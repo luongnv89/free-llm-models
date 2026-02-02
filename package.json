@@ -1,0 +1,12 @@
+{
+  "name": "openrouter-free-models",
+  "version": "1.0.0",
+  "description": "Fetch and list free models from OpenRouter API",
+  "main": "get_openrouter_free_models.js",
+  "scripts": {
+    "start": "node get_openrouter_free_models.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
+}

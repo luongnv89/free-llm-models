@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { Highlight, themes } from 'prism-react-renderer';
@@ -28,16 +28,34 @@ import {
 } from 'lucide-react';
 
 interface FAQItemProps {
+  id: string;
   question: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
+  targetId?: string | null;
 }
 
-function FAQItem({ question, children, defaultOpen = false }: FAQItemProps) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
+function FAQItem({ id, question, children, defaultOpen = false, targetId }: FAQItemProps) {
+  const isTargeted = targetId === id;
+  const [isOpen, setIsOpen] = useState(defaultOpen || isTargeted);
+  const itemRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isTargeted) {
+      setIsOpen(true);
+      // Scroll to the item after a short delay to ensure it's rendered
+      setTimeout(() => {
+        itemRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, [isTargeted]);
 
   return (
-    <Card className="overflow-hidden">
+    <Card
+      ref={itemRef}
+      id={id}
+      className={`overflow-hidden scroll-mt-20 ${isTargeted ? 'ring-2 ring-[var(--highlight)]' : ''}`}
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-muted/50 transition-colors"
@@ -197,6 +215,9 @@ function CodeBlock({ code, language, title }: CodeBlockProps) {
 }
 
 export function FAQPage() {
+  const location = useLocation();
+  const targetId = location.hash ? location.hash.slice(1) : null;
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -237,7 +258,7 @@ export function FAQPage() {
               Getting Started
             </h2>
             <div className="space-y-3">
-              <FAQItem question="What are OpenRouter free models?" defaultOpen>
+              <FAQItem id="what-are-free-models" question="What are OpenRouter free models?" defaultOpen={!targetId} targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   OpenRouter provides access to various AI language models through a unified API.
                   Some of these models are available completely free of charge, with no cost for
@@ -270,7 +291,7 @@ export function FAQPage() {
                 </p>
               </FAQItem>
 
-              <FAQItem question="How do I get an API key?">
+              <FAQItem id="get-api-key" question="How do I get an API key?" targetId={targetId}>
                 <p className="text-muted-foreground mb-2">
                   Follow these steps to get your OpenRouter API key:
                 </p>
@@ -337,7 +358,7 @@ export function FAQPage() {
                 </WarningBox>
               </FAQItem>
 
-              <FAQItem question="How do I make my first API call?">
+              <FAQItem id="first-api-call" question="How do I make my first API call?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   OpenRouter uses an OpenAI-compatible API format. Here's how to make your first call:
                 </p>
@@ -391,7 +412,7 @@ export function FAQPage() {
               Limitations & Considerations
             </h2>
             <div className="space-y-3">
-              <FAQItem question="What are the rate limits for free models?">
+              <FAQItem id="rate-limits" question="What are the rate limits for free models?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">Free models have the following limitations:</p>
                 <div className="grid gap-3">
                   <InfoCard
@@ -415,7 +436,7 @@ export function FAQPage() {
                 </p>
               </FAQItem>
 
-              <FAQItem question="Are there any usage restrictions?">
+              <FAQItem id="usage-restrictions" question="Are there any usage restrictions?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   Yes, when using free models you should be aware of these restrictions:
                 </p>
@@ -467,7 +488,7 @@ export function FAQPage() {
                 </div>
               </FAQItem>
 
-              <FAQItem question="Why do some models have an expiration date?">
+              <FAQItem id="expiration-date" question="Why do some models have an expiration date?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   Some free models are offered as promotional or trial versions. After the expiration date:
                 </p>
@@ -505,7 +526,7 @@ export function FAQPage() {
               Integration Examples
             </h2>
             <div className="space-y-3">
-              <FAQItem question="How do I use OpenRouter with Claude Code?">
+              <FAQItem id="claude-code" question="How do I use OpenRouter with Claude Code?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   OpenRouter integrates with Claude Code, providing automatic failover, centralized budget controls, and real-time usage analytics.
                   There are two configuration methods:
@@ -588,7 +609,7 @@ export ANTHROPIC_API_KEY=""`}
                 </div>
               </FAQItem>
 
-              <FAQItem question="How do I use OpenRouter with LangChain?">
+              <FAQItem id="langchain" question="How do I use OpenRouter with LangChain?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   LangChain supports OpenRouter through the OpenAI-compatible interface:
                 </p>
@@ -624,7 +645,7 @@ console.log(response.content);`}
                 />
               </FAQItem>
 
-              <FAQItem question="How do I use OpenRouter with the OpenAI SDK?">
+              <FAQItem id="openai-sdk" question="How do I use OpenRouter with the OpenAI SDK?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   Since OpenRouter is OpenAI-compatible, just change the base URL:
                 </p>
@@ -685,7 +706,7 @@ console.log(response.choices[0].message.content);`}
                 />
               </FAQItem>
 
-              <FAQItem question="How do I use tool calling / function calling?">
+              <FAQItem id="tool-calling" question="How do I use tool calling / function calling?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   Many free models support tool calling. Check if the model has "tools" in its supported parameters.
                 </p>
@@ -762,7 +783,7 @@ print(response.choices[0].message.tool_calls)`}
               API Key Security
             </h2>
             <div className="space-y-3">
-              <FAQItem question="How should I store my API key?">
+              <FAQItem id="store-api-key" question="How should I store my API key?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">Best practices for API key security:</p>
                 <div className="grid gap-3 sm:grid-cols-2 mb-4">
                   <InfoCard
@@ -802,7 +823,7 @@ api_key = os.environ.get("OPENROUTER_API_KEY")`}
                 />
               </FAQItem>
 
-              <FAQItem question="What if my API key is compromised?">
+              <FAQItem id="key-compromised" question="What if my API key is compromised?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
                   If you suspect your API key has been exposed, act immediately:
                 </p>

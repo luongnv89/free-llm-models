@@ -7,7 +7,7 @@ export function useModels() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/openrouter_free_models.json')
+    fetch(`${import.meta.env.BASE_URL}openrouter_free_models.json`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load models');
         return res.json();

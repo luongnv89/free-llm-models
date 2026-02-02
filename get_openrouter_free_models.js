@@ -13,11 +13,6 @@ const isFreePricing = (pricing = {}) => {
   return pricing.prompt === "0" && pricing.completion === "0";
 };
 
-const getDateString = () => {
-  const now = new Date();
-  return now.toISOString().split('T')[0]; // YYYY-MM-DD
-};
-
 async function main() {
   try {
     console.log('Fetching models from OpenRouter...');
@@ -35,13 +30,15 @@ async function main() {
 
     console.log(`Found ${freeModels.length} free models`);
 
+    // Output path - directly to web/public for automatic website updates
+    const outputPath = path.join(__dirname, 'web', 'public', 'openrouter_free_models.json');
+
     // Load previous data to detect new models
-    const mainOutputPath = path.join(__dirname, 'web', 'public', 'openrouter_free_models.json');
     let previousModelIds = new Set();
 
     try {
-      if (fs.existsSync(mainOutputPath)) {
-        const previousData = JSON.parse(fs.readFileSync(mainOutputPath, 'utf8'));
+      if (fs.existsSync(outputPath)) {
+        const previousData = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
         previousModelIds = new Set(previousData.models.map(m => m.id));
       }
     } catch (e) {
@@ -49,13 +46,11 @@ async function main() {
     }
 
     // Detect new models
-    const currentModelIds = new Set(freeModels.map(m => m.id));
     const newModelIds = freeModels
       .filter(m => !previousModelIds.has(m.id))
       .map(m => m.id);
 
     const fetchedAt = new Date().toISOString();
-    const dateString = getDateString();
 
     // Create output with metadata
     const output = {
@@ -65,25 +60,15 @@ async function main() {
       models: freeModels,
     };
 
-    // Ensure directories exist
+    // Ensure directory exists
     const webPublicDir = path.join(__dirname, 'web', 'public');
-    const archiveDir = path.join(__dirname, 'archive');
-
     if (!fs.existsSync(webPublicDir)) {
       fs.mkdirSync(webPublicDir, { recursive: true });
     }
-    if (!fs.existsSync(archiveDir)) {
-      fs.mkdirSync(archiveDir, { recursive: true });
-    }
 
-    // Write main output file (for frontend)
-    fs.writeFileSync(mainOutputPath, JSON.stringify(output, null, 2), 'utf8');
-    console.log(`Written to: ${mainOutputPath}`);
-
-    // Write dated archive file
-    const archivePath = path.join(archiveDir, `openrouter_free_models_${dateString}.json`);
-    fs.writeFileSync(archivePath, JSON.stringify(output, null, 2), 'utf8');
-    console.log(`Archived to: ${archivePath}`);
+    // Write output file directly to web/public
+    fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf8');
+    console.log(`Written to: ${outputPath}`);
 
     if (newModelIds.length > 0) {
       console.log(`New models detected: ${newModelIds.length}`);

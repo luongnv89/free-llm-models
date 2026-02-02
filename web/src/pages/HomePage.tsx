@@ -4,6 +4,7 @@ import { ModelCard } from '@/components/ModelCard';
 import { FilterSidebar } from '@/components/FilterSidebar';
 import { SearchBar } from '@/components/SearchBar';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { FAQTip } from '@/components/FAQTip';
 import { Button } from '@/components/ui/button';
 import {
   useModels,
@@ -94,8 +95,9 @@ export function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="text-right mr-2">
+            <div className="flex items-center gap-3">
+              <FAQTip />
+              <div className="text-right">
                 <p className="text-xs text-muted-foreground">Last updated</p>
                 <p className="text-sm font-medium">
                   {data?.fetchedAt ? formatDate(data.fetchedAt) : 'Unknown'}
@@ -175,7 +177,7 @@ export function HomePage() {
       <footer className="border-t border-border">
         <div className="px-4 py-6">
           <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap justify-center">
               <span>
                 Data sourced from{' '}
                 <a
@@ -191,6 +193,24 @@ export function HomePage() {
               <Link to="/faq" className="hover:text-[var(--highlight)] transition-colors">
                 FAQ
               </Link>
+              <span>·</span>
+              <a
+                href="https://luongnv.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--highlight)] transition-colors"
+              >
+                luongnv.com
+              </a>
+              <span>·</span>
+              <a
+                href="https://luongnv.com/claude-tools"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--highlight)] transition-colors"
+              >
+                Claude Tools
+              </a>
             </div>
             <div className="text-xs text-muted-foreground/60">
               v{VERSION} ({COMMIT_HASH})

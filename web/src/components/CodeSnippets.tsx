@@ -20,6 +20,23 @@ export function CodeSnippets({ modelId }: CodeSnippetsProps) {
   const [activeTab, setActiveTab] = useState<Language>('curl');
   const [copied, setCopied] = useState(false);
 
+  const claudeCodeEnv = `export OPENROUTER_API_KEY="YOUR_API_KEY"
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
+export ANTHROPIC_API_KEY=""
+# Use this specific model on OpenRouter
+export ANTHROPIC_MODEL="${modelId}"`;
+
+  const claudeCodeSettingsJson = `{
+  "env": {
+    "OPENROUTER_API_KEY": "<your-openrouter-api-key>",
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_AUTH_TOKEN": "<your-openrouter-api-key>",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "${modelId}"
+  }
+}`;
+
   const snippets: Record<Language, { code: string; steps: string[] }> = {
     curl: {
       code: `curl https://openrouter.ai/api/v1/chat/completions \\
@@ -182,6 +199,82 @@ print(completion.choices[0].message.content)`,
               </pre>
             )}
           </Highlight>
+        </div>
+
+        {/* Claude Code Quick Start */}
+        <div className="pt-2 border-t border-border/60">
+          <h4 className="text-sm font-medium mb-2">Claude Code (step-by-step)</h4>
+          <ol className="list-decimal list-inside space-y-1 text-sm text-muted-foreground">
+            <li>
+              Get an OpenRouter API key: <span className="text-foreground">https://openrouter.ai/keys</span>
+            </li>
+            <li>
+              Configure Claude Code to use OpenRouter by setting environment variables (recommended) or
+              via project settings.
+            </li>
+            <li>
+              Set <code className="bg-muted px-1.5 py-0.5 rounded text-xs">ANTHROPIC_MODEL</code> to
+              <code className="bg-muted px-1.5 py-0.5 rounded text-xs ml-1">{modelId}</code>.
+            </li>
+            <li>
+              Launch Claude Code in your project and verify with <code className="bg-muted px-1.5 py-0.5 rounded text-xs">/status</code>.
+            </li>
+          </ol>
+
+          <div className="mt-3 space-y-3">
+            <div>
+              <div className="text-xs text-muted-foreground mb-1">Option A: shell profile</div>
+              <Highlight theme={themes.nightOwl} code={claudeCodeEnv} language="bash">
+                {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                  <pre
+                    className={`${className} p-4 rounded-lg overflow-x-auto text-sm`}
+                    style={{ ...style, margin: 0 }}
+                  >
+                    {tokens.map((line, i) => (
+                      <div key={i} {...getLineProps({ line })}>
+                        <span className="inline-block w-8 text-gray-500 select-none text-right mr-4">
+                          {i + 1}
+                        </span>
+                        {line.map((token, key) => (
+                          <span key={key} {...getTokenProps({ token })} />
+                        ))}
+                      </div>
+                    ))}
+                  </pre>
+                )}
+              </Highlight>
+            </div>
+
+            <div>
+              <div className="text-xs text-muted-foreground mb-1">Option B: project settings</div>
+              <div className="text-xs text-muted-foreground mb-2">
+                Create <code className="bg-muted px-1.5 py-0.5 rounded text-xs">.claude/settings.local.json</code> in your project root.
+              </div>
+              <Highlight theme={themes.nightOwl} code={claudeCodeSettingsJson} language="json">
+                {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                  <pre
+                    className={`${className} p-4 rounded-lg overflow-x-auto text-sm`}
+                    style={{ ...style, margin: 0 }}
+                  >
+                    {tokens.map((line, i) => (
+                      <div key={i} {...getLineProps({ line })}>
+                        <span className="inline-block w-8 text-gray-500 select-none text-right mr-4">
+                          {i + 1}
+                        </span>
+                        {line.map((token, key) => (
+                          <span key={key} {...getTokenProps({ token })} />
+                        ))}
+                      </div>
+                    ))}
+                  </pre>
+                )}
+              </Highlight>
+            </div>
+
+            <div className="text-xs text-muted-foreground">
+              Note: keep <code className="bg-muted px-1.5 py-0.5 rounded text-xs">ANTHROPIC_API_KEY</code> explicitly empty to avoid conflicts.
+            </div>
+          </div>
         </div>
       </CardContent>
     </Card>

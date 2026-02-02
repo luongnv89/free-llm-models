@@ -83,7 +83,7 @@ export function HomePage() {
       {/* Header */}
       <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-20">
         <div className="px-4 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-black rounded-lg flex items-center justify-center">
                 <Zap className="h-6 w-6 text-[var(--highlight)]" />
@@ -95,7 +95,7 @@ export function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap justify-end">
               <FAQTip />
               <div className="text-right">
                 <p className="text-xs text-muted-foreground">Last updated</p>
@@ -115,7 +115,7 @@ export function HomePage() {
       </header>
 
       {/* Main Layout */}
-      <div className="flex flex-1">
+      <div className="flex flex-1 flex-col lg:flex-row min-w-0">
         {/* Sidebar */}
         <FilterSidebar
           filters={filters}
@@ -125,7 +125,7 @@ export function HomePage() {
         />
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-auto">
+        <main className="flex-1 p-4 lg:p-6 overflow-visible lg:overflow-auto min-w-0">
           {/* New Models Banner */}
           {newModelsCount > 0 && (
             <div className="mb-6 p-4 border border-[var(--highlight)] rounded-lg bg-card">

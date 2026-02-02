@@ -142,8 +142,8 @@ export function FilterSidebar({
     (filters.hasTools !== null ? 1 : 0);
 
   return (
-    <aside className="w-64 shrink-0 border-r border-border bg-card">
-      <div className="sticky top-[73px] h-[calc(100vh-73px)] overflow-y-auto p-4 space-y-6">
+    <aside className="w-full lg:w-64 shrink-0 lg:border-r border-border bg-card border-b lg:border-b-0">
+      <div className="lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] overflow-y-auto p-4 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">

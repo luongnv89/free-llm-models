@@ -40,12 +40,12 @@ export function SearchBar({
           className="pl-10"
         />
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap">
         <Select
           value={sortField}
           onValueChange={(v) => onSortChange(v as SortField, sortOrder)}
         >
-          <SelectTrigger className="w-[140px]">
+          <SelectTrigger className="w-full sm:w-[140px]">
             <ArrowUpDown className="h-4 w-4 mr-2" />
             <SelectValue />
           </SelectTrigger>

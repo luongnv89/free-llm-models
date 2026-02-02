@@ -140,19 +140,21 @@ export function HomePage() {
             </div>
           )}
 
-          {/* Search and Sort */}
-          <SearchBar
-            search={filters.search}
-            onSearchChange={(value) => setFilters({ ...filters, search: value })}
-            sortField={sortField}
-            sortOrder={sortOrder}
-            onSortChange={(field, order) => {
-              setSortField(field);
-              setSortOrder(order);
-            }}
-            totalCount={data?.models.length ?? 0}
-            filteredCount={filteredModels.length}
-          />
+          {/* Search and Sort (sticky on mobile) */}
+          <div className="sticky top-[73px] z-10 bg-background/95 backdrop-blur -mx-4 px-4 pt-3 lg:static lg:z-auto lg:bg-transparent lg:backdrop-blur-0 lg:mx-0 lg:px-0 lg:pt-0">
+            <SearchBar
+              search={filters.search}
+              onSearchChange={(value) => setFilters({ ...filters, search: value })}
+              sortField={sortField}
+              sortOrder={sortOrder}
+              onSortChange={(field, order) => {
+                setSortField(field);
+                setSortOrder(order);
+              }}
+              totalCount={data?.models.length ?? 0}
+              filteredCount={filteredModels.length}
+            />
+          </div>
 
           {/* Model Grid */}
           {filteredModels.length === 0 ? (

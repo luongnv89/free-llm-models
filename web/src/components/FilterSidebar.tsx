@@ -32,6 +32,129 @@ function FilterSection({ title, children }: FilterSectionProps) {
   );
 }
 
+function FiltersContent({
+  filters,
+  providers,
+  modalities,
+  hasActiveFilters,
+  activeFilterCount,
+  clearFilters,
+  toggleArrayFilter,
+  toggleContextLength,
+  updateFilter,
+  showHeader = true,
+}: {
+  filters: FilterState;
+  providers: string[];
+  modalities: string[];
+  hasActiveFilters: boolean;
+  activeFilterCount: number;
+  clearFilters: () => void;
+  toggleArrayFilter: (key: 'providers' | 'modalities', value: string) => void;
+  toggleContextLength: (min: number | null, max: number | null) => void;
+  updateFilter: <K extends keyof FilterState>(key: K, value: FilterState[K]) => void;
+  showHeader?: boolean;
+}) {
+  return (
+    <>
+      {showHeader && (
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h2 className="font-semibold">Filters</h2>
+            {activeFilterCount > 0 && (
+              <Badge variant="secondary" className="text-xs">
+                {activeFilterCount}
+              </Badge>
+            )}
+          </div>
+          {hasActiveFilters && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={clearFilters}
+              className="h-7 text-xs text-muted-foreground hover:text-foreground"
+            >
+              <X className="h-3 w-3 mr-1" />
+              Clear
+            </Button>
+          )}
+        </div>
+      )}
+
+      {/* Modalities */}
+      <FilterSection title="Modality">
+        <div className="space-y-1">
+          {modalities.map((modality) => (
+            <FilterOption
+              key={modality}
+              label={modality}
+              selected={filters.modalities.includes(modality)}
+              onClick={() => toggleArrayFilter('modalities', modality)}
+            />
+          ))}
+        </div>
+      </FilterSection>
+
+      {/* Context Length */}
+      <FilterSection title="Context Length">
+        <div className="space-y-1">
+          {contextLengthOptions.map((opt) => (
+            <FilterOption
+              key={opt.label}
+              label={opt.label}
+              selected={
+                filters.contextLengthMin === opt.min &&
+                filters.contextLengthMax === opt.max
+              }
+              onClick={() => toggleContextLength(opt.min, opt.max)}
+            />
+          ))}
+        </div>
+      </FilterSection>
+
+      {/* Capabilities */}
+      <FilterSection title="Capabilities">
+        <div className="space-y-1">
+          <FilterOption
+            label="Reasoning"
+            selected={filters.hasReasoning === true}
+            onClick={() =>
+              updateFilter(
+                'hasReasoning',
+                filters.hasReasoning === true ? null : true
+              )
+            }
+          />
+          <FilterOption
+            label="Tool Use"
+            selected={filters.hasTools === true}
+            onClick={() =>
+              updateFilter(
+                'hasTools',
+                filters.hasTools === true ? null : true
+              )
+            }
+          />
+        </div>
+      </FilterSection>
+
+      {/* Providers */}
+      <FilterSection title="Provider">
+        <div className="space-y-1 max-h-48 overflow-y-auto">
+          {providers.map((provider) => (
+            <FilterOption
+              key={provider}
+              label={provider}
+              selected={filters.providers.includes(provider)}
+              onClick={() => toggleArrayFilter('providers', provider)}
+            />
+          ))}
+        </div>
+      </FilterSection>
+    </>
+  );
+}
+
 interface FilterOptionProps {
   label: string;
   selected: boolean;
@@ -143,100 +266,52 @@ export function FilterSidebar({
 
   return (
     <aside className="w-full lg:w-64 shrink-0 lg:border-r border-border bg-card border-b lg:border-b-0">
-      <div className="lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] overflow-y-auto p-4 space-y-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <h2 className="font-semibold">Filters</h2>
-            {activeFilterCount > 0 && (
-              <Badge variant="secondary" className="text-xs">
-                {activeFilterCount}
-              </Badge>
-            )}
-          </div>
-          {hasActiveFilters && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={clearFilters}
-              className="h-7 text-xs text-muted-foreground hover:text-foreground"
-            >
-              <X className="h-3 w-3 mr-1" />
-              Clear
-            </Button>
-          )}
-        </div>
-
-        {/* Modalities */}
-        <FilterSection title="Modality">
-          <div className="space-y-1">
-            {modalities.map((modality) => (
-              <FilterOption
-                key={modality}
-                label={modality}
-                selected={filters.modalities.includes(modality)}
-                onClick={() => toggleArrayFilter('modalities', modality)}
-              />
-            ))}
-          </div>
-        </FilterSection>
-
-        {/* Context Length */}
-        <FilterSection title="Context Length">
-          <div className="space-y-1">
-            {contextLengthOptions.map((opt) => (
-              <FilterOption
-                key={opt.label}
-                label={opt.label}
-                selected={
-                  filters.contextLengthMin === opt.min &&
-                  filters.contextLengthMax === opt.max
-                }
-                onClick={() => toggleContextLength(opt.min, opt.max)}
-              />
-            ))}
-          </div>
-        </FilterSection>
-
-        {/* Capabilities */}
-        <FilterSection title="Capabilities">
-          <div className="space-y-1">
-            <FilterOption
-              label="Reasoning"
-              selected={filters.hasReasoning === true}
-              onClick={() =>
-                updateFilter(
-                  'hasReasoning',
-                  filters.hasReasoning === true ? null : true
-                )
-              }
-            />
-            <FilterOption
-              label="Tool Use"
-              selected={filters.hasTools === true}
-              onClick={() =>
-                updateFilter(
-                  'hasTools',
-                  filters.hasTools === true ? null : true
-                )
-              }
+      {/* Mobile: collapsible */}
+      <div className="p-4 lg:hidden">
+        <details>
+          <summary className="list-none cursor-pointer select-none">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <h2 className="font-semibold">Filters</h2>
+                {activeFilterCount > 0 && (
+                  <Badge variant="secondary" className="text-xs">
+                    {activeFilterCount}
+                  </Badge>
+                )}
+              </div>
+              <span className="text-xs text-muted-foreground">Tap to expand</span>
+            </div>
+          </summary>
+          <div className="pt-4 space-y-6">
+            <FiltersContent
+              filters={filters}
+              providers={providers}
+              modalities={modalities}
+              hasActiveFilters={hasActiveFilters}
+              activeFilterCount={activeFilterCount}
+              clearFilters={clearFilters}
+              toggleArrayFilter={toggleArrayFilter}
+              toggleContextLength={toggleContextLength}
+              updateFilter={updateFilter}
+              showHeader={false}
             />
           </div>
-        </FilterSection>
+        </details>
+      </div>
 
-        {/* Providers */}
-        <FilterSection title="Provider">
-          <div className="space-y-1 max-h-48 overflow-y-auto">
-            {providers.map((provider) => (
-              <FilterOption
-                key={provider}
-                label={provider}
-                selected={filters.providers.includes(provider)}
-                onClick={() => toggleArrayFilter('providers', provider)}
-              />
-            ))}
-          </div>
-        </FilterSection>
+      {/* Desktop: always open + sticky */}
+      <div className="hidden lg:block lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] overflow-y-auto p-4 space-y-6">
+        <FiltersContent
+          filters={filters}
+          providers={providers}
+          modalities={modalities}
+          hasActiveFilters={hasActiveFilters}
+          activeFilterCount={activeFilterCount}
+          clearFilters={clearFilters}
+          toggleArrayFilter={toggleArrayFilter}
+          toggleContextLength={toggleContextLength}
+          updateFilter={updateFilter}
+        />
       </div>
     </aside>
   );

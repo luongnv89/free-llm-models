@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-02-07T00:00:13.212Z",
+  "fetchedAt": "2026-02-08T00:00:19.251Z",
   "totalModels": 31,
-  "newModelIds": [
-    "openrouter/pony-alpha"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "openrouter/pony-alpha",

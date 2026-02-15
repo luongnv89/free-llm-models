@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-02-14T00:00:15.724Z",
+  "fetchedAt": "2026-02-15T00:00:18.088Z",
   "totalModels": 31,
-  "newModelIds": [
-    "qwen/qwen3-235b-a22b-thinking-2507"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "openrouter/aurora-alpha",

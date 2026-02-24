@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-23T00:00:14.163Z",
+  "fetchedAt": "2026-02-24T00:00:16.309Z",
   "totalModels": 30,
   "newModelIds": [],
   "models": [
@@ -1014,7 +1014,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
-      "expiration_date": null
+      "expiration_date": "2026-02-24"
     },
     {
       "id": "google/gemma-3n-e4b-it:free",

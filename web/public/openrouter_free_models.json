@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-26T00:00:13.429Z",
+  "fetchedAt": "2026-02-27T00:00:17.481Z",
   "totalModels": 29,
   "newModelIds": [],
   "models": [
@@ -197,7 +197,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
-      "expiration_date": "2026-03-02"
+      "expiration_date": "2026-03-22"
     },
     {
       "id": "liquid/lfm-2.5-1.2b-thinking:free",

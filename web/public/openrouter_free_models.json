@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-02T00:00:18.282Z",
+  "fetchedAt": "2026-03-03T00:00:17.973Z",
   "totalModels": 29,
   "newModelIds": [],
   "models": [
@@ -195,9 +195,12 @@
       "default_parameters": {
         "temperature": null,
         "top_p": null,
-        "frequency_penalty": null
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
       },
-      "expiration_date": "2026-03-22"
+      "expiration_date": "2026-03-02"
     },
     {
       "id": "liquid/lfm-2.5-1.2b-thinking:free",
@@ -959,12 +962,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
         "max_tokens",
-        "presence_penalty",
         "response_format",
         "seed",
-        "stop",
         "temperature",
         "top_p"
       ],
@@ -1001,12 +1001,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
         "max_tokens",
-        "presence_penalty",
         "response_format",
         "seed",
-        "stop",
         "temperature",
         "top_p"
       ],

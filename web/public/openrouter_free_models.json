@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-03-03T00:00:17.973Z",
-  "totalModels": 29,
+  "fetchedAt": "2026-03-04T00:00:19.748Z",
+  "totalModels": 28,
   "newModelIds": [],
   "models": [
     {
@@ -152,55 +152,6 @@
         "frequency_penalty": null
       },
       "expiration_date": null
-    },
-    {
-      "id": "upstage/solar-pro-3:free",
-      "canonical_slug": "upstage/solar-pro-3",
-      "hugging_face_id": "",
-      "name": "Upstage: Solar Pro 3 (free)",
-      "created": 1769481200,
-      "description": "Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining computational efficiency. Optimized for Korean with English and Japanese support.",
-      "context_length": 128000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "response_format",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "expiration_date": "2026-03-02"
     },
     {
       "id": "liquid/lfm-2.5-1.2b-thinking:free",

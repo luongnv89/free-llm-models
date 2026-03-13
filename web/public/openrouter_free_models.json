@@ -1,11 +1,7 @@
 {
-  "fetchedAt": "2026-03-12T00:00:42.793Z",
+  "fetchedAt": "2026-03-13T00:00:54.999Z",
   "totalModels": 28,
-  "newModelIds": [
-    "openrouter/hunter-alpha",
-    "openrouter/healer-alpha",
-    "nvidia/nemotron-3-super-120b-a12b:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "openrouter/hunter-alpha",
@@ -36,7 +32,7 @@
       },
       "top_provider": {
         "context_length": 1048576,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 32000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -95,7 +91,7 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 32000,
         "is_moderated": false
       },
       "per_request_limits": null,

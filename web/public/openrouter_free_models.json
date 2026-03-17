@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-03-16T00:00:45.689Z",
+  "fetchedAt": "2026-03-17T00:00:33.698Z",
   "totalModels": 29,
-  "newModelIds": [
-    "minimax/minimax-m2.5:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "openrouter/hunter-alpha",

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-26T00:00:40.393Z",
+  "fetchedAt": "2026-03-27T00:00:27.983Z",
   "totalModels": 27,
   "newModelIds": [],
   "models": [
@@ -52,6 +52,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -101,6 +102,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -156,6 +158,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -202,6 +205,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -254,6 +258,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": "2026-03-31"
     },
     {
@@ -304,6 +309,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -352,6 +358,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -398,6 +405,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -446,6 +454,7 @@
         "top_p": 0.75,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -494,6 +503,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": null,
       "expiration_date": null
     },
     {
@@ -539,6 +549,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2025-09-30",
       "expiration_date": null
     },
     {
@@ -587,6 +598,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": "2025-03-31",
       "expiration_date": null
     },
     {
@@ -633,6 +645,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": "2024-06-30",
       "expiration_date": null
     },
     {
@@ -679,6 +692,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": "2024-06-30",
       "expiration_date": null
     },
     {
@@ -724,6 +738,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": "2024-12-31",
       "expiration_date": null
     },
     {
@@ -767,6 +782,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2025-06-30",
       "expiration_date": null
     },
     {
@@ -810,6 +826,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2024-04-30",
       "expiration_date": null
     },
     {
@@ -849,6 +866,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2024-08-31",
       "expiration_date": null
     },
     {
@@ -888,6 +906,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2024-08-31",
       "expiration_date": null
     },
     {
@@ -935,6 +954,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2025-03-31",
       "expiration_date": "2026-03-29"
     },
     {
@@ -983,6 +1003,7 @@
       "default_parameters": {
         "temperature": 0.3
       },
+      "knowledge_cutoff": "2023-10-31",
       "expiration_date": "2026-03-29"
     },
     {
@@ -1024,6 +1045,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2024-08-31",
       "expiration_date": null
     },
     {
@@ -1064,6 +1086,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2024-08-31",
       "expiration_date": null
     },
     {
@@ -1109,6 +1132,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "knowledge_cutoff": "2024-08-31",
       "expiration_date": null
     },
     {
@@ -1152,6 +1176,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2023-12-31",
       "expiration_date": null
     },
     {
@@ -1193,6 +1218,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2023-12-31",
       "expiration_date": null
     },
     {
@@ -1234,6 +1260,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "knowledge_cutoff": "2023-12-31",
       "expiration_date": null
     }
   ]

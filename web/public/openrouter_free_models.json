@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-29T06:45:27.341Z",
+  "fetchedAt": "2026-03-30T00:00:25.503Z",
   "totalModels": 25,
   "newModelIds": [],
   "models": [
@@ -229,11 +229,7 @@
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
         "context_length": 131000,

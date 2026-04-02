@@ -1,11 +1,7 @@
 {
-  "fetchedAt": "2026-03-31T00:00:34.425Z",
+  "fetchedAt": "2026-04-02T00:26:01.292Z",
   "totalModels": 28,
-  "newModelIds": [
-    "google/lyria-3-pro-preview",
-    "google/lyria-3-clip-preview",
-    "qwen/qwen3.6-plus-preview:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "google/lyria-3-pro-preview",
@@ -130,7 +126,7 @@
       },
       "top_provider": {
         "context_length": 1000000,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 32000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -148,11 +144,11 @@
         "top_p"
       ],
       "default_parameters": {
-        "temperature": null,
-        "top_p": null,
+        "temperature": 1,
+        "top_p": 1,
         "top_k": null,
         "frequency_penalty": null,
-        "presence_penalty": null,
+        "presence_penalty": 0,
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
@@ -410,7 +406,7 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": "2026-03-31"
+      "expiration_date": "2026-04-10"
     },
     {
       "id": "liquid/lfm-2.5-1.2b-thinking:free",

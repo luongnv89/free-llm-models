@@ -1,15 +1,127 @@
 {
-  "fetchedAt": "2026-04-06T00:00:23.492Z",
-  "totalModels": 28,
-  "newModelIds": [],
+  "fetchedAt": "2026-04-08T00:00:32.777Z",
+  "totalModels": 30,
+  "newModelIds": [
+    "google/gemma-4-26b-a4b-it:free",
+    "google/gemma-4-31b-it:free"
+  ],
   "models": [
+    {
+      "id": "google/gemma-4-26b-a4b-it:free",
+      "canonical_slug": "google/gemma-4-26b-a4b-it-20260403",
+      "hugging_face_id": "google/gemma-4-26B-A4B-it",
+      "name": "Google: Gemma 4 26B A4B  (free)",
+      "created": 1775227989,
+      "description": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemma",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 64
+      },
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemma-4-26b-a4b-it-20260403/endpoints"
+      }
+    },
+    {
+      "id": "google/gemma-4-31b-it:free",
+      "canonical_slug": "google/gemma-4-31b-it-20260402",
+      "hugging_face_id": "google/gemma-4-31B-it",
+      "name": "Google: Gemma 4 31B (free)",
+      "created": 1775148486,
+      "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemma",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 64,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemma-4-31b-it-20260402/endpoints"
+      }
+    },
     {
       "id": "qwen/qwen3.6-plus:free",
       "canonical_slug": "qwen/qwen3.6-plus-04-02",
       "hugging_face_id": "",
       "name": "Qwen: Qwen3.6 Plus (free)",
       "created": 1775133557,
-      "description": "Qwen 3.6 Plus builds on a hybrid architecture that combines efficient linear attention with sparse mixture-of-experts routing, enabling strong scalability and high-performance inference. Compared to the 3.5 series, it delivers major gains in agentic coding, front-end development, and overall reasoning, with a significantly improved “vibe coding” experience. The model excels at complex tasks such as 3D scenes, games, and repository-level problem solving, achieving a 78.8 score on SWE-bench Verified. It represents a substantial leap in both pure-text and multimodal capabilities, performing at the level of leading state-of-the-art models.",
+      "description": "Qwen 3.6 Plus builds on a hybrid architecture that combines efficient linear attention with sparse mixture-of-experts routing, enabling strong scalability and high-performance inference. Compared to the 3.5 series, it delivers...",
       "context_length": 1000000,
       "architecture": {
         "modality": "text+image+video->text",
@@ -56,7 +168,10 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": "2026-04-07",
+      "links": {
+        "details": "/api/v1/models/qwen/qwen3.6-plus-04-02/endpoints"
+      }
     },
     {
       "id": "google/lyria-3-pro-preview",
@@ -64,7 +179,7 @@
       "hugging_face_id": null,
       "name": "Google: Lyria 3 Pro Preview",
       "created": 1774907286,
-      "description": "Full-length songs are priced at $0.08 per song. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate high-quality, 48kHz stereo audio from text prompts or from images. These models deliver structural coherence, including vocals, timed lyrics, and full instrumental arrangements. Lyria 3 Pro can generate full-length songs with verses, choruses, bridges.",
+      "description": "Full-length songs are priced at $0.08 per song. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate high-quality, 48kHz...",
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
@@ -105,7 +220,10 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/lyria-3-pro-preview-20260330/endpoints"
+      }
     },
     {
       "id": "google/lyria-3-clip-preview",
@@ -113,7 +231,7 @@
       "hugging_face_id": null,
       "name": "Google: Lyria 3 Clip Preview",
       "created": 1774907255,
-      "description": "30 second duration clips are priced at $0.04 per clip. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate high-quality, 48kHz stereo audio from text prompts or from images. These models deliver structural coherence, including vocals, timed lyrics, and full instrumental arrangements. Lyria 3 Clip can generate short clips, loops, previews.",
+      "description": "30 second duration clips are priced at $0.04 per clip. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate...",
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
@@ -154,7 +272,10 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/lyria-3-clip-preview-20260330/endpoints"
+      }
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
@@ -162,7 +283,7 @@
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
       "name": "NVIDIA: Nemotron 3 Super (free)",
       "created": 1773245239,
-      "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer Mixture-of-Experts architecture with multi-token prediction (MTP), it delivers over 50% higher token generation compared to leading open models.\n \nThe model features a 1M token context window for long-term agent coherence, cross-document reasoning, and multi-step task planning. Latent MoE enables calling 4 experts for the inference cost of only one, improving intelligence and generalization. Multi-environment RL training across 10+ environments delivers leading accuracy on benchmarks including AIME 2025, TerminalBench, and SWE-Bench Verified.\n \nFully open with weights, datasets, and recipes under the NVIDIA Open License, Nemotron 3 Super allows easy customization and secure deployment anywhere — from workstation to cloud.",
+      "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
@@ -206,7 +327,10 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nvidia/nemotron-3-super-120b-a12b-20230311/endpoints"
+      }
     },
     {
       "id": "minimax/minimax-m2.5:free",
@@ -214,7 +338,7 @@
       "hugging_face_id": "MiniMaxAI/MiniMax-M2.5",
       "name": "MiniMax: MiniMax M2.5 (free)",
       "created": 1770908502,
-      "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1 to extend into general office work, reaching fluency in generating and operating Word, Excel, and Powerpoint files, context switching between diverse software environments, and working across different agent and human teams. Scoring 80.2% on SWE-Bench Verified, 51.3% on Multi-SWE-Bench, and 76.3% on BrowseComp, M2.5 is also more token efficient than previous generations, having been trained to optimize its actions and output through planning.",
+      "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
       "context_length": 196608,
       "architecture": {
         "modality": "text->text",
@@ -256,7 +380,10 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/minimax/minimax-m2.5-20260211/endpoints"
+      }
     },
     {
       "id": "openrouter/free",
@@ -264,7 +391,7 @@
       "hugging_face_id": "",
       "name": "Free Models Router",
       "created": 1769917427,
-      "description": "The simplest way to get free inference. openrouter/free is a router that selects free models at random from the models available on OpenRouter. The router smartly filters for models that support features needed for your request such as image understanding, tool calling, structured outputs and more. ",
+      "description": "The simplest way to get free inference. openrouter/free is a router that selects free models at random from the models available on OpenRouter. The router smartly filters for models that...",
       "context_length": 200000,
       "architecture": {
         "modality": "text+image->text",
@@ -312,7 +439,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/openrouter/free/endpoints"
+      }
     },
     {
       "id": "stepfun/step-3.5-flash:free",
@@ -320,7 +450,7 @@
       "hugging_face_id": "stepfun-ai/Step-3.5-Flash",
       "name": "StepFun: Step 3.5 Flash (free)",
       "created": 1769728337,
-      "description": "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token. It is a reasoning model that is incredibly speed efficient even at long contexts.",
+      "description": "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token....",
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
@@ -359,7 +489,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/stepfun/step-3.5-flash/endpoints"
+      }
     },
     {
       "id": "arcee-ai/trinity-large-preview:free",
@@ -367,7 +500,7 @@
       "hugging_face_id": "arcee-ai/Trinity-Large-Preview",
       "name": "Arcee AI: Trinity Large Preview (free)",
       "created": 1769552670,
-      "description": "Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. \n\nIt excels in creative writing, storytelling, role-play, chat scenarios, and real-time voice assistance, better than your average reasoning model usually can. But we’re also introducing some of our newer agentic performance. It was trained to navigate well in agent harnesses like OpenCode, Cline, and Kilo Code, and to handle complex toolchains and long, constraint-filled prompts. \n\nThe architecture natively supports very long context windows up to 512k tokens, with the Preview API currently served at 128k context using 8-bit quantization for practical deployment. Trinity-Large-Preview reflects Arcee’s efficiency-first design philosophy, offering a production-oriented frontier model with open weights and permissive licensing suitable for real-world applications and experimentation.",
+      "description": "Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. It excels in creative writing,...",
       "context_length": 131000,
       "architecture": {
         "modality": "text->text",
@@ -408,7 +541,10 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/arcee-ai/trinity-large-preview/endpoints"
+      }
     },
     {
       "id": "liquid/lfm-2.5-1.2b-thinking:free",
@@ -416,7 +552,7 @@
       "hugging_face_id": "LiquidAI/LFM2.5-1.2B-Thinking",
       "name": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
       "created": 1768927527,
-      "description": "LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is designed to provide higher-quality “thinking” responses in a small 1.2B model.",
+      "description": "LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is...",
       "context_length": 32768,
       "architecture": {
         "modality": "text->text",
@@ -459,7 +595,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/liquid/lfm-2.5-1.2b-thinking-20260120/endpoints"
+      }
     },
     {
       "id": "liquid/lfm-2.5-1.2b-instruct:free",
@@ -508,7 +647,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/liquid/lfm-2.5-1.2b-instruct-20260120/endpoints"
+      }
     },
     {
       "id": "nvidia/nemotron-3-nano-30b-a3b:free",
@@ -516,7 +658,7 @@
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
       "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
       "created": 1765731275,
-      "description": "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems.\n\nThe model is fully open with open-weights, datasets and recipes so developers can easily\ncustomize, optimize, and deploy the model on their infrastructure for maximum privacy and\nsecurity.",
+      "description": "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems. The model is fully...",
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
@@ -555,7 +697,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints"
+      }
     },
     {
       "id": "arcee-ai/trinity-mini:free",
@@ -563,7 +708,7 @@
       "hugging_face_id": "arcee-ai/Trinity-Mini",
       "name": "Arcee AI: Trinity Mini (free)",
       "created": 1764601720,
-      "description": "Trinity Mini is a 26B-parameter (3B active) sparse mixture-of-experts language model featuring 128 experts with 8 active per token. Engineered for efficient reasoning over long contexts (131k) with robust function calling and multi-step agent workflows.",
+      "description": "Trinity Mini is a 26B-parameter (3B active) sparse mixture-of-experts language model featuring 128 experts with 8 active per token. Engineered for efficient reasoning over long contexts (131k) with robust function...",
       "context_length": 131072,
       "architecture": {
         "modality": "text->text",
@@ -604,7 +749,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": "2026-04-10"
+      "expiration_date": "2026-04-10",
+      "links": {
+        "details": "/api/v1/models/arcee-ai/trinity-mini-20251201/endpoints"
+      }
     },
     {
       "id": "nvidia/nemotron-nano-12b-v2-vl:free",
@@ -612,7 +760,7 @@
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
       "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
       "created": 1761675565,
-      "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba’s memory-efficient sequence modeling for significantly higher throughput and lower latency.\n\nThe model supports inputs of text and multi-image documents, producing natural-language outputs. It is trained on high-quality NVIDIA-curated synthetic datasets optimized for optical-character recognition, chart reasoning, and multimodal comprehension.\n\nNemotron Nano 2 VL achieves leading results on OCRBench v2 and scores ≈ 74 average across MMMU, MathVista, AI2D, OCRBench, OCR-Reasoning, ChartQA, DocVQA, and Video-MME—surpassing prior open VL baselines. With Efficient Video Sampling (EVS), it handles long-form videos while reducing inference cost.\n\nOpen-weights, training data, and fine-tuning recipes are released under a permissive NVIDIA open license, with deployment supported across NeMo, NIM, and major inference runtimes.",
+      "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba’s...",
       "context_length": 128000,
       "architecture": {
         "modality": "text+image+video->text",
@@ -653,7 +801,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nvidia/nemotron-nano-12b-v2-vl/endpoints"
+      }
     },
     {
       "id": "qwen/qwen3-next-80b-a3b-instruct:free",
@@ -661,7 +812,7 @@
       "hugging_face_id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
       "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
       "created": 1757612213,
-      "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual use, while remaining robust on alignment and formatting. Compared with prior Qwen3 instruct variants, it focuses on higher throughput and stability on ultra-long inputs and multi-turn dialogues, making it well-suited for RAG, tool use, and agentic workflows that require consistent final answers rather than visible chain-of-thought.\n\nThe model employs scaling-efficient training and decoding to improve parameter efficiency and inference speed, and has been validated on a broad set of public benchmarks where it reaches or approaches larger Qwen3 systems in several categories while outperforming earlier mid-sized baselines. It is best used as a general assistant, code helper, and long-context task solver in production settings where deterministic, instruction-following outputs are preferred.",
+      "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual...",
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
@@ -699,7 +850,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2025-09-30",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/qwen/qwen3-next-80b-a3b-instruct-2509/endpoints"
+      }
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",
@@ -707,7 +861,7 @@
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
       "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
       "created": 1757106807,
-      "description": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and tasks by first generating a reasoning trace and then concluding with a final response. \n\nThe model's reasoning capabilities can be controlled via a system prompt. If the user prefers the model to provide its final answer without intermediate reasoning traces, it can be configured to do so.",
+      "description": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and...",
       "context_length": 128000,
       "architecture": {
         "modality": "text->text",
@@ -748,7 +902,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": "2025-03-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nvidia/nemotron-nano-9b-v2/endpoints"
+      }
     },
     {
       "id": "openai/gpt-oss-120b:free",
@@ -756,7 +913,7 @@
       "hugging_face_id": "openai/gpt-oss-120b",
       "name": "OpenAI: gpt-oss-120b (free)",
       "created": 1754414231,
-      "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized to run on a single H100 GPU with native MXFP4 quantization. The model supports configurable reasoning depth, full chain-of-thought access, and native tool use, including function calling, browsing, and structured output generation.",
+      "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized...",
       "context_length": 131072,
       "architecture": {
         "modality": "text->text",
@@ -795,7 +952,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": "2024-06-30",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/openai/gpt-oss-120b/endpoints"
+      }
     },
     {
       "id": "openai/gpt-oss-20b:free",
@@ -803,7 +963,7 @@
       "hugging_face_id": "openai/gpt-oss-20b",
       "name": "OpenAI: gpt-oss-20b (free)",
       "created": 1754414229,
-      "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for lower-latency inference and deployability on consumer or single-GPU hardware. The model is trained in OpenAI’s Harmony response format and supports reasoning level configuration, fine-tuning, and agentic capabilities including function calling, tool use, and structured outputs.",
+      "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
       "context_length": 131072,
       "architecture": {
         "modality": "text->text",
@@ -842,7 +1002,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": "2024-06-30",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/openai/gpt-oss-20b/endpoints"
+      }
     },
     {
       "id": "z-ai/glm-4.5-air:free",
@@ -850,7 +1013,7 @@
       "hugging_face_id": "zai-org/GLM-4.5-Air",
       "name": "Z.ai: GLM 4.5 Air (free)",
       "created": 1753471258,
-      "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact parameter size. GLM-4.5-Air also supports hybrid inference modes, offering a \"thinking mode\" for advanced reasoning and tool use, and a \"non-thinking mode\" for real-time interaction. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)",
+      "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact parameter...",
       "context_length": 131072,
       "architecture": {
         "modality": "text->text",
@@ -888,7 +1051,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": "2024-12-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/z-ai/glm-4.5-air/endpoints"
+      }
     },
     {
       "id": "qwen/qwen3-coder:free",
@@ -896,7 +1062,7 @@
       "hugging_face_id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "name": "Qwen: Qwen3 Coder 480B A35B (free)",
       "created": 1753230546,
-      "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over repositories. The model features 480 billion total parameters, with 35 billion active per forward pass (8 out of 160 experts).\n\nPricing for the Alibaba endpoints varies by context length. Once a request is greater than 128k input tokens, the higher pricing is used.",
+      "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over...",
       "context_length": 262000,
       "architecture": {
         "modality": "text->text",
@@ -932,7 +1098,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2025-06-30",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/qwen/qwen3-coder-480b-a35b-07-25/endpoints"
+      }
     },
     {
       "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
@@ -940,7 +1109,7 @@
       "hugging_face_id": "cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition",
       "name": "Venice: Uncensored (free)",
       "created": 1752094966,
-      "description": "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-tuned LLM, preserving user control over alignment, system prompts, and behavior. Intended for advanced and unrestricted use cases, Venice Uncensored emphasizes steerability and transparent behavior, removing default safety and alignment layers typically found in mainstream assistant models.",
+      "description": "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-tuned LLM, preserving...",
       "context_length": 32768,
       "architecture": {
         "modality": "text->text",
@@ -976,7 +1145,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2024-04-30",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/venice/uncensored/endpoints"
+      }
     },
     {
       "id": "google/gemma-3n-e2b-it:free",
@@ -984,7 +1156,7 @@
       "hugging_face_id": "google/gemma-3n-E2B-it",
       "name": "Google: Gemma 3n 2B (free)",
       "created": 1752074904,
-      "description": "Gemma 3n E2B IT is a multimodal, instruction-tuned model developed by Google DeepMind, designed to operate efficiently at an effective parameter size of 2B while leveraging a 6B architecture. Based on the MatFormer architecture, it supports nested submodels and modular composition via the Mix-and-Match framework. Gemma 3n models are optimized for low-resource deployment, offering 32K context length and strong multilingual and reasoning performance across common benchmarks. This variant is trained on a diverse corpus including code, math, web, and multimodal data.",
+      "description": "Gemma 3n E2B IT is a multimodal, instruction-tuned model developed by Google DeepMind, designed to operate efficiently at an effective parameter size of 2B while leveraging a 6B architecture. Based...",
       "context_length": 8192,
       "architecture": {
         "modality": "text->text",
@@ -1016,7 +1188,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemma-3n-e2b-it/endpoints"
+      }
     },
     {
       "id": "google/gemma-3n-e4b-it:free",
@@ -1024,7 +1199,7 @@
       "hugging_face_id": "google/gemma-3n-E4B-it",
       "name": "Google: Gemma 3n 4B (free)",
       "created": 1747776824,
-      "description": "Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks such as text generation, speech recognition, translation, and image analysis. Leveraging innovations like Per-Layer Embedding (PLE) caching and the MatFormer architecture, Gemma 3n dynamically manages memory usage and computational load by selectively activating model parameters, significantly reducing runtime resource requirements.\n\nThis model supports a wide linguistic range (trained in over 140 languages) and features a flexible 32K token context window. Gemma 3n can selectively load parameters, optimizing memory and computational efficiency based on the task or device capabilities, making it well-suited for privacy-focused, offline-capable applications and on-device AI solutions. [Read more in the blog post](https://developers.googleblog.com/en/introducing-gemma-3n/)",
+      "description": "Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks...",
       "context_length": 8192,
       "architecture": {
         "modality": "text->text",
@@ -1056,7 +1231,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemma-3n-e4b-it/endpoints"
+      }
     },
     {
       "id": "google/gemma-3-4b-it:free",
@@ -1064,7 +1242,7 @@
       "hugging_face_id": "google/gemma-3-4b-it",
       "name": "Google: Gemma 3 4B (free)",
       "created": 1741905510,
-      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling.",
+      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
       "context_length": 32768,
       "architecture": {
         "modality": "text+image->text",
@@ -1098,7 +1276,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemma-3-4b-it/endpoints"
+      }
     },
     {
       "id": "google/gemma-3-12b-it:free",
@@ -1106,7 +1287,7 @@
       "hugging_face_id": "google/gemma-3-12b-it",
       "name": "Google: Gemma 3 12B (free)",
       "created": 1741902625,
-      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling. Gemma 3 12B is the second largest in the family of Gemma 3 models after [Gemma 3 27B](google/gemma-3-27b-it)",
+      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
       "context_length": 32768,
       "architecture": {
         "modality": "text+image->text",
@@ -1139,7 +1320,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemma-3-12b-it/endpoints"
+      }
     },
     {
       "id": "google/gemma-3-27b-it:free",
@@ -1147,7 +1331,7 @@
       "hugging_face_id": "google/gemma-3-27b-it",
       "name": "Google: Gemma 3 27B (free)",
       "created": 1741756359,
-      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling. Gemma 3 27B is Google's latest open source model, successor to [Gemma 2](google/gemma-2-27b-it)",
+      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
       "context_length": 131072,
       "architecture": {
         "modality": "text+image->text",
@@ -1185,7 +1369,10 @@
         "frequency_penalty": null
       },
       "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemma-3-27b-it/endpoints"
+      }
     },
     {
       "id": "meta-llama/llama-3.3-70b-instruct:free",
@@ -1193,7 +1380,7 @@
       "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct",
       "name": "Meta: Llama 3.3 70B Instruct (free)",
       "created": 1733506137,
-      "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.\n\nSupported languages: English, German, French, Italian, Portuguese, Hindi, Spanish, and Thai.\n\n[Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)",
+      "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
       "context_length": 65536,
       "architecture": {
         "modality": "text->text",
@@ -1229,7 +1416,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2023-12-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/meta-llama/llama-3.3-70b-instruct/endpoints"
+      }
     },
     {
       "id": "meta-llama/llama-3.2-3b-instruct:free",
@@ -1237,7 +1427,7 @@
       "hugging_face_id": "meta-llama/Llama-3.2-3B-Instruct",
       "name": "Meta: Llama 3.2 3B Instruct (free)",
       "created": 1727222400,
-      "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it supports eight languages, including English, Spanish, and Hindi, and is adaptable for additional languages.\n\nTrained on 9 trillion tokens, the Llama 3.2 3B model excels in instruction-following, complex reasoning, and tool use. Its balanced performance makes it ideal for applications needing accuracy and efficiency in text generation across multilingual settings.\n\nClick here for the [original model card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md).\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://www.llama.com/llama3/use-policy/).",
+      "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it...",
       "context_length": 131072,
       "architecture": {
         "modality": "text->text",
@@ -1271,7 +1461,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2023-12-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/meta-llama/llama-3.2-3b-instruct/endpoints"
+      }
     },
     {
       "id": "nousresearch/hermes-3-llama-3.1-405b:free",
@@ -1279,7 +1472,7 @@
       "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
       "name": "Nous: Hermes 3 405B Instruct (free)",
       "created": 1723766400,
-      "description": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.\n\nHermes 3 405B is a frontier-level, full-parameter finetune of the Llama-3.1 405B foundation model, focused on aligning LLMs to the user, with powerful steering capabilities and control given to the end user.\n\nThe Hermes 3 series builds and expands on the Hermes 2 set of capabilities, including more powerful and reliable function calling and structured output capabilities, generalist assistant capabilities, and improved code generation skills.\n\nHermes 3 is competitive, if not superior, to Llama-3.1 Instruct models at general capabilities, with varying strengths and weaknesses attributable between the two.",
+      "description": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the...",
       "context_length": 131072,
       "architecture": {
         "modality": "text->text",
@@ -1313,7 +1506,10 @@
       ],
       "default_parameters": {},
       "knowledge_cutoff": "2023-12-31",
-      "expiration_date": null
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nousresearch/hermes-3-llama-3.1-405b/endpoints"
+      }
     }
   ]
 }

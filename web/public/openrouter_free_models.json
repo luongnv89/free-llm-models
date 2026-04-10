@@ -1,10 +1,7 @@
 {
-  "fetchedAt": "2026-04-08T00:00:32.777Z",
-  "totalModels": 30,
-  "newModelIds": [
-    "google/gemma-4-26b-a4b-it:free",
-    "google/gemma-4-31b-it:free"
-  ],
+  "fetchedAt": "2026-04-10T00:00:25.459Z",
+  "totalModels": 28,
+  "newModelIds": [],
   "models": [
     {
       "id": "google/gemma-4-26b-a4b-it:free",
@@ -113,64 +110,6 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/google/gemma-4-31b-it-20260402/endpoints"
-      }
-    },
-    {
-      "id": "qwen/qwen3.6-plus:free",
-      "canonical_slug": "qwen/qwen3.6-plus-04-02",
-      "hugging_face_id": "",
-      "name": "Qwen: Qwen3.6 Plus (free)",
-      "created": 1775133557,
-      "description": "Qwen 3.6 Plus builds on a hybrid architecture that combines efficient linear attention with sparse mixture-of-experts routing, enabling strong scalability and high-performance inference. Compared to the 3.5 series, it delivers...",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image+video->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 1000000,
-        "max_completion_tokens": 65536,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "response_format",
-        "seed",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-04-07",
-      "links": {
-        "details": "/api/v1/models/qwen/qwen3.6-plus-04-02/endpoints"
       }
     },
     {
@@ -445,56 +384,6 @@
       }
     },
     {
-      "id": "stepfun/step-3.5-flash:free",
-      "canonical_slug": "stepfun/step-3.5-flash",
-      "hugging_face_id": "stepfun-ai/Step-3.5-Flash",
-      "name": "StepFun: Step 3.5 Flash (free)",
-      "created": 1769728337,
-      "description": "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token....",
-      "context_length": 256000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 256000,
-        "max_completion_tokens": 256000,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "stop",
-        "temperature",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      },
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/stepfun/step-3.5-flash/endpoints"
-      }
-    },
-    {
       "id": "arcee-ai/trinity-large-preview:free",
       "canonical_slug": "arcee-ai/trinity-large-preview",
       "hugging_face_id": "arcee-ai/Trinity-Large-Preview",
@@ -541,7 +430,7 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-04-22",
       "links": {
         "details": "/api/v1/models/arcee-ai/trinity-large-preview/endpoints"
       }

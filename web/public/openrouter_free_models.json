@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T00:00:29.417Z",
+  "fetchedAt": "2026-04-13T00:00:42.299Z",
   "totalModels": 27,
   "newModelIds": [],
   "models": [
@@ -296,7 +296,7 @@
       },
       "top_provider": {
         "context_length": 196608,
-        "max_completion_tokens": 196608,
+        "max_completion_tokens": 8192,
         "is_moderated": true
       },
       "per_request_limits": null,
@@ -819,7 +819,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 131072,
+        "max_completion_tokens": 8192,
         "is_moderated": true
       },
       "per_request_limits": null,

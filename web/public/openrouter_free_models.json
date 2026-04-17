@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-04-16T07:20:03.083Z",
+  "fetchedAt": "2026-04-17T00:00:25.187Z",
   "totalModels": 29,
-  "newModelIds": [
-    "meta-llama/llama-guard-4-12b:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "openrouter/elephant-alpha",

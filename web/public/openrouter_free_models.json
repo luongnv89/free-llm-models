@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-04-22T00:00:33.588Z",
+  "fetchedAt": "2026-04-23T00:00:22.492Z",
   "totalModels": 28,
-  "newModelIds": [
-    "inclusionai/ling-2.6-flash:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "inclusionai/ling-2.6-flash:free",
@@ -58,7 +56,7 @@
         "repetition_penalty": null
       },
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-04-29",
       "links": {
         "details": "/api/v1/models/inclusionai/ling-2.6-flash-20260421/endpoints"
       }

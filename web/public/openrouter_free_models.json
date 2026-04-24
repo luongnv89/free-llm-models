@@ -1,8 +1,118 @@
 {
-  "fetchedAt": "2026-04-23T00:00:22.492Z",
-  "totalModels": 28,
-  "newModelIds": [],
+  "fetchedAt": "2026-04-24T00:00:26.255Z",
+  "totalModels": 30,
+  "newModelIds": [
+    "inclusionai/ling-2.6-1t:free",
+    "tencent/hy3-preview:free",
+    "baidu/qianfan-ocr-fast:free"
+  ],
   "models": [
+    {
+      "id": "inclusionai/ling-2.6-1t:free",
+      "canonical_slug": "inclusionai/ling-2.6-1t-20260423",
+      "hugging_face_id": null,
+      "name": "inclusionAI: Ling-2.6-1T (free)",
+      "created": 1776948238,
+      "description": "Ling-2.6-1T is an instant (instruct) model from inclusionAI and the company’s trillion-parameter flagship, designed for real-world agents that require fast execution and high efficiency at scale. It uses a “fast...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "knowledge_cutoff": null,
+      "expiration_date": "2026-04-30",
+      "links": {
+        "details": "/api/v1/models/inclusionai/ling-2.6-1t-20260423/endpoints"
+      }
+    },
+    {
+      "id": "tencent/hy3-preview:free",
+      "canonical_slug": "tencent/hy3-preview-20260421",
+      "hugging_face_id": "tencent/Hy3-preview",
+      "name": "Tencent: Hy3 preview (free)",
+      "created": 1776878150,
+      "description": "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 262144,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "presence_penalty",
+        "reasoning",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/tencent/hy3-preview-20260421/endpoints"
+      }
+    },
     {
       "id": "inclusionai/ling-2.6-flash:free",
       "canonical_slug": "inclusionai/ling-2.6-flash-20260421",
@@ -59,6 +169,62 @@
       "expiration_date": "2026-04-29",
       "links": {
         "details": "/api/v1/models/inclusionai/ling-2.6-flash-20260421/endpoints"
+      }
+    },
+    {
+      "id": "baidu/qianfan-ocr-fast:free",
+      "canonical_slug": "baidu/qianfan-ocr-fast-20260420",
+      "hugging_face_id": "",
+      "name": "Baidu: Qianfan-OCR-Fast (free)",
+      "created": 1776707472,
+      "description": "Qianfan-OCR-Fast is a domain-specific multimodal large model purpose-built for OCR. By leveraging specialized OCR training data while preserving versatile multimodal intelligence, it provides a powerful performance upgrade over Qianfan-OCR.",
+      "context_length": 65536,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "image",
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 65536,
+        "max_completion_tokens": 28672,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/baidu/qianfan-ocr-fast-20260420/endpoints"
       }
     },
     {
@@ -439,58 +605,6 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/openrouter/free/endpoints"
-      }
-    },
-    {
-      "id": "arcee-ai/trinity-large-preview:free",
-      "canonical_slug": "arcee-ai/trinity-large-preview",
-      "hugging_face_id": "arcee-ai/Trinity-Large-Preview",
-      "name": "Arcee AI: Trinity Large Preview (free)",
-      "created": 1769552670,
-      "description": "Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. It excels in creative writing,...",
-      "context_length": 131000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 131000,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "structured_outputs",
-        "temperature",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.8,
-        "top_p": 0.8,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-04-22",
-      "links": {
-        "details": "/api/v1/models/arcee-ai/trinity-large-preview/endpoints"
       }
     },
     {

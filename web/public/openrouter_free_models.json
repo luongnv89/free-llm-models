@@ -1,11 +1,7 @@
 {
-  "fetchedAt": "2026-04-29T00:01:24.216Z",
-  "totalModels": 33,
-  "newModelIds": [
-    "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-    "poolside/laguna-xs.2:free",
-    "poolside/laguna-m.1:free"
-  ],
+  "fetchedAt": "2026-04-30T00:01:21.204Z",
+  "totalModels": 32,
+  "newModelIds": [],
   "models": [
     {
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -277,64 +273,6 @@
       "expiration_date": "2026-05-08",
       "links": {
         "details": "/api/v1/models/tencent/hy3-preview-20260421/endpoints"
-      }
-    },
-    {
-      "id": "inclusionai/ling-2.6-flash:free",
-      "canonical_slug": "inclusionai/ling-2.6-flash-20260421",
-      "hugging_face_id": "",
-      "name": "inclusionAI: Ling-2.6-flash (free)",
-      "created": 1776795886,
-      "description": "Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficiency....",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 32768,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-04-29",
-      "links": {
-        "details": "/api/v1/models/inclusionai/ling-2.6-flash-20260421/endpoints"
       }
     },
     {

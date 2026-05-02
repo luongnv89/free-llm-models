@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-05-01T00:01:12.772Z",
+  "fetchedAt": "2026-05-02T00:01:03.509Z",
   "totalModels": 33,
-  "newModelIds": [
-    "openrouter/owl-alpha"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "openrouter/owl-alpha",

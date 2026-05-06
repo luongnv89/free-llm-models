@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-05-04T00:00:48.597Z",
-  "totalModels": 33,
+  "fetchedAt": "2026-05-06T00:00:50.710Z",
+  "totalModels": 28,
   "newModelIds": [],
   "models": [
     {
@@ -55,6 +55,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -111,6 +112,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -162,6 +164,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -213,6 +216,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -271,6 +275,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": "2026-05-07",
       "links": {
@@ -327,6 +332,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": "2026-05-08",
       "links": {
@@ -383,6 +389,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -436,6 +443,7 @@
         "top_p": 0.95,
         "top_k": 64
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -492,6 +500,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -544,6 +553,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -596,6 +606,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -651,6 +662,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -704,6 +716,7 @@
         "presence_penalty": null,
         "repetition_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -763,6 +776,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -817,6 +831,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -869,6 +884,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -919,6 +935,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -971,6 +988,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
@@ -1020,6 +1038,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "supported_voices": null,
       "knowledge_cutoff": "2025-09-30",
       "expiration_date": null,
       "links": {
@@ -1072,6 +1091,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": "2025-03-31",
       "expiration_date": null,
       "links": {
@@ -1122,6 +1142,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": "2024-06-30",
       "expiration_date": null,
       "links": {
@@ -1172,6 +1193,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": "2024-06-30",
       "expiration_date": null,
       "links": {
@@ -1221,6 +1243,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
+      "supported_voices": null,
       "knowledge_cutoff": "2024-12-31",
       "expiration_date": null,
       "links": {
@@ -1268,6 +1291,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "supported_voices": null,
       "knowledge_cutoff": "2025-06-30",
       "expiration_date": null,
       "links": {
@@ -1315,234 +1339,11 @@
         "top_p"
       ],
       "default_parameters": {},
+      "supported_voices": null,
       "knowledge_cutoff": "2024-04-30",
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/venice/uncensored/endpoints"
-      }
-    },
-    {
-      "id": "google/gemma-3n-e2b-it:free",
-      "canonical_slug": "google/gemma-3n-e2b-it",
-      "hugging_face_id": "google/gemma-3n-E2B-it",
-      "name": "Google: Gemma 3n 2B (free)",
-      "created": 1752074904,
-      "description": "Gemma 3n E2B IT is a multimodal, instruction-tuned model developed by Google DeepMind, designed to operate efficiently at an effective parameter size of 2B while leveraging a 6B architecture. Based...",
-      "context_length": 8192,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": 2048,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "seed",
-        "temperature",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/google/gemma-3n-e2b-it/endpoints"
-      }
-    },
-    {
-      "id": "google/gemma-3n-e4b-it:free",
-      "canonical_slug": "google/gemma-3n-e4b-it",
-      "hugging_face_id": "google/gemma-3n-E4B-it",
-      "name": "Google: Gemma 3n 4B (free)",
-      "created": 1747776824,
-      "description": "Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks...",
-      "context_length": 8192,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": 2048,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "seed",
-        "temperature",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/google/gemma-3n-e4b-it/endpoints"
-      }
-    },
-    {
-      "id": "google/gemma-3-4b-it:free",
-      "canonical_slug": "google/gemma-3-4b-it",
-      "hugging_face_id": "google/gemma-3-4b-it",
-      "name": "Google: Gemma 3 4B (free)",
-      "created": 1741905510,
-      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Gemini",
-        "instruct_type": "gemma"
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "seed",
-        "stop",
-        "temperature",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/google/gemma-3-4b-it/endpoints"
-      }
-    },
-    {
-      "id": "google/gemma-3-12b-it:free",
-      "canonical_slug": "google/gemma-3-12b-it",
-      "hugging_face_id": "google/gemma-3-12b-it",
-      "name": "Google: Gemma 3 12B (free)",
-      "created": 1741902625,
-      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Gemini",
-        "instruct_type": "gemma"
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "seed",
-        "stop",
-        "temperature",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/google/gemma-3-12b-it/endpoints"
-      }
-    },
-    {
-      "id": "google/gemma-3-27b-it:free",
-      "canonical_slug": "google/gemma-3-27b-it",
-      "hugging_face_id": "google/gemma-3-27b-it",
-      "name": "Google: Gemma 3 27B (free)",
-      "created": 1741756359,
-      "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities,...",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Gemini",
-        "instruct_type": "gemma"
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "seed",
-        "stop",
-        "temperature",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      },
-      "knowledge_cutoff": "2024-08-31",
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/google/gemma-3-27b-it/endpoints"
       }
     },
     {
@@ -1586,6 +1387,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "supported_voices": null,
       "knowledge_cutoff": "2023-12-31",
       "expiration_date": null,
       "links": {
@@ -1631,6 +1433,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "supported_voices": null,
       "knowledge_cutoff": "2023-12-31",
       "expiration_date": null,
       "links": {
@@ -1676,6 +1479,7 @@
         "top_p"
       ],
       "default_parameters": {},
+      "supported_voices": null,
       "knowledge_cutoff": "2023-12-31",
       "expiration_date": null,
       "links": {

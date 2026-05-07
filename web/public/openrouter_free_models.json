@@ -1,8 +1,54 @@
 {
-  "fetchedAt": "2026-05-06T00:00:50.710Z",
-  "totalModels": 28,
-  "newModelIds": [],
+  "fetchedAt": "2026-05-07T00:01:22.872Z",
+  "totalModels": 29,
+  "newModelIds": [
+    "baidu/cobuddy:free"
+  ],
   "models": [
+    {
+      "id": "baidu/cobuddy:free",
+      "canonical_slug": "baidu/cobuddy-20260430",
+      "hugging_face_id": null,
+      "name": "Baidu Qianfan: CoBuddy (free)",
+      "created": 1778035480,
+      "description": "CoBuddy is a code generation model from Baidu, optimized for coding tasks and AI Agent workflows. It features high inference throughput and low end-to-end latency, with native support for tool...",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "tools"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/baidu/cobuddy-20260430/endpoints"
+      }
+    },
     {
       "id": "openrouter/owl-alpha",
       "canonical_slug": "openrouter/owl-alpha",

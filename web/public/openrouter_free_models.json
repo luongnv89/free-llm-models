@@ -1,8 +1,69 @@
 {
-  "fetchedAt": "2026-05-08T00:00:59.964Z",
+  "fetchedAt": "2026-05-09T00:00:31.402Z",
   "totalModels": 28,
-  "newModelIds": [],
+  "newModelIds": [
+    "inclusionai/ring-2.6-1t:free"
+  ],
   "models": [
+    {
+      "id": "inclusionai/ring-2.6-1t:free",
+      "canonical_slug": "inclusionai/ring-2.6-1t-20260508",
+      "hugging_face_id": null,
+      "name": "inclusionAI: Ring-2.6-1T (free)",
+      "created": 1778247440,
+      "description": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/inclusionai/ring-2.6-1t-20260508/endpoints"
+      }
+    },
     {
       "id": "baidu/cobuddy:free",
       "canonical_slug": "baidu/cobuddy-20260430",
@@ -265,63 +326,6 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/poolside/laguna-m.1-20260312/endpoints"
-      }
-    },
-    {
-      "id": "tencent/hy3-preview:free",
-      "canonical_slug": "tencent/hy3-preview-20260421",
-      "hugging_face_id": "tencent/Hy3-preview",
-      "name": "Tencent: Hy3 preview (free)",
-      "created": 1776878150,
-      "description": "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 262144,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.9,
-        "top_p": 1,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/tencent/hy3-preview-20260421/endpoints"
       }
     },
     {

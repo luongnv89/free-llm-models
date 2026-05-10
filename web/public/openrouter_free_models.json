@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-05-09T00:00:31.402Z",
+  "fetchedAt": "2026-05-10T00:00:41.421Z",
   "totalModels": 28,
-  "newModelIds": [
-    "inclusionai/ring-2.6-1t:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "inclusionai/ring-2.6-1t:free",

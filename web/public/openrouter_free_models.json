@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-05-12T00:01:00.281Z",
+  "fetchedAt": "2026-05-13T00:00:52.028Z",
   "totalModels": 29,
-  "newModelIds": [
-    "arcee-ai/trinity-large-thinking:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "inclusionai/ring-2.6-1t:free",

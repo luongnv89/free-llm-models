@@ -1,67 +1,8 @@
 {
-  "fetchedAt": "2026-05-15T00:00:54.438Z",
-  "totalModels": 29,
+  "fetchedAt": "2026-05-16T00:00:47.801Z",
+  "totalModels": 28,
   "newModelIds": [],
   "models": [
-    {
-      "id": "inclusionai/ring-2.6-1t:free",
-      "canonical_slug": "inclusionai/ring-2.6-1t-20260508",
-      "hugging_face_id": null,
-      "name": "inclusionAI: Ring-2.6-1T (free)",
-      "created": 1778247440,
-      "description": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 65536,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/inclusionai/ring-2.6-1t-20260508/endpoints"
-      }
-    },
     {
       "id": "baidu/cobuddy:free",
       "canonical_slug": "baidu/cobuddy-20260430",

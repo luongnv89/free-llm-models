@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-05-20T00:00:49.160Z",
+  "fetchedAt": "2026-05-21T00:00:58.519Z",
   "totalModels": 29,
-  "newModelIds": [
-    "z-ai/glm-5.1"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "baidu/cobuddy:free",

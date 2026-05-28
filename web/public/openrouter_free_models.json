@@ -1,52 +1,10 @@
 {
-  "fetchedAt": "2026-05-27T00:00:43.701Z",
+  "fetchedAt": "2026-05-28T00:00:44.250Z",
   "totalModels": 27,
-  "newModelIds": [],
+  "newModelIds": [
+    "moonshotai/kimi-k2.6:free"
+  ],
   "models": [
-    {
-      "id": "baidu/cobuddy:free",
-      "canonical_slug": "baidu/cobuddy-20260430",
-      "hugging_face_id": null,
-      "name": "Baidu Qianfan: CoBuddy (free)",
-      "created": 1778035480,
-      "description": "CoBuddy is a code generation model from Baidu, optimized for coding tasks and AI Agent workflows. It features high inference throughput and low end-to-end latency, with native support for tool...",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 65536,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "stop",
-        "tools"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/baidu/cobuddy-20260430/endpoints"
-      }
-    },
     {
       "id": "openrouter/owl-alpha",
       "canonical_slug": "openrouter/owl-alpha",
@@ -163,7 +121,7 @@
       "name": "Poolside: Laguna XS.2 (free)",
       "created": 1777389604,
       "description": "Laguna XS.2 is the second-generation model in the XS size class from [Poolside](https://poolside.ai), their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
-      "context_length": 131072,
+      "context_length": 262144,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -180,8 +138,8 @@
         "completion": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 8192,
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -308,6 +266,57 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/deepseek/deepseek-v4-flash-20260423/endpoints"
+      }
+    },
+    {
+      "id": "moonshotai/kimi-k2.6:free",
+      "canonical_slug": "moonshotai/kimi-k2.6-20260420",
+      "hugging_face_id": "moonshotai/Kimi-K2.6",
+      "name": "MoonshotAI: Kimi K2.6 (free)",
+      "created": 1776699402,
+      "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "reasoning",
+        "tool_choice",
+        "tools"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/moonshotai/kimi-k2.6-20260420/endpoints"
       }
     },
     {
@@ -590,7 +599,7 @@
       "name": "MiniMax: MiniMax M2.5 (free)",
       "created": 1770908502,
       "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
-      "context_length": 204800,
+      "context_length": 262144,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -607,7 +616,7 @@
         "completion": "0"
       },
       "top_provider": {
-        "context_length": 196608,
+        "context_length": 262144,
         "max_completion_tokens": 8192,
         "is_moderated": true
       },

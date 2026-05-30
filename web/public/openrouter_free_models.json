@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-05-28T00:00:44.250Z",
+  "fetchedAt": "2026-05-30T00:00:30.652Z",
   "totalModels": 27,
-  "newModelIds": [
-    "moonshotai/kimi-k2.6:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "openrouter/owl-alpha",
@@ -410,6 +408,7 @@
         "reasoning",
         "response_format",
         "seed",
+        "stop",
         "temperature",
         "tool_choice",
         "tools",
@@ -599,7 +598,7 @@
       "name": "MiniMax: MiniMax M2.5 (free)",
       "created": 1770908502,
       "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
-      "context_length": 262144,
+      "context_length": 204800,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -616,7 +615,7 @@
         "completion": "0"
       },
       "top_provider": {
-        "context_length": 262144,
+        "context_length": 196608,
         "max_completion_tokens": 8192,
         "is_moderated": true
       },

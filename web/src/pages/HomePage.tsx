@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ModelCard } from '@/components/ModelCard';
 import { FilterSidebar } from '@/components/FilterSidebar';
@@ -6,6 +6,13 @@ import { SearchBar } from '@/components/SearchBar';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { FAQTip } from '@/components/FAQTip';
 import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from '@/components/ui/card';
 import {
   useModels,
   useFilteredModels,
@@ -15,7 +22,7 @@ import {
 } from '@/hooks/useModels';
 import { VERSION, COMMIT_HASH } from '@/version';
 import type { FilterState, SortField, SortOrder } from '@/types/model';
-import { Loader2, AlertCircle, Zap, HelpCircle } from 'lucide-react';
+import { Loader2, AlertCircle, Zap, HelpCircle, Globe, Copy, Check } from 'lucide-react';
 
 export function HomePage() {
   const { data, loading, error } = useModels();
@@ -30,6 +37,14 @@ export function HomePage() {
   });
   const [sortField, setSortField] = useState<SortField>('created');
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
+  const apiUrl = 'https://openrouter.ai/api/v1/models';
+  const [copied, setCopied] = useState(false);
+
+  const copyApiUrl = useCallback(async () => {
+    await navigator.clipboard.writeText(apiUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, [apiUrl]);
 
   const filteredModels = useFilteredModels(
     data?.models ?? [],
@@ -126,6 +141,44 @@ export function HomePage() {
 
         {/* Main Content */}
         <main className="flex-1 p-4 lg:p-6 overflow-visible lg:overflow-auto min-w-0">
+          {/* API URL Card */}
+          <Card className="mb-6">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-sm">
+                <Globe className="h-4 w-4 text-muted-foreground" />
+                Free Models API URL
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <p className="text-xs text-muted-foreground mb-2">
+                Use this endpoint to download the full list of free models. Share it with your agents or workflows so they can always get up-to-date information.
+              </p>
+              <code className="text-sm font-mono bg-muted px-3 py-1.5 rounded-md break-all inline-block">
+                {apiUrl}
+              </code>
+            </CardContent>
+            <CardFooter className="pt-2 pb-4">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={copyApiUrl}
+                className="gap-1.5 text-xs"
+              >
+                {copied ? (
+                  <>
+                    <Check className="h-3.5 w-3.5 text-[var(--highlight)]" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-3.5 w-3.5" />
+                    Copy URL
+                  </>
+                )}
+              </Button>
+            </CardFooter>
+          </Card>
+
           {/* New Models Banner */}
           {newModelsCount > 0 && (
             <div className="mb-6 p-4 border border-[var(--highlight)] rounded-lg bg-card">

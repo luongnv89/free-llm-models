@@ -1,0 +1,32 @@
+{
+  "issue": 2,
+  "title": "Add API URL card to home page for free model list",
+  "type": "feature",
+  "complexity": "low",
+  "decision_record": {
+    "context": "Users need a convenient way to access the OpenRouter API endpoint that returns the list of free models. This URL enables downloading the model list, integrating it into automated workflows, or sharing it with AI agents.",
+    "options_considered": [
+      {
+        "name": "Inline card in HomePage",
+        "rationale": "Selected as the best balance for this low-complexity feature. The card is self-contained, uses existing shadcn/ui primitives, and requires no new module boundaries."
+      },
+      {
+        "name": "Dedicated APIUrlCard component",
+        "rationale": "Rejected — over-engineering for a single-usage card that won't appear on other pages."
+      },
+      {
+        "name": "APIUrlCard + URL config + toast feedback",
+        "rationale": "Rejected — adds unnecessary dependency and config layer for a static URL used only once."
+      }
+    ],
+    "decision": "Inline card component in HomePage.tsx using shadcn/ui Card primitives and existing copy-to-clipboard pattern from ModelCard.tsx.",
+    "tradeoffs": "The URL string is hardcoded inline rather than centralized in a config file, but since it is a single, stable endpoint used only in one location, the simplicity of inlining outweighs the marginal benefit of configuration."
+  },
+  "acceptance_criteria": [
+    "A new card is displayed at the top of the home page ✓",
+    "The card displays the API URL for the free models list ✓",
+    "The card includes a description explaining the URL's purpose ✓",
+    "The card has a copy-to-clipboard button for easy sharing ✓",
+    "The card styling is consistent with the existing UI design ✓"
+  ]
+}

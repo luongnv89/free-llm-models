@@ -37,14 +37,15 @@ export function HomePage() {
   });
   const [sortField, setSortField] = useState<SortField>('created');
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
-  const apiUrl = 'https://openrouter.ai/api/v1/models';
   const [copied, setCopied] = useState(false);
 
-  const copyApiUrl = useCallback(async () => {
-    await navigator.clipboard.writeText(apiUrl);
+  const dataUrl = `${window.location.origin}/openrouter_free_models.json`;
+
+  const copyDataUrl = useCallback(async () => {
+    await navigator.clipboard.writeText(dataUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  }, [apiUrl]);
+  }, [dataUrl]);
 
   const filteredModels = useFilteredModels(
     data?.models ?? [],
@@ -141,27 +142,27 @@ export function HomePage() {
 
         {/* Main Content */}
         <main className="flex-1 p-4 lg:p-6 overflow-visible lg:overflow-auto min-w-0">
-          {/* API URL Card */}
+          {/* Data URL Card */}
           <Card className="mb-6">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-sm">
                 <Globe className="h-4 w-4 text-muted-foreground" />
-                Free Models API URL
+                Download Free Models Data
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-0">
               <p className="text-xs text-muted-foreground mb-2">
-                Use this endpoint to download the full list of free models. Share it with your agents or workflows so they can always get up-to-date information.
+                Download the curated list of free AI models as JSON. This file is updated regularly and served directly from this site.
               </p>
               <code className="text-sm font-mono bg-muted px-3 py-1.5 rounded-md break-all inline-block">
-                {apiUrl}
+                {dataUrl}
               </code>
             </CardContent>
             <CardFooter className="pt-2 pb-4">
               <Button
                 variant="outline"
                 size="sm"
-                onClick={copyApiUrl}
+                onClick={copyDataUrl}
                 className="gap-1.5 text-xs"
               >
                 {copied ? (

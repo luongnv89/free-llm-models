@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-14T00:00:48.647Z",
+  "fetchedAt": "2026-06-15T00:00:46.661Z",
   "totalModels": 26,
   "newModelIds": [],
   "models": [
@@ -169,7 +169,15 @@
         "details": "/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b-20260604/endpoints"
       },
       "benchmarks": {
-        "design_arena": [],
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1144,
+            "win_rate": 34.1,
+            "rank": 74
+          }
+        ],
         "artificial_analysis": {
           "intelligence_index": 47.7,
           "coding_index": 37.6,
@@ -1196,7 +1204,7 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1063,
+            "elo": 1062,
             "win_rate": 40.6,
             "rank": 81
           },
@@ -1205,14 +1213,14 @@
             "category": "uicomponent",
             "elo": 981,
             "win_rate": 35.5,
-            "rank": 86
+            "rank": 87
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1013,
             "win_rate": 32.5,
-            "rank": 95
+            "rank": 96
           }
         ],
         "artificial_analysis": {
@@ -1284,9 +1292,9 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 898,
+            "elo": 897,
             "win_rate": 27.9,
-            "rank": 103
+            "rank": 104
           }
         ],
         "artificial_analysis": {
@@ -1369,14 +1377,14 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1172,
+            "elo": 1171,
             "win_rate": 61.5,
-            "rank": 52
+            "rank": 53
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1204,
+            "elo": 1203,
             "win_rate": 61.7,
             "rank": 53
           }

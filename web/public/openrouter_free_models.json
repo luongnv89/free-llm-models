@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-15T00:00:46.661Z",
+  "fetchedAt": "2026-06-16T00:00:45.242Z",
   "totalModels": 26,
   "newModelIds": [],
   "models": [
@@ -172,9 +172,16 @@
         "design_arena": [
           {
             "arena": "models",
+            "category": "gamedev",
+            "elo": 1223,
+            "win_rate": 44.8,
+            "rank": 39
+          },
+          {
+            "arena": "models",
             "category": "website",
-            "elo": 1144,
-            "win_rate": 34.1,
+            "elo": 1136,
+            "win_rate": 33.3,
             "rank": 74
           }
         ],
@@ -438,14 +445,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "frequency_penalty",
         "include_reasoning",
         "max_tokens",
+        "presence_penalty",
         "reasoning",
+        "repetition_penalty",
         "response_format",
         "seed",
+        "stop",
         "temperature",
         "tool_choice",
         "tools",
+        "top_k",
         "top_p"
       ],
       "default_parameters": {
@@ -1206,7 +1218,7 @@
             "category": "gamedev",
             "elo": 1062,
             "win_rate": 40.6,
-            "rank": 81
+            "rank": 82
           },
           {
             "arena": "models",
@@ -1260,14 +1272,21 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "frequency_penalty",
         "include_reasoning",
         "max_tokens",
+        "presence_penalty",
         "reasoning",
+        "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "tool_choice",
-        "tools"
+        "tools",
+        "top_k",
+        "top_p"
       ],
       "default_parameters": {
         "temperature": null,
@@ -1285,7 +1304,7 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 978,
+            "elo": 977,
             "win_rate": 39.7,
             "rank": 88
           },
@@ -1370,9 +1389,9 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1171,
+            "elo": 1170,
             "win_rate": 59,
-            "rank": 55
+            "rank": 56
           },
           {
             "arena": "models",

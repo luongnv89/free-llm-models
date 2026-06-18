@@ -1,8 +1,71 @@
 {
-  "fetchedAt": "2026-06-17T00:00:47.830Z",
-  "totalModels": 26,
-  "newModelIds": [],
+  "fetchedAt": "2026-06-18T00:00:44.602Z",
+  "totalModels": 27,
+  "newModelIds": [
+    "cohere/north-mini-code:free"
+  ],
   "models": [
+    {
+      "id": "cohere/north-mini-code:free",
+      "canonical_slug": "cohere/north-mini-code-20260617",
+      "hugging_face_id": "CohereLabs/North-Mini-Code-1.0",
+      "name": "Cohere: North Mini Code (free)",
+      "created": 1781723748,
+      "description": "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized...",
+      "context_length": 256000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Cohere",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 256000,
+        "max_completion_tokens": 64000,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/cohere/north-mini-code-20260617/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false
+      }
+    },
     {
       "id": "nex-agi/nex-n2-pro:free",
       "canonical_slug": "nex-agi/nex-n2-pro",
@@ -60,6 +123,9 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/nex-agi/nex-n2-pro/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false
       }
     },
     {
@@ -113,6 +179,10 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/nvidia/nemotron-3.5-content-safety-20260604/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
       }
     },
     {
@@ -172,23 +242,44 @@
         "design_arena": [
           {
             "arena": "models",
+            "category": "3d",
+            "elo": 1193,
+            "win_rate": 40.8,
+            "rank": 47
+          },
+          {
+            "arena": "models",
             "category": "codecategories",
-            "elo": 1150,
-            "win_rate": 33.7,
-            "rank": 69
+            "elo": 1158,
+            "win_rate": 34.6,
+            "rank": 66
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1089,
+            "win_rate": 28.6,
+            "rank": 77
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1222,
-            "win_rate": 42.6,
-            "rank": 39
+            "elo": 1200,
+            "win_rate": 39.3,
+            "rank": 50
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1199,
+            "win_rate": 40.4,
+            "rank": 47
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1133,
-            "win_rate": 31.6,
+            "elo": 1130,
+            "win_rate": 31.1,
             "rank": 75
           }
         ],
@@ -197,6 +288,16 @@
           "coding_index": 37.6,
           "agentic_index": 57.1
         }
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supports_max_tokens": true,
+        "supported_efforts": [
+          "high",
+          "medium"
+        ],
+        "default_effort": "high"
       }
     },
     {
@@ -254,7 +355,7 @@
     {
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
       "canonical_slug": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428",
-      "hugging_face_id": null,
+      "hugging_face_id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16",
       "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
       "created": 1777393095,
       "description": "NVIDIA Nemotron™ 3 Nano Omni is a 30B-A3B open multimodal model designed to function as a perception and context sub-agent in enterprise agent systems. It accepts text, image, video, and...",
@@ -314,6 +415,11 @@
           "coding_index": 14.8,
           "agentic_index": 23.9
         }
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supports_max_tokens": true
       }
     },
     {
@@ -322,7 +428,7 @@
       "hugging_face_id": "poolside/Laguna-XS.2",
       "name": "Poolside: Laguna XS.2 (free)",
       "created": 1777389604,
-      "description": "Laguna XS.2 is the second-generation model in the XS size class from [Poolside](https://poolside.ai), their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
+      "description": "Laguna XS.2 is the second-generation model in the XS size class from [Poolside](https://poolside.ai/), their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
@@ -366,6 +472,10 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/poolside/laguna-xs.2-20260421/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
       }
     },
     {
@@ -418,6 +528,10 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/poolside/laguna-m.1-20260312/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
       }
     },
     {
@@ -446,7 +560,7 @@
         "completion": "0"
       },
       "top_provider": {
-        "context_length": 262144,
+        "context_length": 131072,
         "max_completion_tokens": 32768,
         "is_moderated": false
       },
@@ -485,6 +599,10 @@
           "coding_index": 22.4,
           "agentic_index": 32.1
         }
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": false
       }
     },
     {
@@ -514,8 +632,8 @@
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": 32768,
-        "is_moderated": false
+        "max_completion_tokens": 8192,
+        "is_moderated": true
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -551,6 +669,10 @@
           "coding_index": 38.7,
           "agentic_index": 40.9
         }
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": false
       }
     },
     {
@@ -721,6 +843,16 @@
           "coding_index": 31.2,
           "agentic_index": 40.2
         }
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supports_max_tokens": true,
+        "supported_efforts": [
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
       }
     },
     {
@@ -845,6 +977,9 @@
           "coding_index": 1.4,
           "agentic_index": 6.5
         }
+      },
+      "reasoning": {
+        "mandatory": true
       }
     },
     {
@@ -965,6 +1100,9 @@
           "coding_index": 19,
           "agentic_index": 19.1
         }
+      },
+      "reasoning": {
+        "mandatory": false
       }
     },
     {
@@ -1026,6 +1164,9 @@
           "coding_index": 11.7,
           "agentic_index": 7.1
         }
+      },
+      "reasoning": {
+        "mandatory": false
       }
     },
     {
@@ -1145,6 +1286,9 @@
           "coding_index": 8.3,
           "agentic_index": 9.4
         }
+      },
+      "reasoning": {
+        "mandatory": false
       }
     },
     {
@@ -1204,7 +1348,7 @@
             "category": "3d",
             "elo": 979,
             "win_rate": 29.4,
-            "rank": 87
+            "rank": 88
           },
           {
             "arena": "models",
@@ -1216,9 +1360,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1042,
+            "elo": 1043,
             "win_rate": 45.1,
-            "rank": 84
+            "rank": 85
           },
           {
             "arena": "models",
@@ -1230,9 +1374,9 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 979,
+            "elo": 978,
             "win_rate": 35.5,
-            "rank": 88
+            "rank": 89
           },
           {
             "arena": "models",
@@ -1247,6 +1391,15 @@
           "coding_index": 28.6,
           "agentic_index": 37.9
         }
+      },
+      "reasoning": {
+        "mandatory": true,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
       }
     },
     {
@@ -1274,8 +1427,8 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 8192,
-        "is_moderated": true
+        "max_completion_tokens": 32768,
+        "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
@@ -1311,9 +1464,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 976,
+            "elo": 977,
             "win_rate": 39.7,
-            "rank": 89
+            "rank": 90
           },
           {
             "arena": "models",
@@ -1328,6 +1481,15 @@
           "coding_index": 18.5,
           "agentic_index": 27.6
         }
+      },
+      "reasoning": {
+        "mandatory": true,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
       }
     },
     {
@@ -1405,7 +1567,7 @@
             "category": "uicomponent",
             "elo": 1169,
             "win_rate": 61.5,
-            "rank": 54
+            "rank": 55
           },
           {
             "arena": "models",

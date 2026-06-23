@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-06-22T00:00:57.492Z",
-  "totalModels": 27,
+  "fetchedAt": "2026-06-23T00:00:59.944Z",
+  "totalModels": 26,
   "newModelIds": [],
   "models": [
     {
@@ -59,68 +59,6 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/cohere/north-mini-code-20260617/endpoints"
-      },
-      "reasoning": {
-        "mandatory": false
-      }
-    },
-    {
-      "id": "nex-agi/nex-n2-pro:free",
-      "canonical_slug": "nex-agi/nex-n2-pro",
-      "hugging_face_id": "nex-agi/Nex-N2-Pro",
-      "name": "Nex AGI: Nex-N2-Pro (free)",
-      "created": 1780937140,
-      "description": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 262144,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logprobs",
-        "max_tokens",
-        "reasoning",
-        "response_format",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.7,
-        "top_p": 0.95,
-        "top_k": 40,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-06-22",
-      "links": {
-        "details": "/api/v1/models/nex-agi/nex-n2-pro/endpoints"
       },
       "reasoning": {
         "mandatory": false
@@ -241,51 +179,51 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1204,
-            "win_rate": 42,
-            "rank": 42
+            "elo": 1209,
+            "win_rate": 42.8,
+            "rank": 40
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1166,
-            "win_rate": 35.5,
+            "elo": 1167,
+            "win_rate": 35.6,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1140,
-            "win_rate": 34.7,
-            "rank": 69
+            "elo": 1145,
+            "win_rate": 35.3,
+            "rank": 64
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1199,
-            "win_rate": 39.1,
+            "win_rate": 39,
             "rank": 50
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1133,
-            "win_rate": 37.3,
-            "rank": 44
+            "elo": 1135,
+            "win_rate": 37.4,
+            "rank": 43
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1162,
-            "win_rate": 35.6,
-            "rank": 55
+            "elo": 1158,
+            "win_rate": 35.3,
+            "rank": 57
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1130,
-            "win_rate": 31.1,
-            "rank": 75
+            "elo": 1129,
+            "win_rate": 30.9,
+            "rank": 76
           }
         ],
         "artificial_analysis": {
@@ -888,7 +826,6 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -1314,7 +1251,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1013,
+            "elo": 1014,
             "win_rate": 33.4,
             "rank": 94
           },
@@ -1335,7 +1272,7 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 979,
+            "elo": 978,
             "win_rate": 35.5,
             "rank": 89
           },
@@ -1427,7 +1364,7 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 977,
+            "elo": 976,
             "win_rate": 39.7,
             "rank": 90
           },
@@ -1507,7 +1444,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1192,
+            "elo": 1193,
             "win_rate": 61.2,
             "rank": 53
           },

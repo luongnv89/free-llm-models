@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-26T00:00:59.048Z",
+  "fetchedAt": "2026-06-27T00:01:03.187Z",
   "totalModels": 26,
   "newModelIds": [],
   "models": [
@@ -179,51 +179,51 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1211,
-            "win_rate": 43,
+            "elo": 1212,
+            "win_rate": 43.3,
             "rank": 41
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1168,
-            "win_rate": 36,
+            "elo": 1169,
+            "win_rate": 36.2,
             "rank": 61
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1162,
-            "win_rate": 37.7,
+            "elo": 1165,
+            "win_rate": 38.2,
             "rank": 63
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1190,
-            "win_rate": 38.4,
+            "elo": 1193,
+            "win_rate": 38.8,
             "rank": 54
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1139,
-            "win_rate": 38.1,
+            "elo": 1137,
+            "win_rate": 38,
             "rank": 43
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1166,
-            "win_rate": 36.7,
+            "elo": 1168,
+            "win_rate": 37.2,
             "rank": 56
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1131,
-            "win_rate": 31.2,
-            "rank": 76
+            "elo": 1130,
+            "win_rate": 31.1,
+            "rank": 77
           }
         ],
         "artificial_analysis": {
@@ -1020,6 +1020,14 @@
       "links": {
         "details": "/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints"
       },
+      "benchmarks": {
+        "design_arena": [],
+        "artificial_analysis": {
+          "intelligence_index": 14.2,
+          "coding_index": 14.4,
+          "agentic_index": 2
+        }
+      },
       "reasoning": {
         "mandatory": false
       }
@@ -1259,7 +1267,7 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1043,
+            "elo": 1044,
             "win_rate": 45.1,
             "rank": 86
           },
@@ -1365,7 +1373,7 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 977,
+            "elo": 978,
             "win_rate": 39.7,
             "rank": 92
           },
@@ -1466,7 +1474,7 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1170,
+            "elo": 1171,
             "win_rate": 61.5,
             "rank": 55
           },

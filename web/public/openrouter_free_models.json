@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-06-30T00:00:57.361Z",
-  "totalModels": 26,
+  "fetchedAt": "2026-07-01T00:02:30.871Z",
+  "totalModels": 25,
   "newModelIds": [],
   "models": [
     {
@@ -179,30 +179,30 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1213,
-            "win_rate": 43.6,
+            "elo": 1216,
+            "win_rate": 43.9,
             "rank": 40
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1088,
+            "elo": 1087,
             "win_rate": 34.9,
             "rank": 44
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1174,
-            "win_rate": 36.9,
+            "elo": 1176,
+            "win_rate": 37.1,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1170,
-            "win_rate": 38.9,
-            "rank": 60
+            "elo": 1167,
+            "win_rate": 38.8,
+            "rank": 63
           },
           {
             "arena": "models",
@@ -214,22 +214,22 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1137,
-            "win_rate": 38.2,
-            "rank": 44
+            "elo": 1139,
+            "win_rate": 38.4,
+            "rank": 45
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1178,
-            "win_rate": 38.4,
-            "rank": 55
+            "elo": 1181,
+            "win_rate": 38.8,
+            "rank": 54
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1140,
-            "win_rate": 32.4,
+            "elo": 1141,
+            "win_rate": 32.6,
             "rank": 76
           }
         ],
@@ -248,58 +248,6 @@
           "medium"
         ],
         "default_effort": "high"
-      }
-    },
-    {
-      "id": "openrouter/owl-alpha",
-      "canonical_slug": "openrouter/owl-alpha",
-      "hugging_face_id": null,
-      "name": "Owl Alpha",
-      "created": 1777398589,
-      "description": "Owl Alpha is a high-performance foundation model designed for agentic workloads. Natively supports tool use, and long-context tasks, with strong performance in code generation, automated workflows, and complex instruction execution....",
-      "context_length": 1048756,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 1048756,
-        "max_completion_tokens": 262144,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "max_tokens",
-        "presence_penalty",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": null,
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/openrouter/owl-alpha/endpoints"
       }
     },
     {

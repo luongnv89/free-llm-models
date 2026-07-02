@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-01T00:02:30.871Z",
+  "fetchedAt": "2026-07-02T00:02:24.095Z",
   "totalModels": 25,
   "newModelIds": [],
   "models": [
@@ -179,56 +179,56 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1216,
-            "win_rate": 43.9,
+            "elo": 1213,
+            "win_rate": 43.6,
             "rank": 40
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1087,
-            "win_rate": 34.9,
+            "elo": 1093,
+            "win_rate": 35.8,
             "rank": 44
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1176,
-            "win_rate": 37.1,
+            "elo": 1174,
+            "win_rate": 37,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "dataviz",
             "elo": 1167,
-            "win_rate": 38.8,
+            "win_rate": 38.7,
             "rank": 63
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1197,
-            "win_rate": 39.4,
+            "elo": 1195,
+            "win_rate": 39.3,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1139,
-            "win_rate": 38.4,
+            "elo": 1140,
+            "win_rate": 38.6,
             "rank": 45
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1181,
-            "win_rate": 38.8,
+            "elo": 1180,
+            "win_rate": 38.7,
             "rank": 54
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1141,
+            "elo": 1140,
             "win_rate": 32.6,
             "rank": 76
           }
@@ -359,7 +359,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": "9999-01-01",
+      "expiration_date": "2026-07-09",
       "links": {
         "details": "/api/v1/models/poolside/laguna-xs.2-20260421/endpoints"
       },
@@ -1208,14 +1208,14 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 979,
+            "elo": 978,
             "win_rate": 29.4,
             "rank": 90
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1014,
+            "elo": 1013,
             "win_rate": 33.4,
             "rank": 96
           },
@@ -1229,7 +1229,7 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1060,
+            "elo": 1059,
             "win_rate": 40.6,
             "rank": 84
           },
@@ -1243,7 +1243,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1012,
+            "elo": 1011,
             "win_rate": 32.5,
             "rank": 99
           }
@@ -1335,7 +1335,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 896,
+            "elo": 895,
             "win_rate": 27.9,
             "rank": 107
           }
@@ -1408,7 +1408,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1193,
+            "elo": 1192,
             "win_rate": 61.2,
             "rank": 54
           },
@@ -1422,7 +1422,7 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1168,
+            "elo": 1167,
             "win_rate": 59,
             "rank": 58
           },
@@ -1436,7 +1436,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1202,
+            "elo": 1201,
             "win_rate": 61.7,
             "rank": 55
           }

@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-07-03T00:01:07.217Z",
+  "fetchedAt": "2026-07-04T00:01:09.952Z",
   "totalModels": 26,
-  "newModelIds": [
-    "poolside/laguna-xs-2.1:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "poolside/laguna-xs-2.1:free",
@@ -237,29 +235,29 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1212,
+            "elo": 1213,
             "win_rate": 43.5,
             "rank": 41
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1105,
-            "win_rate": 37.7,
-            "rank": 44
+            "elo": 1100,
+            "win_rate": 37.1,
+            "rank": 45
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1174,
-            "win_rate": 37,
-            "rank": 60
+            "win_rate": 37.1,
+            "rank": 61
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1165,
-            "win_rate": 38.6,
+            "elo": 1164,
+            "win_rate": 38.5,
             "rank": 64
           },
           {
@@ -272,22 +270,22 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1138,
-            "win_rate": 38.5,
+            "elo": 1136,
+            "win_rate": 38,
             "rank": 45
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1178,
-            "win_rate": 38.5,
-            "rank": 56
+            "elo": 1180,
+            "win_rate": 38.6,
+            "rank": 55
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1140,
-            "win_rate": 32.5,
+            "win_rate": 32.6,
             "rank": 77
           }
         ],
@@ -516,6 +514,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
+        "logprobs",
         "max_tokens",
         "presence_penalty",
         "reasoning",
@@ -528,6 +527,7 @@
         "tool_choice",
         "tools",
         "top_k",
+        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -840,6 +840,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
+        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -854,6 +855,7 @@
         "tools",
         "top_a",
         "top_k",
+        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -1275,12 +1277,12 @@
             "category": "codecategories",
             "elo": 1012,
             "win_rate": 33.4,
-            "rank": 97
+            "rank": 98
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1044,
+            "elo": 1043,
             "win_rate": 45.1,
             "rank": 87
           },
@@ -1354,6 +1356,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
+        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -1368,6 +1371,7 @@
         "tools",
         "top_a",
         "top_k",
+        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -1468,7 +1472,7 @@
             "category": "codecategories",
             "elo": 1192,
             "win_rate": 61.2,
-            "rank": 54
+            "rank": 55
           },
           {
             "arena": "models",

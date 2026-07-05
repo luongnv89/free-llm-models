@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-04T00:01:09.952Z",
+  "fetchedAt": "2026-07-05T00:01:32.226Z",
   "totalModels": 26,
   "newModelIds": [],
   "models": [
@@ -236,50 +236,50 @@
             "arena": "models",
             "category": "3d",
             "elo": 1213,
-            "win_rate": 43.5,
+            "win_rate": 43.4,
             "rank": 41
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1100,
-            "win_rate": 37.1,
+            "elo": 1107,
+            "win_rate": 37.7,
             "rank": 45
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1174,
-            "win_rate": 37.1,
+            "win_rate": 37,
             "rank": 61
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1164,
-            "win_rate": 38.5,
+            "elo": 1159,
+            "win_rate": 37.7,
             "rank": 64
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1195,
-            "win_rate": 39.4,
+            "win_rate": 39.3,
             "rank": 54
           },
           {
             "arena": "models",
             "category": "svg",
             "elo": 1136,
-            "win_rate": 38,
-            "rank": 45
+            "win_rate": 37.8,
+            "rank": 46
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1180,
-            "win_rate": 38.6,
-            "rank": 55
+            "elo": 1178,
+            "win_rate": 38.4,
+            "rank": 56
           },
           {
             "arena": "models",
@@ -1303,7 +1303,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1011,
+            "elo": 1010,
             "win_rate": 32.5,
             "rank": 100
           }
@@ -1603,9 +1603,9 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 9.4,
           "coding_index": 11.9,
-          "agentic_index": null
+          "agentic_index": 0.3
         }
       }
     },

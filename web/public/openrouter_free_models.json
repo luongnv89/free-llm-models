@@ -1,8 +1,66 @@
 {
-  "fetchedAt": "2026-07-21T11:28:02.825Z",
-  "totalModels": 16,
-  "newModelIds": [],
+  "fetchedAt": "2026-07-22T03:00:04.362Z",
+  "totalModels": 17,
+  "newModelIds": [
+    "poolside/laguna-s-2.1:free"
+  ],
   "models": [
+    {
+      "id": "poolside/laguna-s-2.1:free",
+      "canonical_slug": "poolside/laguna-s-2.1-20260720",
+      "hugging_face_id": "poolside/Laguna-S-2.1",
+      "name": "Poolside: Laguna S 2.1 (free)",
+      "created": 1784652683,
+      "description": "Laguna S 2.1 is the latest coding agent model from [Poolside](<https://poolside.ai/>). Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "temperature",
+        "tool_choice",
+        "tools"
+      ],
+      "default_parameters": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/poolside/laguna-s-2.1-20260720/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
+      }
+    },
     {
       "id": "poolside/laguna-xs-2.1:free",
       "canonical_slug": "poolside/laguna-xs-2.1-20260625",
@@ -244,29 +302,29 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1200,
-            "win_rate": 42.6,
-            "rank": 47
+            "elo": 1190,
+            "win_rate": 42.2,
+            "rank": 48
           },
           {
             "arena": "models",
             "category": "asciiart",
             "elo": 1118,
             "win_rate": 38,
-            "rank": 48
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1160,
+            "elo": 1156,
             "win_rate": 36.5,
-            "rank": 65
+            "rank": 66
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1146,
-            "win_rate": 36.5,
+            "elo": 1148,
+            "win_rate": 36.9,
             "rank": 69
           },
           {
@@ -280,22 +338,22 @@
             "arena": "models",
             "category": "svg",
             "elo": 1127,
-            "win_rate": 37.9,
+            "win_rate": 37.8,
             "rank": 48
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1180,
-            "win_rate": 39.3,
-            "rank": 58
+            "elo": 1182,
+            "win_rate": 39.6,
+            "rank": 57
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1129,
-            "win_rate": 32.6,
-            "rank": 82
+            "elo": 1127,
+            "win_rate": 32.7,
+            "rank": 83
           }
         ],
         "artificial_analysis": {
@@ -370,6 +428,14 @@
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [],
+        "artificial_analysis": {
+          "intelligence_index": null,
+          "coding_index": 13.8,
+          "agentic_index": null
+        }
       },
       "reasoning": {
         "mandatory": false,
@@ -689,7 +755,7 @@
       "name": "NVIDIA: Nemotron 3 Super (free)",
       "created": 1773245239,
       "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
-      "context_length": 1000000,
+      "context_length": 262144,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -1058,16 +1124,16 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 970,
+            "elo": 971,
             "win_rate": 39.7,
             "rank": 98
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 883,
+            "elo": 880,
             "win_rate": 27.9,
-            "rank": 113
+            "rank": 114
           }
         ],
         "artificial_analysis": {

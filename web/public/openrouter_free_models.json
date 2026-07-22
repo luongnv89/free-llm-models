@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-07-22T03:00:04.362Z",
+  "fetchedAt": "2026-07-22T03:00:47.260Z",
   "totalModels": 17,
-  "newModelIds": [
-    "poolside/laguna-s-2.1:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "poolside/laguna-s-2.1:free",

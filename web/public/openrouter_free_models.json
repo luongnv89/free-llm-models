@@ -1,8 +1,68 @@
 {
-  "fetchedAt": "2026-07-23T03:00:13.640Z",
-  "totalModels": 17,
-  "newModelIds": [],
+  "fetchedAt": "2026-07-24T03:00:03.486Z",
+  "totalModels": 18,
+  "newModelIds": [
+    "inclusionai/ling-3.0-flash:free"
+  ],
   "models": [
+    {
+      "id": "inclusionai/ling-3.0-flash:free",
+      "canonical_slug": "inclusionai/ling-3.0-flash-20260723",
+      "hugging_face_id": null,
+      "name": "Ling-3.0-flash (free)",
+      "created": 1784818580,
+      "description": "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as key priorities, enabling developers...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/inclusionai/ling-3.0-flash-20260723/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": false
+      }
+    },
     {
       "id": "poolside/laguna-s-2.1:free",
       "canonical_slug": "poolside/laguna-s-2.1-20260720",
@@ -300,8 +360,8 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1191,
-            "win_rate": 42.1,
+            "elo": 1192,
+            "win_rate": 42.2,
             "rank": 49
           },
           {
@@ -314,15 +374,15 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1156,
+            "elo": 1157,
             "win_rate": 36.4,
-            "rank": 68
+            "rank": 67
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1150,
-            "win_rate": 37.3,
+            "elo": 1147,
+            "win_rate": 36.9,
             "rank": 70
           },
           {
@@ -335,23 +395,23 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1128,
-            "win_rate": 37.9,
+            "elo": 1129,
+            "win_rate": 37.8,
             "rank": 48
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1181,
-            "win_rate": 39.5,
+            "win_rate": 39.6,
             "rank": 58
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1127,
-            "win_rate": 32.6,
-            "rank": 83
+            "elo": 1129,
+            "win_rate": 32.7,
+            "rank": 82
           }
         ],
         "artificial_analysis": {
@@ -1122,7 +1182,7 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 969,
+            "elo": 968,
             "win_rate": 39.7,
             "rank": 99
           },

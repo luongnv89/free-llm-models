@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-26T03:00:32.428Z",
+  "fetchedAt": "2026-07-27T03:00:03.881Z",
   "totalModels": 18,
   "newModelIds": [],
   "models": [
@@ -365,9 +365,9 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1189,
-            "win_rate": 41.8,
-            "rank": 49
+            "elo": 1190,
+            "win_rate": 41.7,
+            "rank": 50
           },
           {
             "arena": "models",
@@ -381,13 +381,13 @@
             "category": "codecategories",
             "elo": 1155,
             "win_rate": 36.2,
-            "rank": 68
+            "rank": 69
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1146,
-            "win_rate": 36.7,
+            "elo": 1150,
+            "win_rate": 37.2,
             "rank": 71
           },
           {
@@ -407,8 +407,8 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1182,
-            "win_rate": 39.9,
+            "elo": 1181,
+            "win_rate": 39.7,
             "rank": 59
           },
           {
@@ -416,7 +416,7 @@
             "category": "website",
             "elo": 1127,
             "win_rate": 32.5,
-            "rank": 83
+            "rank": 82
           }
         ],
         "artificial_analysis": {
@@ -1187,14 +1187,14 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 966,
+            "elo": 964,
             "win_rate": 39.7,
             "rank": 100
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 878,
+            "elo": 877,
             "win_rate": 27.9,
             "rank": 115
           }

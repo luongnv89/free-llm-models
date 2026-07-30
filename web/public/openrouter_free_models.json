@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-29T03:00:54.513Z",
+  "fetchedAt": "2026-07-30T03:00:03.620Z",
   "totalModels": 17,
   "newModelIds": [],
   "models": [
@@ -374,7 +374,7 @@
             "category": "asciiart",
             "elo": 1113,
             "win_rate": 37.5,
-            "rank": 50
+            "rank": 51
           },
           {
             "arena": "models",
@@ -400,9 +400,9 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1128,
+            "elo": 1129,
             "win_rate": 37.7,
-            "rank": 49
+            "rank": 48
           },
           {
             "arena": "models",

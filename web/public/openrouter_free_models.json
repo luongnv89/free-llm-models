@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-04T03:00:38.383Z",
+  "fetchedAt": "2026-08-05T03:00:03.939Z",
   "totalModels": 17,
   "newModelIds": [],
   "models": [
@@ -351,15 +351,15 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1188,
+            "elo": 1189,
             "win_rate": 41.4,
-            "rank": 50
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1113,
-            "win_rate": 37.5,
+            "elo": 1112,
+            "win_rate": 37.1,
             "rank": 51
           },
           {
@@ -367,19 +367,19 @@
             "category": "codecategories",
             "elo": 1156,
             "win_rate": 36.2,
-            "rank": 69
+            "rank": 70
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1153,
-            "win_rate": 37.8,
+            "elo": 1152,
+            "win_rate": 37.6,
             "rank": 70
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1182,
+            "elo": 1180,
             "win_rate": 38.6,
             "rank": 60
           },
@@ -387,7 +387,7 @@
             "arena": "models",
             "category": "svg",
             "elo": 1126,
-            "win_rate": 37.6,
+            "win_rate": 37.5,
             "rank": 51
           },
           {
@@ -400,8 +400,8 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1132,
-            "win_rate": 32.9,
+            "elo": 1133,
+            "win_rate": 33,
             "rank": 82
           }
         ],
@@ -1117,9 +1117,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 962,
+            "elo": 961,
             "win_rate": 39.7,
-            "rank": 100
+            "rank": 101
           },
           {
             "arena": "models",

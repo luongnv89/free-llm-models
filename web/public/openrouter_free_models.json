@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-08-05T03:00:03.939Z",
+  "fetchedAt": "2026-08-06T03:00:04.109Z",
   "totalModels": 17,
   "newModelIds": [],
   "models": [
     {
       "id": "inclusionai/ling-3.0-flash:free",
       "canonical_slug": "inclusionai/ling-3.0-flash-20260723",
-      "hugging_face_id": null,
+      "hugging_face_id": "inclusionAI/Ling-3.0-flash",
       "name": "Ling-3.0-flash (free)",
       "created": 1784818580,
       "description": "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as key priorities, enabling developers...",
@@ -49,14 +49,7 @@
         "top_logprobs",
         "top_p"
       ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
+      "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
@@ -351,9 +344,9 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1189,
+            "elo": 1188,
             "win_rate": 41.4,
-            "rank": 49
+            "rank": 51
           },
           {
             "arena": "models",
@@ -367,42 +360,42 @@
             "category": "codecategories",
             "elo": 1156,
             "win_rate": 36.2,
-            "rank": 70
+            "rank": 71
           },
           {
             "arena": "models",
             "category": "dataviz",
             "elo": 1152,
             "win_rate": 37.6,
-            "rank": 70
+            "rank": 71
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1180,
-            "win_rate": 38.6,
-            "rank": 60
+            "elo": 1165,
+            "win_rate": 38.5,
+            "rank": 62
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1126,
-            "win_rate": 37.5,
+            "elo": 1124,
+            "win_rate": 37.4,
             "rank": 51
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1181,
-            "win_rate": 39.6,
-            "rank": 57
+            "win_rate": 39.5,
+            "rank": 58
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1133,
             "win_rate": 33,
-            "rank": 82
+            "rank": 83
           }
         ],
         "artificial_analysis": {
@@ -1119,14 +1112,14 @@
             "category": "dataviz",
             "elo": 961,
             "win_rate": 39.7,
-            "rank": 101
+            "rank": 102
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 876,
             "win_rate": 27.9,
-            "rank": 116
+            "rank": 117
           }
         ],
         "artificial_analysis": {

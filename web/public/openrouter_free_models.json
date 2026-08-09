@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-08T03:00:27.969Z",
+  "fetchedAt": "2026-08-09T03:00:03.881Z",
   "totalModels": 17,
   "newModelIds": [],
   "models": [
@@ -345,50 +345,50 @@
             "arena": "models",
             "category": "3d",
             "elo": 1186,
-            "win_rate": 41.2,
+            "win_rate": 41.3,
             "rank": 52
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1118,
-            "win_rate": 37.7,
+            "elo": 1113,
+            "win_rate": 36.6,
             "rank": 51
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1155,
-            "win_rate": 36.1,
-            "rank": 71
+            "win_rate": 36,
+            "rank": 72
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1153,
-            "win_rate": 37.5,
-            "rank": 71
+            "elo": 1150,
+            "win_rate": 37.4,
+            "rank": 73
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1169,
-            "win_rate": 38.7,
+            "elo": 1168,
+            "win_rate": 38.3,
             "rank": 64
           },
           {
             "arena": "models",
             "category": "svg",
             "elo": 1126,
-            "win_rate": 37.5,
+            "win_rate": 37.6,
             "rank": 50
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1177,
-            "win_rate": 39.2,
-            "rank": 60
+            "elo": 1173,
+            "win_rate": 38.6,
+            "rank": 62
           },
           {
             "arena": "models",
@@ -1110,9 +1110,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 961,
+            "elo": 960,
             "win_rate": 39.7,
-            "rank": 102
+            "rank": 103
           },
           {
             "arena": "models",

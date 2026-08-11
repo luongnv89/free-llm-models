@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-08-10T03:00:32.365Z",
+  "fetchedAt": "2026-08-11T03:00:04.168Z",
   "totalModels": 17,
   "newModelIds": [],
   "models": [
     {
       "id": "inclusionai/ling-3.0-tiny:free",
       "canonical_slug": "inclusionai/ling-3.0-tiny-20260806",
-      "hugging_face_id": null,
+      "hugging_face_id": "inclusionAI/Ling-3.0-tiny",
       "name": "inclusionAI: Ling 3.0 Tiny (free)",
       "created": 1786034890,
       "description": "Ling 3.0 Tiny is a mixture-of-experts model from InclusionAI, with 1.3B active parameters out of 7.9B total. It is designed for responsive agents, instruction following, and multi-turn conversations, with switchable...",
@@ -49,12 +49,24 @@
         "top_logprobs",
         "top_p"
       ],
-      "default_parameters": {},
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": 20
+      },
       "supported_voices": null,
       "knowledge_cutoff": null,
       "expiration_date": null,
       "links": {
         "details": "/api/v1/models/inclusionai/ling-3.0-tiny-20260806/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [],
+        "artificial_analysis": {
+          "intelligence_index": 24.5,
+          "coding_index": 26.5,
+          "agentic_index": 16
+        }
       },
       "reasoning": {
         "mandatory": false,
@@ -344,21 +356,21 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1186,
-            "win_rate": 41.3,
+            "elo": 1187,
+            "win_rate": 41.4,
             "rank": 52
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1111,
-            "win_rate": 36.6,
+            "elo": 1115,
+            "win_rate": 36.8,
             "rank": 51
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1155,
+            "elo": 1156,
             "win_rate": 36,
             "rank": 72
           },
@@ -366,35 +378,35 @@
             "arena": "models",
             "category": "dataviz",
             "elo": 1150,
-            "win_rate": 37.4,
+            "win_rate": 37.3,
             "rank": 73
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1167,
-            "win_rate": 38.2,
+            "win_rate": 38,
             "rank": 64
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1125,
-            "win_rate": 37.6,
+            "elo": 1126,
+            "win_rate": 37.7,
             "rank": 50
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1173,
-            "win_rate": 38.5,
-            "rank": 62
+            "elo": 1171,
+            "win_rate": 38.3,
+            "rank": 63
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1134,
-            "win_rate": 33.1,
+            "elo": 1135,
+            "win_rate": 33.2,
             "rank": 83
           }
         ],
@@ -1110,7 +1122,7 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 959,
+            "elo": 960,
             "win_rate": 39.7,
             "rank": 103
           },

@@ -1,10 +1,7 @@
 {
-  "fetchedAt": "2026-08-12T03:00:04.287Z",
+  "fetchedAt": "2026-08-12T03:00:24.021Z",
   "totalModels": 19,
-  "newModelIds": [
-    "liquid/lfm-2.5-2.6b:free",
-    "nvidia/nemotron-3.5-lightning:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "liquid/lfm-2.5-2.6b:free",

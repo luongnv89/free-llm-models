@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-12T03:00:24.021Z",
+  "fetchedAt": "2026-08-13T03:00:03.507Z",
   "totalModels": 19,
   "newModelIds": [],
   "models": [
@@ -179,7 +179,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-08-13",
       "links": {
         "details": "/api/v1/models/inclusionai/ling-3.0-tiny-20260806/endpoints"
       },
@@ -479,30 +479,30 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1186,
-            "win_rate": 41.2,
+            "elo": 1184,
+            "win_rate": 41.1,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1115,
+            "elo": 1113,
             "win_rate": 36.8,
             "rank": 51
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1156,
+            "elo": 1154,
             "win_rate": 36,
             "rank": 72
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1152,
-            "win_rate": 37.4,
-            "rank": 71
+            "elo": 1151,
+            "win_rate": 37.3,
+            "rank": 72
           },
           {
             "arena": "models",
@@ -514,14 +514,14 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1126,
+            "elo": 1122,
             "win_rate": 37.6,
-            "rank": 50
+            "rank": 51
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1173,
+            "elo": 1174,
             "win_rate": 38.5,
             "rank": 62
           },
@@ -530,7 +530,7 @@
             "category": "website",
             "elo": 1136,
             "win_rate": 33.3,
-            "rank": 82
+            "rank": 81
           }
         ],
         "artificial_analysis": {
@@ -1254,7 +1254,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 874,
+            "elo": 873,
             "win_rate": 27.9,
             "rank": 118
           }

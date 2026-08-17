@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-08-17T03:00:09.201Z",
+  "fetchedAt": "2026-08-17T03:00:34.339Z",
   "totalModels": 20,
-  "newModelIds": [
-    "z-ai/glm-5.2:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "dots-studio/dots-3-note-preview:free",

@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-17T03:00:34.339Z",
-  "totalModels": 20,
+  "fetchedAt": "2026-08-18T03:00:03.659Z",
+  "totalModels": 19,
   "newModelIds": [],
   "models": [
     {
@@ -53,71 +53,6 @@
       },
       "reasoning": {
         "mandatory": false
-      }
-    },
-    {
-      "id": "liquid/lfm-2.5-2.6b:free",
-      "canonical_slug": "liquid/lfm-2.5-2.6b-20260811",
-      "hugging_face_id": "LiquidAI/LFM2.5-2.6B",
-      "name": "LiquidAI: LFM2.5-2.6B (free)",
-      "created": 1786470519,
-      "description": "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...",
-      "context_length": 128000,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logprobs",
-        "max_completion_tokens",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.1,
-        "top_k": 50,
-        "repetition_penalty": 1.1
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/liquid/lfm-2.5-2.6b-20260811/endpoints"
-      },
-      "reasoning": {
-        "mandatory": true
       }
     },
     {
@@ -415,15 +350,15 @@
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1210,
-            "win_rate": 54.9,
-            "rank": 16
+            "elo": 1208,
+            "win_rate": 54.7,
+            "rank": 15
           },
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1271,
-            "win_rate": 61.7,
+            "elo": 1264,
+            "win_rate": 61.4,
             "rank": 9
           },
           {
@@ -436,36 +371,36 @@
           {
             "arena": "agents",
             "category": "htmlslides",
-            "elo": 1194,
-            "win_rate": 49.5,
+            "elo": 1199,
+            "win_rate": 50.1,
             "rank": 10
           },
           {
             "arena": "agents",
             "category": "mobileapps",
-            "elo": 1210,
+            "elo": 1209,
             "win_rate": 51.9,
-            "rank": 15
+            "rank": 14
           },
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1198,
-            "win_rate": 48,
+            "elo": 1207,
+            "win_rate": 49.3,
             "rank": 11
           },
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1261,
+            "elo": 1258,
             "win_rate": 56.8,
             "rank": 10
           },
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1354,
-            "win_rate": 57.7,
+            "elo": 1353,
+            "win_rate": 56.8,
             "rank": 6
           },
           {
@@ -479,21 +414,21 @@
             "arena": "models",
             "category": "codecategories",
             "elo": 1326,
-            "win_rate": 56.7,
+            "win_rate": 56.3,
             "rank": 6
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1328,
-            "win_rate": 54.7,
-            "rank": 7
+            "elo": 1321,
+            "win_rate": 53.7,
+            "rank": 8
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1329,
-            "win_rate": 54.5,
+            "elo": 1327,
+            "win_rate": 53.7,
             "rank": 11
           },
           {
@@ -513,9 +448,9 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1320,
-            "win_rate": 57.9,
-            "rank": 5
+            "elo": 1319,
+            "win_rate": 57.5,
+            "rank": 4
           }
         ],
         "artificial_analysis": {
@@ -650,14 +585,14 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1182,
+            "elo": 1183,
             "win_rate": 41.1,
             "rank": 56
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1108,
+            "elo": 1107,
             "win_rate": 36.8,
             "rank": 52
           },
@@ -666,34 +601,34 @@
             "category": "codecategories",
             "elo": 1150,
             "win_rate": 36,
-            "rank": 76
+            "rank": 77
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1150,
+            "elo": 1149,
             "win_rate": 37.3,
-            "rank": 72
+            "rank": 73
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1161,
-            "win_rate": 37.1,
+            "win_rate": 37,
             "rank": 68
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1117,
-            "win_rate": 37.5,
+            "elo": 1116,
+            "win_rate": 37.4,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1168,
-            "win_rate": 38.2,
+            "elo": 1169,
+            "win_rate": 38.3,
             "rank": 66
           },
           {
@@ -1149,7 +1084,6 @@
         "frequency_penalty",
         "include_reasoning",
         "logprobs",
-        "max_completion_tokens",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -1418,9 +1352,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 953,
+            "elo": 952,
             "win_rate": 39.7,
-            "rank": 106
+            "rank": 107
           },
           {
             "arena": "models",

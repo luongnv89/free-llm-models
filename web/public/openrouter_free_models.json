@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T03:01:00.225Z",
+  "fetchedAt": "2026-08-19T03:00:03.910Z",
   "totalModels": 19,
   "newModelIds": [],
   "models": [
@@ -287,7 +287,7 @@
       "name": "Z.ai: GLM 5.2 (free)",
       "created": 1781631930,
       "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
-      "context_length": 128000,
+      "context_length": 256000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -304,8 +304,8 @@
         "completion": "0"
       },
       "top_provider": {
-        "context_length": 128000,
-        "max_completion_tokens": 128000,
+        "context_length": 256000,
+        "max_completion_tokens": 256000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -318,9 +318,13 @@
         "reasoning",
         "reasoning_effort",
         "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
         "top_p"
       ],
@@ -351,7 +355,7 @@
             "arena": "agents",
             "category": "androidnative",
             "elo": 1208,
-            "win_rate": 54.7,
+            "win_rate": 54.6,
             "rank": 15
           },
           {
@@ -386,7 +390,7 @@
             "arena": "agents",
             "category": "python-pptxslides",
             "elo": 1207,
-            "win_rate": 49.3,
+            "win_rate": 49.4,
             "rank": 11
           },
           {
@@ -413,7 +417,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1326,
+            "elo": 1325,
             "win_rate": 56.3,
             "rank": 6
           },
@@ -434,8 +438,8 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1254,
-            "win_rate": 55.5,
+            "elo": 1253,
+            "win_rate": 55.4,
             "rank": 13
           },
           {
@@ -599,7 +603,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1150,
+            "elo": 1149,
             "win_rate": 36,
             "rank": 77
           },
@@ -1223,7 +1227,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-08-24",
       "links": {
         "details": "/api/v1/models/nvidia/nemotron-nano-12b-v2-vl/endpoints"
       },

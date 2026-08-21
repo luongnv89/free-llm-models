@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-08-21T03:00:04.260Z",
+  "fetchedAt": "2026-08-21T03:00:17.119Z",
   "totalModels": 21,
-  "newModelIds": [
-    "stealth/ox-alpha"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "stealth/ox-alpha",

@@ -1,10 +1,7 @@
 {
-  "fetchedAt": "2026-08-22T05:17:28.476Z",
+  "fetchedAt": "2026-08-22T05:21:03.187Z",
   "totalModels": 22,
-  "newModelIds": [
-    "thinkingmachines/inkling-small:free",
-    "thinkingmachines/inkling:free"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "stealth/ox-alpha",

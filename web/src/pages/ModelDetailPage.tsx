@@ -16,7 +16,7 @@ import {
   Layers,
   Cpu,
   Settings,
-  AlertTriangle,
+  TriangleAlert,
 } from 'lucide-react';
 
 export function ModelDetailPage() {
@@ -65,7 +65,7 @@ export function ModelDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <AlertTriangle className="h-12 w-12 text-destructive mx-auto mb-4" />
+          <TriangleAlert className="h-12 w-12 text-destructive mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Model not found</h2>
           <p className="text-muted-foreground mb-4">
             {error || 'The requested model could not be found.'}

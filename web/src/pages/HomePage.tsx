@@ -22,7 +22,7 @@ import {
 } from '@/hooks/useModels';
 
 import type { FilterState, SortField, SortOrder } from '@/types/model';
-import { Loader2, AlertCircle, Zap, HelpCircle, Globe, Copy, Check } from 'lucide-react';
+import { LoaderCircle, CircleAlert, Zap, CircleHelp, Globe, Copy, Check } from 'lucide-react';
 
 export function HomePage() {
   const { data, loading, error } = useModels();
@@ -77,7 +77,7 @@ export function HomePage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+        <LoaderCircle className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     );
   }
@@ -86,7 +86,7 @@ export function HomePage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
+          <CircleAlert className="h-12 w-12 text-destructive mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Failed to load models</h2>
           <p className="text-muted-foreground">{error}</p>
         </div>
@@ -121,7 +121,7 @@ export function HomePage() {
               </div>
               <Link to="/faq">
                 <Button variant="ghost" size="icon" title="FAQ" className="h-9 w-9">
-                  <HelpCircle className="h-5 w-5" />
+                  <CircleHelp className="h-5 w-5" />
                 </Button>
               </Link>
               <DarkModeToggle />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HelpCircle } from 'lucide-react';
+import { CircleHelp } from 'lucide-react';
 import { getRandomFAQ, type FAQQuestion } from '@/data/faqData';
 
 export function FAQTip() {
@@ -23,7 +23,7 @@ export function FAQTip() {
       className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 hover:bg-muted border border-border hover:border-[var(--highlight)]/50 transition-all text-sm text-muted-foreground hover:text-foreground group max-w-md"
       title="Click to see the answer"
     >
-      <HelpCircle className="h-4 w-4 shrink-0 text-[var(--highlight)]" />
+      <CircleHelp className="h-4 w-4 shrink-0 text-[var(--highlight)]" />
       <span className="truncate">{faq.question}</span>
     </Link>
   );

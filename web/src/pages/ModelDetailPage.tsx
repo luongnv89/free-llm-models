@@ -7,6 +7,11 @@ import { CodeSnippets } from '@/components/CodeSnippets';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { useModels, getProvider, isNewModel } from '@/hooks/useModels';
 import {
+  formatDate,
+  formatContextLength,
+  modelCapabilities,
+} from '@/lib/model-utils';
+import {
   ArrowLeft,
   Copy,
   Check,
@@ -32,25 +37,6 @@ export function ModelDetailPage() {
     await navigator.clipboard.writeText(decodedModelId);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const formatDate = (timestamp: number) => {
-    const date = new Date(timestamp * 1000);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
-
-  const formatContextLength = (length: number) => {
-    if (length >= 1000000) {
-      return `${(length / 1000000).toFixed(1)}M tokens`;
-    }
-    if (length >= 1000) {
-      return `${(length / 1000).toFixed(0)}K tokens`;
-    }
-    return `${length} tokens`;
   };
 
   if (loading) {
@@ -82,12 +68,8 @@ export function ModelDetailPage() {
   }
 
   const provider = getProvider(model);
-  const hasReasoning =
-    model.supported_parameters.includes('reasoning') ||
-    model.supported_parameters.includes('include_reasoning');
-  const hasTools = model.supported_parameters.includes('tools');
-  const hasVision = model.architecture.input_modalities.includes('image');
-  const hasVideo = model.architecture.input_modalities.includes('video');
+  const { reasoning: hasReasoning, tools: hasTools, vision: hasVision, video: hasVideo } =
+    modelCapabilities(model);
 
   return (
     <div className="min-h-screen bg-background">
@@ -206,7 +188,7 @@ export function ModelDetailPage() {
                   <div>
                     <p className="text-sm text-muted-foreground">Context Length</p>
                     <p className="font-semibold">
-                      {formatContextLength(model.context_length)}
+                      {formatContextLength(model.context_length)} tokens
                     </p>
                   </div>
                 </div>

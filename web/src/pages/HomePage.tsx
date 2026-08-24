@@ -22,6 +22,7 @@ import {
 } from '@/hooks/useModels';
 
 import type { FilterState, SortField, SortOrder } from '@/types/model';
+import { formatDateTime } from '@/lib/model-utils';
 import { LoaderCircle, CircleAlert, Zap, CircleHelp, Globe, Copy, Check } from 'lucide-react';
 
 export function HomePage() {
@@ -49,7 +50,6 @@ export function HomePage() {
 
   const filteredModels = useFilteredModels(
     data?.models ?? [],
-    [],
     filters,
     sortField,
     sortOrder
@@ -62,17 +62,6 @@ export function HomePage() {
   const newModelsCount = useMemo(() => {
     return data?.models.filter(isNewModel).length ?? 0;
   }, [data?.models]);
-
-  const formatDate = (isoString: string) => {
-    const date = new Date(isoString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  };
 
   if (loading) {
     return (
@@ -116,7 +105,7 @@ export function HomePage() {
               <div className="text-right">
                 <p className="text-xs text-muted-foreground">Last updated</p>
                 <p className="text-sm font-medium">
-                  {data?.fetchedAt ? formatDate(data.fetchedAt) : 'Unknown'}
+                  {data?.fetchedAt ? formatDateTime(data.fetchedAt) : 'Unknown'}
                 </p>
               </div>
               <Link to="/faq">

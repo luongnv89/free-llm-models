@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Copy, Check, Sparkles, ArrowRight } from 'lucide-react';
 import type { Model } from '@/types/model';
 import { getProvider } from '@/hooks/useModels';
+import { formatContextLength, modelCapabilities } from '@/lib/model-utils';
 
 interface ModelCardProps {
   model: Model;
@@ -24,21 +25,8 @@ export function ModelCard({ model, isNew }: ModelCardProps) {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const formatContextLength = (length: number) => {
-    if (length >= 1000000) {
-      return `${(length / 1000000).toFixed(1)}M`;
-    }
-    if (length >= 1000) {
-      return `${(length / 1000).toFixed(0)}K`;
-    }
-    return length.toString();
-  };
-
-  const hasReasoning = model.supported_parameters.includes('reasoning') ||
-    model.supported_parameters.includes('include_reasoning');
-  const hasTools = model.supported_parameters.includes('tools');
-  const hasVision = model.architecture.input_modalities.includes('image');
-  const hasVideo = model.architecture.input_modalities.includes('video');
+  const { reasoning: hasReasoning, tools: hasTools, vision: hasVision, video: hasVideo } =
+    modelCapabilities(model);
 
   return (
     <Link to={`/model/${encodeURIComponent(model.id)}`}>

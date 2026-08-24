@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { Model, ModelsData, FilterState, SortField, SortOrder } from '@/types/model';
+import { modelCapabilities } from '@/lib/model-utils';
 
 export function useModels() {
   const [data, setData] = useState<ModelsData | null>(null);
@@ -39,7 +40,6 @@ export function isNewModel(model: Model): boolean {
 
 export function useFilteredModels(
   models: Model[],
-  _newModelIds: string[],
   filters: FilterState,
   sortField: SortField,
   sortOrder: SortOrder
@@ -98,8 +98,7 @@ export function filterAndSortModels(
   // Reasoning support filter
   if (filters.hasReasoning !== null) {
     filtered = filtered.filter((m) => {
-      const hasReasoning = m.supported_parameters.includes('reasoning') ||
-        m.supported_parameters.includes('include_reasoning');
+      const hasReasoning = modelCapabilities(m).reasoning;
       return filters.hasReasoning ? hasReasoning : !hasReasoning;
     });
   }
@@ -107,7 +106,7 @@ export function filterAndSortModels(
   // Tools support filter
   if (filters.hasTools !== null) {
     filtered = filtered.filter((m) => {
-      const hasTools = m.supported_parameters.includes('tools');
+      const hasTools = modelCapabilities(m).tools;
       return filters.hasTools ? hasTools : !hasTools;
     });
   }

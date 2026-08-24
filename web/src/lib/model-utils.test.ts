@@ -1,0 +1,113 @@
+import { describe, expect, it } from 'vitest';
+import type { Model } from '@/types/model';
+import {
+  formatDate,
+  formatContextLength,
+  formatDateTime,
+  modelCapabilities,
+} from './model-utils';
+
+function makeModel(overrides: Partial<Model> = {}): Model {
+  return {
+    id: 'test/model',
+    canonical_slug: 'test/model',
+    hugging_face_id: null,
+    name: 'Test Model',
+    created: 1700000000,
+    description: 'A test model',
+    context_length: 4096,
+    architecture: {
+      modality: 'text->text',
+      input_modalities: ['text'],
+      output_modalities: ['text'],
+      tokenizer: 'GPT2',
+      instruct_type: null,
+    },
+    pricing: { prompt: '0', completion: '0' },
+    top_provider: {
+      context_length: 4096,
+      max_completion_tokens: null,
+      is_moderated: false,
+    },
+    per_request_limits: null,
+    supported_parameters: [],
+    default_parameters: {},
+    expiration_date: null,
+    ...overrides,
+  };
+}
+
+describe('modelCapabilities', () => {
+  it('detects reasoning via the canonical parameter', () => {
+    expect(modelCapabilities(makeModel({ supported_parameters: ['reasoning'] })).reasoning).toBe(true);
+  });
+
+  it('detects reasoning via the include_reasoning alias', () => {
+    expect(
+      modelCapabilities(makeModel({ supported_parameters: ['include_reasoning'] })).reasoning
+    ).toBe(true);
+  });
+
+  it('reports no reasoning when neither alias is present', () => {
+    expect(modelCapabilities(makeModel({ supported_parameters: ['tools'] })).reasoning).toBe(false);
+    expect(modelCapabilities(makeModel()).reasoning).toBe(false);
+  });
+
+  it('detects tools support', () => {
+    const caps = modelCapabilities(makeModel({ supported_parameters: ['tools'] }));
+    expect(caps.tools).toBe(true);
+    expect(caps.reasoning).toBe(false);
+  });
+
+  it('detects vision and video from input modalities', () => {
+    const caps = modelCapabilities(
+      makeModel({
+        architecture: {
+          modality: 'image->text',
+          input_modalities: ['image', 'video'],
+          output_modalities: ['text'],
+          tokenizer: 'GPT2',
+          instruct_type: null,
+        },
+      })
+    );
+    expect(caps.vision).toBe(true);
+    expect(caps.video).toBe(true);
+  });
+
+  it('reports text-only models as having no vision or video', () => {
+    const caps = modelCapabilities(makeModel());
+    expect(caps.vision).toBe(false);
+    expect(caps.video).toBe(false);
+  });
+});
+
+describe('formatContextLength', () => {
+  it('formats small lengths as plain numbers', () => {
+    expect(formatContextLength(999)).toBe('999');
+    expect(formatContextLength(4096)).toBe('4K');
+  });
+
+  it('formats thousands with a K suffix and no decimals', () => {
+    expect(formatContextLength(1000)).toBe('1K');
+    expect(formatContextLength(131072)).toBe('131K');
+  });
+
+  it('formats millions with one decimal place', () => {
+    expect(formatContextLength(1000000)).toBe('1.0M');
+    expect(formatContextLength(2097152)).toBe('2.1M');
+  });
+});
+
+describe('formatDate (unix seconds)', () => {
+  it('formats a model creation timestamp as a long-form US date', () => {
+    // 2023-11-14 22:13:20 UTC
+    expect(formatDate(1700000000)).toBe('November 14, 2023');
+  });
+});
+
+describe('formatDateTime (ISO string)', () => {
+  it('formats an ISO timestamp with short date and time', () => {
+    expect(formatDateTime('2026-02-02T10:30:00Z')).toMatch(/^Feb 2, 2026/);
+  });
+});

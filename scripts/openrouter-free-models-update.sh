@@ -11,12 +11,18 @@
 #
 # What it does:
 #   1. Locks itself with flock (no overlapping runs).
-#   2. Adds the mise-managed node/npm to PATH (required — node is NOT in
-#      ~/.local/bin under cron).
-#   3. Hard-resets the repo to origin/main (GitHub is source of truth), then
-#      `npm install` (only dep is dotenv).
-#   4. Runs `npm run start` → writes web/public/openrouter_free_models.json.
-#   5. Commits + pushes the JSON ONLY if it changed.
+#   2. Resolves node/npm dynamically (mise shims preferred — no hardcoded
+#      version paths) and verifies the version satisfies .nvmrc.
+#   3. Refuses to run on a dirty working tree unless FORCE_UPDATER=1 is set
+#      (guards against destroying local work if invoked manually).
+#   4. Hard-resets the repo to origin/main (GitHub is source of truth) and
+#      cleans untracked files EXCEPT logs/, node_modules/, .env — then
+#      `npm ci` (lockfile-driven; fails fast on manifest/lockfile mismatch).
+#   5. Runs `npm run start` → writes web/public/openrouter_free_models.json.
+#   6. Commits + pushes the JSON ONLY if it changed.
+#
+# Escape hatch: FORCE_UPDATER=1 bypasses the dirty-tree guard (the reset in
+# step 4 will still discard local changes outside logs/, node_modules/, .env).
 #
 # Everything written to stdout becomes the Telegram message the cron delivers.
 
@@ -30,6 +36,9 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "$SRC")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
+# shellcheck source=scripts/lib/updater-common.sh
+source "$SCRIPT_DIR/lib/updater-common.sh"
+
 BRANCH="main"
 LOG_DIR="$REPO_DIR/logs"
 LOCK_FILE="$LOG_DIR/update-free-models.lock"
@@ -40,9 +49,6 @@ ENV_CANDIDATES=(
   "$HOME/.config/openrouter/api.env"
   "$HOME/.config/devstats/api.env"
 )
-
-# ── Toolchain PATH (mise-managed node + gh) ────────────────────────────────────
-export PATH="$HOME/.local/share/mise/shims:$HOME/.local/share/mise/installs/node/26.7.0/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
 
 # ── SSH auth for push (use the deploy key if present) ───────────────────────────
 if [[ -z "${GIT_SSH_COMMAND:-}" ]]; then
@@ -96,19 +102,24 @@ fi
 git rebase --abort >/dev/null 2>&1 || true
 git merge --abort  >/dev/null 2>&1 || true
 
+# ── Dirty-tree guard (#12): never destroy local work unless forced ──────────────
+if ! updater_dirty_tree_guard; then
+  exit 1
+fi
+
 # Treat GitHub as source of truth for this repo
 git fetch origin
 git checkout "$BRANCH"
 git reset --hard "origin/${BRANCH}"
 git clean -fd -e logs -e node_modules -e .env
 
-# Install deps (only dependency is dotenv)
-if [[ ! -d node_modules ]]; then
-  echo "[DEPS] npm install"
-  npm install
-else
-  npm install --silent
-fi
+# ── Node runtime resolution (#14): no hardcoded install path ────────────────────
+updater_resolve_node
+updater_check_node_version "$(cat "$REPO_DIR/.nvmrc")"
+
+# Install deps from the lockfile (fails fast on package.json/lockfile mismatch)
+echo "[DEPS] npm ci"
+npm ci --silent
 
 npm run start
 
@@ -125,6 +136,7 @@ if ! git push origin "HEAD:${BRANCH}"; then
   echo "[WARN] Push rejected; retrying once against latest $BRANCH"
   git fetch origin
   git reset --hard "origin/${BRANCH}"
+  updater_resolve_node
   npm run start
   if ! git diff --quiet -- "$DATA_FILE"; then
     git add "$DATA_FILE"

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Fetch and list free models from OpenRouter API",
   "main": "get_openrouter_free_models.js",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "start": "node get_openrouter_free_models.js",
     "test": "node --test test/*.test.js"

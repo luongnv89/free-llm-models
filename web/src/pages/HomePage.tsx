@@ -20,7 +20,7 @@ import {
   getUniqueModalities,
   isNewModel,
 } from '@/hooks/useModels';
-import { VERSION, COMMIT_HASH } from '@/version';
+
 import type { FilterState, SortField, SortOrder } from '@/types/model';
 import { Loader2, AlertCircle, Zap, HelpCircle, Globe, Copy, Check } from 'lucide-react';
 
@@ -269,7 +269,7 @@ export function HomePage() {
               </a>
             </div>
             <div className="text-xs text-muted-foreground/60">
-              v{VERSION} ({COMMIT_HASH})
+              v{__APP_VERSION__} ({__COMMIT_HASH__})
             </div>
           </div>
         </div>

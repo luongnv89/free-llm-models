@@ -1,0 +1,24 @@
+{
+  "models": [
+    {
+      "id": "free/exact-zero",
+      "pricing": { "prompt": "0", "completion": "0" }
+    },
+    {
+      "id": "paid/both-nonzero",
+      "pricing": { "prompt": "0.0000015", "completion": "0.000002" }
+    },
+    {
+      "id": "paid/prompt-only",
+      "pricing": { "prompt": "0.0000015", "completion": "0" }
+    },
+    {
+      "id": "paid/completion-only",
+      "pricing": { "prompt": "0", "completion": "0.000002" }
+    },
+    {
+      "id": "edge/string-zero-formats",
+      "pricing": { "prompt": "-0", "completion": "0" }
+    }
+  ]
+}

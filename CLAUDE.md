@@ -7,13 +7,15 @@ Project context for AI agents working on this repo. See @README.md for the user-
 ```bash
 npm install                      # root deps (dotenv, for the updater)
 cd web && npm install            # web app deps
-cd web && npm run build          # recorded build: tsc -b && vite build (rewrites web/src/version.ts — see Hard rules)
+cd web && npm run build          # recorded build: tsc -b && vite build (version injected via Vite define — see Hard rules)
 cd web && npm run lint           # eslint over web/
+cd web && npm run test           # vitest suite over web logic
+npm test                         # node:test smoke suite over the updater's pricing predicate
 node get_openrouter_free_models.js   # ⚠ side effects — see Hard rules
 ./scripts/update_data.sh         # ⚠ cron automation — see Hard rules
 ```
 
-There is **no test command** in this repo yet. Do not invent `npm test`.
+Both packages have test suites (`cd web && npm run test`, `npm test`). Run them after logic changes; they never mutate tracked files.
 
 ## Architecture map
 
@@ -33,8 +35,8 @@ There is **no test command** in this repo yet. Do not invent `npm test`.
 - **IMPORTANT: Do not run `get_openrouter_free_models.js`, `scripts/update_data.sh`, or `scripts/openrouter-free-models-update.sh` casually.** They perform a network fetch, rewrite the tracked `web/public/openrouter_free_models.json`, and the shell scripts commit and push to `main`. Run them only when a task explicitly requires regenerating the dataset.
 - Never commit `.env`.
 - Don't hand-edit `web/public/openrouter_free_models.json` — it is generated.
-- `cd web && npm run build` rewrites the tracked `web/src/version.ts` (its prebuild stamps commit hash + build date). A dirty diff in that file after building is expected — revert with `git checkout -- web/src/version.ts`.
-- Root `package.json` has no build/lint/test; those live under `web/`.
+- Version info (`VERSION`/commit hash/build date) is injected by Vite `define` from `web/vite.config.ts` — building never rewrites tracked sources; `git status --porcelain` stays clean after a build.
+- Root `package.json` only has `start`/`test` scripts; build/lint live under `web/`.
 
 ## Workflow preferences
 

@@ -4,12 +4,10 @@ import { HelpCircle } from 'lucide-react';
 import { getRandomFAQ, type FAQQuestion } from '@/data/faqData';
 
 export function FAQTip() {
-  const [faq, setFaq] = useState<FAQQuestion | null>(null);
+  const [faq, setFaq] = useState<FAQQuestion | null>(() => getRandomFAQ());
 
+  // Rotate the featured FAQ every 30 seconds
   useEffect(() => {
-    setFaq(getRandomFAQ());
-
-    // Change FAQ every 30 seconds
     const interval = setInterval(() => {
       setFaq(getRandomFAQ());
     }, 30000);

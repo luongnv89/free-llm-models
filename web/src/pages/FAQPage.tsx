@@ -8,9 +8,9 @@ import {
   ChevronDown,
   Key,
   Zap,
-  AlertTriangle,
-  Code2,
-  HelpCircle,
+  TriangleAlert,
+  Code,
+  CircleHelp,
   ExternalLink,
   Copy,
   Check,
@@ -161,7 +161,7 @@ interface WarningBoxProps {
 function WarningBox({ children }: WarningBoxProps) {
   return (
     <div className="flex items-start gap-3 p-4 rounded-lg border border-amber-500/30 bg-amber-500/5 mt-4">
-      <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
+      <TriangleAlert className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
       <div className="text-sm text-amber-600 dark:text-amber-400">{children}</div>
     </div>
   );
@@ -245,7 +245,7 @@ export function FAQPage() {
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-12 w-12 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-              <HelpCircle className="h-7 w-7 text-[var(--highlight)]" />
+              <CircleHelp className="h-7 w-7 text-[var(--highlight)]" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">Frequently Asked Questions</h1>
@@ -272,7 +272,7 @@ export function FAQPage() {
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <InfoCard
-                    icon={<Code2 className="h-5 w-5 text-[var(--highlight)]" />}
+                    icon={<Code className="h-5 w-5 text-[var(--highlight)]" />}
                     title="Learning & Experimentation"
                     description="Perfect for testing and learning AI development"
                   />
@@ -414,7 +414,7 @@ export function FAQPage() {
           {/* Limitations */}
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-[var(--highlight)]" />
+              <TriangleAlert className="h-5 w-5 text-[var(--highlight)]" />
               Limitations & Considerations
             </h2>
             <div className="space-y-3">
@@ -528,7 +528,7 @@ export function FAQPage() {
           {/* Integration */}
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
-              <Code2 className="h-5 w-5 text-[var(--highlight)]" />
+              <Code className="h-5 w-5 text-[var(--highlight)]" />
               Integration Examples
             </h2>
             <div className="space-y-3">

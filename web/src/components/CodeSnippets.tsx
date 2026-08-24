@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Copy, Check, Terminal, Code2, AlertTriangle } from 'lucide-react';
+import { Copy, Check, Terminal, Code, TriangleAlert } from 'lucide-react';
 
 interface CodeSnippetsProps {
   modelId: string;
@@ -63,7 +63,7 @@ function StepsContainer({ children }: { children: React.ReactNode }) {
 function WarningBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-3 p-4 rounded-lg border border-amber-500/30 bg-amber-500/5 mt-4">
-      <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
+      <TriangleAlert className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />
       <div className="text-sm text-amber-600 dark:text-amber-400">{children}</div>
     </div>
   );
@@ -233,9 +233,9 @@ print(completion.choices[0].message.content)`,
 
   const tabs: { key: Language; label: string; icon: React.ReactNode }[] = [
     { key: 'curl', label: 'cURL', icon: <Terminal className="h-4 w-4" /> },
-    { key: 'nodejs', label: 'Node.js', icon: <Code2 className="h-4 w-4" /> },
-    { key: 'python', label: 'Python', icon: <Code2 className="h-4 w-4" /> },
-    { key: 'claude', label: 'Claude Code', icon: <Code2 className="h-4 w-4" /> },
+    { key: 'nodejs', label: 'Node.js', icon: <Code className="h-4 w-4" /> },
+    { key: 'python', label: 'Python', icon: <Code className="h-4 w-4" /> },
+    { key: 'claude', label: 'Claude Code', icon: <Code className="h-4 w-4" /> },
   ];
 
   return (

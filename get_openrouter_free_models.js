@@ -9,6 +9,8 @@ const isFreePricing = (pricing = {}) => {
   return pricing.prompt === '0' && pricing.completion === '0';
 };
 
+module.exports = { isFreePricing };
+
 async function main() {
   try {
     console.log('Fetching models from OpenRouter...');
@@ -83,4 +85,6 @@ async function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}

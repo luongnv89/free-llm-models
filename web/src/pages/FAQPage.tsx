@@ -38,15 +38,21 @@ interface FAQItemProps {
 function FAQItem({ id, question, children, defaultOpen = false, targetId }: FAQItemProps) {
   const isTargeted = targetId === id;
   const [isOpen, setIsOpen] = useState(defaultOpen || isTargeted);
+  const [prevTargeted, setPrevTargeted] = useState(isTargeted);
   const itemRef = useRef<HTMLDivElement>(null);
+
+  if (isTargeted !== prevTargeted) {
+    setPrevTargeted(isTargeted);
+    setIsOpen(true);
+  }
 
   useEffect(() => {
     if (isTargeted) {
-      setIsOpen(true);
       // Scroll to the item after a short delay to ensure it's rendered
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         itemRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
+      return () => clearTimeout(timeout);
     }
   }, [isTargeted]);
 

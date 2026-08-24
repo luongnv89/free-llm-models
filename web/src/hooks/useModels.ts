@@ -39,92 +39,102 @@ export function isNewModel(model: Model): boolean {
 
 export function useFilteredModels(
   models: Model[],
-  newModelIds: string[],
+  _newModelIds: string[],
   filters: FilterState,
   sortField: SortField,
   sortOrder: SortOrder
 ) {
-  return useMemo(() => {
-    let filtered = [...models];
+  return useMemo(
+    () => filterAndSortModels(models, filters, sortField, sortOrder),
+    [models, filters, sortField, sortOrder]
+  );
+}
 
-    // Search filter
-    if (filters.search) {
-      const searchLower = filters.search.toLowerCase();
-      filtered = filtered.filter(
-        (m) =>
-          m.name.toLowerCase().includes(searchLower) ||
-          m.description.toLowerCase().includes(searchLower) ||
-          m.id.toLowerCase().includes(searchLower)
-      );
-    }
+export function filterAndSortModels(
+  models: Model[],
+  filters: FilterState,
+  sortField: SortField,
+  sortOrder: SortOrder
+): Model[] {
+  let filtered = [...models];
 
-    // Provider filter
-    if (filters.providers.length > 0) {
-      filtered = filtered.filter((m) =>
-        filters.providers.includes(getProvider(m))
-      );
-    }
+  // Search filter
+  if (filters.search) {
+    const searchLower = filters.search.toLowerCase();
+    filtered = filtered.filter(
+      (m) =>
+        m.name.toLowerCase().includes(searchLower) ||
+        m.description.toLowerCase().includes(searchLower) ||
+        m.id.toLowerCase().includes(searchLower)
+    );
+  }
 
-    // Modality filter
-    if (filters.modalities.length > 0) {
-      filtered = filtered.filter((m) =>
-        filters.modalities.includes(m.architecture.modality)
-      );
-    }
+  // Provider filter
+  if (filters.providers.length > 0) {
+    filtered = filtered.filter((m) =>
+      filters.providers.includes(getProvider(m))
+    );
+  }
 
-    // Context length filter
-    if (filters.contextLengthMin !== null) {
-      filtered = filtered.filter(
-        (m) => m.context_length >= filters.contextLengthMin!
-      );
-    }
-    if (filters.contextLengthMax !== null) {
-      filtered = filtered.filter(
-        (m) => m.context_length <= filters.contextLengthMax!
-      );
-    }
+  // Modality filter
+  if (filters.modalities.length > 0) {
+    filtered = filtered.filter((m) =>
+      filters.modalities.includes(m.architecture.modality)
+    );
+  }
 
-    // Reasoning support filter
-    if (filters.hasReasoning !== null) {
-      filtered = filtered.filter((m) => {
-        const hasReasoning = m.supported_parameters.includes('reasoning') ||
-          m.supported_parameters.includes('include_reasoning');
-        return filters.hasReasoning ? hasReasoning : !hasReasoning;
-      });
-    }
+  // Context length filter
+  if (filters.contextLengthMin !== null) {
+    filtered = filtered.filter(
+      (m) => m.context_length >= filters.contextLengthMin!
+    );
+  }
+  if (filters.contextLengthMax !== null) {
+    filtered = filtered.filter(
+      (m) => m.context_length <= filters.contextLengthMax!
+    );
+  }
 
-    // Tools support filter
-    if (filters.hasTools !== null) {
-      filtered = filtered.filter((m) => {
-        const hasTools = m.supported_parameters.includes('tools');
-        return filters.hasTools ? hasTools : !hasTools;
-      });
-    }
-
-    // Sort
-    filtered.sort((a, b) => {
-      let comparison = 0;
-
-      switch (sortField) {
-        case 'name':
-          comparison = a.name.localeCompare(b.name);
-          break;
-        case 'provider':
-          comparison = getProvider(a).localeCompare(getProvider(b));
-          break;
-        case 'context_length':
-          comparison = a.context_length - b.context_length;
-          break;
-        case 'created':
-          comparison = a.created - b.created;
-          break;
-      }
-
-      return sortOrder === 'asc' ? comparison : -comparison;
+  // Reasoning support filter
+  if (filters.hasReasoning !== null) {
+    filtered = filtered.filter((m) => {
+      const hasReasoning = m.supported_parameters.includes('reasoning') ||
+        m.supported_parameters.includes('include_reasoning');
+      return filters.hasReasoning ? hasReasoning : !hasReasoning;
     });
+  }
 
-    return filtered;
-  }, [models, newModelIds, filters, sortField, sortOrder]);
+  // Tools support filter
+  if (filters.hasTools !== null) {
+    filtered = filtered.filter((m) => {
+      const hasTools = m.supported_parameters.includes('tools');
+      return filters.hasTools ? hasTools : !hasTools;
+    });
+  }
+
+  // Sort
+  filtered.sort((a, b) => {
+    let comparison = 0;
+
+    switch (sortField) {
+      case 'name':
+        comparison = a.name.localeCompare(b.name);
+        break;
+      case 'provider':
+        comparison = getProvider(a).localeCompare(getProvider(b));
+        break;
+      case 'context_length':
+        comparison = a.context_length - b.context_length;
+        break;
+      case 'created':
+        comparison = a.created - b.created;
+        break;
+    }
+
+    return sortOrder === 'asc' ? comparison : -comparison;
+  });
+
+  return filtered;
 }
 
 export function getUniqueProviders(models: Model[]): string[] {

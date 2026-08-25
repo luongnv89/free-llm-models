@@ -125,11 +125,11 @@ export function HomePage() {
                   {data?.fetchedAt ? formatDateTime(data.fetchedAt) : 'Unknown'}
                 </p>
               </div>
-              <Link to="/archive">
-                <Button variant="ghost" size="icon" title="Archive" className="h-9 w-9">
+              <Button asChild variant="ghost" size="icon" className="h-9 w-9">
+                <Link to="/archive" aria-label="Former free models" title="Former free models">
                   <Archive className="h-5 w-5" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
               <Link to="/faq">
                 <Button variant="ghost" size="icon" title="FAQ" className="h-9 w-9">
                   <CircleHelp className="h-5 w-5" />

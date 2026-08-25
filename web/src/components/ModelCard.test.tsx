@@ -6,6 +6,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import { MemoryRouter } from 'react-router-dom';
 import { ModelCard } from './ModelCard';
 import { getProvider } from '@/hooks/useModels';
+import { formatIsoDate } from '@/lib/model-utils';
 import type { Model } from '@/types/model';
 
 function makeModel(overrides: Partial<Model> & Pick<Model, 'id' | 'name'>): Model {
@@ -147,6 +148,19 @@ describe('ModelCard', () => {
       expect(badge).toBeTruthy();
       expect(badge!.querySelector('svg')).toBeTruthy();
     }
+  });
+
+  it('shows the formatted free-list join date', async () => {
+    const addedToFreeList = '2026-02-02T10:30:00Z';
+    await render(
+      makeModel({ id: 'acme/dated', name: 'Dated', addedToFreeList }),
+    );
+    expect(container.textContent).toContain(`Added ${formatIsoDate(addedToFreeList)}`);
+  });
+
+  it('falls back to Unknown when addedToFreeList is missing', async () => {
+    await render(makeModel({ id: 'acme/undated', name: 'Undated' }));
+    expect(container.textContent).toContain('Added Unknown');
   });
 
   it('copies the model id on copy-button click without navigating', async () => {

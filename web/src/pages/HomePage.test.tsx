@@ -142,7 +142,13 @@ describe('HomePage', () => {
     expect(container.textContent).toContain('Old Model');
     expect(container.textContent).toContain('/openrouter_free_models.json');
     expect(container.textContent).toContain('Last updated');
-    expect(container.querySelector('a[href="/archive"]')).toBeTruthy();
+    const archiveLinks = [...container.querySelectorAll('a[href="/archive"]')];
+    const headerArchive = archiveLinks.find(
+      (a) => a.getAttribute('aria-label') === 'Former free models',
+    );
+    expect(headerArchive).toBeTruthy();
+    expect(headerArchive!.querySelector('button')).toBeNull();
+    expect(headerArchive!.tagName).toBe('A');
     expect(container.textContent).toContain('Archive');
   });
 

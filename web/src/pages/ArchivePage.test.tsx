@@ -117,6 +117,17 @@ describe('ArchivePage', () => {
     expect(container.querySelector('a[href="/"]')).toBeTruthy();
   });
 
+  it('keeps a Back to Models path when fetching fails', async () => {
+    fetchMock.mockRejectedValue(new Error('network down'));
+    await renderPage();
+    await settle();
+
+    expect(container.textContent).toContain('Failed to load models');
+    expect(container.textContent).toContain('network down');
+    expect(container.textContent).toContain('Back to Models');
+    expect(container.querySelector('a[href="/"]')).toBeTruthy();
+  });
+
   it('lists archived models with detail links and omits live models', async () => {
     fetchMock.mockResolvedValue({
       ok: true,

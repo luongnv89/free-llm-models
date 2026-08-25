@@ -1,6 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import { Eye, Video, Brain, Wrench } from 'lucide-react';
-import type { Model } from '@/types/model';
+import type { Model, Popularity } from '@/types/model';
 
 export interface ModelCapabilities {
   reasoning: boolean;
@@ -91,4 +91,34 @@ export function calendarDay(isoOrUnix: string | number): string {
     typeof isoOrUnix === 'number' ? new Date(isoOrUnix * 1000) : new Date(isoOrUnix);
   if (Number.isNaN(date.getTime())) return '';
   return date.toISOString().slice(0, 10);
+}
+
+const POPULARITY_REASON_LABELS: Record<string, string> = {
+  unmatched: 'Not in OpenRouter rankings',
+  unavailable: 'Rankings unavailable',
+};
+
+const POPULARITY_SOURCE_LABELS: Record<string, string> = {
+  'rankings-daily': 'OpenRouter daily rankings',
+  'top-weekly': 'OpenRouter weekly rankings',
+};
+
+export function popularityReasonLabel(reason?: string): string {
+  if (!reason) return 'Rankings unavailable';
+  return POPULARITY_REASON_LABELS[reason] ?? 'Rankings unavailable';
+}
+
+export function popularitySourceLabel(source: string): string {
+  return POPULARITY_SOURCE_LABELS[source] ?? source;
+}
+
+export function popularitySummary(popularity: Popularity): string {
+  if (popularity.rank != null) {
+    const tokens =
+      popularity.tokens != null
+        ? ` · ${popularity.tokens.toLocaleString()} tokens`
+        : '';
+    return `Rank #${popularity.rank}${tokens}`;
+  }
+  return popularityReasonLabel(popularity.reason);
 }

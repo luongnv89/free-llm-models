@@ -14,6 +14,8 @@ import {
   modelCapabilities,
   capabilityTags,
   calendarDay,
+  popularitySummary,
+  popularitySourceLabel,
 } from '@/lib/model-utils';
 import {
   ArrowLeft,
@@ -281,21 +283,9 @@ export function ModelDetailPage() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Popularity</p>
-                      {popularity.rank != null ? (
-                        <p className="font-semibold">
-                          Rank #{popularity.rank}
-                          {popularity.tokens != null
-                            ? ` · ${popularity.tokens.toLocaleString()} tokens`
-                            : ''}
-                        </p>
-                      ) : (
-                        <p className="font-semibold">
-                          Unavailable
-                          {popularity.reason ? ` (${popularity.reason})` : ''}
-                        </p>
-                      )}
+                      <p className="font-semibold">{popularitySummary(popularity)}</p>
                       <p className="text-xs text-muted-foreground mt-1">
-                        Source: {popularity.source}
+                        Source: {popularitySourceLabel(popularity.source)}
                         {popularity.asOf ? ` · as of ${formatIsoDate(popularity.asOf)}` : ''}
                       </p>
                       <a

@@ -8,6 +8,9 @@ import {
   modelCapabilities,
   capabilityTags,
   CAPABILITY_TAG_META,
+  popularityReasonLabel,
+  popularitySourceLabel,
+  popularitySummary,
 } from './model-utils';
 
 function makeModel(overrides: Partial<Model> = {}): Model {
@@ -156,5 +159,49 @@ describe('formatDateTime (ISO string)', () => {
 describe('formatIsoDate', () => {
   it('formats an ISO timestamp as a long-form US date', () => {
     expect(formatIsoDate('2026-02-02T10:30:00Z')).toBe('February 2, 2026');
+  });
+});
+
+describe('popularity labels', () => {
+  it('maps miss reasons to user-facing copy', () => {
+    expect(popularityReasonLabel('unmatched')).toBe('Not in OpenRouter rankings');
+    expect(popularityReasonLabel('unavailable')).toBe('Rankings unavailable');
+    expect(popularityReasonLabel(undefined)).toBe('Rankings unavailable');
+    expect(popularityReasonLabel('mystery')).toBe('Rankings unavailable');
+  });
+
+  it('maps ranking sources to user-facing copy', () => {
+    expect(popularitySourceLabel('rankings-daily')).toBe('OpenRouter daily rankings');
+    expect(popularitySourceLabel('top-weekly')).toBe('OpenRouter weekly rankings');
+  });
+
+  it('keeps rank and tokens when present', () => {
+    expect(
+      popularitySummary({
+        rank: 3,
+        tokens: 1500,
+        source: 'rankings-daily',
+        asOf: '2026-08-20T12:00:00Z',
+      }),
+    ).toBe('Rank #3 · 1,500 tokens');
+  });
+
+  it('does not repeat Unavailable for miss reasons', () => {
+    expect(
+      popularitySummary({
+        rank: null,
+        source: 'rankings-daily',
+        reason: 'unavailable',
+        asOf: '2026-08-20T12:00:00Z',
+      }),
+    ).toBe('Rankings unavailable');
+    expect(
+      popularitySummary({
+        rank: null,
+        source: 'rankings-daily',
+        reason: 'unmatched',
+        asOf: '2026-08-20T12:00:00Z',
+      }),
+    ).toBe('Not in OpenRouter rankings');
   });
 });

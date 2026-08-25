@@ -6,7 +6,7 @@ import { Copy, Check, Sparkles, ArrowRight } from 'lucide-react';
 import type { Model } from '@/types/model';
 import { getProvider } from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
-import { formatContextLength, capabilityTags } from '@/lib/model-utils';
+import { formatContextLength, formatIsoDate, capabilityTags } from '@/lib/model-utils';
 
 interface ModelCardProps {
   model: Model;
@@ -69,6 +69,9 @@ export function ModelCard({ model, isNew }: ModelCardProps) {
           <div className="flex flex-wrap gap-1.5 mb-3">
             <Badge variant="secondary" className="text-xs">
               {formatContextLength(model.context_length)} ctx
+            </Badge>
+            <Badge variant="outline" className="text-xs">
+              Added {model.addedToFreeList ? formatIsoDate(model.addedToFreeList) : 'Unknown'}
             </Badge>
             {tags.map((tag) => {
               const Icon = tag.icon;

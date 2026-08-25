@@ -11,6 +11,9 @@ const assert = require('node:assert');
 require('dotenv').config({ quiet: true });
 
 const { createOpenRouterAdapter } = require('../lib/providers/openrouter');
+const {
+  openRouterModelToCanonical,
+} = require('../lib/providers/schema');
 const { createGroqAdapter } = require('../lib/providers/groq');
 const { createGoogleAdapter } = require('../lib/providers/google');
 const { validateCanonicalModel } = require('../lib/providers/schema');
@@ -24,6 +27,9 @@ const PROVIDERS = [
     // but only run it when smoke mode is explicitly requested so plain
     // `npm test` never touches the network.
     requiresKey: false,
+    // normalize() is a defensive copy that preserves the committed snapshot
+    // format; providerId/sourceUrl are injected by openRouterModelToCanonical.
+    canonicalize: (raw, adapter) => openRouterModelToCanonical(adapter.normalize(raw)),
   },
   {
     id: 'groq',
@@ -64,7 +70,9 @@ for (const provider of PROVIDERS) {
 
     const invalid = [];
     for (const raw of free) {
-      const canonical = adapter.normalize(raw);
+      const canonical = provider.canonicalize
+        ? provider.canonicalize(raw, adapter)
+        : adapter.normalize(raw);
       const result = validateCanonicalModel(canonical);
       if (!result.valid) {
         invalid.push(`${canonical?.id ?? '<unknown>'}: ${result.errors.join('; ')}`);

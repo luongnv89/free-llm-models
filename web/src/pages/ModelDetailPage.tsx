@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CodeSnippets } from '@/components/CodeSnippets';
+import { OriHarnessGuide } from '@/components/OriHarnessGuide';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { useModels, getProvider, isNewModel } from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
@@ -148,6 +149,9 @@ export function ModelDetailPage() {
           <div className="lg:col-span-2 space-y-6">
             {/* Quick Start */}
             <CodeSnippets modelId={model.id} />
+
+            {/* Ori harness */}
+            <OriHarnessGuide modelId={model.id} />
 
             {/* Supported Parameters */}
             <Card>

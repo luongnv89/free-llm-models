@@ -300,7 +300,7 @@ export function FilterSidebar({
       </div>
 
       {/* Desktop: always open + sticky */}
-      <div className="hidden lg:block lg:sticky lg:top-[73px] lg:h-[calc(100vh-73px)] overflow-y-auto p-4 space-y-6">
+      <div className="hidden lg:block lg:sticky lg:top-[var(--header-height,73px)] lg:h-[calc(100vh-var(--header-height,73px))] overflow-y-auto p-4 space-y-6">
         <FiltersContent
           filters={filters}
           providers={providers}

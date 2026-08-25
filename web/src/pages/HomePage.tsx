@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ModelCard } from '@/components/ModelCard';
 import { FilterSidebar } from '@/components/FilterSidebar';
@@ -18,6 +18,7 @@ import {
   useFilteredModels,
   getUniqueProviders,
   getUniqueModalities,
+  getModelsDataUrl,
   isNewModel,
 } from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
@@ -28,6 +29,19 @@ import { LoaderCircle, CircleAlert, Zap, CircleHelp, Globe, Copy, Check } from '
 
 export function HomePage() {
   const { data, loading, error } = useModels();
+  const headerRef = useRef<HTMLElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(73);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const update = () => setHeaderHeight(el.offsetHeight);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [loading]);
+
   const [filters, setFilters] = useState<FilterState>({
     search: '',
     providers: [],
@@ -41,7 +55,7 @@ export function HomePage() {
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
   const { copied, copy } = useCopyToClipboard();
 
-  const dataUrl = `${window.location.origin}/openrouter_free_models.json`;
+  const dataUrl = getModelsDataUrl();
 
   const copyDataUrl = () => copy(dataUrl);
 
@@ -81,13 +95,19 @@ export function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div
+      className="min-h-screen bg-background flex flex-col"
+      style={{ '--header-height': `${headerHeight}px` } as React.CSSProperties}
+    >
       {/* Header */}
-      <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-20">
+      <header
+        ref={headerRef}
+        className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-20"
+      >
         <div className="px-4 py-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 bg-black rounded-lg flex items-center justify-center">
+              <div className="h-10 w-10 bg-black dark:bg-white rounded-lg flex items-center justify-center">
                 <Zap className="h-6 w-6 text-[var(--highlight)]" />
               </div>
               <div>
@@ -181,7 +201,7 @@ export function HomePage() {
           )}
 
           {/* Search and Sort (sticky on mobile) */}
-          <div className="sticky top-[73px] z-10 bg-background/95 backdrop-blur -mx-4 px-4 pt-3 lg:static lg:z-auto lg:bg-transparent lg:backdrop-blur-0 lg:mx-0 lg:px-0 lg:pt-0">
+          <div className="sticky top-[var(--header-height)] z-10 bg-background/95 backdrop-blur -mx-4 px-4 pt-3 lg:static lg:z-auto lg:bg-transparent lg:backdrop-blur-0 lg:mx-0 lg:px-0 lg:pt-0">
             <SearchBar
               search={filters.search}
               onSearchChange={(value) => setFilters({ ...filters, search: value })}

@@ -19,13 +19,19 @@ module.exports = {
   buildLegacyOpenRouterOutput: runner.buildLegacyOpenRouterOutput,
   writeLegacyOpenRouterSnapshot: runner.writeLegacyOpenRouterSnapshot,
   runUpdate: runner.runUpdate,
+  parseArgs,
 };
 
 function parseArgs(argv) {
   const args = { providers: process.env.PROVIDERS };
-  for (const arg of argv) {
-    const match = /^--providers=(.+)$/.exec(arg);
-    if (match) args.providers = match[1];
+  for (let i = 0; i < argv.length; i += 1) {
+    const match = /^--providers=(.*)$/.exec(argv[i]);
+    if (match) {
+      args.providers = match[1];
+    } else if (argv[i] === '--providers' && i + 1 < argv.length) {
+      args.providers = argv[i + 1];
+      i += 1;
+    }
   }
   return args;
 }

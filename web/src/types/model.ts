@@ -78,3 +78,24 @@ export interface ResolvedModel {
   archived: boolean;
   archive?: ArchivedModel;
 }
+
+export interface RateLimits {
+  requestsPerMinute?: number | null;
+  tokensPerMinute?: number | null;
+  requestsPerDay?: number | null;
+}
+
+export type CanonicalModel = Model & {
+  providerId: string;
+  sourceUrl?: string | null;
+  rateLimits?: RateLimits | null;
+};
+
+export interface ProviderMetadata {
+  id: string;
+  displayName: string;
+  baseUrl: string | null;
+  apiKeySignupUrl: string | null;
+  docsUrl: string | null;
+  notes: string | null;
+}

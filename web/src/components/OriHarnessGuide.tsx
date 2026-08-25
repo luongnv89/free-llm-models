@@ -21,7 +21,6 @@ const HARNESSES = [
 
 export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
   const installCommand = 'curl -fsSL https://openrouter.ai/labs/ori/install.sh | bash';
-  const launchCommand = `ori <harness> --model ${modelId}`;
   const launchExample = `ori claude --model ${modelId}`;
 
   return (
@@ -116,9 +115,12 @@ ori login`} />
             title="Launch with this model"
             description={
               <span>
-                Pass <code className="bg-muted px-1.5 py-0.5 rounded text-xs">--model</code> with
-                this model's OpenRouter id. Remaining flags pass through to the agent
-                unchanged.
+                Run{' '}
+                <code className="bg-muted px-1.5 py-0.5 rounded text-xs">
+                  ori HARNESS --model {modelId}
+                </code>
+                , replacing HARNESS with a command from the list above. Remaining flags
+                pass through to the agent unchanged.
               </span>
             }
           />
@@ -135,8 +137,7 @@ ori login`} />
           />
         </StepsContainer>
 
-        <CodeBlock language="bash" title="Launch this model" code={`${launchCommand}
-${launchExample}`} />
+        <CodeBlock language="bash" title="Launch this model" code={launchExample} />
 
         <div className="mt-4 p-3 bg-muted/50 rounded-lg border border-border">
           <p className="text-sm text-muted-foreground">

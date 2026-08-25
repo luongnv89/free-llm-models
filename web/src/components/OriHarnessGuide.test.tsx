@@ -70,8 +70,9 @@ describe('OriHarnessGuide', () => {
     await render();
 
     expect(container.textContent).toContain('Launch any harness');
-    expect(container.textContent).toContain(`ori <harness> --model ${MODEL_ID}`);
+    expect(container.textContent).toContain(`ori HARNESS --model ${MODEL_ID}`);
     expect(container.textContent).toContain(`ori claude --model ${MODEL_ID}`);
+    expect(container.textContent).not.toContain('ori <harness>');
     expect(container.textContent).toContain('Remaining flags pass through');
   });
 

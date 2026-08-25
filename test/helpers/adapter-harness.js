@@ -105,8 +105,12 @@ function assertCanonicalModelValid(canonical, context = '') {
  * @param {(models: Object[]) => Object} [options.wrapResponse] Wraps the
  *   raw model list into the JSON body shape the adapter parses; defaults
  *   to the OpenRouter-style `{ data: models }`.
+ * @param {string} [options.requiredRawField='id'] Raw entry field whose
+ *   removal must surface a CanonicalModel schema failure (providers whose
+ *   identity lives elsewhere — e.g. Google's `name` — override this).
  */
 function runAdapterContract({
+  requiredRawField = 'id',
   adapterName,
   createAdapter,
   fixtureModels,
@@ -190,7 +194,7 @@ function runAdapterContract({
   test(`${adapterName}: harness fails loudly on missing required fields`, () => {
     const adapter = makeOfflineAdapter();
     const broken = JSON.parse(JSON.stringify(fixtureModels[0]));
-    delete broken.id;
+    delete broken[requiredRawField];
 
     const canonical = toCanon(adapter.normalize(broken), adapter);
     assert.throws(

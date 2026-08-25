@@ -1,0 +1,42 @@
+{
+  "models": [
+    {
+      "name": "models/gemini-2.5-flash",
+      "version": "2.0",
+      "displayName": "Gemini 2.5 Flash",
+      "description": "Fast and versatile performance across a diverse set of tasks",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": ["generateContent", "countTokens"],
+      "temperatureControl": true,
+      "maxTemperature": 2.0
+    },
+    {
+      "name": "models/gemini-2.5-pro",
+      "version": "2.5",
+      "displayName": "Gemini 2.5 Pro",
+      "description": "Complex reasoning and long-context understanding",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": ["generateContent", "countTokens"]
+    },
+    {
+      "name": "models/gemma-3-27b-it",
+      "version": "3",
+      "displayName": "Gemma 3 27B",
+      "description": "Lightweight open model built from Gemini technology",
+      "inputTokenLimit": 131072,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": ["generateContent"]
+    },
+    {
+      "name": "models/gemini-embedding-001",
+      "version": "001",
+      "displayName": "Gemini Embedding 001",
+      "description": "Text embedding model",
+      "inputTokenLimit": 2048,
+      "outputTokenLimit": 1,
+      "supportedGenerationMethods": ["embedContent"]
+    }
+  ]
+}

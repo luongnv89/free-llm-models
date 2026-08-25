@@ -6,7 +6,7 @@ import { Copy, Check, Sparkles, ArrowRight } from 'lucide-react';
 import type { Model } from '@/types/model';
 import { getProvider } from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
-import { formatContextLength, modelCapabilities } from '@/lib/model-utils';
+import { formatContextLength, capabilityTags } from '@/lib/model-utils';
 
 interface ModelCardProps {
   model: Model;
@@ -23,8 +23,7 @@ export function ModelCard({ model, isNew }: ModelCardProps) {
     copy(model.id);
   };
 
-  const { reasoning: hasReasoning, tools: hasTools, vision: hasVision, video: hasVideo } =
-    modelCapabilities(model);
+  const tags = capabilityTags(model);
 
   return (
     <Link to={`/model/${encodeURIComponent(model.id)}`}>
@@ -71,18 +70,15 @@ export function ModelCard({ model, isNew }: ModelCardProps) {
             <Badge variant="secondary" className="text-xs">
               {formatContextLength(model.context_length)} ctx
             </Badge>
-            {hasVision && (
-              <Badge variant="secondary" className="text-xs">Vision</Badge>
-            )}
-            {hasVideo && (
-              <Badge variant="secondary" className="text-xs">Video</Badge>
-            )}
-            {hasReasoning && (
-              <Badge variant="secondary" className="text-xs">Reasoning</Badge>
-            )}
-            {hasTools && (
-              <Badge variant="secondary" className="text-xs">Tools</Badge>
-            )}
+            {tags.map((tag) => {
+              const Icon = tag.icon;
+              return (
+                <Badge key={tag.key} variant={tag.variant} className="text-xs">
+                  <Icon aria-hidden="true" />
+                  {tag.label}
+                </Badge>
+              );
+            })}
           </div>
 
           <div className="flex items-center justify-between pt-2 border-t border-border">

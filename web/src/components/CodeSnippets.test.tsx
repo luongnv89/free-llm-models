@@ -65,4 +65,31 @@ describe('CodeSnippets', () => {
     expect(container.textContent).toContain(`model="${MODEL_ID}"`);
     expect(container.textContent).not.toContain('Claude Code');
   });
+
+  it('does not mark a step copied when the clipboard write fails', async () => {
+    const original = navigator.clipboard;
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText: () => Promise.reject(new Error('denied')) },
+    });
+    try {
+      await render();
+
+      const copyButton = [...container.querySelectorAll('button')].find(
+        (button) => button.getAttribute('aria-label') === 'Copy: Set your API key',
+      );
+      expect(copyButton).toBeTruthy();
+
+      await act(async () => {
+        copyButton!.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+      });
+
+      expect(container.textContent).toContain('0/2');
+    } finally {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: original,
+      });
+    }
+  });
 });

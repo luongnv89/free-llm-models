@@ -53,8 +53,8 @@
   --border: #e5e5e5;
   --input: #e5e5e5;
   --ring: #a3a3a3;
-  /* Bright green for highlights */
-  --highlight: #22c55e;
+  /* Darker green for AA contrast when used as text/icons on white cards */
+  --highlight: #15803d;
   --highlight-foreground: #000000;
   /* Status colors (text only) */
   --success: #22c55e;
@@ -120,6 +120,18 @@
     linear-gradient(to right, color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px),
     linear-gradient(to bottom, color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
 }
 
 /* Custom scrollbar */

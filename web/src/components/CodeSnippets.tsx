@@ -150,8 +150,9 @@ export function CodeSnippets({ modelId }: CodeSnippetsProps) {
   const steps = allSteps[activeTab];
   const doneCount = steps.filter((_, i) => copiedKeys.has(`${activeTab}:${i}`)).length;
 
-  const handleCopy = (key: string, code: string) => {
-    void copy(code);
+  const handleCopy = async (key: string, code: string) => {
+    const ok = await copy(code);
+    if (!ok) return;
     setCopiedKeys((prev) => new Set(prev).add(key));
     setFlashKey(key);
     if (flashTimer.current) clearTimeout(flashTimer.current);
@@ -260,7 +261,7 @@ export function CodeSnippets({ modelId }: CodeSnippetsProps) {
                     <button
                       onClick={() => handleCopy(key, step.code)}
                       aria-label={`Copy: ${step.title}`}
-                      className={`absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-md transition-colors ${
+                      className={`absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
                         isDone
                           ? 'text-[var(--highlight)]'
                           : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'

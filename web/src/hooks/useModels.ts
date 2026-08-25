@@ -2,25 +2,44 @@ import { useState, useEffect, useMemo } from 'react';
 import type { Model, ModelsData, FilterState, SortField, SortOrder } from '@/types/model';
 import { modelCapabilities } from '@/lib/model-utils';
 
+let cachedData: ModelsData | null = null;
+
+export function getModelsDataUrl(): string {
+  return `${import.meta.env.BASE_URL}openrouter_free_models.json`;
+}
+
 export function useModels() {
-  const [data, setData] = useState<ModelsData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<ModelsData | null>(cachedData);
+  const [loading, setLoading] = useState(cachedData === null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}openrouter_free_models.json`)
+    if (cachedData) return;
+
+    const controller = new AbortController();
+    let cancelled = false;
+
+    fetch(getModelsDataUrl(), { signal: controller.signal })
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load models');
         return res.json();
       })
       .then((json: ModelsData) => {
+        if (cancelled) return;
+        cachedData = json;
         setData(json);
         setLoading(false);
       })
       .catch((err) => {
+        if (cancelled || err.name === 'AbortError') return;
         setError(err.message);
         setLoading(false);
       });
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
   }, []);
 
   return { data, loading, error };

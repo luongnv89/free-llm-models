@@ -210,8 +210,8 @@ export function ModelDetailPage() {
                 </div>
 
                 {model.expiration_date && (
-                  <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg">
-                    <p className="text-sm text-amber-700">
+                  <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
+                    <p className="text-sm text-amber-600 dark:text-amber-400">
                       <span className="font-medium">Expires:</span>{' '}
                       {model.expiration_date}
                     </p>

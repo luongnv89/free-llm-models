@@ -10,13 +10,12 @@ const {
   relativeRankFromTopWeekly,
   pickLatestRankingsDay,
 } = require('./lib/free-models-popularity');
+const {
+  isFreePricing,
+  createOpenRouterAdapter,
+} = require('./lib/providers/openrouter');
 
-// Optional: public /models listing works without a key; key is used when present.
-const API_KEY = process.env.OPENROUTER_API_KEY || '';
-
-const isFreePricing = (pricing = {}) => {
-  return pricing.prompt === '0' && pricing.completion === '0';
-};
+const adapter = createOpenRouterAdapter();
 
 module.exports = {
   isFreePricing,
@@ -29,31 +28,15 @@ module.exports = {
   pickLatestRankingsDay,
 };
 
-function requestHeaders() {
-  const headers = {
-    Accept: 'application/json',
-    'User-Agent': 'openrouter-free-models-updater',
-  };
-  if (API_KEY) {
-    headers.Authorization = `Bearer ${API_KEY}`;
-  }
-  return headers;
-}
-
-async function fetchJson(url, headers) {
-  const res = await fetch(url, { headers });
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
-  return res.json();
-}
-
 async function main() {
   try {
     console.log('Fetching models from OpenRouter...');
-    console.log(`Auth: ${API_KEY ? 'OPENROUTER_API_KEY' : 'none (public models endpoint)'}`);
+    console.log(`Auth: ${adapter.hasApiKey() ? 'OPENROUTER_API_KEY' : 'none (public models endpoint)'}`);
 
-    const headers = requestHeaders();
-    const { data } = await fetchJson('https://openrouter.ai/api/v1/models', headers);
-    const freeModels = data.filter((m) => isFreePricing(m.pricing));
+    const data = await adapter.fetchModels();
+    const freeModels = data
+      .filter((m) => adapter.isFree(m))
+      .map((m) => adapter.normalize(m));
 
     console.log(`Found ${freeModels.length} free models`);
 
@@ -67,12 +50,9 @@ async function main() {
     );
 
     let rankingsDaily = null;
-    if (shouldFetchRankingsDaily(API_KEY)) {
+    if (shouldFetchRankingsDaily(adapter.hasApiKey())) {
       try {
-        rankingsDaily = await fetchJson(
-          'https://openrouter.ai/api/v1/datasets/rankings-daily',
-          headers
-        );
+        rankingsDaily = await adapter.fetchRankingsDaily();
         console.log('Fetched rankings-daily');
       } catch (err) {
         console.warn(`rankings-daily fetch failed: ${err.message}`);
@@ -83,11 +63,7 @@ async function main() {
 
     let topWeekly = null;
     try {
-      const weekly = await fetchJson(
-        'https://openrouter.ai/api/v1/models?sort=top-weekly',
-        headers
-      );
-      topWeekly = weekly.data || [];
+      topWeekly = await adapter.fetchTopWeekly();
       console.log(`Fetched top-weekly (${topWeekly.length} models)`);
     } catch (err) {
       console.warn(`top-weekly fetch failed: ${err.message}`);
@@ -98,7 +74,7 @@ async function main() {
       rankingsDaily,
       topWeekly,
       asOf: fetchedAt,
-      hasApiKey: API_KEY,
+      hasApiKey: adapter.hasApiKey(),
     });
 
     const output = {

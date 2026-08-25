@@ -117,8 +117,10 @@ function runAdapterContract({
   if (typeof createAdapter !== 'function') {
     throw new TypeError('runAdapterContract requires a createAdapter factory');
   }
-  if (!Array.isArray(fixtureModels)) {
-    throw new TypeError('runAdapterContract requires fixtureModels: Object[]');
+  if (!Array.isArray(fixtureModels) || fixtureModels.length === 0) {
+    throw new TypeError(
+      'runAdapterContract requires a non-empty fixtureModels: Object[]'
+    );
   }
 
   const toCanon =
@@ -191,7 +193,11 @@ function runAdapterContract({
     delete broken.id;
 
     const canonical = toCanon(adapter.normalize(broken), adapter);
-    assert.throws(() => assertCanonicalModelValid(canonical, broken.name));
+    assert.throws(
+      () => assertCanonicalModelValid(canonical, broken.name),
+      /failed validation/,
+      'removing id must surface a CanonicalModel schema failure, not an incidental throw'
+    );
   });
 }
 

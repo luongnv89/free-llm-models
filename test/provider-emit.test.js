@@ -185,6 +185,35 @@ function groqAdapterMetadata() {
   return { id: 'groq', displayName: 'Groq' };
 }
 
+test('writeProviderOutputs prunes stale provider files from earlier runs', () => {
+  const dir = tmpDir();
+  try {
+    fs.writeFileSync(
+      path.join(dir, 'ghost.json'),
+      JSON.stringify({ providerId: 'ghost', stale: true }),
+      'utf8'
+    );
+
+    const results = [
+      {
+        providerId: 'groq',
+        name: 'Groq',
+        metadata: groqAdapterMetadata(),
+        fetchedAt: '2026-08-25T02:00:00.000Z',
+        models: [{ id: 'g1', providerId: 'groq' }],
+      },
+    ];
+    const { files, pruned } = writeProviderOutputs({ results, outputDir: dir });
+
+    assert.deepStrictEqual(pruned, ['ghost']);
+    assert.ok(!fs.existsSync(path.join(dir, 'ghost.json')));
+    assert.ok(fs.existsSync(path.join(dir, 'groq.json')));
+    assert.strictEqual(files.filter((f) => f.endsWith('.json')).length, files.length);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 test('legacy OpenRouter snapshot format is preserved (backward compat)', async () => {
   const dir = tmpDir();
   try {

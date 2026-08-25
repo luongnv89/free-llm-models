@@ -124,13 +124,16 @@ async function writeLegacyOpenRouterSnapshot({
   outputPath,
 }) {
   const legacyPath = outputPath ?? legacyOutputPath();
+  fs.mkdirSync(path.dirname(legacyPath), { recursive: true });
   const { output, archivedModels, newModelIds } = await buildLegacyOpenRouterOutput(
     adapter,
     freeModels,
     fetchedAt,
     { io, outputPath: legacyPath }
   );
-  io.writeFileSync(legacyPath, JSON.stringify(output, null, 2), 'utf8');
+  const tmpPath = `${legacyPath}.tmp`;
+  io.writeFileSync(tmpPath, JSON.stringify(output, null, 2), 'utf8');
+  io.renameSync(tmpPath, legacyPath);
   console.log(`Written to: ${legacyPath}`);
   console.log(`Archived models: ${archivedModels.length}`);
 
@@ -138,7 +141,7 @@ async function writeLegacyOpenRouterSnapshot({
     console.log(`New models detected: ${newModelIds.length}`);
     newModelIds.forEach((id) => console.log(`  - ${id}`));
   }
-  return outputPath;
+  return legacyPath;
 }
 
 async function main() {
@@ -179,8 +182,11 @@ async function main() {
   }
 
   const outputDir = path.join(__dirname, 'web', 'public', 'models');
-  const { files } = writeProviderOutputs({ results, outputDir });
+  const { files, pruned } = writeProviderOutputs({ results, outputDir });
   files.forEach((f) => console.log(`Written to: ${f}`));
+  if (pruned.length > 0) {
+    pruned.forEach((id) => console.warn(`Pruned stale provider file: ${id}.json`));
+  }
 
   console.log(
     `Emitted ${results.length} provider file(s)` +
@@ -190,5 +196,8 @@ async function main() {
 }
 
 if (require.main === module) {
-  main();
+  main().catch((error) => {
+    console.error('Error:', error.message);
+    process.exit(1);
+  });
 }

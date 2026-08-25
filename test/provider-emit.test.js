@@ -302,12 +302,14 @@ test('legacy OpenRouter snapshot format is preserved (backward compat)', async (
     const archived = doc.archivedModels[0];
     assert.deepStrictEqual(Object.keys(archived), [
       'id',
+      'providerId',
       'removedAt',
       'lastSeenAt',
       'addedToFreeList',
       'model',
     ]);
     assert.strictEqual(archived.id, 'gone-model');
+    assert.strictEqual(archived.providerId, 'openrouter');
 
     // History merge preserved addedToFreeList for surviving models.
     const kept = doc.models.find((m) => m.id === 'kept-model');

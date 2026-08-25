@@ -275,3 +275,61 @@ test('writeLegacyOpenRouterSnapshot honours io injection (no network, no repo wr
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test('per-provider history merges stay isolated across runs (same model id)', async () => {
+  const dir = tmpDir();
+  try {
+    let t = 0;
+    const stamps = ['2026-08-24T00:00:00.000Z', '2026-08-25T00:00:00.000Z'];
+    const options = () =>
+      makeRunnerOptions(
+        [
+          fakeAdapter('alpha', { rawModels: t === 0 ? [{ id: 'shared' }] : [] }),
+          fakeAdapter('beta', { rawModels: [{ id: 'shared' }] }),
+        ],
+        dir,
+        { now: () => stamps[t], log: () => {}, warn: () => {} }
+      );
+
+    await runUpdate(options());
+    t = 1;
+    await runUpdate(options());
+
+    // alpha dropped the model: it is archived under alpha's providerId only.
+    const alpha = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'alpha.json'), 'utf8'));
+    assert.deepStrictEqual(alpha.newModelIds, []);
+    assert.strictEqual(alpha.archivedModels.length, 1);
+    assert.strictEqual(alpha.archivedModels[0].providerId, 'alpha');
+    assert.strictEqual(alpha.archivedModels[0].removedAt, stamps[1]);
+
+    // beta still serves it: original join stamp preserved, nothing archived.
+    const beta = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'beta.json'), 'utf8'));
+    assert.deepStrictEqual(beta.archivedModels, []);
+    assert.strictEqual(beta.models[0].addedToFreeList, stamps[0]);
+    assert.deepStrictEqual(beta.newModelIds, []);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('a corrupt previous provider history starts fresh instead of failing', async () => {
+  const dir = tmpDir();
+  try {
+    fs.mkdirSync(path.join(dir, 'models'), { recursive: true });
+    fs.writeFileSync(path.join(dir, 'models', 'groq.json'), '{not-json');
+
+    const warnings = [];
+    const summary = await runUpdate(
+      makeRunnerOptions([fakeAdapter('groq', { rawModels: [{ id: 'g1' }] })], dir, {
+        warn: (m) => warnings.push(m),
+      })
+    );
+
+    assert.strictEqual(summary.exitCode, 0);
+    assert.ok(warnings.some((w) => /unreadable, starting fresh/.test(w)));
+    const doc = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'groq.json'), 'utf8'));
+    assert.deepStrictEqual(doc.newModelIds, ['g1']);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

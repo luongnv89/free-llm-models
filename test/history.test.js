@@ -180,3 +180,143 @@ test('first-seen models without prior history use fetchedAt', () => {
   assert.strictEqual(fresh.addedToFreeList, fetchedAt);
   assert.deepStrictEqual(result.newModelIds, ['acme/new']);
 });
+
+const {
+  DEFAULT_PROVIDER_ID,
+  historyEntryKey,
+} = require('../lib/free-models-history');
+const { attachPopularity } = require('../lib/free-models-popularity');
+
+test('history keys are composite and legacy entries default to openrouter', () => {
+  assert.strictEqual(DEFAULT_PROVIDER_ID, 'openrouter');
+  assert.notStrictEqual(
+    historyEntryKey('groq', 'm1'),
+    historyEntryKey('google', 'm1')
+  );
+});
+
+test('legacy-format entries (no providerId) are treated as openrouter', () => {
+  const original = '2026-01-15T12:00:00.000Z';
+  const previous = {
+    fetchedAt: '2026-08-24T00:00:00.000Z',
+    models: [makeModel('legacy/m1', { addedToFreeList: original })],
+    archivedModels: [],
+  };
+  const fetchedAt = '2026-08-25T00:00:00.000Z';
+
+  const openrouterResult = mergeFreeListHistory(previous, [makeModel('legacy/m1')], fetchedAt);
+  assert.strictEqual(openrouterResult.models[0].addedToFreeList, original);
+  assert.deepStrictEqual(openrouterResult.newModelIds, []);
+
+  // Another provider must not see the legacy OpenRouter entry.
+  const googleResult = mergeFreeListHistory(
+    previous,
+    [makeModel('legacy/m1')],
+    fetchedAt,
+    { providerId: 'google' }
+  );
+  assert.strictEqual(googleResult.models[0].addedToFreeList, fetchedAt);
+  assert.deepStrictEqual(googleResult.newModelIds, ['legacy/m1']);
+  assert.deepStrictEqual(googleResult.archivedModels, []);
+});
+
+test('same model id on two providers stays distinct', () => {
+  const groqAdded = '2026-02-01T00:00:00.000Z';
+  const orAdded = '2026-03-01T00:00:00.000Z';
+  const previous = {
+    fetchedAt: '2026-08-24T00:00:00.000Z',
+    models: [
+      { ...makeModel('dup/model', { addedToFreeList: groqAdded }), providerId: 'groq' },
+      makeModel('dup/model', { addedToFreeList: orAdded }),
+    ],
+  };
+  const fetchedAt = '2026-08-25T00:00:00.000Z';
+
+  const result = mergeFreeListHistory(previous, [makeModel('dup/model')], fetchedAt);
+  assert.strictEqual(result.models[0].addedToFreeList, orAdded);
+  assert.deepStrictEqual(result.newModelIds, []);
+  assert.deepStrictEqual(result.archivedModels, []);
+});
+
+test('newly archived entries carry the slice providerId', () => {
+  const previous = {
+    fetchedAt: '2026-08-24T00:00:00.000Z',
+    models: [{ ...makeModel('gone/m1'), providerId: 'groq' }],
+  };
+  const result = mergeFreeListHistory(previous, [], '2026-08-25T00:00:00.000Z', {
+    providerId: 'groq',
+  });
+  assert.strictEqual(result.archivedModels.length, 1);
+  assert.strictEqual(result.archivedModels[0].providerId, 'groq');
+});
+
+test('legacy archive entries rejoin under openrouter but not other providers', () => {
+  const original = '2026-03-01T00:00:00.000Z';
+  const previous = {
+    fetchedAt: '2026-08-24T00:00:00.000Z',
+    models: [],
+    archivedModels: [
+      {
+        id: 'acme/back',
+        removedAt: '2026-07-01T00:00:00.000Z',
+        lastSeenAt: '2026-06-30T00:00:00.000Z',
+        addedToFreeList: original,
+        model: makeModel('acme/back'),
+      },
+    ],
+  };
+  const fetchedAt = '2026-08-25T00:00:00.000Z';
+
+  const openrouterResult = mergeFreeListHistory(previous, [makeModel('acme/back')], fetchedAt);
+  assert.strictEqual(openrouterResult.models[0].addedToFreeList, original);
+  assert.deepStrictEqual(openrouterResult.archivedModels, []);
+
+  const groqResult = mergeFreeListHistory(
+    previous,
+    [makeModel('acme/back')],
+    fetchedAt,
+    { providerId: 'groq' }
+  );
+  assert.strictEqual(groqResult.models[0].addedToFreeList, fetchedAt);
+  assert.deepStrictEqual(groqResult.archivedModels, []);
+});
+
+test('popularity attaches independently to provider-keyed merged models', () => {
+  const previous = null;
+  const groqAt = '2026-08-24T00:00:00.000Z';
+  const googleAt = '2026-08-25T00:00:00.000Z';
+  const groqSlice = mergeFreeListHistory(
+    previous,
+    [{ ...makeModel('shared/model'), providerId: 'groq' }],
+    groqAt,
+    { providerId: 'groq' }
+  );
+  const googleSlice = mergeFreeListHistory(
+    previous,
+    [{ ...makeModel('shared/model'), providerId: 'google' }],
+    googleAt,
+    { providerId: 'google' }
+  );
+
+  const merged = [...groqSlice.models, ...googleSlice.models];
+  assert.strictEqual(merged.length, 2);
+
+  const withPopularity = attachPopularity({
+    models: merged,
+    topWeekly: [{ id: 'shared/model' }],
+    asOf: googleAt,
+  });
+
+  // Rows stay distinct despite identical ids...
+  assert.deepStrictEqual(withPopularity.map((m) => m.providerId), ['groq', 'google']);
+  // ...keep their independently-merged history stamps...
+  assert.notStrictEqual(
+    withPopularity[0].addedToFreeList,
+    withPopularity[1].addedToFreeList
+  );
+  // ...and each gets its own popularity attachment.
+  assert.deepStrictEqual(
+    withPopularity.map((m) => [m.popularity.source, m.popularity.rank]),
+    [['top-weekly', 1], ['top-weekly', 1]]
+  );
+});

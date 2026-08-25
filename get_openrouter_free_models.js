@@ -2,6 +2,15 @@ require('dotenv').config({ quiet: true });
 const fs = require('fs');
 const path = require('path');
 
+const { loadPreviousSnapshot, mergeFreeListHistory } = require('./lib/free-models-history');
+const {
+  shouldFetchRankingsDaily,
+  attachPopularity,
+  matchRankingsDaily,
+  relativeRankFromTopWeekly,
+  pickLatestRankingsDay,
+} = require('./lib/free-models-popularity');
+
 // Optional: public /models listing works without a key; key is used when present.
 const API_KEY = process.env.OPENROUTER_API_KEY || '';
 
@@ -9,69 +18,105 @@ const isFreePricing = (pricing = {}) => {
   return pricing.prompt === '0' && pricing.completion === '0';
 };
 
-module.exports = { isFreePricing };
+module.exports = {
+  isFreePricing,
+  loadPreviousSnapshot,
+  mergeFreeListHistory,
+  shouldFetchRankingsDaily,
+  attachPopularity,
+  matchRankingsDaily,
+  relativeRankFromTopWeekly,
+  pickLatestRankingsDay,
+};
+
+function requestHeaders() {
+  const headers = {
+    Accept: 'application/json',
+    'User-Agent': 'openrouter-free-models-updater',
+  };
+  if (API_KEY) {
+    headers.Authorization = `Bearer ${API_KEY}`;
+  }
+  return headers;
+}
+
+async function fetchJson(url, headers) {
+  const res = await fetch(url, { headers });
+  if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
+  return res.json();
+}
 
 async function main() {
   try {
     console.log('Fetching models from OpenRouter...');
     console.log(`Auth: ${API_KEY ? 'OPENROUTER_API_KEY' : 'none (public models endpoint)'}`);
 
-    const headers = {
-      Accept: 'application/json',
-      'User-Agent': 'openrouter-free-models-updater',
-    };
-    if (API_KEY) {
-      headers.Authorization = `Bearer ${API_KEY}`;
-    }
-
-    const res = await fetch('https://openrouter.ai/api/v1/models', { headers });
-
-    if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
-
-    const { data } = await res.json();
+    const headers = requestHeaders();
+    const { data } = await fetchJson('https://openrouter.ai/api/v1/models', headers);
     const freeModels = data.filter((m) => isFreePricing(m.pricing));
 
     console.log(`Found ${freeModels.length} free models`);
 
-    // Output path - directly to web/public for automatic website updates
     const outputPath = path.join(__dirname, 'web', 'public', 'openrouter_free_models.json');
+    const previous = loadPreviousSnapshot(outputPath);
+    const fetchedAt = new Date().toISOString();
+    const { models, archivedModels, newModelIds } = mergeFreeListHistory(
+      previous,
+      freeModels,
+      fetchedAt
+    );
 
-    // Load previous data to detect new models
-    let previousModelIds = new Set();
-
-    try {
-      if (fs.existsSync(outputPath)) {
-        const previousData = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
-        previousModelIds = new Set((previousData.models || []).map((m) => m.id));
+    let rankingsDaily = null;
+    if (shouldFetchRankingsDaily(API_KEY)) {
+      try {
+        rankingsDaily = await fetchJson(
+          'https://openrouter.ai/api/v1/datasets/rankings-daily',
+          headers
+        );
+        console.log('Fetched rankings-daily');
+      } catch (err) {
+        console.warn(`rankings-daily fetch failed: ${err.message}`);
       }
-    } catch (e) {
-      console.log('No previous data found, all models will be marked as existing');
+    } else {
+      console.log('Skipping rankings-daily (no OPENROUTER_API_KEY)');
     }
 
-    // Detect new models
-    const newModelIds = freeModels
-      .filter((m) => !previousModelIds.has(m.id))
-      .map((m) => m.id);
+    let topWeekly = null;
+    try {
+      const weekly = await fetchJson(
+        'https://openrouter.ai/api/v1/models?sort=top-weekly',
+        headers
+      );
+      topWeekly = weekly.data || [];
+      console.log(`Fetched top-weekly (${topWeekly.length} models)`);
+    } catch (err) {
+      console.warn(`top-weekly fetch failed: ${err.message}`);
+    }
 
-    const fetchedAt = new Date().toISOString();
+    const modelsWithPopularity = attachPopularity({
+      models,
+      rankingsDaily,
+      topWeekly,
+      asOf: fetchedAt,
+      hasApiKey: API_KEY,
+    });
 
-    // Create output with metadata
     const output = {
       fetchedAt,
-      totalModels: freeModels.length,
+      totalModels: modelsWithPopularity.length,
       newModelIds,
-      models: freeModels,
+      models: modelsWithPopularity,
+      archivedModels,
     };
 
-    // Ensure directory exists
     const webPublicDir = path.join(__dirname, 'web', 'public');
     if (!fs.existsSync(webPublicDir)) {
       fs.mkdirSync(webPublicDir, { recursive: true });
     }
 
-    // Write output file directly to web/public
     fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf8');
     console.log(`Written to: ${outputPath}`);
+    console.log(`Archived models: ${archivedModels.length}`);
 
     if (newModelIds.length > 0) {
       console.log(`New models detected: ${newModelIds.length}`);

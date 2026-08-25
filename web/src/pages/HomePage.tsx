@@ -55,7 +55,7 @@ export function HomePage() {
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
   const { copied, copy } = useCopyToClipboard();
 
-  const dataUrl = getModelsDataUrl();
+  const dataUrl = new URL(getModelsDataUrl(), window.location.origin).href;
 
   const copyDataUrl = () => copy(dataUrl);
 

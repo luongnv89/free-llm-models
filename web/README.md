@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# OpenRouter Free Models — web app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Searchable, filterable UI for [OpenRouter](https://openrouter.ai) models that are currently free. Built with Vite, React 19, TypeScript, and Tailwind CSS 4.
 
-Currently, two official plugins are available:
+## Data flow
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. The root updater (`node get_openrouter_free_models.js`) fetches the OpenRouter
+   models list, filters to free ones, and writes `web/public/openrouter_free_models.json`
+   (generated and committed — never hand-edit it).
+2. This app loads that JSON at runtime and provides search, sort, filtering,
+   per-model pricing details, and a FAQ page.
+3. Deploys (e.g. Netlify) rebuild the static bundle from `web/` whenever `main` changes;
+   `web/netlify.toml` sets security headers, MIME types, and the SPA fallback.
 
-## React Compiler
+## Requirements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js ≥ 22 (`.nvmrc` pins 22; `mise use` or `nvm use` from the repo root)
+- npm
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd web
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command | What it does |
+|---------|--------------|
+| `npm run dev` | Start the Vite dev server with HMR |
+| `npm run build` | Typecheck (`tsc -b`) then build the production bundle into `dist/` |
+| `npm run preview` | Serve the built `dist/` locally |
+| `npm run lint` | ESLint over the project |
+| `npm run test` | Run the vitest suite |
+| `npm run test:coverage` | Run vitest with V8 coverage reporting |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Environment variables
+
+None required. The app is fully static — it only reads `public/openrouter_free_models.json`.
+The optional `OPENROUTER_API_KEY` used by the updater lives at the repo root (see the
+root README); it is not read by this app.

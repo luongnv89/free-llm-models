@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Copy, Check, Sparkles, ArrowRight } from 'lucide-react';
 import type { Model } from '@/types/model';
 import { getProvider } from '@/hooks/useModels';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 import { formatContextLength, modelCapabilities } from '@/lib/model-utils';
 
 interface ModelCardProps {
@@ -14,15 +14,13 @@ interface ModelCardProps {
 }
 
 export function ModelCard({ model, isNew }: ModelCardProps) {
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useCopyToClipboard();
   const provider = getProvider(model);
 
-  const copyModelId = async (e: React.MouseEvent) => {
+  const copyModelId = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    await navigator.clipboard.writeText(model.id);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    copy(model.id);
   };
 
   const { reasoning: hasReasoning, tools: hasTools, vision: hasVision, video: hasVideo } =

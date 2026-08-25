@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CodeSnippets } from '@/components/CodeSnippets';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { useModels, getProvider, isNewModel } from '@/hooks/useModels';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 import {
   formatDate,
   formatContextLength,
@@ -27,17 +27,13 @@ import {
 export function ModelDetailPage() {
   const { modelId } = useParams<{ modelId: string }>();
   const { data, loading, error } = useModels();
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useCopyToClipboard();
 
   const decodedModelId = modelId ? decodeURIComponent(modelId) : '';
   const model = data?.models.find((m) => m.id === decodedModelId);
   const isNew = model ? isNewModel(model) : false;
 
-  const copyModelId = async () => {
-    await navigator.clipboard.writeText(decodedModelId);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const copyModelId = () => copy(decodedModelId);
 
   if (loading) {
     return (

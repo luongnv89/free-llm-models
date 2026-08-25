@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { ModelCard } from '@/components/ModelCard';
 import { FilterSidebar } from '@/components/FilterSidebar';
@@ -20,6 +20,7 @@ import {
   getUniqueModalities,
   isNewModel,
 } from '@/hooks/useModels';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 
 import type { FilterState, SortField, SortOrder } from '@/types/model';
 import { formatDateTime } from '@/lib/model-utils';
@@ -38,15 +39,11 @@ export function HomePage() {
   });
   const [sortField, setSortField] = useState<SortField>('created');
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useCopyToClipboard();
 
   const dataUrl = `${window.location.origin}/openrouter_free_models.json`;
 
-  const copyDataUrl = useCallback(async () => {
-    await navigator.clipboard.writeText(dataUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }, [dataUrl]);
+  const copyDataUrl = () => copy(dataUrl);
 
   const filteredModels = useFilteredModels(
     data?.models ?? [],

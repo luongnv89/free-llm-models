@@ -4,6 +4,9 @@ const {
   createOpenRouterAdapter,
 } = require('../lib/providers/openrouter');
 const {
+  createGroqAdapter,
+} = require('../lib/providers/groq');
+const {
   openRouterModelToCanonical,
 } = require('../lib/providers/schema');
 
@@ -21,4 +24,16 @@ runAdapterContract({
   modelsUrl: 'https://openrouter.example/api/v1/models',
   toCanonical: (raw, adapter) =>
     openRouterModelToCanonical(adapter.normalize(raw)),
+});
+
+// Groq adapter (#51): normalization already yields a valid CanonicalModel.
+runAdapterContract({
+  adapterName: 'groq',
+  createAdapter: (overrides = {}) =>
+    createGroqAdapter({
+      baseUrl: 'https://groq.example/openai/v1',
+      ...overrides,
+    }),
+  fixtureModels: loadFixtureModels('groq-models.json').data,
+  modelsUrl: 'https://groq.example/openai/v1/models',
 });

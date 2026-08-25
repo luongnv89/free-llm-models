@@ -12,6 +12,7 @@ const {
   parseTimeoutMs,
   runUpdate,
   writeLegacyOpenRouterSnapshot,
+  buildLegacyOpenRouterOutput,
 } = require('../lib/providers/run-update');
 
 function fakeAdapter(id, overrides = {}) {
@@ -271,6 +272,141 @@ test('writeLegacyOpenRouterSnapshot honours io injection (no network, no repo wr
     assert.strictEqual(written, legacyPath);
     assert.deepStrictEqual(calls.sort(), ['mkdirSync', 'renameSync', 'writeFileSync']);
     assert.ok(fs.existsSync(legacyPath));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('per-provider history merges stay isolated across runs (same model id)', async () => {
+  const dir = tmpDir();
+  try {
+    let t = 0;
+    const stamps = ['2026-08-24T00:00:00.000Z', '2026-08-25T00:00:00.000Z'];
+    const options = () =>
+      makeRunnerOptions(
+        [
+          fakeAdapter('alpha', { rawModels: t === 0 ? [{ id: 'shared' }] : [] }),
+          fakeAdapter('beta', { rawModels: [{ id: 'shared' }] }),
+        ],
+        dir,
+        { now: () => stamps[t], log: () => {}, warn: () => {} }
+      );
+
+    await runUpdate(options());
+    t = 1;
+    await runUpdate(options());
+
+    // alpha dropped the model: it is archived under alpha's providerId only.
+    const alpha = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'alpha.json'), 'utf8'));
+    assert.deepStrictEqual(alpha.newModelIds, []);
+    assert.strictEqual(alpha.archivedModels.length, 1);
+    assert.strictEqual(alpha.archivedModels[0].providerId, 'alpha');
+    assert.strictEqual(alpha.archivedModels[0].removedAt, stamps[1]);
+
+    // beta still serves it: original join stamp preserved, nothing archived.
+    const beta = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'beta.json'), 'utf8'));
+    assert.deepStrictEqual(beta.archivedModels, []);
+    assert.strictEqual(beta.models[0].addedToFreeList, stamps[0]);
+    assert.deepStrictEqual(beta.newModelIds, []);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('a corrupt previous provider history starts fresh instead of failing', async () => {
+  const dir = tmpDir();
+  try {
+    fs.mkdirSync(path.join(dir, 'models'), { recursive: true });
+    fs.writeFileSync(path.join(dir, 'models', 'groq.json'), '{not-json');
+
+    const warnings = [];
+    const summary = await runUpdate(
+      makeRunnerOptions([fakeAdapter('groq', { rawModels: [{ id: 'g1' }] })], dir, {
+        warn: (m) => warnings.push(m),
+      })
+    );
+
+    assert.strictEqual(summary.exitCode, 0);
+    assert.ok(warnings.some((w) => /unreadable, starting fresh/.test(w)));
+    const doc = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'groq.json'), 'utf8'));
+    assert.deepStrictEqual(doc.newModelIds, ['g1']);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('a merge failure on one provider never blocks the others', async () => {
+  const dir = tmpDir();
+  try {
+    const warnings = [];
+    const summary = await runUpdate(
+      makeRunnerOptions(
+        [
+          fakeAdapter('bad', { rawModels: [{ id: 'nul\u0000id' }] }),
+          fakeAdapter('good', { rawModels: [{ id: 'g1' }] }),
+        ],
+        dir,
+        { warn: (m) => warnings.push(m) }
+      )
+    );
+
+    assert.strictEqual(summary.exitCode, 0);
+    assert.deepStrictEqual(summary.succeeded.sort(), ['bad', 'good']);
+    assert.ok(warnings.some((w) => /history merge for bad failed/.test(w)));
+
+    // The failing provider is still emitted (without history fields).
+    const bad = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'bad.json'), 'utf8'));
+    assert.strictEqual(bad.models[0].id, 'nul\u0000id');
+    assert.strictEqual('newModelIds' in bad, false);
+
+    // The healthy provider keeps its full history treatment.
+    const good = JSON.parse(fs.readFileSync(path.join(dir, 'models', 'good.json'), 'utf8'));
+    assert.deepStrictEqual(good.newModelIds, ['g1']);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('buildLegacyOpenRouterOutput composes the history merge with popularity', async () => {
+  const dir = tmpDir();
+  try {
+    const legacyPath = path.join(dir, 'legacy.json');
+    const original = '2026-01-01T00:00:00.000Z';
+    fs.writeFileSync(
+      legacyPath,
+      JSON.stringify({
+        fetchedAt: '2026-08-20T00:00:00.000Z',
+        models: [{ id: 'm1', name: 'M1', addedToFreeList: original }],
+        archivedModels: [],
+      })
+    );
+
+    const adapter = {
+      id: 'openrouter',
+      hasApiKey: () => false,
+      fetchTopWeekly: async () => [{ id: 'm1' }],
+    };
+
+    const { output } = await buildLegacyOpenRouterOutput(
+      adapter,
+      [{ id: 'm1', name: 'M1' }, { id: 'm2', name: 'M2' }],
+      '2026-08-25T00:00:00.000Z',
+      { io: fs, outputPath: legacyPath, log: () => {}, warn: () => {} }
+    );
+
+    // History merge ran against the previous legacy snapshot...
+    assert.strictEqual(output.totalModels, 2);
+    assert.deepStrictEqual(output.newModelIds, ['m2']);
+    assert.deepStrictEqual(output.archivedModels, []);
+    assert.strictEqual(
+      output.models.find((m) => m.id === 'm1').addedToFreeList,
+      original
+    );
+    // ...and popularity attached on top of the merged rows.
+    assert.deepStrictEqual(
+      output.models.map((m) => [m.popularity?.source, m.popularity?.rank ?? null]),
+      [['top-weekly', 1], ['top-weekly', null]]
+    );
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }

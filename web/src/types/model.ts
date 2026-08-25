@@ -17,6 +17,14 @@ export interface TopProvider {
   is_moderated: boolean;
 }
 
+export interface Popularity {
+  rank: number | null;
+  tokens?: number | null;
+  source: string;
+  asOf: string;
+  reason?: string;
+}
+
 export interface Model {
   id: string;
   canonical_slug: string;
@@ -32,6 +40,16 @@ export interface Model {
   supported_parameters: string[];
   default_parameters: Record<string, unknown>;
   expiration_date: string | null;
+  addedToFreeList?: string;
+  popularity?: Popularity;
+}
+
+export interface ArchivedModel {
+  id: string;
+  removedAt: string;
+  lastSeenAt: string;
+  addedToFreeList?: string;
+  model: Model;
 }
 
 export interface ModelsData {
@@ -39,9 +57,10 @@ export interface ModelsData {
   totalModels: number;
   newModelIds: string[];
   models: Model[];
+  archivedModels?: ArchivedModel[];
 }
 
-export type SortField = 'name' | 'provider' | 'context_length' | 'created';
+export type SortField = 'name' | 'provider' | 'context_length' | 'created' | 'addedToFreeList';
 export type SortOrder = 'asc' | 'desc';
 
 export interface FilterState {
@@ -52,4 +71,10 @@ export interface FilterState {
   contextLengthMax: number | null;
   hasReasoning: boolean | null;
   hasTools: boolean | null;
+}
+
+export interface ResolvedModel {
+  model: Model;
+  archived: boolean;
+  archive?: ArchivedModel;
 }

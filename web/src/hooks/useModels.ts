@@ -1,11 +1,54 @@
 import { useState, useEffect, useMemo } from 'react';
-import type { Model, ModelsData, FilterState, SortField, SortOrder } from '@/types/model';
+import type {
+  Model,
+  ModelsData,
+  FilterState,
+  SortField,
+  SortOrder,
+  ArchivedModel,
+  ResolvedModel,
+} from '@/types/model';
 import { modelCapabilities } from '@/lib/model-utils';
 
 let cachedData: ModelsData | null = null;
 
+export function resetModelsCacheForTests() {
+  cachedData = null;
+}
+
 export function getModelsDataUrl(): string {
   return `${import.meta.env.BASE_URL}openrouter_free_models.json`;
+}
+
+export function normalizeModelsData(json: ModelsData): ModelsData {
+  return {
+    ...json,
+    models: Array.isArray(json.models) ? json.models : [],
+    newModelIds: Array.isArray(json.newModelIds) ? json.newModelIds : [],
+    archivedModels: Array.isArray(json.archivedModels) ? json.archivedModels : [],
+  };
+}
+
+export function getArchivedModels(data: ModelsData | null | undefined): ArchivedModel[] {
+  return data?.archivedModels ?? [];
+}
+
+export function findModelById(
+  data: ModelsData | null | undefined,
+  id: string
+): ResolvedModel | null {
+  if (!data || !id) return null;
+  const live = data.models.find((m) => m.id === id);
+  if (live) return { model: live, archived: false };
+
+  const archive = getArchivedModels(data).find((entry) => entry.id === id);
+  if (!archive?.model) return null;
+
+  const model: Model = {
+    ...archive.model,
+    addedToFreeList: archive.addedToFreeList ?? archive.model.addedToFreeList,
+  };
+  return { model, archived: true, archive };
 }
 
 export function useModels() {
@@ -26,8 +69,9 @@ export function useModels() {
       })
       .then((json: ModelsData) => {
         if (cancelled) return;
-        cachedData = json;
-        setData(json);
+        const normalized = normalizeModelsData(json);
+        cachedData = normalized;
+        setData(normalized);
         setLoading(false);
       })
       .catch((err) => {
@@ -52,9 +96,18 @@ export function getProvider(model: Model): string {
 const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
 
 export function isNewModel(model: Model): boolean {
-  const now = Date.now();
-  const createdMs = model.created * 1000; // created is in seconds
-  return now - createdMs <= THREE_DAYS_MS;
+  if (!model.addedToFreeList) return false;
+  const addedMs = Date.parse(model.addedToFreeList);
+  if (Number.isNaN(addedMs)) return false;
+  return Date.now() - addedMs <= THREE_DAYS_MS;
+}
+
+function addedToFreeListMs(model: Model): number {
+  if (model.addedToFreeList) {
+    const parsed = Date.parse(model.addedToFreeList);
+    if (!Number.isNaN(parsed)) return parsed;
+  }
+  return model.created * 1000;
 }
 
 export function useFilteredModels(
@@ -146,6 +199,9 @@ export function filterAndSortModels(
         break;
       case 'created':
         comparison = a.created - b.created;
+        break;
+      case 'addedToFreeList':
+        comparison = addedToFreeListMs(a) - addedToFreeListMs(b);
         break;
     }
 

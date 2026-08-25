@@ -25,7 +25,7 @@ import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 
 import type { FilterState, SortField, SortOrder } from '@/types/model';
 import { formatDateTime } from '@/lib/model-utils';
-import { LoaderCircle, CircleAlert, Zap, CircleHelp, Globe, Copy, Check } from 'lucide-react';
+import { LoaderCircle, CircleAlert, Zap, CircleHelp, Globe, Copy, Check, Archive } from 'lucide-react';
 
 export function HomePage() {
   const { data, loading, error } = useModels();
@@ -51,7 +51,7 @@ export function HomePage() {
     hasReasoning: null,
     hasTools: null,
   });
-  const [sortField, setSortField] = useState<SortField>('created');
+  const [sortField, setSortField] = useState<SortField>('addedToFreeList');
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
   const { copied, copy } = useCopyToClipboard();
 
@@ -125,6 +125,11 @@ export function HomePage() {
                   {data?.fetchedAt ? formatDateTime(data.fetchedAt) : 'Unknown'}
                 </p>
               </div>
+              <Link to="/archive">
+                <Button variant="ghost" size="icon" title="Archive" className="h-9 w-9">
+                  <Archive className="h-5 w-5" />
+                </Button>
+              </Link>
               <Link to="/faq">
                 <Button variant="ghost" size="icon" title="FAQ" className="h-9 w-9">
                   <CircleHelp className="h-5 w-5" />
@@ -251,6 +256,10 @@ export function HomePage() {
                   OpenRouter API
                 </a>
               </span>
+              <span>·</span>
+              <Link to="/archive" className="hover:text-[var(--highlight)] transition-colors">
+                Archive
+              </Link>
               <span>·</span>
               <Link to="/faq" className="hover:text-[var(--highlight)] transition-colors">
                 FAQ

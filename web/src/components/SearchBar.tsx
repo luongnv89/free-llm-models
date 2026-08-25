@@ -53,7 +53,7 @@ export function SearchBar({
             <SelectItem value="name">Name</SelectItem>
             <SelectItem value="provider">Provider</SelectItem>
             <SelectItem value="context_length">Context</SelectItem>
-            <SelectItem value="created">Date Added</SelectItem>
+            <SelectItem value="addedToFreeList">Date Added</SelectItem>
           </SelectContent>
         </Select>
         <Button

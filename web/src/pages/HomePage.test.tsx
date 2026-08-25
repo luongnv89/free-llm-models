@@ -5,6 +5,7 @@ import { createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { MemoryRouter } from 'react-router-dom';
 import { HomePage } from './HomePage';
+import { resetModelsCacheForTests } from '@/hooks/useModels';
 import type { ModelsData } from '@/types/model';
 
 function makeModelsData(): ModelsData {
@@ -34,11 +35,12 @@ function makeModelsData(): ModelsData {
         expiration_date: null,
         id: 'acme/fresh',
         name: 'Fresh Model',
+        addedToFreeList: new Date().toISOString(),
       },
       {
         canonical_slug: '',
         hugging_face_id: null,
-        created: 1700000000,
+        created: Math.floor(Date.now() / 1000),
         description: 'Old model',
         context_length: 8192,
         architecture: {
@@ -87,6 +89,7 @@ async function settle() {
 
 describe('HomePage', () => {
   beforeEach(() => {
+    resetModelsCacheForTests();
     fetchMock = vi.fn();
     globalThis.fetch = fetchMock as unknown as typeof fetch;
     Object.defineProperty(globalThis, 'localStorage', {
@@ -139,6 +142,14 @@ describe('HomePage', () => {
     expect(container.textContent).toContain('Old Model');
     expect(container.textContent).toContain('/openrouter_free_models.json');
     expect(container.textContent).toContain('Last updated');
+    const archiveLinks = [...container.querySelectorAll('a[href="/archive"]')];
+    const headerArchive = archiveLinks.find(
+      (a) => a.getAttribute('aria-label') === 'Former free models',
+    );
+    expect(headerArchive).toBeTruthy();
+    expect(headerArchive!.querySelector('button')).toBeNull();
+    expect(headerArchive!.tagName).toBe('A');
+    expect(container.textContent).toContain('Archive');
   });
 
   it('shows the empty-state message when filters match nothing', async () => {

@@ -1,12 +1,15 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   filterAndSortModels,
+  findModelById,
+  getArchivedModels,
   getProvider,
   getUniqueModalities,
   getUniqueProviders,
   isNewModel,
+  normalizeModelsData,
 } from './useModels';
-import type { FilterState, Model, SortField, SortOrder } from '@/types/model';
+import type { FilterState, Model, ModelsData, SortField, SortOrder } from '@/types/model';
 
 function makeModel(overrides: Partial<Model> & Pick<Model, 'id' | 'name'>): Model {
   return {
@@ -98,9 +101,6 @@ describe('getProvider', () => {
 });
 
 describe('isNewModel', () => {
-  const DAY_S = 24 * 60 * 60;
-  const NOW_S = Math.floor(new Date('2026-08-25T00:00:00Z').getTime() / 1000);
-
   beforeEach(() => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-08-25T00:00:00Z'));
@@ -110,19 +110,36 @@ describe('isNewModel', () => {
     vi.useRealTimers();
   });
 
-  it('returns true within three days of creation', () => {
-    const recent = makeModel({ id: 'a/b', name: 'A', created: NOW_S - DAY_S });
+  it('returns true within three days of addedToFreeList', () => {
+    const recent = makeModel({
+      id: 'a/b',
+      name: 'A',
+      addedToFreeList: '2026-08-24T00:00:00Z',
+    });
     expect(isNewModel(recent)).toBe(true);
   });
 
   it('returns true at exactly the three-day boundary', () => {
-    const boundary = makeModel({ id: 'a/b', name: 'A', created: NOW_S - 3 * DAY_S });
+    const boundary = makeModel({
+      id: 'a/b',
+      name: 'A',
+      addedToFreeList: '2026-08-22T00:00:00Z',
+    });
     expect(isNewModel(boundary)).toBe(true);
   });
 
-  it('returns false after three days from creation', () => {
-    const old = makeModel({ id: 'a/b', name: 'A', created: NOW_S - 4 * DAY_S });
+  it('returns false after three days from addedToFreeList', () => {
+    const old = makeModel({
+      id: 'a/b',
+      name: 'A',
+      addedToFreeList: '2026-08-21T00:00:00Z',
+    });
     expect(isNewModel(old)).toBe(false);
+  });
+
+  it('returns false when addedToFreeList is missing even if created is recent', () => {
+    const nowS = Math.floor(new Date('2026-08-25T00:00:00Z').getTime() / 1000);
+    expect(isNewModel(makeModel({ id: 'a/b', name: 'A', created: nowS }))).toBe(false);
   });
 });
 
@@ -283,6 +300,41 @@ describe('filterAndSortModels', () => {
     ]);
   });
 
+  it('sorts by addedToFreeList and falls back to created when missing', () => {
+    const dated = [
+      makeModel({
+        id: 'a/old-join',
+        name: 'Old Join',
+        created: 1760000000,
+        addedToFreeList: '2026-01-01T00:00:00Z',
+      }),
+      makeModel({
+        id: 'a/new-join',
+        name: 'New Join',
+        created: 1700000000,
+        addedToFreeList: '2026-08-01T00:00:00Z',
+      }),
+      makeModel({
+        id: 'a/no-join',
+        name: 'No Join',
+        created: 1750000000,
+      }),
+    ];
+    const ids = (field: SortField, order: SortOrder) =>
+      filterAndSortModels(dated, noFilters, field, order).map((m) => m.id);
+
+    expect(ids('addedToFreeList', 'asc')).toEqual([
+      'a/no-join',
+      'a/old-join',
+      'a/new-join',
+    ]);
+    expect(ids('addedToFreeList', 'desc')).toEqual([
+      'a/new-join',
+      'a/old-join',
+      'a/no-join',
+    ]);
+  });
+
   it('combines filters and sorting together', () => {
     expect(
       sort('context_length', 'desc', {
@@ -290,5 +342,60 @@ describe('filterAndSortModels', () => {
         contextLengthMin: 100000,
       })
     ).toEqual(['openai/gpt-a']);
+  });
+});
+
+describe('archive resolution', () => {
+  const live = makeModel({ id: 'acme/live', name: 'Live' });
+  const archivedModel = makeModel({
+    id: 'acme/gone',
+    name: 'Gone',
+    addedToFreeList: '2026-01-01T00:00:00Z',
+  });
+  const data: ModelsData = {
+    fetchedAt: '2026-08-25T00:00:00Z',
+    totalModels: 1,
+    newModelIds: [],
+    models: [live],
+    archivedModels: [
+      {
+        id: 'acme/gone',
+        removedAt: '2026-08-01T00:00:00Z',
+        lastSeenAt: '2026-07-31T00:00:00Z',
+        addedToFreeList: '2026-01-01T00:00:00Z',
+        model: archivedModel,
+      },
+    ],
+  };
+
+  it('resolves a live model by id', () => {
+    const resolved = findModelById(data, 'acme/live');
+    expect(resolved?.archived).toBe(false);
+    expect(resolved?.model.name).toBe('Live');
+  });
+
+  it('resolves an archived model by id without mixing it into the live list', () => {
+    const resolved = findModelById(data, 'acme/gone');
+    expect(resolved?.archived).toBe(true);
+    expect(resolved?.model.name).toBe('Gone');
+    expect(resolved?.archive?.removedAt).toBe('2026-08-01T00:00:00Z');
+    expect(data.models.map((m) => m.id)).toEqual(['acme/live']);
+  });
+
+  it('returns null for unknown ids', () => {
+    expect(findModelById(data, 'nope')).toBeNull();
+  });
+
+  it('defaults missing archivedModels to an empty list', () => {
+    expect(
+      getArchivedModels(
+        normalizeModelsData({
+          fetchedAt: '2026-08-25T00:00:00Z',
+          totalModels: 0,
+          newModelIds: [],
+          models: [],
+        })
+      )
+    ).toEqual([]);
   });
 });

@@ -10,6 +10,24 @@ import {
 import { Search, ArrowUpDown } from 'lucide-react';
 import type { SortField, SortOrder } from '@/types/model';
 
+function isDateSortField(field: SortField): boolean {
+  return field === 'addedToFreeList' || field === 'created';
+}
+
+function sortOrderVisibleLabel(field: SortField, order: SortOrder): string {
+  if (isDateSortField(field)) {
+    return order === 'desc' ? 'Newest' : 'Oldest';
+  }
+  return order === 'asc' ? 'A↑' : 'Z↓';
+}
+
+function sortOrderAriaLabel(field: SortField, order: SortOrder): string {
+  if (isDateSortField(field)) {
+    return order === 'desc' ? 'Newest first' : 'Oldest first';
+  }
+  return order === 'asc' ? 'Ascending' : 'Descending';
+}
+
 interface SearchBarProps {
   search: string;
   onSearchChange: (value: string) => void;
@@ -29,6 +47,8 @@ export function SearchBar({
   totalCount,
   filteredCount,
 }: SearchBarProps) {
+  const orderAriaLabel = sortOrderAriaLabel(sortField, sortOrder);
+
   return (
     <div className="flex flex-col sm:flex-row gap-3 pb-4 border-b border-border">
       <div className="relative flex-1">
@@ -45,7 +65,7 @@ export function SearchBar({
           value={sortField}
           onValueChange={(v) => onSortChange(v as SortField, sortOrder)}
         >
-          <SelectTrigger className="w-full sm:w-[140px]">
+          <SelectTrigger className="w-full sm:w-[11.5rem]">
             <ArrowUpDown className="h-4 w-4 mr-2" />
             <SelectValue />
           </SelectTrigger>
@@ -53,19 +73,20 @@ export function SearchBar({
             <SelectItem value="name">Name</SelectItem>
             <SelectItem value="provider">Provider</SelectItem>
             <SelectItem value="context_length">Context</SelectItem>
-            <SelectItem value="created">Date Added</SelectItem>
+            <SelectItem value="addedToFreeList">Date Added</SelectItem>
           </SelectContent>
         </Select>
         <Button
           variant="outline"
-          size="icon"
+          size="sm"
           onClick={() =>
             onSortChange(sortField, sortOrder === 'asc' ? 'desc' : 'asc')
           }
-          title={sortOrder === 'asc' ? 'Ascending' : 'Descending'}
+          aria-label={orderAriaLabel}
+          title={orderAriaLabel}
         >
           <span className="text-xs font-medium">
-            {sortOrder === 'asc' ? 'A↑' : 'Z↓'}
+            {sortOrderVisibleLabel(sortField, sortOrder)}
           </span>
         </Button>
         <span className="text-sm text-muted-foreground whitespace-nowrap">

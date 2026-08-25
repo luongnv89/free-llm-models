@@ -49,9 +49,9 @@ async function render(props: Props = {}) {
   });
 }
 
-async function clickButton(title: string) {
+async function clickButton(name: string) {
   const button = [...container.querySelectorAll('button')].find(
-    (b) => b.getAttribute('title') === title,
+    (b) => b.getAttribute('aria-label') === name,
   );
   expect(button).toBeTruthy();
   await act(async () => {
@@ -103,7 +103,7 @@ describe('SearchBar', () => {
 
   it('toggles sort order desc -> asc on button click', async () => {
     await render({ sortField: 'created', sortOrder: 'desc' });
-    await clickButton('Descending');
+    await clickButton('Newest first');
     expect(captured.sorts).toEqual([['created', 'asc']]);
   });
 
@@ -124,5 +124,30 @@ describe('SearchBar', () => {
     });
     expect(container.textContent).toContain('Context');
     expect(container.textContent).toContain('Z↓');
+  });
+
+  it('shows Newest/Oldest for Date Added instead of A/Z', async () => {
+    await render({ sortField: 'addedToFreeList', sortOrder: 'desc' });
+    expect(container.textContent).toContain('Date Added');
+    expect(container.textContent).toContain('Newest');
+    expect(container.textContent).not.toContain('Z↓');
+    expect(
+      container.querySelector('button[aria-label="Newest first"]'),
+    ).toBeTruthy();
+
+    await act(async () => {
+      root!.render(harness({ sortField: 'addedToFreeList', sortOrder: 'asc' }));
+    });
+    expect(container.textContent).toContain('Oldest');
+    expect(container.textContent).not.toContain('A↑');
+    expect(
+      container.querySelector('button[aria-label="Oldest first"]'),
+    ).toBeTruthy();
+  });
+
+  it('widens the sort trigger enough for Date Added', async () => {
+    await render({ sortField: 'addedToFreeList', sortOrder: 'desc' });
+    const trigger = container.querySelector('[data-slot="select-trigger"]');
+    expect(trigger?.className).toContain('sm:w-[11.5rem]');
   });
 });

@@ -5,12 +5,17 @@ import { Button } from '@/components/ui/button';
 import { CodeSnippets } from '@/components/CodeSnippets';
 import { OriHarnessGuide } from '@/components/OriHarnessGuide';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
-import { useModels, getProvider, isNewModel } from '@/hooks/useModels';
+import { useModels, getProvider, isNewModel, findModelById } from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 import {
   formatDate,
+  formatIsoDate,
   formatContextLength,
   modelCapabilities,
+  capabilityTags,
+  calendarDay,
+  popularitySummary,
+  popularitySourceLabel,
 } from '@/lib/model-utils';
 import {
   ArrowLeft,
@@ -23,6 +28,8 @@ import {
   Cpu,
   Settings,
   TriangleAlert,
+  TrendingUp,
+  Archive,
 } from 'lucide-react';
 
 export function ModelDetailPage() {
@@ -31,8 +38,10 @@ export function ModelDetailPage() {
   const { copied, copy } = useCopyToClipboard();
 
   const decodedModelId = modelId ? decodeURIComponent(modelId) : '';
-  const model = data?.models.find((m) => m.id === decodedModelId);
-  const isNew = model ? isNewModel(model) : false;
+  const resolved = findModelById(data, decodedModelId);
+  const model = resolved?.model;
+  const isArchived = resolved?.archived ?? false;
+  const isNew = model && !isArchived ? isNewModel(model) : false;
 
   const copyModelId = () => copy(decodedModelId);
 
@@ -67,6 +76,14 @@ export function ModelDetailPage() {
   const provider = getProvider(model);
   const { reasoning: hasReasoning, tools: hasTools, vision: hasVision, video: hasVideo } =
     modelCapabilities(model);
+  const tags = capabilityTags(model);
+  const addedLabel = model.addedToFreeList
+    ? formatIsoDate(model.addedToFreeList)
+    : 'Unknown';
+  const showCreated =
+    !model.addedToFreeList ||
+    calendarDay(model.addedToFreeList) !== calendarDay(model.created);
+  const popularity = model.popularity;
 
   return (
     <div className="min-h-screen bg-background">
@@ -74,11 +91,11 @@ export function ModelDetailPage() {
       <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link
-            to="/"
+            to={isArchived ? '/archive' : '/'}
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Models
+            {isArchived ? 'Back to Archive' : 'Back to Models'}
           </Link>
           <DarkModeToggle />
         </div>
@@ -86,6 +103,27 @@ export function ModelDetailPage() {
 
       {/* Main Content */}
       <main className="max-w-5xl mx-auto px-4 py-8">
+        {isArchived && (
+          <div className="mb-6 p-4 border border-amber-500/30 rounded-lg bg-amber-500/10">
+            <div className="flex items-center gap-2 mb-1">
+              <Archive className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+              <span className="text-sm font-medium text-amber-600 dark:text-amber-400">
+                Former free model
+              </span>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              This model is no longer on the free list
+              {resolved?.archive?.removedAt
+                ? ` (removed ${formatIsoDate(resolved.archive.removedAt)})`
+                : ''}
+              .{' '}
+              <Link to="/archive" className="text-[var(--highlight)] hover:underline">
+                View archive
+              </Link>
+            </p>
+          </div>
+        )}
+
         {/* Model Header */}
         <div className="mb-8">
           <div className="flex items-start justify-between gap-4 mb-4">
@@ -122,6 +160,19 @@ export function ModelDetailPage() {
                   )}
                 </Button>
               </div>
+              {tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {tags.map((tag) => {
+                    const Icon = tag.icon;
+                    return (
+                      <Badge key={tag.key} variant={tag.variant} className="text-xs">
+                        <Icon aria-hidden="true" />
+                        {tag.label}
+                      </Badge>
+                    );
+                  })}
+                </div>
+              )}
             </div>
             {model.hugging_face_id && (
               <a
@@ -208,10 +259,46 @@ export function ModelDetailPage() {
                     <Calendar className="h-5 w-5 text-muted-foreground" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Added</p>
-                    <p className="font-semibold">{formatDate(model.created)}</p>
+                    <p className="text-sm text-muted-foreground">Added to free list</p>
+                    <p className="font-semibold">{addedLabel}</p>
                   </div>
                 </div>
+
+                {showCreated && (
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
+                      <Calendar className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Created</p>
+                      <p className="font-semibold">{formatDate(model.created)}</p>
+                    </div>
+                  </div>
+                )}
+
+                {popularity && (
+                  <div className="flex items-start gap-3">
+                    <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center">
+                      <TrendingUp className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Popularity</p>
+                      <p className="font-semibold">{popularitySummary(popularity)}</p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Source: {popularitySourceLabel(popularity.source)}
+                        {popularity.asOf ? ` · as of ${formatIsoDate(popularity.asOf)}` : ''}
+                      </p>
+                      <a
+                        href="https://openrouter.ai/rankings"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-[var(--highlight)] hover:underline"
+                      >
+                        OpenRouter rankings
+                      </a>
+                    </div>
+                  </div>
+                )}
 
                 {model.expiration_date && (
                   <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
@@ -233,25 +320,25 @@ export function ModelDetailPage() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Vision</span>
-                    <Badge variant={hasVision ? 'default' : 'secondary'}>
+                    <Badge variant={hasVision ? 'vision' : 'secondary'}>
                       {hasVision ? 'Yes' : 'No'}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Video</span>
-                    <Badge variant={hasVideo ? 'default' : 'secondary'}>
+                    <Badge variant={hasVideo ? 'video' : 'secondary'}>
                       {hasVideo ? 'Yes' : 'No'}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Reasoning</span>
-                    <Badge variant={hasReasoning ? 'default' : 'secondary'}>
+                    <Badge variant={hasReasoning ? 'reasoning' : 'secondary'}>
                       {hasReasoning ? 'Yes' : 'No'}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm">Tool Use</span>
-                    <Badge variant={hasTools ? 'default' : 'secondary'}>
+                    <Badge variant={hasTools ? 'tools' : 'secondary'}>
                       {hasTools ? 'Yes' : 'No'}
                     </Badge>
                   </div>

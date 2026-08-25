@@ -10,12 +10,15 @@ A tiny site + updater that tracks **OpenRouter models that are currently free** 
 
 1. Fetches OpenRouter models.
 2. Filters to the ones that are free.
-3. Writes `web/public/openrouter_free_models.json`.
-4. The `web/` app loads that JSON and provides search/sort/filters.
+3. Merges join dates and an archive of former free models, then attaches popularity when it can be obtained.
+4. Writes `web/public/openrouter_free_models.json`.
+5. The `web/` app loads that JSON and provides search/sort/filters, an `/archive` of leavers, and capability tags.
 
 ## Repo layout
 
 - `get_openrouter_free_models.js` – fetch + transform logic
+- `lib/free-models-history.js` – join-date stamping and archive merge (no network)
+- `lib/free-models-popularity.js` – rankings-daily / top-weekly matching (no network)
 - `scripts/update_data.sh` – end-to-end updater (pull → fetch → commit → push)
 - `scripts/openrouter-free-models-update.sh` – hardened variant used by the author’s Hermes cron job (lock, dirty-tree guard, mise-managed Node resolution via `scripts/lib/updater-common.sh`)
 - `scripts/install-daily-cron.sh` – installs a user crontab entry for `scripts/update_data.sh`
@@ -37,14 +40,14 @@ npm install
 ```
 
 Create a `.env` (see `.env.example`). `OPENROUTER_API_KEY` is optional — the public
-OpenRouter `/models` endpoint works keyless; set it only for authenticated requests
-or higher rate limits.
+OpenRouter `/models` endpoint works keyless; set it only for authenticated requests,
+higher rate limits, or the rankings-daily popularity dataset.
 
 ## Environment variables
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
-| `OPENROUTER_API_KEY` | no | Sent to the OpenRouter API for authenticated/higher-rate-limit requests. Read by the fetcher and both updater scripts. |
+| `OPENROUTER_API_KEY` | no | Sent to the OpenRouter API for authenticated/higher-rate-limit requests. When set, the updater may also `GET /api/v1/datasets/rankings-daily`. Read by the fetcher and both updater scripts. |
 | `OPENROUTER_ENV_FILE` | no | Path to an env file the updater scripts source when looking for `OPENROUTER_API_KEY`. |
 
 If `OPENROUTER_API_KEY` is not already exported, both updater scripts source the first
@@ -135,6 +138,31 @@ except `logs/`, `node_modules/`, and `.env`. The hardened variant additionally
 refuses to run on a dirty working tree unless `FORCE_UPDATER=1` is set. Do not run
 these scripts from a checkout with work you want to keep — commit or stash first.
 
+## Model history and archive
+
+The updater persists sidecar fields in `web/public/openrouter_free_models.json` (it still writes only that file):
+
+| Field | Meaning |
+|-------|---------|
+| `models[].addedToFreeList` | ISO timestamp when the model was first seen on the free list. Preserved if a model leaves and later returns. |
+| `models[].popularity` | Rank/tokens from OpenRouter when available, or a recorded miss (see below). |
+| `archivedModels` | Models that left the free list, each with `removedAt`, `lastSeenAt`, `addedToFreeList` if known, and a model snapshot. |
+
+**First-run caveat:** the first updater run after this feature ships stamps every *currently* free model with that run's `fetchedAt`. Those dates are an upper bound, not the true first day a model became free. The committed JSON in this repo does not include the sidecar fields until the next scheduled updater run — this change does not rewrite the dataset by itself. The UI defaults gracefully (`archivedModels: []`, missing `addedToFreeList` is unknown / not "New", missing popularity is hidden).
+
+Former free models are listed at `/archive`. Detail URLs (`/model/:modelId`) resolve the live list first, then the archive, so a bookmarked page keeps working after a model leaves.
+
+"New" badges and the home banner use `addedToFreeList` (3-day window). The "Date Added" sort uses the same field (falling back to `created` when it is missing).
+
+## Popularity
+
+When `OPENROUTER_API_KEY` is set, the updater may query `GET /api/v1/datasets/rankings-daily` and match a model by `id`, `canonical_slug`, or a `:free` variant. Without a key that dataset is skipped (the public `/models` listing still works).
+
+If there is no daily ranking match, a relative rank is derived from `GET /api/v1/models?sort=top-weekly` among currently free ids. When neither source matches — or a fetch fails — the updater records a miss (`{ rank: null, tokens: null, source, reason, asOf }`) rather than omitting the field. The site shows the rank/tokens/source or the recorded miss, with a link to [OpenRouter rankings](https://openrouter.ai/rankings).
+
+Source: OpenRouter (openrouter.ai/rankings). Do not scrape the HTML rankings page.
+
 ## Notes
 
 - Mobile UI: filters are collapsed by default; search/sort stays visible while scrolling.
+- Capability tags (vision, video, reasoning, tools) render with an icon and color.

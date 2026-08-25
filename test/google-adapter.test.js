@@ -103,6 +103,11 @@ test('normalize strips the models/ prefix and uses displayName', () => {
   );
   // Names without the prefix pass through unchanged.
   assert.strictEqual(adapter.normalize({ name: 'gemma-3' }).id, 'gemma-3');
+  // Only the leading prefix is stripped; nested slashes survive.
+  assert.strictEqual(
+    adapter.normalize({ name: 'models/tuned/gemini' }).id,
+    'tuned/gemini'
+  );
 
   const canonical = adapter.normalize({
     name: 'models/gemini-2.5-flash',
@@ -170,7 +175,9 @@ test('normalize is idempotent and accepts canonical-shaped input', () => {
   const once = adapter.normalize(fixtureModels[0]);
   const twice = adapter.normalize(once);
 
+  assert.deepStrictEqual(twice, once, 'normalize must be idempotent');
   assert.strictEqual(twice.id, 'gemini-2.5-flash');
+  assert.strictEqual(twice.name, 'Gemini 2.5 Flash');
   assertCanonicalModelValid(twice, 'double-normalized');
 
   // Canonical entries carry id instead of name; both must map identically.

@@ -126,6 +126,29 @@ describe('ModelCard', () => {
     expect(container.textContent).toContain(label);
   });
 
+  it('renders capability tags with icons and color variants', async () => {
+    await render(
+      makeModel({
+        id: 'acme/full',
+        name: 'Full',
+        supported_parameters: ['reasoning', 'tools'],
+        architecture: {
+          modality: 'text->text',
+          input_modalities: ['text', 'image', 'video'],
+          output_modalities: ['text'],
+          tokenizer: 'GPT',
+          instruct_type: null,
+        },
+      }),
+    );
+
+    for (const variant of ['vision', 'video', 'reasoning', 'tools'] as const) {
+      const badge = container.querySelector(`[data-variant="${variant}"]`);
+      expect(badge).toBeTruthy();
+      expect(badge!.querySelector('svg')).toBeTruthy();
+    }
+  });
+
   it('copies the model id on copy-button click without navigating', async () => {
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.defineProperty(window.navigator, 'clipboard', {

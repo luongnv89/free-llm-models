@@ -4,7 +4,10 @@ import {
   formatDate,
   formatContextLength,
   formatDateTime,
+  formatIsoDate,
   modelCapabilities,
+  capabilityTags,
+  CAPABILITY_TAG_META,
 } from './model-utils';
 
 function makeModel(overrides: Partial<Model> = {}): Model {
@@ -82,6 +85,44 @@ describe('modelCapabilities', () => {
   });
 });
 
+describe('capabilityTags', () => {
+  it('exports icon and color metadata for each capability', () => {
+    expect(CAPABILITY_TAG_META.vision).toMatchObject({
+      label: 'Vision',
+      variant: 'vision',
+    });
+    expect(CAPABILITY_TAG_META.vision.icon).toBeTruthy();
+    expect(CAPABILITY_TAG_META.video.variant).toBe('video');
+    expect(CAPABILITY_TAG_META.reasoning.variant).toBe('reasoning');
+    expect(CAPABILITY_TAG_META.tools.variant).toBe('tools');
+  });
+
+  it('returns only supported tags with icon and variant', () => {
+    const tags = capabilityTags(
+      makeModel({
+        supported_parameters: ['reasoning', 'tools'],
+        architecture: {
+          modality: 'image->text',
+          input_modalities: ['image', 'video'],
+          output_modalities: ['text'],
+          tokenizer: 'GPT2',
+          instruct_type: null,
+        },
+      })
+    );
+    expect(tags.map((t) => t.key)).toEqual(['vision', 'video', 'reasoning', 'tools']);
+    for (const tag of tags) {
+      expect(tag.icon).toBe(CAPABILITY_TAG_META[tag.key].icon);
+      expect(tag.variant).toBe(tag.key);
+      expect(tag.label).toBeTruthy();
+    }
+  });
+
+  it('returns no tags for a text-only model without tools or reasoning', () => {
+    expect(capabilityTags(makeModel())).toEqual([]);
+  });
+});
+
 describe('formatContextLength', () => {
   it('formats small lengths as plain numbers', () => {
     expect(formatContextLength(999)).toBe('999');
@@ -109,5 +150,11 @@ describe('formatDate (unix seconds)', () => {
 describe('formatDateTime (ISO string)', () => {
   it('formats an ISO timestamp with short date and time', () => {
     expect(formatDateTime('2026-02-02T10:30:00Z')).toMatch(/^Feb 2, 2026/);
+  });
+});
+
+describe('formatIsoDate', () => {
+  it('formats an ISO timestamp as a long-form US date', () => {
+    expect(formatIsoDate('2026-02-02T10:30:00Z')).toBe('February 2, 2026');
   });
 });

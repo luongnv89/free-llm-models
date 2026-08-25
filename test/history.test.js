@@ -195,6 +195,11 @@ test('history keys are composite and legacy entries default to openrouter', () =
   );
 });
 
+test('historyEntryKey rejects separator (U+0000) injection', () => {
+  assert.throws(() => historyEntryKey('groq', 'a\u0000b'), /U\+0000/);
+  assert.throws(() => historyEntryKey('gr\u0000q', 'm1'), /U\+0000/);
+});
+
 test('legacy-format entries (no providerId) are treated as openrouter', () => {
   const original = '2026-01-15T12:00:00.000Z';
   const previous = {

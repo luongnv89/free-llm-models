@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node get_openrouter_free_models.js",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "test:smoke": "RUN_LIVE_SMOKE=1 node --test test/live-smoke.test.js"
   },
   "dependencies": {
     "dotenv": "^17.4.2"

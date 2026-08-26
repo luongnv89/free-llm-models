@@ -1,0 +1,37 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "llama3.1-8b",
+      "object": "model",
+      "created": 1722476800,
+      "owned_by": "Meta",
+      "context_window": 131072,
+      "max_completion_tokens": 131072
+    },
+    {
+      "id": "llama-3.3-70b",
+      "object": "model",
+      "created": 1735689600,
+      "owned_by": "Meta",
+      "context_window": 131072,
+      "max_completion_tokens": 131072
+    },
+    {
+      "id": "qwen-3-32b",
+      "object": "model",
+      "created": 1743465600,
+      "owned_by": "Alibaba",
+      "context_window": 40960,
+      "max_completion_tokens": 40960
+    },
+    {
+      "id": "gpt-oss-120b",
+      "object": "model",
+      "created": 1755676755,
+      "owned_by": "OpenAI",
+      "context_window": 131072,
+      "max_completion_tokens": 65536
+    }
+  ]
+}

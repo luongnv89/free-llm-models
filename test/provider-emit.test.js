@@ -323,7 +323,13 @@ test('legacy OpenRouter snapshot format is preserved (backward compat)', async (
 
 test('openrouter adapter is registered first and permits keyless fetch', () => {
   const ids = UPDATER.registry.getProviders().map((a) => a.id);
-  assert.deepStrictEqual(ids, ['openrouter', 'groq', 'cerebras', 'google']);
+  assert.deepStrictEqual(ids, [
+    'openrouter',
+    'groq',
+    'cerebras',
+    'google',
+    'mistral',
+  ]);
   const openrouter = UPDATER.registry.getProvider('openrouter');
   assert.strictEqual(openrouter.allowKeylessFetch, true);
 });

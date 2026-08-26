@@ -169,7 +169,7 @@ export function ArchivePage() {
           ) : (
             groups.map((group) => (
               <ProviderGroup key={group.providerId} displayName={group.displayName} count={group.entries.length}>
-                <ol aria-label={`${group.displayName} archived models`}>
+                <ol aria-label={`${group.displayName} archived models`} className="list-none">
                   {group.entries.map((entry, index) => (
                     <ModelListItem
                       key={entry.id}

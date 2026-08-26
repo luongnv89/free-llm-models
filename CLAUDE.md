@@ -42,7 +42,7 @@ Both packages have test suites (`cd web && npm run test`, `npm test`). Run them 
 - **IMPORTANT: Do not run `get_openrouter_free_models.js`, `scripts/update_data.sh`, or `scripts/openrouter-free-models-update.sh` casually.** They perform network fetches, rewrite tracked data files under `web/public/models/` plus the legacy snapshot, and the shell scripts commit and push to `main`. Run them only when a task explicitly requires regenerating the dataset.
 - Never commit `.env`.
 - Don't hand-edit `web/public/models/*.json`, `web/public/models/index.json`, or `web/public/openrouter_free_models.json` — they are generated.
-- Version info (`VERSION`/commit hash/build date) is injected by Vite `define` from `web/vite.config.ts` — building never rewrites tracked sources; `git status --porcelain` stays clean after a build.
+- Build metadata is injected by Vite `define` from `web/vite.config.ts`: app version (hardcoded `'1.0.0'`), commit hash, build date — building never rewrites tracked sources; `git status --porcelain` stays clean after a build.
 - Root `package.json` has `start`/`test`/`test:smoke`/`crossref`; build/lint live under `web/`.
 
 ## Workflow preferences

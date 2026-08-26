@@ -25,10 +25,65 @@ import {
   WarningBox,
   CodeBlock,
 } from '@/components/faq';
+import { OPENROUTER_DEFAULT_METADATA } from '@/hooks/useModels';
+import type { ProviderMetadata } from '@/types/model';
 
 interface SectionProps {
   targetId: string | null;
 }
+
+const PROVIDER_TRADEOFFS: Record<string, { rateLimits: string; dataTraining: string }> = {
+  openrouter: {
+    rateLimits:
+      ':free models are typically limited to about 20 requests per minute (50 if you have $10+ in credits), plus daily caps that scale with your credit balance.',
+    dataTraining:
+      'Free endpoints may route to upstream providers that log prompts or train on them. Set your data policy preferences in the OpenRouter privacy settings and check each model\'s policy.',
+  },
+  google: {
+    rateLimits:
+      'The Gemini free tier is typically limited to around 15 requests per minute and 1,500 requests per day, though exact limits vary by model.',
+    dataTraining:
+      'On the free tier Google may use your prompts and responses to improve its products. Paid tiers are not used for training.',
+  },
+  groq: {
+    rateLimits:
+      'Groq\'s free tier offers very high throughput but is typically capped at around 30 requests per minute and 14,400 requests per day, depending on the model.',
+    dataTraining:
+      'Per its terms, Groq does not train on your API data, but free-tier usage may be logged for abuse monitoring.',
+  },
+};
+
+const GENERIC_TRADEOFFS = {
+  rateLimits:
+    'Free tiers are rate limited; exact numbers depend on the provider and model, so check their documentation before production use.',
+  dataTraining:
+    'Check the provider documentation for whether free-tier traffic may be logged or used for model training.',
+};
+
+function getTradeoffs(providerId: string) {
+  return PROVIDER_TRADEOFFS[providerId] ?? GENERIC_TRADEOFFS;
+}
+
+// Providers listed even when no provider metadata has loaded yet.
+const FALLBACK_PROVIDERS: ProviderMetadata[] = [
+  OPENROUTER_DEFAULT_METADATA,
+  {
+    id: 'google',
+    displayName: 'Google AI Studio',
+    baseUrl: null,
+    apiKeySignupUrl: null,
+    docsUrl: 'https://ai.google.dev/docs',
+    notes: null,
+  },
+  {
+    id: 'groq',
+    displayName: 'Groq',
+    baseUrl: null,
+    apiKeySignupUrl: null,
+    docsUrl: 'https://console.groq.com/docs',
+    notes: null,
+  },
+];
 
 
 export function GettingStartedSection({ targetId }: SectionProps) {
@@ -40,11 +95,11 @@ export function GettingStartedSection({ targetId }: SectionProps) {
               Getting Started
             </h2>
             <div className="space-y-3">
-              <FAQItem id="what-are-free-models" question="What are OpenRouter free models?" defaultOpen={!targetId} targetId={targetId}>
+              <FAQItem id="what-are-free-models" question="What are free models?" defaultOpen={!targetId} targetId={targetId}>
                 <p className="text-muted-foreground mb-4">
-                  OpenRouter provides access to various AI language models through a unified API.
-                  Some of these models are available completely free of charge, with no cost for
-                  input or output tokens.
+                  This site tracks AI language models that are available completely free of charge
+                  across multiple providers, each offering them through a unified,
+                  OpenAI-compatible API with no cost for input or output tokens.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <InfoCard
@@ -75,7 +130,8 @@ export function GettingStartedSection({ targetId }: SectionProps) {
 
               <FAQItem id="get-api-key" question="How do I get an API key?" targetId={targetId}>
                 <p className="text-muted-foreground mb-2">
-                  Follow these steps to get your OpenRouter API key:
+                  Each provider has its own signup, but the steps below walk through OpenRouter as the
+                  most common starting point:
                 </p>
                 <StepsContainer>
                   <Step
@@ -190,7 +246,11 @@ export function GettingStartedSection({ targetId }: SectionProps) {
   );
 }
 
-export function LimitationsSection({ targetId }: SectionProps) {
+export function LimitationsSection({
+  targetId,
+  providers = [],
+}: SectionProps & { providers?: ProviderMetadata[] }) {
+  const launched = providers.length > 0 ? providers : FALLBACK_PROVIDERS;
   return (
     <>
           <div className="mb-6">
@@ -199,13 +259,53 @@ export function LimitationsSection({ targetId }: SectionProps) {
               Limitations & Considerations
             </h2>
             <div className="space-y-3">
+              <FAQItem id="provider-trade-offs" question="How do free models differ between providers?" targetId={targetId}>
+                <p className="text-muted-foreground mb-4">
+                  Every provider runs its free tier differently. The main differences are rate limits and
+                  whether your prompts may be logged or used for training:
+                </p>
+                <div className="space-y-3">
+                  {launched.map((provider) => {
+                    const tradeoffs = getTradeoffs(provider.id);
+                    return (
+                      <div key={provider.id} className="p-3 rounded-lg border border-border">
+                        <h4 className="font-medium text-sm mb-1">
+                          {provider.displayName || provider.id}
+                          {provider.docsUrl && (
+                            <>
+                              {' '}
+                              <a
+                                href={provider.docsUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[var(--highlight)] hover:underline font-normal text-xs"
+                              >
+                                docs
+                              </a>
+                            </>
+                          )}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          <strong className="text-foreground font-medium">Rate limits:</strong>{' '}
+                          {tradeoffs.rateLimits}
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          <strong className="text-foreground font-medium">Data & training:</strong>{' '}
+                          {tradeoffs.dataTraining}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </FAQItem>
+
               <FAQItem id="rate-limits" question="What are the rate limits for free models?" targetId={targetId}>
                 <p className="text-muted-foreground mb-4">Free models have the following limitations:</p>
                 <div className="grid gap-3">
                   <InfoCard
                     icon={<RefreshCw className="h-5 w-5 text-muted-foreground" />}
                     title="Rate Limits"
-                    description="Typically 10-20 requests per minute (varies by model)"
+                    description="Typically 10-20 requests per minute (see per-provider differences below)"
                   />
                   <InfoCard
                     icon={<Layers className="h-5 w-5 text-muted-foreground" />}

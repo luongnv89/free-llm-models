@@ -110,6 +110,65 @@ export function getArchivedModels(data: ModelsData | null | undefined): Archived
   return data?.archivedModels ?? [];
 }
 
+// Entries written before multi-provider tracking carry no providerId and are
+// treated as belonging to OpenRouter (the original single source).
+export function getArchiveProviderId(entry: ArchivedModel): string {
+  const model = entry.model;
+  if ('providerId' in model && typeof model.providerId === 'string' && model.providerId) {
+    return model.providerId;
+  }
+  return 'openrouter';
+}
+
+function archiveDisplayNames(
+  providersMetadata: ProviderMetadata[]
+): Map<string, string> {
+  return new Map([
+    [OPENROUTER_DEFAULT_METADATA.id, OPENROUTER_DEFAULT_METADATA.displayName],
+    ...providersMetadata.map((p) => [p.id, p.displayName] as const),
+  ]);
+}
+
+export function getArchiveSourceOptions(
+  entries: ArchivedModel[],
+  providersMetadata: ProviderMetadata[] = []
+): SourceOption[] {
+  const displayNames = archiveDisplayNames(providersMetadata);
+  const counts = new Map<string, number>();
+  for (const entry of entries) {
+    const source = getArchiveProviderId(entry);
+    counts.set(source, (counts.get(source) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([id, count]) => ({
+      id,
+      displayName: displayNames.get(id) ?? id,
+      count,
+    }))
+    .sort((a, b) => a.displayName.localeCompare(b.displayName));
+}
+
+export function groupArchivedByProvider(
+  entries: ArchivedModel[],
+  providersMetadata: ProviderMetadata[] = []
+): Array<{ providerId: string; displayName: string; entries: ArchivedModel[] }> {
+  const displayNames = archiveDisplayNames(providersMetadata);
+  const groups = new Map<string, ArchivedModel[]>();
+  for (const entry of entries) {
+    const source = getArchiveProviderId(entry);
+    const bucket = groups.get(source);
+    if (bucket) bucket.push(entry);
+    else groups.set(source, [entry]);
+  }
+  return Array.from(groups.entries())
+    .map(([providerId, grouped]) => ({
+      providerId,
+      displayName: displayNames.get(providerId) ?? providerId,
+      entries: grouped,
+    }))
+    .sort((a, b) => a.displayName.localeCompare(b.displayName));
+}
+
 export function findModelById(
   data: ModelsData | null | undefined,
   id: string

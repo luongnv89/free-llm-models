@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft, CircleHelp } from 'lucide-react';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { useModels } from '@/hooks/useModels';
 import {
   GettingStartedSection,
   LimitationsSection,
@@ -12,6 +13,14 @@ import {
 export function FAQPage() {
   const location = useLocation();
   const targetId = location.hash ? location.hash.slice(1) : null;
+  const { data } = useModels();
+  const providers = data?.providers ?? [];
+  const subtitle =
+    providers.length > 0
+      ? `Everything you need to know about free models across ${providers
+          .map((p) => p.displayName)
+          .join(', ')}`
+      : 'Everything you need to know about free models across supported providers';
 
   return (
     <div className="min-h-screen bg-background">
@@ -38,16 +47,14 @@ export function FAQPage() {
             </div>
             <div>
               <h1 className="text-3xl font-bold">Frequently Asked Questions</h1>
-              <p className="text-muted-foreground">
-                Everything you need to know about OpenRouter free models
-              </p>
+              <p className="text-muted-foreground">{subtitle}</p>
             </div>
           </div>
         </div>
 
         <div className="space-y-4">
           <GettingStartedSection targetId={targetId} />
-          <LimitationsSection targetId={targetId} />
+          <LimitationsSection targetId={targetId} providers={providers} />
           <IntegrationSection targetId={targetId} />
           <ApiKeySecuritySection targetId={targetId} />
           <MoreResources />

@@ -2,16 +2,20 @@
 set -euo pipefail
 
 # End-to-end daily updater for OpenRouter free-models dataset.
-# pull → fetch free models → commit JSON if changed → push main
+# pull → fetch free models → commit generated JSON if changed → push main
 #
 # Hardened for cron:
 # - repo-relative paths (works on any host user)
 # - flock to prevent overlapping runs
 # - default SSH identity (optional blogs_deploy key)
-# - optional OPENROUTER_API_KEY from env or ~/.config/openrouter/api.env
+# - optional provider API keys from env or ~/.config/openrouter/api.env
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# shellcheck source=scripts/lib/updater-common.sh
+source "$SCRIPT_DIR/lib/updater-common.sh"
+
 LOG_DIR="$REPO_DIR/logs"
 LOCK_FILE="$LOG_DIR/update-free-models.lock"
 ENV_CANDIDATES=(
@@ -20,6 +24,17 @@ ENV_CANDIDATES=(
   "$HOME/.config/openrouter/api.env"
   "$HOME/.config/devstats/api.env"
 )
+
+# Provider API keys the multi-provider runner consumes (PROVIDERS and
+# PROVIDER_TIMEOUT_MS are read straight from the environment by node).
+PROVIDER_KEY_VARS=(OPENROUTER_API_KEY GROQ_API_KEY GOOGLE_AI_API_KEY)
+
+all_provider_keys_set() {
+  local v
+  for v in "${PROVIDER_KEY_VARS[@]}"; do
+    [[ -n "${!v:-}" ]] || return 1
+  done
+}
 
 mkdir -p "$LOG_DIR"
 
@@ -39,26 +54,25 @@ else
   export GIT_SSH_COMMAND="ssh -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
 fi
 
-# Load first available env file that defines OPENROUTER_API_KEY (optional).
-if [[ -z "${OPENROUTER_API_KEY:-}" ]]; then
+# Load first available env file that defines the provider API keys (optional).
+if ! all_provider_keys_set; then
   for f in "${ENV_CANDIDATES[@]}"; do
     [[ -n "$f" && -f "$f" ]] || continue
     set -a
     # shellcheck disable=SC1090
     source "$f"
     set +a
-    if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
-      echo "[AUTH] Loaded OPENROUTER_API_KEY from $f"
-      break
-    fi
+    all_provider_keys_set && break
   done
 fi
 
-if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
-  echo "[AUTH] Using OPENROUTER_API_KEY"
-else
-  echo "[AUTH] No OPENROUTER_API_KEY; using public models endpoint"
-fi
+for v in "${PROVIDER_KEY_VARS[@]}"; do
+  if [[ -n "${!v:-}" ]]; then
+    echo "[AUTH] Using $v"
+  else
+    echo "[AUTH] No $v; using keyless endpoint where applicable"
+  fi
+done
 
 echo "[REPO] $REPO_DIR"
 cd "$REPO_DIR"
@@ -88,12 +102,12 @@ fi
 
 npm run start
 
-if git diff --quiet -- web/public/openrouter_free_models.json; then
+if ! updater_data_dirty; then
   echo "[OK] No data change; nothing to commit."
   exit 0
 fi
 
-git add web/public/openrouter_free_models.json
+updater_stage_data
 git commit -m "chore: daily update openrouter free models"
 
 if ! git push origin HEAD:main; then
@@ -101,8 +115,8 @@ if ! git push origin HEAD:main; then
   git fetch origin
   git reset --hard origin/main
   npm run start
-  if ! git diff --quiet -- web/public/openrouter_free_models.json; then
-    git add web/public/openrouter_free_models.json
+  if updater_data_dirty; then
+    updater_stage_data
     git commit -m "chore: daily update openrouter free models"
     git push origin HEAD:main
   else

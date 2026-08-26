@@ -29,6 +29,7 @@ ENV_CANDIDATES=(
 # PROVIDER_TIMEOUT_MS are read straight from the environment by node).
 PROVIDER_KEY_VARS=(OPENROUTER_API_KEY GROQ_API_KEY GOOGLE_AI_API_KEY)
 
+# True when every provider key var is set to a non-empty value.
 all_provider_keys_set() {
   local v
   for v in "${PROVIDER_KEY_VARS[@]}"; do

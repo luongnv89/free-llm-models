@@ -1,7 +1,8 @@
 {
+  "providerId": "openrouter",
   "fetchedAt": "2026-08-26T08:33:36.678Z",
-  "totalModels": 21,
   "newModelIds": [],
+  "archivedModels": [],
   "models": [
     {
       "id": "stealth/ox-alpha",
@@ -66,12 +67,7 @@
         ],
         "default_effort": "max"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 1,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "dots-studio/dots-3-note-preview:free",
@@ -124,12 +120,7 @@
       "reasoning": {
         "mandatory": false
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 8,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "liquid/lfm-2.5-2.6b:free",
@@ -195,12 +186,7 @@
       "reasoning": {
         "mandatory": true
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 14,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "nvidia/nemotron-3.5-lightning:free",
@@ -259,12 +245,7 @@
       "reasoning": {
         "mandatory": false
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 4,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "thinkingmachines/inkling-small:free",
@@ -345,12 +326,7 @@
         ],
         "default_effort": "high"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 12,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "poolside/laguna-s-2.1:free",
@@ -400,12 +376,7 @@
         "mandatory": false,
         "default_enabled": true
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 3,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "thinkingmachines/inkling:free",
@@ -536,12 +507,7 @@
         ],
         "default_effort": "high"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 10,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "poolside/laguna-xs-2.1:free",
@@ -591,12 +557,7 @@
         "mandatory": false,
         "default_enabled": true
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 7,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "cohere/north-mini-code:free",
@@ -666,12 +627,7 @@
       "reasoning": {
         "mandatory": false
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 6,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "z-ai/glm-5.2:free",
@@ -865,12 +821,7 @@
         ],
         "default_effort": "high"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 13,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "nvidia/nemotron-3.5-content-safety:free",
@@ -928,12 +879,7 @@
         "mandatory": false,
         "default_enabled": true
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 18,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -1064,12 +1010,7 @@
         ],
         "default_effort": "high"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 2,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "minimax/minimax-m3:free",
@@ -1244,12 +1185,7 @@
       "reasoning": {
         "mandatory": false
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 9,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -1320,12 +1256,7 @@
         "default_enabled": true,
         "supports_max_tokens": true
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 11,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "google/gemma-4-26b-a4b-it:free",
@@ -1392,12 +1323,7 @@
         "mandatory": false,
         "default_enabled": false
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 16,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "google/gemma-4-31b-it:free",
@@ -1467,12 +1393,7 @@
         "mandatory": false,
         "default_enabled": false
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 17,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "google/lyria-3-pro-preview",
@@ -1526,12 +1447,7 @@
       "links": {
         "details": "/api/v1/models/google/lyria-3-pro-preview-20260330/endpoints"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 19,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "google/lyria-3-clip-preview",
@@ -1585,12 +1501,7 @@
       "links": {
         "details": "/api/v1/models/google/lyria-3-clip-preview-20260330/endpoints"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 20,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "minimax/minimax-m2.7:free",
@@ -1714,12 +1625,7 @@
       "reasoning": {
         "mandatory": true
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 15,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
@@ -1795,12 +1701,7 @@
         ],
         "default_effort": "medium"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 5,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
       "id": "openrouter/free",
@@ -1865,206 +1766,7 @@
       "links": {
         "details": "/api/v1/models/openrouter/free/endpoints"
       },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 21,
-        "source": "top-weekly",
-        "asOf": "2026-08-26T08:33:36.678Z"
-      }
-    }
-  ],
-  "archivedModels": [
-    {
-      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
-      "providerId": "openrouter",
-      "removedAt": "2026-08-26T08:32:50.786Z",
-      "lastSeenAt": "2026-08-22T05:21:03.187Z",
-      "model": {
-        "id": "nvidia/nemotron-3-nano-30b-a3b:free",
-        "canonical_slug": "nvidia/nemotron-3-nano-30b-a3b",
-        "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-        "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
-        "created": 1765731275,
-        "description": "NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems. The model is fully...",
-        "context_length": 256000,
-        "architecture": {
-          "modality": "text->text",
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "text"
-          ],
-          "tokenizer": "Other",
-          "instruct_type": null
-        },
-        "pricing": {
-          "prompt": "0",
-          "completion": "0"
-        },
-        "top_provider": {
-          "context_length": 256000,
-          "max_completion_tokens": null,
-          "is_moderated": false
-        },
-        "per_request_limits": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_tokens",
-          "reasoning",
-          "seed",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_p"
-        ],
-        "default_parameters": {
-          "temperature": null,
-          "top_p": null,
-          "frequency_penalty": null
-        },
-        "supported_voices": null,
-        "knowledge_cutoff": null,
-        "expiration_date": "2026-08-24",
-        "links": {
-          "details": "/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints"
-        },
-        "benchmarks": {
-          "design_arena": [],
-          "artificial_analysis": {
-            "intelligence_index": 14.5,
-            "coding_index": 14.4,
-            "agentic_index": 2
-          }
-        },
-        "reasoning": {
-          "mandatory": false
-        }
-      }
-    },
-    {
-      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
-      "providerId": "openrouter",
-      "removedAt": "2026-08-26T08:32:50.786Z",
-      "lastSeenAt": "2026-08-22T05:21:03.187Z",
-      "model": {
-        "id": "nvidia/nemotron-nano-12b-v2-vl:free",
-        "canonical_slug": "nvidia/nemotron-nano-12b-v2-vl",
-        "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
-        "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
-        "created": 1761675565,
-        "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba’s...",
-        "context_length": 128000,
-        "architecture": {
-          "modality": "text+image+video->text",
-          "input_modalities": [
-            "image",
-            "text",
-            "video"
-          ],
-          "output_modalities": [
-            "text"
-          ],
-          "tokenizer": "Other",
-          "instruct_type": null
-        },
-        "pricing": {
-          "prompt": "0",
-          "completion": "0"
-        },
-        "top_provider": {
-          "context_length": 128000,
-          "max_completion_tokens": 128000,
-          "is_moderated": false
-        },
-        "per_request_limits": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_tokens",
-          "reasoning",
-          "seed",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_p"
-        ],
-        "default_parameters": {
-          "temperature": null,
-          "top_p": null,
-          "frequency_penalty": null
-        },
-        "supported_voices": null,
-        "knowledge_cutoff": null,
-        "expiration_date": "2026-08-24",
-        "links": {
-          "details": "/api/v1/models/nvidia/nemotron-nano-12b-v2-vl/endpoints"
-        },
-        "reasoning": {
-          "mandatory": false
-        }
-      }
-    },
-    {
-      "id": "nvidia/nemotron-nano-9b-v2:free",
-      "providerId": "openrouter",
-      "removedAt": "2026-08-26T08:32:50.786Z",
-      "lastSeenAt": "2026-08-22T05:21:03.187Z",
-      "model": {
-        "id": "nvidia/nemotron-nano-9b-v2:free",
-        "canonical_slug": "nvidia/nemotron-nano-9b-v2",
-        "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
-        "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
-        "created": 1757106807,
-        "description": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and...",
-        "context_length": 128000,
-        "architecture": {
-          "modality": "text->text",
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "text"
-          ],
-          "tokenizer": "Other",
-          "instruct_type": null
-        },
-        "pricing": {
-          "prompt": "0",
-          "completion": "0"
-        },
-        "top_provider": {
-          "context_length": 128000,
-          "max_completion_tokens": null,
-          "is_moderated": false
-        },
-        "per_request_limits": null,
-        "supported_parameters": [
-          "include_reasoning",
-          "max_tokens",
-          "reasoning",
-          "response_format",
-          "seed",
-          "structured_outputs",
-          "temperature",
-          "tool_choice",
-          "tools",
-          "top_p"
-        ],
-        "default_parameters": {
-          "temperature": null,
-          "top_p": null,
-          "frequency_penalty": null
-        },
-        "supported_voices": null,
-        "knowledge_cutoff": "2025-03-31",
-        "expiration_date": "2026-08-24",
-        "links": {
-          "details": "/api/v1/models/nvidia/nemotron-nano-9b-v2/endpoints"
-        },
-        "reasoning": {
-          "mandatory": false
-        }
-      }
+      "addedToFreeList": "2026-08-26T08:32:50.786Z"
     }
   ]
 }

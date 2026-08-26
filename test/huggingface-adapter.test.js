@@ -58,7 +58,7 @@ test('huggingface adapter satisfies the ProviderAdapter contract', () => {
   assert.strictEqual(registry.getProvider('huggingface'), adapter);
 });
 
-test('isHuggingFaceFree treats any catalog entry with an id as free-tier-accessible', () => {
+test('isHuggingFaceFree keys on id, honoring explicit providers.is_free flags', () => {
   for (const model of fixtureModels) {
     assert.strictEqual(isHuggingFaceFree(model), true);
   }
@@ -67,6 +67,21 @@ test('isHuggingFaceFree treats any catalog entry with an id as free-tier-accessi
   assert.strictEqual(isHuggingFaceFree({ id: '' }), false);
   assert.strictEqual(isHuggingFaceFree({ id: 42 }), false);
   assert.strictEqual(isHuggingFaceFree(undefined), false);
+
+  assert.strictEqual(
+    isHuggingFaceFree({ id: 'm', providers: [{ is_free: true }] }),
+    true
+  );
+  assert.strictEqual(
+    isHuggingFaceFree({ id: 'm', providers: [{ is_free: false }] }),
+    false
+  );
+  assert.strictEqual(
+    isHuggingFaceFree({ id: 'm', providers: [{}, { is_free: true }] }),
+    true
+  );
+  assert.strictEqual(isHuggingFaceFree({ id: 'm', providers: [] }), true);
+  assert.strictEqual(isHuggingFaceFree({ id: 'm', providers: [null] }), true);
 
   const adapter = makeAdapter();
   assert.strictEqual(adapter.isFree({ id: 'x' }), true);
@@ -114,6 +129,30 @@ test('normalize falls back to null context_length when missing', () => {
 
   assert.strictEqual(canonical.context_length, null);
   assertCanonicalModelValid(canonical, 'missing-context_length');
+});
+
+test('normalize derives context_length from providers entries, free first', () => {
+  const adapter = makeAdapter();
+
+  assert.strictEqual(
+    adapter.normalize({
+      id: 'm',
+      created: 1,
+      providers: [{ context_length: 8192 }, { context_length: 262144 }],
+    }).context_length,
+    8192
+  );
+  assert.strictEqual(
+    adapter.normalize({
+      id: 'm',
+      created: 1,
+      providers: [
+        { is_free: false, context_length: 262144 },
+        { is_free: true, context_length: 8192 },
+      ],
+    }).context_length,
+    8192
+  );
 });
 
 test('normalize reports flat zero pricing without inventing per-token rates', () => {

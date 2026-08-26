@@ -49,7 +49,6 @@ describe('HarnessSetupGuide', () => {
       'Codex',
     ]);
     expect(tabs.filter((tab) => tab.getAttribute('aria-selected') === 'true')).toHaveLength(1);
-    expect(container.textContent).toContain('claude --model');
     expect(container.textContent).toContain(MODEL_ID);
   });
 
@@ -65,8 +64,8 @@ describe('HarnessSetupGuide', () => {
     });
 
     expect(openCodeTab!.getAttribute('aria-selected')).toBe('true');
-    expect(container.textContent).toContain('opencode --model');
-    expect(container.textContent).not.toContain('claude --model');
+    expect(container.textContent).toContain('Official OpenCode docs');
+    expect(container.textContent).toContain(MODEL_ID);
     expect(container.querySelector('[role="tabpanel"]')?.getAttribute('aria-labelledby')).toBe(
       'harness-tab-opencode',
     );
@@ -93,14 +92,14 @@ describe('HarnessSetupGuide', () => {
     await render();
 
     const copyButton = container.querySelector<HTMLButtonElement>(
-      'button[aria-label="Copy Claude Code command"]',
+      'button[aria-label="Copy Claude Code model ID"]',
     );
     expect(copyButton).toBeTruthy();
     await act(async () => {
       copyButton!.click();
     });
 
-    expect(writeText).toHaveBeenCalledWith(`claude --model '${MODEL_ID}'`);
-    expect(container.querySelector('button[aria-label="Copy Claude Code command"] svg')).toBeTruthy();
+    expect(writeText).toHaveBeenCalledWith(MODEL_ID);
+    expect(container.querySelector('button[aria-label="Copy Claude Code model ID"] svg')).toBeTruthy();
   });
 });

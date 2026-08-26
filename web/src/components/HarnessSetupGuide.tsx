@@ -8,7 +8,6 @@ import type { ProviderMetadata } from '@/types/model';
 interface HarnessOption {
   id: string;
   label: string;
-  command: string;
   docsUrl: string;
   description: string;
 }
@@ -45,16 +44,11 @@ const HARNESSES: Omit<HarnessOption, 'command'>[] = [
   },
 ];
 
-function shellQuote(value: string): string {
-  return `'${value.replaceAll("'", "'\"'\"")}'`;
-}
-
 export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuideProps) {
   const [activeId, setActiveId] = useState(HARNESSES[0].id);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const { copied, copy } = useCopyToClipboard();
   const activeHarness = HARNESSES.find((harness) => harness.id === activeId) ?? HARNESSES[0];
-  const activeCommand = `${activeHarness.id === 'claude-code' ? 'claude' : activeHarness.id} --model ${shellQuote(modelId)}`;
 
   const selectHarness = (id: string) => {
     setActiveId(id);
@@ -76,8 +70,8 @@ export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuidePr
     document.getElementById(`harness-tab-${nextHarness.id}`)?.focus();
   };
 
-  const copyCommand = async () => {
-    const ok = await copy(activeCommand);
+  const copyModelId = async () => {
+    const ok = await copy(modelId);
     if (ok) setCopiedId(activeHarness.id);
   };
 
@@ -132,13 +126,17 @@ export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuidePr
           <div>
             <h3 className="font-medium">{activeHarness.label}</h3>
             <p className="mt-1 text-sm text-muted-foreground">{activeHarness.description}</p>
+            <p className="mt-2 text-xs text-muted-foreground">
+              Follow the official setup instructions, then use this provider model ID in the
+              harness configuration.
+            </p>
           </div>
           <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-3 font-mono text-sm">
-            <code className="min-w-0 flex-1 overflow-x-auto whitespace-pre-wrap break-all">{activeCommand}</code>
+            <code className="min-w-0 flex-1 overflow-x-auto whitespace-pre-wrap break-all">{modelId}</code>
             <button
               type="button"
-              onClick={copyCommand}
-              aria-label={`Copy ${activeHarness.label} command`}
+              onClick={copyModelId}
+              aria-label={`Copy ${activeHarness.label} model ID`}
               className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               {copied && copiedId === activeHarness.id ? (

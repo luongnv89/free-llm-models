@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ModelCard } from '@/components/ModelCard';
+import { ModelListItem } from '@/components/ModelListItem';
 import { FilterSidebar } from '@/components/FilterSidebar';
 import { SearchBar } from '@/components/SearchBar';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
@@ -204,7 +204,7 @@ export function HomePage() {
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">
-                New models are highlighted with a green border on the left side.
+                New models are marked with a visible “New” indicator in each row.
               </p>
             </div>
           )}
@@ -225,21 +225,22 @@ export function HomePage() {
             />
           </div>
 
-          {/* Model Grid */}
+          {/* Ranked model list */}
           {filteredModels.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground">No models match your filters</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-              {filteredModels.map((model) => (
-                <ModelCard
+            <ol aria-label="Free models" className="mt-6">
+              {filteredModels.map((model, index) => (
+                <ModelListItem
                   key={model.id}
                   model={model}
+                  rank={index + 1}
                   isNew={isNewModel(model)}
                 />
               ))}
-            </div>
+            </ol>
           )}
         </main>
       </div>

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ModelCard } from '@/components/ModelCard';
+import { ModelListItem } from '@/components/ModelListItem';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import {
   useModels,
@@ -9,7 +9,6 @@ import {
   getArchiveSourceOptions,
   groupArchivedByProvider,
 } from '@/hooks/useModels';
-import { formatDateTime } from '@/lib/model-utils';
 import type { SourceOption } from '@/types/model';
 import {
   ArrowLeft,
@@ -170,16 +169,18 @@ export function ArchivePage() {
           ) : (
             groups.map((group) => (
               <ProviderGroup key={group.providerId} displayName={group.displayName} count={group.entries.length}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {group.entries.map((entry) => (
-                    <div key={entry.id}>
-                      <ModelCard model={entry.model} isNew={false} />
-                      <p className="text-xs text-muted-foreground mt-2 px-1">
-                        Removed {formatDateTime(entry.removedAt)}
-                      </p>
-                    </div>
+                <ol aria-label={`${group.displayName} archived models`}>
+                  {group.entries.map((entry, index) => (
+                    <ModelListItem
+                      key={entry.id}
+                      model={entry.model}
+                      rank={index + 1}
+                      isNew={false}
+                      providerLabel={group.displayName}
+                      removedAt={entry.removedAt}
+                    />
                   ))}
-                </div>
+                </ol>
               </ProviderGroup>
             ))
           )}

@@ -147,6 +147,33 @@ describe('ModelDetailPage', () => {
     expect(container.textContent).not.toContain('openrouter.ai/api/v1');
   });
 
+  it('renders the general guide for non-OpenRouter providers without showing Ori', async () => {
+    const model = { ...makeModel({ id: 'google-gemini-2', name: 'Gemini 2' }), providerId: 'google' } as Model;
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({
+        providerId: 'google',
+        ...makeData(model),
+        providers: [{
+          id: 'google',
+          displayName: 'Google AI Studio',
+          baseUrl: 'https://generativelanguage.googleapis.com',
+          apiKeySignupUrl: 'https://aistudio.google.com/apikey',
+          docsUrl: 'https://ai.google.dev/gemini-api/docs',
+          notes: null,
+        }],
+      }),
+    });
+    await renderPage(model.id);
+    await settle();
+    await settle();
+
+    expect(container.textContent).toContain('Set up a coding harness');
+    expect(container.textContent).toContain('Google AI Studio provider docs');
+    expect(container.textContent).not.toContain('Use in any harness via Ori');
+    expect(container.textContent).toContain('No setup command is shown');
+  });
+
   it('shows rank and tokens when popularity is present', async () => {
     await renderModel({
       rank: 3,

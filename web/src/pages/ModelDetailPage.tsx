@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CodeSnippets } from '@/components/CodeSnippets';
+import { HarnessSetupGuide } from '@/components/HarnessSetupGuide';
 import { OriHarnessGuide } from '@/components/OriHarnessGuide';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import {
@@ -81,6 +82,11 @@ export function ModelDetailPage() {
 
   const provider = getProvider(model);
   const providerMeta = resolveProviderMetadata(model, data?.providers);
+  // Older catalogs have no providerId and are OpenRouter snapshots. Prefer the
+  // resolved metadata for those records so nested model IDs do not hide Ori.
+  const canonicalProviderId = 'providerId' in model && typeof model.providerId === 'string' && model.providerId
+    ? model.providerId
+    : providerMeta.id;
   const { reasoning: hasReasoning, tools: hasTools, vision: hasVision, video: hasVideo } =
     modelCapabilities(model);
   const tags = capabilityTags(model);
@@ -276,8 +282,18 @@ export function ModelDetailPage() {
             </div>
 
             <div {...reveal(150)}>
-              <OriHarnessGuide modelId={model.id} />
+              <HarnessSetupGuide
+                modelId={model.id}
+                providerId={canonicalProviderId}
+                providerMeta={providerMeta}
+              />
             </div>
+
+            {canonicalProviderId === 'openrouter' && (
+              <div {...reveal(225)}>
+                <OriHarnessGuide modelId={model.id} />
+              </div>
+            )}
 
             <Card {...reveal(225)}>
               <CardHeader>

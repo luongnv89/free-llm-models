@@ -1,29 +1,50 @@
 # OpenRouter Free Models
 
-A tiny site + updater that tracks **OpenRouter models that are currently free** and publishes a searchable UI.
+A tiny site + updater that tracks **free LLM models across multiple providers** (OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, GitHub Models, Hugging Face, NVIDIA NIM) and publishes a searchable UI.
 
 - **Site:** `web/` (Vite + React + Tailwind)
-- **Data fetcher:** `get_openrouter_free_models.js`
-- **Generated data file (served by the site):** `web/public/openrouter_free_models.json`
+- **Data fetcher:** `get_openrouter_free_models.js` (multi-provider runner: `lib/providers/run-update.js`)
+- **Generated data files (served by the site):**
+  - `web/public/models/<providerId>.json` – one file per provider
+  - `web/public/models/index.json` – merged index of all providers
+  - `web/public/openrouter_free_models.json` – legacy OpenRouter-only snapshot (still refreshed for backward compatibility)
+
+## Supported providers
+
+| Provider id | Service | API key env var |
+|-------------|---------|-----------------|
+| `openrouter` | [OpenRouter](https://openrouter.ai) | `OPENROUTER_API_KEY` (optional — works keyless) |
+| `groq` | [Groq](https://groq.com) | `GROQ_API_KEY` (required) |
+| `google` | [Google AI Studio](https://aistudio.google.com) | `GOOGLE_AI_API_KEY` (required) |
+| `cerebras` | [Cerebras](https://cloud.cerebras.ai) | `CEREBRAS_API_KEY` (optional) |
+| `mistral` | [Mistral AI](https://console.mistral.ai) | `MISTRAL_API_KEY` (optional) |
+| `github-models` | [GitHub Models](https://github.com/marketplace/models) | `GITHUB_TOKEN` (required) |
+| `huggingface` | [Hugging Face Router](https://router.huggingface.co) | `HF_TOKEN` (optional) |
+| `nvidia-nim` | [NVIDIA NIM](https://build.nvidia.com) | `NVIDIA_API_KEY` (required) |
+
+Providers whose key is missing are skipped with a warning (except where noted); one failing provider never blocks the others.
 
 ## What it does
 
-1. Fetches OpenRouter models.
-2. Filters to the ones that are free.
-3. Merges join dates and an archive of former free models, then attaches popularity when it can be obtained.
-4. Writes `web/public/openrouter_free_models.json`.
-5. The `web/` app loads that JSON and provides search/sort/filters, an `/archive` of leavers, and capability tags.
+1. Fetches each enabled provider's model catalog via its adapter (`lib/providers/*.js`).
+2. Filters each catalog down to free models and normalizes them to a canonical schema.
+3. Merges per-provider join dates and archives of former free models, then attaches OpenRouter popularity when it can be obtained.
+4. Writes `web/public/models/<providerId>.json`, `web/public/models/index.json`, and refreshes the legacy `web/public/openrouter_free_models.json` when OpenRouter succeeded.
+5. The `web/` app loads the index + per-provider files and provides search/sort/filters, a source (provider) filter, provider-specific code snippets, an `/archive` of leavers grouped by provider, and capability tags.
 
 ## Repo layout
 
-- `get_openrouter_free_models.js` – fetch + transform logic
+- `get_openrouter_free_models.js` – CLI entry point (parses `--providers`, invokes the runner)
+- `lib/providers/run-update.js` – multi-provider runner: registry iteration, timeouts, emission, legacy snapshot
+- `lib/providers/*.js` – one adapter per provider plus shared schema/registry/emit helpers
 - `lib/free-models-history.js` – join-date stamping and archive merge (no network)
 - `lib/free-models-popularity.js` – rankings-daily / top-weekly matching (no network)
 - `scripts/update_data.sh` – end-to-end updater (pull → fetch → commit → push)
 - `scripts/openrouter-free-models-update.sh` – hardened variant used by the author’s Hermes cron job (lock, dirty-tree guard, mise-managed Node resolution via `scripts/lib/updater-common.sh`)
 - `scripts/install-daily-cron.sh` – installs a user crontab entry for `scripts/update_data.sh`
 - `web/` – frontend app (see [`web/README.md`](web/README.md))
-  - `web/public/openrouter_free_models.json` – generated data (committed)
+  - `web/public/models/` – generated per-provider data + index (committed)
+  - `web/public/openrouter_free_models.json` – legacy snapshot (committed)
   - `web/src/` – React code
 
 ## Requirements
@@ -39,18 +60,25 @@ A tiny site + updater that tracks **OpenRouter models that are currently free** 
 npm install
 ```
 
-Create a `.env` (see `.env.example`). `OPENROUTER_API_KEY` is optional — the public
-OpenRouter `/models` endpoint works keyless; set it only for authenticated requests,
-higher rate limits, or the rankings-daily popularity dataset.
+Create a `.env` (see `.env.example`). All provider keys are optional in the sense that
+nothing crashes without them — but only OpenRouter works keyless; the other providers
+are skipped (with a warning) until their key is configured.
 
 ## Environment variables
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
-| `OPENROUTER_API_KEY` | no | Sent to the OpenRouter API for authenticated/higher-rate-limit requests. When set, the updater may also `GET /api/v1/datasets/rankings-daily`. Read by the fetcher and both updater scripts. |
-| `OPENROUTER_ENV_FILE` | no | Path to an env file the updater scripts source when looking for `OPENROUTER_API_KEY`. |
+| `OPENROUTER_API_KEY` | no | Sent to the OpenRouter API for authenticated/higher-rate-limit requests. When set, the updater may also `GET /api/v1/datasets/rankings-daily` for popularity data. Read by the fetcher and both updater scripts. |
+| `GROQ_API_KEY` | for Groq | Groq API key (`https://api.groq.com/openai/v1`). Get one at https://console.groq.com/keys. |
+| `GOOGLE_AI_API_KEY` | for Google | Google AI Studio key (`https://generativelanguage.googleapis.com/v1beta`). Get one at https://aistudio.google.com/apikey. |
+| `CEREBRAS_API_KEY` | no | Cerebras API key (`https://api.cerebras.ai/v1`). Get one at https://cloud.cerebras.ai. |
+| `MISTRAL_API_KEY` | no | Mistral API key (`https://api.mistral.ai/v1`). Get one at https://console.mistral.ai. |
+| `GITHUB_TOKEN` | for GitHub Models | GitHub personal access token (classic) for `https://models.github.ai/catalog/models`. Create one at https://github.com/settings/tokens. |
 | `HF_TOKEN` | no | Hugging Face token sent to the HF Router (`https://router.huggingface.co/v1`) for authenticated requests. Get one at https://huggingface.co/settings/tokens. |
-| `NVIDIA_API_KEY` | no | NVIDIA API key sent to the hosted NIM API (`https://integrate.api.nvidia.com/v1`). Get one at https://build.nvidia.com (NVIDIA's docs call this `NVAPI_KEY`; we read `NVIDIA_API_KEY` for consistency). |
+| `NVIDIA_API_KEY` | for NVIDIA NIM | NVIDIA API key sent to the hosted NIM API (`https://integrate.api.nvidia.com/v1`). Get one at https://build.nvidia.com (NVIDIA's docs call this `NVAPI_KEY`; we read `NVIDIA_API_KEY` for consistency). |
+| `PROVIDERS` | no | Comma-separated allow-list of provider ids to run (e.g. `openrouter,groq`). Unset = all providers. Same as the `--providers` flag. |
+| `PROVIDER_TIMEOUT_MS` | no | Per-provider fetch timeout in milliseconds (default `30000`). Invalid or non-positive values fall back to the default. |
+| `OPENROUTER_ENV_FILE` | no | Path to an env file the updater scripts source when looking for `OPENROUTER_API_KEY`. |
 
 If `OPENROUTER_API_KEY` is not already exported, both updater scripts source the first
 existing file from this list that defines it:
@@ -65,8 +93,15 @@ Never commit `.env` or any of these files.
 ## Update the dataset
 
 ```bash
-# from repo root
+# from repo root — fetches every enabled provider (key-configured ones)
 node get_openrouter_free_models.js
+```
+
+Restrict the run to specific providers:
+
+```bash
+node get_openrouter_free_models.js --providers openrouter,groq
+PROVIDERS=openrouter,groq node get_openrouter_free_models.js   # equivalent
 ```
 
 Or run the full automation script (recommended):
@@ -78,7 +113,7 @@ Or run the full automation script (recommended):
 That script:
 - pulls latest `main`
 - installs deps if needed
-- regenerates `web/public/openrouter_free_models.json`
+- regenerates `web/public/models/*.json` (+ `index.json` and the legacy OpenRouter snapshot)
 - commits if the JSON changed
 - pushes to `main`
 
@@ -130,7 +165,7 @@ npm run preview
 
 ## Deployment
 
-This repo is intended to deploy the static site from `web/` (e.g. Netlify). When `main` changes (especially `web/public/openrouter_free_models.json`), the site updates.
+This repo is intended to deploy the static site from `web/` (e.g. Netlify). When `main` changes (especially the files under `web/public/models/`), the site updates.
 
 ## Automation
 
@@ -172,17 +207,19 @@ these scripts from a checkout with work you want to keep — commit or stash fir
 
 ## Model history and archive
 
-The updater persists sidecar fields in `web/public/openrouter_free_models.json` (it still writes only that file):
+The updater persists sidecar fields per provider in `web/public/models/<providerId>.json` (and, for backward compatibility, in the legacy `web/public/openrouter_free_models.json` for OpenRouter):
 
 | Field | Meaning |
 |-------|---------|
-| `models[].addedToFreeList` | ISO timestamp when the model was first seen on the free list. Preserved if a model leaves and later returns. |
-| `models[].popularity` | Rank/tokens from OpenRouter when available, or a recorded miss (see below). |
-| `archivedModels` | Models that left the free list, each with `removedAt`, `lastSeenAt`, `addedToFreeList` if known, and a model snapshot. |
+| `models[].addedToFreeList` | ISO timestamp when the model was first seen on that provider's free list. Preserved if a model leaves and later returns. |
+| `models[].popularity` | OpenRouter rank/tokens when available, or a recorded miss (see below). |
+| `archivedModels` | Models that left the free list, each with `removedAt`, `lastSeenAt`, `addedToFreeList` if known, a model snapshot, and its provider id. |
 
-**First-run caveat:** the first updater run after this feature ships stamps every *currently* free model with that run's `fetchedAt`. Those dates are an upper bound, not the true first day a model became free. The committed JSON in this repo does not include the sidecar fields until the next scheduled updater run — this change does not rewrite the dataset by itself. The UI defaults gracefully (`archivedModels: []`, missing `addedToFreeList` is unknown / not "New", missing popularity is hidden).
+History is merged against each provider's own previous output file; a corrupt previous file is treated as missing history (fresh start) rather than failing the run.
 
-Former free models are listed at `/archive`. Detail URLs (`/model/:modelId`) resolve the live list first, then the archive, so a bookmarked page keeps working after a model leaves.
+**First-run caveat:** the first updater run after this feature ships stamps every *currently* free model with that run's `fetchedAt`. Those dates are an upper bound, not the true first day a model became free. The UI defaults gracefully (`archivedModels: []`, missing `addedToFreeList` is unknown / not "New", missing popularity is hidden).
+
+Former free models are listed at `/archive`, grouped by source provider. Detail URLs (`/model/:modelId`) resolve the live list first, then the archive, so a bookmarked page keeps working after a model leaves.
 
 "New" badges and the home banner use `addedToFreeList` (3-day window). The "Date Added" sort uses the same field (falling back to `created` when it is missing).
 
@@ -194,7 +231,19 @@ If there is no daily ranking match, a relative rank is derived from `GET /api/v1
 
 Source: OpenRouter (openrouter.ai/rankings). Do not scrape the HTML rankings page.
 
+## Tests
+
+```bash
+npm test                # node:test suite over the updater (adapters, runner, history, pricing, CLI args)
+npm run test:smoke      # live smoke test against real provider APIs (RUN_LIVE_SMOKE=1; needs keys, network)
+cd web && npm run lint        # eslint
+cd web && npm run test        # vitest suite over frontend logic
+cd web && npm run build       # tsc -b && vite build
+cd web && npm run typecheck   # tsc -b only
+```
+
 ## Notes
 
 - Mobile UI: filters are collapsed by default; search/sort stays visible while scrolling.
 - Capability tags (vision, video, reasoning, tools) render with an icon and color.
+- The UI has a source filter to narrow results by provider, sorts by provider, and shows provider-specific code snippets (OpenAI-compatible base URLs per provider).

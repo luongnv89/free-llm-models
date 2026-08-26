@@ -10,7 +10,10 @@ cd web && npm install            # web app deps
 cd web && npm run build          # recorded build: tsc -b && vite build (version injected via Vite define — see Hard rules)
 cd web && npm run lint           # eslint over web/
 cd web && npm run test           # vitest suite over web logic
-npm test                         # node:test smoke suite over the updater's pricing predicate
+cd web && npm run typecheck      # tsc -b only
+npm test                         # node:test suite over the updater (adapters, runner, history, pricing, CLI args)
+npm run test:smoke               # live smoke test vs real provider APIs (RUN_LIVE_SMOKE=1; network + keys)
+npm run crossref                 # report-only diff of our data vs the community free-LLM list
 node get_openrouter_free_models.js   # ⚠ side effects — see Hard rules
 ./scripts/update_data.sh         # ⚠ cron automation — see Hard rules
 ```
@@ -19,24 +22,28 @@ Both packages have test suites (`cd web && npm run test`, `npm test`). Run them 
 
 ## Architecture map
 
-- `get_openrouter_free_models.js` — Node script: fetches OpenRouter models, filters free ones, writes the data file.
-- `web/` — Vite + React + Tailwind frontend; loads `web/public/openrouter_free_models.json` at runtime.
-- `web/public/openrouter_free_models.json` — **generated and committed**; only changed by the updater script.
+- `get_openrouter_free_models.js` — CLI entry point: parses `--providers`, invokes the runner.
+- `lib/providers/run-update.js` — multi-provider runner: iterates adapters from `lib/providers/registry.js`, per-provider fetch with `PROVIDER_TIMEOUT_MS` timeout, history merge, emission.
+- `lib/providers/*.js` — one adapter per provider (openrouter, groq, google, cerebras, mistral, github-models, huggingface, nvidia-nim) plus shared schema/emit helpers.
+- `web/` — Vite + React + Tailwind frontend; loads `web/public/models/index.json` and the per-provider files at runtime.
+- `web/public/models/<providerId>.json` + `index.json` — **generated and committed**; only changed by the updater.
+- `web/public/openrouter_free_models.json` — legacy OpenRouter-only snapshot (also generated; refreshed when OpenRouter succeeds).
 - `scripts/update_data.sh` — end-to-end cron updater: pull → fetch → commit → push `main`.
 - `.env` (gitignored) from `.env.example`.
 
 ## Environment
 
 - Node.js (modern) + npm. No other toolchain required.
-- `OPENROUTER_API_KEY` is **optional** — the public `/models` endpoint works keyless. Set it only for authenticated/higher-rate-limit requests.
+- Provider API keys are all optional at the process level (see README *Supported providers* / `.env.example`). Only OpenRouter works keyless; every other provider is skipped (with a warning) until its key is set.
+- Provider selection: `PROVIDERS=openrouter,groq` env var or `--providers openrouter,groq` flag. `PROVIDER_TIMEOUT_MS` caps each provider's fetch (default 30000).
 
 ## Hard rules
 
-- **IMPORTANT: Do not run `get_openrouter_free_models.js`, `scripts/update_data.sh`, or `scripts/openrouter-free-models-update.sh` casually.** They perform a network fetch, rewrite the tracked `web/public/openrouter_free_models.json`, and the shell scripts commit and push to `main`. Run them only when a task explicitly requires regenerating the dataset.
+- **IMPORTANT: Do not run `get_openrouter_free_models.js`, `scripts/update_data.sh`, or `scripts/openrouter-free-models-update.sh` casually.** They perform network fetches, rewrite tracked data files under `web/public/models/` plus the legacy snapshot, and the shell scripts commit and push to `main`. Run them only when a task explicitly requires regenerating the dataset.
 - Never commit `.env`.
-- Don't hand-edit `web/public/openrouter_free_models.json` — it is generated.
+- Don't hand-edit `web/public/models/*.json`, `web/public/models/index.json`, or `web/public/openrouter_free_models.json` — they are generated.
 - Version info (`VERSION`/commit hash/build date) is injected by Vite `define` from `web/vite.config.ts` — building never rewrites tracked sources; `git status --porcelain` stays clean after a build.
-- Root `package.json` only has `start`/`test` scripts; build/lint live under `web/`.
+- Root `package.json` has `start`/`test`/`test:smoke`/`crossref`; build/lint live under `web/`.
 
 ## Workflow preferences
 

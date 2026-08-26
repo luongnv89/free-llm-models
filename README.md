@@ -185,6 +185,10 @@ npm run build
 npm run preview
 ```
 
+## Manual harness validation
+
+The credentialed route matrix and release worksheet are in [`docs/manual-harness-validation.md`](docs/manual-harness-validation.md). These checks are manual only, use disposable credentials, and must never be added to CI or automated updater jobs.
+
 ## Deployment
 
 This repo is intended to deploy the static site from `web/` (e.g. Netlify). When `main` changes (especially the files under `web/public/models/`), the site updates.

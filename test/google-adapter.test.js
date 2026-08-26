@@ -57,6 +57,10 @@ test('google adapter satisfies the ProviderAdapter contract', () => {
     adapter.metadata.docsUrl,
     'https://ai.google.dev/gemini-api/docs'
   );
+  assert.strictEqual(
+    adapter.metadata.openaiCompatibleBaseUrl,
+    'https://generativelanguage.googleapis.com/openai/v1'
+  );
 
   const registry = createRegistry();
   registry.registerProvider(adapter);

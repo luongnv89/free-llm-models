@@ -80,6 +80,7 @@ test('defineProviderMetadata fills defaults and rejects invalid metadata', () =>
     baseUrl: null,
     apiKeySignupUrl: null,
     docsUrl: null,
+    openaiCompatibleBaseUrl: null,
     notes: null,
   });
 

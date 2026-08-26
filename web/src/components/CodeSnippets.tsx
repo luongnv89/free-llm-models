@@ -3,9 +3,12 @@ import type { ReactNode } from 'react';
 import { Highlight, themes } from 'prism-react-renderer';
 import { Check, CircleCheck, Code, Copy, Terminal } from 'lucide-react';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import { OPENROUTER_DEFAULT_METADATA, providerApiKeyEnvVar } from '@/hooks/useModels';
+import type { ProviderMetadata } from '@/types/model';
 
 interface CodeSnippetsProps {
   modelId: string;
+  provider?: ProviderMetadata;
 }
 
 type Language = 'curl' | 'nodejs' | 'python';
@@ -16,17 +19,24 @@ const prismLanguageMap: Record<Language, string> = {
   python: 'python',
 };
 
-const API_KEYS_URL = 'https://openrouter.ai/keys';
+function displayUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.host}${parsed.pathname.replace(/\/$/, '')}`;
+  } catch {
+    return url;
+  }
+}
 
-function KeysLink() {
+function KeysLink({ url }: { url: string }) {
   return (
     <a
-      href={API_KEYS_URL}
+      href={url}
       target="_blank"
       rel="noopener noreferrer"
       className="font-medium underline decoration-[var(--highlight)] decoration-2 underline-offset-4 hover:decoration-foreground"
     >
-      openrouter.ai/keys
+      {displayUrl(url)}
     </a>
   );
 }
@@ -38,17 +48,24 @@ interface RunStep {
   code: string;
 }
 
-function buildSteps(modelId: string): Record<Language, RunStep[]> {
+function buildSteps(modelId: string, provider: ProviderMetadata): Record<Language, RunStep[]> {
+  const baseUrl =
+    provider.openaiCompatibleBaseUrl ??
+    provider.baseUrl ??
+    OPENROUTER_DEFAULT_METADATA.baseUrl!;
+  const signupUrl = provider.apiKeySignupUrl ?? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl!;
+  const envVar = providerApiKeyEnvVar(provider);
+
   const apiKeyStep: RunStep = {
     title: 'Set your API key',
     hint: (
       <>
-        Create a key at <KeysLink />, then paste this into your terminal with your
+        Create a key at <KeysLink url={signupUrl} />, then paste this into your terminal with your
         real key.
       </>
     ),
     language: 'bash',
-    code: 'export OPENROUTER_API_KEY="sk-or-v1-...your-key..."',
+    code: `export ${envVar}="sk-or-v1-...your-key..."`,
   };
 
   return {
@@ -58,9 +75,9 @@ function buildSteps(modelId: string): Record<Language, RunStep[]> {
         title: 'Run the request',
         hint: 'Reads the key from your environment — nothing to edit.',
         language: 'bash',
-        code: `curl https://openrouter.ai/api/v1/chat/completions \\
+        code: `curl ${baseUrl}/chat/completions \\
   -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $OPENROUTER_API_KEY" \\
+  -H "Authorization: Bearer $${envVar}" \\
   -d '{
     "model": "${modelId}",
     "messages": [
@@ -73,7 +90,7 @@ function buildSteps(modelId: string): Record<Language, RunStep[]> {
       apiKeyStep,
       {
         title: 'Install the OpenAI SDK',
-        hint: 'OpenRouter speaks the OpenAI API format.',
+        hint: `${provider.displayName} speaks the OpenAI API format.`,
         language: 'bash',
         code: 'npm install openai',
       },
@@ -84,8 +101,8 @@ function buildSteps(modelId: string): Record<Language, RunStep[]> {
         code: `import OpenAI from "openai";
 
 const openai = new OpenAI({
-  baseURL: "https://openrouter.ai/api/v1",
-  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: "${baseUrl}",
+  apiKey: process.env.${envVar},
 });
 
 const completion = await openai.chat.completions.create({
@@ -100,7 +117,7 @@ console.log(completion.choices[0].message.content);`,
       apiKeyStep,
       {
         title: 'Install the OpenAI SDK',
-        hint: 'OpenRouter speaks the OpenAI API format.',
+        hint: `${provider.displayName} speaks the OpenAI API format.`,
         language: 'bash',
         code: 'pip install openai',
       },
@@ -112,8 +129,8 @@ console.log(completion.choices[0].message.content);`,
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=os.environ["OPENROUTER_API_KEY"],
+    base_url="${baseUrl}",
+    api_key=os.environ["${envVar}"],
 )
 
 completion = client.chat.completions.create(
@@ -133,7 +150,7 @@ const TABS: { key: Language; label: string; icon: ReactNode }[] = [
   { key: 'python', label: 'Python', icon: <Code className="h-4 w-4" /> },
 ];
 
-export function CodeSnippets({ modelId }: CodeSnippetsProps) {
+export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
   const [activeTab, setActiveTab] = useState<Language>('curl');
   const [copiedKeys, setCopiedKeys] = useState<ReadonlySet<string>>(new Set());
   const [flashKey, setFlashKey] = useState<string | null>(null);
@@ -146,7 +163,8 @@ export function CodeSnippets({ modelId }: CodeSnippetsProps) {
     };
   }, []);
 
-  const allSteps = buildSteps(modelId);
+  const resolvedProvider = provider ?? OPENROUTER_DEFAULT_METADATA;
+  const allSteps = buildSteps(modelId, resolvedProvider);
   const steps = allSteps[activeTab];
   const doneCount = steps.filter((_, i) => copiedKeys.has(`${activeTab}:${i}`)).length;
 

@@ -1,0 +1,33 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "meta/llama-3.3-70b-instruct",
+      "object": "model",
+      "created": 1735689600,
+      "owned_by": "meta",
+      "context_length": 128000
+    },
+    {
+      "id": "nvidia/llama-3.1-nemotron-70b-instruct",
+      "object": "model",
+      "created": 1729036800,
+      "owned_by": "nvidia",
+      "context_length": 131072
+    },
+    {
+      "id": "mistralai/mistral-large-2-instruct",
+      "object": "model",
+      "created": 1722476800,
+      "owned_by": "mistralai",
+      "context_length": 131072
+    },
+    {
+      "id": "deepseek-ai/deepseek-r1",
+      "object": "model",
+      "created": 1737676800,
+      "owned_by": "deepseek-ai",
+      "context_length": 163840
+    }
+  ]
+}

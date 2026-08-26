@@ -49,6 +49,8 @@ higher rate limits, or the rankings-daily popularity dataset.
 |----------|----------|---------|
 | `OPENROUTER_API_KEY` | no | Sent to the OpenRouter API for authenticated/higher-rate-limit requests. When set, the updater may also `GET /api/v1/datasets/rankings-daily`. Read by the fetcher and both updater scripts. |
 | `OPENROUTER_ENV_FILE` | no | Path to an env file the updater scripts source when looking for `OPENROUTER_API_KEY`. |
+| `HF_TOKEN` | no | Hugging Face token sent to the HF Router (`https://router.huggingface.co/v1`) for authenticated requests. Get one at https://huggingface.co/settings/tokens. |
+| `NVIDIA_API_KEY` | no | NVIDIA API key sent to the hosted NIM API (`https://integrate.api.nvidia.com/v1`). Get one at https://build.nvidia.com (NVIDIA's docs call this `NVAPI_KEY`; we read `NVIDIA_API_KEY` for consistency). |
 
 If `OPENROUTER_API_KEY` is not already exported, both updater scripts source the first
 existing file from this list that defines it:

@@ -1,0 +1,33 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "meta-llama/Llama-3.1-8B-Instruct",
+      "object": "model",
+      "created": 1722476800,
+      "owned_by": "meta-llama",
+      "context_length": 131072
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V3-0324",
+      "object": "model",
+      "created": 1743465600,
+      "owned_by": "deepseek-ai",
+      "context_length": 163840
+    },
+    {
+      "id": "Qwen/Qwen2.5-72B-Instruct",
+      "object": "model",
+      "created": 1735689600,
+      "owned_by": "Qwen",
+      "context_length": 32768
+    },
+    {
+      "id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "object": "model",
+      "created": 1718755200,
+      "owned_by": "mistralai",
+      "context_length": 32768
+    }
+  ]
+}

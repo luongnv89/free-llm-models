@@ -301,5 +301,7 @@ describe('ModelDetailPage', () => {
 
     expect(container.textContent).toContain('Set up a coding harness');
     expect(container.textContent).not.toContain('Use in any harness via Ori');
+    expect(container.textContent).not.toContain('https://openrouter.ai/api/v1');
+    expect(container.textContent).not.toContain('Quick Start');
   });
 });

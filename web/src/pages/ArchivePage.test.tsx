@@ -6,7 +6,9 @@ import { createRoot, type Root } from 'react-dom/client';
 import { MemoryRouter } from 'react-router-dom';
 import { ArchivePage } from './ArchivePage';
 import { resetModelsCacheForTests } from '@/hooks/useModels';
-import type { Model, ModelsData } from '@/types/model';
+import type { Model } from '@/types/model';
+
+const FETCHED_AT = '2026-08-20T12:00:00Z';
 
 function makeModel(overrides: Partial<Model> & Pick<Model, 'id' | 'name'>): Model {
   return {
@@ -33,20 +35,50 @@ function makeModel(overrides: Partial<Model> & Pick<Model, 'id' | 'name'>): Mode
   };
 }
 
-function makeData(archived: Model[]): ModelsData {
-  return {
-    fetchedAt: '2026-08-20T12:00:00Z',
-    totalModels: 1,
-    newModelIds: [],
-    models: [makeModel({ id: 'acme/live', name: 'Live Model', description: 'Still free' })],
-    archivedModels: archived.map((model) => ({
-      id: model.id,
-      removedAt: '2026-08-01T00:00:00Z',
-      lastSeenAt: '2026-07-31T00:00:00Z',
-      addedToFreeList: model.addedToFreeList,
-      model,
-    })),
-  };
+interface ProviderFixture {
+  id: string;
+  name: string;
+  models?: Model[];
+  archived?: Model[];
+}
+
+/**
+ * Serves a multi-provider index plus one JSON payload per provider,
+ * mirroring what useModels() fetches on a current deploy.
+ */
+function mockMultiProviderFetch(providers: ProviderFixture[]): ReturnType<typeof vi.fn> {
+  return vi.fn(async (input: RequestInfo | URL) => {
+    const url = String(input);
+    let body: unknown;
+    if (url.endsWith('/models/index.json')) {
+      body = {
+        providers: providers.map((p) => ({
+          id: p.id,
+          name: p.name,
+          modelCount: p.models?.length ?? 0,
+          fetchedAt: FETCHED_AT,
+        })),
+      };
+    } else {
+      const match = providers.find((p) => url.endsWith(`/models/${p.id}.json`));
+      if (!match) {
+        return { ok: false, status: 404, json: () => Promise.resolve({}) };
+      }
+      body = {
+        providerId: match.id,
+        fetchedAt: FETCHED_AT,
+        models: match.models ?? [],
+        archivedModels: (match.archived ?? []).map((model) => ({
+          id: model.id,
+          removedAt: '2026-08-01T00:00:00Z',
+          lastSeenAt: '2026-07-31T00:00:00Z',
+          addedToFreeList: model.addedToFreeList,
+          model,
+        })),
+      };
+    }
+    return { ok: true, json: () => Promise.resolve(body) };
+  });
 }
 
 let container: HTMLElement;
@@ -104,10 +136,10 @@ describe('ArchivePage', () => {
   });
 
   it('shows an empty state when there are no archived models', async () => {
-    fetchMock.mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve(makeData([])),
-    });
+    fetchMock = mockMultiProviderFetch([
+      { id: 'openrouter', name: 'OpenRouter', models: [makeModel({ id: 'acme/live', name: 'Live Model' })] },
+    ]);
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
     await renderPage();
     await settle();
 
@@ -129,13 +161,15 @@ describe('ArchivePage', () => {
   });
 
   it('lists archived models with detail links and omits live models', async () => {
-    fetchMock.mockResolvedValue({
-      ok: true,
-      json: () =>
-        Promise.resolve(
-          makeData([makeModel({ id: 'acme/gone', name: 'Gone Model' })]),
-        ),
-    });
+    fetchMock = mockMultiProviderFetch([
+      {
+        id: 'openrouter',
+        name: 'OpenRouter',
+        models: [makeModel({ id: 'acme/live', name: 'Live Model', description: 'Still free' })],
+        archived: [makeModel({ id: 'acme/gone', name: 'Gone Model' })],
+      },
+    ]);
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
     await renderPage();
     await settle();
 
@@ -144,5 +178,26 @@ describe('ArchivePage', () => {
     expect(container.textContent).toContain('Removed');
     expect(container.textContent).not.toContain('Live Model');
     expect(container.querySelector('a[href="/model/acme%2Fgone"]')).toBeTruthy();
+  });
+
+  it('groups legacy entries under OpenRouter and tagged entries under their provider', async () => {
+    const legacy = makeModel({ id: 'acme/gone', name: 'Gone Model' });
+    const groqEntry = makeModel({ id: 'groq/gone-fast', name: 'Gone Fast' }) as Model & {
+      providerId?: string;
+    };
+    groqEntry.providerId = 'groq';
+
+    fetchMock = mockMultiProviderFetch([
+      { id: 'openrouter', name: 'OpenRouter', archived: [legacy] },
+      { id: 'groq', name: 'Groq', archived: [groqEntry] },
+    ]);
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
+    await renderPage();
+    await settle();
+
+    expect(container.textContent).toContain('2 archived models');
+    expect(container.textContent).toContain('OpenRouter');
+    expect(container.textContent).toContain('Groq');
+    expect(container.textContent).toContain('Gone Fast');
   });
 });

@@ -1,18 +1,99 @@
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ModelCard } from '@/components/ModelCard';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
-import { useModels, getArchivedModels } from '@/hooks/useModels';
+import {
+  useModels,
+  getArchivedModels,
+  getArchiveProviderId,
+  getArchiveSourceOptions,
+  groupArchivedByProvider,
+} from '@/hooks/useModels';
 import { formatDateTime } from '@/lib/model-utils';
+import type { SourceOption } from '@/types/model';
 import {
   ArrowLeft,
   Archive,
   LoaderCircle,
   CircleAlert,
+  Check,
 } from 'lucide-react';
+
+interface ProviderGroupProps {
+  displayName: string;
+  count: number;
+  children: React.ReactNode;
+}
+
+function ProviderGroup({ displayName, count, children }: ProviderGroupProps) {
+  return (
+    <section className="mb-8">
+      <div className="flex items-center gap-2 mb-4">
+        <h2 className="text-base font-semibold">{displayName}</h2>
+        <span className="text-xs text-muted-foreground">
+          {count} archived model{count === 1 ? '' : 's'}
+        </span>
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function SourceChip({
+  option,
+  selected,
+  onClick,
+}: {
+  option: SourceOption;
+  selected: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-pressed={selected}
+      className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-md border transition-colors ${
+        selected
+          ? 'bg-black text-white border-black dark:bg-white dark:text-black dark:border-white'
+          : 'border-border hover:bg-muted text-foreground'
+      }`}
+    >
+      {selected && <Check className="w-3 h-3" />}
+      <span>{option.displayName}</span>
+      <span className={`text-xs ${selected ? 'opacity-70' : 'text-muted-foreground'}`}>
+        {option.count}
+      </span>
+    </button>
+  );
+}
 
 export function ArchivePage() {
   const { data, loading, error } = useModels();
   const archived = getArchivedModels(data);
+  const [selectedSources, setSelectedSources] = useState<string[]>([]);
+
+  const sourceOptions = useMemo(
+    () => getArchiveSourceOptions(archived, data?.providers ?? []),
+    [archived, data]
+  );
+
+  const filtered =
+    selectedSources.length > 0
+      ? archived.filter((entry) => selectedSources.includes(getArchiveProviderId(entry)))
+      : archived;
+
+  const groups = useMemo(
+    () => groupArchivedByProvider(filtered, data?.providers ?? []),
+    [filtered, data]
+  );
+
+  const toggleSource = (id: string) => {
+    setSelectedSources((current) =>
+      current.includes(id)
+        ? current.filter((v) => v !== id)
+        : [...current, id]
+    );
+  };
 
   if (loading) {
     return (
@@ -59,6 +140,22 @@ export function ArchivePage() {
             </div>
           </div>
 
+          {sourceOptions.length > 1 && (
+            <div className="flex flex-wrap items-center gap-2 mb-6">
+              <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mr-1">
+                Source
+              </span>
+              {sourceOptions.map((option) => (
+                <SourceChip
+                  key={option.id}
+                  option={option}
+                  selected={selectedSources.includes(option.id)}
+                  onClick={() => toggleSource(option.id)}
+                />
+              ))}
+            </div>
+          )}
+
           {archived.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground">No archived models yet</p>
@@ -66,17 +163,25 @@ export function ArchivePage() {
                 Models that leave the free list will appear here after the next updater run.
               </p>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {archived.map((entry) => (
-                <div key={entry.id}>
-                  <ModelCard model={entry.model} isNew={false} />
-                  <p className="text-xs text-muted-foreground mt-2 px-1">
-                    Removed {formatDateTime(entry.removedAt)}
-                  </p>
-                </div>
-              ))}
+          ) : filtered.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No archived models for the selected providers</p>
             </div>
+          ) : (
+            groups.map((group) => (
+              <ProviderGroup key={group.providerId} displayName={group.displayName} count={group.entries.length}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {group.entries.map((entry) => (
+                    <div key={entry.id}>
+                      <ModelCard model={entry.model} isNew={false} />
+                      <p className="text-xs text-muted-foreground mt-2 px-1">
+                        Removed {formatDateTime(entry.removedAt)}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </ProviderGroup>
+            ))
           )}
         </main>
       )}

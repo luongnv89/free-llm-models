@@ -7,7 +7,7 @@ export interface FAQQuestion {
 export const faqQuestions: FAQQuestion[] = [
   {
     id: 'what-are-free-models',
-    question: 'What are OpenRouter free models?',
+    question: 'What are free models?',
     category: 'getting-started',
   },
   {

@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act } from 'react';
 import { createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
-import type { ModelsData } from '@/types/model';
+import type { ModelsData, ModelsIndex, ProviderModelsPayload } from '@/types/model';
 
 function makeModelsData(): ModelsData {
   return {
@@ -75,6 +75,89 @@ function makeModelsData(): ModelsData {
   };
 }
 
+function makeIndex(): ModelsIndex {
+  return {
+    providers: [
+      {
+        id: 'openrouter',
+        name: 'OpenRouter',
+        metadata: {
+          id: 'openrouter',
+          displayName: 'OpenRouter',
+          baseUrl: null,
+          apiKeySignupUrl: null,
+          docsUrl: null,
+          notes: null,
+        },
+        modelCount: 1,
+        fetchedAt: '2026-08-20T12:00:00Z',
+      },
+      {
+        id: 'groq',
+        name: 'Groq',
+        metadata: {
+          id: 'groq',
+          displayName: 'Groq',
+          baseUrl: null,
+          apiKeySignupUrl: null,
+          docsUrl: null,
+          notes: null,
+        },
+        modelCount: 1,
+        fetchedAt: '2026-08-20T12:00:00Z',
+      },
+    ],
+  };
+}
+
+function makeProviderPayload(providerId: string, modelId: string): ProviderModelsPayload {
+  return {
+    providerId,
+    fetchedAt: '2026-08-20T12:00:00Z',
+    newModelIds: [modelId],
+    models: [
+      {
+        canonical_slug: '',
+        hugging_face_id: null,
+        created: 1700000000,
+        description: `${providerId} model`,
+        context_length: 8192,
+        architecture: {
+          modality: 'text->text',
+          input_modalities: ['text'],
+          output_modalities: ['text'],
+          tokenizer: 'GPT',
+          instruct_type: null,
+        },
+        pricing: { prompt: '0', completion: '0' },
+        top_provider: { context_length: 8192, max_completion_tokens: null, is_moderated: false },
+        per_request_limits: null,
+        supported_parameters: [],
+        default_parameters: {},
+        expiration_date: null,
+        id: modelId,
+        name: `${providerId} Model`,
+      },
+    ],
+  };
+}
+
+function mockMultiProvider(fetchMock: ReturnType<typeof vi.fn>) {
+  fetchMock.mockImplementation((url: string) => {
+    if (url === '/models/index.json') {
+      return Promise.resolve({ ok: true, json: () => Promise.resolve(makeIndex()) });
+    }
+    const match = url.match(/^\/models\/(\w+)\.json$/);
+    if (match) {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(makeProviderPayload(match[1], `acme/${match[1]}-one`)),
+      });
+    }
+    return Promise.resolve({ ok: false, status: 404 });
+  });
+}
+
 let container: HTMLElement;
 let root: Root | null = null;
 let fetchMock: ReturnType<typeof vi.fn>;
@@ -97,6 +180,12 @@ async function renderHook() {
         'data-archived': String(data?.archivedModels?.length ?? -1),
         'data-pop-rank': String(data?.models[0]?.popularity?.rank ?? ''),
         'data-added': data?.models[0]?.addedToFreeList ?? '',
+        'data-providers': JSON.stringify(
+          (data?.providers ?? []).map((p: { id: string }) => p.id),
+        ),
+        'data-provider-ids': JSON.stringify(
+          data?.models.map((m: { providerId?: string; id: string }) => m.providerId ?? m.id),
+        ),
       },
       String(data?.models.length ?? -1),
     );
@@ -131,6 +220,91 @@ describe('useModels fetching', () => {
     vi.restoreAllMocks();
   });
 
+  it('falls back to the legacy file when index.json is missing', async () => {
+    fetchMock.mockImplementation((url: string) => {
+      if (url === '/models/index.json') return Promise.resolve({ ok: false, status: 404 });
+      if (url === '/openrouter_free_models.json') {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(makeModelsData()) });
+      }
+      return Promise.resolve({ ok: false, status: 404 });
+    });
+    await renderHook();
+    await settle();
+
+    const urls = fetchMock.mock.calls.map((c) => c[0]);
+    expect(urls).toEqual(['/models/index.json', '/openrouter_free_models.json']);
+    expect(container.querySelector('[data-state="loaded"]')).toBeTruthy();
+    expect(container.textContent).toContain('1');
+  });
+
+  it('merges per-provider payloads into one annotated list', async () => {
+    mockMultiProvider(fetchMock);
+    await renderHook();
+    await settle();
+
+    const loaded = container.querySelector('[data-state="loaded"]');
+    expect(loaded).toBeTruthy();
+    expect(loaded!.textContent).toBe('2');
+    expect(JSON.parse(loaded!.getAttribute('data-providers')!)).toEqual([
+      'openrouter',
+      'groq',
+    ]);
+    const providerIds = JSON.parse(loaded!.getAttribute('data-provider-ids')!);
+    expect(providerIds).toContain('openrouter');
+    expect(providerIds).toContain('groq');
+  });
+
+  it('skips providers whose file fails while keeping the rest', async () => {
+    mockMultiProvider(fetchMock);
+    fetchMock.mockImplementation((url: string) => {
+      if (url === '/models/groq.json') return Promise.resolve({ ok: false, status: 500 });
+      if (url === '/models/index.json') {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(makeIndex()) });
+      }
+      if (url === '/models/openrouter.json') {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(makeProviderPayload('openrouter', 'acme/or-one')),
+        });
+      }
+      return Promise.resolve({ ok: false, status: 404 });
+    });
+    await renderHook();
+    await settle();
+
+    const loaded = container.querySelector('[data-state="loaded"]');
+    expect(loaded).toBeTruthy();
+    expect(loaded!.textContent).toBe('1');
+    expect(JSON.parse(loaded!.getAttribute('data-providers')!)).toEqual(['openrouter']);
+  });
+
+  it('shows an error when every provider payload fails', async () => {
+    fetchMock.mockResolvedValue({ ok: false, status: 500 });
+    await renderHook();
+    await settle();
+
+    expect(container.querySelector('[data-state="error"]')).toBeTruthy();
+  });
+
+  it('falls back to the legacy file when index.json is malformed', async () => {
+    fetchMock.mockImplementation((url: string) => {
+      if (url === '/models/index.json') {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve({ broken: true }),
+        });
+      }
+      if (url === '/openrouter_free_models.json') {
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(makeModelsData()) });
+      }
+      return Promise.resolve({ ok: false, status: 404 });
+    });
+    await renderHook();
+    await settle();
+
+    expect(container.querySelector('[data-state="loaded"]')).toBeTruthy();
+  });
+
   it('fetches from the BASE_URL-derived path', async () => {
     fetchMock.mockResolvedValue({
       ok: true,
@@ -139,21 +313,22 @@ describe('useModels fetching', () => {
     await renderHook();
     await settle();
 
-    expect(fetchMock).toHaveBeenCalledTimes(1);
     const [url, init] = fetchMock.mock.calls[0];
-    expect(url).toBe('/openrouter_free_models.json');
+    expect(url).toBe('/models/index.json');
     expect(init?.signal).toBeInstanceOf(AbortSignal);
+    // Invalid index body falls back to the legacy dataset.
+    expect(container.querySelector('[data-state="loaded"]')).toBeTruthy();
+    expect(fetchMock.mock.calls[1][0]).toBe('/openrouter_free_models.json');
   });
 
   it('serves the dataset from cache on remount without refetching', async () => {
-    fetchMock.mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve(makeModelsData()),
-    });
+    mockMultiProvider(fetchMock);
 
     await renderHook();
     await settle();
-    expect(container.textContent).toContain('1');
+    const callCount = fetchMock.mock.calls.length;
+    expect(callCount).toBeGreaterThanOrEqual(3);
+    expect(container.textContent).toContain('2');
 
     await act(async () => {
       root?.unmount();
@@ -164,7 +339,7 @@ describe('useModels fetching', () => {
     expect(container.querySelector('[data-state="loaded"]')).toBeTruthy();
 
     await settle();
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock).toHaveBeenCalledTimes(callCount);
   });
 
   it('aborts an in-flight request on unmount', async () => {

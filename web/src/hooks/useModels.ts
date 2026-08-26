@@ -2,6 +2,9 @@ import { useState, useEffect, useMemo } from 'react';
 import type {
   Model,
   ModelsData,
+  ModelsIndex,
+  ProviderModelsPayload,
+  ProviderMetadata,
   FilterState,
   SortField,
   SortOrder,
@@ -20,6 +23,14 @@ export function getModelsDataUrl(): string {
   return `${import.meta.env.BASE_URL}openrouter_free_models.json`;
 }
 
+export function getModelsIndexUrl(): string {
+  return `${import.meta.env.BASE_URL}models/index.json`;
+}
+
+export function getProviderFileUrl(providerId: string): string {
+  return `${import.meta.env.BASE_URL}models/${encodeURIComponent(providerId)}.json`;
+}
+
 export function normalizeModelsData(json: ModelsData): ModelsData {
   return {
     ...json,
@@ -27,6 +38,71 @@ export function normalizeModelsData(json: ModelsData): ModelsData {
     newModelIds: Array.isArray(json.newModelIds) ? json.newModelIds : [],
     archivedModels: Array.isArray(json.archivedModels) ? json.archivedModels : [],
   };
+}
+
+export function mergeProviderPayloads(
+  indexJson: ModelsIndex,
+  payloads: (ProviderModelsPayload | null)[]
+): ModelsData {
+  const providers: ProviderMetadata[] = [];
+  const models: Model[] = [];
+  const archived: ArchivedModel[] = [];
+  const newModelIds: string[] = [];
+  let latestFetchedAt = '';
+
+  for (const entry of indexJson.providers ?? []) {
+    const payload = payloads.find(
+      (p): p is ProviderModelsPayload => p?.providerId === entry.id
+    );
+    if (!payload || !Array.isArray(payload.models)) continue;
+
+    if (entry.metadata) providers.push(entry.metadata);
+    else
+      providers.push({
+        id: entry.id,
+        displayName: entry.name || entry.id,
+        baseUrl: null,
+        apiKeySignupUrl: null,
+        docsUrl: null,
+        notes: null,
+      });
+
+    for (const model of payload.models) {
+      models.push({ ...model, providerId: payload.providerId } as Model);
+    }
+    if (Array.isArray(payload.newModelIds)) newModelIds.push(...payload.newModelIds);
+    if (Array.isArray(payload.archivedModels)) {
+      archived.push(
+        ...payload.archivedModels.map((a) => ({
+          ...a,
+          model: { ...a.model, providerId: payload.providerId } as Model,
+        }))
+      );
+    }
+
+    const fetchedAt = Date.parse(payload.fetchedAt);
+    const currentLatest = Date.parse(latestFetchedAt);
+    if (!Number.isNaN(fetchedAt) && (Number.isNaN(currentLatest) || fetchedAt > currentLatest)) {
+      latestFetchedAt = payload.fetchedAt;
+    }
+  }
+
+  return normalizeModelsData({
+    fetchedAt: latestFetchedAt || new Date().toISOString(),
+    totalModels: models.length,
+    newModelIds,
+    models,
+    archivedModels: archived,
+    providers,
+  });
+}
+
+export function isMultiProviderIndex(json: unknown): json is ModelsIndex {
+  return (
+    typeof json === 'object' &&
+    json !== null &&
+    Array.isArray((json as ModelsIndex).providers)
+  );
 }
 
 export function getArchivedModels(data: ModelsData | null | undefined): ArchivedModel[] {
@@ -51,6 +127,12 @@ export function findModelById(
   return { model, archived: true, archive };
 }
 
+async function fetchJson<T>(url: string, signal: AbortSignal): Promise<T> {
+  const res = await fetch(url, { signal });
+  if (!res.ok) throw new Error(`Failed to load ${url}`);
+  return res.json() as Promise<T>;
+}
+
 export function useModels() {
   const [data, setData] = useState<ModelsData | null>(cachedData);
   const [loading, setLoading] = useState(cachedData === null);
@@ -62,23 +144,56 @@ export function useModels() {
     const controller = new AbortController();
     let cancelled = false;
 
-    fetch(getModelsDataUrl(), { signal: controller.signal })
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to load models');
-        return res.json();
-      })
-      .then((json: ModelsData) => {
+    async function load() {
+      try {
+        let indexJson: ModelsIndex;
+        try {
+          const json = await fetchJson<unknown>(getModelsIndexUrl(), controller.signal);
+          if (!isMultiProviderIndex(json)) throw new Error('Invalid models index');
+          indexJson = json;
+        } catch (indexErr) {
+          if (
+            cancelled ||
+            controller.signal.aborted ||
+            (indexErr instanceof DOMException && indexErr.name === 'AbortError')
+          ) {
+            return;
+          }
+          // Stale deploy without valid per-provider files: legacy single file.
+          const json = await fetchJson<ModelsData>(getModelsDataUrl(), controller.signal);
+          if (cancelled) return;
+          cachedData = normalizeModelsData(json);
+          setData(cachedData);
+          setLoading(false);
+          return;
+        }
+        const settled = await Promise.allSettled(
+          indexJson.providers.map((entry) =>
+            fetchJson<ProviderModelsPayload>(getProviderFileUrl(entry.id), controller.signal)
+          )
+        );
         if (cancelled) return;
-        const normalized = normalizeModelsData(json);
-        cachedData = normalized;
-        setData(normalized);
+
+        const payloads = settled.map((result) =>
+          result.status === 'fulfilled' ? result.value : null
+        );
+
+        if (payloads.every((p) => p === null)) {
+          throw new Error('Failed to load models');
+        }
+
+        const merged = mergeProviderPayloads(indexJson, payloads);
+        cachedData = merged;
+        setData(merged);
         setLoading(false);
-      })
-      .catch((err) => {
-        if (cancelled || err.name === 'AbortError') return;
-        setError(err.message);
+      } catch (err) {
+        if (cancelled || (err instanceof DOMException && err.name === 'AbortError')) return;
+        setError(err instanceof Error ? err.message : String(err));
         setLoading(false);
-      });
+      }
+    }
+
+    void load();
 
     return () => {
       cancelled = true;
@@ -90,6 +205,9 @@ export function useModels() {
 }
 
 export function getProvider(model: Model): string {
+  if ('providerId' in model && typeof model.providerId === 'string' && model.providerId) {
+    return model.providerId;
+  }
   return model.id.split('/')[0] || 'Unknown';
 }
 

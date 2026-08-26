@@ -52,12 +52,33 @@ export interface ArchivedModel {
   model: Model;
 }
 
+export interface ProviderIndexEntry {
+  id: string;
+  name: string;
+  metadata: ProviderMetadata;
+  modelCount: number;
+  fetchedAt: string;
+}
+
+export interface ModelsIndex {
+  providers: ProviderIndexEntry[];
+}
+
+export interface ProviderModelsPayload {
+  providerId: string;
+  fetchedAt: string;
+  newModelIds?: string[];
+  archivedModels?: ArchivedModel[];
+  models: Model[];
+}
+
 export interface ModelsData {
   fetchedAt: string;
   totalModels: number;
   newModelIds: string[];
   models: Model[];
   archivedModels?: ArchivedModel[];
+  providers?: ProviderMetadata[];
 }
 
 export type SortField = 'name' | 'provider' | 'context_length' | 'created' | 'addedToFreeList';

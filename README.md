@@ -82,6 +82,36 @@ That script:
 - commits if the JSON changed
 - pushes to `main`
 
+## Cross-reference against the community free-LLM list
+
+To catch newly added (or removed) free tiers that our adapters miss, the dataset can be
+cross-checked against the community-maintained
+[cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) list.
+
+```bash
+# from repo root — generate local per-provider files first (web/public/models/*.json)
+npm start
+
+# fetch the community list and print a per-provider discrepancy report
+npm run crossref
+
+# offline: compare against a saved copy of the list instead of fetching
+node scripts/crossref-free-lists.js --source /path/to/README.md
+```
+
+How to interpret the output (`scripts/crossref-free-lists.js`):
+
+- For every provider tracked here it lists:
+  - **In community list but not matched in ours** — candidates our adapters may be missing.
+  - **In ours but not matched in community list** — models we carry that the community list
+    does not mention (not necessarily wrong; the list is curated and lags).
+  - **no-local-data** providers have no `web/public/models/<id>.json` yet — usually because
+    their API key is not configured; re-run after `npm start` succeeds for them.
+- Matching is heuristic: model ids/display names are normalized (lowercase alphanumerics)
+  and matched by substring containment in either direction, so near-matches count as matched.
+- The script is report-only: it never modifies adapters or data. When GitHub is unreachable,
+  `--fetch` automatically falls back to the project's official Mintlify mirror.
+
 ## Run the website locally
 
 ```bash

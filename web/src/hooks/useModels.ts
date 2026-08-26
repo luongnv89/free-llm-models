@@ -21,7 +21,7 @@ export function resetModelsCacheForTests() {
 }
 
 export function getModelsDataUrl(): string {
-  return `${import.meta.env.BASE_URL}openrouter_free_models.json`;
+  return `${import.meta.env.BASE_URL}free_models.json`;
 }
 
 export function getModelsIndexUrl(): string {

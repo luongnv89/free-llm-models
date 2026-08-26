@@ -73,6 +73,11 @@ function commitScriptsCoverAllOutputs() {
   assert.match(lib, /web\/public\/models/, 'lib declares the models/ output dir');
   assert.match(
     lib,
+    /web\/public\/free_models\.json/,
+    'lib declares the aggregate free_models.json output'
+  );
+  assert.match(
+    lib,
     /openrouter_free_models\.json/,
     'lib keeps the legacy snapshot in the path set'
   );
@@ -86,17 +91,19 @@ function seedDataFiles(dir) {
   fs.mkdirSync(path.join(dir, MODELS_DIR), { recursive: true });
   fs.writeFileSync(path.join(dir, MODELS_DIR, 'index.json'), '{"providers":[]}\n');
   fs.writeFileSync(path.join(dir, MODELS_DIR, 'openrouter.json'), '[]\n');
+  fs.writeFileSync(path.join(dir, 'web/public/free_models.json'), '{}\n');
   fs.writeFileSync(path.join(dir, 'web/public/openrouter_free_models.json'), '[]\n');
   execFileSync('git', ['add', '-A'], { cwd: dir });
   execFileSync('git', ['commit', '-qm', 'seed data'], { cwd: dir });
 }
 
-test('updater_data_paths lists models dir and legacy snapshot', () => {
+test('updater_data_paths lists models dir, aggregate, and legacy snapshot', () => {
   const r = sourceLib('mapfile -t p < <(updater_data_paths); echo "count=${#p[@]}"; printf "%s\\n" "${p[@]}"', {}, REPO);
   assert.strictEqual(r.status, 0);
   const lines = r.stdout.trim().split('\n');
-  assert.strictEqual(lines[0], 'count=2');
+  assert.strictEqual(lines[0], 'count=3');
   assert.ok(lines.includes('web/public/models'));
+  assert.ok(lines.includes('web/public/free_models.json'));
   assert.ok(lines.includes('web/public/openrouter_free_models.json'));
 });
 
@@ -126,6 +133,13 @@ test('updater_data_dirty ignores clean trees, flags any generated change', () =>
     fs.rmSync(path.join(dir, MODELS_DIR, 'index.json'));
     r = sourceLib('updater_data_dirty', {}, dir);
     assert.strictEqual(r.status, 0, 'deleted index.json must be dirty');
+    execFileSync('git', ['checkout', '--', '.'], { cwd: dir });
+    execFileSync('git', ['clean', '-qfd', 'web/public'], { cwd: dir });
+
+    // Modified aggregate file → dirty
+    fs.appendFileSync(path.join(dir, 'web/public/free_models.json'), '{}\n');
+    r = sourceLib('updater_data_dirty', {}, dir);
+    assert.strictEqual(r.status, 0, 'modified aggregate must be dirty');
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
@@ -139,6 +153,7 @@ test('updater_stage_data stages the whole generated set in one go', () => {
     // Only some provider files changed
     fs.appendFileSync(path.join(dir, MODELS_DIR, 'groq.json'), '{}\n');
     fs.writeFileSync(path.join(dir, MODELS_DIR, 'google.json'), '[{"id":"gemini"}]\n');
+    fs.appendFileSync(path.join(dir, 'web/public/free_models.json'), '{}\n');
     fs.appendFileSync(path.join(dir, 'web/public/openrouter_free_models.json'), '{}\n');
 
     sourceLib('updater_stage_data', {}, dir);
@@ -148,6 +163,7 @@ test('updater_stage_data stages the whole generated set in one go', () => {
       encoding: 'utf8',
     }).trim().split('\n').sort();
     assert.deepStrictEqual(staged, [
+      'web/public/free_models.json',
       'web/public/models/google.json',
       'web/public/models/groq.json',
       'web/public/openrouter_free_models.json',

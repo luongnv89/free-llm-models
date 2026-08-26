@@ -7,6 +7,7 @@ A tiny site + updater that tracks **free LLM models across multiple providers** 
 - **Generated data files (served by the site):**
   - `web/public/models/<providerId>.json` – one file per provider
   - `web/public/models/index.json` – merged index of all providers
+  - `web/public/free_models.json` – aggregate document covering every provider emitted in the run (see below)
   - `web/public/openrouter_free_models.json` – legacy OpenRouter-only snapshot (still refreshed for backward compatibility)
 
 ## Supported providers
@@ -29,7 +30,7 @@ Providers whose key is missing are skipped with a warning (except where noted); 
 1. Fetches each enabled provider's model catalog via its adapter (`lib/providers/*.js`).
 2. Filters each catalog down to free models and normalizes them to a canonical schema.
 3. Merges per-provider join dates and archives of former free models, then attaches OpenRouter popularity when it can be obtained.
-4. Writes `web/public/models/<providerId>.json`, `web/public/models/index.json`, and refreshes the legacy `web/public/openrouter_free_models.json` when OpenRouter succeeded.
+4. Writes `web/public/models/<providerId>.json`, `web/public/models/index.json`, the aggregate `web/public/free_models.json`, and refreshes the legacy `web/public/openrouter_free_models.json` when OpenRouter succeeded.
 5. The `web/` app loads the index + per-provider files and provides search/sort/filters, a source (provider) filter, provider-specific code snippets, an `/archive` of leavers grouped by provider, and capability tags.
 
 ## Repo layout
@@ -44,6 +45,7 @@ Providers whose key is missing are skipped with a warning (except where noted); 
 - `scripts/install-daily-cron.sh` – installs a user crontab entry for `scripts/update_data.sh`
 - `web/` – frontend app (see [`web/README.md`](web/README.md))
   - `web/public/models/` – generated per-provider data + index (committed)
+  - `web/public/free_models.json` – aggregate dataset (committed)
   - `web/public/openrouter_free_models.json` – legacy snapshot (committed)
   - `web/src/` – React code
 
@@ -113,9 +115,29 @@ Or run the full automation script (recommended):
 That script:
 - pulls latest `main`
 - installs deps if needed
-- regenerates `web/public/models/*.json` (+ `index.json` and the legacy OpenRouter snapshot)
+- regenerates `web/public/models/*.json` (+ `index.json`, the aggregate `free_models.json`, and the legacy OpenRouter snapshot)
 - commits if the JSON changed
 - pushes to `main`
+
+### The aggregate `web/public/free_models.json`
+
+On every run where at least one provider succeeded, the updater also writes a single
+aggregate document at `web/public/free_models.json` (built by `buildAggregate` /
+`writeFreeModelsAggregate` in `lib/providers/emit.js`). It contains **only the providers
+that were successfully emitted in that run**:
+
+| Field | Content |
+|-------|---------|
+| `fetchedAt` | Latest `fetchedAt` across the included providers |
+| `totalModels` | Number of current models across all included providers |
+| `newModelIds` | Flattened new-model ids from every included provider's history |
+| `models` | All current models, each tagged with its `providerId` |
+| `archivedModels` | Archived models from every included provider, each retaining its `providerId` |
+| `providers` | Each provider's metadata (display name, base URL, docs links) |
+
+Like everything else under `web/public`, it is generated — never hand-edit it. The
+updater scripts stage and commit it together with the per-provider files
+(`scripts/lib/updater-common.sh`).
 
 ## Cross-reference against the community free-LLM list
 

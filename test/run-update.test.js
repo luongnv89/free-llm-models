@@ -60,6 +60,7 @@ function makeRunnerOptions(registryAdapters, dir, overrides = {}) {
     registry,
     outputDir: overrides.outputDir ?? path.join(dir, 'models'),
     legacyOutputPath: overrides.legacyOutputPath ?? path.join(dir, 'legacy.json'),
+    aggregateOutputPath: path.join(dir, 'free_models.json'),
     now: () => '2026-08-25T00:00:00.000Z',
     log: () => {},
     warn: () => {},

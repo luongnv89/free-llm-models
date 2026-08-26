@@ -1,10 +1,7 @@
 {
   "providerId": "cerebras",
-  "fetchedAt": "2026-08-26T08:52:08.057Z",
-  "newModelIds": [
-    "gpt-oss-120b",
-    "gemma-4-31b"
-  ],
+  "fetchedAt": "2026-08-26T13:48:50.170Z",
+  "newModelIds": [],
   "archivedModels": [],
   "models": [
     {

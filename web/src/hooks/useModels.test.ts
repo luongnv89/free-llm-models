@@ -7,6 +7,7 @@ import {
   getUniqueModalities,
   getUniqueProviders,
   getSourceOptions,
+  getProviderQuickFilterOptions,
   isNewModel,
   normalizeModelsData,
 } from './useModels';
@@ -423,6 +424,36 @@ describe('getSourceOptions', () => {
 
   it('returns an empty array for an empty list', () => {
     expect(getSourceOptions([])).toEqual([]);
+  });
+});
+
+describe('getProviderQuickFilterOptions', () => {
+  it('returns the fixed provider order with canonical source counts', () => {
+    const sourced = [
+      { ...models[0], id: 'owner/model-a', ...sourceTag('groq') },
+      { ...models[1], id: 'groq/model-b', ...sourceTag('openrouter') },
+      { ...models[2], id: 'google/model-c', ...sourceTag('groq') },
+    ] as Model[];
+
+    expect(getProviderQuickFilterOptions(sourced)).toEqual([
+      { id: 'openrouter', displayName: 'OpenRouter', count: 1 },
+      { id: 'google', displayName: 'Google', count: 0 },
+      { id: 'mistral', displayName: 'Mistral', count: 0 },
+      { id: 'nvidia-nim', displayName: 'Nvidia', count: 0 },
+      { id: 'groq', displayName: 'Groq', count: 2 },
+      { id: 'cerebras', displayName: 'Cerebras', count: 0 },
+    ]);
+  });
+
+  it('keeps every required provider visible when no models are loaded', () => {
+    expect(getProviderQuickFilterOptions([]).map(({ id, count }) => ({ id, count }))).toEqual([
+      { id: 'openrouter', count: 0 },
+      { id: 'google', count: 0 },
+      { id: 'mistral', count: 0 },
+      { id: 'nvidia-nim', count: 0 },
+      { id: 'groq', count: 0 },
+      { id: 'cerebras', count: 0 },
+    ]);
   });
 });
 

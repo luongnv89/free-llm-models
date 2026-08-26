@@ -27,6 +27,7 @@ export interface Popularity {
 
 export interface Model {
   id: string;
+  providerId?: string;
   canonical_slug: string;
   hugging_face_id: string | null;
   name: string;

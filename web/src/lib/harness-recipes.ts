@@ -28,12 +28,22 @@ export interface RecipeStep {
   snippets: RecipeSnippet[];
 }
 
+export interface RecipeProvenance {
+  providerDisplayName: string;
+  providerSignupUrl: string;
+  providerDocsUrl: string;
+  harnessDocsUrl: string;
+  verificationDate: '2026-08-26';
+}
+
 export interface CompatibilityEntry {
   providerId: ProviderId;
   harnessId: HarnessId;
   status: CompatibilityStatus;
   harnessProviderId: string;
   docsUrl: string;
+  providerSignupUrl: string;
+  providerDocsUrl: string;
   lastVerified: '2026-08-26';
   caveats?: string[];
   minimumKnownVersion?: string;
@@ -44,16 +54,20 @@ export interface HarnessRecipe {
   providerId: string;
   harnessProviderId: string | null;
   status: CompatibilityStatus;
-  /** The model ID from the provider catalog, before harness-specific mapping. */
   sourceModelId: string;
-  /** The exact model ID passed to the selected harness. */
   modelId: string;
   steps: RecipeStep[];
   snippets: RecipeSnippet[];
+  /** Non-null only when joining every snippet is safe and useful. */
+  copyAll: string | null;
+  copyAllSafe: boolean;
   caveats?: string[];
+  providerSignupUrl?: string;
+  providerDocsUrl?: string;
   minimumKnownVersion?: string;
   docsUrl: string;
   lastVerified: '2026-08-26';
+  provenance: RecipeProvenance | null;
 }
 
 export type RecipeModel = string | { id: string };
@@ -65,6 +79,46 @@ const HARNESS_DOCS: Record<HarnessId, string> = {
   pi: 'https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/providers.md',
   opencode: 'https://opencode.ai/docs/providers/',
   codex: 'https://developers.openai.com/codex/config-advanced/',
+};
+
+const HARNESS_LABELS: Record<HarnessId, string> = {
+  'claude-code': 'Claude Code',
+  pi: 'Pi',
+  opencode: 'OpenCode',
+  codex: 'Codex CLI',
+};
+
+const PROVIDER_INFO: Record<ProviderId, Omit<RecipeProvenance, 'harnessDocsUrl' | 'verificationDate'>> = {
+  openrouter: {
+    providerDisplayName: 'OpenRouter',
+    providerSignupUrl: 'https://openrouter.ai/keys',
+    providerDocsUrl: 'https://openrouter.ai/docs',
+  },
+  google: {
+    providerDisplayName: 'Google AI Studio',
+    providerSignupUrl: 'https://aistudio.google.com/apikey',
+    providerDocsUrl: 'https://ai.google.dev/gemini-api/docs',
+  },
+  mistral: {
+    providerDisplayName: 'Mistral AI',
+    providerSignupUrl: 'https://console.mistral.ai',
+    providerDocsUrl: 'https://docs.mistral.ai',
+  },
+  'nvidia-nim': {
+    providerDisplayName: 'NVIDIA NIM',
+    providerSignupUrl: 'https://build.nvidia.com',
+    providerDocsUrl: 'https://docs.api.nvidia.com',
+  },
+  groq: {
+    providerDisplayName: 'Groq',
+    providerSignupUrl: 'https://console.groq.com/keys',
+    providerDocsUrl: 'https://console.groq.com/docs',
+  },
+  cerebras: {
+    providerDisplayName: 'Cerebras',
+    providerSignupUrl: 'https://cloud.cerebras.ai',
+    providerDocsUrl: 'https://inference-docs.cerebras.ai',
+  },
 };
 
 const API_KEY_ENV: Record<ProviderId, string> = {
@@ -92,65 +146,57 @@ function entry(
   providerId: ProviderId,
   harnessId: HarnessId,
   status: CompatibilityStatus,
-  options: Pick<CompatibilityEntry, 'harnessProviderId'> &
-    Partial<Pick<CompatibilityEntry, 'caveats' | 'minimumKnownVersion'>>,
+  harnessProviderId: string,
+  caveats?: string[],
 ): CompatibilityEntry {
+  const info = PROVIDER_INFO[providerId];
   return {
     providerId,
     harnessId,
     status,
-    ...options,
+    harnessProviderId,
     docsUrl: HARNESS_DOCS[harnessId],
+    providerSignupUrl: info.providerSignupUrl,
+    providerDocsUrl: info.providerDocsUrl,
     lastVerified: LAST_VERIFIED,
+    ...(caveats ? { caveats } : {}),
   };
 }
 
-/**
- * The complete supported-provider matrix. Keep every pair explicit so adding a
- * provider or harness cannot silently inherit another provider's recipe.
- */
 export const COMPATIBILITY_REGISTRY = {
   'claude-code': {
-    openrouter: entry('openrouter', 'claude-code', 'experimental', {
-      harnessProviderId: 'openrouter',
-      caveats: [OPENROUTER_CLAUDE_CAVEAT],
-    }),
-    google: entry('google', 'claude-code', 'unsupported', { harnessProviderId: 'google' }),
-    mistral: entry('mistral', 'claude-code', 'unsupported', { harnessProviderId: 'mistral' }),
-    'nvidia-nim': entry('nvidia-nim', 'claude-code', 'unsupported', {
-      harnessProviderId: 'nvidia',
-    }),
-    groq: entry('groq', 'claude-code', 'unsupported', { harnessProviderId: 'groq' }),
-    cerebras: entry('cerebras', 'claude-code', 'unsupported', {
-      harnessProviderId: 'cerebras',
-    }),
+    openrouter: entry('openrouter', 'claude-code', 'experimental', 'openrouter', [OPENROUTER_CLAUDE_CAVEAT]),
+    google: entry('google', 'claude-code', 'unsupported', 'google'),
+    mistral: entry('mistral', 'claude-code', 'unsupported', 'mistral'),
+    'nvidia-nim': entry('nvidia-nim', 'claude-code', 'unsupported', 'nvidia'),
+    groq: entry('groq', 'claude-code', 'unsupported', 'groq'),
+    cerebras: entry('cerebras', 'claude-code', 'unsupported', 'cerebras'),
   },
   pi: {
-    openrouter: entry('openrouter', 'pi', 'supported', { harnessProviderId: 'openrouter' }),
-    google: entry('google', 'pi', 'supported', { harnessProviderId: 'google' }),
-    mistral: entry('mistral', 'pi', 'supported', { harnessProviderId: 'mistral' }),
-    'nvidia-nim': entry('nvidia-nim', 'pi', 'supported', { harnessProviderId: 'nvidia' }),
-    groq: entry('groq', 'pi', 'supported', { harnessProviderId: 'groq' }),
-    cerebras: entry('cerebras', 'pi', 'supported', { harnessProviderId: 'cerebras' }),
+    openrouter: entry('openrouter', 'pi', 'supported', 'openrouter'),
+    google: entry('google', 'pi', 'supported', 'google'),
+    mistral: entry('mistral', 'pi', 'supported', 'mistral'),
+    'nvidia-nim': entry('nvidia-nim', 'pi', 'supported', 'nvidia'),
+    groq: entry('groq', 'pi', 'supported', 'groq'),
+    cerebras: entry('cerebras', 'pi', 'supported', 'cerebras'),
   },
   opencode: {
-    openrouter: entry('openrouter', 'opencode', 'supported', { harnessProviderId: 'openrouter' }),
-    google: entry('google', 'opencode', 'supported', { harnessProviderId: 'google' }),
-    mistral: entry('mistral', 'opencode', 'supported', { harnessProviderId: 'mistral' }),
-    'nvidia-nim': entry('nvidia-nim', 'opencode', 'supported', { harnessProviderId: 'nvidia' }),
-    groq: entry('groq', 'opencode', 'supported', { harnessProviderId: 'groq' }),
-    cerebras: entry('cerebras', 'opencode', 'supported', { harnessProviderId: 'cerebras' }),
+    openrouter: entry('openrouter', 'opencode', 'supported', 'openrouter'),
+    google: entry('google', 'opencode', 'supported', 'google'),
+    mistral: entry('mistral', 'opencode', 'supported', 'mistral'),
+    'nvidia-nim': entry('nvidia-nim', 'opencode', 'supported', 'nvidia'),
+    groq: entry('groq', 'opencode', 'supported', 'groq'),
+    cerebras: entry('cerebras', 'opencode', 'supported', 'cerebras'),
   },
   codex: {
-    openrouter: entry('openrouter', 'codex', 'supported', { harnessProviderId: 'openrouter' }),
-    google: entry('google', 'codex', 'unsupported', { harnessProviderId: 'google' }),
-    mistral: entry('mistral', 'codex', 'supported', { harnessProviderId: 'mistral' }),
-    'nvidia-nim': entry('nvidia-nim', 'codex', 'unsupported', { harnessProviderId: 'nvidia' }),
-    groq: entry('groq', 'codex', 'experimental', {
-      harnessProviderId: 'groq',
-      caveats: ['Tool calls, streaming, and multi-turn Responses behavior still require manual verification.'],
-    }),
-    cerebras: entry('cerebras', 'codex', 'unsupported', { harnessProviderId: 'cerebras' }),
+    openrouter: entry('openrouter', 'codex', 'supported', 'openrouter'),
+    google: entry('google', 'codex', 'unsupported', 'google'),
+    mistral: entry('mistral', 'codex', 'supported', 'mistral'),
+    'nvidia-nim': entry('nvidia-nim', 'codex', 'unsupported', 'nvidia'),
+    groq: entry('groq', 'codex', 'experimental', 'groq', [
+      'Tool calls, streaming, and multi-turn Responses behavior still require manual verification.',
+    ]),
+    cerebras: entry('cerebras', 'codex', 'unsupported', 'cerebras'),
   },
 } as const satisfies Record<HarnessId, Record<ProviderId, CompatibilityEntry>>;
 
@@ -167,32 +213,17 @@ function tomlString(value: string): string {
   for (const character of value) {
     const codePoint = character.codePointAt(0)!;
     switch (character) {
-      case '\\':
-        escaped += '\\\\';
-        break;
-      case '"':
-        escaped += '\\"';
-        break;
-      case '\b':
-        escaped += '\\b';
-        break;
-      case '\t':
-        escaped += '\\t';
-        break;
-      case '\n':
-        escaped += '\\n';
-        break;
-      case '\f':
-        escaped += '\\f';
-        break;
-      case '\r':
-        escaped += '\\r';
-        break;
+      case '\\': escaped += '\\\\'; break;
+      case '"': escaped += '\\"'; break;
+      case '\b': escaped += '\\b'; break;
+      case '\t': escaped += '\\t'; break;
+      case '\n': escaped += '\\n'; break;
+      case '\f': escaped += '\\f'; break;
+      case '\r': escaped += '\\r'; break;
       default:
-        escaped +=
-          codePoint < 0x20 || codePoint === 0x7f
-            ? `\\u${codePoint.toString(16).padStart(4, '0')}`
-            : character;
+        escaped += codePoint < 0x20 || codePoint === 0x7f
+          ? `\\u${codePoint.toString(16).padStart(4, '0')}`
+          : character;
     }
   }
   return `"${escaped}"`;
@@ -205,37 +236,36 @@ function jsonSnippet(value: Record<string, string>): string {
 function envCheck(envVar: string): RecipeSnippet {
   return {
     id: 'credentials',
-    label: 'Check the API key environment variable',
+    label: `Check ${envVar}`,
     language: 'shell',
     content: `test -n "$${envVar}" || { printf '%s\\n' 'Set ${envVar} before continuing.' >&2; exit 1; }`,
   };
 }
 
-function unsupportedCaveats(entryForPair: CompatibilityEntry, providerId: string): string[] {
+function unsupportedCaveat(pair: CompatibilityEntry, providerId: string): string[] {
   return [
-    ...(entryForPair.caveats ?? []),
-    `There is no documented direct ${entryForPair.harnessId} integration for provider "${providerId}". Use the official documentation to evaluate a compatible route.`,
+    ...(pair.caveats ?? []),
+    `There is no documented direct ${HARNESS_LABELS[pair.harnessId]} integration for ${providerId}; the provider and harness use different protocols or have not been verified together.`,
   ];
 }
 
 function claudeCodeSteps(providerId: ProviderId, modelId: string): RecipeStep[] {
-  const model = shellQuote(modelId);
   const envVar = API_KEY_ENV[providerId];
   return [
     {
       id: 'configure-gateway',
       title: 'Configure the Anthropic gateway',
-      description: 'Keep the API key in your environment and point Claude Code at the gateway.',
+      description: 'Keep the credential in your environment and point Claude Code at the gateway.',
       snippets: [
         envCheck(envVar),
         {
           id: 'gateway-environment',
-          label: 'Set gateway environment variables',
+          label: 'Set Claude Code gateway variables',
           language: 'shell',
           content: [
-            `export ANTHROPIC_BASE_URL=${shellQuote(PROVIDER_BASE_URL[providerId].replace('/v1', ''))}`,
+            `export ANTHROPIC_BASE_URL=${shellQuote(PROVIDER_BASE_URL[providerId].replace(/\/v1$/, ''))}`,
             `export ANTHROPIC_AUTH_TOKEN="$${envVar}"`,
-            `export ANTHROPIC_MODEL=${model}`,
+            `export ANTHROPIC_MODEL=${shellQuote(modelId)}`,
           ].join('\n'),
         },
       ],
@@ -243,105 +273,103 @@ function claudeCodeSteps(providerId: ProviderId, modelId: string): RecipeStep[] 
     {
       id: 'run',
       title: 'Start Claude Code',
-      description: 'Claude Code reads the gateway settings from the current shell.',
+      description: 'Claude Code reads these settings from the current shell.',
       snippets: [{ id: 'run', label: 'Start Claude Code', language: 'shell', content: 'claude' }],
     },
   ];
 }
 
-function piSteps(entryForPair: CompatibilityEntry, modelId: string): RecipeStep[] {
-  const envVar = API_KEY_ENV[entryForPair.providerId];
+function piSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
+  const envVar = API_KEY_ENV[pair.providerId];
   return [
     {
       id: 'authenticate',
       title: 'Authenticate with the provider',
       description: 'Use Pi login or make the provider key available as an environment variable.',
       snippets: [
-        envCheck(envVar),
         { id: 'login', label: 'Open Pi provider login', language: 'text', content: '/login' },
+        envCheck(envVar),
       ],
     },
     {
-      id: 'run',
-      title: 'Run the model',
-      description: 'Pi uses the canonical model ID exactly as published by the provider.',
+      id: 'select',
+      title: 'Select the model',
+      description: 'You can select it interactively or use the exact command below.',
       snippets: [
+        { id: 'model-picker', label: 'Open the Pi model picker', language: 'text', content: '/model' },
         {
           id: 'run',
           label: 'Start Pi with this model',
           language: 'shell',
-          content: `pi --provider ${shellQuote(entryForPair.harnessProviderId)} --model ${shellQuote(modelId)}`,
+          content: `pi --provider ${shellQuote(pair.harnessProviderId)} --model ${shellQuote(modelId)}`,
         },
       ],
     },
   ];
 }
 
-function harnessModelId(entryForPair: CompatibilityEntry, modelId: string): string {
-  if (entryForPair.harnessId !== 'opencode') return modelId;
-  const sourceModel =
-    entryForPair.providerId === 'openrouter' && modelId.startsWith('openrouter/')
-      ? modelId.slice('openrouter/'.length)
-      : modelId;
-  return `${entryForPair.harnessProviderId}/${sourceModel}`;
+function openCodeModelId(pair: CompatibilityEntry, modelId: string): string {
+  const sourceModel = pair.providerId === 'openrouter' && modelId.startsWith('openrouter/')
+    ? modelId.slice('openrouter/'.length)
+    : modelId;
+  return `${pair.harnessProviderId}/${sourceModel}`;
 }
 
-function opencodeSteps(entryForPair: CompatibilityEntry, modelId: string): RecipeStep[] {
-  const envVar = API_KEY_ENV[entryForPair.providerId];
-  const opencodeModel = harnessModelId(entryForPair, modelId);
+function opencodeSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
+  const envVar = API_KEY_ENV[pair.providerId];
+  const exactModelId = openCodeModelId(pair, modelId);
   return [
     {
       id: 'connect',
       title: 'Connect the provider',
-      description: 'Open OpenCode and use its provider connection flow.',
+      description: 'Open OpenCode and use its named provider connection flow.',
       snippets: [
-        envCheck(envVar),
         { id: 'connect', label: 'Connect a provider', language: 'text', content: '/connect' },
         { id: 'models', label: 'List available models', language: 'text', content: '/models' },
+        envCheck(envVar),
         {
           id: 'config',
           label: 'Optional model configuration',
           language: 'json',
-          content: jsonSnippet({ model: opencodeModel }),
+          content: jsonSnippet({ model: exactModelId }),
         },
       ],
     },
     {
       id: 'run',
       title: 'Run the model',
-      description: 'The provider prefix keeps the harness route explicit.',
-      snippets: [
-        {
-          id: 'run',
-          label: 'Start OpenCode with this model',
-          language: 'shell',
-          content: `opencode --model ${shellQuote(opencodeModel)}`,
-        },
-      ],
+      description: 'The provider prefix keeps the route explicit.',
+      snippets: [{
+        id: 'run',
+        label: 'Start OpenCode with this model',
+        language: 'shell',
+        content: `opencode --model ${shellQuote(exactModelId)}`,
+      }],
     },
   ];
 }
 
-function codexSteps(entryForPair: CompatibilityEntry, modelId: string): RecipeStep[] {
-  const providerId = entryForPair.harnessProviderId;
-  const envVar = API_KEY_ENV[entryForPair.providerId];
+function codexSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
+  const providerId = pair.harnessProviderId;
+  const envVar = API_KEY_ENV[pair.providerId];
   return [
     {
       id: 'configure',
       title: 'Merge a custom provider into Codex config',
-      description: 'Add this table to ~/.codex/config.toml; do not overwrite your existing file.',
+      description: 'Merge this table into your user-level ~/.codex/config.toml; never overwrite the existing file.',
       snippets: [
+        { id: 'merge-note', label: 'Merge instruction', language: 'text', content: 'Merge the TOML below into ~/.codex/config.toml. Do not replace the file.' },
         envCheck(envVar),
         {
           id: 'config',
-          label: 'Add provider configuration to ~/.codex/config.toml',
+          label: 'Provider configuration to merge',
           language: 'toml',
           content: [
             `model_provider = ${tomlString(providerId)}`,
             '',
             `[model_providers.${providerId}]`,
             `name = ${tomlString(providerId)}`,
-            `base_url = ${tomlString(PROVIDER_BASE_URL[entryForPair.providerId])}`,
+            `base_url = ${tomlString(PROVIDER_BASE_URL[pair.providerId])}`,
             `env_key = ${tomlString(envVar)}`,
             'wire_api = "responses"',
           ].join('\n'),
@@ -351,87 +379,96 @@ function codexSteps(entryForPair: CompatibilityEntry, modelId: string): RecipeSt
     {
       id: 'run',
       title: 'Run the model',
-      description: 'Codex uses the Responses API for custom providers.',
-      snippets: [
-        {
-          id: 'run',
-          label: 'Start Codex with this model',
-          language: 'shell',
-          content: `codex --model ${shellQuote(modelId)}`,
-        },
-      ],
+      description: 'Codex uses the Responses API for these custom providers.',
+      snippets: [{
+        id: 'run',
+        label: 'Start Codex with this model',
+        language: 'shell',
+        content: `codex --model ${shellQuote(modelId)}`,
+      }],
     },
   ];
 }
 
 function knownEntry(harnessId: HarnessId, providerId: string): CompatibilityEntry | null {
-  if (!PROVIDER_IDS.includes(providerId as ProviderId)) return null;
-  return COMPATIBILITY_REGISTRY[harnessId][providerId as ProviderId];
+  return PROVIDER_IDS.includes(providerId as ProviderId)
+    ? COMPATIBILITY_REGISTRY[harnessId][providerId as ProviderId]
+    : null;
 }
 
-function modelSupportsClaudeCode(providerId: string, modelId: string): boolean {
-  return providerId === 'openrouter' && /^anthropic\/claude(?:[-/]|$)/.test(modelId);
+function supportsClaudeCode(providerId: string, modelId: string): boolean {
+  const sourceModel = modelId.startsWith('openrouter/') ? modelId.slice('openrouter/'.length) : modelId;
+  return providerId === 'openrouter' && /^anthropic\/claude(?:[-/]|$)/.test(sourceModel);
 }
 
-/**
- * Generate a deterministic recipe without reading browser, environment, or
- * provider state. Unknown providers intentionally get an unsupported recipe.
- */
+function provenanceFor(pair: CompatibilityEntry): RecipeProvenance {
+  const info = PROVIDER_INFO[pair.providerId];
+  return {
+    ...info,
+    harnessDocsUrl: pair.docsUrl,
+    verificationDate: pair.lastVerified,
+  };
+}
+
 export function generateHarnessRecipe(
   harnessId: HarnessId,
   providerId: string,
   model: RecipeModel,
 ): HarnessRecipe {
-  const modelId = modelIdOf(model);
+  const sourceModelId = modelIdOf(model);
   const pair = knownEntry(harnessId, providerId);
 
   if (!pair) {
-    const fallback: HarnessRecipe = {
+    return {
       harnessId,
       providerId,
       harnessProviderId: null,
       status: 'unsupported',
-      sourceModelId: modelId,
-      modelId,
+      sourceModelId,
+      modelId: sourceModelId,
       steps: [],
       snippets: [],
-      caveats: [
-        `Provider "${providerId}" is not in the compatibility registry. It is unsupported until explicitly verified.`,
-      ],
+      copyAll: null,
+      copyAllSafe: false,
+      caveats: [`Provider "${providerId}" is not in the compatibility registry. It is unsupported until explicitly verified.`],
       docsUrl: HARNESS_DOCS[harnessId],
       lastVerified: LAST_VERIFIED,
+      provenance: null,
     };
-    return fallback;
   }
 
-  const modelAllowed =
-    harnessId !== 'claude-code' || pair.status === 'unsupported' || modelSupportsClaudeCode(providerId, modelId);
-  const status = modelAllowed ? pair.status : 'unsupported';
-  const caveats = modelAllowed ? pair.caveats : unsupportedCaveats(pair, providerId);
-  const exactHarnessModelId = harnessModelId(pair, modelId);
-  const steps =
-    status === 'unsupported'
-      ? []
-      : harnessId === 'claude-code'
-        ? claudeCodeSteps(pair.providerId, modelId)
-        : harnessId === 'pi'
-          ? piSteps(pair, modelId)
-          : harnessId === 'opencode'
-            ? opencodeSteps(pair, modelId)
-            : codexSteps(pair, modelId);
+  const modelSupported = harnessId !== 'claude-code' || supportsClaudeCode(providerId, sourceModelId);
+  const status = modelSupported ? pair.status : 'unsupported';
+  const caveats = modelSupported ? pair.caveats : unsupportedCaveat(pair, providerId);
+  const steps = status === 'unsupported'
+    ? []
+    : harnessId === 'claude-code'
+      ? claudeCodeSteps(pair.providerId, sourceModelId)
+      : harnessId === 'pi'
+        ? piSteps(pair, sourceModelId)
+        : harnessId === 'opencode'
+          ? opencodeSteps(pair, sourceModelId)
+          : codexSteps(pair, sourceModelId);
+  const snippets = steps.flatMap((step) => step.snippets);
+  const copyAllSafe = harnessId === 'claude-code' && status !== 'unsupported' && snippets.length > 0 && snippets.every((snippet) => snippet.language === 'shell');
 
   return {
     harnessId,
     providerId,
     harnessProviderId: pair.harnessProviderId,
     status,
-    sourceModelId: modelId,
-    modelId: exactHarnessModelId,
+    sourceModelId,
+    modelId: harnessId === 'opencode' ? openCodeModelId(pair, sourceModelId) : sourceModelId,
     steps,
-    snippets: steps.flatMap((step) => step.snippets),
-    ...(caveats && caveats.length > 0 ? { caveats: [...caveats] } : {}),
+    snippets,
+    copyAll: copyAllSafe ? snippets.map((snippet) => snippet.content).join('\n') : null,
+    copyAllSafe,
+    ...(caveats?.length ? { caveats: [...caveats] } : {}),
     ...(pair.minimumKnownVersion ? { minimumKnownVersion: pair.minimumKnownVersion } : {}),
+    providerSignupUrl: pair.providerSignupUrl,
+    providerDocsUrl: pair.providerDocsUrl,
     docsUrl: pair.docsUrl,
     lastVerified: pair.lastVerified,
+    provenance: provenanceFor(pair),
   };
 }

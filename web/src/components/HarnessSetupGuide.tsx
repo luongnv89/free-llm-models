@@ -3,187 +3,195 @@ import type { KeyboardEvent } from 'react';
 import { Check, Copy, ExternalLink, SquareTerminal } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import {
+  generateHarnessRecipe,
+  HARNESS_IDS,
+  type HarnessId,
+  type HarnessRecipe,
+  type RecipeSnippet,
+} from '@/lib/harness-recipes';
 import type { ProviderMetadata } from '@/types/model';
-
-interface HarnessOption {
-  id: string;
-  label: string;
-  docsUrl: string;
-  description: string;
-}
 
 interface HarnessSetupGuideProps {
   modelId: string;
   providerMeta: ProviderMetadata;
+  providerId?: string;
 }
 
-const HARNESSES: Omit<HarnessOption, 'command'>[] = [
-  {
-    id: 'claude-code',
-    label: 'Claude Code',
-    docsUrl: 'https://code.claude.com/docs/en/llm-gateway',
-    description: 'Configure the provider in Claude Code, then start a session with this model.',
-  },
-  {
-    id: 'pi',
-    label: 'Pi',
-    docsUrl: 'https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/providers.md',
-    description: 'Make the provider credentials available to Pi before launching the model.',
-  },
-  {
-    id: 'opencode',
-    label: 'OpenCode',
-    docsUrl: 'https://opencode.ai/docs/providers/',
-    description: 'Configure the provider in OpenCode, then launch the selected model.',
-  },
-  {
-    id: 'codex',
-    label: 'Codex',
-    docsUrl: 'https://developers.openai.com/codex/config-advanced/',
-    description: 'Add the provider to Codex configuration before starting a session.',
-  },
-];
+const HARNESS_LABELS: Record<HarnessId, string> = {
+  'claude-code': 'Claude Code',
+  pi: 'Pi',
+  opencode: 'OpenCode',
+  codex: 'Codex',
+};
 
-export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuideProps) {
-  const [activeId, setActiveId] = useState(HARNESSES[0].id);
-  const [copiedId, setCopiedId] = useState<string | null>(null);
-  const { copied, copy } = useCopyToClipboard();
+type CopyState = { id: string; result: 'copied' | 'failed' } | null;
 
-  const selectHarness = (id: string) => {
-    setActiveId(id);
-    setCopiedId(null);
+function StatusLabel({ status }: { status: HarnessRecipe['status'] }) {
+  const label = status === 'supported' ? 'Supported' : status === 'experimental' ? 'Experimental' : 'Unsupported';
+  return (
+    <span className={`rounded-full border px-2 py-0.5 text-xs ${status === 'unsupported' ? 'border-amber-500/40 text-amber-600 dark:text-amber-400' : 'border-[var(--highlight)]/40 text-[var(--highlight)]'}`}>
+      {label}
+    </span>
+  );
+}
+
+function ExternalDocLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-medium text-[var(--highlight)] hover:underline">
+      {children}
+      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+    </a>
+  );
+}
+
+function Snippet({ snippet, copyState, onCopy }: { snippet: RecipeSnippet; copyState: CopyState; onCopy: () => void }) {
+  const copied = copyState?.id === snippet.id && copyState.result === 'copied';
+  const failed = copyState?.id === snippet.id && copyState.result === 'failed';
+  return (
+    <div className="rounded-lg border border-border bg-muted/40 p-3">
+      <div className="mb-2 flex items-center justify-between gap-3">
+        <span className="text-xs font-medium text-muted-foreground">{snippet.label}</span>
+        <button type="button" onClick={onCopy} aria-label={`Copy ${snippet.label}`} className="inline-flex shrink-0 items-center gap-1 rounded-md p-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          {copied ? <Check className="h-4 w-4 text-[var(--highlight)]" aria-hidden="true" /> : <Copy className="h-4 w-4" aria-hidden="true" />}
+          <span>{copied ? 'Copied' : 'Copy'}</span>
+        </button>
+      </div>
+      <pre className="overflow-x-auto whitespace-pre-wrap break-words font-mono text-xs leading-relaxed text-foreground"><code>{snippet.content}</code></pre>
+      {failed && <p role="status" className="mt-2 text-xs text-amber-600 dark:text-amber-400">Copy failed. Select the snippet manually, then copy it.</p>}
+    </div>
+  );
+}
+
+function RecipePanel({
+  id,
+  recipe,
+  providerName,
+  providerDocsUrl,
+  providerSignupUrl,
+  copyState,
+  onCopy,
+  onCopyAll,
+  hidden,
+}: {
+  id: HarnessId;
+  recipe: HarnessRecipe;
+  hidden: boolean;
+  providerName: string;
+  providerDocsUrl: string | null;
+  providerSignupUrl: string | null;
+  copyState: CopyState;
+  onCopy: (snippet: RecipeSnippet) => void;
+  onCopyAll: (recipe: HarnessRecipe) => void;
+}) {
+  return (
+    <section hidden={hidden} id={`harness-panel-${id}`} role="tabpanel" aria-labelledby={`harness-tab-${id}`} tabIndex={0} className="space-y-4 rounded-lg border border-border p-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h3 className="font-medium">{HARNESS_LABELS[id]}</h3>
+        <StatusLabel status={recipe.status} />
+      </div>
+      {recipe.status === 'unsupported' ? (
+        <div className="space-y-3 text-sm text-muted-foreground">
+          <p>This combination is not advertised as runnable: the provider and {HARNESS_LABELS[id]} use different protocols or this route has not been verified. No setup command is shown.</p>
+          {recipe.caveats?.map((caveat) => <p key={caveat}>{caveat}</p>)}
+          <ExternalDocLink href={recipe.docsUrl}>Read the official {HARNESS_LABELS[id]} docs</ExternalDocLink>
+        </div>
+      ) : (
+        <>
+          {recipe.caveats?.map((caveat) => <p key={caveat} className="text-sm text-muted-foreground">{caveat}</p>)}
+          <ol className="space-y-4" aria-label={`${HARNESS_LABELS[id]} setup steps`}>
+            {recipe.steps.map((step, index) => (
+              <li key={step.id} className="space-y-3">
+                <div>
+                  <h4 className="font-medium"><span className="mr-2 text-[var(--highlight)]">{index + 1}.</span>{step.title}</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
+                </div>
+                <div className="space-y-2">
+                  {step.snippets.map((snippet) => <Snippet key={snippet.id} snippet={snippet} copyState={copyState} onCopy={() => onCopy(snippet)} />)}
+                </div>
+              </li>
+            ))}
+          </ol>
+          {recipe.copyAllSafe && recipe.copyAll !== null && (
+            <div className="flex flex-wrap items-center gap-3 border-t border-border pt-3">
+              <button type="button" aria-label="Copy all" onClick={() => onCopyAll(recipe)} className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 text-sm font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                {copyState?.id === 'all' && copyState.result === 'copied' ? <Check className="h-4 w-4 text-[var(--highlight)]" aria-hidden="true" /> : <Copy className="h-4 w-4" aria-hidden="true" />}
+                {copyState?.id === 'all' && copyState.result === 'copied' ? 'Copied all' : 'Copy all'}
+              </button>
+              {copyState?.id === 'all' && copyState.result === 'failed' && <span role="status" className="text-xs text-amber-600 dark:text-amber-400">Copy failed; copy snippets individually.</span>}
+            </div>
+          )}
+        </>
+      )}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-3 text-xs text-muted-foreground">
+        <ExternalDocLink href={recipe.docsUrl}>Official {HARNESS_LABELS[id]} docs</ExternalDocLink>
+        {providerDocsUrl && <ExternalDocLink href={providerDocsUrl}>{providerName} provider docs</ExternalDocLink>}
+        {providerSignupUrl && <ExternalDocLink href={providerSignupUrl}>Get {providerName} credentials</ExternalDocLink>}
+        <span>Verified {recipe.provenance?.verificationDate ?? recipe.lastVerified}</span>
+      </div>
+    </section>
+  );
+}
+
+export function HarnessSetupGuide({ modelId, providerMeta, providerId }: HarnessSetupGuideProps) {
+  const effectiveProviderId = providerId ?? providerMeta.id;
+  const [activeId, setActiveId] = useState<HarnessId>(HARNESS_IDS[0]);
+  const [copyState, setCopyState] = useState<CopyState>(null);
+  const { copy } = useCopyToClipboard();
+  const recipes = HARNESS_IDS.map((id) => generateHarnessRecipe(id, effectiveProviderId, modelId));
+  const activeRecipe = recipes[HARNESS_IDS.indexOf(activeId)];
+  const provenance = activeRecipe.provenance;
+  const providerName = provenance?.providerDisplayName ?? providerMeta.displayName;
+  const providerDocsUrl = provenance?.providerDocsUrl ?? (providerMeta.id === effectiveProviderId ? providerMeta.docsUrl : null);
+  const providerSignupUrl = provenance?.providerSignupUrl ?? (providerMeta.id === effectiveProviderId ? providerMeta.apiKeySignupUrl : null);
+
+  const copySnippet = async (snippet: RecipeSnippet) => {
+    const ok = await copy(snippet.content);
+    setCopyState({ id: snippet.id, result: ok ? 'copied' : 'failed' });
   };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    const index = HARNESSES.findIndex((harness) => harness.id === activeId);
-    const nextIndex =
-      event.key === 'ArrowRight'
-        ? (index + 1) % HARNESSES.length
-        : event.key === 'ArrowLeft'
-          ? (index - 1 + HARNESSES.length) % HARNESSES.length
-          : -1;
+  const copyAll = async (recipe: HarnessRecipe) => {
+    if (!recipe.copyAllSafe || recipe.copyAll === null) return;
+    const ok = await copy(recipe.copyAll);
+    setCopyState({ id: 'all', result: ok ? 'copied' : 'failed' });
+  };
+
+  const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    const index = HARNESS_IDS.indexOf(activeId);
+    const nextIndex = event.key === 'ArrowRight' || event.key === 'ArrowDown'
+      ? (index + 1) % HARNESS_IDS.length
+      : event.key === 'ArrowLeft' || event.key === 'ArrowUp'
+        ? (index - 1 + HARNESS_IDS.length) % HARNESS_IDS.length
+        : event.key === 'Home'
+          ? 0
+          : event.key === 'End'
+            ? HARNESS_IDS.length - 1
+            : -1;
     if (nextIndex < 0) return;
     event.preventDefault();
-    const nextHarness = HARNESSES[nextIndex];
-    selectHarness(nextHarness.id);
-    document.getElementById(`harness-tab-${nextHarness.id}`)?.focus();
-  };
-
-  const copyModelId = async (harnessId: string) => {
-    const ok = await copy(modelId);
-    if (ok) setCopiedId(harnessId);
+    const nextId = HARNESS_IDS[nextIndex];
+    setActiveId(nextId);
+    setCopyState(null);
+    document.getElementById(`harness-tab-${nextId}`)?.focus();
   };
 
   return (
     <Card>
       <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-2 text-lg">
-          <SquareTerminal className="h-4.5 w-4.5 text-[var(--highlight)]" aria-hidden="true" />
-          Set up a coding harness
-        </CardTitle>
+        <CardTitle className="flex items-center gap-2 text-lg"><SquareTerminal className="h-4.5 w-4.5 text-[var(--highlight)]" aria-hidden="true" />Set up a coding harness</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground">
-          Use <span className="font-medium text-foreground">{providerMeta.displayName}</span> with
-          the coding harness you already use. Configure credentials through the provider and
-          harness documentation; never paste a real key into a shared command or file.
-        </p>
-
+        <p className="text-sm text-muted-foreground">Use <span className="font-medium text-foreground">{providerName}</span> with your preferred coding harness. Credentials may be required, free quotas can change, and prompts or tool output leave your machine when sent to a provider.</p>
         <div className="flex flex-wrap gap-1 rounded-lg border border-border bg-muted/50 p-1" role="tablist" aria-label="Choose a coding harness">
-          {HARNESSES.map((harness) => {
-            const selected = harness.id === activeId;
-            return (
-              <button
-                key={harness.id}
-                id={`harness-tab-${harness.id}`}
-                type="button"
-                role="tab"
-                aria-selected={selected}
-                aria-controls={`harness-panel-${harness.id}`}
-                tabIndex={selected ? 0 : -1}
-                onClick={() => selectHarness(harness.id)}
-                onKeyDown={handleKeyDown}
-                className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                  selected
-                    ? 'bg-background text-foreground shadow-sm'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {harness.label}
-              </button>
-            );
+          {HARNESS_IDS.map((id) => {
+            const selected = id === activeId;
+            return <button key={id} id={`harness-tab-${id}`} type="button" role="tab" aria-selected={selected} aria-controls={`harness-panel-${id}`} tabIndex={selected ? 0 : -1} onClick={() => { setActiveId(id); setCopyState(null); }} onKeyDown={handleTabKeyDown} className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${selected ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}>{HARNESS_LABELS[id]}</button>;
           })}
         </div>
-
-        {HARNESSES.map((harness) => {
-          const selected = harness.id === activeId;
-          return (
-            <section
-              key={harness.id}
-              id={`harness-panel-${harness.id}`}
-              role="tabpanel"
-              aria-labelledby={`harness-tab-${harness.id}`}
-              tabIndex={0}
-              hidden={!selected}
-              className="space-y-3 rounded-lg border border-border p-4"
-            >
-              <div>
-                <h3 className="font-medium">{harness.label}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{harness.description}</p>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  Follow the official setup instructions, then use this provider model ID in the
-                  harness configuration.
-                </p>
-              </div>
-              <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-3 font-mono text-sm">
-                <code className="min-w-0 flex-1 overflow-x-auto whitespace-pre-wrap break-all">{modelId}</code>
-                <button
-                  type="button"
-                  onClick={() => copyModelId(harness.id)}
-                  aria-label={`Copy ${harness.label} model ID`}
-                  className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {copied && copiedId === harness.id ? (
-                    <Check className="h-4 w-4 text-[var(--highlight)]" aria-hidden="true" />
-                  ) : (
-                    <Copy className="h-4 w-4" aria-hidden="true" />
-                  )}
-                </button>
-              </div>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-                <a
-                  href={harness.docsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-medium text-[var(--highlight)] hover:underline"
-                >
-                  Official {harness.label} docs
-                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                </a>
-                {providerMeta.docsUrl && (
-                  <a
-                    href={providerMeta.docsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[var(--highlight)] hover:underline"
-                  >
-                    {providerMeta.displayName} provider docs
-                  </a>
-                )}
-                {providerMeta.apiKeySignupUrl && (
-                  <a
-                    href={providerMeta.apiKeySignupUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[var(--highlight)] hover:underline"
-                  >
-                    Get provider credentials
-                  </a>
-                )}
-              </div>
-            </section>
-          );
-        })}
+        {HARNESS_IDS.map((id, index) => (
+          <RecipePanel key={id} id={id} recipe={recipes[index]} hidden={id !== activeId} providerName={id === activeId ? providerName : (recipes[index].provenance?.providerDisplayName ?? providerName)} providerDocsUrl={recipes[index].provenance?.providerDocsUrl ?? providerDocsUrl} providerSignupUrl={recipes[index].provenance?.providerSignupUrl ?? providerSignupUrl} copyState={copyState} onCopy={copySnippet} onCopyAll={copyAll} />
+        ))}
+        <span className="sr-only">Active recipe status: {activeRecipe.status}</span>
       </CardContent>
     </Card>
   );

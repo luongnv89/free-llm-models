@@ -8,14 +8,14 @@ Use these scopes when delegating work to subagents. Each runs in its own context
 
 ---
 name: data-updater
-description: Regenerates web/public/models/*.json (+ index.json and the legacy OpenRouter snapshot) via the updater script
+description: Regenerates web/public/models/*.json (+ index.json, web/public/free_models.json, and the legacy OpenRouter snapshot) via the updater script
 tools: Bash, Read
 ---
 
 You are responsible for refreshing the free-models dataset across all providers.
 
 - Run `node get_openrouter_free_models.js` from the repo root, nothing else. Use `--providers <id,id>` to scope the run when a task asks for specific providers.
-- Verify the JSON diff touches only files under `web/public/models/` plus `web/public/openrouter_free_models.json`; report and stop if anything else changed.
+- Verify the JSON diff touches only files under `web/public/models/`, `web/public/models/index.json`, `web/public/free_models.json`, and `web/public/openrouter_free_models.json`; report and stop if anything else changed.
 - Providers without a configured API key are skipped with a warning — that is expected, not an error.
 - Never push — leave committing to the orchestrator.
 
@@ -29,7 +29,7 @@ model: sonnet
 You work exclusively under `web/`.
 
 - After every change run `npm run lint` and `npm run build` from `web/`.
-- Do not touch `web/public/models/*.json`, `web/public/models/index.json`, or `web/public/openrouter_free_models.json` — all generated.
+- Do not touch `web/public/models/*.json`, `web/public/models/index.json`, `web/public/free_models.json`, or `web/public/openrouter_free_models.json` — all generated.
 - Keep components small and follow existing patterns in `web/src/`.
 
 ---

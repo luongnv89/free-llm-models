@@ -1,8 +1,369 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-08-26T08:52:08.918Z",
+  "fetchedAt": "2026-08-26T13:42:36.251Z",
   "newModelIds": [],
-  "archivedModels": [],
+  "archivedModels": [
+    {
+      "id": "meta/llama-3.1-70b-instruct",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "meta/llama-3.1-70b-instruct",
+        "name": "Meta/llama 3 1 70b Instruct",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "meta/llama-3.1-8b-instruct",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "meta/llama-3.1-8b-instruct",
+        "name": "Meta/llama 3 1 8b Instruct",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "meta/llama-3.2-1b-instruct",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "meta/llama-3.2-1b-instruct",
+        "name": "Meta/llama 3 2 1b Instruct",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "meta/llama-3.2-3b-instruct",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "meta/llama-3.2-3b-instruct",
+        "name": "Meta/llama 3 2 3b Instruct",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "meta/llama-3.3-70b-instruct",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "meta/llama-3.3-70b-instruct",
+        "name": "Meta/llama 3 3 70b Instruct",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "nvidia/llama-3.1-nemotron-nano-8b-v1",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/llama-3.1-nemotron-nano-8b-v1",
+        "name": "Nvidia/llama 3 1 Nemotron Nano 8b V1",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+        "name": "Nvidia/llama 3 1 Nemotron Nano Vl 8b V1",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "nvidia/llama-3.3-nemotron-super-49b-v1",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/llama-3.3-nemotron-super-49b-v1",
+        "name": "Nvidia/llama 3 3 Nemotron Super 49b V1",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+        "name": "Nvidia/llama 3 3 Nemotron Super 49b V1 5",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "nvidia/nemotron-mini-4b-instruct",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/nemotron-mini-4b-instruct",
+        "name": "Nvidia/nemotron Mini 4b Instruct",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/nemotron-nano-12b-v2-vl",
+        "name": "Nvidia/nemotron Nano 12b V2 Vl",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-nano-9b-v2",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-26T13:42:36.251Z",
+      "lastSeenAt": "2026-08-26T08:52:08.918Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/nvidia-nemotron-nano-9b-v2",
+        "name": "Nvidia/nvidia Nemotron Nano 9b V2",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    }
+  ],
   "models": [
     {
       "id": "01-ai/yi-large",
@@ -511,52 +872,6 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
-      "id": "meta/llama-3.1-70b-instruct",
-      "name": "Meta/llama 3 1 70b Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "meta/llama-3.1-8b-instruct",
-      "name": "Meta/llama 3 1 8b Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
       "id": "meta/llama-3.2-11b-vision-instruct",
       "name": "Meta/llama 3 2 11b Vision Instruct",
       "created": 735790403,
@@ -580,77 +895,8 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
-      "id": "meta/llama-3.2-1b-instruct",
-      "name": "Meta/llama 3 2 1b Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "meta/llama-3.2-3b-instruct",
-      "name": "Meta/llama 3 2 3b Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
       "id": "meta/llama-3.2-90b-vision-instruct",
       "name": "Meta/llama 3 2 90b Vision Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "meta/llama-3.3-70b-instruct",
-      "name": "Meta/llama 3 3 70b Instruct",
       "created": 735790403,
       "description": "",
       "context_length": null,
@@ -1224,52 +1470,6 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
-      "id": "nvidia/llama-3.1-nemotron-nano-8b-v1",
-      "name": "Nvidia/llama 3 1 Nemotron Nano 8b V1",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
-      "name": "Nvidia/llama 3 1 Nemotron Nano Vl 8b V1",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
       "id": "nvidia/llama-3.1-nemotron-safety-guard-8b-v3",
       "name": "Nvidia/llama 3 1 Nemotron Safety Guard 8b V3",
       "created": 735790403,
@@ -1341,52 +1541,6 @@
     {
       "id": "nvidia/llama-3.2-nv-embedqa-1b-v1",
       "name": "Nvidia/llama 3 2 Nv Embedqa 1b V1",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "nvidia/llama-3.3-nemotron-super-49b-v1",
-      "name": "Nvidia/llama 3 3 Nemotron Super 49b V1",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
-      "name": "Nvidia/llama 3 3 Nemotron Super 49b V1 5",
       "created": 735790403,
       "description": "",
       "context_length": null,
@@ -1684,52 +1838,6 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
-      "id": "nvidia/nemotron-mini-4b-instruct",
-      "name": "Nvidia/nemotron Mini 4b Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "nvidia/nemotron-nano-12b-v2-vl",
-      "name": "Nvidia/nemotron Nano 12b V2 Vl",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
       "id": "nvidia/nemotron-nano-3-30b-a3b",
       "name": "Nvidia/nemotron Nano 3 30b A3b",
       "created": 735790403,
@@ -1824,29 +1932,6 @@
     {
       "id": "nvidia/nvclip",
       "name": "Nvidia/nvclip",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "nvidia/nvidia-nemotron-nano-9b-v2",
-      "name": "Nvidia/nvidia Nemotron Nano 9b V2",
       "created": 735790403,
       "description": "",
       "context_length": null,

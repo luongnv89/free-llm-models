@@ -1,0 +1,29 @@
+{
+  "fetchedAt": "2026-08-25T00:00:00.000Z",
+  "totalModels": 2,
+  "newModelIds": [
+    "g1"
+  ],
+  "models": [
+    {
+      "id": "nul\u0000id",
+      "providerId": "bad"
+    },
+    {
+      "id": "g1",
+      "providerId": "good",
+      "addedToFreeList": "2026-08-25T00:00:00.000Z"
+    }
+  ],
+  "archivedModels": [],
+  "providers": [
+    {
+      "id": "bad",
+      "displayName": "bad"
+    },
+    {
+      "id": "good",
+      "displayName": "good"
+    }
+  ]
+}

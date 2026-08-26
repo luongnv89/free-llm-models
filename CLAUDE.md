@@ -27,6 +27,7 @@ Both packages have test suites (`cd web && npm run test`, `npm test`). Run them 
 - `lib/providers/*.js` — one adapter per provider (openrouter, groq, google, cerebras, mistral, github-models, huggingface, nvidia-nim) plus shared schema/emit helpers.
 - `web/` — Vite + React + Tailwind frontend; loads `web/public/models/index.json` and the per-provider files at runtime.
 - `web/public/models/<providerId>.json` + `index.json` — **generated and committed**; only changed by the updater.
+- `web/public/free_models.json` — aggregate dataset (also generated and committed): one document with every provider emitted in the run (`fetchedAt`, `totalModels`, flattened `newModelIds`, all `models` and `archivedModels` each retaining their `providerId`, plus per-provider metadata). Built by `buildAggregate`/`writeFreeModelsAggregate` in `lib/providers/emit.js` whenever ≥1 provider succeeded. The web app reads it as a fallback when the per-provider index is unavailable (`web/src/hooks/useModels.ts`).
 - `web/public/openrouter_free_models.json` — legacy OpenRouter-only snapshot (also generated; refreshed when OpenRouter succeeds).
 - `scripts/update_data.sh` — end-to-end cron updater: pull → fetch → commit → push `main`.
 - `.env` (gitignored) from `.env.example`.
@@ -39,9 +40,9 @@ Both packages have test suites (`cd web && npm run test`, `npm test`). Run them 
 
 ## Hard rules
 
-- **IMPORTANT: Do not run `get_openrouter_free_models.js`, `scripts/update_data.sh`, or `scripts/openrouter-free-models-update.sh` casually.** They perform network fetches, rewrite tracked data files under `web/public/models/` plus the legacy snapshot, and the shell scripts commit and push to `main`. Run them only when a task explicitly requires regenerating the dataset.
+- **IMPORTANT: Do not run `get_openrouter_free_models.js`, `scripts/update_data.sh`, or `scripts/openrouter-free-models-update.sh` casually.** They perform network fetches, rewrite tracked data files under `web/public/models/` plus the aggregate `web/public/free_models.json` and the legacy snapshot, and the shell scripts commit and push to `main`. Run them only when a task explicitly requires regenerating the dataset.
 - Never commit `.env`.
-- Don't hand-edit `web/public/models/*.json`, `web/public/models/index.json`, or `web/public/openrouter_free_models.json` — they are generated.
+- Don't hand-edit `web/public/models/*.json`, `web/public/models/index.json`, `web/public/free_models.json`, or `web/public/openrouter_free_models.json` — they are generated.
 - Build metadata is injected by Vite `define` from `web/vite.config.ts`: app version (hardcoded `'1.0.0'`), commit hash, build date — building never rewrites tracked sources; `git status --porcelain` stays clean after a build.
 - Root `package.json` has `start`/`test`/`test:smoke`/`crossref`; build/lint live under `web/`.
 

@@ -4,11 +4,17 @@ Searchable, filterable UI for [OpenRouter](https://openrouter.ai) models that ar
 
 ## Data flow
 
-1. The root updater (`node get_openrouter_free_models.js`) fetches the OpenRouter
-   models list, filters to free ones, and writes `web/public/openrouter_free_models.json`
-   (generated and committed — never hand-edit it).
-2. This app loads that JSON at runtime and provides search, sort, filtering,
-   per-model pricing details, and a FAQ page.
+1. The root updater (`node get_openrouter_free_models.js`) fetches every
+   key-configured provider, filters each catalog to free models, and writes the
+   per-provider files `web/public/models/<providerId>.json` plus
+   `web/public/models/index.json`, an aggregate `web/public/free_models.json`
+   (all emitted providers in one document), and the legacy
+   `web/public/openrouter_free_models.json` — all generated and committed,
+   never hand-edit them.
+2. This app loads `models/index.json` and the per-provider files at runtime.
+   If the index is unavailable (e.g. a stale deploy), it falls back to the
+   aggregate `free_models.json` (see `web/src/hooks/useModels.ts`). It provides
+   search, sort, filtering, per-model pricing details, and a FAQ page.
 3. Deploys (e.g. Netlify) rebuild the static bundle from `web/` whenever `main` changes;
    `web/netlify.toml` sets security headers, MIME types, and the SPA fallback.
 
@@ -37,6 +43,7 @@ npm install
 
 ## Environment variables
 
-None required. The app is fully static — it only reads `public/openrouter_free_models.json`.
-The optional `OPENROUTER_API_KEY` used by the updater lives at the repo root (see the
-root README); it is not read by this app.
+None required. The app is fully static — it reads only files from `public/`
+(`models/index.json`, per-provider files, and the aggregate `free_models.json` fallback).
+The optional provider API keys used by the updater live at the repo root (see the
+root README); they are not read by this app.

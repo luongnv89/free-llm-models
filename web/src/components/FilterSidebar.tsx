@@ -1,11 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { X, Check } from 'lucide-react';
-import type { FilterState } from '@/types/model';
+import type { FilterState, SourceOption } from '@/types/model';
 
 interface FilterSidebarProps {
   filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
+  sources: SourceOption[];
   providers: string[];
   modalities: string[];
 }
@@ -34,6 +35,7 @@ function FilterSection({ title, children }: FilterSectionProps) {
 
 function FiltersContent({
   filters,
+  sources,
   providers,
   modalities,
   hasActiveFilters,
@@ -45,12 +47,13 @@ function FiltersContent({
   showHeader = true,
 }: {
   filters: FilterState;
+  sources: SourceOption[];
   providers: string[];
   modalities: string[];
   hasActiveFilters: boolean;
   activeFilterCount: number;
   clearFilters: () => void;
-  toggleArrayFilter: (key: 'providers' | 'modalities', value: string) => void;
+  toggleArrayFilter: (key: 'sources' | 'providers' | 'modalities', value: string) => void;
   toggleContextLength: (min: number | null, max: number | null) => void;
   updateFilter: <K extends keyof FilterState>(key: K, value: FilterState[K]) => void;
   showHeader?: boolean;
@@ -138,6 +141,21 @@ function FiltersContent({
         </div>
       </FilterSection>
 
+      {/* Sources */}
+      <FilterSection title="Source">
+        <div className="space-y-1 max-h-48 overflow-y-auto">
+          {sources.map((source) => (
+            <FilterOption
+              key={source.id}
+              label={source.displayName}
+              count={source.count}
+              selected={filters.sources.includes(source.id)}
+              onClick={() => toggleArrayFilter('sources', source.id)}
+            />
+          ))}
+        </div>
+      </FilterSection>
+
       {/* Providers */}
       <FilterSection title="Provider">
         <div className="space-y-1 max-h-48 overflow-y-auto">
@@ -194,6 +212,7 @@ function FilterOption({ label, selected, onClick, count }: FilterOptionProps) {
 export function FilterSidebar({
   filters,
   onFiltersChange,
+  sources,
   providers,
   modalities,
 }: FilterSidebarProps) {
@@ -205,7 +224,7 @@ export function FilterSidebar({
   };
 
   const toggleArrayFilter = (
-    key: 'providers' | 'modalities',
+    key: 'sources' | 'providers' | 'modalities',
     value: string
   ) => {
     const current = filters[key];
@@ -240,6 +259,7 @@ export function FilterSidebar({
   const clearFilters = () => {
     onFiltersChange({
       search: filters.search, // Keep search
+      sources: [],
       providers: [],
       modalities: [],
       contextLengthMin: null,
@@ -250,6 +270,7 @@ export function FilterSidebar({
   };
 
   const hasActiveFilters =
+    filters.sources.length > 0 ||
     filters.providers.length > 0 ||
     filters.modalities.length > 0 ||
     filters.contextLengthMin !== null ||
@@ -258,6 +279,7 @@ export function FilterSidebar({
     filters.hasTools !== null;
 
   const activeFilterCount =
+    filters.sources.length +
     filters.providers.length +
     filters.modalities.length +
     (filters.contextLengthMin !== null || filters.contextLengthMax !== null ? 1 : 0) +
@@ -285,6 +307,7 @@ export function FilterSidebar({
           <div className="pt-4 space-y-6">
             <FiltersContent
               filters={filters}
+              sources={sources}
               providers={providers}
               modalities={modalities}
               hasActiveFilters={hasActiveFilters}
@@ -303,6 +326,7 @@ export function FilterSidebar({
       <div className="hidden lg:block lg:sticky lg:top-[var(--header-height,73px)] lg:h-[calc(100vh-var(--header-height,73px))] overflow-y-auto p-4 space-y-6">
         <FiltersContent
           filters={filters}
+          sources={sources}
           providers={providers}
           modalities={modalities}
           hasActiveFilters={hasActiveFilters}

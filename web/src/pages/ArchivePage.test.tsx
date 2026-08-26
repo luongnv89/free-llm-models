@@ -193,6 +193,7 @@ describe('ArchivePage', () => {
     expect(container.querySelector('a[href="/model/acme%2Fgone"]')).toBeTruthy();
     const list = container.querySelector('ol[aria-label="OpenRouter archived models"]');
     expect(list).toBeTruthy();
+    expect(list!.getAttribute('role')).toBe('list');
     expect(list!.querySelectorAll(':scope > li')).toHaveLength(1);
     expect(list!.querySelector('[aria-label="Rank 1"]')?.textContent).toBe('1');
   });

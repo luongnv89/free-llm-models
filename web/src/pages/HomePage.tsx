@@ -231,7 +231,7 @@ export function HomePage() {
               <p className="text-muted-foreground">No models match your filters</p>
             </div>
           ) : (
-            <ol aria-label="Free models" className="mt-6 list-none">
+            <ol aria-label="Free models" role="list" className="mt-6 list-none">
               {filteredModels.map((model, index) => (
                 <ModelListItem
                   key={model.id}

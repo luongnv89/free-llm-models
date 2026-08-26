@@ -154,6 +154,7 @@ describe('HomePage', () => {
 
     const list = container.querySelector('ol[aria-label="Free models"]');
     expect(list).toBeTruthy();
+    expect(list!.getAttribute('role')).toBe('list');
     expect(list!.querySelectorAll(':scope > li')).toHaveLength(2);
     expect(list!.querySelector('[aria-label="Rank 1"]')?.textContent).toBe('1');
     expect(list!.querySelector('[aria-label="Rank 2"]')?.textContent).toBe('2');

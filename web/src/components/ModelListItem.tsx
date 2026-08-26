@@ -77,7 +77,7 @@ export function ModelListItem({
               aria-label={`Copy model ID ${model.id}`}
               title="Copy model ID"
             >
-              {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+              {!copyFailed && copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
             </Button>
             <span>{formatContextLength(model.context_length)} ctx</span>
             <span>
@@ -101,7 +101,7 @@ export function ModelListItem({
             </p>
           )}
           <span className="sr-only" role="status" aria-live="polite">
-            {copied ? 'Model ID copied' : copyFailed ? 'Unable to copy model ID' : ''}
+            {copyFailed ? 'Unable to copy model ID' : copied ? 'Model ID copied' : ''}
           </span>
         </div>
       </div>

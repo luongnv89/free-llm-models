@@ -204,7 +204,7 @@ export function HomePage() {
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">
-                New models are marked with a visible “New” indicator in each row.
+                New models are marked with a visible “New” badge.
               </p>
             </div>
           )}

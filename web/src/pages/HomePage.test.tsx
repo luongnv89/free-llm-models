@@ -138,7 +138,7 @@ describe('HomePage', () => {
 
     expect(container.textContent).toContain('2 free models available');
     expect(container.textContent).toContain('1 New Model (added in last 3 days)');
-    expect(container.textContent).toContain('visible “New” indicator in each row');
+    expect(container.textContent).toContain('visible “New” badge');
     expect(container.textContent).toContain('Fresh Model');
     expect(container.textContent).toContain('Old Model');
     expect(container.textContent).toContain('/free_models.json');

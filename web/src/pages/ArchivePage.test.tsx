@@ -6,6 +6,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import { MemoryRouter } from 'react-router-dom';
 import { ArchivePage } from './ArchivePage';
 import { resetModelsCacheForTests } from '@/hooks/useModels';
+import { formatDateTime } from '@/lib/model-utils';
 import type { Model } from '@/types/model';
 
 const FETCHED_AT = '2026-08-20T12:00:00Z';
@@ -187,7 +188,7 @@ describe('ArchivePage', () => {
 
     expect(container.textContent).toContain('1 archived model');
     expect(container.textContent).toContain('Gone Model');
-    expect(container.textContent).toContain('Removed');
+    expect(container.textContent).toContain(`Removed ${formatDateTime('2026-08-01T00:00:00Z')}`);
     expect(container.textContent).not.toContain('Live Model');
     expect(container.querySelector('a[href="/model/acme%2Fgone"]')).toBeTruthy();
     const list = container.querySelector('ol[aria-label="OpenRouter archived models"]');

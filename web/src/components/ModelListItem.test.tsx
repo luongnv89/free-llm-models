@@ -190,6 +190,29 @@ describe('ModelListItem', () => {
     expect(container.querySelector('[role="status"]')?.textContent).toBe('Model ID copied');
   });
 
+  it('announces a later failure instead of stale success feedback', async () => {
+    const writeText = vi
+      .fn()
+      .mockResolvedValueOnce(undefined)
+      .mockRejectedValueOnce(new Error('not allowed'));
+    Object.defineProperty(window.navigator, 'clipboard', {
+      value: { writeText },
+      configurable: true,
+    });
+    Object.defineProperty(document, 'execCommand', { value: vi.fn().mockReturnValue(false), configurable: true });
+
+    await render(makeModel({ id: 'acme/retry', name: 'Retry' }));
+    await act(async () => {
+      container.querySelector('button')!.click();
+    });
+    expect(container.querySelector('[role="status"]')?.textContent).toBe('Model ID copied');
+
+    await act(async () => {
+      container.querySelector('button')!.click();
+    });
+    expect(container.querySelector('[role="status"]')?.textContent).toBe('Unable to copy model ID');
+  });
+
   it('falls back to execCommand when the Clipboard API rejects', async () => {
     const writeText = vi.fn().mockRejectedValue(new Error('not allowed'));
     const execCommand = vi.fn().mockReturnValue(true);

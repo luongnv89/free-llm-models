@@ -120,13 +120,20 @@ export function getArchiveProviderId(entry: ArchivedModel): string {
   return 'openrouter';
 }
 
+function archiveDisplayNames(
+  providersMetadata: ProviderMetadata[]
+): Map<string, string> {
+  return new Map([
+    [OPENROUTER_DEFAULT_METADATA.id, OPENROUTER_DEFAULT_METADATA.displayName],
+    ...providersMetadata.map((p) => [p.id, p.displayName] as const),
+  ]);
+}
+
 export function getArchiveSourceOptions(
   entries: ArchivedModel[],
   providersMetadata: ProviderMetadata[] = []
 ): SourceOption[] {
-  const displayNames = new Map(
-    providersMetadata.map((p) => [p.id, p.displayName])
-  );
+  const displayNames = archiveDisplayNames(providersMetadata);
   const counts = new Map<string, number>();
   for (const entry of entries) {
     const source = getArchiveProviderId(entry);
@@ -145,9 +152,7 @@ export function groupArchivedByProvider(
   entries: ArchivedModel[],
   providersMetadata: ProviderMetadata[] = []
 ): Array<{ providerId: string; displayName: string; entries: ArchivedModel[] }> {
-  const displayNames = new Map(
-    providersMetadata.map((p) => [p.id, p.displayName])
-  );
+  const displayNames = archiveDisplayNames(providersMetadata);
   const groups = new Map<string, ArchivedModel[]>();
   for (const entry of entries) {
     const source = getArchiveProviderId(entry);

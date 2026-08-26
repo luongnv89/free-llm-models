@@ -42,6 +42,17 @@ interface ProviderFixture {
   archived?: Model[];
 }
 
+function providerMetadata(id: string, name: string) {
+  return {
+    id,
+    displayName: name,
+    baseUrl: null,
+    apiKeySignupUrl: null,
+    docsUrl: null,
+    notes: null,
+  };
+}
+
 /**
  * Serves a multi-provider index plus one JSON payload per provider,
  * mirroring what useModels() fetches on a current deploy.
@@ -55,6 +66,7 @@ function mockMultiProviderFetch(providers: ProviderFixture[]): ReturnType<typeof
         providers: providers.map((p) => ({
           id: p.id,
           name: p.name,
+          metadata: providerMetadata(p.id, p.name),
           modelCount: p.models?.length ?? 0,
           fetchedAt: FETCHED_AT,
         })),

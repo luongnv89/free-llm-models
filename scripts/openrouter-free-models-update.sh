@@ -18,8 +18,9 @@
 #   4. Hard-resets the repo to origin/main (GitHub is source of truth) and
 #      cleans untracked files EXCEPT logs/, node_modules/, .env — then
 #      `npm ci` (lockfile-driven; fails fast on manifest/lockfile mismatch).
-#   5. Runs `npm run start` → writes web/public/openrouter_free_models.json.
-#   6. Commits + pushes the JSON ONLY if it changed.
+#   5. Runs `npm run start` → writes web/public/models/*.json + index.json
+#      plus the legacy web/public/openrouter_free_models.json.
+#   6. Commits + pushes ONLY if any generated file changed.
 #
 # Escape hatch: FORCE_UPDATER=1 bypasses the dirty-tree guard (the reset in
 # step 4 will still discard local changes outside logs/, node_modules/, .env).
@@ -42,13 +43,24 @@ source "$SCRIPT_DIR/lib/updater-common.sh"
 BRANCH="main"
 LOG_DIR="$REPO_DIR/logs"
 LOCK_FILE="$LOG_DIR/update-free-models.lock"
-DATA_FILE="web/public/openrouter_free_models.json"
 ENV_CANDIDATES=(
   "$REPO_DIR/.env"
   "${OPENROUTER_ENV_FILE:-}"
   "$HOME/.config/openrouter/api.env"
   "$HOME/.config/devstats/api.env"
 )
+
+# Provider API keys the multi-provider runner consumes (PROVIDERS and
+# PROVIDER_TIMEOUT_MS are read straight from the environment by node).
+PROVIDER_KEY_VARS=(OPENROUTER_API_KEY GROQ_API_KEY GOOGLE_AI_API_KEY)
+
+# True when every provider key var is set to a non-empty value.
+all_provider_keys_set() {
+  local v
+  for v in "${PROVIDER_KEY_VARS[@]}"; do
+    [[ -n "${!v:-}" ]] || return 1
+  done
+}
 
 # ── SSH auth for push (use the deploy key if present) ───────────────────────────
 if [[ -z "${GIT_SSH_COMMAND:-}" ]]; then
@@ -67,25 +79,26 @@ if ! flock -n 9; then
   exit 0
 fi
 
-# ── Optional OPENROUTER_API_KEY from env files ──────────────────────────────────
-if [[ -z "${OPENROUTER_API_KEY:-}" ]]; then
+# ── Optional provider API keys from env files ───────────────────────────────
+# Source candidate env files until every provider key is defined; keys absent
+# everywhere simply fall back to the adapters' public/no-key behaviour.
+if ! all_provider_keys_set; then
   for f in "${ENV_CANDIDATES[@]}"; do
     [[ -n "$f" && -f "$f" ]] || continue
     set -a
     # shellcheck disable=SC1090
     source "$f"
     set +a
-    if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
-      echo "[AUTH] Loaded OPENROUTER_API_KEY from $f"
-      break
-    fi
+    all_provider_keys_set && break
   done
 fi
-if [[ -n "${OPENROUTER_API_KEY:-}" ]]; then
-  echo "[AUTH] Using OPENROUTER_API_KEY"
-else
-  echo "[AUTH] No OPENROUTER_API_KEY; using public models endpoint"
-fi
+for v in "${PROVIDER_KEY_VARS[@]}"; do
+  if [[ -n "${!v:-}" ]]; then
+    echo "[AUTH] Using $v"
+  else
+    echo "[AUTH] No $v; using keyless endpoint where applicable"
+  fi
+done
 
 echo "[REPO] $REPO_DIR (branch $BRANCH)"
 cd "$REPO_DIR"
@@ -123,13 +136,13 @@ npm ci --silent
 
 npm run start
 
-# Commit + push only if the dataset actually changed
-if git diff --quiet -- "$DATA_FILE"; then
+# Commit + push only if the generated dataset actually changed
+if ! updater_data_dirty; then
   echo "[OK] No data change; nothing to commit."
   exit 0
 fi
 
-git add "$DATA_FILE"
+updater_stage_data
 git commit -m "chore: daily update openrouter free models"
 
 if ! git push origin "HEAD:${BRANCH}"; then
@@ -138,8 +151,8 @@ if ! git push origin "HEAD:${BRANCH}"; then
   git reset --hard "origin/${BRANCH}"
   updater_resolve_node
   npm run start
-  if ! git diff --quiet -- "$DATA_FILE"; then
-    git add "$DATA_FILE"
+  if updater_data_dirty; then
+    updater_stage_data
     git commit -m "chore: daily update openrouter free models"
     git push origin "HEAD:${BRANCH}"
   else

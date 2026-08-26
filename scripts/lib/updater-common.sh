@@ -11,6 +11,38 @@
 
 set -euo pipefail
 
+# Generated dataset paths committed by the cron updaters: the multi-provider
+# outputs (web/public/models/*.json + index.json) and the legacy OpenRouter
+# snapshot.
+UPDATER_DATA_PATHS=(
+  "web/public/models"
+  "web/public/openrouter_free_models.json"
+)
+
+# updater_data_paths
+# Prints the generated dataset paths, one per line.
+updater_data_paths() {
+  local p
+  for p in "${UPDATER_DATA_PATHS[@]}"; do
+    echo "$p"
+  done
+}
+
+# updater_data_dirty
+# Returns 0 when any generated dataset path has staged, unstaged, or untracked
+# changes (new provider files may be untracked, so `git status --porcelain`
+# is required rather than `git diff --quiet`).
+updater_data_dirty() {
+  [[ -n "$(git status --porcelain -- "${UPDATER_DATA_PATHS[@]}")" ]]
+}
+
+# updater_stage_data
+# Stages all generated dataset paths (safe on a no-op: adds nothing when the
+# tree is clean).
+updater_stage_data() {
+  git add -- "${UPDATER_DATA_PATHS[@]}"
+}
+
 # updater_assert_clean_tree
 # Returns 0 when the working tree has no tracked modifications and no
 # untracked files outside the cron-owned paths (logs/, node_modules/, .env).

@@ -284,9 +284,26 @@ export function resolveProviderMetadata(
   model: Model,
   providers?: ProviderMetadata[] | null
 ): ProviderMetadata {
+  const hasCanonicalProviderId =
+    'providerId' in model && typeof model.providerId === 'string' && model.providerId;
   const providerId = getProvider(model);
   const meta = providers?.find((p) => p.id === providerId);
-  if (!meta) return OPENROUTER_DEFAULT_METADATA;
+  if (!meta) {
+    // Pre-provider datasets have no canonical source and remain OpenRouter data.
+    // An explicit provider ID must never silently inherit OpenRouter metadata.
+    if (!hasCanonicalProviderId || providerId === OPENROUTER_DEFAULT_METADATA.id) {
+      return OPENROUTER_DEFAULT_METADATA;
+    }
+    return {
+      id: providerId,
+      displayName: providerId,
+      baseUrl: null,
+      openaiCompatibleBaseUrl: null,
+      apiKeySignupUrl: null,
+      docsUrl: null,
+      notes: null,
+    };
+  }
   return {
     id: meta.id,
     displayName: meta.displayName || OPENROUTER_DEFAULT_METADATA.displayName,

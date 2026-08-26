@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CodeSnippets } from '@/components/CodeSnippets';
+import { HarnessSetupGuide } from '@/components/HarnessSetupGuide';
 import { OriHarnessGuide } from '@/components/OriHarnessGuide';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import {
@@ -276,10 +277,16 @@ export function ModelDetailPage() {
             </div>
 
             <div {...reveal(150)}>
-              <OriHarnessGuide modelId={model.id} />
+              <HarnessSetupGuide modelId={model.id} providerMeta={providerMeta} />
             </div>
 
-            <Card {...reveal(225)}>
+            {providerMeta.id === 'openrouter' && (
+              <div {...reveal(225)}>
+                <OriHarnessGuide modelId={model.id} />
+              </div>
+            )}
+
+            <Card {...reveal(300)}>
               <CardHeader>
                 <CardTitle className="text-lg">Supported Parameters</CardTitle>
               </CardHeader>

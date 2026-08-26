@@ -22,3 +22,4 @@ npm-debug.log*
 
 # Archive (optional - can be included if you want to track historical data)
 # archive/
+.gitissue/

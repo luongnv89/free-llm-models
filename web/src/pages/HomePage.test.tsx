@@ -140,6 +140,7 @@ describe('HomePage', () => {
 
     expect(container.textContent).toContain('2 free models available');
     expect(container.textContent).toContain('1 New Model (added in last 3 days)');
+    expect(container.textContent).toContain('visible “New” badge');
     expect(container.textContent).toContain('Fresh Model');
     expect(container.textContent).toContain('Old Model');
     expect(container.textContent).toContain('/free_models.json');
@@ -152,6 +153,37 @@ describe('HomePage', () => {
     expect(headerArchive!.querySelector('button')).toBeNull();
     expect(headerArchive!.tagName).toBe('A');
     expect(container.textContent).toContain('Archive');
+
+    const list = container.querySelector('ol[aria-label="Free models"]');
+    expect(list).toBeTruthy();
+    expect(list!.getAttribute('role')).toBe('list');
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(2);
+    expect(list!.querySelector('[aria-label="Rank 1"]')?.textContent).toBe('1');
+    expect(list!.querySelector('[aria-label="Rank 2"]')?.textContent).toBe('2');
+  });
+
+  it('re-ranks rows after filtering the sorted result', async () => {
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(makeModelsData()),
+    });
+    await renderPage();
+    await settle();
+
+    const input = container.querySelector('input')!;
+    await act(async () => {
+      const setter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value',
+      )!.set!;
+      setter.call(input, 'Old Model');
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+
+    const list = container.querySelector('ol[aria-label="Free models"]');
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(1);
+    expect(list!.querySelector('[aria-label="Rank 1"]')?.textContent).toBe('1');
+    expect(list!.textContent).toContain('Old Model');
   });
 
   it('renders ordered provider quick filters with accessible pressed state', async () => {

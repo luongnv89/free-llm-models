@@ -6,6 +6,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import { MemoryRouter } from 'react-router-dom';
 import { ArchivePage } from './ArchivePage';
 import { resetModelsCacheForTests } from '@/hooks/useModels';
+import { formatDateTime } from '@/lib/model-utils';
 import type { Model } from '@/types/model';
 
 const FETCHED_AT = '2026-08-20T12:00:00Z';
@@ -187,9 +188,14 @@ describe('ArchivePage', () => {
 
     expect(container.textContent).toContain('1 archived model');
     expect(container.textContent).toContain('Gone Model');
-    expect(container.textContent).toContain('Removed');
+    expect(container.textContent).toContain(`Removed ${formatDateTime('2026-08-01T00:00:00Z')}`);
     expect(container.textContent).not.toContain('Live Model');
     expect(container.querySelector('a[href="/model/acme%2Fgone"]')).toBeTruthy();
+    const list = container.querySelector('ol[aria-label="OpenRouter archived models"]');
+    expect(list).toBeTruthy();
+    expect(list!.getAttribute('role')).toBe('list');
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(1);
+    expect(list!.querySelector('[aria-label="Rank 1"]')?.textContent).toBe('1');
   });
 
   it('groups legacy entries under OpenRouter and tagged entries under their provider', async () => {
@@ -211,5 +217,8 @@ describe('ArchivePage', () => {
     expect(container.textContent).toContain('OpenRouter');
     expect(container.textContent).toContain('Groq');
     expect(container.textContent).toContain('Gone Fast');
+    expect(container.querySelector('ol[aria-label="Groq archived models"]')).toBeTruthy();
+    expect(container.querySelector('ol[aria-label="OpenRouter archived models"]')).toBeTruthy();
+    expect(container.querySelectorAll('ol > li')).toHaveLength(2);
   });
 });

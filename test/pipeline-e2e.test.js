@@ -45,9 +45,11 @@ function makeOfflineFetch(routes) {
     requested,
     fetchImpl: async (url) => {
       requested.push(String(url));
-      const match = Object.keys(routes).find((prefix) =>
-        String(url).startsWith(prefix)
-      );
+      // Longest prefix wins so "…/models?sort=top-weekly" can never be
+      // captured by the shorter "…/models" route regardless of key order.
+      const match = Object.keys(routes)
+        .filter((prefix) => String(url).startsWith(prefix))
+        .sort((a, b) => b.length - a.length)[0];
       if (!match) {
         throw new Error(`unexpected network request in offline test: ${url}`);
       }

@@ -1,8 +1,9 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ModelCard } from '@/components/ModelCard';
+import { ModelListItem } from '@/components/ModelListItem';
 import { FilterSidebar } from '@/components/FilterSidebar';
 import { SearchBar } from '@/components/SearchBar';
+import { ProviderQuickFilter } from '@/components/ProviderQuickFilter';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
 import { FAQTip } from '@/components/FAQTip';
 import { Button } from '@/components/ui/button';
@@ -19,6 +20,7 @@ import {
   getUniqueProviders,
   getUniqueModalities,
   getSourceOptions,
+  getProviderQuickFilterOptions,
   getModelsDataUrl,
   isNewModel,
 } from '@/hooks/useModels';
@@ -71,6 +73,20 @@ export function HomePage() {
   const providers = getUniqueProviders(data?.models ?? []);
   const modalities = getUniqueModalities(data?.models ?? []);
   const sources = getSourceOptions(data?.models ?? [], data?.providers ?? []);
+  const providerQuickFilterOptions = getProviderQuickFilterOptions(data?.models ?? []);
+
+  const toggleSource = (sourceId: string) => {
+    setFilters((current) => ({
+      ...current,
+      sources: current.sources.includes(sourceId)
+        ? current.sources.filter((id) => id !== sourceId)
+        : [...current.sources, sourceId],
+    }));
+  };
+
+  const clearSources = () => {
+    setFilters((current) => ({ ...current, sources: [] }));
+  };
 
   // Count new models (added in last 3 days)
   const newModelsCount = useMemo(() => {
@@ -204,7 +220,7 @@ export function HomePage() {
                 </span>
               </div>
               <p className="text-xs text-muted-foreground">
-                New models are highlighted with a green border on the left side.
+                New models are marked with a visible “New” badge.
               </p>
             </div>
           )}
@@ -213,7 +229,7 @@ export function HomePage() {
           <div className="sticky top-[var(--header-height)] z-10 bg-background/95 backdrop-blur -mx-4 px-4 pt-3 lg:static lg:z-auto lg:bg-transparent lg:backdrop-blur-0 lg:mx-0 lg:px-0 lg:pt-0">
             <SearchBar
               search={filters.search}
-              onSearchChange={(value) => setFilters({ ...filters, search: value })}
+              onSearchChange={(value) => setFilters((current) => ({ ...current, search: value }))}
               sortField={sortField}
               sortOrder={sortOrder}
               onSortChange={(field, order) => {
@@ -223,23 +239,30 @@ export function HomePage() {
               totalCount={data?.models.length ?? 0}
               filteredCount={filteredModels.length}
             />
+            <ProviderQuickFilter
+              options={providerQuickFilterOptions}
+              selectedSources={filters.sources}
+              onSourceToggle={toggleSource}
+              onAll={clearSources}
+            />
           </div>
 
-          {/* Model Grid */}
+          {/* Ranked model list */}
           {filteredModels.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground">No models match your filters</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-              {filteredModels.map((model) => (
-                <ModelCard
+            <ol aria-label="Free models" role="list" className="mt-6 list-none">
+              {filteredModels.map((model, index) => (
+                <ModelListItem
                   key={model.id}
                   model={model}
+                  rank={index + 1}
                   isNew={isNewModel(model)}
                 />
               ))}
-            </div>
+            </ol>
           )}
         </main>
       </div>

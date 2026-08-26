@@ -284,16 +284,34 @@ export function resolveProviderMetadata(
   model: Model,
   providers?: ProviderMetadata[] | null
 ): ProviderMetadata {
+  const hasCanonicalProviderId =
+    'providerId' in model && typeof model.providerId === 'string' && model.providerId;
   const providerId = getProvider(model);
   const meta = providers?.find((p) => p.id === providerId);
-  if (!meta) return OPENROUTER_DEFAULT_METADATA;
+  if (!meta) {
+    // Pre-provider datasets have no canonical source and remain OpenRouter data.
+    // An explicit provider ID must never silently inherit OpenRouter metadata.
+    if (!hasCanonicalProviderId || providerId === OPENROUTER_DEFAULT_METADATA.id) {
+      return OPENROUTER_DEFAULT_METADATA;
+    }
+    return {
+      id: providerId,
+      displayName: providerId,
+      baseUrl: null,
+      openaiCompatibleBaseUrl: null,
+      apiKeySignupUrl: null,
+      docsUrl: null,
+      notes: null,
+    };
+  }
+  const isOpenRouter = providerId === OPENROUTER_DEFAULT_METADATA.id;
   return {
     id: meta.id,
-    displayName: meta.displayName || OPENROUTER_DEFAULT_METADATA.displayName,
-    baseUrl: meta.baseUrl ?? OPENROUTER_DEFAULT_METADATA.baseUrl,
+    displayName: meta.displayName || (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.displayName : providerId),
+    baseUrl: meta.baseUrl ?? (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.baseUrl : null),
     openaiCompatibleBaseUrl: meta.openaiCompatibleBaseUrl ?? null,
-    apiKeySignupUrl: meta.apiKeySignupUrl ?? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl,
-    docsUrl: meta.docsUrl ?? OPENROUTER_DEFAULT_METADATA.docsUrl,
+    apiKeySignupUrl: meta.apiKeySignupUrl ?? (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl : null),
+    docsUrl: meta.docsUrl ?? (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.docsUrl : null),
     notes: meta.notes ?? null,
   };
 }
@@ -432,6 +450,28 @@ export function filterAndSortModels(
 export function getUniqueProviders(models: Model[]): string[] {
   const providers = new Set(models.map(getProvider));
   return Array.from(providers).sort();
+}
+
+const PROVIDER_QUICK_FILTERS = [
+  { id: 'openrouter', displayName: 'OpenRouter' },
+  { id: 'google', displayName: 'Google' },
+  { id: 'mistral', displayName: 'Mistral' },
+  { id: 'nvidia-nim', displayName: 'Nvidia' },
+  { id: 'groq', displayName: 'Groq' },
+  { id: 'cerebras', displayName: 'Cerebras' },
+] as const;
+
+export function getProviderQuickFilterOptions(models: Model[]): SourceOption[] {
+  const counts = new Map<string, number>();
+  for (const model of models) {
+    const providerId = getProvider(model);
+    counts.set(providerId, (counts.get(providerId) ?? 0) + 1);
+  }
+
+  return PROVIDER_QUICK_FILTERS.map((provider) => ({
+    ...provider,
+    count: counts.get(provider.id) ?? 0,
+  }));
 }
 
 export function getSourceOptions(

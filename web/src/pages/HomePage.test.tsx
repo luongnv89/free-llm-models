@@ -35,6 +35,7 @@ function makeModelsData(): ModelsData {
         expiration_date: null,
         id: 'acme/fresh',
         name: 'Fresh Model',
+        providerId: 'google',
         addedToFreeList: new Date().toISOString(),
       },
       {
@@ -58,6 +59,7 @@ function makeModelsData(): ModelsData {
         expiration_date: null,
         id: 'acme/old',
         name: 'Old Model',
+        providerId: 'openrouter',
       },
     ],
   };
@@ -138,6 +140,7 @@ describe('HomePage', () => {
 
     expect(container.textContent).toContain('2 free models available');
     expect(container.textContent).toContain('1 New Model (added in last 3 days)');
+    expect(container.textContent).toContain('visible “New” badge');
     expect(container.textContent).toContain('Fresh Model');
     expect(container.textContent).toContain('Old Model');
     expect(container.textContent).toContain('/free_models.json');
@@ -150,6 +153,118 @@ describe('HomePage', () => {
     expect(headerArchive!.querySelector('button')).toBeNull();
     expect(headerArchive!.tagName).toBe('A');
     expect(container.textContent).toContain('Archive');
+
+    const list = container.querySelector('ol[aria-label="Free models"]');
+    expect(list).toBeTruthy();
+    expect(list!.getAttribute('role')).toBe('list');
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(2);
+    expect(list!.querySelector('[aria-label="Rank 1"]')?.textContent).toBe('1');
+    expect(list!.querySelector('[aria-label="Rank 2"]')?.textContent).toBe('2');
+  });
+
+  it('re-ranks rows after filtering the sorted result', async () => {
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(makeModelsData()),
+    });
+    await renderPage();
+    await settle();
+
+    const input = container.querySelector('input')!;
+    await act(async () => {
+      const setter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value',
+      )!.set!;
+      setter.call(input, 'Old Model');
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+
+    const list = container.querySelector('ol[aria-label="Free models"]');
+    expect(list!.querySelectorAll(':scope > li')).toHaveLength(1);
+    expect(list!.querySelector('[aria-label="Rank 1"]')?.textContent).toBe('1');
+    expect(list!.textContent).toContain('Old Model');
+  });
+
+  it('renders ordered provider quick filters with accessible pressed state', async () => {
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(makeModelsData()),
+    });
+    await renderPage();
+    await settle();
+
+    const group = container.querySelector('[role="group"][aria-label="Filter models by provider"]')!;
+    const buttons = [...group.querySelectorAll('button')];
+    expect(buttons.map((button) => button.getAttribute('aria-label'))).toEqual([
+      'All',
+      'OpenRouter',
+      'Google',
+      'Mistral',
+      'Nvidia',
+      'Groq',
+      'Cerebras',
+    ]);
+    expect(buttons.every((button) => button.getAttribute('type') === 'button')).toBe(true);
+    expect(buttons[0].getAttribute('aria-pressed')).toBe('true');
+    expect(buttons.slice(1).map((button) => button.getAttribute('aria-pressed'))).toEqual([
+      'false',
+      'false',
+      'false',
+      'false',
+      'false',
+      'false',
+    ]);
+    expect(group.textContent).toContain('OpenRouter1');
+    expect(group.textContent).toContain('Google1');
+    expect(group.textContent).toContain('Mistral0');
+  });
+
+  it('supports multi-select, sidebar synchronization, intersection, and All reset', async () => {
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(makeModelsData()),
+    });
+    await renderPage();
+    await settle();
+
+    const group = container.querySelector('[role="group"][aria-label="Filter models by provider"]')!;
+    const quickButton = (label: string) =>
+      [...group.querySelectorAll('button')].find(
+        (button) => button.getAttribute('aria-label') === label,
+      )!;
+
+    await act(async () => {
+      quickButton('Google').click();
+    });
+    expect(quickButton('Google').getAttribute('aria-pressed')).toBe('true');
+    expect(quickButton('All').getAttribute('aria-pressed')).toBe('false');
+    expect(container.textContent).toContain('Fresh Model');
+    expect(container.textContent).not.toContain('Old Model');
+
+    const openRouterSidebarButton = [...container.querySelectorAll('aside button')].find(
+      (button) => button.textContent?.toLowerCase().includes('openrouter'),
+    ) as HTMLButtonElement | undefined;
+    await act(async () => {
+      openRouterSidebarButton!.click();
+    });
+    expect(quickButton('Google').getAttribute('aria-pressed')).toBe('true');
+    expect(quickButton('OpenRouter').getAttribute('aria-pressed')).toBe('true');
+    expect(container.textContent).toContain('Old Model');
+
+    await act(async () => {
+      quickButton('Google').click();
+    });
+    expect(quickButton('Google').getAttribute('aria-pressed')).toBe('false');
+    expect(quickButton('OpenRouter').getAttribute('aria-pressed')).toBe('true');
+    expect(container.textContent).not.toContain('Fresh Model');
+
+    await act(async () => {
+      quickButton('All').click();
+    });
+    expect(quickButton('All').getAttribute('aria-pressed')).toBe('true');
+    expect(container.textContent).toContain('Fresh Model');
+    expect(container.textContent).toContain('Old Model');
   });
 
   it('shows the empty-state message when filters match nothing', async () => {

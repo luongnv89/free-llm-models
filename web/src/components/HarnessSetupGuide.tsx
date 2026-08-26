@@ -48,7 +48,6 @@ export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuidePr
   const [activeId, setActiveId] = useState(HARNESSES[0].id);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const { copied, copy } = useCopyToClipboard();
-  const activeHarness = HARNESSES.find((harness) => harness.id === activeId) ?? HARNESSES[0];
 
   const selectHarness = (id: string) => {
     setActiveId(id);
@@ -70,9 +69,9 @@ export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuidePr
     document.getElementById(`harness-tab-${nextHarness.id}`)?.focus();
   };
 
-  const copyModelId = async () => {
+  const copyModelId = async (harnessId: string) => {
     const ok = await copy(modelId);
-    if (ok) setCopiedId(activeHarness.id);
+    if (ok) setCopiedId(harnessId);
   };
 
   return (
@@ -92,7 +91,7 @@ export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuidePr
 
         <div className="flex flex-wrap gap-1 rounded-lg border border-border bg-muted/50 p-1" role="tablist" aria-label="Choose a coding harness">
           {HARNESSES.map((harness) => {
-            const selected = harness.id === activeHarness.id;
+            const selected = harness.id === activeId;
             return (
               <button
                 key={harness.id}
@@ -116,68 +115,75 @@ export function HarnessSetupGuide({ modelId, providerMeta }: HarnessSetupGuidePr
           })}
         </div>
 
-        <section
-          id={`harness-panel-${activeHarness.id}`}
-          role="tabpanel"
-          aria-labelledby={`harness-tab-${activeHarness.id}`}
-          tabIndex={0}
-          className="space-y-3 rounded-lg border border-border p-4"
-        >
-          <div>
-            <h3 className="font-medium">{activeHarness.label}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{activeHarness.description}</p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              Follow the official setup instructions, then use this provider model ID in the
-              harness configuration.
-            </p>
-          </div>
-          <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-3 font-mono text-sm">
-            <code className="min-w-0 flex-1 overflow-x-auto whitespace-pre-wrap break-all">{modelId}</code>
-            <button
-              type="button"
-              onClick={copyModelId}
-              aria-label={`Copy ${activeHarness.label} model ID`}
-              className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        {HARNESSES.map((harness) => {
+          const selected = harness.id === activeId;
+          return (
+            <section
+              key={harness.id}
+              id={`harness-panel-${harness.id}`}
+              role="tabpanel"
+              aria-labelledby={`harness-tab-${harness.id}`}
+              tabIndex={0}
+              hidden={!selected}
+              className="space-y-3 rounded-lg border border-border p-4"
             >
-              {copied && copiedId === activeHarness.id ? (
-                <Check className="h-4 w-4 text-[var(--highlight)]" aria-hidden="true" />
-              ) : (
-                <Copy className="h-4 w-4" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-            <a
-              href={activeHarness.docsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-medium text-[var(--highlight)] hover:underline"
-            >
-              Official {activeHarness.label} docs
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
-            {providerMeta.docsUrl && (
-              <a
-                href={providerMeta.docsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[var(--highlight)] hover:underline"
-              >
-                {providerMeta.displayName} provider docs
-              </a>
-            )}
-            {providerMeta.apiKeySignupUrl && (
-              <a
-                href={providerMeta.apiKeySignupUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[var(--highlight)] hover:underline"
-              >
-                Get provider credentials
-              </a>
-            )}
-          </div>
-        </section>
+              <div>
+                <h3 className="font-medium">{harness.label}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{harness.description}</p>
+                <p className="mt-2 text-xs text-muted-foreground">
+                  Follow the official setup instructions, then use this provider model ID in the
+                  harness configuration.
+                </p>
+              </div>
+              <div className="flex items-start gap-3 rounded-lg bg-muted/50 p-3 font-mono text-sm">
+                <code className="min-w-0 flex-1 overflow-x-auto whitespace-pre-wrap break-all">{modelId}</code>
+                <button
+                  type="button"
+                  onClick={() => copyModelId(harness.id)}
+                  aria-label={`Copy ${harness.label} model ID`}
+                  className="shrink-0 rounded-md p-1.5 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {copied && copiedId === harness.id ? (
+                    <Check className="h-4 w-4 text-[var(--highlight)]" aria-hidden="true" />
+                  ) : (
+                    <Copy className="h-4 w-4" aria-hidden="true" />
+                  )}
+                </button>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+                <a
+                  href={harness.docsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-medium text-[var(--highlight)] hover:underline"
+                >
+                  Official {harness.label} docs
+                  <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                </a>
+                {providerMeta.docsUrl && (
+                  <a
+                    href={providerMeta.docsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[var(--highlight)] hover:underline"
+                  >
+                    {providerMeta.displayName} provider docs
+                  </a>
+                )}
+                {providerMeta.apiKeySignupUrl && (
+                  <a
+                    href={providerMeta.apiKeySignupUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-[var(--highlight)] hover:underline"
+                  >
+                    Get provider credentials
+                  </a>
+                )}
+              </div>
+            </section>
+          );
+        })}
       </CardContent>
     </Card>
   );

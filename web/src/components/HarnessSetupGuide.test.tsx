@@ -49,6 +49,9 @@ describe('HarnessSetupGuide', () => {
       'Codex',
     ]);
     expect(tabs.filter((tab) => tab.getAttribute('aria-selected') === 'true')).toHaveLength(1);
+    expect(tabs.every((tab) => container.querySelector(`#${tab.getAttribute('aria-controls')}`))).toBe(true);
+    expect(container.querySelectorAll('[role="tabpanel"]')).toHaveLength(4);
+    expect(container.querySelectorAll('[role="tabpanel"][hidden]')).toHaveLength(3);
     expect(container.textContent).toContain(MODEL_ID);
   });
 
@@ -66,9 +69,11 @@ describe('HarnessSetupGuide', () => {
     expect(openCodeTab!.getAttribute('aria-selected')).toBe('true');
     expect(container.textContent).toContain('Official OpenCode docs');
     expect(container.textContent).toContain(MODEL_ID);
-    expect(container.querySelector('[role="tabpanel"]')?.getAttribute('aria-labelledby')).toBe(
+    expect(container.querySelector('#harness-panel-opencode')?.getAttribute('aria-labelledby')).toBe(
       'harness-tab-opencode',
     );
+    expect(container.querySelector('#harness-panel-opencode')?.hasAttribute('hidden')).toBe(false);
+    expect(container.querySelector('#harness-panel-claude-code')?.hasAttribute('hidden')).toBe(true);
   });
 
   it('links to provider and official harness documentation', async () => {

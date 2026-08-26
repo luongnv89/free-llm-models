@@ -29,13 +29,21 @@ export const CAPABILITY_TAG_META: Record<
 };
 
 export function modelCapabilities(model: Model): ModelCapabilities {
+  // Some provider catalogs do not expose OpenRouter's capability fields.
+  const supportedParameters = Array.isArray(model.supported_parameters)
+    ? model.supported_parameters
+    : [];
+  const inputModalities = Array.isArray(model.architecture?.input_modalities)
+    ? model.architecture.input_modalities
+    : [];
+
   return {
     reasoning:
-      model.supported_parameters.includes('reasoning') ||
-      model.supported_parameters.includes('include_reasoning'),
-    tools: model.supported_parameters.includes('tools'),
-    vision: model.architecture.input_modalities.includes('image'),
-    video: model.architecture.input_modalities.includes('video'),
+      supportedParameters.includes('reasoning') ||
+      supportedParameters.includes('include_reasoning'),
+    tools: supportedParameters.includes('tools'),
+    vision: inputModalities.includes('image'),
+    video: inputModalities.includes('video'),
   };
 }
 
@@ -47,7 +55,8 @@ export function capabilityTags(model: Model): CapabilityTag[] {
     .map((key) => ({ key, ...CAPABILITY_TAG_META[key] }));
 }
 
-export function formatContextLength(length: number): string {
+export function formatContextLength(length: number | null | undefined): string {
+  if (length == null) return 'Unknown';
   if (length >= 1000000) {
     return `${(length / 1000000).toFixed(1)}M`;
   }

@@ -81,6 +81,24 @@ describe('modelCapabilities', () => {
     expect(caps.video).toBe(true);
   });
 
+  it('treats missing provider capability metadata as unsupported', () => {
+    const providerModel = {
+      ...makeModel(),
+      supported_parameters: undefined,
+      architecture: {
+        ...makeModel().architecture,
+        input_modalities: undefined,
+      },
+    } as unknown as Model;
+
+    expect(modelCapabilities(providerModel)).toEqual({
+      reasoning: false,
+      tools: false,
+      vision: false,
+      video: false,
+    });
+  });
+
   it('reports text-only models as having no vision or video', () => {
     const caps = modelCapabilities(makeModel());
     expect(caps.vision).toBe(false);
@@ -127,6 +145,10 @@ describe('capabilityTags', () => {
 });
 
 describe('formatContextLength', () => {
+  it('handles providers without a context length', () => {
+    expect(formatContextLength(null)).toBe('Unknown');
+  });
+
   it('formats small lengths as plain numbers', () => {
     expect(formatContextLength(999)).toBe('999');
     expect(formatContextLength(4096)).toBe('4K');

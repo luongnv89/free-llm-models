@@ -285,7 +285,7 @@ export function ModelDetailPage() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {model.supported_parameters.map((param) => (
+                  {(model.supported_parameters ?? []).map((param) => (
                     <Badge key={param} variant="secondary" className="font-mono text-xs">
                       {param}
                     </Badge>
@@ -309,7 +309,7 @@ export function ModelDetailPage() {
                       {formatContextLength(model.context_length)} tokens
                     </dd>
                   </div>
-                  {model.top_provider.max_completion_tokens != null && (
+                  {model.top_provider?.max_completion_tokens != null && (
                     <div className="flex items-baseline justify-between gap-4 py-2.5 first:pt-0 last:pb-0">
                       <dt className="text-sm text-muted-foreground">Max completion</dt>
                       <dd className="text-sm font-medium font-mono text-right">
@@ -381,7 +381,7 @@ export function ModelDetailPage() {
                       ['Video', hasVideo],
                       ['Reasoning', hasReasoning],
                       ['Tool Use', hasTools],
-                      ['Moderated', model.top_provider.is_moderated],
+                      ['Moderated', model.top_provider?.is_moderated ?? false],
                     ] as const
                   ).map(([label, enabled]) => (
                     <div

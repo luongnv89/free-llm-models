@@ -1,0 +1,32 @@
+[
+  {
+    "id": "openai/gpt-4o-mini",
+    "name": "OpenAI GPT-4o mini",
+    "publisher": "OpenAI",
+    "summary": "A smaller, cheaper variant of GPT-4o for lightweight tasks.",
+    "rate_limit_tier": "low",
+    "supported_input_modalities": ["text", "image"],
+    "supported_output_modalities": ["text"],
+    "context_window": 128000
+  },
+  {
+    "id": "meta/Llama-3.3-70B-Instruct",
+    "name": "Meta Llama 3.3 70B Instruct",
+    "publisher": "Meta",
+    "summary": "State-of-the-art open instruct model optimized for dialogue.",
+    "rate_limit_tier": "high",
+    "supported_input_modalities": ["text"],
+    "supported_output_modalities": ["text"],
+    "context_window": 131072
+  },
+  {
+    "id": "mistral-ai/mistral-small-2503",
+    "name": "Mistral Small 2503",
+    "publisher": "Mistral AI",
+    "summary": "Efficient multilingual model with function calling support.",
+    "rate_limit_tier": "low",
+    "supported_input_modalities": ["text", "image"],
+    "supported_output_modalities": ["text"],
+    "context_window": 128000
+  }
+]

@@ -114,7 +114,7 @@ export function HomePage() {
                 <Zap className="h-6 w-6 text-[var(--highlight)]" />
               </div>
               <div>
-                <h1 className="text-xl font-bold">OpenRouter Free Models</h1>
+                <h1 className="text-xl font-bold">Free LLM Models</h1>
                 <p className="text-xs text-muted-foreground">
                   {data?.totalModels} free models available
                 </p>

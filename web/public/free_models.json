@@ -1,29 +1,151 @@
 {
   "fetchedAt": "2026-08-25T00:00:00.000Z",
-  "totalModels": 2,
-  "newModelIds": [
-    "g1"
-  ],
+  "totalModels": 5,
+  "newModelIds": [],
   "models": [
     {
-      "id": "nul\u0000id",
-      "providerId": "bad"
+      "id": "openai/gpt-oss-120b:free",
+      "canonical_slug": "openai/gpt-oss-120b",
+      "name": "OpenAI: gpt-oss-120b (free)",
+      "created": 1754880000,
+      "description": "Open-weight 120B model.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "supported_parameters": [
+        "temperature",
+        "top_p"
+      ],
+      "addedToFreeList": "2026-08-24T00:00:00.000Z",
+      "providerId": "openrouter"
     },
     {
-      "id": "g1",
-      "providerId": "good",
-      "addedToFreeList": "2026-08-25T00:00:00.000Z"
+      "id": "meta-llama/llama-3.3-70b-instruct:free",
+      "canonical_slug": "meta-llama/llama-3.3-70b-instruct",
+      "name": "Meta: Llama 3.3 70B Instruct (free)",
+      "created": 1733011200,
+      "description": "Llama 3.3 70B Instruct.",
+      "context_length": 65536,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "supported_parameters": [
+        "temperature",
+        "tools"
+      ],
+      "addedToFreeList": "2026-08-24T00:00:00.000Z",
+      "providerId": "openrouter"
+    },
+    {
+      "id": "gemini-2.5-flash",
+      "name": "Gemini 2.5 Flash",
+      "created": 0,
+      "description": "Fast and versatile performance across a diverse set of tasks",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-08-24T00:00:00.000Z"
+    },
+    {
+      "id": "gemini-2.5-pro",
+      "name": "Gemini 2.5 Pro",
+      "created": 0,
+      "description": "Complex reasoning and long-context understanding",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-08-24T00:00:00.000Z"
+    },
+    {
+      "id": "gemma-3-27b-it",
+      "name": "Gemma 3 27B",
+      "created": 0,
+      "description": "Lightweight open model built from Gemini technology",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-08-24T00:00:00.000Z"
     }
   ],
   "archivedModels": [],
   "providers": [
     {
-      "id": "bad",
-      "displayName": "bad"
+      "id": "openrouter",
+      "displayName": "OpenRouter",
+      "baseUrl": "https://openrouter.ai",
+      "apiKeySignupUrl": "https://openrouter.ai/keys",
+      "docsUrl": "https://openrouter.ai/docs",
+      "openaiCompatibleBaseUrl": null,
+      "notes": null
     },
     {
-      "id": "good",
-      "displayName": "good"
+      "id": "google",
+      "displayName": "Google AI Studio",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+      "apiKeySignupUrl": "https://aistudio.google.com/apikey",
+      "docsUrl": "https://ai.google.dev/gemini-api/docs",
+      "openaiCompatibleBaseUrl": "https://generativelanguage.googleapis.com/openai/v1",
+      "notes": null
     }
   ]
 }

@@ -223,7 +223,7 @@ describe('useModels fetching', () => {
   it('falls back to the legacy file when index.json is missing', async () => {
     fetchMock.mockImplementation((url: string) => {
       if (url === '/models/index.json') return Promise.resolve({ ok: false, status: 404 });
-      if (url === '/openrouter_free_models.json') {
+      if (url === '/free_models.json') {
         return Promise.resolve({ ok: true, json: () => Promise.resolve(makeModelsData()) });
       }
       return Promise.resolve({ ok: false, status: 404 });
@@ -232,7 +232,7 @@ describe('useModels fetching', () => {
     await settle();
 
     const urls = fetchMock.mock.calls.map((c) => c[0]);
-    expect(urls).toEqual(['/models/index.json', '/openrouter_free_models.json']);
+    expect(urls).toEqual(['/models/index.json', '/free_models.json']);
     expect(container.querySelector('[data-state="loaded"]')).toBeTruthy();
     expect(container.textContent).toContain('1');
   });
@@ -294,7 +294,7 @@ describe('useModels fetching', () => {
           json: () => Promise.resolve({ broken: true }),
         });
       }
-      if (url === '/openrouter_free_models.json') {
+      if (url === '/free_models.json') {
         return Promise.resolve({ ok: true, json: () => Promise.resolve(makeModelsData()) });
       }
       return Promise.resolve({ ok: false, status: 404 });
@@ -318,7 +318,7 @@ describe('useModels fetching', () => {
     expect(init?.signal).toBeInstanceOf(AbortSignal);
     // Invalid index body falls back to the legacy dataset.
     expect(container.querySelector('[data-state="loaded"]')).toBeTruthy();
-    expect(fetchMock.mock.calls[1][0]).toBe('/openrouter_free_models.json');
+    expect(fetchMock.mock.calls[1][0]).toBe('/free_models.json');
   });
 
   it('serves the dataset from cache on remount without refetching', async () => {

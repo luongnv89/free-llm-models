@@ -12,10 +12,11 @@
 set -euo pipefail
 
 # Generated dataset paths committed by the cron updaters: the multi-provider
-# outputs (web/public/models/*.json + index.json) and the legacy OpenRouter
-# snapshot.
+# outputs (web/public/models/*.json + index.json), the frontend aggregate,
+# and the legacy OpenRouter snapshot.
 UPDATER_DATA_PATHS=(
   "web/public/models"
+  "web/public/free_models.json"
   "web/public/openrouter_free_models.json"
 )
 

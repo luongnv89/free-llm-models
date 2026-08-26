@@ -61,6 +61,11 @@ test('buildAggregate produces the ModelsData shape with latest fetchedAt', () =>
     data.providers.map((p) => p.id),
     ['groq', 'google']
   );
+  // providers entries are ProviderMetadata, not index entries (#97).
+  assert.deepStrictEqual(data.providers, [
+    { id: 'groq', displayName: 'groq' },
+    { id: 'google', displayName: 'Google AI Studio' },
+  ]);
 });
 
 test('buildAggregate flattens archived models across providers retaining providerId', () => {

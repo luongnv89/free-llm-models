@@ -140,7 +140,7 @@ describe('HomePage', () => {
     expect(container.textContent).toContain('1 New Model (added in last 3 days)');
     expect(container.textContent).toContain('Fresh Model');
     expect(container.textContent).toContain('Old Model');
-    expect(container.textContent).toContain('/openrouter_free_models.json');
+    expect(container.textContent).toContain('/free_models.json');
     expect(container.textContent).toContain('Last updated');
     const archiveLinks = [...container.querySelectorAll('a[href="/archive"]')];
     const headerArchive = archiveLinks.find(

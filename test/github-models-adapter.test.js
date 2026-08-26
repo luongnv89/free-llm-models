@@ -181,6 +181,18 @@ test('fetchModels unwraps an OpenAI-style data envelope when present', async () 
   assert.deepStrictEqual(models, fixtureModels);
 });
 
+test('fetchModels throws a descriptive error on an unexpected envelope', async () => {
+  for (const payload of [{}, { body: fixtureModels }, null, 'nope']) {
+    const adapter = makeAdapter({
+      fetchImpl: async () => ({ ok: true, json: async () => payload }),
+    });
+    await assert.rejects(
+      () => adapter.fetchModels(),
+      /unexpected catalog response shape/
+    );
+  }
+});
+
 test('fetchModels omits Authorization without a token', async () => {
   let seenHeaders;
   const adapter = makeAdapter({

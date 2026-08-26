@@ -164,6 +164,9 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
   }, []);
 
   const resolvedProvider = provider ?? OPENROUTER_DEFAULT_METADATA;
+  const baseUrl = resolvedProvider.openaiCompatibleBaseUrl ?? resolvedProvider.baseUrl;
+  if (!baseUrl) return null;
+
   const allSteps = buildSteps(modelId, resolvedProvider);
   const steps = allSteps[activeTab];
   const doneCount = steps.filter((_, i) => copiedKeys.has(`${activeTab}:${i}`)).length;

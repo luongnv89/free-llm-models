@@ -434,6 +434,28 @@ export function getUniqueProviders(models: Model[]): string[] {
   return Array.from(providers).sort();
 }
 
+const PROVIDER_QUICK_FILTERS = [
+  { id: 'openrouter', displayName: 'OpenRouter' },
+  { id: 'google', displayName: 'Google' },
+  { id: 'mistral', displayName: 'Mistral' },
+  { id: 'nvidia-nim', displayName: 'Nvidia' },
+  { id: 'groq', displayName: 'Groq' },
+  { id: 'cerebras', displayName: 'Cerebras' },
+] as const;
+
+export function getProviderQuickFilterOptions(models: Model[]): SourceOption[] {
+  const counts = new Map<string, number>();
+  for (const model of models) {
+    const providerId = getProvider(model);
+    counts.set(providerId, (counts.get(providerId) ?? 0) + 1);
+  }
+
+  return PROVIDER_QUICK_FILTERS.map((provider) => ({
+    ...provider,
+    count: counts.get(provider.id) ?? 0,
+  }));
+}
+
 export function getSourceOptions(
   models: Model[],
   providersMetadata: ProviderMetadata[] = []

@@ -6,6 +6,7 @@ import type {
   ProviderModelsPayload,
   ProviderMetadata,
   FilterState,
+  SourceOption,
   SortField,
   SortOrder,
   ArchivedModel,
@@ -259,6 +260,11 @@ export function filterAndSortModels(
     );
   }
 
+  // Source filter (providerId of the loaded data)
+  if (filters.sources.length > 0) {
+    filtered = filtered.filter((m) => filters.sources.includes(getProvider(m)));
+  }
+
   // Provider filter
   if (filters.providers.length > 0) {
     filtered = filtered.filter((m) =>
@@ -332,6 +338,27 @@ export function filterAndSortModels(
 export function getUniqueProviders(models: Model[]): string[] {
   const providers = new Set(models.map(getProvider));
   return Array.from(providers).sort();
+}
+
+export function getSourceOptions(
+  models: Model[],
+  providersMetadata: ProviderMetadata[] = []
+): SourceOption[] {
+  const displayNames = new Map(
+    providersMetadata.map((p) => [p.id, p.displayName])
+  );
+  const counts = new Map<string, number>();
+  for (const model of models) {
+    const source = getProvider(model);
+    counts.set(source, (counts.get(source) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([id, count]) => ({
+      id,
+      displayName: displayNames.get(id) ?? id,
+      count,
+    }))
+    .sort((a, b) => a.displayName.localeCompare(b.displayName));
 }
 
 export function getUniqueModalities(models: Model[]): string[] {

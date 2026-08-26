@@ -86,6 +86,7 @@ export type SortOrder = 'asc' | 'desc';
 
 export interface FilterState {
   search: string;
+  sources: string[];
   providers: string[];
   modalities: string[];
   contextLengthMin: number | null;
@@ -111,6 +112,12 @@ export type CanonicalModel = Model & {
   sourceUrl?: string | null;
   rateLimits?: RateLimits | null;
 };
+
+export interface SourceOption {
+  id: string;
+  displayName: string;
+  count: number;
+}
 
 export interface ProviderMetadata {
   id: string;

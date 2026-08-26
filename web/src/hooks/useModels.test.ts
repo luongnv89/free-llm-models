@@ -6,6 +6,7 @@ import {
   getProvider,
   getUniqueModalities,
   getUniqueProviders,
+  getSourceOptions,
   isNewModel,
   normalizeModelsData,
 } from './useModels';
@@ -76,8 +77,13 @@ const models: Model[] = [
   }),
 ];
 
+function sourceTag(providerId: string): Record<string, string> {
+  return { providerId };
+}
+
 const noFilters: FilterState = {
   search: '',
+  sources: [],
   providers: [],
   modalities: [],
   contextLengthMin: null,
@@ -200,6 +206,47 @@ describe('filterAndSortModels', () => {
       'openai/gpt-a',
       'meta/llama-b',
     ]);
+  });
+
+  it('filters by source providerId', () => {
+    const withSources: Model[] = [
+      { ...models[0], ...sourceTag('or') },
+      { ...models[1], ...sourceTag('chutes') },
+      { ...models[2], ...sourceTag('or') },
+    ] as Model[];
+    const ids = (sources: string[]) =>
+      filterAndSortModels(
+        withSources,
+        { ...noFilters, sources },
+        'name',
+        'asc'
+      ).map((m) => m.id);
+
+    expect(ids(['or'])).toEqual(['anthropic/claude-c', 'openai/gpt-a']);
+    expect(ids(['chutes'])).toEqual(['meta/llama-b']);
+    expect(ids([])).toHaveLength(3);
+  });
+
+  it('intersects the source filter with search and other filters', () => {
+    const withSources = [models[0], models[1]].map((m) => ({
+      ...m,
+      ...sourceTag('or'),
+    })) as Model[];
+    const ids = (filters: Partial<FilterState>) =>
+      filterAndSortModels(
+        withSources,
+        { ...noFilters, ...filters },
+        'name',
+        'asc'
+      ).map((m) => m.id);
+
+    expect(ids({ sources: ['or'], search: 'llama' })).toEqual([
+      'meta/llama-b',
+    ]);
+    expect(ids({ sources: ['or'], contextLengthMax: 8192 })).toEqual([
+      'meta/llama-b',
+    ]);
+    expect(ids({ sources: ['chutes'] })).toEqual([]);
   });
 
   it('filters by modality', () => {
@@ -342,6 +389,40 @@ describe('filterAndSortModels', () => {
         contextLengthMin: 100000,
       })
     ).toEqual(['openai/gpt-a']);
+  });
+});
+
+describe('getSourceOptions', () => {
+  it('derives options from data with metadata display names and counts', () => {
+    const sourced = [
+      { ...models[0], ...sourceTag('or') },
+      { ...models[1], ...sourceTag('chutes') },
+      { ...models[2], ...sourceTag('or') },
+    ] as Model[];
+    expect(
+      getSourceOptions(sourced, [
+        { id: 'or', displayName: 'OpenRouter', baseUrl: null, apiKeySignupUrl: null, docsUrl: null, notes: null },
+        { id: 'chutes', displayName: 'Chutes', baseUrl: null, apiKeySignupUrl: null, docsUrl: null, notes: null },
+      ])
+    ).toEqual([
+      { id: 'chutes', displayName: 'Chutes', count: 1 },
+      { id: 'or', displayName: 'OpenRouter', count: 2 },
+    ]);
+  });
+
+  it('falls back to the id when metadata is missing and sorts by display name', () => {
+    const sourced = [
+      { ...models[0], ...sourceTag('zeta') },
+      { ...models[1], ...sourceTag('alpha') },
+    ] as Model[];
+    expect(getSourceOptions(sourced)).toEqual([
+      { id: 'alpha', displayName: 'alpha', count: 1 },
+      { id: 'zeta', displayName: 'zeta', count: 1 },
+    ]);
+  });
+
+  it('returns an empty array for an empty list', () => {
+    expect(getSourceOptions([])).toEqual([]);
   });
 });
 

@@ -18,6 +18,7 @@ import {
   useFilteredModels,
   getUniqueProviders,
   getUniqueModalities,
+  getSourceOptions,
   getModelsDataUrl,
   isNewModel,
 } from '@/hooks/useModels';
@@ -44,6 +45,7 @@ export function HomePage() {
 
   const [filters, setFilters] = useState<FilterState>({
     search: '',
+    sources: [],
     providers: [],
     modalities: [],
     contextLengthMin: null,
@@ -68,6 +70,7 @@ export function HomePage() {
 
   const providers = getUniqueProviders(data?.models ?? []);
   const modalities = getUniqueModalities(data?.models ?? []);
+  const sources = getSourceOptions(data?.models ?? [], data?.providers ?? []);
 
   // Count new models (added in last 3 days)
   const newModelsCount = useMemo(() => {
@@ -147,6 +150,7 @@ export function HomePage() {
         <FilterSidebar
           filters={filters}
           onFiltersChange={setFilters}
+          sources={sources}
           providers={providers}
           modalities={modalities}
         />

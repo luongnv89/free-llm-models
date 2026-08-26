@@ -232,6 +232,7 @@ export function resolveProviderMetadata(
     id: meta.id,
     displayName: meta.displayName || OPENROUTER_DEFAULT_METADATA.displayName,
     baseUrl: meta.baseUrl ?? OPENROUTER_DEFAULT_METADATA.baseUrl,
+    openaiCompatibleBaseUrl: meta.openaiCompatibleBaseUrl ?? null,
     apiKeySignupUrl: meta.apiKeySignupUrl ?? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl,
     docsUrl: meta.docsUrl ?? OPENROUTER_DEFAULT_METADATA.docsUrl,
     notes: meta.notes ?? null,

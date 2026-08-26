@@ -49,7 +49,10 @@ interface RunStep {
 }
 
 function buildSteps(modelId: string, provider: ProviderMetadata): Record<Language, RunStep[]> {
-  const baseUrl = provider.baseUrl ?? OPENROUTER_DEFAULT_METADATA.baseUrl!;
+  const baseUrl =
+    provider.openaiCompatibleBaseUrl ??
+    provider.baseUrl ??
+    OPENROUTER_DEFAULT_METADATA.baseUrl!;
   const signupUrl = provider.apiKeySignupUrl ?? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl!;
   const envVar = providerApiKeyEnvVar(provider);
 

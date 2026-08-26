@@ -94,6 +94,23 @@ describe('CodeSnippets', () => {
     expect(keysLink?.textContent).toBe('console.acme.ai/api-keys');
   });
 
+  it('uses the OpenAI-compatible endpoint for providers whose native API differs', async () => {
+    await render('google/gemini-flash', {
+      ...ACME_PROVIDER,
+      id: 'google',
+      displayName: 'Google AI Studio',
+      baseUrl: 'https://generativelanguage.googleapis.com/v1beta',
+      openaiCompatibleBaseUrl: 'https://generativelanguage.googleapis.com/openai/v1',
+      apiKeySignupUrl: 'https://aistudio.google.com/apikey',
+    });
+
+    expect(container.textContent).toContain(
+      'https://generativelanguage.googleapis.com/openai/v1/chat/completions'
+    );
+    expect(container.textContent).not.toContain('/v1beta/chat/completions');
+    expect(container.textContent).toContain('GOOGLE_AI_STUDIO_API_KEY');
+  });
+
   it('uses the provider base URL in Node.js and Python snippets', async () => {
     await render(MODEL_ID, ACME_PROVIDER);
 

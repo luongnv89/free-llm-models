@@ -123,6 +123,8 @@ export interface ProviderMetadata {
   id: string;
   displayName: string;
   baseUrl: string | null;
+  /** OpenAI-compatible endpoint for chat/completions snippets, when the native baseUrl is not OpenAI-compatible. */
+  openaiCompatibleBaseUrl?: string | null;
   apiKeySignupUrl: string | null;
   docsUrl: string | null;
   notes: string | null;

@@ -212,6 +212,40 @@ export function getProvider(model: Model): string {
   return model.id.split('/')[0] || 'Unknown';
 }
 
+export const OPENROUTER_DEFAULT_METADATA: ProviderMetadata = {
+  id: 'openrouter',
+  displayName: 'OpenRouter',
+  baseUrl: 'https://openrouter.ai/api/v1',
+  apiKeySignupUrl: 'https://openrouter.ai/keys',
+  docsUrl: 'https://openrouter.ai/docs',
+  notes: null,
+};
+
+export function resolveProviderMetadata(
+  model: Model,
+  providers?: ProviderMetadata[] | null
+): ProviderMetadata {
+  const providerId = getProvider(model);
+  const meta = providers?.find((p) => p.id === providerId);
+  if (!meta) return OPENROUTER_DEFAULT_METADATA;
+  return {
+    id: meta.id,
+    displayName: meta.displayName || OPENROUTER_DEFAULT_METADATA.displayName,
+    baseUrl: meta.baseUrl ?? OPENROUTER_DEFAULT_METADATA.baseUrl,
+    apiKeySignupUrl: meta.apiKeySignupUrl ?? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl,
+    docsUrl: meta.docsUrl ?? OPENROUTER_DEFAULT_METADATA.docsUrl,
+    notes: meta.notes ?? null,
+  };
+}
+
+export function providerApiKeyEnvVar(meta: ProviderMetadata): string {
+  const base = (meta.displayName || meta.id || '')
+    .replace(/[^a-zA-Z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .toUpperCase();
+  return `${base || 'API'}_API_KEY`;
+}
+
 const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
 
 export function isNewModel(model: Model): boolean {

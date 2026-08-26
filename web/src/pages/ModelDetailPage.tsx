@@ -5,7 +5,13 @@ import { Button } from '@/components/ui/button';
 import { CodeSnippets } from '@/components/CodeSnippets';
 import { OriHarnessGuide } from '@/components/OriHarnessGuide';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
-import { useModels, getProvider, isNewModel, findModelById } from '@/hooks/useModels';
+import {
+  useModels,
+  getProvider,
+  isNewModel,
+  findModelById,
+  resolveProviderMetadata,
+} from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 import {
   formatDate,
@@ -19,6 +25,7 @@ import {
 } from '@/lib/model-utils';
 import {
   ArrowLeft,
+  BookOpen,
   Check,
   Copy,
   ExternalLink,
@@ -73,6 +80,7 @@ export function ModelDetailPage() {
   }
 
   const provider = getProvider(model);
+  const providerMeta = resolveProviderMetadata(model, data?.providers);
   const { reasoning: hasReasoning, tools: hasTools, vision: hasVision, video: hasVideo } =
     modelCapabilities(model);
   const tags = capabilityTags(model);
@@ -227,18 +235,33 @@ export function ModelDetailPage() {
                   {model.pricing.completion}
                 </span>
               )}
-              {model.hugging_face_id && (
-                <a
-                  href={`https://huggingface.co/${model.hugging_face_id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-auto"
-                >
-                  <Button variant="outline" size="sm">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Hugging Face
-                  </Button>
-                </a>
+              {(model.hugging_face_id || providerMeta.docsUrl) && (
+                <div className="ml-auto flex items-center gap-2">
+                  {model.hugging_face_id && (
+                    <a
+                      href={`https://huggingface.co/${model.hugging_face_id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" size="sm">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Hugging Face
+                      </Button>
+                    </a>
+                  )}
+                  {providerMeta.docsUrl && (
+                    <a
+                      href={providerMeta.docsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" size="sm">
+                        <BookOpen className="h-4 w-4 mr-2" />
+                        {providerMeta.displayName} Docs
+                      </Button>
+                    </a>
+                  )}
+                </div>
               )}
             </div>
           </div>
@@ -249,7 +272,7 @@ export function ModelDetailPage() {
           {/* Left column — run it now */}
           <div className="lg:col-span-2 space-y-6">
             <div {...reveal(75)}>
-              <CodeSnippets modelId={model.id} />
+              <CodeSnippets modelId={model.id} provider={providerMeta} />
             </div>
 
             <div {...reveal(150)}>

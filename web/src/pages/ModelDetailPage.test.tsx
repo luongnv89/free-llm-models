@@ -109,6 +109,44 @@ describe('ModelDetailPage', () => {
     vi.restoreAllMocks();
   });
 
+  it('renders provider metadata in docs link and code snippets when available', async () => {
+    const model = {
+      ...makeModel({ id: 'acme/pop', name: 'Pop Model' }),
+      providerId: 'acme',
+    } as Model;
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () =>
+        Promise.resolve({
+          providerId: 'acme',
+          ...makeData(model),
+          providers: [
+            {
+              id: 'acme',
+              name: 'Acme AI',
+              modelCount: 1,
+              metadata: {
+                id: 'acme',
+                displayName: 'Acme AI',
+                baseUrl: 'https://api.acme.ai/v1',
+                apiKeySignupUrl: 'https://console.acme.ai/api-keys',
+                docsUrl: 'https://docs.acme.ai',
+                notes: null,
+              },
+            },
+          ],
+        }),
+    });
+    await renderPage(model.id);
+    await settle();
+    await settle();
+
+    expect(container.textContent).toContain('Acme AI Docs');
+    expect(container.querySelector('a[href="https://docs.acme.ai"]')).toBeTruthy();
+    expect(container.textContent).toContain('https://api.acme.ai/v1/chat/completions');
+    expect(container.textContent).not.toContain('openrouter.ai/api/v1');
+  });
+
   it('shows rank and tokens when popularity is present', async () => {
     await renderModel({
       rank: 3,

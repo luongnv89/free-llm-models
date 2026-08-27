@@ -331,4 +331,18 @@ describe('ModelDetailPage', () => {
     expect(container.textContent).not.toContain('https://openrouter.ai/api/v1');
     expect(container.textContent).not.toContain('Quick Start');
   });
+
+  it('does not show Ori for models without providerId (legacy OpenRouter snapshots)', async () => {
+    const model = makeModel({ id: 'stealth/ox-alpha', name: 'Ox Alpha' });
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(makeData(model)),
+    });
+    await renderPage(model.id);
+    await settle();
+    await settle();
+
+    expect(container.textContent).toContain('Set up a coding harness');
+    expect(container.textContent).not.toContain('Use in any harness via Ori');
+  });
 });

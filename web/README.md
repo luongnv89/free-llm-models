@@ -16,7 +16,7 @@ Searchable, filterable UI for [OpenRouter](https://openrouter.ai) models that ar
    aggregate `free_models.json` (see `web/src/hooks/useModels.ts`). It provides
    search, sort, filtering, per-model pricing details, and a FAQ page.
 3. Deploys (e.g. Netlify) rebuild the static bundle from `web/` whenever `main` changes;
-   `web/netlify.toml` sets security headers, MIME types, and the SPA fallback.
+   the root `netlify.toml` sets the build, security headers, MIME types, and SPA fallback.
 
 ## Requirements
 

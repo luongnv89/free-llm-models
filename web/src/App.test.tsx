@@ -123,6 +123,38 @@ describe('App deep links', () => {
     expect(container.textContent).not.toContain('Model not found');
   });
 
+  it('navigates into a model detail page and back without a full page reload', async () => {
+    const model = makeModel({ id: 'acme/navigation-model', name: 'Navigation Model' });
+
+    await renderAt('/', [model]);
+
+    const modelLink = container.querySelector(
+      'a[href="/model/acme%2Fnavigation-model"]',
+    ) as HTMLAnchorElement | null;
+    expect(modelLink).toBeTruthy();
+
+    await act(async () => {
+      modelLink!.click();
+    });
+
+    expect(window.location.pathname).toBe('/model/acme%2Fnavigation-model');
+    expect(container.textContent).toContain('Navigation Model');
+    expect(container.textContent).not.toContain('Model not found');
+
+    const backLink = [...container.querySelectorAll('a')].find(
+      (link) => link.textContent?.includes('Back to Models'),
+    );
+    expect(backLink).toBeTruthy();
+
+    await act(async () => {
+      backLink!.click();
+    });
+
+    expect(window.location.pathname).toBe('/');
+    expect(container.querySelector('ol[aria-label="Free models"]')).toBeTruthy();
+    expect(container.textContent).toContain('Navigation Model');
+  });
+
   it('keeps the model-not-found state for an unknown direct URL', async () => {
     await renderAt('/model/acme%2Fmissing-model', []);
 

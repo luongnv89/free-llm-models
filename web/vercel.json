@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/model/:path*",
+      "destination": "/index.html"
+    }
+  ]
+}

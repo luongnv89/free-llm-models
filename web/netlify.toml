@@ -1,6 +1,4 @@
-# Netlify runs the app from its web/ project directory.
 [build]
-  base = "web"
   publish = "dist"
   command = "npm run build"
 

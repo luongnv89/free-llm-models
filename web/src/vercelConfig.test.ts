@@ -6,7 +6,15 @@ const webVercelConfig = new URL('../vercel.json', import.meta.url);
 const expectedConfig = {
   rewrites: [
     {
-      source: '/model/:path*',
+      source: '/model/:path+',
+      destination: '/index.html',
+    },
+    {
+      source: '/archive',
+      destination: '/index.html',
+    },
+    {
+      source: '/faq',
       destination: '/index.html',
     },
   ],
@@ -21,7 +29,23 @@ describe('Vercel configuration', () => {
     const webSource = readFileSync(webVercelConfig, 'utf8');
     expect(webSource).toBe(rootSource);
 
-    expect(JSON.parse(rootSource)).toEqual(expectedConfig);
-    expect(JSON.parse(webSource)).toEqual(expectedConfig);
+    const rootConfig = JSON.parse(rootSource) as typeof expectedConfig;
+    const webConfig = JSON.parse(webSource) as typeof expectedConfig;
+    expect(webConfig).toEqual(rootConfig);
+    expect(rootConfig).toEqual(expectedConfig);
+
+    for (const config of [rootConfig, webConfig]) {
+      const modelRewrite = config.rewrites.find((rewrite) => rewrite.source.startsWith('/model/'));
+      expect(modelRewrite?.source).toBe('/model/:path+');
+      expect(modelRewrite?.source).not.toBe('/model/:path*');
+      expect(config.rewrites).toContainEqual({
+        source: '/archive',
+        destination: '/index.html',
+      });
+      expect(config.rewrites).toContainEqual({
+        source: '/faq',
+        destination: '/index.html',
+      });
+    }
   });
 });

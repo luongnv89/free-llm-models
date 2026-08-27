@@ -11,7 +11,7 @@
     "crossref": "node scripts/crossref-free-lists.js --fetch",
     "test": "node --test test/*.test.js",
     "test:smoke": "RUN_LIVE_SMOKE=1 node --test test/live-smoke.test.js",
-    "build": "cd web && npm run build"
+    "build": "cd web && npm install --no-audit --no-fund && npm run build"
   },
   "dependencies": {
     "dotenv": "^17.4.2"

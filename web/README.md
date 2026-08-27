@@ -15,8 +15,10 @@ Searchable, filterable UI for [OpenRouter](https://openrouter.ai) models that ar
    If the index is unavailable (e.g. a stale deploy), it falls back to the
    aggregate `free_models.json` (see `web/src/hooks/useModels.ts`). It provides
    search, sort, filtering, per-model pricing details, and a FAQ page.
-3. Deploys (e.g. Netlify) rebuild the static bundle from `web/` whenever `main` changes;
-   `web/netlify.toml` sets security headers, MIME types, and the SPA fallback.
+3. Vercel is the authoritative deployment target. Identical `vercel.json` files at the
+   repository root and under `web/` provide a narrow `/model/:path*` SPA rewrite for
+   either configured Vercel Project Root. `web/netlify.toml` remains only for legacy
+   Netlify support.
 
 ## Requirements
 

@@ -191,7 +191,11 @@ The credentialed route matrix and release worksheet are in [`docs/manual-harness
 
 ## Deployment
 
-This repo is intended to deploy the static site from `web/` (e.g. Netlify). When `main` changes (especially the files under `web/public/models/`), the site updates.
+Vercel is the authoritative deployment target for the static site. Identical
+`vercel.json` files at the repository root and under `web/` provide a narrow
+`/model/:path*` SPA rewrite whether the configured Vercel Project Root is the
+repository root or `web/`. `web/netlify.toml` is retained only for legacy Netlify
+support; Netlify is not the active deployment target.
 
 ## Automation
 

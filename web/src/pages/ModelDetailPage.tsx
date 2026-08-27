@@ -41,12 +41,22 @@ const reveal = (delayMs: number) => ({
   style: { animationDelay: `${delayMs}ms` },
 });
 
+function decodeModelId(modelId: string | undefined): string {
+  if (!modelId) return '';
+
+  try {
+    return decodeURIComponent(modelId);
+  } catch {
+    return '';
+  }
+}
+
 export function ModelDetailPage() {
   const { modelId } = useParams<{ modelId: string }>();
   const { data, loading, error } = useModels();
   const { copied, copy } = useCopyToClipboard();
 
-  const decodedModelId = modelId ? decodeURIComponent(modelId) : '';
+  const decodedModelId = decodeModelId(modelId);
   const resolved = findModelById(data, decodedModelId);
   const model = resolved?.model;
   const isArchived = resolved?.archived ?? false;

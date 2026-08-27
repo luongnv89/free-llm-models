@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/model/:path+",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/archive",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Netlify runs the app from its web/ project directory.
+# The nested config contains the build, publish, headers, and SPA fallback settings.
+[build]
+  base = "web"

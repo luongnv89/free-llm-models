@@ -289,7 +289,7 @@ export function ModelDetailPage() {
               />
             </div>
 
-            {canonicalProviderId === 'openrouter' && (
+            {('providerId' in model && model.providerId === 'openrouter') && (
               <div {...reveal(225)}>
                 <OriHarnessGuide modelId={model.id} />
               </div>

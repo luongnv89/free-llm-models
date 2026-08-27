@@ -22,6 +22,7 @@ import {
   getSourceOptions,
   getProviderQuickFilterOptions,
   getModelsDataUrl,
+  getProvider,
   isNewModel,
 } from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
@@ -256,7 +257,7 @@ export function HomePage() {
             <ol aria-label="Free models" role="list" className="mt-6 list-none">
               {filteredModels.map((model, index) => (
                 <ModelListItem
-                  key={model.id}
+                  key={`${getProvider(model)}:${model.id}`}
                   model={model}
                   rank={index + 1}
                   isNew={isNewModel(model)}

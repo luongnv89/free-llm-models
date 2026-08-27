@@ -267,6 +267,44 @@ describe('HomePage', () => {
     expect(container.textContent).toContain('Old Model');
   });
 
+  it('keeps duplicate model IDs distinct when filtering by provider', async () => {
+    const data = makeModelsData();
+    data.models = data.models.map((model, index) => ({
+      ...model,
+      id: 'openai/gpt-oss-20b',
+      name: index === 0 ? 'Groq GPT OSS 20B' : 'Nvidia GPT OSS 20B',
+      providerId: index === 0 ? 'groq' : 'nvidia-nim',
+      addedToFreeList: `2026-08-${26 - index}T08:00:00Z`,
+    }));
+    data.totalModels = data.models.length;
+
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve(data),
+    });
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    await renderPage();
+    await settle();
+
+    const duplicateKeyWarning = errorSpy.mock.calls.some(([message]) =>
+      String(message).includes('same key'),
+    );
+    expect(duplicateKeyWarning).toBe(false);
+
+    const group = container.querySelector('[role="group"][aria-label="Filter models by provider"]')!;
+    const nvidiaButton = [...group.querySelectorAll('button')].find(
+      (button) => button.getAttribute('aria-label') === 'Nvidia',
+    )!;
+    await act(async () => {
+      nvidiaButton.click();
+    });
+
+    const list = container.querySelector('ol[aria-label="Free models"]')!;
+    expect(list.querySelectorAll(':scope > li')).toHaveLength(1);
+    expect(list.textContent).toContain('Nvidia GPT OSS 20B');
+    expect(list.textContent).not.toContain('Groq GPT OSS 20B');
+  });
+
   it('shows the empty-state message when filters match nothing', async () => {
     fetchMock.mockResolvedValue({
       ok: true,

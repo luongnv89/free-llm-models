@@ -1,7 +1,9 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-08-26T13:48:51.047Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-08-27T23:20:39.401Z",
+  "newModelIds": [
+    "deepseek-ai/deepseek-v4-pro-0813"
+  ],
   "archivedModels": [
     {
       "id": "meta/llama-3.1-70b-instruct",
@@ -548,6 +550,29 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
+    },
+    {
+      "id": "deepseek-ai/deepseek-v4-pro-0813",
+      "name": "Deepseek Ai/deepseek V4 Pro 0813",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-08-27T23:20:39.401Z"
     },
     {
       "id": "google/codegemma-1.1-7b",

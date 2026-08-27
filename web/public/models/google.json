@@ -1,7 +1,10 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-08-26T13:48:50.263Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-08-27T23:20:38.565Z",
+  "newModelIds": [
+    "gemini-omni-1.1-flash",
+    "gemini-3.5-transcribe"
+  ],
   "archivedModels": [],
   "models": [
     {
@@ -578,6 +581,52 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-08-26T08:52:08.172Z"
+    },
+    {
+      "id": "gemini-omni-1.1-flash",
+      "name": "Gemini Omni 1.1 Flash",
+      "created": 0,
+      "description": "Gemini Omni 1.1 Flash ",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-08-27T23:20:38.565Z"
+    },
+    {
+      "id": "gemini-3.5-transcribe",
+      "name": "Gemini 3.5 Transcribe",
+      "created": 0,
+      "description": "Gemini 3.5 Transcribe",
+      "context_length": 98304,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-08-27T23:20:38.565Z"
     },
     {
       "id": "gemini-3.6-flash",

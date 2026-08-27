@@ -161,4 +161,11 @@ describe('App deep links', () => {
     expect(container.textContent).toContain('Model not found');
     expect(container.textContent).toContain('The requested model could not be found.');
   });
+
+  it('keeps the model-not-found state for a malformed encoded direct URL', async () => {
+    await renderAt('/model/%E0%A4%A', []);
+
+    expect(container.textContent).toContain('Model not found');
+    expect(container.textContent).toContain('The requested model could not be found.');
+  });
 });

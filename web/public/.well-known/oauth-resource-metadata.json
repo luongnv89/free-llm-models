@@ -1,9 +1,6 @@
 {
   "resource": "https://free-llm-models.vercel.app",
-  "oauth_token_endpoint": null,
-  "jwks_uri": null,
-  "scopes_supported": [],
-  "authorization_details_types_supported": [],
-  "documentation": "https://github.com/luongnv89/free-llm-models",
-  "note": "This site does not currently support OAuth protected resource authentication. All resources are publicly accessible without authentication. If protected resources are added in the future, this metadata will be updated."
+  "oauth_token_endpoint": "https://free-llm-models.vercel.app/.well-known/oauth-token",
+  "jwks_uri": "https://free-llm-models.vercel.app/.well-known/jwks.json",
+  "note": "This site does not currently support OAuth protected resource authentication. All resources are publicly accessible."
 }

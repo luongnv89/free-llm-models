@@ -5,46 +5,52 @@
   "skills": [
     {
       "name": "model-catalog",
-      "description": "Access the full catalog of free AI/LLM models across multiple providers (OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, NVIDIA NIM).",
+      "description": "Access the full catalog of free AI/LLM models across multiple providers.",
       "endpoint": "/free_models.json",
       "content_type": "application/json",
-      "tags": ["models", "catalog", "free"]
+      "tags": ["models", "catalog", "free"],
+      "digest": "sha256-9d6548fe20906e4915bac34448103f6192a8afe4925d01d0e75bbbea786b30f0"
     },
     {
       "name": "provider-models",
       "description": "Access per-provider model listings with counts and metadata.",
       "endpoint": "/models/index.json",
       "content_type": "application/json",
-      "tags": ["providers", "models", "catalog"]
+      "tags": ["providers", "models", "catalog"],
+      "digest": "sha256-dd79700ba353fd94059b298a9c77d6e75c665d4409d9a8254169f5f3140868b2"
     },
     {
       "name": "model-details",
-      "description": "Get detailed information about a specific free AI model including context length, capabilities, supported parameters, and API setup.",
+      "description": "Get detailed information about a specific free AI model.",
       "endpoint": "/model/{model_id}",
       "content_type": "text/html",
       "parameters": ["model_id"],
-      "tags": ["models", "details", "api"]
+      "tags": ["models", "details", "api"],
+      "digest": "sha256-dynamic"
     },
     {
       "name": "faq",
-      "description": "Frequently asked questions about free AI models, provider APIs, rate limits, integrations, and API key security.",
+      "description": "Frequently asked questions about free AI models and provider APIs.",
       "endpoint": "/faq",
       "content_type": "text/html",
-      "tags": ["faq", "documentation"]
+      "tags": ["faq", "documentation"],
+      "digest": "sha256-dynamic"
     },
     {
       "name": "archive",
       "description": "Browse models that have left the current free catalog.",
       "endpoint": "/archive",
       "content_type": "text/html",
-      "tags": ["archive", "historical"]
+      "tags": ["archive", "historical"],
+      "digest": "sha256-dynamic"
     },
     {
       "name": "llms-full-text",
-      "description": "Machine-readable full-text summary of the site content for LLM consumption.",
+      "description": "Machine-readable full-text summary for LLM consumption.",
       "endpoint": "/llms.txt",
       "content_type": "text/plain",
-      "tags": ["llms", "full-text", "machine-readable"]
+      "tags": ["llms", "full-text", "machine-readable"],
+      "digest": "sha256-c378d4a395ab0bb017b1195b6009ebc294ea68855efb0a2f24f4b532adcaa8c2"
     }
   ],
   "homepage": "https://free-llm-models.vercel.app/",

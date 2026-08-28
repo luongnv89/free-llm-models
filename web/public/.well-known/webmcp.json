@@ -1,23 +1,19 @@
 {
   "schema_version": "1.0.0",
   "name": "Free LLM Models WebMCP",
-  "description": "Expose site tools to AI agents via the browser using WebMCP (Web Model Context Protocol).",
+  "description": "Expose site tools to AI agents via the browser using WebMCP.",
   "url": "https://free-llm-models.vercel.app/.well-known/webmcp.html",
   "transport": "web-mcp",
-  "browser_support": {
-    "required": true,
-    "description": "Agents can interact with the site through a browser-based MCP client."
-  },
   "tools": [
     {
       "name": "search_models",
-      "description": "Search the free AI model catalog by name, provider, or capability.",
+      "description": "Search the free AI model catalog",
       "method": "GET",
-      "endpoint": "/?q={query}&provider={provider}&modality={modality}"
+      "endpoint": "/?q={query}&provider={provider}"
     },
     {
       "name": "get_model",
-      "description": "Get detailed information about a specific free AI model.",
+      "description": "Get details for a specific model",
       "method": "GET",
       "endpoint": "/model/{model_id}"
     }

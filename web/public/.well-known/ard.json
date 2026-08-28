@@ -1,45 +1,39 @@
 {
   "schema_version": "1.0.0",
-  "name": "Free LLM Models — Agentic Resource Discovery",
+  "name": "Free LLM Models - Agentic Resource Discovery",
   "description": "Discoverable resources for AI agents interacting with the Free LLM Models directory.",
   "resources": [
     {
       "type": "mcp-server",
       "name": "Free LLM Models MCP",
-      "description": "Model catalog browsing and search via MCP protocol.",
       "url": "https://free-llm-models.vercel.app/.well-known/mcp.json",
       "transport": "http"
     },
     {
       "type": "a2a-agent",
       "name": "Free LLM Models Agent",
-      "description": "Agent-to-agent discovery for model catalog queries.",
       "url": "https://free-llm-models.vercel.app/.well-known/agent.json"
     },
     {
       "type": "openapi",
       "name": "Free LLM Models API",
-      "description": "Machine-readable API catalog for free model data.",
       "url": "https://free-llm-models.vercel.app/.well-known/api-catalog.json",
       "version": "1.0.0"
     },
     {
       "type": "agent-skills",
       "name": "Agent Skills Index",
-      "description": "Index of discoverable agent skills and resources.",
       "url": "https://free-llm-models.vercel.app/.well-known/agent-skills/index.json"
     },
     {
       "type": "data",
       "name": "Full Model Catalog",
-      "description": "Complete JSON catalog of all free models with metadata.",
       "url": "https://free-llm-models.vercel.app/free_models.json",
       "content_type": "application/json"
     },
     {
       "type": "data",
       "name": "Per-Provider Model Index",
-      "description": "Provider-specific model listings with counts.",
       "url": "https://free-llm-models.vercel.app/models/index.json",
       "content_type": "application/json"
     }

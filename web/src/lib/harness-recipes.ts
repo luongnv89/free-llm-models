@@ -327,8 +327,8 @@ function claudeCodeSteps(
           label: `Run with ${PROVIDER_INFO[providerId].providerDisplayName}`,
           language: "shell",
           content: [
-            `export OPENAI_BASE_URL=${shellQuote(PROVIDER_BASE_URL[providerId])}`,
-            `export OPENAI_API_KEY="$${envVar}"`,
+            `export ANTHROPIC_BASE_URL=${shellQuote(PROVIDER_BASE_URL[providerId])}`,
+            `export ANTHROPIC_AUTH_TOKEN="$${envVar}"`,
             `claude --model ${shellQuote(modelId)}`,
           ].join("\n"),
         },

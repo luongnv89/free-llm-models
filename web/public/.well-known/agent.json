@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Free LLM Models Directory",
+  "description": "A searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM. Browse, search, and compare free models by provider, modality, context length, reasoning capabilities, and tool use.",
+  "url": "https://free-llm-models.vercel.app/",
+  "documentation_url": "https://github.com/luongnv89/free-llm-models",
+  "avatar_url": "https://free-llm-models.vercel.app/og-image.svg",
+  "capabilities": [
+    "model-search",
+    "model-comparison",
+    "provider-filtering",
+    "capability-filtering",
+    "model-details"
+  ],
+  "tools": [
+    {
+      "name": "search_models",
+      "description": "Search the free AI model catalog by name, provider, or capability.",
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "Search query for model name or capability"
+        },
+        "provider": {
+          "type": "string",
+          "description": "Filter by provider (openrouter, groq, google, cerebras, mistral, huggingface, nvidia)"
+        },
+        "modality": {
+          "type": "string",
+          "description": "Filter by input/output modality (text, image, audio, video, text->text, text->image, etc.)"
+        },
+        "context_length": {
+          "type": "number",
+          "description": "Minimum context length in tokens"
+        }
+      }
+    },
+    {
+      "name": "get_model_details",
+      "description": "Get detailed information about a specific free AI model.",
+      "parameters": {
+        "model_id": {
+          "type": "string",
+          "description": "The model ID (e.g., 'openrouter/deepseek/deepseek-r1')"
+        }
+      }
+    },
+    {
+      "name": "list_providers",
+      "description": "List all providers with free models and their metadata.",
+      "parameters": {}
+    }
+  ],
+  "contact": {
+    "repository": "https://github.com/luongnv89/free-llm-models"
+  }
+}

@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Allow AI search and user-requested retrieval, but do not allow training crawlers.
+# AI search and retrieval bots — allowed to crawl and serve snippets, but not to train.
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -30,6 +30,7 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
+# Training crawlers — disallowed.
 User-agent: GPTBot
 Disallow: /
 
@@ -56,5 +57,11 @@ Disallow: /
 
 User-agent: Applebot-Extended
 Disallow: /
+
+# Content-Signal: declare AI content usage preferences.
+# ai-train=no: Do not use this site's content for AI training.
+# search=yes: Allow AI search engines to index and serve snippets.
+# ai-input=no: Do not use user-submitted content to improve AI models.
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 Sitemap: https://free-llm-models.vercel.app/sitemap.xml

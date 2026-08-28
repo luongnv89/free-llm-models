@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Free LLM Models API Catalog",
+  "description": "Machine-readable API catalog for the Free LLM Models directory. Provides access to the full model catalog, per-provider listings, and model details.",
+  "apis": [
+    {
+      "name": "Full Model Catalog",
+      "description": "Complete catalog of all free AI models with metadata including provider, modality, context length, pricing, and supported parameters.",
+      "url": "/free_models.json",
+      "method": "GET",
+      "content_type": "application/json",
+      "authentication": "none",
+      "rate_limit": "none"
+    },
+    {
+      "name": "Per-Provider Model Index",
+      "description": "Provider-specific model listings with counts and metadata.",
+      "url": "/models/index.json",
+      "method": "GET",
+      "content_type": "application/json",
+      "authentication": "none",
+      "rate_limit": "none"
+    },
+    {
+      "name": "Model Details",
+      "description": "Detailed information about a specific free AI model.",
+      "url": "/model/{model_id}",
+      "method": "GET",
+      "content_type": "text/html",
+      "authentication": "none",
+      "rate_limit": "none",
+      "parameters": {
+        "model_id": {
+          "type": "string",
+          "required": true,
+          "description": "The model identifier (e.g., 'openrouter/deepseek/deepseek-r1')"
+        }
+      }
+    },
+    {
+      "name": "FAQ Content",
+      "description": "Frequently asked questions about free AI models and provider APIs.",
+      "url": "/faq",
+      "method": "GET",
+      "content_type": "text/html",
+      "authentication": "none",
+      "rate_limit": "none"
+    },
+    {
+      "name": "LLMs Text (Machine-Readable)",
+      "description": "Full-text site content in a format optimized for LLM consumption.",
+      "url": "/llms.txt",
+      "method": "GET",
+      "content_type": "text/plain",
+      "authentication": "none",
+      "rate_limit": "none"
+    }
+  ],
+  "homepage": "https://free-llm-models.vercel.app/",
+  "documentation": "https://github.com/luongnv89/free-llm-models"
+}

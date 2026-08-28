@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Free LLM Models MCP Server",
+  "description": "Model catalog browsing and search via the Model Context Protocol (MCP).",
+  "url": "https://free-llm-models.vercel.app/.well-known/mcp.json",
+  "transport": "streamable-http",
+  "endpoints": {
+    "mcp": {
+      "url": "https://free-llm-models.vercel.app/.well-known/mcp.json",
+      "methods": ["POST"],
+      "content_types": ["application/json"]
+    }
+  },
+  "capabilities": {
+    "tools": {
+      "list": [
+        {
+          "name": "search_models",
+          "description": "Search the free AI model catalog by name, provider, or capability.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "query": { "type": "string", "description": "Search query" },
+              "provider": { "type": "string", "description": "Filter by provider" },
+              "modality": { "type": "string", "description": "Filter by input/output modality" },
+              "context_length": { "type": "integer", "description": "Minimum context length in tokens" }
+            }
+          }
+        },
+        {
+          "name": "get_model",
+          "description": "Get detailed information about a specific free AI model.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "model_id": { "type": "string", "description": "The model identifier" }
+            },
+            "required": ["model_id"]
+          }
+        },
+        {
+          "name": "list_providers",
+          "description": "List all providers with free models.",
+          "input_schema": { "type": "object", "properties": {} }
+        }
+      ]
+    }
+  }
+}

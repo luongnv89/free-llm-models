@@ -1,0 +1,11 @@
+{
+  "issuer": "https://free-llm-models.vercel.app",
+  "authorization_endpoint": null,
+  "token_endpoint": null,
+  "jwks_uri": null,
+  "response_types_supported": [],
+  "subject_types_supported": [],
+  "id_token_signing_alg_values_supported": [],
+  "documentation": "https://github.com/luongnv89/free-llm-models",
+  "note": "This site does not currently support OAuth/OIDC authentication. All resources are publicly accessible without authentication. If authentication is added in the future, this metadata will be updated."
+}

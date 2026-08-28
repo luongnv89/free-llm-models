@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebMCP — Free LLM Models</title>
+  <meta name="robots" content="noindex, nofollow">
+  <script type="module">
+    // WebMCP endpoint for browser-based agent interaction
+    // This page enables AI agents to discover and interact with site tools via the browser.
+    const tools = [
+      {
+        name: 'search_models',
+        description: 'Search the free AI model catalog',
+        execute: async (params) => {
+          const url = new URL('/free_models.json', window.location.origin);
+          if (params.query) url.searchParams.set('q', params.query);
+          if (params.provider) url.searchParams.set('provider', params.provider);
+          const response = await fetch(url);
+          return await response.json();
+        }
+      },
+      {
+        name: 'get_model',
+        description: 'Get details for a specific model',
+        execute: async (params) => {
+          const response = await fetch(`/model/${encodeURIComponent(params.model_id)}`);
+          return await response.text();
+        }
+      }
+    ];
+
+    // Expose tools to agents via postMessage
+    window.addEventListener('message', (event) => {
+      if (event.data?.type === 'webmcp.request') {
+        const tool = tools.find(t => t.name === event.data.tool);
+        if (tool) {
+          tool.execute(event.data.params).then(result => {
+            window.postMessage({ type: 'webmcp.response', tool: event.data.tool, result }, '*');
+          }).catch(error => {
+            window.postMessage({ type: 'webmcp.error', tool: event.data.tool, error: error.message }, '*');
+          });
+        }
+      }
+    });
+
+    // Announce WebMCP availability
+    window.addEventListener('load', () => {
+      window.postMessage({ type: 'webmcp.announce', tools: tools.map(t => t.name) }, '*');
+    });
+  </script>
+</head>
+<body>
+  <h1>WebMCP — Free LLM Models</h1>
+  <p>This page enables AI agents to interact with the Free LLM Models catalog via the browser.</p>
+  <p>Available tools: <code>search_models</code>, <code>get_model</code></p>
+  <p>See <a href="/.well-known/webmcp.json">.well-known/webmcp.json</a> for the full specification.</p>
+</body>
+</html>

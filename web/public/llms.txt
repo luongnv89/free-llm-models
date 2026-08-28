@@ -4,6 +4,20 @@
 
 The catalog is refreshed from provider APIs. Availability, limits, model policies, and pricing can change; verify important details with the provider before production use.
 
+## Agent Resources
+
+This site is agent-ready. Discoverable resources:
+
+- [Agent Skills Index](/.well-known/agent-skills/index.json) — Discoverable skills and resources
+- [API Catalog](/.well-known/api-catalog.json) — Machine-readable API endpoints (RFC 9727)
+- [A2A Agent Card](/.well-known/agent.json) — Agent-to-agent discovery
+- [MCP Server Card](/.well-known/mcp.json) — Model Context Protocol server
+- [ARD Manifest](/.well-known/ard.json) — Agentic Resource Discovery
+- [Auth.md](/Auth.md) — Authentication and API key policy
+- [robots.txt](/robots.txt) — Crawl rules and AI content preferences
+- [sitemap.xml](/sitemap.xml) — Site map for crawlers
+- [Link Headers](/) — RFC 8288 Link headers on all pages
+
 ## Catalog
 
 - [Free AI model directory](https://free-llm-models.vercel.app/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.

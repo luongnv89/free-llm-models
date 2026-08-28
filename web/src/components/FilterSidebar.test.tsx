@@ -1,10 +1,10 @@
 // @vitest-environment happy-dom
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { act } from 'react';
-import { createElement } from 'react';
-import { createRoot, type Root } from 'react-dom/client';
-import { FilterSidebar } from './FilterSidebar';
-import type { FilterState, SourceOption } from '@/types/model';
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { act } from "react";
+import { createElement } from "react";
+import { createRoot, type Root } from "react-dom/client";
+import { FilterSidebar } from "./FilterSidebar";
+import type { FilterState, SourceOption } from "@/types/model";
 
 let container: HTMLElement;
 let root: Root | null = null;
@@ -12,7 +12,7 @@ let root: Root | null = null;
 const captured: { filterChanges: FilterState[] } = { filterChanges: [] };
 
 const emptyFilters: FilterState = {
-  search: '',
+  search: "",
   sources: [],
   providers: [],
   modalities: [],
@@ -23,8 +23,8 @@ const emptyFilters: FilterState = {
 };
 
 const sources: SourceOption[] = [
-  { id: 'or', displayName: 'OpenRouter', count: 12 },
-  { id: 'chutes', displayName: 'Chutes', count: 3 },
+  { id: "or", displayName: "OpenRouter", count: 12 },
+  { id: "chutes", displayName: "Chutes", count: 3 },
 ];
 
 interface Props {
@@ -34,15 +34,16 @@ interface Props {
 function harness(props: Props) {
   return createElement(FilterSidebar, {
     filters: props.filters ?? emptyFilters,
-    onFiltersChange: (filters: FilterState) => captured.filterChanges.push(filters),
+    onFiltersChange: (filters: FilterState) =>
+      captured.filterChanges.push(filters),
     sources,
-    providers: ['openai', 'meta'],
-    modalities: ['text->text'],
+    providers: ["openai", "meta"],
+    modalities: ["text->text"],
   });
 }
 
 async function render(props: Props = {}) {
-  container = document.createElement('div');
+  container = document.createElement("div");
   document.body.appendChild(container);
   root = createRoot(container);
   await act(async () => {
@@ -51,16 +52,16 @@ async function render(props: Props = {}) {
 }
 
 async function clickOption(label: string) {
-  const button = [...container.querySelectorAll('button')].find(
-    (b) => b.textContent?.includes(label)
+  const button = [...container.querySelectorAll("button")].find((b) =>
+    b.textContent?.includes(label),
   );
   expect(button).toBeTruthy();
   await act(async () => {
-    button!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    button!.dispatchEvent(new MouseEvent("click", { bubbles: true }));
   });
 }
 
-describe('FilterSidebar source filter', () => {
+describe("FilterSidebar source filter", () => {
   beforeEach(() => {
     captured.filterChanges = [];
   });
@@ -73,42 +74,42 @@ describe('FilterSidebar source filter', () => {
     root = null;
   });
 
-  it('renders data-derived sources with per-source counts', async () => {
+  it("renders data-derived sources with per-source counts", async () => {
     await render();
-    const sourceSection = [...container.querySelectorAll('h3')].find(
-      (h) => h.textContent === 'Source'
+    const sourceSection = [...container.querySelectorAll("h3")].find(
+      (h) => h.textContent === "Source",
     );
     expect(sourceSection).toBeTruthy();
-    expect(container.textContent).toContain('OpenRouter');
-    expect(container.textContent).toContain('Chutes');
-    expect(container.textContent).toContain('12');
-    expect(container.textContent).toContain('3');
+    expect(container.textContent).toContain("OpenRouter");
+    expect(container.textContent).toContain("Chutes");
+    expect(container.textContent).toContain("12");
+    expect(container.textContent).toContain("3");
   });
 
-  it('emits updated filters when a source is selected', async () => {
+  it("emits updated filters when a source is selected", async () => {
     await render();
-    await clickOption('OpenRouter');
+    await clickOption("OpenRouter");
     expect(captured.filterChanges).toEqual([
-      { ...emptyFilters, sources: ['or'] },
+      { ...emptyFilters, sources: ["or"] },
     ]);
   });
 
-  it('deselects an already selected source', async () => {
-    await render({ filters: { ...emptyFilters, sources: ['or'] } });
-    await clickOption('OpenRouter');
+  it("deselects an already selected source", async () => {
+    await render({ filters: { ...emptyFilters, sources: ["or"] } });
+    await clickOption("OpenRouter");
     expect(captured.filterChanges).toEqual([{ ...emptyFilters, sources: [] }]);
   });
 
-  it('includes the source filter in the active count and clears it', async () => {
+  it("includes the source filter in the active count and clears it", async () => {
     await render({
-      filters: { ...emptyFilters, sources: ['or'], search: 'llama' },
+      filters: { ...emptyFilters, sources: ["or"], search: "llama" },
     });
     const badge = container.querySelector('[data-slot="badge"]');
-    expect(badge?.textContent).toBe('1');
+    expect(badge?.textContent).toBe("1");
 
-    await clickOption('Clear');
+    await clickOption("Clear");
     expect(captured.filterChanges).toEqual([
-      { ...emptyFilters, search: 'llama' },
+      { ...emptyFilters, search: "llama" },
     ]);
   });
 });

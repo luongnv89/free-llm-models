@@ -1,18 +1,21 @@
 // Vercel Edge Function: Accept: text/markdown content negotiation
-import modelsIndex from '../../public/models/index.json';
-import freeModels from '../../public/free_models.json';
+import modelsIndex from "../../public/models/index.json";
+import freeModels from "../../public/free_models.json";
 
 export async function GET(request: Request) {
-  const accept = request.headers.get('Accept') || '';
+  const accept = request.headers.get("Accept") || "";
 
-  if (!accept.includes('text/markdown')) {
-    return new Response('Not Acceptable', { status: 406 });
+  if (!accept.includes("text/markdown")) {
+    return new Response("Not Acceptable", { status: 406 });
   }
 
   const totalModels = freeModels.totalModels ?? 0;
   const providerEntries = (modelsIndex.providers || [])
-    .map((p: any) => `- **${p.displayName || p.id}**: ${p.model_count ?? 0} models`)
-    .join('\n');
+    .map(
+      (p: { id: string; displayName?: string; model_count?: number }) =>
+        `- **${p.displayName || p.id}**: ${p.model_count ?? 0} models`,
+    )
+    .join("\n");
 
   const markdown = `# Free LLM Models
 
@@ -49,8 +52,8 @@ ${providerEntries}
   return new Response(markdown, {
     status: 200,
     headers: {
-      'Content-Type': 'text/markdown; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600',
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Cache-Control": "public, max-age=3600",
     },
   });
 }

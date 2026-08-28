@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react';
+import { Check } from "lucide-react";
 
 export interface StepProps {
   number: number;
@@ -18,7 +18,9 @@ export function Step({ number, title, description, icon }: StepProps) {
       </div>
       <div className="pb-8 flex-1">
         <h4 className="font-medium mb-1">{title}</h4>
-        {description && <div className="text-sm text-muted-foreground">{description}</div>}
+        {description && (
+          <div className="text-sm text-muted-foreground">{description}</div>
+        )}
       </div>
     </div>
   );
@@ -28,7 +30,7 @@ export function StepLast({
   title,
   description,
   icon,
-}: Omit<StepProps, 'number'> & { number?: number }) {
+}: Omit<StepProps, "number"> & { number?: number }) {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col items-center">
@@ -38,7 +40,9 @@ export function StepLast({
       </div>
       <div className="flex-1">
         <h4 className="font-medium mb-1">{title}</h4>
-        {description && <div className="text-sm text-muted-foreground">{description}</div>}
+        {description && (
+          <div className="text-sm text-muted-foreground">{description}</div>
+        )}
       </div>
     </div>
   );

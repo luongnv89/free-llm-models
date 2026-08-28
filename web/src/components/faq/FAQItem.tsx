@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface FAQItemProps {
   id: string;
@@ -10,7 +10,13 @@ interface FAQItemProps {
   targetId?: string | null;
 }
 
-export function FAQItem({ id, question, children, defaultOpen = false, targetId }: FAQItemProps) {
+export function FAQItem({
+  id,
+  question,
+  children,
+  defaultOpen = false,
+  targetId,
+}: FAQItemProps) {
   const isTargeted = targetId === id;
   const [isOpen, setIsOpen] = useState(defaultOpen || isTargeted);
   const [prevTargeted, setPrevTargeted] = useState(isTargeted);
@@ -25,7 +31,7 @@ export function FAQItem({ id, question, children, defaultOpen = false, targetId 
     if (isTargeted) {
       // Scroll to the item after a short delay to ensure it's rendered
       const timeout = setTimeout(() => {
-        itemRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        itemRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 100);
       return () => clearTimeout(timeout);
     }
@@ -35,7 +41,7 @@ export function FAQItem({ id, question, children, defaultOpen = false, targetId 
     <Card
       ref={itemRef}
       id={id}
-      className={`overflow-hidden scroll-mt-20 ${isTargeted ? 'ring-2 ring-[var(--highlight)]' : ''}`}
+      className={`overflow-hidden scroll-mt-20 ${isTargeted ? "ring-2 ring-[var(--highlight)]" : ""}`}
     >
       <button
         id={`${id}-trigger`}
@@ -48,7 +54,7 @@ export function FAQItem({ id, question, children, defaultOpen = false, targetId 
         <span className="font-medium">{question}</span>
         <ChevronDown
           className={`h-5 w-5 text-muted-foreground transition-transform ${
-            isOpen ? 'rotate-180' : ''
+            isOpen ? "rotate-180" : ""
           }`}
         />
       </button>

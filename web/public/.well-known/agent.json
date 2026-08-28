@@ -5,7 +5,13 @@
   "url": "https://free-llm-models.vercel.app/",
   "documentation_url": "https://github.com/luongnv89/free-llm-models",
   "avatar_url": "https://free-llm-models.vercel.app/og-image.svg",
-  "capabilities": ["model-search", "model-comparison", "provider-filtering", "capability-filtering", "model-details"],
+  "capabilities": [
+    "model-search",
+    "model-comparison",
+    "provider-filtering",
+    "capability-filtering",
+    "model-details"
+  ],
   "tools": [
     {
       "name": "search_models",
@@ -14,7 +20,10 @@
         "query": { "type": "string", "description": "Search query" },
         "provider": { "type": "string", "description": "Filter by provider" },
         "modality": { "type": "string", "description": "Filter by modality" },
-        "context_length": { "type": "number", "description": "Minimum context length" }
+        "context_length": {
+          "type": "number",
+          "description": "Minimum context length"
+        }
       }
     },
     {

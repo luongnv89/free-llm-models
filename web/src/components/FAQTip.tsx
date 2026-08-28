@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { CircleHelp } from 'lucide-react';
-import { getRandomFAQ, type FAQQuestion } from '@/data/faqData';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { CircleHelp } from "lucide-react";
+import { getRandomFAQ, type FAQQuestion } from "@/data/faqData";
 
 export function FAQTip() {
   const [faq, setFaq] = useState<FAQQuestion | null>(() => getRandomFAQ());

@@ -16,12 +16,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -39,12 +35,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -62,12 +54,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -85,12 +73,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -108,12 +92,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -131,12 +111,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -154,12 +130,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -177,12 +149,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -200,12 +168,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -223,12 +187,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -246,12 +206,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -269,12 +225,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -292,12 +244,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -315,12 +263,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -338,12 +282,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -361,12 +301,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -384,12 +320,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -407,12 +339,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -430,12 +358,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -453,12 +377,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -476,12 +396,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -499,12 +415,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -522,12 +434,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -545,12 +453,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -568,12 +472,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -591,12 +491,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -614,12 +510,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -637,12 +529,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -660,12 +548,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -683,12 +567,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -706,12 +586,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -729,12 +605,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -752,12 +624,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -775,12 +643,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -798,12 +662,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -821,12 +681,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -844,12 +700,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -867,12 +719,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -890,12 +738,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -913,12 +757,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -936,12 +776,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -959,12 +795,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -982,12 +814,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1005,12 +833,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1028,12 +852,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1051,12 +871,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1074,12 +890,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1097,12 +909,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1120,12 +928,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1143,12 +947,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1166,12 +966,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1189,12 +985,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1212,12 +1004,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1235,12 +1023,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1258,12 +1042,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",
@@ -1281,12 +1061,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "mistral",
       "sourceUrl": "https://api.mistral.ai/v1/models",

@@ -1,33 +1,39 @@
 // @vitest-environment happy-dom
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { act } from 'react';
-import { createElement } from 'react';
-import { createRoot, type Root } from 'react-dom/client';
-import App from './App';
-import { resetModelsCacheForTests } from '@/hooks/useModels';
-import type { Model } from '@/types/model';
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { act } from "react";
+import { createElement } from "react";
+import { createRoot, type Root } from "react-dom/client";
+import App from "./App";
+import { resetModelsCacheForTests } from "@/hooks/useModels";
+import type { Model } from "@/types/model";
 
-function makeModel(overrides: Partial<Model> & Pick<Model, 'id' | 'name'>): Model {
+function makeModel(
+  overrides: Partial<Model> & Pick<Model, "id" | "name">,
+): Model {
   return {
-    canonical_slug: '',
+    canonical_slug: "",
     hugging_face_id: null,
     created: 1700000000,
-    description: 'A test model',
+    description: "A test model",
     context_length: 8192,
     architecture: {
-      modality: 'text->text',
-      input_modalities: ['text'],
-      output_modalities: ['text'],
-      tokenizer: 'GPT',
+      modality: "text->text",
+      input_modalities: ["text"],
+      output_modalities: ["text"],
+      tokenizer: "GPT",
       instruct_type: null,
     },
-    pricing: { prompt: '0', completion: '0' },
-    top_provider: { context_length: 8192, max_completion_tokens: null, is_moderated: false },
+    pricing: { prompt: "0", completion: "0" },
+    top_provider: {
+      context_length: 8192,
+      max_completion_tokens: null,
+      is_moderated: false,
+    },
     per_request_limits: null,
     supported_parameters: [],
     default_parameters: {},
     expiration_date: null,
-    addedToFreeList: '2026-02-02T10:30:00Z',
+    addedToFreeList: "2026-02-02T10:30:00Z",
     ...overrides,
   };
 }
@@ -43,16 +49,16 @@ function mockCatalog(models: Model[]) {
       Promise.resolve({
         providers: [
           {
-            id: 'acme',
-            name: 'Acme AI',
+            id: "acme",
+            name: "Acme AI",
             modelCount: models.length,
-            fetchedAt: '2026-08-20T12:00:00Z',
+            fetchedAt: "2026-08-20T12:00:00Z",
             metadata: {
-              id: 'acme',
-              displayName: 'Acme AI',
-              baseUrl: 'https://api.acme.ai/v1',
-              apiKeySignupUrl: 'https://console.acme.ai/api-keys',
-              docsUrl: 'https://docs.acme.ai',
+              id: "acme",
+              displayName: "Acme AI",
+              baseUrl: "https://api.acme.ai/v1",
+              apiKeySignupUrl: "https://console.acme.ai/api-keys",
+              docsUrl: "https://docs.acme.ai",
               notes: null,
             },
           },
@@ -63,8 +69,8 @@ function mockCatalog(models: Model[]) {
     ok: true,
     json: () =>
       Promise.resolve({
-        providerId: 'acme',
-        fetchedAt: '2026-08-20T12:00:00Z',
+        providerId: "acme",
+        fetchedAt: "2026-08-20T12:00:00Z",
         newModelIds: [],
         models,
       }),
@@ -72,9 +78,9 @@ function mockCatalog(models: Model[]) {
 }
 
 async function renderAt(path: string, models: Model[]) {
-  window.history.replaceState(null, '', path);
+  window.history.replaceState(null, "", path);
   mockCatalog(models);
-  container = document.createElement('div');
+  container = document.createElement("div");
   document.body.appendChild(container);
   root = createRoot(container);
   await act(async () => {
@@ -88,14 +94,14 @@ async function renderAt(path: string, models: Model[]) {
   });
 }
 
-describe('App deep links', () => {
+describe("App deep links", () => {
   beforeEach(() => {
     resetModelsCacheForTests();
     fetchMock = vi.fn();
     globalThis.fetch = fetchMock as unknown as typeof fetch;
-    Object.defineProperty(globalThis, 'localStorage', {
+    Object.defineProperty(globalThis, "localStorage", {
       value: {
-        getItem: vi.fn().mockReturnValue('false'),
+        getItem: vi.fn().mockReturnValue("false"),
         setItem: vi.fn(),
         removeItem: vi.fn(),
       },
@@ -109,24 +115,27 @@ describe('App deep links', () => {
     });
     container.remove();
     root = null;
-    window.history.replaceState(null, '', '/');
+    window.history.replaceState(null, "", "/");
     vi.restoreAllMocks();
   });
 
-  it('initializes the model route from an encoded direct URL', async () => {
-    const model = makeModel({ id: 'acme/direct-model', name: 'Direct Model' });
+  it("initializes the model route from an encoded direct URL", async () => {
+    const model = makeModel({ id: "acme/direct-model", name: "Direct Model" });
 
     await renderAt(`/model/${encodeURIComponent(model.id)}`, [model]);
 
-    expect(window.location.pathname).toBe('/model/acme%2Fdirect-model');
-    expect(container.textContent).toContain('Direct Model');
-    expect(container.textContent).not.toContain('Model not found');
+    expect(window.location.pathname).toBe("/model/acme%2Fdirect-model");
+    expect(container.textContent).toContain("Direct Model");
+    expect(container.textContent).not.toContain("Model not found");
   });
 
-  it('navigates into a model detail page and back without a full page reload', async () => {
-    const model = makeModel({ id: 'acme/navigation-model', name: 'Navigation Model' });
+  it("navigates into a model detail page and back without a full page reload", async () => {
+    const model = makeModel({
+      id: "acme/navigation-model",
+      name: "Navigation Model",
+    });
 
-    await renderAt('/', [model]);
+    await renderAt("/", [model]);
 
     const modelLink = container.querySelector(
       'a[href="/model/acme%2Fnavigation-model"]',
@@ -137,12 +146,12 @@ describe('App deep links', () => {
       modelLink!.click();
     });
 
-    expect(window.location.pathname).toBe('/model/acme%2Fnavigation-model');
-    expect(container.textContent).toContain('Navigation Model');
-    expect(container.textContent).not.toContain('Model not found');
+    expect(window.location.pathname).toBe("/model/acme%2Fnavigation-model");
+    expect(container.textContent).toContain("Navigation Model");
+    expect(container.textContent).not.toContain("Model not found");
 
-    const backLink = [...container.querySelectorAll('a')].find(
-      (link) => link.textContent?.includes('Back to Models'),
+    const backLink = [...container.querySelectorAll("a")].find((link) =>
+      link.textContent?.includes("Back to Models"),
     );
     expect(backLink).toBeTruthy();
 
@@ -150,22 +159,28 @@ describe('App deep links', () => {
       backLink!.click();
     });
 
-    expect(window.location.pathname).toBe('/');
-    expect(container.querySelector('ol[aria-label="Free models"]')).toBeTruthy();
-    expect(container.textContent).toContain('Navigation Model');
+    expect(window.location.pathname).toBe("/");
+    expect(
+      container.querySelector('ol[aria-label="Free models"]'),
+    ).toBeTruthy();
+    expect(container.textContent).toContain("Navigation Model");
   });
 
-  it('keeps the model-not-found state for an unknown direct URL', async () => {
-    await renderAt('/model/acme%2Fmissing-model', []);
+  it("keeps the model-not-found state for an unknown direct URL", async () => {
+    await renderAt("/model/acme%2Fmissing-model", []);
 
-    expect(container.textContent).toContain('Model not found');
-    expect(container.textContent).toContain('The requested model could not be found.');
+    expect(container.textContent).toContain("Model not found");
+    expect(container.textContent).toContain(
+      "The requested model could not be found.",
+    );
   });
 
-  it('keeps the model-not-found state for a malformed encoded direct URL', async () => {
-    await renderAt('/model/%E0%A4%A', []);
+  it("keeps the model-not-found state for a malformed encoded direct URL", async () => {
+    await renderAt("/model/%E0%A4%A", []);
 
-    expect(container.textContent).toContain('Model not found');
-    expect(container.textContent).toContain('The requested model could not be found.');
+    expect(container.textContent).toContain("Model not found");
+    expect(container.textContent).toContain(
+      "The requested model could not be found.",
+    );
   });
 });

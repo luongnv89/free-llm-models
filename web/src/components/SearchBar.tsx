@@ -1,31 +1,31 @@
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Search, ArrowUpDown } from 'lucide-react';
-import type { SortField, SortOrder } from '@/types/model';
+} from "@/components/ui/select";
+import { Search, ArrowUpDown } from "lucide-react";
+import type { SortField, SortOrder } from "@/types/model";
 
 function isDateSortField(field: SortField): boolean {
-  return field === 'addedToFreeList' || field === 'created';
+  return field === "addedToFreeList" || field === "created";
 }
 
 function sortOrderVisibleLabel(field: SortField, order: SortOrder): string {
   if (isDateSortField(field)) {
-    return order === 'desc' ? 'Newest' : 'Oldest';
+    return order === "desc" ? "Newest" : "Oldest";
   }
-  return order === 'asc' ? 'A↑' : 'Z↓';
+  return order === "asc" ? "A↑" : "Z↓";
 }
 
 function sortOrderAriaLabel(field: SortField, order: SortOrder): string {
   if (isDateSortField(field)) {
-    return order === 'desc' ? 'Newest first' : 'Oldest first';
+    return order === "desc" ? "Newest first" : "Oldest first";
   }
-  return order === 'asc' ? 'Ascending' : 'Descending';
+  return order === "asc" ? "Ascending" : "Descending";
 }
 
 interface SearchBarProps {
@@ -80,7 +80,7 @@ export function SearchBar({
           variant="outline"
           size="sm"
           onClick={() =>
-            onSortChange(sortField, sortOrder === 'asc' ? 'desc' : 'asc')
+            onSortChange(sortField, sortOrder === "asc" ? "desc" : "asc")
           }
           aria-label={orderAriaLabel}
           title={orderAriaLabel}

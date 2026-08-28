@@ -13,12 +13,8 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -77,13 +73,8 @@
       "context_length": 512000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text", "image"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -135,12 +126,8 @@
       "context_length": 65536,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -206,12 +193,8 @@
       "context_length": 1000000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -270,14 +253,8 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+audio->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "audio"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text", "image", "audio"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -356,12 +333,8 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -411,14 +384,8 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+audio->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "audio"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text", "image", "audio"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -547,12 +514,8 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -602,12 +565,8 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Cohere",
         "instruct_type": null
       },
@@ -677,12 +636,8 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -853,10 +808,7 @@
       "reasoning": {
         "mandatory": false,
         "default_enabled": true,
-        "supported_efforts": [
-          "xhigh",
-          "high"
-        ],
+        "supported_efforts": ["xhigh", "high"],
         "default_effort": "high"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -876,13 +828,8 @@
       "context_length": 128000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text", "image"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -939,12 +886,8 @@
       "context_length": 1000000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1052,10 +995,7 @@
         "mandatory": false,
         "default_enabled": true,
         "supports_max_tokens": true,
-        "supported_efforts": [
-          "high",
-          "medium"
-        ],
+        "supported_efforts": ["high", "medium"],
         "default_effort": "high"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -1075,14 +1015,8 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text", "image", "video"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1255,15 +1189,8 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text+image+audio+video->text",
-        "input_modalities": [
-          "text",
-          "audio",
-          "image",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text", "audio", "image", "video"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1331,14 +1258,8 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": [
-          "image",
-          "text",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["image", "text", "video"],
+        "output_modalities": ["text"],
         "tokenizer": "Gemma",
         "instruct_type": null
       },
@@ -1403,14 +1324,8 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": [
-          "image",
-          "text",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["image", "text", "video"],
+        "output_modalities": ["text"],
         "tokenizer": "Gemma",
         "instruct_type": null
       },
@@ -1478,14 +1393,8 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text",
-          "audio"
-        ],
+        "input_modalities": ["text", "image"],
+        "output_modalities": ["text", "audio"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1537,14 +1446,8 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text",
-          "audio"
-        ],
+        "input_modalities": ["text", "image"],
+        "output_modalities": ["text", "audio"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1596,12 +1499,8 @@
       "context_length": 196608,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1725,12 +1624,8 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text"],
+        "output_modalities": ["text"],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1783,10 +1678,7 @@
         "mandatory": false,
         "default_enabled": true,
         "supports_max_tokens": true,
-        "supported_efforts": [
-          "medium",
-          "low"
-        ],
+        "supported_efforts": ["medium", "low"],
         "default_effort": "medium"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -1806,13 +1698,8 @@
       "context_length": 200000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
+        "input_modalities": ["text", "image"],
+        "output_modalities": ["text"],
         "tokenizer": "Router",
         "instruct_type": null
       },
@@ -1884,14 +1771,8 @@
         "context_length": 1048576,
         "architecture": {
           "modality": "text+image+video->text",
-          "input_modalities": [
-            "text",
-            "image",
-            "video"
-          ],
-          "output_modalities": [
-            "text"
-          ],
+          "input_modalities": ["text", "image", "video"],
+          "output_modalities": ["text"],
           "tokenizer": "Other",
           "instruct_type": null
         },
@@ -1930,11 +1811,7 @@
         "reasoning": {
           "mandatory": true,
           "default_enabled": true,
-          "supported_efforts": [
-            "max",
-            "high",
-            "low"
-          ],
+          "supported_efforts": ["max", "high", "low"],
           "default_effort": "max"
         },
         "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -1960,12 +1837,8 @@
         "context_length": 256000,
         "architecture": {
           "modality": "text->text",
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "text"
-          ],
+          "input_modalities": ["text"],
+          "output_modalities": ["text"],
           "tokenizer": "Other",
           "instruct_type": null
         },
@@ -2028,14 +1901,8 @@
         "context_length": 128000,
         "architecture": {
           "modality": "text+image+video->text",
-          "input_modalities": [
-            "image",
-            "text",
-            "video"
-          ],
-          "output_modalities": [
-            "text"
-          ],
+          "input_modalities": ["image", "text", "video"],
+          "output_modalities": ["text"],
           "tokenizer": "Other",
           "instruct_type": null
         },
@@ -2090,12 +1957,8 @@
         "context_length": 128000,
         "architecture": {
           "modality": "text->text",
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "text"
-          ],
+          "input_modalities": ["text"],
+          "output_modalities": ["text"],
           "tokenizer": "Other",
           "instruct_type": null
         },

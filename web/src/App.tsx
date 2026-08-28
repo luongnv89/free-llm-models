@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HomePage } from '@/pages/HomePage';
-import { ModelDetailPage } from '@/pages/ModelDetailPage';
-import { FAQPage } from '@/pages/FAQPage';
-import { ArchivePage } from '@/pages/ArchivePage';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HomePage } from "@/pages/HomePage";
+import { ModelDetailPage } from "@/pages/ModelDetailPage";
+import { FAQPage } from "@/pages/FAQPage";
+import { ArchivePage } from "@/pages/ArchivePage";
 
 function App() {
   return (

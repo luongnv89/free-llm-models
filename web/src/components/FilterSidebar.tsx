@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { X, Check } from 'lucide-react';
-import type { FilterState, SourceOption } from '@/types/model';
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { X, Check } from "lucide-react";
+import type { FilterState, SourceOption } from "@/types/model";
 
 interface FilterSidebarProps {
   filters: FilterState;
@@ -12,9 +12,9 @@ interface FilterSidebarProps {
 }
 
 const contextLengthOptions = [
-  { label: '< 32K', min: null, max: 32768 },
-  { label: '32K - 128K', min: 32768, max: 131072 },
-  { label: '> 128K', min: 131072, max: null },
+  { label: "< 32K", min: null, max: 32768 },
+  { label: "32K - 128K", min: 32768, max: 131072 },
+  { label: "> 128K", min: 131072, max: null },
 ];
 
 interface FilterSectionProps {
@@ -53,9 +53,15 @@ function FiltersContent({
   hasActiveFilters: boolean;
   activeFilterCount: number;
   clearFilters: () => void;
-  toggleArrayFilter: (key: 'sources' | 'providers' | 'modalities', value: string) => void;
+  toggleArrayFilter: (
+    key: "sources" | "providers" | "modalities",
+    value: string,
+  ) => void;
   toggleContextLength: (min: number | null, max: number | null) => void;
-  updateFilter: <K extends keyof FilterState>(key: K, value: FilterState[K]) => void;
+  updateFilter: <K extends keyof FilterState>(
+    key: K,
+    value: FilterState[K],
+  ) => void;
   showHeader?: boolean;
 }) {
   return (
@@ -92,7 +98,7 @@ function FiltersContent({
               key={modality}
               label={modality}
               selected={filters.modalities.includes(modality)}
-              onClick={() => toggleArrayFilter('modalities', modality)}
+              onClick={() => toggleArrayFilter("modalities", modality)}
             />
           ))}
         </div>
@@ -123,8 +129,8 @@ function FiltersContent({
             selected={filters.hasReasoning === true}
             onClick={() =>
               updateFilter(
-                'hasReasoning',
-                filters.hasReasoning === true ? null : true
+                "hasReasoning",
+                filters.hasReasoning === true ? null : true,
               )
             }
           />
@@ -132,10 +138,7 @@ function FiltersContent({
             label="Tool Use"
             selected={filters.hasTools === true}
             onClick={() =>
-              updateFilter(
-                'hasTools',
-                filters.hasTools === true ? null : true
-              )
+              updateFilter("hasTools", filters.hasTools === true ? null : true)
             }
           />
         </div>
@@ -150,7 +153,7 @@ function FiltersContent({
               label={source.displayName}
               count={source.count}
               selected={filters.sources.includes(source.id)}
-              onClick={() => toggleArrayFilter('sources', source.id)}
+              onClick={() => toggleArrayFilter("sources", source.id)}
             />
           ))}
         </div>
@@ -164,7 +167,7 @@ function FiltersContent({
               key={provider}
               label={provider}
               selected={filters.providers.includes(provider)}
-              onClick={() => toggleArrayFilter('providers', provider)}
+              onClick={() => toggleArrayFilter("providers", provider)}
             />
           ))}
         </div>
@@ -185,17 +188,15 @@ function FilterOption({ label, selected, onClick, count }: FilterOptionProps) {
     <button
       onClick={onClick}
       className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-md transition-colors text-left ${
-        selected
-          ? 'bg-black text-white'
-          : 'hover:bg-muted text-foreground'
+        selected ? "bg-black text-white" : "hover:bg-muted text-foreground"
       }`}
     >
       <span className="flex items-center gap-2">
         <span
           className={`w-4 h-4 rounded border flex items-center justify-center ${
             selected
-              ? 'bg-[var(--highlight)] border-[var(--highlight)]'
-              : 'border-gray-300'
+              ? "bg-[var(--highlight)] border-[var(--highlight)]"
+              : "border-gray-300"
           }`}
         >
           {selected && <Check className="w-3 h-3 text-black" />}
@@ -218,20 +219,20 @@ export function FilterSidebar({
 }: FilterSidebarProps) {
   const updateFilter = <K extends keyof FilterState>(
     key: K,
-    value: FilterState[K]
+    value: FilterState[K],
   ) => {
     onFiltersChange({ ...filters, [key]: value });
   };
 
   const toggleArrayFilter = (
-    key: 'sources' | 'providers' | 'modalities',
-    value: string
+    key: "sources" | "providers" | "modalities",
+    value: string,
   ) => {
     const current = filters[key];
     if (current.includes(value)) {
       updateFilter(
         key,
-        current.filter((v) => v !== value)
+        current.filter((v) => v !== value),
       );
     } else {
       updateFilter(key, [...current, value]);
@@ -282,7 +283,9 @@ export function FilterSidebar({
     filters.sources.length +
     filters.providers.length +
     filters.modalities.length +
-    (filters.contextLengthMin !== null || filters.contextLengthMax !== null ? 1 : 0) +
+    (filters.contextLengthMin !== null || filters.contextLengthMax !== null
+      ? 1
+      : 0) +
     (filters.hasReasoning !== null ? 1 : 0) +
     (filters.hasTools !== null ? 1 : 0);
 
@@ -301,7 +304,9 @@ export function FilterSidebar({
                   </Badge>
                 )}
               </div>
-              <span className="text-xs text-muted-foreground">Tap to expand</span>
+              <span className="text-xs text-muted-foreground">
+                Tap to expand
+              </span>
             </div>
           </summary>
           <div className="pt-4 space-y-6">

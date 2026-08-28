@@ -9,9 +9,9 @@ export async function GET(request: Request) {
     return new Response('Not Acceptable', { status: 406 });
   }
 
-  const totalModels = freeModels.length;
-  const providerEntries = Object.entries(modelsIndex.providers || {})
-    .map(([id, info]: [string, any]) => `- **${id}**: ${info.model_count ?? 0} models`)
+  const totalModels = freeModels.totalModels ?? 0;
+  const providerEntries = (modelsIndex.providers || [])
+    .map((p: any) => `- **${p.displayName || p.id}**: ${p.model_count ?? 0} models`)
     .join('\n');
 
   const markdown = `# Free LLM Models

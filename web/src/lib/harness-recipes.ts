@@ -277,8 +277,8 @@ function claudeCodeSteps(providerId: ProviderId, modelId: string): RecipeStep[] 
   const envVar = API_KEY_ENV[providerId];
   return [
     {
-      id: 'use-direct',
-      title: 'Use this provider directly',
+      id: 'use-api-key',
+      title: '1. Use API key',
       description: `Point Claude Code at ${PROVIDER_INFO[providerId].providerDisplayName} using its OpenAI-compatible endpoint.`,
       snippets: [
         envCheck(envVar),
@@ -295,6 +295,15 @@ function claudeCodeSteps(providerId: ProviderId, modelId: string): RecipeStep[] 
       ],
     },
     {
+      id: 'use-login',
+      title: '2. Use connect/login',
+      description: 'Use Claude Code\'s built-in authentication to connect to the provider.',
+      snippets: [
+        { id: 'login', label: 'Start Claude Code and authenticate', language: 'text', content: 'claude' },
+        { id: 'login-prompt', label: 'When prompted, enter provider URL and key', language: 'text', content: 'Enter API base URL: ' + PROVIDER_BASE_URL[providerId] + '\nEnter API key: ' + '$' + envVar },
+      ],
+    },
+    {
       id: 'run',
       title: 'Start Claude Code',
       description: 'Claude Code reads these settings from the current shell.',
@@ -307,8 +316,8 @@ function piSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
   const envVar = API_KEY_ENV[pair.providerId];
   return [
     {
-      id: 'use-direct',
-      title: 'Use this provider directly',
+      id: 'use-api-key',
+      title: '1. Use API key',
       description: `Add ${PROVIDER_INFO[pair.providerId].providerDisplayName} to ~/.pi/agent/models.json.`,
       snippets: [
         envCheck(envVar),
@@ -330,8 +339,8 @@ function piSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
       ],
     },
     {
-      id: 'interactive',
-      title: 'Or use the interactive flow',
+      id: 'use-login',
+      title: '2. Use connect/login',
       description: 'Authenticate with /login, then select the model.',
       snippets: [
         { id: 'login', label: 'Open Pi provider login', language: 'text', content: '/login' },
@@ -359,8 +368,8 @@ function opencodeSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] 
   const exactModelId = openCodeModelId(pair, modelId);
   return [
     {
-      id: 'use-direct',
-      title: 'Use this provider directly',
+      id: 'use-api-key',
+      title: '1. Use API key',
       description: `Add ${PROVIDER_INFO[pair.providerId].providerDisplayName} to opencode.json.`,
       snippets: [
         envCheck(envVar),
@@ -381,8 +390,8 @@ function opencodeSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] 
       ],
     },
     {
-      id: 'interactive',
-      title: 'Or use the interactive flow',
+      id: 'use-login',
+      title: '2. Use connect/login',
       description: 'Connect the provider, then select the model.',
       snippets: [
         { id: 'connect', label: 'Connect a provider', language: 'text', content: '/connect' },
@@ -414,8 +423,8 @@ function codexSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
   const envVar = API_KEY_ENV[pair.providerId];
   return [
     {
-      id: 'use-direct',
-      title: 'Use this provider directly',
+      id: 'use-api-key',
+      title: '1. Use API key',
       description: `Merge ${PROVIDER_INFO[pair.providerId].providerDisplayName} into ~/.codex/config.toml.`,
       snippets: [
         envCheck(envVar),
@@ -435,6 +444,15 @@ function codexSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
             `model_provider = ${tomlString(providerId)}`,
           ].join('\n'),
         },
+      ],
+    },
+    {
+      id: 'use-login',
+      title: '2. Use connect/login',
+      description: 'Use Codex\'s interactive provider setup.',
+      snippets: [
+        { id: 'connect', label: 'Start Codex and configure provider', language: 'text', content: 'codex --model ' + modelId },
+        { id: 'connect-prompt', label: 'When prompted, enter provider details', language: 'text', content: 'Enter API base URL: ' + PROVIDER_BASE_URL[pair.providerId] + '\nEnter API key: ' + '$' + envVar },
       ],
     },
     {

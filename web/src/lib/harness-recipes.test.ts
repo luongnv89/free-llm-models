@@ -93,7 +93,8 @@ describe('generateHarnessRecipe', () => {
   });
 
   it('only enables Copy all when all targets are safe shell commands', () => {
-    expect(generateHarnessRecipe('claude-code', 'openrouter', 'anthropic/claude-3').copyAllSafe).toBe(true);
+    // Claude Code has text snippets in the login step, so copyAllSafe is false
+    expect(generateHarnessRecipe('claude-code', 'openrouter', 'anthropic/claude-3').copyAllSafe).toBe(false);
     for (const pair of [
       ['pi', 'google'], ['opencode', 'google'], ['codex', 'openrouter'],
     ] as const) {

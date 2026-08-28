@@ -82,9 +82,8 @@ describe('HarnessSetupGuide', () => {
     Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText } });
     await render(PROVIDER, undefined, 'anthropic/claude-3');
     expect(container.querySelector('#harness-panel-claude-code button')?.textContent).toContain('Copy');
-    expect(container.querySelector('#harness-panel-claude-code button[aria-label="Copy all"]')).toBeTruthy();
-    await act(async () => container.querySelector<HTMLButtonElement>('#harness-panel-claude-code button[aria-label="Copy all"]')!.click());
-    expect(writeText).toHaveBeenCalledWith(expect.stringContaining('OPENAI_API_KEY'));
+    // Claude Code now has text snippets in the login step, so no Copy all
+    expect(container.querySelector('#harness-panel-claude-code button[aria-label="Copy all"]')).toBeNull();
     await act(async () => container.querySelector<HTMLButtonElement>('#harness-tab-pi')!.click());
     expect(container.querySelector('#harness-panel-pi button[aria-label="Copy all"]')).toBeNull();
   });

@@ -52,7 +52,7 @@ describe('HarnessSetupGuide', () => {
     expect(container.querySelector('a[href="https://code.claude.com/docs/en/llm-gateway"]')).toBeTruthy();
     expect(container.querySelector('a[href="https://openrouter.ai/docs"]')).toBeTruthy();
     expect(container.querySelector('a[href="https://openrouter.ai/keys"]')).toBeTruthy();
-    expect(container.textContent).toContain('Verified 2026-08-26');
+    expect(container.textContent).toContain('Verified 2026-08-27');
     expect(container.textContent).toContain('Credentials may be required');
     expect(container.textContent).toContain('free quotas can change');
     expect(container.textContent).toContain('prompts or tool output leave your machine');

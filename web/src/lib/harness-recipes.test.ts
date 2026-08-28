@@ -11,10 +11,15 @@ import {
 
 const MODEL_ID = 'owner/model';
 const EXPECTED: Array<{ harnessId: HarnessId; providerId: ProviderId; status: CompatibilityStatus }> = [
-  ...(['openrouter', 'google', 'mistral', 'nvidia-nim', 'groq', 'cerebras'] as ProviderId[]).map((providerId) => ({
+  ...(['openrouter'] as ProviderId[]).map((providerId) => ({
     harnessId: 'claude-code' as const,
     providerId,
-    status: providerId === 'openrouter' ? 'experimental' as const : 'unsupported' as const,
+    status: 'experimental' as const,
+  })),
+  ...(['huggingface', 'github-models', 'google', 'mistral', 'nvidia-nim', 'groq', 'cerebras'] as ProviderId[]).map((providerId) => ({
+    harnessId: 'claude-code' as const,
+    providerId,
+    status: 'unsupported' as const,
   })),
   ...PROVIDER_IDS.map((providerId) => ({ harnessId: 'pi' as const, providerId, status: 'supported' as const })),
   ...PROVIDER_IDS.map((providerId) => ({ harnessId: 'opencode' as const, providerId, status: 'supported' as const })),
@@ -32,11 +37,11 @@ describe('harness compatibility registry', () => {
     expect(COMPATIBILITY_REGISTRY[expected.harnessId][expected.providerId]).toMatchObject(expected);
   });
 
-  it('has exactly one provenance-backed entry for all 24 combinations', () => {
+  it('has exactly one provenance-backed entry for all 32 combinations', () => {
     const entries = HARNESS_IDS.flatMap((harnessId) => PROVIDER_IDS.map((providerId) => COMPATIBILITY_REGISTRY[harnessId][providerId]));
-    expect(entries).toHaveLength(24);
-    expect(new Set(entries.map((entry) => `${entry.providerId}:${entry.harnessId}`)).size).toBe(24);
-    expect(entries.every((entry) => entry.lastVerified === '2026-08-26')).toBe(true);
+    expect(entries).toHaveLength(32);
+    expect(new Set(entries.map((entry) => `${entry.providerId}:${entry.harnessId}`)).size).toBe(32);
+    expect(entries.every((entry) => entry.lastVerified === '2026-08-27')).toBe(true);
     expect(entries.every((entry) => entry.providerSignupUrl.startsWith('https://'))).toBe(true);
     expect(entries.every((entry) => entry.providerDocsUrl.startsWith('https://'))).toBe(true);
   });
@@ -77,7 +82,7 @@ describe('generateHarnessRecipe', () => {
   it('renders ordered steps with unique copy targets and provenance', () => {
     for (const expected of EXPECTED) {
       const recipe = generateHarnessRecipe(expected.harnessId, expected.providerId, expected.harnessId === 'claude-code' ? 'anthropic/claude-3' : MODEL_ID);
-      expect(recipe.lastVerified).toBe('2026-08-26');
+      expect(recipe.lastVerified).toBe('2026-08-27');
       expect(recipe.provenance?.harnessDocsUrl).toBe(recipe.docsUrl);
       expect(recipe.snippets).toEqual(recipe.steps.flatMap((step) => step.snippets));
       expect(new Set(recipe.snippets.map((snippet) => snippet.id)).size).toBe(recipe.snippets.length);

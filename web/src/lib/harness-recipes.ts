@@ -8,6 +8,8 @@ export const PROVIDER_IDS = [
   'nvidia-nim',
   'groq',
   'cerebras',
+  'huggingface',
+  'github-models',
 ] as const;
 export type ProviderId = (typeof PROVIDER_IDS)[number];
 
@@ -33,7 +35,7 @@ export interface RecipeProvenance {
   providerSignupUrl: string;
   providerDocsUrl: string;
   harnessDocsUrl: string;
-  verificationDate: '2026-08-26';
+  verificationDate: '2026-08-27';
 }
 
 export interface CompatibilityEntry {
@@ -44,7 +46,7 @@ export interface CompatibilityEntry {
   docsUrl: string;
   providerSignupUrl: string;
   providerDocsUrl: string;
-  lastVerified: '2026-08-26';
+  lastVerified: '2026-08-27';
   caveats?: string[];
   minimumKnownVersion?: string;
 }
@@ -66,13 +68,13 @@ export interface HarnessRecipe {
   providerDocsUrl?: string;
   minimumKnownVersion?: string;
   docsUrl: string;
-  lastVerified: '2026-08-26';
+  lastVerified: '2026-08-27';
   provenance: RecipeProvenance | null;
 }
 
 export type RecipeModel = string | { id: string };
 
-const LAST_VERIFIED = '2026-08-26' as const;
+const LAST_VERIFIED = '2026-08-27' as const;
 
 const HARNESS_DOCS: Record<HarnessId, string> = {
   'claude-code': 'https://code.claude.com/docs/en/llm-gateway',
@@ -119,6 +121,16 @@ const PROVIDER_INFO: Record<ProviderId, Omit<RecipeProvenance, 'harnessDocsUrl' 
     providerSignupUrl: 'https://cloud.cerebras.ai',
     providerDocsUrl: 'https://inference-docs.cerebras.ai',
   },
+  huggingface: {
+    providerDisplayName: 'Hugging Face',
+    providerSignupUrl: 'https://huggingface.co/settings/tokens',
+    providerDocsUrl: 'https://huggingface.co/docs/router/quickstart',
+  },
+  'github-models': {
+    providerDisplayName: 'GitHub Models',
+    providerSignupUrl: 'https://github.com/settings/tokens',
+    providerDocsUrl: 'https://docs.github.com/en/github-models',
+  },
 };
 
 const API_KEY_ENV: Record<ProviderId, string> = {
@@ -128,6 +140,8 @@ const API_KEY_ENV: Record<ProviderId, string> = {
   'nvidia-nim': 'NVIDIA_API_KEY',
   groq: 'GROQ_API_KEY',
   cerebras: 'CEREBRAS_API_KEY',
+  huggingface: 'HF_TOKEN',
+  'github-models': 'GITHUB_TOKEN',
 };
 
 const PROVIDER_BASE_URL: Record<ProviderId, string> = {
@@ -137,6 +151,8 @@ const PROVIDER_BASE_URL: Record<ProviderId, string> = {
   'nvidia-nim': 'https://integrate.api.nvidia.com/v1',
   groq: 'https://api.groq.com/openai/v1',
   cerebras: 'https://api.cerebras.ai/v1',
+  huggingface: 'https://router.huggingface.co/v1',
+  'github-models': 'https://models.github.ai/v1',
 };
 
 const OPENROUTER_CLAUDE_CAVEAT =
@@ -171,6 +187,8 @@ export const COMPATIBILITY_REGISTRY = {
     'nvidia-nim': entry('nvidia-nim', 'claude-code', 'unsupported', 'nvidia'),
     groq: entry('groq', 'claude-code', 'unsupported', 'groq'),
     cerebras: entry('cerebras', 'claude-code', 'unsupported', 'cerebras'),
+    huggingface: entry('huggingface', 'claude-code', 'unsupported', 'huggingface'),
+    'github-models': entry('github-models', 'claude-code', 'unsupported', 'github'),
   },
   pi: {
     openrouter: entry('openrouter', 'pi', 'supported', 'openrouter'),
@@ -179,6 +197,8 @@ export const COMPATIBILITY_REGISTRY = {
     'nvidia-nim': entry('nvidia-nim', 'pi', 'supported', 'nvidia'),
     groq: entry('groq', 'pi', 'supported', 'groq'),
     cerebras: entry('cerebras', 'pi', 'supported', 'cerebras'),
+    huggingface: entry('huggingface', 'pi', 'supported', 'huggingface'),
+    'github-models': entry('github-models', 'pi', 'supported', 'github'),
   },
   opencode: {
     openrouter: entry('openrouter', 'opencode', 'supported', 'openrouter'),
@@ -187,6 +207,8 @@ export const COMPATIBILITY_REGISTRY = {
     'nvidia-nim': entry('nvidia-nim', 'opencode', 'supported', 'nvidia'),
     groq: entry('groq', 'opencode', 'supported', 'groq'),
     cerebras: entry('cerebras', 'opencode', 'supported', 'cerebras'),
+    huggingface: entry('huggingface', 'opencode', 'supported', 'huggingface'),
+    'github-models': entry('github-models', 'opencode', 'supported', 'github'),
   },
   codex: {
     openrouter: entry('openrouter', 'codex', 'supported', 'openrouter'),
@@ -197,6 +219,8 @@ export const COMPATIBILITY_REGISTRY = {
       'Tool calls, streaming, and multi-turn Responses behavior still require manual verification.',
     ]),
     cerebras: entry('cerebras', 'codex', 'unsupported', 'cerebras'),
+    huggingface: entry('huggingface', 'codex', 'supported', 'huggingface'),
+    'github-models': entry('github-models', 'codex', 'supported', 'github'),
   },
 } as const satisfies Record<HarnessId, Record<ProviderId, CompatibilityEntry>>;
 

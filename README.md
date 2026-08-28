@@ -66,6 +66,116 @@ Create a `.env` (see `.env.example`). All provider keys are optional in the sens
 nothing crashes without them — but only OpenRouter works keyless; the other providers
 are skipped (with a warning) until their key is configured.
 
+## Set up a coding harness
+
+All three harnesses — [Claude Code](https://code.claude.com), [Codex CLI](https://developers.openai.com/codex/cli/features), and [Pi](https://pi.dev) — can connect to any OpenAI-compatible endpoint. This lets you plug in free models from OpenRouter, Ollama, LM Studio, or any local server without changing your codebase.
+
+### Claude Code
+
+Claude Code uses the Anthropic Messages API under the hood. Point it at an OpenAI-compatible server by setting `ANTHROPIC_BASE_URL`:
+
+```bash
+# OpenRouter (free models)
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api/v1"
+export ANTHROPIC_API_KEY="$OPENROUTER_API_KEY"
+claude --model openrouter/free-model-name
+
+# Ollama (local)
+export ANTHROPIC_BASE_URL="http://localhost:11434"
+export ANTHROPIC_AUTH_TOKEN="ollama"
+export ANTHROPIC_API_KEY=""
+claude --model your-model-name
+
+# LM Studio (local)
+export ANTHROPIC_BASE_URL="http://localhost:1234"
+export ANTHROPIC_AUTH_TOKEN="lmstudio"
+claude --model your-model-name
+```
+
+To make the environment variables persistent, add them to `~/.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api/v1",
+    "ANTHROPIC_API_KEY": "$OPENROUTER_API_KEY"
+  }
+}
+```
+
+> **Gotcha**: When using llama.cpp, Claude Code injects an attribution header that invalidates the KV cache and can slow inference by up to 90%. Fix it by adding `"CLAUDE_CODE_ATTRIBUTION_HEADER": "0"` to the `env` block in `~/.claude/settings.json` — a shell `export` does NOT work.
+
+### Codex CLI
+
+Codex uses the OpenAI Responses API. Configure via `~/.codex/config.toml`:
+
+```toml
+# OpenRouter (free models)
+[model_providers.openrouter]
+name = "openrouter"
+base_url = "https://openrouter.ai/api/v1"
+wire_api = "responses"
+
+[profiles.openrouter]
+model = "openrouter/free-model-name"
+model_provider = "openrouter"
+```
+
+Then run:
+
+```bash
+codex --oss --profile openrouter
+```
+
+Or override inline without editing the config file:
+
+```bash
+OPENAI_API_KEY="$OPENROUTER_API_KEY" \
+codex --oss \
+  -c 'openai_base_url="https://openrouter.ai/api/v1"' \
+  -c 'model="openrouter/free-model-name"'
+```
+
+> **Note**: Use `wire_api = "responses"` — not `"chat"`. OpenAI is removing Chat Completions support from Codex. The `OPENAI_API_KEY` env var must be set even for local servers.
+
+### Pi (pi.dev)
+
+Pi is an open, extensible AI coding platform that unifies multiple free token sources. Install and configure:
+
+```bash
+# Install
+npm install -g pi-coding-agent
+
+# Or via Homebrew
+brew install --HEAD pi-coding-agent
+```
+
+Pi reads provider configuration from your environment. Set up OpenRouter (the most flexible free-model gateway):
+
+```bash
+export OPENROUTER_API_KEY="sk-your-key"
+```
+
+Then run Pi in your repo:
+
+```bash
+pi
+```
+
+Pi supports custom providers via the OpenAI-compatible SDK, so you can also point it at local servers the same way — set `OPENAI_BASE_URL` for OpenAI-compatible endpoints, or `ANTHROPIC_BASE_URL` for Anthropic-compatible ones.
+
+### Quick comparison
+
+| Harness | API format | Config file | One-liner (Ollama local) |
+|---------|-----------|-------------|--------------------------|
+| **Claude Code** | Anthropic Messages | `~/.claude/settings.json` | `ollama launch claude --model your-model` |
+| **Codex CLI** | OpenAI Responses | `~/.codex/config.toml` | `ollama launch codex --model your-model` |
+| **Pi** | Multi-provider | `~/.config/pi/` | `pi` (after env setup) |
+
+All three work with the same free models from OpenRouter, Ollama, LM Studio, or any local inference server. Pick the one that fits your workflow — or use all three and switch when a provider changes terms or goes down.
+
+> **Privacy note**: Free tokens mean the provider trains on your code. If you work with sensitive information — customer data, proprietary algorithms — use a local model or your company's provided endpoint instead.
+
 ## Environment variables
 
 | Variable | Required | Purpose |

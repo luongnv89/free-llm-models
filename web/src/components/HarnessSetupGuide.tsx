@@ -181,7 +181,7 @@ export function HarnessSetupGuide({ modelId, providerMeta, providerId }: Harness
         <CardTitle className="flex items-center gap-2 text-lg"><SquareTerminal className="h-4.5 w-4.5 text-[var(--highlight)]" aria-hidden="true" />Set up a coding harness</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground">Use <span className="font-medium text-foreground">{providerName}</span> with your preferred coding harness. Credentials may be required, free quotas can change, and prompts or tool output leave your machine when sent to a provider.</p>
+        <p className="text-sm text-muted-foreground">Use <span className="font-medium text-foreground">{providerName}</span> with your preferred coding harness. Credentials may be required, free quotas can change, and prompts or tool output leave your machine when sent to a provider. For local model setups (Ollama, LM Studio, llama.cpp), see the <a href="https://github.com/luongnv89/blogs/blob/main/blog-posts/2026-04-03-run-claude-code-codex-local-gemma4/draft-v0.2.md" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--highlight)] hover:underline">full local model guide</a>.</p>
         <div className="flex flex-wrap gap-1 rounded-lg border border-border bg-muted/50 p-1" role="tablist" aria-label="Choose a coding harness">
           {HARNESS_IDS.map((id) => {
             const selected = id === activeId;

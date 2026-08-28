@@ -6,6 +6,7 @@ import { CodeSnippets } from '@/components/CodeSnippets';
 import { HarnessSetupGuide } from '@/components/HarnessSetupGuide';
 import { OriHarnessGuide } from '@/components/OriHarnessGuide';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { SeoHead } from '@/components/SeoHead';
 import {
   useModels,
   getProvider,
@@ -24,6 +25,13 @@ import {
   popularitySummary,
   popularitySourceLabel,
 } from '@/lib/model-utils';
+import {
+  buildModelStructuredData,
+  canonicalUrl,
+  modelPath,
+  modelSeoDescription,
+  modelSeoTitle,
+} from '@/lib/seo';
 import {
   ArrowLeft,
   BookOpen,
@@ -112,7 +120,17 @@ export function ModelDetailPage() {
     (!model.pricing.completion || model.pricing.completion === '0');
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SeoHead
+        metadata={{
+          title: modelSeoTitle(model),
+          description: modelSeoDescription(model, providerMeta.displayName),
+          canonicalPath: canonicalUrl(modelPath(model.id)),
+          type: 'article',
+        }}
+        structuredData={buildModelStructuredData(model, providerMeta.displayName, isArchived)}
+      />
+      <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -468,6 +486,7 @@ export function ModelDetailPage() {
           </div>
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }

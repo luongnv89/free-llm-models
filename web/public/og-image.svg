@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Free LLM Models</title>
+  <desc id="desc">A directory of free AI and large language models.</desc>
+  <rect width="1200" height="630" fill="#09090b"/>
+  <circle cx="1020" cy="-20" r="330" fill="#22c55e" opacity="0.18"/>
+  <circle cx="110" cy="670" r="290" fill="#22c55e" opacity="0.12"/>
+  <rect x="92" y="112" width="94" height="94" rx="20" fill="#fff"/>
+  <path d="M139 136l31 54-31 24-31-24z" fill="#22c55e"/>
+  <text x="92" y="330" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="64" font-weight="700">Free LLM Models</text>
+  <text x="96" y="398" fill="#a1a1aa" font-family="Inter,Arial,sans-serif" font-size="30">Search and compare free AI models</text>
+  <text x="96" y="500" fill="#22c55e" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="24">free-llm-models.vercel.app</text>
+</svg>

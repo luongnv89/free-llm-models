@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ModelListItem } from '@/components/ModelListItem';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { SeoHead } from '@/components/SeoHead';
 import {
   useModels,
   getArchivedModels,
@@ -10,6 +11,7 @@ import {
   groupArchivedByProvider,
 } from '@/hooks/useModels';
 import type { SourceOption } from '@/types/model';
+import { ARCHIVE_DESCRIPTION, ARCHIVE_TITLE, buildPageStructuredData, canonicalUrl } from '@/lib/seo';
 import {
   ArrowLeft,
   Archive,
@@ -103,7 +105,24 @@ export function ArchivePage() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <>
+      <SeoHead
+        metadata={{
+          title: ARCHIVE_TITLE,
+          description: ARCHIVE_DESCRIPTION,
+          canonicalPath: canonicalUrl('/archive'),
+        }}
+        structuredData={buildPageStructuredData(
+          ARCHIVE_TITLE,
+          ARCHIVE_DESCRIPTION,
+          '/archive',
+          [
+            { name: 'Free LLM Models', path: '/' },
+            { name: 'Archive', path: '/archive' },
+          ],
+        )}
+      />
+      <div className="min-h-screen bg-background flex flex-col">
       <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-20">
         <div className="px-4 py-4 flex items-center justify-between gap-3">
           <Link
@@ -186,6 +205,7 @@ export function ArchivePage() {
           )}
         </main>
       )}
-    </div>
+      </div>
+    </>
   );
 }

@@ -1,0 +1,22 @@
+# Free LLM Models
+
+> Free LLM Models is a searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM.
+
+The catalog is refreshed from provider APIs. Availability, limits, model policies, and pricing can change; verify important details with the provider before production use.
+
+## Catalog
+
+- [Free AI model directory](https://free-llm-models.vercel.app/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
+- [Free models JSON](https://free-llm-models.vercel.app/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
+- [Per-provider model index](https://free-llm-models.vercel.app/models/index.json): Provider files and model counts used by the website.
+
+## Pages
+
+- [Frequently Asked Questions](https://free-llm-models.vercel.app/faq): API keys, first API calls, rate limits, integrations, and API key security.
+- [Former free models](https://free-llm-models.vercel.app/archive): Models that have left the current free catalog.
+- [Model details](https://free-llm-models.vercel.app/): Individual model pages use the URL pattern `/model/{encoded-model-id}`.
+
+## Optional
+
+- [OpenRouter documentation](https://openrouter.ai/docs): Provider API documentation and integration guides.
+- [Project source](https://github.com/luongnv89/free-llm-models): Updater and web application source code.

@@ -253,7 +253,7 @@ function tomlString(value: string): string {
   return `"${escaped}"`;
 }
 
-function jsonSnippet(value: Record<string, string>): string {
+function jsonSnippet(value: unknown): string {
   return JSON.stringify(value, null, 2);
 }
 
@@ -295,6 +295,33 @@ function claudeCodeSteps(providerId: ProviderId, modelId: string): RecipeStep[] 
       ],
     },
     {
+      id: 'custom-provider',
+      title: 'Add a custom provider',
+      description: 'For any OpenAI-compatible or Anthropic-compatible server, set the base URL and API key.',
+      snippets: [
+        {
+          id: 'custom-anthropic',
+          label: 'Anthropic-compatible endpoint',
+          language: 'shell',
+          content: [
+            'export ANTHROPIC_BASE_URL="http://localhost:8001"',
+            'export ANTHROPIC_API_KEY="sk-local"',
+            'claude --model my-model',
+          ].join('\n'),
+        },
+        {
+          id: 'custom-openai',
+          label: 'OpenAI-compatible endpoint',
+          language: 'shell',
+          content: [
+            'export OPENAI_BASE_URL="http://localhost:8000/v1"',
+            'export OPENAI_API_KEY="sk-local"',
+            'claude --model my-model',
+          ].join('\n'),
+        },
+      ],
+    },
+    {
       id: 'run',
       title: 'Start Claude Code',
       description: 'Claude Code reads these settings from the current shell.',
@@ -326,6 +353,43 @@ function piSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
           label: 'Start Pi with this model',
           language: 'shell',
           content: `pi --provider ${shellQuote(pair.harnessProviderId)} --model ${shellQuote(modelId)}`,
+        },
+      ],
+    },
+    {
+      id: 'custom-provider',
+      title: 'Add a custom provider',
+      description: 'Define any OpenAI-compatible or Anthropic-compatible server in ~/.pi/agent/models.json.',
+      snippets: [
+        {
+          id: 'custom-openai',
+          label: 'OpenAI-compatible server (models.json)',
+          language: 'json',
+          content: jsonSnippet({
+            providers: {
+              'my-server': {
+                baseUrl: 'http://localhost:8000/v1',
+                api: 'openai-completions',
+                apiKey: '$MY_API_KEY',
+                models: [{ id: 'my-model', name: 'My Model' }],
+              },
+            },
+          }),
+        },
+        {
+          id: 'custom-anthropic',
+          label: 'Anthropic-compatible server (models.json)',
+          language: 'json',
+          content: jsonSnippet({
+            providers: {
+              'my-server': {
+                baseUrl: 'http://localhost:8001',
+                api: 'anthropic-messages',
+                apiKey: '$MY_API_KEY',
+                models: [{ id: 'my-model', name: 'My Model' }],
+              },
+            },
+          }),
         },
       ],
     },
@@ -370,6 +434,27 @@ function opencodeSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] 
         content: `opencode --model ${shellQuote(exactModelId)}`,
       }],
     },
+    {
+      id: 'custom-provider',
+      title: 'Add a custom provider',
+      description: 'Define any OpenAI-compatible server in opencode.json.',
+      snippets: [
+        {
+          id: 'custom-config',
+          label: 'opencode.json provider config',
+          language: 'json',
+          content: jsonSnippet({
+            providers: {
+              'my-server': {
+                type: 'openai',
+                apiKey: '$MY_API_KEY',
+                apiBase: 'http://localhost:8000/v1',
+              },
+            },
+          }),
+        },
+      ],
+    },
   ];
 }
 
@@ -410,6 +495,29 @@ function codexSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
         language: 'shell',
         content: `codex --model ${shellQuote(modelId)}`,
       }],
+    },
+    {
+      id: 'custom-provider',
+      title: 'Add any OpenAI-compatible server',
+      description: 'Use the same config.toml pattern for any endpoint that speaks the OpenAI API.',
+      snippets: [
+        {
+          id: 'custom-config',
+          label: 'Generic OpenAI-compatible provider',
+          language: 'toml',
+          content: [
+            '[model_providers.custom]',
+            'name = "custom"',
+            'base_url = "http://localhost:8000/v1"',
+            'env_key = "OPENAI_API_KEY"',
+            'wire_api = "responses"',
+            '',
+            '[profiles.custom]',
+            'model = "my-model"',
+            'model_provider = "custom"',
+          ].join('\n'),
+        },
+      ],
     },
   ];
 }

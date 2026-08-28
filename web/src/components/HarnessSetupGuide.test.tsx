@@ -68,7 +68,7 @@ describe('HarnessSetupGuide', () => {
     await act(async () => piTab.click());
     const panel = container.querySelector<HTMLElement>('#harness-panel-pi')!;
     expect(panel.hidden).toBe(false);
-    expect(panel.querySelectorAll('ol > li')).toHaveLength(2);
+    expect(panel.querySelectorAll('ol > li')).toHaveLength(3);
     expect(panel.textContent).toContain('1.');
     expect(panel.textContent).toContain('2.');
     expect(panel.querySelectorAll('button[aria-label^="Copy "]')).not.toHaveLength(0);

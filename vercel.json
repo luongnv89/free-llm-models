@@ -13,5 +13,24 @@
       "source": "/faq",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "headers": [
+    {
+      "source": "(/)?(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/agent-skills>; rel=\"well-known\", </robots.txt>; rel=\"robots\", </sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"llms-text\", </free_models.json>; rel=\"data\""
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "api/markdown/route.ts": {
+      "runtime": "edge",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
 }

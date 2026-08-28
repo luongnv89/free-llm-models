@@ -1,0 +1,7 @@
+{
+  "issuer": "https://free-llm-models.vercel.app",
+  "authorization_endpoint": null,
+  "token_endpoint": null,
+  "jwks_uri": null,
+  "note": "This site does not currently support OAuth/OIDC authentication. All resources are publicly accessible."
+}

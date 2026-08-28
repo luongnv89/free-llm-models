@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "name": "Free LLM Models Agent Skills",
+  "description": "Discoverable agent skills and resources for the Free LLM Models directory.",
+  "skills": [
+    {
+      "name": "model-catalog",
+      "description": "Access the full catalog of free AI/LLM models across multiple providers.",
+      "endpoint": "/free_models.json",
+      "content_type": "application/json",
+      "tags": ["models", "catalog", "free"]
+    },
+    {
+      "name": "provider-models",
+      "description": "Access per-provider model listings with counts and metadata.",
+      "endpoint": "/models/index.json",
+      "content_type": "application/json",
+      "tags": ["providers", "models", "catalog"]
+    },
+    {
+      "name": "model-details",
+      "description": "Get detailed information about a specific free AI model.",
+      "endpoint": "/model/{model_id}",
+      "content_type": "text/html",
+      "parameters": ["model_id"],
+      "tags": ["models", "details", "api"]
+    },
+    {
+      "name": "faq",
+      "description": "Frequently asked questions about free AI models and provider APIs.",
+      "endpoint": "/faq",
+      "content_type": "text/html",
+      "tags": ["faq", "documentation"]
+    },
+    {
+      "name": "archive",
+      "description": "Browse models that have left the current free catalog.",
+      "endpoint": "/archive",
+      "content_type": "text/html",
+      "tags": ["archive", "historical"]
+    },
+    {
+      "name": "llms-full-text",
+      "description": "Machine-readable full-text summary for LLM consumption.",
+      "endpoint": "/llms.txt",
+      "content_type": "text/plain",
+      "tags": ["llms", "full-text", "machine-readable"]
+    }
+  ],
+  "homepage": "https://free-llm-models.vercel.app/",
+  "license": "See https://github.com/luongnv89/free-llm-models"
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "name": "Free LLM Models Directory",
+  "description": "A searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM.",
+  "url": "https://free-llm-models.vercel.app/",
+  "documentation_url": "https://github.com/luongnv89/free-llm-models",
+  "avatar_url": "https://free-llm-models.vercel.app/og-image.svg",
+  "capabilities": ["model-search", "model-comparison", "provider-filtering", "capability-filtering", "model-details"],
+  "tools": [
+    {
+      "name": "search_models",
+      "description": "Search the free AI model catalog by name, provider, or capability.",
+      "parameters": {
+        "query": { "type": "string", "description": "Search query" },
+        "provider": { "type": "string", "description": "Filter by provider" },
+        "modality": { "type": "string", "description": "Filter by modality" },
+        "context_length": { "type": "number", "description": "Minimum context length" }
+      }
+    },
+    {
+      "name": "get_model_details",
+      "description": "Get detailed information about a specific free AI model.",
+      "parameters": {
+        "model_id": { "type": "string", "description": "The model ID" }
+      }
+    },
+    {
+      "name": "list_providers",
+      "description": "List all providers with free models.",
+      "parameters": {}
+    }
+  ],
+  "contact": {
+    "repository": "https://github.com/luongnv89/free-llm-models"
+  }
+}

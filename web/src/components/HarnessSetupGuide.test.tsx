@@ -68,7 +68,7 @@ describe('HarnessSetupGuide', () => {
     await act(async () => piTab.click());
     const panel = container.querySelector<HTMLElement>('#harness-panel-pi')!;
     expect(panel.hidden).toBe(false);
-    expect(panel.querySelectorAll('ol > li')).toHaveLength(3);
+    expect(panel.querySelectorAll('ol > li')).toHaveLength(2);
     expect(panel.textContent).toContain('1.');
     expect(panel.textContent).toContain('2.');
     expect(panel.querySelectorAll('button[aria-label^="Copy "]')).not.toHaveLength(0);
@@ -84,7 +84,7 @@ describe('HarnessSetupGuide', () => {
     expect(container.querySelector('#harness-panel-claude-code button')?.textContent).toContain('Copy');
     expect(container.querySelector('#harness-panel-claude-code button[aria-label="Copy all"]')).toBeTruthy();
     await act(async () => container.querySelector<HTMLButtonElement>('#harness-panel-claude-code button[aria-label="Copy all"]')!.click());
-    expect(writeText).toHaveBeenCalledWith(expect.stringContaining('ANTHROPIC_AUTH_TOKEN'));
+    expect(writeText).toHaveBeenCalledWith(expect.stringContaining('OPENAI_API_KEY'));
     await act(async () => container.querySelector<HTMLButtonElement>('#harness-tab-pi')!.click());
     expect(container.querySelector('#harness-panel-pi button[aria-label="Copy all"]')).toBeNull();
   });

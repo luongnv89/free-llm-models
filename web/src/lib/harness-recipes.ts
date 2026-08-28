@@ -277,30 +277,13 @@ function claudeCodeSteps(providerId: ProviderId, modelId: string): RecipeStep[] 
   const envVar = API_KEY_ENV[providerId];
   return [
     {
-      id: 'configure-gateway',
-      title: 'Configure the Anthropic gateway',
-      description: 'Keep the credential in your environment and point Claude Code at the gateway.',
-      snippets: [
-        envCheck(envVar),
-        {
-          id: 'gateway-environment',
-          label: 'Set Claude Code gateway variables',
-          language: 'shell',
-          content: [
-            `export ANTHROPIC_BASE_URL=${shellQuote(PROVIDER_BASE_URL[providerId].replace(/\/v1$/, ''))}`,
-            `export ANTHROPIC_AUTH_TOKEN="$${envVar}"`,
-            `export ANTHROPIC_MODEL=${shellQuote(modelId)}`,
-          ].join('\n'),
-        },
-      ],
-    },
-    {
-      id: 'custom-provider',
+      id: 'use-direct',
       title: 'Use this provider directly',
       description: `Point Claude Code at ${PROVIDER_INFO[providerId].providerDisplayName} using its OpenAI-compatible endpoint.`,
       snippets: [
+        envCheck(envVar),
         {
-          id: 'custom-provider',
+          id: 'provider-config',
           label: `Run with ${PROVIDER_INFO[providerId].providerDisplayName}`,
           language: 'shell',
           content: [
@@ -324,35 +307,13 @@ function piSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
   const envVar = API_KEY_ENV[pair.providerId];
   return [
     {
-      id: 'authenticate',
-      title: 'Authenticate with the provider',
-      description: 'Use Pi login or make the provider key available as an environment variable.',
-      snippets: [
-        { id: 'login', label: 'Open Pi provider login', language: 'text', content: '/login' },
-        envCheck(envVar),
-      ],
-    },
-    {
-      id: 'select',
-      title: 'Select the model',
-      description: 'You can select it interactively or use the exact command below.',
-      snippets: [
-        { id: 'model-picker', label: 'Open the Pi model picker', language: 'text', content: '/model' },
-        {
-          id: 'run',
-          label: 'Start Pi with this model',
-          language: 'shell',
-          content: `pi --provider ${shellQuote(pair.harnessProviderId)} --model ${shellQuote(modelId)}`,
-        },
-      ],
-    },
-    {
-      id: 'custom-provider',
+      id: 'use-direct',
       title: 'Use this provider directly',
       description: `Add ${PROVIDER_INFO[pair.providerId].providerDisplayName} to ~/.pi/agent/models.json.`,
       snippets: [
+        envCheck(envVar),
         {
-          id: 'custom-provider',
+          id: 'provider-config',
           label: `models.json for ${PROVIDER_INFO[pair.providerId].providerDisplayName}`,
           language: 'json',
           content: jsonSnippet({
@@ -365,6 +326,21 @@ function piSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
               },
             },
           }),
+        },
+      ],
+    },
+    {
+      id: 'interactive',
+      title: 'Or use the interactive flow',
+      description: 'Authenticate with /login, then select the model.',
+      snippets: [
+        { id: 'login', label: 'Open Pi provider login', language: 'text', content: '/login' },
+        { id: 'model-picker', label: 'Open the Pi model picker', language: 'text', content: '/model' },
+        {
+          id: 'run',
+          label: 'Start Pi with this model',
+          language: 'shell',
+          content: `pi --provider ${shellQuote(pair.harnessProviderId)} --model ${shellQuote(modelId)}`,
         },
       ],
     },
@@ -383,13 +359,34 @@ function opencodeSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] 
   const exactModelId = openCodeModelId(pair, modelId);
   return [
     {
-      id: 'connect',
-      title: 'Connect the provider',
-      description: 'Open OpenCode and use its named provider connection flow.',
+      id: 'use-direct',
+      title: 'Use this provider directly',
+      description: `Add ${PROVIDER_INFO[pair.providerId].providerDisplayName} to opencode.json.`,
+      snippets: [
+        envCheck(envVar),
+        {
+          id: 'provider-config',
+          label: `opencode.json for ${PROVIDER_INFO[pair.providerId].providerDisplayName}`,
+          language: 'json',
+          content: jsonSnippet({
+            providers: {
+              [pair.providerId]: {
+                type: 'openai',
+                apiKey: `$${API_KEY_ENV[pair.providerId]}`,
+                apiBase: PROVIDER_BASE_URL[pair.providerId],
+              },
+            },
+          }),
+        },
+      ],
+    },
+    {
+      id: 'interactive',
+      title: 'Or use the interactive flow',
+      description: 'Connect the provider, then select the model.',
       snippets: [
         { id: 'connect', label: 'Connect a provider', language: 'text', content: '/connect' },
         { id: 'models', label: 'List available models', language: 'text', content: '/models' },
-        envCheck(envVar),
         {
           id: 'config',
           label: 'Optional model configuration',
@@ -409,27 +406,6 @@ function opencodeSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] 
         content: `opencode --model ${shellQuote(exactModelId)}`,
       }],
     },
-    {
-      id: 'custom-provider',
-      title: 'Use this provider directly',
-      description: `Add ${PROVIDER_INFO[pair.providerId].providerDisplayName} to opencode.json.`,
-      snippets: [
-        {
-          id: 'custom-config',
-          label: `opencode.json for ${PROVIDER_INFO[pair.providerId].providerDisplayName}`,
-          language: 'json',
-          content: jsonSnippet({
-            providers: {
-              [pair.providerId]: {
-                type: 'openai',
-                apiKey: `$${API_KEY_ENV[pair.providerId]}`,
-                apiBase: PROVIDER_BASE_URL[pair.providerId],
-              },
-            },
-          }),
-        },
-      ],
-    },
   ];
 }
 
@@ -438,46 +414,13 @@ function codexSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
   const envVar = API_KEY_ENV[pair.providerId];
   return [
     {
-      id: 'configure',
-      title: 'Merge a custom provider into Codex config',
-      description: 'Merge this table into your user-level ~/.codex/config.toml; never overwrite the existing file.',
-      snippets: [
-        { id: 'merge-note', label: 'Merge instruction', language: 'text', content: 'Merge the TOML below into ~/.codex/config.toml. Do not replace the file.' },
-        envCheck(envVar),
-        {
-          id: 'config',
-          label: 'Provider configuration to merge',
-          language: 'toml',
-          content: [
-            `model_provider = ${tomlString(providerId)}`,
-            '',
-            `[model_providers.${providerId}]`,
-            `name = ${tomlString(providerId)}`,
-            `base_url = ${tomlString(PROVIDER_BASE_URL[pair.providerId])}`,
-            `env_key = ${tomlString(envVar)}`,
-            'wire_api = "responses"',
-          ].join('\n'),
-        },
-      ],
-    },
-    {
-      id: 'run',
-      title: 'Run the model',
-      description: 'Codex uses the Responses API for these custom providers.',
-      snippets: [{
-        id: 'run',
-        label: 'Start Codex with this model',
-        language: 'shell',
-        content: `codex --model ${shellQuote(modelId)}`,
-      }],
-    },
-    {
-      id: 'custom-provider',
+      id: 'use-direct',
       title: 'Use this provider directly',
       description: `Merge ${PROVIDER_INFO[pair.providerId].providerDisplayName} into ~/.codex/config.toml.`,
       snippets: [
+        envCheck(envVar),
         {
-          id: 'custom-config',
+          id: 'provider-config',
           label: `config.toml for ${PROVIDER_INFO[pair.providerId].providerDisplayName}`,
           language: 'toml',
           content: [
@@ -493,6 +436,17 @@ function codexSteps(pair: CompatibilityEntry, modelId: string): RecipeStep[] {
           ].join('\n'),
         },
       ],
+    },
+    {
+      id: 'run',
+      title: 'Run the model',
+      description: 'Codex uses the Responses API for these custom providers.',
+      snippets: [{
+        id: 'run',
+        label: 'Start Codex with this model',
+        language: 'shell',
+        content: `codex --model ${shellQuote(modelId)}`,
+      }],
     },
   ];
 }

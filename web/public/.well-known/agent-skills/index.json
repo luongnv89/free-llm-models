@@ -8,14 +8,16 @@
       "description": "Access the full catalog of free AI/LLM models across multiple providers.",
       "endpoint": "/free_models.json",
       "content_type": "application/json",
-      "tags": ["models", "catalog", "free"]
+      "tags": ["models", "catalog", "free"],
+      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000000"
     },
     {
       "name": "provider-models",
       "description": "Access per-provider model listings with counts and metadata.",
       "endpoint": "/models/index.json",
       "content_type": "application/json",
-      "tags": ["providers", "models", "catalog"]
+      "tags": ["providers", "models", "catalog"],
+      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000001"
     },
     {
       "name": "model-details",
@@ -23,28 +25,32 @@
       "endpoint": "/model/{model_id}",
       "content_type": "text/html",
       "parameters": ["model_id"],
-      "tags": ["models", "details", "api"]
+      "tags": ["models", "details", "api"],
+      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000002"
     },
     {
       "name": "faq",
       "description": "Frequently asked questions about free AI models and provider APIs.",
       "endpoint": "/faq",
       "content_type": "text/html",
-      "tags": ["faq", "documentation"]
+      "tags": ["faq", "documentation"],
+      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000003"
     },
     {
       "name": "archive",
       "description": "Browse models that have left the current free catalog.",
       "endpoint": "/archive",
       "content_type": "text/html",
-      "tags": ["archive", "historical"]
+      "tags": ["archive", "historical"],
+      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000004"
     },
     {
       "name": "llms-full-text",
       "description": "Machine-readable full-text summary for LLM consumption.",
       "endpoint": "/llms.txt",
       "content_type": "text/plain",
-      "tags": ["llms", "full-text", "machine-readable"]
+      "tags": ["llms", "full-text", "machine-readable"],
+      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000005"
     }
   ],
   "homepage": "https://free-llm-models.vercel.app/",

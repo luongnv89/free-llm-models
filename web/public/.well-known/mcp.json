@@ -3,7 +3,7 @@
   "name": "Free LLM Models MCP Server",
   "description": "Model catalog browsing and search via the Model Context Protocol.",
   "url": "https://free-llm-models.vercel.app/.well-known/mcp.json",
-  "transport": "streamable-http",
+  "transport": "sse",
   "capabilities": {
     "tools": {
       "list": [

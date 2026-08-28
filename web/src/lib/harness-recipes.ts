@@ -212,13 +212,13 @@ export const COMPATIBILITY_REGISTRY = {
   },
   codex: {
     openrouter: entry('openrouter', 'codex', 'supported', 'openrouter'),
-    google: entry('google', 'codex', 'unsupported', 'google'),
+    google: entry('google', 'codex', 'supported', 'google'),
     mistral: entry('mistral', 'codex', 'supported', 'mistral'),
-    'nvidia-nim': entry('nvidia-nim', 'codex', 'unsupported', 'nvidia'),
+    'nvidia-nim': entry('nvidia-nim', 'codex', 'supported', 'nvidia'),
     groq: entry('groq', 'codex', 'experimental', 'groq', [
       'Tool calls, streaming, and multi-turn Responses behavior still require manual verification.',
     ]),
-    cerebras: entry('cerebras', 'codex', 'unsupported', 'cerebras'),
+    cerebras: entry('cerebras', 'codex', 'supported', 'cerebras'),
     huggingface: entry('huggingface', 'codex', 'supported', 'huggingface'),
     'github-models': entry('github-models', 'codex', 'supported', 'github'),
   },

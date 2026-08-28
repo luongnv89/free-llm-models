@@ -26,9 +26,7 @@ const EXPECTED: Array<{ harnessId: HarnessId; providerId: ProviderId; status: Co
   ...PROVIDER_IDS.map((providerId) => ({
     harnessId: 'codex' as const,
     providerId,
-    status: providerId === 'google' || providerId === 'nvidia-nim' || providerId === 'cerebras'
-      ? 'unsupported' as const
-      : providerId === 'groq' ? 'experimental' as const : 'supported' as const,
+    status: providerId === 'groq' ? 'experimental' as const : 'supported' as const,
   })),
 ];
 

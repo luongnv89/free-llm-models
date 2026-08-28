@@ -9,7 +9,7 @@
       "endpoint": "/free_models.json",
       "content_type": "application/json",
       "tags": ["models", "catalog", "free"],
-      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000000"
+      "digest": "sha256-9d6548fe20906e4915bac34448103f6192a8afe4925d01d0e75bbbea786b30f0"
     },
     {
       "name": "provider-models",
@@ -17,7 +17,7 @@
       "endpoint": "/models/index.json",
       "content_type": "application/json",
       "tags": ["providers", "models", "catalog"],
-      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000001"
+      "digest": "sha256-dd79700ba353fd94059b298a9c77d6e75c665d4409d9a8254169f5f3140868b2"
     },
     {
       "name": "model-details",
@@ -26,7 +26,7 @@
       "content_type": "text/html",
       "parameters": ["model_id"],
       "tags": ["models", "details", "api"],
-      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000002"
+      "digest": "sha256-dynamic"
     },
     {
       "name": "faq",
@@ -34,7 +34,7 @@
       "endpoint": "/faq",
       "content_type": "text/html",
       "tags": ["faq", "documentation"],
-      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000003"
+      "digest": "sha256-dynamic"
     },
     {
       "name": "archive",
@@ -42,7 +42,7 @@
       "endpoint": "/archive",
       "content_type": "text/html",
       "tags": ["archive", "historical"],
-      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000004"
+      "digest": "sha256-dynamic"
     },
     {
       "name": "llms-full-text",
@@ -50,7 +50,7 @@
       "endpoint": "/llms.txt",
       "content_type": "text/plain",
       "tags": ["llms", "full-text", "machine-readable"],
-      "digest": "sha256-0000000000000000000000000000000000000000000000000000000000000005"
+      "digest": "sha256-c378d4a395ab0bb017b1195b6009ebc294ea68855efb0a2f24f4b532adcaa8c2"
     }
   ],
   "homepage": "https://free-llm-models.vercel.app/",

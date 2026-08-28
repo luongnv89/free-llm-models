@@ -1,18 +1,16 @@
 import type { Model } from '@/types/model';
+import seoConfig from './seo-config.json';
 
-export const SITE_URL = 'https://free-llm-models.vercel.app';
-export const SITE_NAME = 'Free LLM Models';
-export const OG_IMAGE_URL = `${SITE_URL}/og-image.svg`;
+export const SITE_URL = seoConfig.siteUrl;
+export const SITE_NAME = seoConfig.siteName;
+export const OG_IMAGE_URL = seoConfig.ogImageUrl;
 
-export const HOME_TITLE = 'Free AI Models & LLM Directory | Free LLM Models';
-export const HOME_DESCRIPTION =
-  'Browse free AI and LLM models from OpenRouter, Groq, Google, Cerebras, Mistral, Hugging Face, and NVIDIA. Compare capabilities, context, and APIs.';
-export const ARCHIVE_TITLE = 'Archived Free AI Models | Free LLM Models';
-export const ARCHIVE_DESCRIPTION =
-  'Explore AI models that were previously free, with provider details and removal dates from the Free LLM Models archive.';
-export const FAQ_TITLE = 'Free AI Models FAQ | API Keys, Limits & Usage';
-export const FAQ_DESCRIPTION =
-  'Learn how free AI models work, how to get provider API keys, understand rate limits, and use OpenRouter with common developer tools.';
+export const HOME_TITLE = seoConfig.homeTitle;
+export const HOME_DESCRIPTION = seoConfig.homeDescription;
+export const ARCHIVE_TITLE = seoConfig.archiveTitle;
+export const ARCHIVE_DESCRIPTION = seoConfig.archiveDescription;
+export const FAQ_TITLE = seoConfig.faqTitle;
+export const FAQ_DESCRIPTION = seoConfig.faqDescription;
 
 export interface SeoMetadata {
   title: string;
@@ -29,68 +27,9 @@ export interface FaqSchemaEntry {
   answer: string;
 }
 
-export const FAQ_SCHEMA_ENTRIES: FaqSchemaEntry[] = [
-  {
-    question: 'What are free models?',
-    answer:
-      'This site tracks AI language models available completely free of charge across multiple providers, with no cost for input or output tokens.',
-  },
-  {
-    question: 'How do I get an API key?',
-    answer:
-      'Each provider has its own signup. For OpenRouter, create an account, open API Keys in the dashboard, create a key, and store it securely.',
-  },
-  {
-    question: 'How do I make my first API call?',
-    answer:
-      'OpenRouter uses an OpenAI-compatible API format. Choose a free model, send a request with your API key, and read the model reply from the JSON response.',
-  },
-  {
-    question: 'What are the rate limits for free models?',
-    answer:
-      'Free models are rate limited. Limits vary by provider and model and can include requests per minute, daily limits, and lower queue priority.',
-  },
-  {
-    question: 'Are there any usage restrictions?',
-    answer:
-      'Check provider logging policies, terms of service, commercial-use permissions, and model availability before relying on a free model.',
-  },
-  {
-    question: 'Why do some models have an expiration date?',
-    answer:
-      'Some free models are promotional or trial versions. They may become paid, be replaced, or stop being available after the expiration date.',
-  },
-  {
-    question: 'How do I use OpenRouter with Claude Code?',
-    answer:
-      'OpenRouter integrates with Claude Code through an OpenRouter endpoint and API key configured in your shell profile or project settings.',
-  },
-  {
-    question: 'How do I use OpenRouter with LangChain?',
-    answer:
-      'LangChain can use OpenRouter through its OpenAI-compatible interface by setting the OpenRouter model, API key, and base URL.',
-  },
-  {
-    question: 'How do I use OpenRouter with the OpenAI SDK?',
-    answer:
-      'Since OpenRouter is OpenAI-compatible, configure the OpenAI SDK with the OpenRouter base URL and your API key.',
-  },
-  {
-    question: 'How do I use tool calling / function calling?',
-    answer:
-      'Define your tools, include them in the API request, and handle tool calls in the response. Check whether the model supports tools.',
-  },
-  {
-    question: 'How should I store my API key?',
-    answer:
-      'Store API keys in environment variables or a secret manager, never commit them to git, rotate them regularly, and limit their scope.',
-  },
-  {
-    question: 'What if my API key is compromised?',
-    answer:
-      'Revoke the compromised key immediately, create a new one, update applications, review account activity, and remove the secret from git history if necessary.',
-  },
-];
+export const FAQ_SCHEMA_ENTRIES: FaqSchemaEntry[] = (seoConfig.faqEntries as [string, string][]).map(
+  ([question, answer]) => ({ question, answer }),
+);
 
 export function canonicalUrl(path: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;

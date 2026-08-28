@@ -1,60 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebMCP - Free LLM Models</title>
-  <meta name="robots" content="noindex, nofollow">
-</head>
-<body>
-  <h1>WebMCP - Free LLM Models</h1>
-  <p>This page enables AI agents to interact with the Free LLM Models catalog via the browser.</p>
-  <p>Available tools: <code>search_models</code>, <code>get_model</code></p>
-  <p>See <a href="/.well-known/webmcp.json">.well-known/webmcp.json</a> for the full specification.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebMCP - Free LLM Models</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <h1>WebMCP - Free LLM Models</h1>
+    <p>
+      This page enables AI agents to interact with the Free LLM Models catalog
+      via the browser.
+    </p>
+    <p>Available tools: <code>search_models</code>, <code>get_model</code></p>
+    <p>
+      See <a href="/.well-known/webmcp.json">.well-known/webmcp.json</a> for the
+      full specification.
+    </p>
 
-  <script>
-    if (typeof navigator.modelContext !== 'undefined' && typeof navigator.modelContext.registerTool === 'function') {
-      navigator.modelContext.registerTool({
-        name: 'search_models',
-        description: 'Search the free AI model catalog by query, provider, and modality.',
-        inputSchema: {
-          type: 'object',
-          properties: {
-            query: { type: 'string', description: 'Search query string' },
-            provider: { type: 'string', description: 'Filter by provider ID' },
-            modality: { type: 'string', description: 'Filter by modality (text, image, audio)' },
-            context_length: { type: 'integer', description: 'Maximum context length in tokens' }
-          }
-        },
-        handler: async (input) => {
-          const params = new URLSearchParams();
-          if (input.query) params.set('q', input.query);
-          if (input.provider) params.set('provider', input.provider);
-          if (input.modality) params.set('modality', input.modality);
-          if (input.context_length) params.set('context_length', String(input.context_length));
-          const resp = await fetch(`/free_models.json?${params}`);
-          const data = await resp.json();
-          return { content: JSON.stringify(data, null, 2) };
-        }
-      });
-
-      navigator.modelContext.registerTool({
-        name: 'get_model',
-        description: 'Get detailed information about a specific free AI model.',
-        inputSchema: {
-          type: 'object',
-          properties: {
-            model_id: { type: 'string', description: 'The model identifier' }
+    <script>
+      if (
+        typeof navigator.modelContext !== "undefined" &&
+        typeof navigator.modelContext.registerTool === "function"
+      ) {
+        navigator.modelContext.registerTool({
+          name: "search_models",
+          description:
+            "Search the free AI model catalog by query, provider, and modality.",
+          inputSchema: {
+            type: "object",
+            properties: {
+              query: { type: "string", description: "Search query string" },
+              provider: {
+                type: "string",
+                description: "Filter by provider ID",
+              },
+              modality: {
+                type: "string",
+                description: "Filter by modality (text, image, audio)",
+              },
+              context_length: {
+                type: "integer",
+                description: "Maximum context length in tokens",
+              },
+            },
           },
-          required: ['model_id']
-        },
-        handler: async (input) => {
-          const resp = await fetch(`/api/models/${encodeURIComponent(input.model_id)}`);
-          const data = await resp.json();
-          return { content: JSON.stringify(data, null, 2) };
-        }
-      });
-    }
-  </script>
-</body>
+          handler: async (input) => {
+            const params = new URLSearchParams();
+            if (input.query) params.set("q", input.query);
+            if (input.provider) params.set("provider", input.provider);
+            if (input.modality) params.set("modality", input.modality);
+            if (input.context_length)
+              params.set("context_length", String(input.context_length));
+            const resp = await fetch(`/free_models.json?${params}`);
+            const data = await resp.json();
+            return { content: JSON.stringify(data, null, 2) };
+          },
+        });
+
+        navigator.modelContext.registerTool({
+          name: "get_model",
+          description:
+            "Get detailed information about a specific free AI model.",
+          inputSchema: {
+            type: "object",
+            properties: {
+              model_id: { type: "string", description: "The model identifier" },
+            },
+            required: ["model_id"],
+          },
+          handler: async (input) => {
+            const resp = await fetch(
+              `/api/models/${encodeURIComponent(input.model_id)}`,
+            );
+            const data = await resp.json();
+            return { content: JSON.stringify(data, null, 2) };
+          },
+        });
+      }
+    </script>
+  </body>
 </html>

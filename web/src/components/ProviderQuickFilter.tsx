@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button';
-import type { SourceOption } from '@/types/model';
+import { Button } from "@/components/ui/button";
+import type { SourceOption } from "@/types/model";
 
 interface ProviderQuickFilterProps {
   options: SourceOption[];
@@ -24,7 +24,7 @@ export function ProviderQuickFilter({
     >
       <Button
         type="button"
-        variant={allSelected ? 'default' : 'outline'}
+        variant={allSelected ? "default" : "outline"}
         size="sm"
         aria-label="All"
         aria-pressed={allSelected}
@@ -38,7 +38,7 @@ export function ProviderQuickFilter({
           <Button
             key={option.id}
             type="button"
-            variant={selected ? 'default' : 'outline'}
+            variant={selected ? "default" : "outline"}
             size="sm"
             aria-label={option.displayName}
             aria-pressed={selected}

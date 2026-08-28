@@ -1,28 +1,31 @@
-import { useEffect, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
-import { Highlight, themes } from 'prism-react-renderer';
-import { Check, CircleCheck, Code, Copy, Terminal } from 'lucide-react';
-import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
-import { OPENROUTER_DEFAULT_METADATA, providerApiKeyEnvVar } from '@/hooks/useModels';
-import type { ProviderMetadata } from '@/types/model';
+import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { Highlight, themes } from "prism-react-renderer";
+import { Check, CircleCheck, Code, Copy, Terminal } from "lucide-react";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
+import {
+  OPENROUTER_DEFAULT_METADATA,
+  providerApiKeyEnvVar,
+} from "@/hooks/useModels";
+import type { ProviderMetadata } from "@/types/model";
 
 interface CodeSnippetsProps {
   modelId: string;
   provider?: ProviderMetadata;
 }
 
-type Language = 'curl' | 'nodejs' | 'python';
+type Language = "curl" | "nodejs" | "python";
 
 const prismLanguageMap: Record<Language, string> = {
-  curl: 'bash',
-  nodejs: 'javascript',
-  python: 'python',
+  curl: "bash",
+  nodejs: "javascript",
+  python: "python",
 };
 
 function displayUrl(url: string): string {
   try {
     const parsed = new URL(url);
-    return `${parsed.host}${parsed.pathname.replace(/\/$/, '')}`;
+    return `${parsed.host}${parsed.pathname.replace(/\/$/, "")}`;
   } catch {
     return url;
   }
@@ -48,23 +51,27 @@ interface RunStep {
   code: string;
 }
 
-function buildSteps(modelId: string, provider: ProviderMetadata): Record<Language, RunStep[]> {
+function buildSteps(
+  modelId: string,
+  provider: ProviderMetadata,
+): Record<Language, RunStep[]> {
   const baseUrl =
     provider.openaiCompatibleBaseUrl ??
     provider.baseUrl ??
     OPENROUTER_DEFAULT_METADATA.baseUrl!;
-  const signupUrl = provider.apiKeySignupUrl ?? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl!;
+  const signupUrl =
+    provider.apiKeySignupUrl ?? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl!;
   const envVar = providerApiKeyEnvVar(provider);
 
   const apiKeyStep: RunStep = {
-    title: 'Set your API key',
+    title: "Set your API key",
     hint: (
       <>
-        Create a key at <KeysLink url={signupUrl} />, then paste this into your terminal with your
-        real key.
+        Create a key at <KeysLink url={signupUrl} />, then paste this into your
+        terminal with your real key.
       </>
     ),
-    language: 'bash',
+    language: "bash",
     code: `export ${envVar}="sk-or-v1-...your-key..."`,
   };
 
@@ -72,9 +79,9 @@ function buildSteps(modelId: string, provider: ProviderMetadata): Record<Languag
     curl: [
       apiKeyStep,
       {
-        title: 'Run the request',
-        hint: 'Reads the key from your environment — nothing to edit.',
-        language: 'bash',
+        title: "Run the request",
+        hint: "Reads the key from your environment — nothing to edit.",
+        language: "bash",
         code: `curl ${baseUrl}/chat/completions \\
   -H "Content-Type: application/json" \\
   -H "Authorization: Bearer $${envVar}" \\
@@ -89,15 +96,15 @@ function buildSteps(modelId: string, provider: ProviderMetadata): Record<Languag
     nodejs: [
       apiKeyStep,
       {
-        title: 'Install the OpenAI SDK',
+        title: "Install the OpenAI SDK",
         hint: `${provider.displayName} speaks the OpenAI API format.`,
-        language: 'bash',
-        code: 'npm install openai',
+        language: "bash",
+        code: "npm install openai",
       },
       {
-        title: 'Save as app.mjs and run it',
-        hint: 'Then run: node app.mjs',
-        language: 'javascript',
+        title: "Save as app.mjs and run it",
+        hint: "Then run: node app.mjs",
+        language: "javascript",
         code: `import OpenAI from "openai";
 
 const openai = new OpenAI({
@@ -116,15 +123,15 @@ console.log(completion.choices[0].message.content);`,
     python: [
       apiKeyStep,
       {
-        title: 'Install the OpenAI SDK',
+        title: "Install the OpenAI SDK",
         hint: `${provider.displayName} speaks the OpenAI API format.`,
-        language: 'bash',
-        code: 'pip install openai',
+        language: "bash",
+        code: "pip install openai",
       },
       {
-        title: 'Save as main.py and run it',
-        hint: 'Then run: python main.py',
-        language: 'python',
+        title: "Save as main.py and run it",
+        hint: "Then run: python main.py",
+        language: "python",
         code: `import os
 from openai import OpenAI
 
@@ -145,13 +152,13 @@ print(completion.choices[0].message.content)`,
 }
 
 const TABS: { key: Language; label: string; icon: ReactNode }[] = [
-  { key: 'curl', label: 'cURL', icon: <Terminal className="h-4 w-4" /> },
-  { key: 'nodejs', label: 'Node.js', icon: <Code className="h-4 w-4" /> },
-  { key: 'python', label: 'Python', icon: <Code className="h-4 w-4" /> },
+  { key: "curl", label: "cURL", icon: <Terminal className="h-4 w-4" /> },
+  { key: "nodejs", label: "Node.js", icon: <Code className="h-4 w-4" /> },
+  { key: "python", label: "Python", icon: <Code className="h-4 w-4" /> },
 ];
 
 export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
-  const [activeTab, setActiveTab] = useState<Language>('curl');
+  const [activeTab, setActiveTab] = useState<Language>("curl");
   const [copiedKeys, setCopiedKeys] = useState<ReadonlySet<string>>(new Set());
   const [flashKey, setFlashKey] = useState<string | null>(null);
   const { copy } = useCopyToClipboard();
@@ -164,12 +171,15 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
   }, []);
 
   const resolvedProvider = provider ?? OPENROUTER_DEFAULT_METADATA;
-  const baseUrl = resolvedProvider.openaiCompatibleBaseUrl ?? resolvedProvider.baseUrl;
+  const baseUrl =
+    resolvedProvider.openaiCompatibleBaseUrl ?? resolvedProvider.baseUrl;
   if (!baseUrl) return null;
 
   const allSteps = buildSteps(modelId, resolvedProvider);
   const steps = allSteps[activeTab];
-  const doneCount = steps.filter((_, i) => copiedKeys.has(`${activeTab}:${i}`)).length;
+  const doneCount = steps.filter((_, i) =>
+    copiedKeys.has(`${activeTab}:${i}`),
+  ).length;
 
   const handleCopy = async (key: string, code: string) => {
     const ok = await copy(code);
@@ -194,7 +204,7 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
         </span>
         <h2 className="ml-1 text-sm font-semibold">Quick Start</h2>
         <span className="hidden truncate font-mono text-xs text-muted-foreground sm:inline">
-          ~/run-{modelId.split('/').pop() ?? modelId}
+          ~/run-{modelId.split("/").pop() ?? modelId}
         </span>
         <div className="ml-auto flex items-center gap-2">
           <div
@@ -231,8 +241,8 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
               onClick={() => setActiveTab(tab.key)}
               className={`flex flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 font-mono text-sm transition-colors ${
                 activeTab === tab.key
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-muted-foreground hover:text-foreground'
+                  ? "bg-background text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {tab.icon}
@@ -257,8 +267,8 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
                   aria-hidden="true"
                   className={`mt-0.5 flex h-6 w-6 items-center justify-center rounded-full border font-mono text-xs ${
                     isDone
-                      ? 'border-[var(--highlight)] text-[var(--highlight)]'
-                      : 'border-border text-muted-foreground'
+                      ? "border-[var(--highlight)] text-[var(--highlight)]"
+                      : "border-border text-muted-foreground"
                   }`}
                 >
                   {isDone ? <Check className="h-3.5 w-3.5" /> : i + 1}
@@ -269,14 +279,16 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
                     <span
                       role="status"
                       className={`ml-2 font-mono text-xs font-normal text-[var(--highlight)] transition-opacity ${
-                        justCopied ? 'opacity-100' : 'opacity-0'
+                        justCopied ? "opacity-100" : "opacity-0"
                       }`}
                     >
                       copied
                     </span>
                   </p>
                   {step.hint && (
-                    <p className="text-xs leading-relaxed text-muted-foreground">{step.hint}</p>
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      {step.hint}
+                    </p>
                   )}
                   <div className="group relative overflow-hidden rounded-lg border border-border">
                     <button
@@ -284,14 +296,31 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
                       aria-label={`Copy: ${step.title}`}
                       className={`absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
                         isDone
-                          ? 'text-[var(--highlight)]'
-                          : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                          ? "text-[var(--highlight)]"
+                          : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white"
                       }`}
                     >
-                      {isDone ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                      {isDone ? (
+                        <Check className="h-4 w-4" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
                     </button>
-                    <Highlight theme={themes.nightOwl} code={step.code} language={prismLanguageMap[step.language as Language] ?? step.language}>
-                      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                    <Highlight
+                      theme={themes.nightOwl}
+                      code={step.code}
+                      language={
+                        prismLanguageMap[step.language as Language] ??
+                        step.language
+                      }
+                    >
+                      {({
+                        className,
+                        style,
+                        tokens,
+                        getLineProps,
+                        getTokenProps,
+                      }) => (
                         <pre
                           className={`${className} overflow-x-auto p-4 pr-12 text-[13px] leading-relaxed`}
                           style={{ ...style, margin: 0 }}
@@ -316,8 +345,12 @@ export function CodeSnippets({ modelId, provider }: CodeSnippetsProps) {
         {/* Completion state */}
         {doneCount === steps.length && (
           <p className="flex items-center gap-2 rounded-lg border border-[var(--highlight)]/40 bg-muted/40 px-3 py-2.5 text-sm animate-in fade-in duration-300">
-            <CircleCheck className="h-4 w-4 shrink-0 text-[var(--highlight)]" aria-hidden="true" />
-            All set — paste the blocks in your terminal in order and the last one answers.
+            <CircleCheck
+              className="h-4 w-4 shrink-0 text-[var(--highlight)]"
+              aria-hidden="true"
+            />
+            All set — paste the blocks in your terminal in order and the last
+            one answers.
           </p>
         )}
       </div>

@@ -1,6 +1,6 @@
-import { Highlight, themes } from 'prism-react-renderer';
-import { Copy, Check } from 'lucide-react';
-import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import { Highlight, themes } from "prism-react-renderer";
+import { Copy, Check } from "lucide-react";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 
 interface CodeBlockProps {
   code: string;
@@ -21,7 +21,7 @@ export function CodeBlock({ code, language, title }: CodeBlockProps) {
       <button
         onClick={() => copy(code)}
         className="absolute top-2 right-2 p-2 rounded bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors z-10"
-        style={{ top: title ? '2.5rem' : '0.5rem' }}
+        style={{ top: title ? "2.5rem" : "0.5rem" }}
         aria-label="Copy code"
       >
         {copied ? (

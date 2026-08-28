@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from "react";
 import type {
   Model,
   ModelsData,
@@ -11,8 +11,8 @@ import type {
   SortOrder,
   ArchivedModel,
   ResolvedModel,
-} from '@/types/model';
-import { modelCapabilities } from '@/lib/model-utils';
+} from "@/types/model";
+import { modelCapabilities } from "@/lib/model-utils";
 
 let cachedData: ModelsData | null = null;
 
@@ -37,23 +37,25 @@ export function normalizeModelsData(json: ModelsData): ModelsData {
     ...json,
     models: Array.isArray(json.models) ? json.models : [],
     newModelIds: Array.isArray(json.newModelIds) ? json.newModelIds : [],
-    archivedModels: Array.isArray(json.archivedModels) ? json.archivedModels : [],
+    archivedModels: Array.isArray(json.archivedModels)
+      ? json.archivedModels
+      : [],
   };
 }
 
 export function mergeProviderPayloads(
   indexJson: ModelsIndex,
-  payloads: (ProviderModelsPayload | null)[]
+  payloads: (ProviderModelsPayload | null)[],
 ): ModelsData {
   const providers: ProviderMetadata[] = [];
   const models: Model[] = [];
   const archived: ArchivedModel[] = [];
   const newModelIds: string[] = [];
-  let latestFetchedAt = '';
+  let latestFetchedAt = "";
 
   for (const entry of indexJson.providers ?? []) {
     const payload = payloads.find(
-      (p): p is ProviderModelsPayload => p?.providerId === entry.id
+      (p): p is ProviderModelsPayload => p?.providerId === entry.id,
     );
     if (!payload || !Array.isArray(payload.models)) continue;
 
@@ -71,19 +73,23 @@ export function mergeProviderPayloads(
     for (const model of payload.models) {
       models.push({ ...model, providerId: payload.providerId } as Model);
     }
-    if (Array.isArray(payload.newModelIds)) newModelIds.push(...payload.newModelIds);
+    if (Array.isArray(payload.newModelIds))
+      newModelIds.push(...payload.newModelIds);
     if (Array.isArray(payload.archivedModels)) {
       archived.push(
         ...payload.archivedModels.map((a) => ({
           ...a,
           model: { ...a.model, providerId: payload.providerId } as Model,
-        }))
+        })),
       );
     }
 
     const fetchedAt = Date.parse(payload.fetchedAt);
     const currentLatest = Date.parse(latestFetchedAt);
-    if (!Number.isNaN(fetchedAt) && (Number.isNaN(currentLatest) || fetchedAt > currentLatest)) {
+    if (
+      !Number.isNaN(fetchedAt) &&
+      (Number.isNaN(currentLatest) || fetchedAt > currentLatest)
+    ) {
       latestFetchedAt = payload.fetchedAt;
     }
   }
@@ -100,13 +106,15 @@ export function mergeProviderPayloads(
 
 export function isMultiProviderIndex(json: unknown): json is ModelsIndex {
   return (
-    typeof json === 'object' &&
+    typeof json === "object" &&
     json !== null &&
     Array.isArray((json as ModelsIndex).providers)
   );
 }
 
-export function getArchivedModels(data: ModelsData | null | undefined): ArchivedModel[] {
+export function getArchivedModels(
+  data: ModelsData | null | undefined,
+): ArchivedModel[] {
   return data?.archivedModels ?? [];
 }
 
@@ -114,14 +122,18 @@ export function getArchivedModels(data: ModelsData | null | undefined): Archived
 // treated as belonging to OpenRouter (the original single source).
 export function getArchiveProviderId(entry: ArchivedModel): string {
   const model = entry.model;
-  if ('providerId' in model && typeof model.providerId === 'string' && model.providerId) {
+  if (
+    "providerId" in model &&
+    typeof model.providerId === "string" &&
+    model.providerId
+  ) {
     return model.providerId;
   }
-  return 'openrouter';
+  return "openrouter";
 }
 
 function archiveDisplayNames(
-  providersMetadata: ProviderMetadata[]
+  providersMetadata: ProviderMetadata[],
 ): Map<string, string> {
   return new Map([
     [OPENROUTER_DEFAULT_METADATA.id, OPENROUTER_DEFAULT_METADATA.displayName],
@@ -131,7 +143,7 @@ function archiveDisplayNames(
 
 export function getArchiveSourceOptions(
   entries: ArchivedModel[],
-  providersMetadata: ProviderMetadata[] = []
+  providersMetadata: ProviderMetadata[] = [],
 ): SourceOption[] {
   const displayNames = archiveDisplayNames(providersMetadata);
   const counts = new Map<string, number>();
@@ -150,8 +162,12 @@ export function getArchiveSourceOptions(
 
 export function groupArchivedByProvider(
   entries: ArchivedModel[],
-  providersMetadata: ProviderMetadata[] = []
-): Array<{ providerId: string; displayName: string; entries: ArchivedModel[] }> {
+  providersMetadata: ProviderMetadata[] = [],
+): Array<{
+  providerId: string;
+  displayName: string;
+  entries: ArchivedModel[];
+}> {
   const displayNames = archiveDisplayNames(providersMetadata);
   const groups = new Map<string, ArchivedModel[]>();
   for (const entry of entries) {
@@ -171,7 +187,7 @@ export function groupArchivedByProvider(
 
 export function findModelById(
   data: ModelsData | null | undefined,
-  id: string
+  id: string,
 ): ResolvedModel | null {
   if (!data || !id) return null;
   const live = data.models.find((m) => m.id === id);
@@ -208,19 +224,26 @@ export function useModels() {
       try {
         let indexJson: ModelsIndex;
         try {
-          const json = await fetchJson<unknown>(getModelsIndexUrl(), controller.signal);
-          if (!isMultiProviderIndex(json)) throw new Error('Invalid models index');
+          const json = await fetchJson<unknown>(
+            getModelsIndexUrl(),
+            controller.signal,
+          );
+          if (!isMultiProviderIndex(json))
+            throw new Error("Invalid models index");
           indexJson = json;
         } catch (indexErr) {
           if (
             cancelled ||
             controller.signal.aborted ||
-            (indexErr instanceof DOMException && indexErr.name === 'AbortError')
+            (indexErr instanceof DOMException && indexErr.name === "AbortError")
           ) {
             return;
           }
           // Stale deploy without valid per-provider files: legacy single file.
-          const json = await fetchJson<ModelsData>(getModelsDataUrl(), controller.signal);
+          const json = await fetchJson<ModelsData>(
+            getModelsDataUrl(),
+            controller.signal,
+          );
           if (cancelled) return;
           cachedData = normalizeModelsData(json);
           setData(cachedData);
@@ -229,17 +252,20 @@ export function useModels() {
         }
         const settled = await Promise.allSettled(
           indexJson.providers.map((entry) =>
-            fetchJson<ProviderModelsPayload>(getProviderFileUrl(entry.id), controller.signal)
-          )
+            fetchJson<ProviderModelsPayload>(
+              getProviderFileUrl(entry.id),
+              controller.signal,
+            ),
+          ),
         );
         if (cancelled) return;
 
         const payloads = settled.map((result) =>
-          result.status === 'fulfilled' ? result.value : null
+          result.status === "fulfilled" ? result.value : null,
         );
 
         if (payloads.every((p) => p === null)) {
-          throw new Error('Failed to load models');
+          throw new Error("Failed to load models");
         }
 
         const merged = mergeProviderPayloads(indexJson, payloads);
@@ -247,7 +273,11 @@ export function useModels() {
         setData(merged);
         setLoading(false);
       } catch (err) {
-        if (cancelled || (err instanceof DOMException && err.name === 'AbortError')) return;
+        if (
+          cancelled ||
+          (err instanceof DOMException && err.name === "AbortError")
+        )
+          return;
         setError(err instanceof Error ? err.message : String(err));
         setLoading(false);
       }
@@ -265,33 +295,42 @@ export function useModels() {
 }
 
 export function getProvider(model: Model): string {
-  if ('providerId' in model && typeof model.providerId === 'string' && model.providerId) {
+  if (
+    "providerId" in model &&
+    typeof model.providerId === "string" &&
+    model.providerId
+  ) {
     return model.providerId;
   }
-  return model.id.split('/')[0] || 'Unknown';
+  return model.id.split("/")[0] || "Unknown";
 }
 
 export const OPENROUTER_DEFAULT_METADATA: ProviderMetadata = {
-  id: 'openrouter',
-  displayName: 'OpenRouter',
-  baseUrl: 'https://openrouter.ai/api/v1',
-  apiKeySignupUrl: 'https://openrouter.ai/keys',
-  docsUrl: 'https://openrouter.ai/docs',
+  id: "openrouter",
+  displayName: "OpenRouter",
+  baseUrl: "https://openrouter.ai/api/v1",
+  apiKeySignupUrl: "https://openrouter.ai/keys",
+  docsUrl: "https://openrouter.ai/docs",
   notes: null,
 };
 
 export function resolveProviderMetadata(
   model: Model,
-  providers?: ProviderMetadata[] | null
+  providers?: ProviderMetadata[] | null,
 ): ProviderMetadata {
   const hasCanonicalProviderId =
-    'providerId' in model && typeof model.providerId === 'string' && model.providerId;
+    "providerId" in model &&
+    typeof model.providerId === "string" &&
+    model.providerId;
   const providerId = getProvider(model);
   const meta = providers?.find((p) => p.id === providerId);
   if (!meta) {
     // Pre-provider datasets have no canonical source and remain OpenRouter data.
     // An explicit provider ID must never silently inherit OpenRouter metadata.
-    if (!hasCanonicalProviderId || providerId === OPENROUTER_DEFAULT_METADATA.id) {
+    if (
+      !hasCanonicalProviderId ||
+      providerId === OPENROUTER_DEFAULT_METADATA.id
+    ) {
       return OPENROUTER_DEFAULT_METADATA;
     }
     return {
@@ -307,21 +346,29 @@ export function resolveProviderMetadata(
   const isOpenRouter = providerId === OPENROUTER_DEFAULT_METADATA.id;
   return {
     id: meta.id,
-    displayName: meta.displayName || (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.displayName : providerId),
-    baseUrl: meta.baseUrl ?? (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.baseUrl : null),
+    displayName:
+      meta.displayName ||
+      (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.displayName : providerId),
+    baseUrl:
+      meta.baseUrl ??
+      (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.baseUrl : null),
     openaiCompatibleBaseUrl: meta.openaiCompatibleBaseUrl ?? null,
-    apiKeySignupUrl: meta.apiKeySignupUrl ?? (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl : null),
-    docsUrl: meta.docsUrl ?? (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.docsUrl : null),
+    apiKeySignupUrl:
+      meta.apiKeySignupUrl ??
+      (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.apiKeySignupUrl : null),
+    docsUrl:
+      meta.docsUrl ??
+      (isOpenRouter ? OPENROUTER_DEFAULT_METADATA.docsUrl : null),
     notes: meta.notes ?? null,
   };
 }
 
 export function providerApiKeyEnvVar(meta: ProviderMetadata): string {
-  const base = (meta.displayName || meta.id || '')
-    .replace(/[^a-zA-Z0-9]+/g, '_')
-    .replace(/^_+|_+$/g, '')
+  const base = (meta.displayName || meta.id || "")
+    .replace(/[^a-zA-Z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "")
     .toUpperCase();
-  return `${base || 'API'}_API_KEY`;
+  return `${base || "API"}_API_KEY`;
 }
 
 const THREE_DAYS_MS = 3 * 24 * 60 * 60 * 1000;
@@ -345,11 +392,11 @@ export function useFilteredModels(
   models: Model[],
   filters: FilterState,
   sortField: SortField,
-  sortOrder: SortOrder
+  sortOrder: SortOrder,
 ) {
   return useMemo(
     () => filterAndSortModels(models, filters, sortField, sortOrder),
-    [models, filters, sortField, sortOrder]
+    [models, filters, sortField, sortOrder],
   );
 }
 
@@ -357,7 +404,7 @@ export function filterAndSortModels(
   models: Model[],
   filters: FilterState,
   sortField: SortField,
-  sortOrder: SortOrder
+  sortOrder: SortOrder,
 ): Model[] {
   let filtered = [...models];
 
@@ -368,7 +415,7 @@ export function filterAndSortModels(
       (m) =>
         m.name.toLowerCase().includes(searchLower) ||
         m.description.toLowerCase().includes(searchLower) ||
-        m.id.toLowerCase().includes(searchLower)
+        m.id.toLowerCase().includes(searchLower),
     );
   }
 
@@ -380,26 +427,26 @@ export function filterAndSortModels(
   // Provider filter
   if (filters.providers.length > 0) {
     filtered = filtered.filter((m) =>
-      filters.providers.includes(getProvider(m))
+      filters.providers.includes(getProvider(m)),
     );
   }
 
   // Modality filter
   if (filters.modalities.length > 0) {
     filtered = filtered.filter((m) =>
-      filters.modalities.includes(m.architecture.modality)
+      filters.modalities.includes(m.architecture.modality),
     );
   }
 
   // Context length filter
   if (filters.contextLengthMin !== null) {
     filtered = filtered.filter(
-      (m) => m.context_length >= filters.contextLengthMin!
+      (m) => m.context_length >= filters.contextLengthMin!,
     );
   }
   if (filters.contextLengthMax !== null) {
     filtered = filtered.filter(
-      (m) => m.context_length <= filters.contextLengthMax!
+      (m) => m.context_length <= filters.contextLengthMax!,
     );
   }
 
@@ -424,24 +471,24 @@ export function filterAndSortModels(
     let comparison = 0;
 
     switch (sortField) {
-      case 'name':
+      case "name":
         comparison = a.name.localeCompare(b.name);
         break;
-      case 'provider':
+      case "provider":
         comparison = getProvider(a).localeCompare(getProvider(b));
         break;
-      case 'context_length':
+      case "context_length":
         comparison = a.context_length - b.context_length;
         break;
-      case 'created':
+      case "created":
         comparison = a.created - b.created;
         break;
-      case 'addedToFreeList':
+      case "addedToFreeList":
         comparison = addedToFreeListMs(a) - addedToFreeListMs(b);
         break;
     }
 
-    return sortOrder === 'asc' ? comparison : -comparison;
+    return sortOrder === "asc" ? comparison : -comparison;
   });
 
   return filtered;
@@ -453,12 +500,12 @@ export function getUniqueProviders(models: Model[]): string[] {
 }
 
 const PROVIDER_QUICK_FILTERS = [
-  { id: 'openrouter', displayName: 'OpenRouter' },
-  { id: 'google', displayName: 'Google' },
-  { id: 'mistral', displayName: 'Mistral' },
-  { id: 'nvidia-nim', displayName: 'Nvidia' },
-  { id: 'groq', displayName: 'Groq' },
-  { id: 'cerebras', displayName: 'Cerebras' },
+  { id: "openrouter", displayName: "OpenRouter" },
+  { id: "google", displayName: "Google" },
+  { id: "mistral", displayName: "Mistral" },
+  { id: "nvidia-nim", displayName: "Nvidia" },
+  { id: "groq", displayName: "Groq" },
+  { id: "cerebras", displayName: "Cerebras" },
 ] as const;
 
 export function getProviderQuickFilterOptions(models: Model[]): SourceOption[] {
@@ -476,10 +523,10 @@ export function getProviderQuickFilterOptions(models: Model[]): SourceOption[] {
 
 export function getSourceOptions(
   models: Model[],
-  providersMetadata: ProviderMetadata[] = []
+  providersMetadata: ProviderMetadata[] = [],
 ): SourceOption[] {
   const displayNames = new Map(
-    providersMetadata.map((p) => [p.id, p.displayName])
+    providersMetadata.map((p) => [p.id, p.displayName]),
   );
   const counts = new Map<string, number>();
   for (const model of models) {

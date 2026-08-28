@@ -1,16 +1,16 @@
 // @vitest-environment happy-dom
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { act } from 'react';
-import { createElement } from 'react';
-import { createRoot, type Root } from 'react-dom/client';
-import { MemoryRouter } from 'react-router-dom';
-import { FAQPage } from './FAQPage';
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { act } from "react";
+import { createElement } from "react";
+import { createRoot, type Root } from "react-dom/client";
+import { MemoryRouter } from "react-router-dom";
+import { FAQPage } from "./FAQPage";
 
 let container: HTMLElement;
 let root: Root | null = null;
 
-async function renderPage(hash = '') {
-  container = document.createElement('div');
+async function renderPage(hash = "") {
+  container = document.createElement("div");
   document.body.appendChild(container);
   root = createRoot(container);
   await act(async () => {
@@ -23,11 +23,11 @@ async function renderPage(hash = '') {
   });
 }
 
-describe('FAQPage', () => {
+describe("FAQPage", () => {
   beforeEach(() => {
-    Object.defineProperty(globalThis, 'localStorage', {
+    Object.defineProperty(globalThis, "localStorage", {
       value: {
-        getItem: vi.fn().mockReturnValue('false'),
+        getItem: vi.fn().mockReturnValue("false"),
         setItem: vi.fn(),
         removeItem: vi.fn(),
       },
@@ -43,17 +43,17 @@ describe('FAQPage', () => {
     root = null;
   });
 
-  it('renders the header with a back link and FAQ sections', async () => {
+  it("renders the header with a back link and FAQ sections", async () => {
     await renderPage();
 
-    expect(container.textContent).toContain('Back to Models');
-    expect(container.querySelectorAll('header').length).toBeGreaterThan(0);
+    expect(container.textContent).toContain("Back to Models");
+    expect(container.querySelectorAll("header").length).toBeGreaterThan(0);
     expect(container.textContent.length).toBeGreaterThan(200);
   });
 
-  it('renders without a hash target', async () => {
-    await renderPage('#getting-started');
+  it("renders without a hash target", async () => {
+    await renderPage("#getting-started");
 
-    expect(container.textContent).toContain('Back to Models');
+    expect(container.textContent).toContain("Back to Models");
   });
 });

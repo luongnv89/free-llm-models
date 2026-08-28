@@ -1,10 +1,10 @@
 // @vitest-environment happy-dom
 /* eslint-disable react-hooks/immutability */
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { act } from 'react';
-import { createElement } from 'react';
-import { createRoot, type Root } from 'react-dom/client';
-import { useCopyToClipboard } from './useCopyToClipboard';
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { act } from "react";
+import { createElement } from "react";
+import { createRoot, type Root } from "react-dom/client";
+import { useCopyToClipboard } from "./useCopyToClipboard";
 
 type Hook = ReturnType<typeof useCopyToClipboard>;
 
@@ -18,7 +18,7 @@ function Probe({ feedbackMs }: { feedbackMs?: number }) {
 }
 
 async function renderHook(feedbackMs?: number) {
-  container = document.createElement('div');
+  container = document.createElement("div");
   document.body.appendChild(container);
   root = createRoot(container);
   await act(async () => {
@@ -33,12 +33,12 @@ async function unmount() {
   root = null;
 }
 
-describe('useCopyToClipboard', () => {
+describe("useCopyToClipboard", () => {
   const writeText = vi.fn<(text: string) => Promise<void>>();
 
   beforeEach(() => {
     vi.useFakeTimers();
-    Object.defineProperty(navigator, 'clipboard', {
+    Object.defineProperty(navigator, "clipboard", {
       value: { writeText },
       configurable: true,
       writable: true,
@@ -47,13 +47,13 @@ describe('useCopyToClipboard', () => {
 
   afterEach(async () => {
     if (root) await unmount();
-    document.body.innerHTML = '';
+    document.body.innerHTML = "";
     delete (document as unknown as Record<string, unknown>).execCommand;
     writeText.mockRestore();
     vi.useRealTimers();
   });
 
-  it('writes via navigator.clipboard and flips copied to true', async () => {
+  it("writes via navigator.clipboard and flips copied to true", async () => {
     writeText.mockResolvedValue(undefined);
     await renderHook();
 
@@ -61,20 +61,20 @@ describe('useCopyToClipboard', () => {
 
     let result = false;
     await act(async () => {
-      result = await capture.current!.copy('hello');
+      result = await capture.current!.copy("hello");
     });
 
-    expect(writeText).toHaveBeenCalledWith('hello');
+    expect(writeText).toHaveBeenCalledWith("hello");
     expect(result).toBe(true);
     expect(capture.current!.copied).toBe(true);
   });
 
-  it('resets copied after the feedback timeout', async () => {
+  it("resets copied after the feedback timeout", async () => {
     writeText.mockResolvedValue(undefined);
     await renderHook(2000);
 
     await act(async () => {
-      await capture.current!.copy('hello');
+      await capture.current!.copy("hello");
     });
     expect(capture.current!.copied).toBe(true);
 
@@ -84,8 +84,8 @@ describe('useCopyToClipboard', () => {
     expect(capture.current!.copied).toBe(false);
   });
 
-  it('falls back to execCommand when the Clipboard API is unavailable', async () => {
-    Object.defineProperty(navigator, 'clipboard', {
+  it("falls back to execCommand when the Clipboard API is unavailable", async () => {
+    Object.defineProperty(navigator, "clipboard", {
       value: undefined,
       configurable: true,
       writable: true,
@@ -96,16 +96,16 @@ describe('useCopyToClipboard', () => {
 
     let result = false;
     await act(async () => {
-      result = await capture.current!.copy('fallback');
+      result = await capture.current!.copy("fallback");
     });
 
-    expect(execCommand).toHaveBeenCalledWith('copy');
+    expect(execCommand).toHaveBeenCalledWith("copy");
     expect(result).toBe(true);
     expect(capture.current!.copied).toBe(true);
   });
 
-  it('degrades gracefully (returns false, no throw) when every path fails', async () => {
-    Object.defineProperty(navigator, 'clipboard', {
+  it("degrades gracefully (returns false, no throw) when every path fails", async () => {
+    Object.defineProperty(navigator, "clipboard", {
       value: undefined,
       configurable: true,
       writable: true,
@@ -115,20 +115,20 @@ describe('useCopyToClipboard', () => {
 
     let result = true;
     await act(async () => {
-      result = await capture.current!.copy('doomed');
+      result = await capture.current!.copy("doomed");
     });
 
     expect(result).toBe(false);
     expect(capture.current!.copied).toBe(false);
   });
 
-  it('clears the feedback timer on unmount (no state update after unmount)', async () => {
+  it("clears the feedback timer on unmount (no state update after unmount)", async () => {
     writeText.mockResolvedValue(undefined);
-    const clearTimeoutSpy = vi.spyOn(globalThis, 'clearTimeout');
+    const clearTimeoutSpy = vi.spyOn(globalThis, "clearTimeout");
     await renderHook();
 
     await act(async () => {
-      await capture.current!.copy('hello');
+      await capture.current!.copy("hello");
     });
     expect(capture.current!.copied).toBe(true);
 

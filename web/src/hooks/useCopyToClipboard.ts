@@ -1,19 +1,19 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const COPY_FEEDBACK_MS = 2000;
 
 function legacyCopy(text: string): boolean {
-  if (typeof document === 'undefined') return false;
-  const textarea = document.createElement('textarea');
+  if (typeof document === "undefined") return false;
+  const textarea = document.createElement("textarea");
   textarea.value = text;
-  textarea.setAttribute('readonly', '');
-  textarea.style.position = 'fixed';
-  textarea.style.opacity = '0';
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
   document.body.appendChild(textarea);
   textarea.select();
   let ok = false;
   try {
-    ok = document.execCommand('copy');
+    ok = document.execCommand("copy");
   } catch {
     ok = false;
   }
@@ -46,9 +46,9 @@ export function useCopyToClipboard(feedbackMs: number = COPY_FEEDBACK_MS) {
     async (text: string): Promise<boolean> => {
       let ok = false;
       if (
-        typeof navigator !== 'undefined' &&
+        typeof navigator !== "undefined" &&
         navigator.clipboard &&
-        typeof navigator.clipboard.writeText === 'function'
+        typeof navigator.clipboard.writeText === "function"
       ) {
         try {
           await navigator.clipboard.writeText(text);
@@ -69,7 +69,7 @@ export function useCopyToClipboard(feedbackMs: number = COPY_FEEDBACK_MS) {
       }
       return ok;
     },
-    [feedbackMs]
+    [feedbackMs],
   );
 
   return { copied, copy };

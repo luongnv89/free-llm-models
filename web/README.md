@@ -34,14 +34,14 @@ npm install
 
 ## Scripts
 
-| Command | What it does |
-|---------|--------------|
-| `npm run dev` | Start the Vite dev server with HMR |
-| `npm run build` | Typecheck (`tsc -b`) then build the production bundle into `dist/` |
-| `npm run preview` | Serve the built `dist/` locally |
-| `npm run lint` | ESLint over the project |
-| `npm run test` | Run the vitest suite |
-| `npm run test:coverage` | Run vitest with V8 coverage reporting |
+| Command                 | What it does                                                       |
+| ----------------------- | ------------------------------------------------------------------ |
+| `npm run dev`           | Start the Vite dev server with HMR                                 |
+| `npm run build`         | Typecheck (`tsc -b`) then build the production bundle into `dist/` |
+| `npm run preview`       | Serve the built `dist/` locally                                    |
+| `npm run lint`          | ESLint over the project                                            |
+| `npm run test`          | Run the vitest suite                                               |
+| `npm run test:coverage` | Run vitest with V8 coverage reporting                              |
 
 ## Environment variables
 

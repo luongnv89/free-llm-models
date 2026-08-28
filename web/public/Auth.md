@@ -8,15 +8,15 @@ This site provides public, unauthenticated access to its core resources. No API 
 
 ## Authentication
 
-| Resource | Authentication Required |
-|----------|------------------------|
-| `/` (homepage) | No |
-| `/free_models.json` | No |
-| `/models/*.json` | No |
-| `/model/{id}` | No |
-| `/faq` | No |
-| `/archive` | No |
-| `/.well-known/*` | No |
+| Resource            | Authentication Required |
+| ------------------- | ----------------------- |
+| `/` (homepage)      | No                      |
+| `/free_models.json` | No                      |
+| `/models/*.json`    | No                      |
+| `/model/{id}`       | No                      |
+| `/faq`              | No                      |
+| `/archive`          | No                      |
+| `/.well-known/*`    | No                      |
 
 ## API Keys
 

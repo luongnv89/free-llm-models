@@ -1,26 +1,27 @@
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, Copy, ExternalLink, SquareTerminal } from 'lucide-react';
-import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Check, Copy, ExternalLink, SquareTerminal } from "lucide-react";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 
 interface OriHarnessGuideProps {
   modelId: string;
 }
 
-const HARNESS_GUIDE_URL = 'https://openrouter.ai/docs/guides/ori/harness';
-const INSTALL_SKILL_URL = 'https://openrouter.ai/skills/install-ori-harness';
-const INSTALL_COMMAND = 'curl -fsSL https://openrouter.ai/labs/ori/install.sh | bash';
-const SETUP_COMMANDS = ['ori update', 'ori login'];
+const HARNESS_GUIDE_URL = "https://openrouter.ai/docs/guides/ori/harness";
+const INSTALL_SKILL_URL = "https://openrouter.ai/skills/install-ori-harness";
+const INSTALL_COMMAND =
+  "curl -fsSL https://openrouter.ai/labs/ori/install.sh | bash";
+const SETUP_COMMANDS = ["ori update", "ori login"];
 
 const HARNESSES = [
-  'claude',
-  'codex',
-  'dsh',
-  'grok',
-  'hermes',
-  'opencode',
-  'pi',
-  'prime-agent',
+  "claude",
+  "codex",
+  "dsh",
+  "grok",
+  "hermes",
+  "opencode",
+  "pi",
+  "prime-agent",
 ] as const;
 
 type Harness = (typeof HARNESSES)[number];
@@ -38,7 +39,10 @@ function PromptRow({
 }) {
   return (
     <div className="group flex items-center gap-3 py-1">
-      <span aria-hidden="true" className="shrink-0 select-none text-[var(--highlight)]">
+      <span
+        aria-hidden="true"
+        className="shrink-0 select-none text-[var(--highlight)]"
+      >
         $
       </span>
       <code className="min-w-0 flex-1 overflow-x-auto whitespace-nowrap text-[13px] leading-relaxed text-zinc-200">
@@ -60,7 +64,13 @@ function PromptRow({
   );
 }
 
-function SectionLabel({ index, children }: { index: string; children: React.ReactNode }) {
+function SectionLabel({
+  index,
+  children,
+}: {
+  index: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="mb-2 flex items-center gap-2 text-xs tracking-wide text-zinc-500 uppercase">
       <span className="text-[var(--highlight)]">{index}</span>
@@ -70,7 +80,7 @@ function SectionLabel({ index, children }: { index: string; children: React.Reac
 }
 
 export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
-  const [harness, setHarness] = useState<Harness>('claude');
+  const [harness, setHarness] = useState<Harness>("claude");
   const installCopy = useCopyToClipboard();
   const setupCopy = useCopyToClipboard();
   const launchCopy = useCopyToClipboard();
@@ -81,14 +91,18 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
     <Card>
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2 text-lg">
-          <SquareTerminal className="h-4.5 w-4.5 text-[var(--highlight)]" aria-hidden="true" />
+          <SquareTerminal
+            className="h-4.5 w-4.5 text-[var(--highlight)]"
+            aria-hidden="true"
+          />
           Use in any harness via Ori
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <p className="text-sm text-muted-foreground">
-          Run the CLI you already use — Claude Code, Codex, Grok, Hermes, OpenCode, Pi, Prime Agent,
-          or DeepSeek Harness — on this model. Sign in with OAuth PKCE, no API key to paste. See the{' '}
+          Run the CLI you already use — Claude Code, Codex, Grok, Hermes,
+          OpenCode, Pi, Prime Agent, or DeepSeek Harness — on this model. Sign
+          in with OAuth PKCE, no API key to paste. See the{" "}
           <a
             href={HARNESS_GUIDE_URL}
             target="_blank"
@@ -105,7 +119,10 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
           {/* Title bar */}
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
             <div className="flex items-center gap-2 text-xs text-zinc-400">
-              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[var(--highlight)]" />
+              <span
+                aria-hidden="true"
+                className="h-2 w-2 rounded-full bg-[var(--highlight)]"
+              />
               ori — openrouter harness
             </div>
             <span className="rounded border border-white/15 px-1.5 py-0.5 text-[10px] tracking-wider text-zinc-500 uppercase">
@@ -124,7 +141,7 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
               />
               <PromptRow
                 command={SETUP_COMMANDS[0]}
-                onCopy={() => setupCopy.copy(SETUP_COMMANDS.join('\n'))}
+                onCopy={() => setupCopy.copy(SETUP_COMMANDS.join("\n"))}
                 copied={setupCopy.copied}
               />
               <PromptRow
@@ -134,7 +151,7 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
                 copied={setupCopy.copied}
               />
               <p className="mt-2 text-xs text-zinc-500">
-                Prefer an agent do it? Have your coding agent follow the{' '}
+                Prefer an agent do it? Have your coding agent follow the{" "}
                 <a
                   href={INSTALL_SKILL_URL}
                   target="_blank"
@@ -143,16 +160,24 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
                 >
                   install-ori-harness skill
                 </a>
-                . If a harness is missing, Ori asks to install it when you launch.
+                . If a harness is missing, Ori asks to install it when you
+                launch.
               </p>
             </section>
 
-            <div aria-hidden="true" className="border-t border-dashed border-white/10" />
+            <div
+              aria-hidden="true"
+              className="border-t border-dashed border-white/10"
+            />
 
             {/* 2 · Pick a harness */}
             <section aria-label="Launch any harness">
               <SectionLabel index="02">Launch any harness</SectionLabel>
-              <div className="flex flex-wrap gap-1.5" role="group" aria-label="Choose a harness">
+              <div
+                className="flex flex-wrap gap-1.5"
+                role="group"
+                aria-label="Choose a harness"
+              >
                 {HARNESSES.map((name) => {
                   const active = name === harness;
                   return (
@@ -162,8 +187,8 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
                       aria-pressed={active}
                       className={`rounded-md border px-2.5 py-1 text-xs transition-colors ${
                         active
-                          ? 'border-[var(--highlight)] bg-[var(--highlight)]/10 text-[var(--highlight)]'
-                          : 'border-white/15 text-zinc-400 hover:border-white/40 hover:text-zinc-200'
+                          ? "border-[var(--highlight)] bg-[var(--highlight)]/10 text-[var(--highlight)]"
+                          : "border-white/15 text-zinc-400 hover:border-white/40 hover:text-zinc-200"
                       }`}
                     >
                       ori {name}
@@ -172,21 +197,27 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
                 })}
               </div>
               <p className="mt-2.5 text-xs leading-relaxed text-zinc-500">
-                DeepSeek Harness is setup-only:{' '}
-                <code className="text-zinc-400">ori dsh</code> writes DeepSeek Harness config
-                (including the default model) rather than starting a CLI — run{' '}
-                <code className="text-zinc-400">dsh</code> as usual afterwards.
+                DeepSeek Harness is setup-only:{" "}
+                <code className="text-zinc-400">ori dsh</code> writes DeepSeek
+                Harness config (including the default model) rather than
+                starting a CLI — run <code className="text-zinc-400">dsh</code>{" "}
+                as usual afterwards.
               </p>
             </section>
 
-            <div aria-hidden="true" className="border-t border-dashed border-white/10" />
+            <div
+              aria-hidden="true"
+              className="border-t border-dashed border-white/10"
+            />
 
             {/* 3 · Launch */}
             <section aria-label="Launch with this model">
               <SectionLabel index="03">launch</SectionLabel>
               <p className="mb-1.5 text-xs text-zinc-500">
-                Template:{' '}
-                <code className="text-zinc-300">ori HARNESS --model {modelId}</code>
+                Template:{" "}
+                <code className="text-zinc-300">
+                  ori HARNESS --model {modelId}
+                </code>
               </p>
               <div className="rounded-lg border border-white/10 bg-black/50 px-3 py-2">
                 <PromptRow
@@ -205,7 +236,7 @@ export function OriHarnessGuide({ modelId }: OriHarnessGuideProps) {
         <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
           <span>
-            For more details, see the{' '}
+            For more details, see the{" "}
             <a
               href={HARNESS_GUIDE_URL}
               target="_blank"

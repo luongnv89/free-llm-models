@@ -82,8 +82,9 @@ export interface ModelsData {
   providers?: ProviderMetadata[];
 }
 
-export type SortField = 'name' | 'provider' | 'context_length' | 'created' | 'addedToFreeList';
-export type SortOrder = 'asc' | 'desc';
+export type SortField =
+  "name" | "provider" | "context_length" | "created" | "addedToFreeList";
+export type SortOrder = "asc" | "desc";
 
 export interface FilterState {
   search: string;

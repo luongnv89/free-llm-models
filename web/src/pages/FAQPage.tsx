@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft, CircleHelp } from 'lucide-react';
 import { DarkModeToggle } from '@/components/DarkModeToggle';
+import { SeoHead } from '@/components/SeoHead';
 import { useModels } from '@/hooks/useModels';
+import { FAQ_DESCRIPTION, FAQ_TITLE, buildFaqStructuredData, canonicalUrl } from '@/lib/seo';
 import {
   GettingStartedSection,
   LimitationsSection,
@@ -23,7 +25,16 @@ export function FAQPage() {
       : 'Everything you need to know about free models across supported providers';
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SeoHead
+        metadata={{
+          title: FAQ_TITLE,
+          description: FAQ_DESCRIPTION,
+          canonicalPath: canonicalUrl('/faq'),
+        }}
+        structuredData={buildFaqStructuredData()}
+      />
+      <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -60,6 +71,7 @@ export function FAQPage() {
           <MoreResources />
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }

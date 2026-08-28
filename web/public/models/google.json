@@ -1,10 +1,7 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-08-27T23:20:38.565Z",
-  "newModelIds": [
-    "gemini-omni-1.1-flash",
-    "gemini-3.5-transcribe"
-  ],
+  "fetchedAt": "2026-08-28T07:49:42.256Z",
+  "newModelIds": [],
   "archivedModels": [],
   "models": [
     {

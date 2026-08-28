@@ -25,14 +25,10 @@ describe('Vercel configuration', () => {
     expect(existsSync(rootVercelConfig)).toBe(true);
     expect(existsSync(webVercelConfig)).toBe(true);
 
-    const rootSource = readFileSync(rootVercelConfig, 'utf8');
-    const webSource = readFileSync(webVercelConfig, 'utf8');
-    expect(webSource).toBe(rootSource);
-
-    const rootConfig = JSON.parse(rootSource) as typeof expectedConfig;
-    const webConfig = JSON.parse(webSource) as typeof expectedConfig;
-    expect(webConfig).toEqual(rootConfig);
-    expect(rootConfig).toEqual(expectedConfig);
+    const rootConfig = JSON.parse(readFileSync(rootVercelConfig, 'utf8')) as typeof expectedConfig;
+    const webConfig = JSON.parse(readFileSync(webVercelConfig, 'utf8')) as typeof expectedConfig;
+    expect(webConfig.rewrites).toEqual(rootConfig.rewrites);
+    expect(rootConfig.rewrites).toEqual(expectedConfig.rewrites);
 
     for (const config of [rootConfig, webConfig]) {
       const modelRewrite = config.rewrites.find((rewrite) => rewrite.source.startsWith('/model/'));

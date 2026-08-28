@@ -38,6 +38,10 @@ export function FAQItem({ id, question, children, defaultOpen = false, targetId 
       className={`overflow-hidden scroll-mt-20 ${isTargeted ? 'ring-2 ring-[var(--highlight)]' : ''}`}
     >
       <button
+        id={`${id}-trigger`}
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={`${id}-content`}
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-muted/50 transition-colors"
       >
@@ -49,7 +53,12 @@ export function FAQItem({ id, question, children, defaultOpen = false, targetId 
         />
       </button>
       {isOpen && (
-        <CardContent className="pt-0 pb-6 px-6 border-t border-border">
+        <CardContent
+          id={`${id}-content`}
+          role="region"
+          aria-labelledby={`${id}-trigger`}
+          className="pt-0 pb-6 px-6 border-t border-border"
+        >
           <div className="pt-4">{children}</div>
         </CardContent>
       )}

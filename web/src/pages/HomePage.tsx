@@ -26,9 +26,16 @@ import {
   isNewModel,
 } from '@/hooks/useModels';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import { SeoHead } from '@/components/SeoHead';
 
 import type { FilterState, SortField, SortOrder } from '@/types/model';
 import { formatDateTime } from '@/lib/model-utils';
+import {
+  HOME_DESCRIPTION,
+  HOME_TITLE,
+  buildHomeStructuredData,
+  canonicalUrl,
+} from '@/lib/seo';
 import { LoaderCircle, CircleAlert, Zap, CircleHelp, Globe, Copy, Check, Archive } from 'lucide-react';
 
 export function HomePage() {
@@ -115,8 +122,19 @@ export function HomePage() {
   }
 
   return (
-    <div
-      className="min-h-screen bg-background flex flex-col"
+    <>
+      <SeoHead
+        metadata={{
+          title: HOME_TITLE,
+          description: data?.totalModels
+            ? `Browse and compare ${data.totalModels} free AI and LLM models from OpenRouter, Groq, Google, Cerebras, Mistral, Hugging Face, and NVIDIA.`
+            : HOME_DESCRIPTION,
+          canonicalPath: canonicalUrl('/'),
+        }}
+        structuredData={buildHomeStructuredData(data?.models ?? [], data?.fetchedAt)}
+      />
+      <div
+        className="min-h-screen bg-background flex flex-col"
       style={{ '--header-height': `${headerHeight}px` } as React.CSSProperties}
     >
       {/* Header */}
@@ -317,6 +335,7 @@ export function HomePage() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 }

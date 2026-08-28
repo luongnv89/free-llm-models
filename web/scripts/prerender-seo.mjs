@@ -145,7 +145,7 @@ function staticLink(route, label) {
 function homeBody() {
   const providerSummary = providers.map((provider) => provider.displayName || provider.id).join(', ');
   const list = uniqueModels.map((model) => `<li><a href="${escapeHtml(modelPath(model.id))}"><strong>${escapeHtml(model.name)}</strong></a> <span>${escapeHtml(providerNameFor(model))}</span>${model.description ? `<p>${escapeHtml(model.description)}</p>` : ''}</li>`).join('');
-  return `<main class="seo-prerendered"><header><h1>Free LLM Models</h1><p>Browse and compare ${escapeHtml(String(models.length))} free AI models across ${escapeHtml(providerSummary || 'multiple providers')}.</p></header><nav aria-label="Primary navigation">${staticLink('/faq', 'FAQ')} ${staticLink('/archive', 'Former free models')} ${staticLink('/free_models.json', 'Download model data')}</nav><section><h2>Free AI model directory</h2><p>Search models by provider, context length, modality, reasoning, tool use, and other capabilities.</p><ul>${list}</ul></section></main>`;
+  return `<main class="seo-prerendered"><header><h1>Free LLM Models</h1><p>Browse and compare ${escapeHtml(String(uniqueModels.length))} free AI models across ${escapeHtml(providerSummary || 'multiple providers')}.</p></header><nav aria-label="Primary navigation">${staticLink('/faq', 'FAQ')} ${staticLink('/archive', 'Former free models')} ${staticLink('/free_models.json', 'Download model data')}</nav><section><h2>Free AI model directory</h2><p>Search models by provider, context length, modality, reasoning, tool use, and other capabilities.</p><ul>${list}</ul></section></main>`;
 }
 
 function archiveBody() {

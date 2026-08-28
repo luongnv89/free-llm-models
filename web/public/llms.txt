@@ -19,4 +19,4 @@ The catalog is refreshed from provider APIs. Availability, limits, model policie
 ## Optional
 
 - [OpenRouter documentation](https://openrouter.ai/docs): Provider API documentation and integration guides.
-- [Project source](https://github.com/luongnv89/openrouter-free-models): Updater and web application source code.
+- [Project source](https://github.com/luongnv89/free-llm-models): Updater and web application source code.

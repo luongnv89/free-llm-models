@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-28T07:49:41.733Z",
+  "fetchedAt": "2026-08-29T06:01:02.889Z",
   "totalModels": 21,
   "newModelIds": [],
   "models": [
@@ -13,8 +13,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -58,9 +62,9 @@
       },
       "addedToFreeList": "2026-08-27T23:20:38.098Z",
       "popularity": {
-        "rank": 15,
+        "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -73,8 +77,13 @@
       "context_length": 512000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -111,9 +120,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 7,
+        "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -126,8 +135,12 @@
       "context_length": 65536,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -178,9 +191,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 14,
+        "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -193,8 +206,12 @@
       "context_length": 1000000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -238,9 +255,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 3,
+        "rank": 4,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -253,8 +270,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+audio->text",
-        "input_modalities": ["text", "image", "audio"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image",
+          "audio"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -318,9 +341,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 10,
+        "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -333,8 +356,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -371,7 +398,7 @@
       "popularity": {
         "rank": 2,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -384,8 +411,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+audio->text",
-        "input_modalities": ["text", "image", "audio"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image",
+          "audio"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -431,30 +464,30 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1203,
-            "win_rate": 43.9,
-            "rank": 47
+            "elo": 1206,
+            "win_rate": 44.1,
+            "rank": 46
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1131,
-            "win_rate": 36.4,
-            "rank": 51
+            "elo": 1121,
+            "win_rate": 35.9,
+            "rank": 52
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1219,
-            "win_rate": 42.1,
+            "elo": 1220,
+            "win_rate": 42.2,
             "rank": 44
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1189,
-            "win_rate": 39.3,
-            "rank": 55
+            "elo": 1186,
+            "win_rate": 38.7,
+            "rank": 58
           },
           {
             "arena": "models",
@@ -466,16 +499,16 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1202,
-            "win_rate": 40.2,
-            "rank": 50
+            "elo": 1204,
+            "win_rate": 40.5,
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1227,
-            "win_rate": 42.9,
-            "rank": 44
+            "elo": 1229,
+            "win_rate": 43,
+            "rank": 43
           }
         ],
         "artificial_analysis": {
@@ -499,9 +532,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 9,
+        "rank": 7,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -514,8 +547,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -550,9 +587,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 8,
+        "rank": 9,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -565,8 +602,12 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Cohere",
         "instruct_type": null
       },
@@ -623,7 +664,7 @@
       "popularity": {
         "rank": 6,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -636,8 +677,12 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -696,9 +741,9 @@
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1200,
-            "win_rate": 54.8,
-            "rank": 18
+            "elo": 1201,
+            "win_rate": 53,
+            "rank": 17
           },
           {
             "arena": "agents",
@@ -724,8 +769,8 @@
           {
             "arena": "agents",
             "category": "mobileapps",
-            "elo": 1205,
-            "win_rate": 52,
+            "elo": 1208,
+            "win_rate": 52.3,
             "rank": 16
           },
           {
@@ -738,7 +783,7 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1251,
+            "elo": 1252,
             "win_rate": 56.5,
             "rank": 11
           },
@@ -747,27 +792,27 @@
             "category": "3d",
             "elo": 1345,
             "win_rate": 56.9,
-            "rank": 7
+            "rank": 6
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1246,
-            "win_rate": 52.1,
+            "elo": 1247,
+            "win_rate": 52.3,
             "rank": 14
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1329,
-            "win_rate": 56.3,
-            "rank": 5
+            "elo": 1328,
+            "win_rate": 56.2,
+            "rank": 6
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1323,
-            "win_rate": 54.5,
+            "elo": 1322,
+            "win_rate": 54.4,
             "rank": 7
           },
           {
@@ -794,7 +839,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1323,
+            "elo": 1322,
             "win_rate": 56.9,
             "rank": 5
           }
@@ -808,14 +853,17 @@
       "reasoning": {
         "mandatory": false,
         "default_enabled": true,
-        "supported_efforts": ["xhigh", "high"],
+        "supported_efforts": [
+          "xhigh",
+          "high"
+        ],
         "default_effort": "high"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 13,
+        "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -828,8 +876,13 @@
       "context_length": 128000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -873,7 +926,7 @@
       "popularity": {
         "rank": 17,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -886,8 +939,12 @@
       "context_length": 1000000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -953,8 +1010,8 @@
             "arena": "models",
             "category": "dataviz",
             "elo": 1158,
-            "win_rate": 38.2,
-            "rank": 69
+            "win_rate": 38.1,
+            "rank": 70
           },
           {
             "arena": "models",
@@ -973,15 +1030,15 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1162,
-            "win_rate": 37.5,
-            "rank": 69
+            "elo": 1164,
+            "win_rate": 37.8,
+            "rank": 68
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1146,
-            "win_rate": 34.2,
+            "elo": 1147,
+            "win_rate": 34.3,
             "rank": 80
           }
         ],
@@ -995,14 +1052,17 @@
         "mandatory": false,
         "default_enabled": true,
         "supports_max_tokens": true,
-        "supported_efforts": ["high", "medium"],
+        "supported_efforts": [
+          "high",
+          "medium"
+        ],
         "default_effort": "high"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 1,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1015,8 +1075,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": ["text", "image", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1060,23 +1126,23 @@
           {
             "arena": "agents",
             "category": "agenticgamedev",
-            "elo": 1158,
-            "win_rate": 44.4,
+            "elo": 1157,
+            "win_rate": 44.2,
             "rank": 19
           },
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1177,
-            "win_rate": 46.6,
-            "rank": 22
+            "elo": 1176,
+            "win_rate": 43.7,
+            "rank": 24
           },
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1225,
-            "win_rate": 50,
-            "rank": 16
+            "elo": 1224,
+            "win_rate": 49.9,
+            "rank": 17
           },
           {
             "arena": "agents",
@@ -1088,8 +1154,8 @@
           {
             "arena": "agents",
             "category": "mobileapps",
-            "elo": 1202,
-            "win_rate": 47.6,
+            "elo": 1200,
+            "win_rate": 47,
             "rank": 18
           },
           {
@@ -1102,8 +1168,8 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1231,
-            "win_rate": 49,
+            "elo": 1233,
+            "win_rate": 49.2,
             "rank": 18
           },
           {
@@ -1116,22 +1182,22 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1187,
-            "win_rate": 47.6,
+            "elo": 1189,
+            "win_rate": 47.8,
             "rank": 27
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1275,
+            "elo": 1274,
             "win_rate": 52.8,
             "rank": 26
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1254,
-            "win_rate": 51.8,
+            "elo": 1256,
+            "win_rate": 52.1,
             "rank": 29
           },
           {
@@ -1151,15 +1217,15 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1275,
-            "win_rate": 53,
+            "elo": 1274,
+            "win_rate": 52.8,
             "rank": 27
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1279,
-            "win_rate": 53.3,
+            "elo": 1278,
+            "win_rate": 53.2,
             "rank": 25
           }
         ],
@@ -1174,9 +1240,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 4,
+        "rank": 3,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1189,8 +1255,15 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text+image+audio+video->text",
-        "input_modalities": ["text", "audio", "image", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1243,9 +1316,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 12,
+        "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1258,8 +1331,14 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": ["image", "text", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Gemma",
         "instruct_type": null
       },
@@ -1311,7 +1390,7 @@
       "popularity": {
         "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1324,8 +1403,14 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": ["image", "text", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Gemma",
         "instruct_type": null
       },
@@ -1380,7 +1465,7 @@
       "popularity": {
         "rank": 16,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1393,8 +1478,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text", "audio"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1433,7 +1524,7 @@
       "popularity": {
         "rank": 19,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1446,8 +1537,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text", "audio"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1486,7 +1583,7 @@
       "popularity": {
         "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1499,8 +1596,12 @@
       "context_length": 196608,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1544,7 +1645,7 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1238,
+            "elo": 1237,
             "win_rate": 50.7,
             "rank": 37
           },
@@ -1552,8 +1653,8 @@
             "arena": "models",
             "category": "asciiart",
             "elo": 1167,
-            "win_rate": 47.9,
-            "rank": 36
+            "win_rate": 47.8,
+            "rank": 37
           },
           {
             "arena": "models",
@@ -1565,8 +1666,8 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1251,
-            "win_rate": 52.6,
+            "elo": 1252,
+            "win_rate": 52.7,
             "rank": 30
           },
           {
@@ -1580,14 +1681,14 @@
             "arena": "models",
             "category": "svg",
             "elo": 1177,
-            "win_rate": 49.4,
+            "win_rate": 49.3,
             "rank": 41
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1236,
-            "win_rate": 49.5,
+            "win_rate": 49.4,
             "rank": 40
           },
           {
@@ -1609,9 +1710,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 11,
+        "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1624,8 +1725,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1678,14 +1783,17 @@
         "mandatory": false,
         "default_enabled": true,
         "supports_max_tokens": true,
-        "supported_efforts": ["medium", "low"],
+        "supported_efforts": [
+          "medium",
+          "low"
+        ],
         "default_effort": "medium"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 5,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     },
     {
@@ -1698,8 +1806,13 @@
       "context_length": 200000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Router",
         "instruct_type": null
       },
@@ -1750,7 +1863,7 @@
       "popularity": {
         "rank": 21,
         "source": "top-weekly",
-        "asOf": "2026-08-28T07:49:41.733Z"
+        "asOf": "2026-08-29T06:01:02.889Z"
       }
     }
   ],
@@ -1771,8 +1884,14 @@
         "context_length": 1048576,
         "architecture": {
           "modality": "text+image+video->text",
-          "input_modalities": ["text", "image", "video"],
-          "output_modalities": ["text"],
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
           "tokenizer": "Other",
           "instruct_type": null
         },
@@ -1811,7 +1930,11 @@
         "reasoning": {
           "mandatory": true,
           "default_enabled": true,
-          "supported_efforts": ["max", "high", "low"],
+          "supported_efforts": [
+            "max",
+            "high",
+            "low"
+          ],
           "default_effort": "max"
         },
         "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -1837,8 +1960,12 @@
         "context_length": 256000,
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
           "tokenizer": "Other",
           "instruct_type": null
         },
@@ -1901,8 +2028,14 @@
         "context_length": 128000,
         "architecture": {
           "modality": "text+image+video->text",
-          "input_modalities": ["image", "text", "video"],
-          "output_modalities": ["text"],
+          "input_modalities": [
+            "image",
+            "text",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
           "tokenizer": "Other",
           "instruct_type": null
         },
@@ -1957,8 +2090,12 @@
         "context_length": 128000,
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
           "tokenizer": "Other",
           "instruct_type": null
         },

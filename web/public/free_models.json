@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-08-28T07:49:43.030Z",
-  "totalModels": 216,
+  "fetchedAt": "2026-08-29T06:01:03.134Z",
+  "totalModels": 104,
   "newModelIds": [],
   "models": [
     {
@@ -13,8 +13,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -69,8 +73,13 @@
       "context_length": 512000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -118,8 +127,12 @@
       "context_length": 65536,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -181,8 +194,12 @@
       "context_length": 1000000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -237,8 +254,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+audio->text",
-        "input_modalities": ["text", "image", "audio"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image",
+          "audio"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -313,8 +336,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -360,8 +387,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+audio->text",
-        "input_modalities": ["text", "image", "audio"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image",
+          "audio"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -407,30 +440,30 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1203,
-            "win_rate": 43.9,
-            "rank": 47
+            "elo": 1206,
+            "win_rate": 44.1,
+            "rank": 46
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1131,
-            "win_rate": 36.4,
-            "rank": 51
+            "elo": 1121,
+            "win_rate": 35.9,
+            "rank": 52
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1219,
-            "win_rate": 42.1,
+            "elo": 1220,
+            "win_rate": 42.2,
             "rank": 44
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1189,
-            "win_rate": 39.3,
-            "rank": 55
+            "elo": 1186,
+            "win_rate": 38.7,
+            "rank": 58
           },
           {
             "arena": "models",
@@ -442,16 +475,16 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1202,
-            "win_rate": 40.2,
-            "rank": 50
+            "elo": 1204,
+            "win_rate": 40.5,
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1227,
-            "win_rate": 42.9,
-            "rank": 44
+            "elo": 1229,
+            "win_rate": 43,
+            "rank": 43
           }
         ],
         "artificial_analysis": {
@@ -486,8 +519,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -533,8 +570,12 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Cohere",
         "instruct_type": null
       },
@@ -600,8 +641,12 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -660,9 +705,9 @@
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1200,
-            "win_rate": 54.8,
-            "rank": 18
+            "elo": 1201,
+            "win_rate": 53,
+            "rank": 17
           },
           {
             "arena": "agents",
@@ -688,8 +733,8 @@
           {
             "arena": "agents",
             "category": "mobileapps",
-            "elo": 1205,
-            "win_rate": 52,
+            "elo": 1208,
+            "win_rate": 52.3,
             "rank": 16
           },
           {
@@ -702,7 +747,7 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1251,
+            "elo": 1252,
             "win_rate": 56.5,
             "rank": 11
           },
@@ -711,27 +756,27 @@
             "category": "3d",
             "elo": 1345,
             "win_rate": 56.9,
-            "rank": 7
+            "rank": 6
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1246,
-            "win_rate": 52.1,
+            "elo": 1247,
+            "win_rate": 52.3,
             "rank": 14
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1329,
-            "win_rate": 56.3,
-            "rank": 5
+            "elo": 1328,
+            "win_rate": 56.2,
+            "rank": 6
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1323,
-            "win_rate": 54.5,
+            "elo": 1322,
+            "win_rate": 54.4,
             "rank": 7
           },
           {
@@ -758,7 +803,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1323,
+            "elo": 1322,
             "win_rate": 56.9,
             "rank": 5
           }
@@ -772,7 +817,10 @@
       "reasoning": {
         "mandatory": false,
         "default_enabled": true,
-        "supported_efforts": ["xhigh", "high"],
+        "supported_efforts": [
+          "xhigh",
+          "high"
+        ],
         "default_effort": "high"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -788,8 +836,13 @@
       "context_length": 128000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -842,8 +895,12 @@
       "context_length": 1000000,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -909,8 +966,8 @@
             "arena": "models",
             "category": "dataviz",
             "elo": 1158,
-            "win_rate": 38.2,
-            "rank": 69
+            "win_rate": 38.1,
+            "rank": 70
           },
           {
             "arena": "models",
@@ -929,15 +986,15 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1162,
-            "win_rate": 37.5,
-            "rank": 69
+            "elo": 1164,
+            "win_rate": 37.8,
+            "rank": 68
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1146,
-            "win_rate": 34.2,
+            "elo": 1147,
+            "win_rate": 34.3,
             "rank": 80
           }
         ],
@@ -951,7 +1008,10 @@
         "mandatory": false,
         "default_enabled": true,
         "supports_max_tokens": true,
-        "supported_efforts": ["high", "medium"],
+        "supported_efforts": [
+          "high",
+          "medium"
+        ],
         "default_effort": "high"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -967,8 +1027,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": ["text", "image", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1012,23 +1078,23 @@
           {
             "arena": "agents",
             "category": "agenticgamedev",
-            "elo": 1158,
-            "win_rate": 44.4,
+            "elo": 1157,
+            "win_rate": 44.2,
             "rank": 19
           },
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1177,
-            "win_rate": 46.6,
-            "rank": 22
+            "elo": 1176,
+            "win_rate": 43.7,
+            "rank": 24
           },
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1225,
-            "win_rate": 50,
-            "rank": 16
+            "elo": 1224,
+            "win_rate": 49.9,
+            "rank": 17
           },
           {
             "arena": "agents",
@@ -1040,8 +1106,8 @@
           {
             "arena": "agents",
             "category": "mobileapps",
-            "elo": 1202,
-            "win_rate": 47.6,
+            "elo": 1200,
+            "win_rate": 47,
             "rank": 18
           },
           {
@@ -1054,8 +1120,8 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1231,
-            "win_rate": 49,
+            "elo": 1233,
+            "win_rate": 49.2,
             "rank": 18
           },
           {
@@ -1068,22 +1134,22 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1187,
-            "win_rate": 47.6,
+            "elo": 1189,
+            "win_rate": 47.8,
             "rank": 27
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1275,
+            "elo": 1274,
             "win_rate": 52.8,
             "rank": 26
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1254,
-            "win_rate": 51.8,
+            "elo": 1256,
+            "win_rate": 52.1,
             "rank": 29
           },
           {
@@ -1103,15 +1169,15 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1275,
-            "win_rate": 53,
+            "elo": 1274,
+            "win_rate": 52.8,
             "rank": 27
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1279,
-            "win_rate": 53.3,
+            "elo": 1278,
+            "win_rate": 53.2,
             "rank": 25
           }
         ],
@@ -1137,8 +1203,15 @@
       "context_length": 256000,
       "architecture": {
         "modality": "text+image+audio+video->text",
-        "input_modalities": ["text", "audio", "image", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1202,8 +1275,14 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": ["image", "text", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Gemma",
         "instruct_type": null
       },
@@ -1264,8 +1343,14 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text+image+video->text",
-        "input_modalities": ["image", "text", "video"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Gemma",
         "instruct_type": null
       },
@@ -1329,8 +1414,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text", "audio"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1378,8 +1469,14 @@
       "context_length": 1048576,
       "architecture": {
         "modality": "text+image->text+audio",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text", "audio"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1427,8 +1524,12 @@
       "context_length": 196608,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1472,7 +1573,7 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1238,
+            "elo": 1237,
             "win_rate": 50.7,
             "rank": 37
           },
@@ -1480,8 +1581,8 @@
             "arena": "models",
             "category": "asciiart",
             "elo": 1167,
-            "win_rate": 47.9,
-            "rank": 36
+            "win_rate": 47.8,
+            "rank": 37
           },
           {
             "arena": "models",
@@ -1493,8 +1594,8 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1251,
-            "win_rate": 52.6,
+            "elo": 1252,
+            "win_rate": 52.7,
             "rank": 30
           },
           {
@@ -1508,14 +1609,14 @@
             "arena": "models",
             "category": "svg",
             "elo": 1177,
-            "win_rate": 49.4,
+            "win_rate": 49.3,
             "rank": 41
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1236,
-            "win_rate": 49.5,
+            "win_rate": 49.4,
             "rank": 40
           },
           {
@@ -1548,8 +1649,12 @@
       "context_length": 262144,
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Other",
         "instruct_type": null
       },
@@ -1602,7 +1707,10 @@
         "mandatory": false,
         "default_enabled": true,
         "supports_max_tokens": true,
-        "supported_efforts": ["medium", "low"],
+        "supported_efforts": [
+          "medium",
+          "low"
+        ],
         "default_effort": "medium"
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
@@ -1618,8 +1726,13 @@
       "context_length": 200000,
       "architecture": {
         "modality": "text+image->text",
-        "input_modalities": ["text", "image"],
-        "output_modalities": ["text"],
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
         "tokenizer": "Router",
         "instruct_type": null
       },
@@ -1670,2115 +1783,6 @@
       "providerId": "openrouter"
     },
     {
-      "id": "groq/compound",
-      "name": "Groq/compound",
-      "created": 1756949530,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "canopylabs/orpheus-arabic-saudi",
-      "name": "Canopylabs/orpheus Arabic Saudi",
-      "created": 1765926439,
-      "description": "",
-      "context_length": 4000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
-      "description": "",
-      "context_length": 4096,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "name": "Openai/gpt Oss 120b",
-      "created": 1754408224,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "whisper-large-v3",
-      "name": "Whisper Large V3",
-      "created": 1693721698,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "canopylabs/orpheus-v1-english",
-      "name": "Canopylabs/orpheus V1 English",
-      "created": 1766186316,
-      "description": "",
-      "context_length": 4000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-22m",
-      "name": "Meta Llama/llama Prompt Guard 2 22m",
-      "created": 1748632101,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "whisper-large-v3-turbo",
-      "name": "Whisper Large V3 Turbo",
-      "created": 1728413088,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "openai/gpt-oss-20b",
-      "name": "Openai/gpt Oss 20b",
-      "created": 1754407957,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "qwen/qwen3.6-27b",
-      "name": "Qwen/qwen3 6 27b",
-      "created": 1778288776,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "groq/compound-mini",
-      "name": "Groq/compound Mini",
-      "created": 1756949707,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "openai/gpt-oss-safeguard-20b",
-      "name": "Openai/gpt Oss Safeguard 20b",
-      "created": 1761708789,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "qwen/qwen3.8-27b",
-      "name": "Qwen/qwen3 8 27b",
-      "created": 1786984846,
-      "description": "",
-      "context_length": 131042,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:07.902Z"
-    },
-    {
-      "id": "gpt-oss-120b",
-      "name": "Gpt Oss 120b",
-      "created": 0,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "cerebras",
-      "sourceUrl": "https://api.cerebras.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.057Z"
-    },
-    {
-      "id": "gemma-4-31b",
-      "name": "Gemma 4 31b",
-      "created": 0,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "cerebras",
-      "sourceUrl": "https://api.cerebras.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.057Z"
-    },
-    {
-      "id": "gemini-2.5-flash",
-      "name": "Gemini 2.5 Flash",
-      "created": 0,
-      "description": "Stable version of Gemini 2.5 Flash, our mid-size multimodal model that supports up to 1 million tokens, released in June of 2025.",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-2.5-pro",
-      "name": "Gemini 2.5 Pro",
-      "created": 0,
-      "description": "Stable release (June 17th, 2025) of Gemini 2.5 Pro",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-2.5-flash-preview-tts",
-      "name": "Gemini 2.5 Flash Preview TTS",
-      "created": 0,
-      "description": "Gemini 2.5 Flash Preview TTS",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-2.5-pro-preview-tts",
-      "name": "Gemini 2.5 Pro Preview TTS",
-      "created": 0,
-      "description": "Gemini 2.5 Pro Preview TTS",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemma-4-26b-a4b-it",
-      "name": "Gemma 4 26B A4B IT",
-      "created": 0,
-      "description": "Gemma 4 26B A4B IT",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemma-4-31b-it",
-      "name": "Gemma 4 31B IT",
-      "created": 0,
-      "description": "Gemma 4 31B IT",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-flash-latest",
-      "name": "Gemini Flash Latest",
-      "created": 0,
-      "description": "Latest release of Gemini Flash",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-flash-lite-latest",
-      "name": "Gemini Flash-Lite Latest",
-      "created": 0,
-      "description": "Latest release of Gemini Flash-Lite",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-pro-latest",
-      "name": "Gemini Pro Latest",
-      "created": 0,
-      "description": "Latest release of Gemini Pro",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-2.5-flash-lite",
-      "name": "Gemini 2.5 Flash-Lite",
-      "created": 0,
-      "description": "Stable version of Gemini 2.5 Flash-Lite, released in July of 2025",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-2.5-flash-image",
-      "name": "Nano Banana",
-      "created": 0,
-      "description": "Gemini 2.5 Flash Preview Image",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3-flash-preview",
-      "name": "Gemini 3 Flash Preview",
-      "created": 0,
-      "description": "Gemini 3 Flash Preview",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-pro-preview",
-      "name": "Gemini 3.1 Pro Preview",
-      "created": 0,
-      "description": "Gemini 3.1 Pro Preview",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-pro-preview-customtools",
-      "name": "Gemini 3.1 Pro Preview Custom Tools",
-      "created": 0,
-      "description": "Gemini 3.1 Pro Preview optimized for custom tool usage",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-flash-lite-preview",
-      "name": "Gemini 3.1 Flash Lite Preview",
-      "created": 0,
-      "description": "Gemini 3.1 Flash Lite Preview",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-flash-lite",
-      "name": "Gemini 3.1 Flash Lite",
-      "created": 0,
-      "description": "Gemini 3.1 Flash Lite",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3-pro-image-preview",
-      "name": "Nano Banana Pro",
-      "created": 0,
-      "description": "Gemini 3 Pro Image Preview",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3-pro-image",
-      "name": "Nano Banana Pro",
-      "created": 0,
-      "description": "Gemini 3 Pro Image",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "nano-banana-pro-preview",
-      "name": "Nano Banana Pro",
-      "created": 0,
-      "description": "Gemini 3 Pro Image Preview",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-flash-image-preview",
-      "name": "Nano Banana 2",
-      "created": 0,
-      "description": "Gemini 3.1 Flash Image Preview.",
-      "context_length": 65536,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-flash-image",
-      "name": "Nano Banana 2",
-      "created": 0,
-      "description": "Gemini 3.1 Flash Image.",
-      "context_length": 65536,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-flash-lite-image",
-      "name": "Nano Banana 2 Lite",
-      "created": 0,
-      "description": "Gemini 3.1 Flash Lite Image.",
-      "context_length": 65536,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.5-flash",
-      "name": "Gemini 3.5 Flash",
-      "created": 0,
-      "description": "Gemini 3.5 Flash",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.5-flash-lite",
-      "name": "Gemini 3.5 Flash Lite",
-      "created": 0,
-      "description": "Gemini 3.5 Flash Lite",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-omni-flash-preview",
-      "name": "Gemini Omni Flash Preview",
-      "created": 0,
-      "description": "Gemini Omni Flash Preview",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-omni-1.1-flash",
-      "name": "Gemini Omni 1.1 Flash",
-      "created": 0,
-      "description": "Gemini Omni 1.1 Flash ",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-27T23:20:38.565Z"
-    },
-    {
-      "id": "gemini-3.5-transcribe",
-      "name": "Gemini 3.5 Transcribe",
-      "created": 0,
-      "description": "Gemini 3.5 Transcribe",
-      "context_length": 98304,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-27T23:20:38.565Z"
-    },
-    {
-      "id": "gemini-3.6-flash",
-      "name": "Gemini 3.6 Flash",
-      "created": 0,
-      "description": "Gemini 3.6 Flash",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.7-flash",
-      "name": "Gemini 3.7 Flash",
-      "created": 0,
-      "description": "Gemini 3.7 Flash",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "lyria-3-clip-preview",
-      "name": "Lyria 3 Clip Preview",
-      "created": 0,
-      "description": "Lyria 3 30s model Preview",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "lyria-3-pro-preview",
-      "name": "Lyria 3 Pro Preview",
-      "created": 0,
-      "description": "Lyria 3 Pro Preview",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-3.1-flash-tts-preview",
-      "name": "Gemini 3.1 Flash TTS Preview",
-      "created": 0,
-      "description": "Gemini 3.1 Flash TTS Preview",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-robotics-er-1.6-preview",
-      "name": "Gemini Robotics-ER 1.6 Preview",
-      "created": 0,
-      "description": "Gemini Robotics-ER 1.6 Preview",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-robotics-er-2-preview",
-      "name": "Gemini Robotics-ER 2 Preview",
-      "created": 0,
-      "description": "Gemini Robotics-ER 2 Preview",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "gemini-2.5-computer-use-preview-10-2025",
-      "name": "Gemini 2.5 Computer Use Preview 10-2025",
-      "created": 0,
-      "description": "Gemini 2.5 Computer Use Preview 10-2025",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "antigravity-preview-05-2026",
-      "name": "Antigravity Agent Preview",
-      "created": 0,
-      "description": "Preview release of Antigravity Agent (05-2026)",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "deep-research-max-preview-04-2026",
-      "name": "Deep Research Max Preview (Apr-21-2026)",
-      "created": 0,
-      "description": "Preview release (April 21st, 2026) of Deep Research Max",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "deep-research-preview-04-2026",
-      "name": "Deep Research Preview (Apr-21-2026)",
-      "created": 0,
-      "description": "Preview release (April 21th, 2026) of Deep Research",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "deep-research-pro-preview-12-2025",
-      "name": "Deep Research Pro Preview (Dec-12-2025)",
-      "created": 0,
-      "description": "Preview release (December 12th, 2025) of Deep Research Pro",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-08-26T08:52:08.172Z"
-    },
-    {
-      "id": "mistral-medium-2505",
-      "name": "Mistral Medium 2505",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-medium-2508",
-      "name": "Mistral Medium 2508",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "codestral-2508",
-      "name": "Codestral 2508",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "codestral-latest",
-      "name": "Codestral Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-code-latest",
-      "name": "Mistral Code Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-code-fim-latest",
-      "name": "Mistral Code Fim Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "devstral-2512",
-      "name": "Devstral 2512",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "devstral-medium-latest",
-      "name": "Devstral Medium Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "devstral-latest",
-      "name": "Devstral Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-code-agent-latest",
-      "name": "Mistral Code Agent Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-small-2603",
-      "name": "Mistral Small 2603",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-small-latest",
-      "name": "Mistral Small Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-vibe-cli-fast",
-      "name": "Mistral Vibe Cli Fast",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "magistral-small-latest",
-      "name": "Magistral Small Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-small-2507",
-      "name": "Voxtral Small 2507",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-small-latest",
-      "name": "Voxtral Small Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "labs-leanstral-1-5-1",
-      "name": "Labs Leanstral 1 5 1",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "labs-leanstral-1-5",
-      "name": "Labs Leanstral 1 5",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-large-2512",
-      "name": "Mistral Large 2512",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-large-latest",
-      "name": "Mistral Large Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "ministral-3b-2512",
-      "name": "Ministral 3b 2512",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "ministral-3b-latest",
-      "name": "Ministral 3b Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "ministral-8b-2512",
-      "name": "Ministral 8b 2512",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "ministral-8b-latest",
-      "name": "Ministral 8b Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "ministral-14b-2512",
-      "name": "Ministral 14b 2512",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "ministral-14b-latest",
-      "name": "Ministral 14b Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-medium-latest",
-      "name": "Mistral Medium Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-medium",
-      "name": "Mistral Medium",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-medium-3-5",
-      "name": "Mistral Medium 3 5",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-medium-3.5",
-      "name": "Mistral Medium 3 5",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-medium-3",
-      "name": "Mistral Medium 3",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-medium-2604",
-      "name": "Mistral Medium 2604",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-vibe-cli-latest",
-      "name": "Mistral Vibe Cli Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-vibe-cli-with-tools",
-      "name": "Mistral Vibe Cli With Tools",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "magistral-medium-latest",
-      "name": "Magistral Medium Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "glm-5-2",
-      "name": "Glm 5 2",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "zai-glm-5-2",
-      "name": "Zai Glm 5 2",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-embed-2312",
-      "name": "Mistral Embed 2312",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-embed",
-      "name": "Mistral Embed",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "codestral-embed",
-      "name": "Codestral Embed",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "codestral-embed-2505",
-      "name": "Codestral Embed 2505",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-moderation-2603",
-      "name": "Mistral Moderation 2603",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-ocr-2512",
-      "name": "Mistral Ocr 2512",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-ocr-3-0",
-      "name": "Mistral Ocr 3 0",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-ocr-3",
-      "name": "Mistral Ocr 3",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-ocr-4-0",
-      "name": "Mistral Ocr 4 0",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-ocr-latest",
-      "name": "Mistral Ocr Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-ocr-4",
-      "name": "Mistral Ocr 4",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "mistral-ocr-4-1",
-      "name": "Mistral Ocr 4 1",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-mini-2602",
-      "name": "Voxtral Mini 2602",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-mini-latest",
-      "name": "Voxtral Mini Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-mini-transcribe-realtime-2602",
-      "name": "Voxtral Mini Transcribe Realtime 2602",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-mini-realtime-2602",
-      "name": "Voxtral Mini Realtime 2602",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-mini-realtime-latest",
-      "name": "Voxtral Mini Realtime Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-mini-tts-2603",
-      "name": "Voxtral Mini Tts 2603",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 4096,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
-      "id": "voxtral-mini-tts-latest",
-      "name": "Voxtral Mini Tts Latest",
-      "created": 1787903382,
-      "description": "",
-      "context_length": 4096,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-08-26T08:52:08.336Z"
-    },
-    {
       "id": "01-ai/yi-large",
       "name": "01 Ai/yi Large",
       "created": 735790403,
@@ -3790,8 +1794,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3809,8 +1817,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3828,8 +1840,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3847,8 +1863,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3866,8 +1886,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3885,8 +1909,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3904,8 +1932,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3923,8 +1955,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3942,8 +1978,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3961,8 +2001,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3980,8 +2024,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -3999,8 +2047,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4018,8 +2070,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4037,8 +2093,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4056,8 +2116,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4075,8 +2139,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4094,8 +2162,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4113,8 +2185,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4132,8 +2208,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4151,8 +2231,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4170,8 +2254,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4189,8 +2277,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4208,8 +2300,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4227,8 +2323,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4246,8 +2346,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4265,8 +2369,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4284,8 +2392,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4303,8 +2415,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4322,8 +2438,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4341,8 +2461,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4360,8 +2484,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4379,8 +2507,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4398,8 +2530,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4417,8 +2553,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4436,8 +2576,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4455,8 +2599,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4474,8 +2622,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4493,8 +2645,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4512,8 +2668,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4531,8 +2691,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4550,8 +2714,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4569,8 +2737,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4588,8 +2760,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4607,8 +2783,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4626,8 +2806,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4645,8 +2829,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4664,8 +2852,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4683,8 +2875,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4702,8 +2898,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4721,8 +2921,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4740,8 +2944,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4759,8 +2967,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4778,8 +2990,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4797,8 +3013,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4816,8 +3036,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4835,8 +3059,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4854,8 +3082,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4873,8 +3105,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4892,8 +3128,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4911,8 +3151,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4930,8 +3174,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4949,8 +3197,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4968,8 +3220,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -4987,8 +3243,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5006,8 +3266,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5025,8 +3289,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5044,8 +3312,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5063,8 +3335,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5082,8 +3358,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5101,8 +3381,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5120,8 +3404,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5139,8 +3427,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5158,8 +3450,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5177,8 +3473,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5196,8 +3496,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5215,8 +3519,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5234,8 +3542,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5253,27 +3565,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "stepfun-ai/step-3.7-flash",
-      "name": "Stepfun Ai/step 3 7 Flash",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5291,8 +3588,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5310,8 +3611,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5329,8 +3634,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5348,8 +3657,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5367,8 +3680,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5392,8 +3709,14 @@
         "context_length": 1048576,
         "architecture": {
           "modality": "text+image+video->text",
-          "input_modalities": ["text", "image", "video"],
-          "output_modalities": ["text"],
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
           "tokenizer": "Other",
           "instruct_type": null
         },
@@ -5432,10 +3755,44 @@
         "reasoning": {
           "mandatory": true,
           "default_enabled": true,
-          "supported_efforts": ["max", "high", "low"],
+          "supported_efforts": [
+            "max",
+            "high",
+            "low"
+          ],
           "default_effort": "max"
         },
         "addedToFreeList": "2026-08-26T08:32:50.786Z"
+      }
+    },
+    {
+      "id": "stepfun-ai/step-3.7-flash",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-08-29T06:01:03.134Z",
+      "lastSeenAt": "2026-08-28T07:49:43.030Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "stepfun-ai/step-3.7-flash",
+        "name": "Stepfun Ai/step 3 7 Flash",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
       }
     },
     {
@@ -5456,8 +3813,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5482,8 +3843,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5508,8 +3873,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5534,8 +3903,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5560,8 +3933,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5586,8 +3963,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5612,8 +3993,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5638,8 +4023,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5664,8 +4053,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5690,8 +4083,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5716,8 +4113,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5742,8 +4143,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -5760,42 +4165,6 @@
       "docsUrl": "https://openrouter.ai/docs",
       "openaiCompatibleBaseUrl": null,
       "notes": null
-    },
-    {
-      "id": "groq",
-      "displayName": "Groq",
-      "baseUrl": "https://api.groq.com/openai/v1",
-      "apiKeySignupUrl": "https://console.groq.com/keys",
-      "docsUrl": "https://console.groq.com/docs",
-      "openaiCompatibleBaseUrl": null,
-      "notes": null
-    },
-    {
-      "id": "cerebras",
-      "displayName": "Cerebras",
-      "baseUrl": "https://api.cerebras.ai/v1",
-      "apiKeySignupUrl": "https://cloud.cerebras.ai",
-      "docsUrl": "https://inference-docs.cerebras.ai",
-      "openaiCompatibleBaseUrl": null,
-      "notes": null
-    },
-    {
-      "id": "google",
-      "displayName": "Google AI Studio",
-      "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
-      "apiKeySignupUrl": "https://aistudio.google.com/apikey",
-      "docsUrl": "https://ai.google.dev/gemini-api/docs",
-      "openaiCompatibleBaseUrl": "https://generativelanguage.googleapis.com/openai/v1",
-      "notes": null
-    },
-    {
-      "id": "mistral",
-      "displayName": "Mistral AI",
-      "baseUrl": "https://api.mistral.ai/v1",
-      "apiKeySignupUrl": "https://console.mistral.ai",
-      "docsUrl": "https://docs.mistral.ai",
-      "openaiCompatibleBaseUrl": null,
-      "notes": "Free tier (\"La Plateforme\" experiment plan) serves the whole catalog at no cost but with low per-minute rate limits."
     },
     {
       "id": "huggingface",

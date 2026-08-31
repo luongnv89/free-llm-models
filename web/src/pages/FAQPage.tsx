@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, CircleHelp } from "lucide-react";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { SeoHead } from "@/components/SeoHead";
+import { CuStatsBanner } from "@/components/CuStatsBanner";
 import { useModels } from "@/hooks/useModels";
 import {
   FAQ_DESCRIPTION,
@@ -40,6 +41,7 @@ export function FAQPage() {
         structuredData={buildFaqStructuredData()}
       />
       <div className="min-h-screen bg-background">
+        <CuStatsBanner />
         {/* Header */}
         <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
           <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">

@@ -6,6 +6,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { ProviderQuickFilter } from "@/components/ProviderQuickFilter";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { FAQTip } from "@/components/FAQTip";
+import { CuStatsBanner } from "@/components/CuStatsBanner";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -153,6 +154,7 @@ export function HomePage() {
           { "--header-height": `${headerHeight}px` } as React.CSSProperties
         }
       >
+        <CuStatsBanner />
         {/* Header */}
         <header
           ref={headerRef}

@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ModelListItem } from "@/components/ModelListItem";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { CuStatsBanner } from "@/components/CuStatsBanner";
 import { SeoHead } from "@/components/SeoHead";
 import {
   useModels,
@@ -130,6 +131,7 @@ export function ArchivePage() {
         )}
       />
       <div className="min-h-screen bg-background flex flex-col">
+        <CuStatsBanner />
         <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-20">
           <div className="px-4 py-4 flex items-center justify-between gap-3">
             <Link

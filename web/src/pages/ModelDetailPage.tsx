@@ -7,6 +7,7 @@ import { HarnessSetupGuide } from "@/components/HarnessSetupGuide";
 import { OriHarnessGuide } from "@/components/OriHarnessGuide";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { SeoHead } from "@/components/SeoHead";
+import { CuStatsBanner } from "@/components/CuStatsBanner";
 import {
   useModels,
   getProvider,
@@ -144,6 +145,7 @@ export function ModelDetailPage() {
         )}
       />
       <div className="min-h-screen bg-background">
+        <CuStatsBanner />
         {/* Header */}
         <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
           <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">

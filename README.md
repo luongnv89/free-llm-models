@@ -302,7 +302,7 @@ The credentialed route matrix and release worksheet are in [`docs/manual-harness
 ## Deployment
 
 GitHub Pages is the default hosting target at
-<https://luongnv89.github.io/free-llm-models/>. In the repository's Pages
+<https://luongnv.com/free-llm-models/>. In the repository's Pages
 settings, set **Source** to **GitHub Actions**; the
 `.github/workflows/deploy-pages.yml` workflow then builds and deploys only
 `web/dist` on pushes to `main` (or by manual dispatch).
@@ -311,7 +311,7 @@ The production build uses these variables:
 
 ```bash
 VITE_BASE_PATH=/free-llm-models/
-VITE_SITE_URL=https://luongnv89.github.io/free-llm-models
+VITE_SITE_URL=https://luongnv.com/free-llm-models
 ```
 
 The app is static on Pages. It supports prerendered routes and the generated

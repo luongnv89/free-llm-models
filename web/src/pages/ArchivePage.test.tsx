@@ -217,7 +217,7 @@ describe("ArchivePage", () => {
     );
     expect(container.textContent).not.toContain("Live Model");
     expect(
-      container.querySelector('a[href="/model/acme%2Fgone"]'),
+      container.querySelector('a[href="/model/acme/gone"]'),
     ).toBeTruthy();
     const list = container.querySelector(
       'ol[aria-label="OpenRouter archived models"]',

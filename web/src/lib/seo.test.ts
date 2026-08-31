@@ -40,9 +40,9 @@ const model: Model = {
 describe("SEO helpers", () => {
   it("builds absolute canonical URLs and safely encodes model IDs", () => {
     expect(canonicalUrl("/faq")).toBe(
-      "https://luongnv89.github.io/free-llm-models/faq",
+      "https://luongnv.com/free-llm-models/faq",
     );
-    expect(modelPath(model.id)).toBe("/model/acme%2Fexample%3Amodel");
+    expect(modelPath(model.id)).toBe("/model/acme/example:model");
   });
 
   it("provides a useful model description when source data is short", () => {

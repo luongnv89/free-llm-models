@@ -1,13 +1,13 @@
 # Agent Readiness Plan — GitHub Pages
 
-**Default site:** <https://luongnv89.github.io/free-llm-models/>
+**Default site:** <https://luongnv.com/free-llm-models/>
 
 The hosting target is GitHub Pages, configured with **Settings → Pages →
 Source: GitHub Actions**. The deploy workflow builds the static Vite site with:
 
 ```text
 VITE_BASE_PATH=/free-llm-models/
-VITE_SITE_URL=https://luongnv89.github.io/free-llm-models
+VITE_SITE_URL=https://luongnv.com/free-llm-models
 ```
 
 ## Supported static discovery

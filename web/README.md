@@ -16,12 +16,12 @@ Searchable, filterable UI for [OpenRouter](https://openrouter.ai) models that ar
    aggregate `free_models.json` (see `web/src/hooks/useModels.ts`). It provides
    search, sort, filtering, per-model pricing details, and a FAQ page.
 3. GitHub Pages is the default deployment target at
-   <https://luongnv89.github.io/free-llm-models/>. Configure the repository Pages
+   <https://luongnv.com/free-llm-models/>. Configure the repository Pages
    source as **GitHub Actions**; `.github/workflows/deploy-pages.yml` builds and
    uploads `web/dist` with the project base path.
 
    Production builds set `VITE_BASE_PATH=/free-llm-models/` and
-   `VITE_SITE_URL=https://luongnv89.github.io/free-llm-models`. When
+   `VITE_SITE_URL=https://luongnv.com/free-llm-models`. When
    `VITE_BASE_PATH` is unset, local development and tests use root URLs.
 
    Pages serves static files only: it cannot provide Vercel Edge Functions
@@ -63,7 +63,7 @@ root README); they are not read by this app.
 | Variable | Local default | Pages production value |
 | -------- | ------------- | ---------------------- |
 | `VITE_BASE_PATH` | `/` | `/free-llm-models/` |
-| `VITE_SITE_URL` | `https://luongnv89.github.io/free-llm-models` | `https://luongnv89.github.io/free-llm-models` |
+| `VITE_SITE_URL` | `https://luongnv.com/free-llm-models` | `https://luongnv.com/free-llm-models` |
 
 The Pages workflow supplies both values explicitly. `VITE_BASE_PATH` controls
 Vite assets, the React Router basename, data fetch URLs, and prerendered links.

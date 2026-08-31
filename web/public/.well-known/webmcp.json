@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "name": "Free LLM Models WebMCP",
   "description": "Expose site tools to AI agents via the browser using WebMCP.",
-  "url": "https://luongnv89.github.io/free-llm-models/.well-known/webmcp.html",
+  "url": "https://luongnv.com/free-llm-models/.well-known/webmcp.html",
   "transport": "web-mcp",
   "tools": [
     {

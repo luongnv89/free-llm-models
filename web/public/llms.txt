@@ -20,15 +20,15 @@ This site is agent-ready. Discoverable resources:
 
 ## Catalog
 
-- [Free AI model directory](https://luongnv89.github.io/free-llm-models/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
-- [Free models JSON](https://luongnv89.github.io/free-llm-models/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
-- [Per-provider model index](https://luongnv89.github.io/free-llm-models/models/index.json): Provider files and model counts used by the website.
+- [Free AI model directory](https://luongnv.com/free-llm-models/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
+- [Free models JSON](https://luongnv.com/free-llm-models/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
+- [Per-provider model index](https://luongnv.com/free-llm-models/models/index.json): Provider files and model counts used by the website.
 
 ## Pages
 
-- [Frequently Asked Questions](https://luongnv89.github.io/free-llm-models/faq): API keys, first API calls, rate limits, integrations, and API key security.
-- [Former free models](https://luongnv89.github.io/free-llm-models/archive): Models that have left the current free catalog.
-- [Model details](https://luongnv89.github.io/free-llm-models/): Individual model pages use the URL pattern `/free-llm-models/model/{encoded-model-id}`.
+- [Frequently Asked Questions](https://luongnv.com/free-llm-models/faq): API keys, first API calls, rate limits, integrations, and API key security.
+- [Former free models](https://luongnv.com/free-llm-models/archive): Models that have left the current free catalog.
+- [Model details](https://luongnv.com/free-llm-models/): Individual model pages use the URL pattern `/free-llm-models/model/{encoded-model-id}`.
 
 ## Optional
 

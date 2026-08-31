@@ -1,7 +1,7 @@
 {
-  "issuer": "https://luongnv89.github.io/free-llm-models",
-  "authorization_endpoint": "https://luongnv89.github.io/free-llm-models/oauth/authorize",
-  "token_endpoint": "https://luongnv89.github.io/free-llm-models/oauth/token",
-  "jwks_uri": "https://luongnv89.github.io/free-llm-models/.well-known/jwks.json",
+  "issuer": "https://luongnv.com/free-llm-models",
+  "authorization_endpoint": "https://luongnv.com/free-llm-models/oauth/authorize",
+  "token_endpoint": "https://luongnv.com/free-llm-models/oauth/token",
+  "jwks_uri": "https://luongnv.com/free-llm-models/.well-known/jwks.json",
   "note": "This site does not currently support OAuth/OIDC authentication. All resources are publicly accessible."
 }

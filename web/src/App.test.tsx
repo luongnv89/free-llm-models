@@ -138,7 +138,7 @@ describe("App deep links", () => {
     await renderAt("/", [model]);
 
     const modelLink = container.querySelector(
-      'a[href="/model/acme%2Fnavigation-model"]',
+      'a[href="/model/acme/navigation-model"]',
     ) as HTMLAnchorElement | null;
     expect(modelLink).toBeTruthy();
 
@@ -146,7 +146,7 @@ describe("App deep links", () => {
       modelLink!.click();
     });
 
-    expect(window.location.pathname).toBe("/model/acme%2Fnavigation-model");
+    expect(window.location.pathname).toBe("/model/acme/navigation-model");
     expect(container.textContent).toContain("Navigation Model");
     expect(container.textContent).not.toContain("Model not found");
 

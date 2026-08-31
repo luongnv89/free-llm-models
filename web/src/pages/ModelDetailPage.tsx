@@ -61,7 +61,9 @@ function decodeModelId(modelId: string | undefined): string {
 }
 
 export function ModelDetailPage() {
-  const { modelId } = useParams<{ modelId: string }>();
+  const params = useParams<{ modelId?: string; "*": string }>();
+  // Splat route: single-segment ids arrive as modelId, slash-containing ids as "*".
+  const modelId = params.modelId ?? params["*"];
   const { data, loading, error } = useModels();
   const { copied, copy } = useCopyToClipboard();
 

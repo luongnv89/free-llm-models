@@ -4,6 +4,7 @@ import { Check, Copy, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getProvider, isNewModel } from "@/hooks/useModels";
+import { modelPath } from "@/lib/seo";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import {
   capabilityTags,
@@ -50,7 +51,7 @@ export function ModelListItem({
         <div className="min-w-0 flex-1">
           <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
             <Link
-              to={`/model/${encodeURIComponent(model.id)}`}
+              to={modelPath(model.id)}
               className="min-w-0 break-words text-sm font-semibold leading-tight hover:text-[var(--highlight)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               {model.name}

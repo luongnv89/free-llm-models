@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/archive" element={<ArchivePage />} />
-        <Route path="/model/:modelId" element={<ModelDetailPage />} />
+        <Route path="/model/*" element={<ModelDetailPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

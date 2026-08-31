@@ -74,7 +74,7 @@ describe("ModelListItem", () => {
     expect(container.textContent).toContain("8K ctx");
     expect(container.textContent).toContain("acme/test-model");
     const link = container.querySelector("a");
-    expect(link!.getAttribute("href")).toBe("/model/acme%2Ftest-model");
+    expect(link!.getAttribute("href")).toBe("/model/acme/test-model");
   });
 
   it("omits the optional description when it is empty", async () => {

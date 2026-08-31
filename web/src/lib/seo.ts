@@ -37,7 +37,10 @@ export function canonicalUrl(path: string): string {
 }
 
 export function modelPath(modelId: string): string {
-  return `/model/${encodeURIComponent(modelId)}`;
+  // Real slashes, not encodeURIComponent: GitHub Pages decodes %2F before file
+  // lookup, so encoded-slash URLs can never resolve to a static file. Model ids
+  // are provider-safe ([a-z0-9._/:-]); the router splat accepts both forms.
+  return `/model/${modelId}`;
 }
 
 export function modelUrl(modelId: string): string {

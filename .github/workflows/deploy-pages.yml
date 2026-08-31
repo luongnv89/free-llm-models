@@ -40,7 +40,7 @@ jobs:
       - name: Build for GitHub Pages
         env:
           VITE_BASE_PATH: /free-llm-models/
-          VITE_SITE_URL: https://luongnv89.github.io/free-llm-models
+          VITE_SITE_URL: https://luongnv.com/free-llm-models
         run: npm run build
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1

@@ -59,7 +59,7 @@ const sitePath = (route) => {
     ? normalized
     : `${basePath}${normalized.slice(1)}`;
 };
-const modelPath = (id) => `/model/${encodeURIComponent(id)}`;
+const modelPath = (id) => `/model/${id}`;
 const modelUrl = (id) => canonicalUrl(modelPath(id));
 const canonicalUrl = (route) => `${siteUrl}${routePath(route)}`;
 const jsonLd = (value) => JSON.stringify(value).replaceAll("<", "\\u003c");
@@ -395,6 +395,8 @@ const renderedModelRoutes = new Set();
 for (const model of models) {
   const providerName = providerNameFor(model);
   const route = modelPath(model.id);
+  // Guard the fs write: model ids are upstream data; never escape dist/model/.
+  if (route.includes("..")) continue;
   if (renderedModelRoutes.has(route)) continue;
   renderedModelRoutes.add(route);
   await writeRoute(
@@ -415,6 +417,7 @@ for (const entry of archivedModels) {
   const model = entry.model;
   const providerName = providerNameFor(model);
   const route = modelPath(model.id);
+  if (route.includes("..")) continue;
   if (renderedModelRoutes.has(route)) continue;
   renderedModelRoutes.add(route);
   await writeRoute(

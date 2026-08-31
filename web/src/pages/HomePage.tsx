@@ -6,6 +6,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { ProviderQuickFilter } from "@/components/ProviderQuickFilter";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { FAQTip } from "@/components/FAQTip";
+import { CuStatsPageShell } from "@/components/CuStatsBanner";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -114,21 +115,25 @@ export function HomePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <LoaderCircle className="h-8 w-8 animate-spin text-muted-foreground" />
-      </div>
+      <CuStatsPageShell>
+        <div className="flex-1 flex items-center justify-center">
+          <LoaderCircle className="h-8 w-8 animate-spin text-muted-foreground" />
+        </div>
+      </CuStatsPageShell>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <CircleAlert className="h-12 w-12 text-destructive mx-auto mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Failed to load models</h2>
-          <p className="text-muted-foreground">{error}</p>
+      <CuStatsPageShell>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <CircleAlert className="h-12 w-12 text-destructive mx-auto mb-4" />
+            <h2 className="text-xl font-semibold mb-2">Failed to load models</h2>
+            <p className="text-muted-foreground">{error}</p>
+          </div>
         </div>
-      </div>
+      </CuStatsPageShell>
     );
   }
 
@@ -147,8 +152,7 @@ export function HomePage() {
           data?.fetchedAt,
         )}
       />
-      <div
-        className="min-h-screen bg-background flex flex-col"
+      <CuStatsPageShell
         style={
           { "--header-height": `${headerHeight}px` } as React.CSSProperties
         }
@@ -378,7 +382,7 @@ export function HomePage() {
             </div>
           </div>
         </footer>
-      </div>
+      </CuStatsPageShell>
     </>
   );
 }

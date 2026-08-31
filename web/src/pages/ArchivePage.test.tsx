@@ -154,6 +154,9 @@ describe("ArchivePage", () => {
     fetchMock.mockReturnValue(new Promise(() => {}));
     await renderPage();
     expect(container.querySelector(".animate-spin")).toBeTruthy();
+    expect(
+      container.querySelector('a[href="https://custats.info"]'),
+    ).toBeTruthy();
   });
 
   it("shows an empty state when there are no archived models", async () => {
@@ -183,6 +186,9 @@ describe("ArchivePage", () => {
     expect(container.textContent).toContain("network down");
     expect(container.textContent).toContain("Back to Models");
     expect(container.querySelector('a[href="/"]')).toBeTruthy();
+    expect(
+      container.querySelector('a[href="https://custats.info"]'),
+    ).toBeTruthy();
   });
 
   it("lists archived models with detail links and omits live models", async () => {

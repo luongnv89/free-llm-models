@@ -7,6 +7,7 @@ import { HarnessSetupGuide } from "@/components/HarnessSetupGuide";
 import { OriHarnessGuide } from "@/components/OriHarnessGuide";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { SeoHead } from "@/components/SeoHead";
+import { CuStatsPageShell } from "@/components/CuStatsBanner";
 import {
   useModels,
   getProvider,
@@ -72,31 +73,35 @@ export function ModelDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-muted-foreground font-mono">
-          Loading…
+      <CuStatsPageShell>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="animate-pulse text-muted-foreground font-mono">
+            Loading…
+          </div>
         </div>
-      </div>
+      </CuStatsPageShell>
     );
   }
 
   if (error || !model) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <TriangleAlert className="h-12 w-12 text-destructive mx-auto mb-4" />
-          <h2 className="text-xl font-semibold mb-2">Model not found</h2>
-          <p className="text-muted-foreground mb-4">
-            {error || "The requested model could not be found."}
-          </p>
-          <Link to="/">
-            <Button>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Models
-            </Button>
-          </Link>
+      <CuStatsPageShell>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <TriangleAlert className="h-12 w-12 text-destructive mx-auto mb-4" />
+            <h2 className="text-xl font-semibold mb-2">Model not found</h2>
+            <p className="text-muted-foreground mb-4">
+              {error || "The requested model could not be found."}
+            </p>
+            <Link to="/">
+              <Button>
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Models
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </CuStatsPageShell>
     );
   }
 
@@ -143,7 +148,7 @@ export function ModelDetailPage() {
           isArchived,
         )}
       />
-      <div className="min-h-screen bg-background">
+      <CuStatsPageShell className="min-h-screen bg-background">
         {/* Header */}
         <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
           <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -546,7 +551,7 @@ export function ModelDetailPage() {
             </div>
           </div>
         </main>
-      </div>
+      </CuStatsPageShell>
     </>
   );
 }

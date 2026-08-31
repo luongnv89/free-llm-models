@@ -31,6 +31,7 @@ describe("CuStatsBanner", () => {
 
     expect(container.textContent).toContain("CuStats");
     expect(container.textContent).toContain("AI usage tracking tool");
+    expect(container.textContent).toContain("usage. Learn more");
   });
 
   it("links to custats.info in a new tab", async () => {

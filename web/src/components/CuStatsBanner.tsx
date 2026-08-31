@@ -11,9 +11,9 @@ export function CuStatsBanner() {
       <Zap className="h-4 w-4 shrink-0 text-[var(--highlight)]" aria-hidden="true" />
       <span className="text-xs font-semibold text-[var(--highlight)]">
         Track Your AI Usage
-      </span>
+      </span>{" "}
       <span className="text-xs text-muted-foreground">
-        CuStats is a free AI usage tracking tool — monitor your AI costs and usage.
+        CuStats is a free AI usage tracking tool — monitor your AI costs and usage.{" "}
         <span className="text-[var(--highlight)] underline decoration-[var(--highlight)] decoration-2 underline-offset-4">
           Learn more
         </span>

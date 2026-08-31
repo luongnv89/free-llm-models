@@ -1,4 +1,24 @@
+import type { CSSProperties, ReactNode } from "react";
 import { Zap } from "lucide-react";
+
+interface CuStatsPageShellProps {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}
+
+export function CuStatsPageShell({
+  children,
+  className = "min-h-screen bg-background flex flex-col",
+  style,
+}: CuStatsPageShellProps) {
+  return (
+    <div className={className} style={style}>
+      <CuStatsBanner />
+      {children}
+    </div>
+  );
+}
 
 export function CuStatsBanner() {
   return (

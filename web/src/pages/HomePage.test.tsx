@@ -126,6 +126,9 @@ describe("HomePage", () => {
     await renderPage();
 
     expect(container.querySelector(".animate-spin")).toBeTruthy();
+    expect(
+      container.querySelector('a[href="https://custats.info"]'),
+    ).toBeTruthy();
     expect(container.textContent).not.toContain("OpenRouter Free Models");
   });
 
@@ -136,6 +139,9 @@ describe("HomePage", () => {
 
     expect(container.textContent).toContain("Failed to load models");
     expect(container.textContent).toContain("network down");
+    expect(
+      container.querySelector('a[href="https://custats.info"]'),
+    ).toBeTruthy();
   });
 
   it("renders models with counts and data URL after loading", async () => {

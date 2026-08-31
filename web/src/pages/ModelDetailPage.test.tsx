@@ -115,6 +115,22 @@ describe("ModelDetailPage", () => {
     vi.restoreAllMocks();
   });
 
+  it("renders the banner while loading", async () => {
+    fetchMock.mockReturnValue(new Promise(() => {}));
+    await renderPage("acme/loading");
+
+    expect(container.querySelector('a[href="https://custats.info"]')).toBeTruthy();
+  });
+
+  it("renders the banner when the model cannot be loaded", async () => {
+    fetchMock.mockRejectedValue(new Error("network down"));
+    await renderPage("acme/missing");
+    await settle();
+
+    expect(container.textContent).toContain("Model not found");
+    expect(container.querySelector('a[href="https://custats.info"]')).toBeTruthy();
+  });
+
   it("renders provider metadata in docs link and code snippets when available", async () => {
     const model = {
       ...makeModel({ id: "acme/pop", name: "Pop Model" }),

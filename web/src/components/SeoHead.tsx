@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import type { SeoMetadata, StructuredData } from "@/lib/seo";
-import { serializeStructuredData } from "@/lib/seo";
+import { OG_IMAGE_URL, serializeStructuredData } from "@/lib/seo";
 
 function setMeta(attribute: "name" | "property", key: string, content: string) {
   let element = document.head.querySelector<HTMLMetaElement>(
@@ -46,7 +46,7 @@ export function SeoHead({
     setMeta(
       "property",
       "og:image",
-      metadata.image ?? "https://free-llm-models.vercel.app/og-image.svg",
+      metadata.image ?? OG_IMAGE_URL,
     );
     setMeta("property", "og:site_name", "Free LLM Models");
     setMeta("name", "twitter:card", "summary_large_image");
@@ -55,7 +55,7 @@ export function SeoHead({
     setMeta(
       "name",
       "twitter:image",
-      metadata.image ?? "https://free-llm-models.vercel.app/og-image.svg",
+      metadata.image ?? OG_IMAGE_URL,
     );
 
     let script = document.head.querySelector<HTMLScriptElement>(

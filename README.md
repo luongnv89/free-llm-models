@@ -301,11 +301,25 @@ The credentialed route matrix and release worksheet are in [`docs/manual-harness
 
 ## Deployment
 
-Vercel is the authoritative deployment target for the static site. Identical
-`vercel.json` files at the repository root and under `web/` provide a narrow
-`/model/:path*` SPA rewrite whether the configured Vercel Project Root is the
-repository root or `web/`. `web/netlify.toml` is retained only for legacy Netlify
-support; Netlify is not the active deployment target.
+GitHub Pages is the default hosting target at
+<https://luongnv89.github.io/free-llm-models/>. In the repository's Pages
+settings, set **Source** to **GitHub Actions**; the
+`.github/workflows/deploy-pages.yml` workflow then builds and deploys only
+`web/dist` on pushes to `main` (or by manual dispatch).
+
+The production build uses these variables:
+
+```bash
+VITE_BASE_PATH=/free-llm-models/
+VITE_SITE_URL=https://luongnv89.github.io/free-llm-models
+```
+
+The app is static on Pages. It supports prerendered routes and the generated
+`404.html` fallback, but Pages cannot provide Vercel Edge Functions (including
+`/api/markdown` content negotiation), server rewrites, custom response
+headers, or response `Link` headers. The root and `web/vercel.json` files and
+`web/netlify.toml` remain temporarily as legacy rollback configuration; they do
+not describe capabilities of the Pages deployment.
 
 ## Automation
 

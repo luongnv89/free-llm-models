@@ -6,35 +6,35 @@
     {
       "type": "mcp-server",
       "name": "Free LLM Models MCP",
-      "url": "https://free-llm-models.vercel.app/.well-known/mcp.json",
+      "url": "https://luongnv89.github.io/free-llm-models/.well-known/mcp.json",
       "transport": "http"
     },
     {
       "type": "a2a-agent",
       "name": "Free LLM Models Agent",
-      "url": "https://free-llm-models.vercel.app/.well-known/agent.json"
+      "url": "https://luongnv89.github.io/free-llm-models/.well-known/agent.json"
     },
     {
       "type": "openapi",
       "name": "Free LLM Models API",
-      "url": "https://free-llm-models.vercel.app/.well-known/api-catalog.json",
+      "url": "https://luongnv89.github.io/free-llm-models/.well-known/api-catalog.json",
       "version": "1.0.0"
     },
     {
       "type": "agent-skills",
       "name": "Agent Skills Index",
-      "url": "https://free-llm-models.vercel.app/.well-known/agent-skills/index.json"
+      "url": "https://luongnv89.github.io/free-llm-models/.well-known/agent-skills/index.json"
     },
     {
       "type": "data",
       "name": "Full Model Catalog",
-      "url": "https://free-llm-models.vercel.app/free_models.json",
+      "url": "https://luongnv89.github.io/free-llm-models/free_models.json",
       "content_type": "application/json"
     },
     {
       "type": "data",
       "name": "Per-Provider Model Index",
-      "url": "https://free-llm-models.vercel.app/models/index.json",
+      "url": "https://luongnv89.github.io/free-llm-models/models/index.json",
       "content_type": "application/json"
     }
   ]

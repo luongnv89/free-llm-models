@@ -1,9 +1,9 @@
 import type { Model } from "@/types/model";
 import seoConfig from "./seo-config.json";
+import { OG_IMAGE_URL, SITE_URL } from "./site-config";
 
-export const SITE_URL = seoConfig.siteUrl;
+export { OG_IMAGE_URL, SITE_URL };
 export const SITE_NAME = seoConfig.siteName;
-export const OG_IMAGE_URL = seoConfig.ogImageUrl;
 
 export const HOME_TITLE = seoConfig.homeTitle;
 export const HOME_DESCRIPTION = seoConfig.homeDescription;
@@ -33,7 +33,7 @@ export const FAQ_SCHEMA_ENTRIES: FaqSchemaEntry[] = (
 
 export function canonicalUrl(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  return new URL(normalized, `${SITE_URL}/`).toString();
+  return new URL(normalized.slice(1), `${SITE_URL}/`).toString();
 }
 
 export function modelPath(modelId: string): string {

@@ -39,7 +39,9 @@ const model: Model = {
 
 describe("SEO helpers", () => {
   it("builds absolute canonical URLs and safely encodes model IDs", () => {
-    expect(canonicalUrl("/faq")).toBe("https://free-llm-models.vercel.app/faq");
+    expect(canonicalUrl("/faq")).toBe(
+      "https://luongnv89.github.io/free-llm-models/faq",
+    );
     expect(modelPath(model.id)).toBe("/model/acme%2Fexample%3Amodel");
   });
 

@@ -64,4 +64,4 @@ Disallow: /
 # ai-input=no: Do not use user-submitted content to improve AI models.
 Content-Signal: ai-train=no, search=yes, ai-input=no
 
-Sitemap: https://free-llm-models.vercel.app/sitemap.xml
+Sitemap: https://luongnv89.github.io/free-llm-models/sitemap.xml

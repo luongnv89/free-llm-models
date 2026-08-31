@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "name": "Free LLM Models MCP Server",
   "description": "Model catalog browsing and search via the Model Context Protocol.",
-  "url": "https://free-llm-models.vercel.app/.well-known/mcp.json",
+  "url": "https://luongnv89.github.io/free-llm-models/.well-known/mcp.json",
   "transport": "sse",
   "capabilities": {
     "tools": {

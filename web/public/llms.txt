@@ -8,27 +8,27 @@ The catalog is refreshed from provider APIs. Availability, limits, model policie
 
 This site is agent-ready. Discoverable resources:
 
-- [Agent Skills Index](/.well-known/agent-skills/index.json) - Discoverable skills and resources
-- [API Catalog](/.well-known/api-catalog.json) - Machine-readable API endpoints (RFC 9727)
-- [A2A Agent Card](/.well-known/agent.json) - Agent-to-agent discovery
-- [MCP Server Card](/.well-known/mcp.json) - Model Context Protocol server
-- [ARD Manifest](/.well-known/ard.json) - Agentic Resource Discovery
-- [Auth.md](/Auth.md) - Authentication and API key policy
-- [robots.txt](/robots.txt) - Crawl rules and AI content preferences
-- [sitemap.xml](/sitemap.xml) - Site map for crawlers
-- [Link Headers](/) - RFC 8288 Link headers on all pages
+- [Agent Skills Index](/free-llm-models/.well-known/agent-skills/index.json) - Discoverable skills and resources
+- [API Catalog](/free-llm-models/.well-known/api-catalog.json) - Machine-readable API endpoints (RFC 9727)
+- [A2A Agent Card](/free-llm-models/.well-known/agent.json) - Agent-to-agent discovery
+- [MCP Server Card](/free-llm-models/.well-known/mcp.json) - Model Context Protocol server
+- [ARD Manifest](/free-llm-models/.well-known/ard.json) - Agentic Resource Discovery
+- [Auth.md](/free-llm-models/Auth.md) - Authentication and API key policy
+- [robots.txt](/free-llm-models/robots.txt) - Crawl rules and AI content preferences
+- [sitemap.xml](/free-llm-models/sitemap.xml) - Site map for crawlers
+- Link response headers are not available on GitHub Pages (legacy Vercel/Netlify behavior is not part of this deployment).
 
 ## Catalog
 
-- [Free AI model directory](https://free-llm-models.vercel.app/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
-- [Free models JSON](https://free-llm-models.vercel.app/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
-- [Per-provider model index](https://free-llm-models.vercel.app/models/index.json): Provider files and model counts used by the website.
+- [Free AI model directory](https://luongnv89.github.io/free-llm-models/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
+- [Free models JSON](https://luongnv89.github.io/free-llm-models/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
+- [Per-provider model index](https://luongnv89.github.io/free-llm-models/models/index.json): Provider files and model counts used by the website.
 
 ## Pages
 
-- [Frequently Asked Questions](https://free-llm-models.vercel.app/faq): API keys, first API calls, rate limits, integrations, and API key security.
-- [Former free models](https://free-llm-models.vercel.app/archive): Models that have left the current free catalog.
-- [Model details](https://free-llm-models.vercel.app/): Individual model pages use the URL pattern `/model/{encoded-model-id}`.
+- [Frequently Asked Questions](https://luongnv89.github.io/free-llm-models/faq): API keys, first API calls, rate limits, integrations, and API key security.
+- [Former free models](https://luongnv89.github.io/free-llm-models/archive): Models that have left the current free catalog.
+- [Model details](https://luongnv89.github.io/free-llm-models/): Individual model pages use the URL pattern `/free-llm-models/model/{encoded-model-id}`.
 
 ## Optional
 

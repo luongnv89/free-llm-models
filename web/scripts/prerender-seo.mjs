@@ -9,9 +9,25 @@ const distDir = path.join(webDir, "dist");
 const seoConfig = JSON.parse(
   await readFile(path.join(webDir, "src/lib/seo-config.json"), "utf8"),
 );
-const siteUrl = seoConfig.siteUrl;
+function normalizeBasePath(value) {
+  if (!value || value === "/") return "/";
+  const withLeadingSlash = value.startsWith("/") ? value : `/${value}`;
+  return `${withLeadingSlash.replace(/\/+$/, "")}/`;
+}
+
+const basePath = normalizeBasePath(process.env.VITE_BASE_PATH);
+const normalizeSiteUrl = (value, fallback) => {
+  try {
+    const url = new URL(value || fallback);
+    if (url.protocol !== "http:" && url.protocol !== "https:") throw new Error();
+    return url.toString().replace(/\/+$/, "");
+  } catch {
+    return fallback.replace(/\/+$/, "");
+  }
+};
+const siteUrl = normalizeSiteUrl(process.env.VITE_SITE_URL, seoConfig.siteUrl);
 const siteName = seoConfig.siteName;
-const ogImage = seoConfig.ogImageUrl;
+const ogImage = new URL("og-image.svg", `${siteUrl}/`).toString();
 const homeTitle = seoConfig.homeTitle;
 const homeDescription = seoConfig.homeDescription;
 const archiveTitle = seoConfig.archiveTitle;
@@ -35,10 +51,17 @@ const truncate = (value, max) => {
   const text = cleanText(value);
   return text.length <= max ? text : `${text.slice(0, max - 1).trimEnd()}…`;
 };
+const routePath = (route) =>
+  route.startsWith("/") ? route : `/${route}`;
+const sitePath = (route) => {
+  const normalized = routePath(route);
+  return basePath === "/"
+    ? normalized
+    : `${basePath}${normalized.slice(1)}`;
+};
 const modelPath = (id) => `/model/${encodeURIComponent(id)}`;
-const modelUrl = (id) => `${siteUrl}${modelPath(id)}`;
-const canonicalUrl = (route) =>
-  `${siteUrl}${route.startsWith("/") ? route : `/${route}`}`;
+const modelUrl = (id) => canonicalUrl(modelPath(id));
+const canonicalUrl = (route) => `${siteUrl}${routePath(route)}`;
 const jsonLd = (value) => JSON.stringify(value).replaceAll("<", "\\u003c");
 
 const faqEntries = seoConfig.faqEntries;
@@ -232,7 +255,7 @@ function faqSchema() {
 }
 
 function staticLink(route, label) {
-  return `<a href="${escapeHtml(route)}">${escapeHtml(label)}</a>`;
+  return `<a href="${escapeHtml(sitePath(route))}">${escapeHtml(label)}</a>`;
 }
 
 function homeBody() {
@@ -242,7 +265,7 @@ function homeBody() {
   const list = uniqueModels
     .map(
       (model) =>
-        `<li><a href="${escapeHtml(modelPath(model.id))}"><strong>${escapeHtml(model.name)}</strong></a> <span>${escapeHtml(providerNameFor(model))}</span>${model.description ? `<p>${escapeHtml(model.description)}</p>` : ""}</li>`,
+        `<li><a href="${escapeHtml(sitePath(modelPath(model.id)))}"><strong>${escapeHtml(model.name)}</strong></a> <span>${escapeHtml(providerNameFor(model))}</span>${model.description ? `<p>${escapeHtml(model.description)}</p>` : ""}</li>`,
     )
     .join("");
   return `<main class="seo-prerendered"><header><h1>Free LLM Models</h1><p>Browse and compare ${escapeHtml(String(uniqueModels.length))} free AI models across ${escapeHtml(providerSummary || "multiple providers")}.</p></header><nav aria-label="Primary navigation">${staticLink("/faq", "FAQ")} ${staticLink("/archive", "Former free models")} ${staticLink("/free_models.json", "Download model data")}</nav><section><h2>Free AI model directory</h2><p>Search models by provider, context length, modality, reasoning, tool use, and other capabilities.</p><ul>${list}</ul></section></main>`;
@@ -252,7 +275,7 @@ function archiveBody() {
   const list = archivedModels
     .map(
       (entry) =>
-        `<li><a href="${escapeHtml(modelPath(entry.id || entry.model?.id))}">${escapeHtml(entry.model?.name || entry.id)}</a> <span>${escapeHtml(providerNameFor(entry.model || {}))}</span></li>`,
+        `<li><a href="${escapeHtml(sitePath(modelPath(entry.id || entry.model?.id)))}">${escapeHtml(entry.model?.name || entry.id)}</a> <span>${escapeHtml(providerNameFor(entry.model || {}))}</span></li>`,
     )
     .join("");
   return `<main class="seo-prerendered"><header><h1>Former free models</h1><p>Models that have left the current free AI model catalog.</p></header>${list ? `<section><h2>Archived AI models</h2><ul>${list}</ul></section>` : "<p>No archived models yet. Models that leave the free list will appear here after a future updater run.</p>"}${staticLink("/", "Back to free models")}</main>`;
@@ -266,6 +289,10 @@ function faqBody() {
     )
     .join("");
   return `<main class="seo-prerendered"><header><h1>Frequently Asked Questions</h1><p>Everything you need to know about free AI models, provider APIs, limits, and integrations.</p></header><div>${entries}</div>${staticLink("/", "Back to free models")}</main>`;
+}
+
+function notFoundBody() {
+  return `<main class="seo-prerendered"><h1>Page not found</h1><p>The requested page does not exist.</p>${staticLink("/", "Back to free models")}</main>`;
 }
 
 function modelBody(model, archived) {
@@ -404,6 +431,24 @@ for (const entry of archivedModels) {
   );
 }
 await writeFile(path.join(distDir, "sitemap.xml"), sitemapXml());
+await writeFile(
+  path.join(distDir, "404.html"),
+  renderDocument(
+    template,
+    {
+      title: "Page Not Found | Free LLM Models",
+      description: "The requested Free LLM Models page does not exist.",
+      route: "/",
+      structuredData: pageSchema(
+        "Page Not Found | Free LLM Models",
+        "The requested Free LLM Models page does not exist.",
+        "/",
+        [{ name: siteName, path: "/" }],
+      ),
+    },
+    notFoundBody(),
+  ),
+);
 console.log(
   `Prerendered ${renderedModelRoutes.size + 3} unique SEO routes and generated sitemap.xml`,
 );

@@ -2,9 +2,9 @@
   "schema_version": "1.0.0",
   "name": "Free LLM Models Directory",
   "description": "A searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM.",
-  "url": "https://luongnv.com/free-llm-models/",
+  "url": "https://free-llm-models.custats.info/",
   "documentation_url": "https://github.com/luongnv89/free-llm-models",
-  "avatar_url": "https://luongnv.com/free-llm-models/og-image.svg",
+  "avatar_url": "https://free-llm-models.custats.info/og-image.svg",
   "capabilities": [
     "model-search",
     "model-comparison",

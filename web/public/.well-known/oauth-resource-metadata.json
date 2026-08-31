@@ -1,6 +1,6 @@
 {
-  "resource": "https://luongnv.com/free-llm-models",
-  "oauth_token_endpoint": "https://luongnv.com/free-llm-models/.well-known/oauth-token",
-  "jwks_uri": "https://luongnv.com/free-llm-models/.well-known/jwks.json",
+  "resource": "https://free-llm-models.custats.info",
+  "oauth_token_endpoint": "https://free-llm-models.custats.info/.well-known/oauth-token",
+  "jwks_uri": "https://free-llm-models.custats.info/.well-known/jwks.json",
   "note": "This site does not currently support OAuth protected resource authentication. All resources are publicly accessible."
 }

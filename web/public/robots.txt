@@ -64,4 +64,4 @@ Disallow: /
 # ai-input=no: Do not use user-submitted content to improve AI models.
 Content-Signal: ai-train=no, search=yes, ai-input=no
 
-Sitemap: https://luongnv.com/free-llm-models/sitemap.xml
+Sitemap: https://free-llm-models.custats.info/sitemap.xml

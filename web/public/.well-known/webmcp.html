@@ -14,7 +14,7 @@
     </p>
     <p>Available tools: <code>search_models</code>, <code>get_model</code></p>
     <p>
-      See <a href="/free-llm-models/.well-known/webmcp.json">.well-known/webmcp.json</a> for the
+      See <a href="/.well-known/webmcp.json">.well-known/webmcp.json</a> for the
       full specification.
     </p>
 
@@ -52,7 +52,7 @@
             if (input.modality) params.set("modality", input.modality);
             if (input.context_length)
               params.set("context_length", String(input.context_length));
-            const resp = await fetch(`/free-llm-models/free_models.json?${params}`);
+            const resp = await fetch(`/free_models.json?${params}`);
             const data = await resp.json();
             return { content: JSON.stringify(data, null, 2) };
           },
@@ -71,7 +71,7 @@
           },
           handler: async (input) => {
             const resp = await fetch(
-              `/free-llm-models/free_models.json`,
+              `/free_models.json`,
             );
             const data = await resp.json();
             return { content: JSON.stringify(data, null, 2) };

@@ -6,35 +6,35 @@
     {
       "type": "mcp-server",
       "name": "Free LLM Models MCP",
-      "url": "https://luongnv.com/free-llm-models/.well-known/mcp.json",
+      "url": "https://free-llm-models.custats.info/.well-known/mcp.json",
       "transport": "http"
     },
     {
       "type": "a2a-agent",
       "name": "Free LLM Models Agent",
-      "url": "https://luongnv.com/free-llm-models/.well-known/agent.json"
+      "url": "https://free-llm-models.custats.info/.well-known/agent.json"
     },
     {
       "type": "openapi",
       "name": "Free LLM Models API",
-      "url": "https://luongnv.com/free-llm-models/.well-known/api-catalog.json",
+      "url": "https://free-llm-models.custats.info/.well-known/api-catalog.json",
       "version": "1.0.0"
     },
     {
       "type": "agent-skills",
       "name": "Agent Skills Index",
-      "url": "https://luongnv.com/free-llm-models/.well-known/agent-skills/index.json"
+      "url": "https://free-llm-models.custats.info/.well-known/agent-skills/index.json"
     },
     {
       "type": "data",
       "name": "Full Model Catalog",
-      "url": "https://luongnv.com/free-llm-models/free_models.json",
+      "url": "https://free-llm-models.custats.info/free_models.json",
       "content_type": "application/json"
     },
     {
       "type": "data",
       "name": "Per-Provider Model Index",
-      "url": "https://luongnv.com/free-llm-models/models/index.json",
+      "url": "https://free-llm-models.custats.info/models/index.json",
       "content_type": "application/json"
     }
   ]

@@ -1,7 +1,7 @@
 {
-  "issuer": "https://luongnv.com/free-llm-models",
-  "authorization_endpoint": "https://luongnv.com/free-llm-models/oauth/authorize",
-  "token_endpoint": "https://luongnv.com/free-llm-models/oauth/token",
-  "jwks_uri": "https://luongnv.com/free-llm-models/.well-known/jwks.json",
+  "issuer": "https://free-llm-models.custats.info",
+  "authorization_endpoint": "https://free-llm-models.custats.info/oauth/authorize",
+  "token_endpoint": "https://free-llm-models.custats.info/oauth/token",
+  "jwks_uri": "https://free-llm-models.custats.info/.well-known/jwks.json",
   "note": "This site does not currently support OAuth/OIDC authentication. All resources are publicly accessible."
 }

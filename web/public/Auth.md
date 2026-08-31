@@ -10,13 +10,13 @@ This site provides public, unauthenticated access to its core resources. No API 
 
 | Resource            | Authentication Required |
 | ------------------- | ----------------------- |
-| `/free-llm-models/` (homepage) | No                      |
-| `/free-llm-models/free_models.json` | No                      |
-| `/free-llm-models/models/*.json` | No                      |
-| `/free-llm-models/model/{id}` | No                      |
-| `/free-llm-models/faq` | No                      |
-| `/free-llm-models/archive` | No                      |
-| `/free-llm-models/.well-known/*` | No                      |
+| `/` (homepage) | No                      |
+| `/free_models.json` | No                      |
+| `/models/*.json` | No                      |
+| `/model/{id}` | No                      |
+| `/faq` | No                      |
+| `/archive` | No                      |
+| `/.well-known/*` | No                      |
 
 ## API Keys
 
@@ -34,4 +34,4 @@ artifacts, not capabilities of the Pages site.
 ## Contact
 
 For questions about access or authentication, open an issue at:
-https://github.com/luongnv89/free-llm-models/issues
+https://github.com/luongnv89/issues

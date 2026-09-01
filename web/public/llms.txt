@@ -27,6 +27,7 @@ This site is agent-ready. Discoverable resources:
 - [Free AI model directory](https://free-llm-models.custats.com/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
 - [Free models JSON](https://free-llm-models.custats.com/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
 - [Per-provider model index](https://free-llm-models.custats.com/models/index.json): Provider files and model counts used by the website.
+- [Full context](https://free-llm-models.custats.com/llms-full.txt): Expanded markdown with all FAQs, provider details, and harness setup for LLM consumption.
 
 ## Pages
 

@@ -1,0 +1,5 @@
+Contact: https://github.com/luongnv89/free-llm-models/issues
+Expires: 2027-09-01T00:00:00.000Z
+Acknowledgments: https://github.com/luongnv89/free-llm-models
+Preferred-Languages: en
+Canonical: https://free-llm-models.custats.com/.well-known/security.txt

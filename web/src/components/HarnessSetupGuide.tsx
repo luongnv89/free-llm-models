@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import { Check, Copy, ExternalLink, SquareTerminal } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -260,6 +260,23 @@ export function HarnessSetupGuide({
   const [activeId, setActiveId] = useState<HarnessId>(HARNESS_IDS[0]);
   const [copyState, setCopyState] = useState<CopyState>(null);
   const { copy } = useCopyToClipboard();
+  const copyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copyTimeoutRef.current !== null) {
+        clearTimeout(copyTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const clearCopyStateAfterTimeout = () => {
+    if (copyTimeoutRef.current !== null) clearTimeout(copyTimeoutRef.current);
+    copyTimeoutRef.current = setTimeout(() => {
+      copyTimeoutRef.current = null;
+      setCopyState(null);
+    }, 2000);
+  };
   const recipes = HARNESS_IDS.map((id) =>
     generateHarnessRecipe(id, effectiveProviderId, modelId),
   );
@@ -279,12 +296,14 @@ export function HarnessSetupGuide({
   const copySnippet = async (snippet: RecipeSnippet) => {
     const ok = await copy(snippet.content);
     setCopyState({ id: snippet.id, result: ok ? "copied" : "failed" });
+    if (ok) clearCopyStateAfterTimeout();
   };
 
   const copyAll = async (recipe: HarnessRecipe) => {
     if (!recipe.copyAllSafe || recipe.copyAll === null) return;
     const ok = await copy(recipe.copyAll);
     setCopyState({ id: "all", result: ok ? "copied" : "failed" });
+    if (ok) clearCopyStateAfterTimeout();
   };
 
   const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
@@ -303,6 +322,10 @@ export function HarnessSetupGuide({
     event.preventDefault();
     const nextId = HARNESS_IDS[nextIndex];
     setActiveId(nextId);
+    if (copyTimeoutRef.current !== null) {
+      clearTimeout(copyTimeoutRef.current);
+      copyTimeoutRef.current = null;
+    }
     setCopyState(null);
     document.getElementById(`harness-tab-${nextId}`)?.focus();
   };
@@ -354,6 +377,10 @@ export function HarnessSetupGuide({
                 tabIndex={selected ? 0 : -1}
                 onClick={() => {
                   setActiveId(id);
+                  if (copyTimeoutRef.current !== null) {
+                    clearTimeout(copyTimeoutRef.current);
+                    copyTimeoutRef.current = null;
+                  }
                   setCopyState(null);
                 }}
                 onKeyDown={handleTabKeyDown}

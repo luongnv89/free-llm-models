@@ -1,0 +1,112 @@
+# Free LLM Models — Full Context for LLMs
+
+> Free LLM Models is a searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM. All data is machine-readable and refreshed from provider APIs.
+
+The catalog is refreshed from provider APIs. Availability, limits, model policies, and pricing can change; verify important details with the provider before production use.
+
+## Site
+
+- Homepage: https://free-llm-models.custats.com/
+- Canonical: https://free-llm-models.custats.com/
+- Sitemap: https://free-llm-models.custats.com/sitemap.xml
+- Robots: https://free-llm-models.custats.com/robots.txt
+- GitHub: https://github.com/luongnv89/free-llm-models
+
+## Machine-readable data
+
+- Full catalog: https://free-llm-models.custats.com/free_models.json — aggregate with `models`, `archivedModels`, `providers`, `totalModels`, `fetchedAt`
+- Per-provider index: https://free-llm-models.custats.com/models/index.json — provider files and counts
+- Legacy snapshot: https://free-llm-models.custats.com/openrouter_free_models.json
+- Per-provider files: https://free-llm-models.custats.com/models/{providerId}.json
+
+Each model entry includes: `id`, `name`, `description`, `context_length`, `architecture.modality`, `pricing.prompt/completion`, `supported_parameters`, `providerId`, `addedToFreeList`, `popularity`.
+
+## Agent discovery
+
+- Agent Skills: https://free-llm-models.custats.com/.well-known/agent-skills/index.json
+- API Catalog (RFC 9727): https://free-llm-models.custats.com/.well-known/api-catalog
+- A2A Agent Card: https://free-llm-models.custats.com/.well-known/agent-card.json
+- MCP Server Card: https://free-llm-models.custats.com/.well-known/mcp/server-card.json
+- ARD Manifest: https://free-llm-models.custats.com/.well-known/ai-catalog.json
+- Auth.md: https://free-llm-models.custats.com/Auth.md
+- OAuth Authorization Server: https://free-llm-models.custats.com/.well-known/oauth-authorization-server
+- OAuth Protected Resource: https://free-llm-models.custats.com/.well-known/oauth-protected-resource
+- WebMCP: https://free-llm-models.custats.com/.well-known/webmcp.html (registerTool: search_models, get_model, list_providers)
+
+## Pages
+
+- FAQ: https://free-llm-models.custats.com/faq — API keys, first calls, rate limits, harness integrations, key security
+- Archive: https://free-llm-models.custats.com/archive — former free models
+- Model detail: https://free-llm-models.custats.com/model/{encoded-model-id} — per-model context, capabilities, and provider-specific setup recipes
+
+## Providers
+
+Supported providers (see README for env vars): openrouter (keyless), groq, google (Google AI Studio), cerebras, mistral, github-models, huggingface, nvidia-nim. Unconfigured providers are skipped with a warning.
+
+## How to use the data
+
+- Search/filter by provider, modality, context length, reasoning, tools in the UI.
+- Fetch `free_models.json` for the full list, or `models/{providerId}.json` for per-provider.
+- Model detail pages show OpenAI-compatible base URLs and harness recipes for Claude Code, Pi, OpenCode, Codex CLI.
+
+## Harness setup
+
+- Claude Code: set `ANTHROPIC_BASE_URL` (e.g. `https://openrouter.ai/api/v1`) and `ANTHROPIC_API_KEY`.
+- Codex CLI: configure `~/.codex/config.toml` with `wire_api = "responses"` and `base_url`.
+- Pi / OpenCode: use `/login` or env vars then select provider/model via their model pickers.
+
+See the detail page's "Set up a coding harness" guide for provider-aware, copyable steps. Unsupported combinations explain the protocol gap and link to official docs.
+
+## FAQ (verbatim)
+
+Q: What are free models?
+A: This site tracks AI language models available completely free of charge across multiple providers, with no cost for input or output tokens.
+
+Q: How do I get an API key?
+A: Each provider has its own signup. For OpenRouter, create an account, open API Keys in the dashboard, create a key, and store it securely.
+
+Q: How do I make my first API call?
+A: OpenRouter uses an OpenAI-compatible API format. Choose a free model, send a request with your API key, and read the model reply from the JSON response.
+
+Q: What are the rate limits for free models?
+A: Free models are rate limited. Limits vary by provider and model and can include requests per minute, daily limits, and lower queue priority.
+
+Q: Are there any usage restrictions?
+A: Check provider logging policies, terms of service, commercial-use permissions, and model availability before relying on a free model.
+
+Q: Why do some models have an expiration date?
+A: Some free models are promotional or trial versions. They may become paid, be replaced, or stop being available after the expiration date.
+
+Q: How do I use OpenRouter with Claude Code?
+A: OpenRouter integrates with Claude Code through an OpenRouter endpoint and API key configured in your shell profile or project settings.
+
+Q: How do I use OpenRouter with LangChain?
+A: LangChain can use OpenRouter through its OpenAI-compatible interface by setting the OpenRouter model, API key, and base URL.
+
+Q: How do I use OpenRouter with the OpenAI SDK?
+A: Since OpenRouter is OpenAI-compatible, configure the OpenAI SDK with the OpenRouter base URL and your API key.
+
+Q: How do I use tool calling / function calling?
+A: Define your tools, include them in the API request, and handle tool calls in the response. Check whether the model supports tools.
+
+Q: How should I store my API key?
+A: Store API keys in environment variables or a secret manager, never commit them to git, rotate them regularly, and limit their scope.
+
+Q: What if my API key is compromised?
+A: Revoke the compromised key immediately, create a new one, update applications, review account activity, and remove the secret from git history if necessary.
+
+## Usage notes
+
+- Free quotas are ephemeral and training-related: do not send sensitive code to free endpoints.
+- For local usage, point harnesses at Ollama (`http://localhost:11434`) or LM Studio (`http://localhost:1234`) instead.
+
+## Crawl & AI preferences
+
+- `robots.txt` declares `Content-Signal: ai-train=no, search=yes, ai-input=no` and explicit `User-agent` rules for GPTBot, Claude-Web, etc.
+- `User-agent: GPTBot`, `ClaudeBot`, `anthropic-ai`, `CCBot`, `Bytespider`, `Google-Extended` are disallowed for training; search bots are allowed.
+
+## Verification
+
+- Sitemap and discovery URLs use `https://free-llm-models.custats.com/`.
+- Structured data includes WebSite with SearchAction, Organization, Dataset, ItemList, WebPage, and per-model SoftwareApplication.
+- Markdown negotiation (`Accept: text/markdown` → `text/markdown` + `x-markdown-tokens`) is served on Vercel; GitHub Pages documents it as Vercel-only.

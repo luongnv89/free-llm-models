@@ -40,7 +40,7 @@ const model: Model = {
 describe("SEO helpers", () => {
   it("builds absolute canonical URLs and safely encodes model IDs", () => {
     expect(canonicalUrl("/faq")).toBe(
-      "https://free-llm-models.custats.info/faq",
+      "https://free-llm-models.custats.com/faq",
     );
     expect(modelPath(model.id)).toBe("/model/acme/example:model");
   });

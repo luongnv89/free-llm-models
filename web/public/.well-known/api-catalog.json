@@ -1,10 +1,10 @@
 {
   "linkset": [
     {
-      "anchor": "https://free-llm-models.custats.info/",
+      "anchor": "https://free-llm-models.custats.com/",
       "service-desc": [
         {
-          "href": "https://free-llm-models.custats.info/free_models.json",
+          "href": "https://free-llm-models.custats.com/free_models.json",
           "type": "application/json"
         }
       ],
@@ -16,16 +16,16 @@
       ],
       "describedby": [
         {
-          "href": "https://free-llm-models.custats.info/llms.txt",
+          "href": "https://free-llm-models.custats.com/llms.txt",
           "type": "text/plain"
         }
       ]
     },
     {
-      "anchor": "https://free-llm-models.custats.info/free_models.json",
+      "anchor": "https://free-llm-models.custats.com/free_models.json",
       "service-desc": [
         {
-          "href": "https://free-llm-models.custats.info/.well-known/api-catalog",
+          "href": "https://free-llm-models.custats.com/.well-known/api-catalog",
           "type": "application/linkset+json"
         }
       ],
@@ -37,10 +37,10 @@
       ]
     },
     {
-      "anchor": "https://free-llm-models.custats.info/models/index.json",
+      "anchor": "https://free-llm-models.custats.com/models/index.json",
       "service-desc": [
         {
-          "href": "https://free-llm-models.custats.info/.well-known/api-catalog",
+          "href": "https://free-llm-models.custats.com/.well-known/api-catalog",
           "type": "application/linkset+json"
         }
       ],

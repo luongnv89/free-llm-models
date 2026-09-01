@@ -34,12 +34,12 @@ describe("CuStatsBanner", () => {
     expect(container.textContent).toContain("usage. Learn more");
   });
 
-  it("links to custats.info in a new tab", async () => {
+  it("links to custats.com in a new tab", async () => {
     await render();
 
     const link = container.querySelector("a");
     expect(link).toBeTruthy();
-    expect(link!.getAttribute("href")).toBe("https://custats.info");
+    expect(link!.getAttribute("href")).toBe("https://custats.com");
     expect(link!.getAttribute("target")).toBe("_blank");
     expect(link!.getAttribute("rel")).toContain("noopener");
   });

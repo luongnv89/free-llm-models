@@ -1,13 +1,13 @@
 # Agent Readiness Plan — GitHub Pages
 
-**Default site:** <https://free-llm-models.custats.info/>
+**Default site:** <https://free-llm-models.custats.com/>
 
 The hosting target is GitHub Pages, configured with **Settings → Pages →
 Source: GitHub Actions**. The deploy workflow builds the static Vite site with:
 
 ```text
 VITE_BASE_PATH=/
-VITE_SITE_URL=https://free-llm-models.custats.info
+VITE_SITE_URL=https://free-llm-models.custats.com
 ```
 
 ## Supported static discovery
@@ -34,12 +34,12 @@ available. Pushing to `main` updates both deployments when Vercel is connected.
 ### DNS for AI Discovery (DNS-AID)
 
 DNS-AID requires ServiceMode SVCB/HTTPS records under `_agents` (e.g.
-`_a2a._agents.free-llm-models.custats.info`) with DNSSEC. This is a manual DNS
+`_a2a._agents.free-llm-models.custats.com`) with DNSSEC. This is a manual DNS
 provider step and cannot be implemented via static files:
 
 ```
-_a2a._agents.custats.info. 3600 IN SVCB 1 free-llm-models.custats.info. alpn="a2a" port=443 mandatory=alpn,port
-_index._agents.custats.info. 3600 IN SVCB 1 free-llm-models.custats.info. alpn="generic" port=443
+_a2a._agents.custats.com. 3600 IN SVCB 1 free-llm-models.custats.com. alpn="a2a" port=443 mandatory=alpn,port
+_index._agents.custats.com. 3600 IN SVCB 1 free-llm-models.custats.com. alpn="generic" port=443
 ```
 
 Enable DNSSEC at the registrar and add the records via the DNS dashboard.
@@ -56,7 +56,7 @@ from code changes.
        `faq/index.html`, model detail files, `sitemap.xml`, `robots.txt`, `llms.txt`,
        and all `.well-known` discovery documents.
 - [ ] Check canonical, Open Graph, JSON-LD, sitemap, robots, and discovery URLs
-       against the default Pages URL (`https://free-llm-models.custats.info`).
+       against the default Pages URL (`https://free-llm-models.custats.com`).
 - [ ] For Vercel (`https://free-llm-models.vercel.app`) verify Link headers
        (`rel=api-catalog`), markdown negotiation (`Accept: text/markdown` → `text/markdown`),
        and Edge Functions are served via `vercel.json`.

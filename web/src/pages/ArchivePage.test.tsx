@@ -155,7 +155,7 @@ describe("ArchivePage", () => {
     await renderPage();
     expect(container.querySelector(".animate-spin")).toBeTruthy();
     expect(
-      container.querySelector('a[href="https://custats.info"]'),
+      container.querySelector('a[href="https://custats.com"]'),
     ).toBeTruthy();
   });
 
@@ -187,7 +187,7 @@ describe("ArchivePage", () => {
     expect(container.textContent).toContain("Back to Models");
     expect(container.querySelector('a[href="/"]')).toBeTruthy();
     expect(
-      container.querySelector('a[href="https://custats.info"]'),
+      container.querySelector('a[href="https://custats.com"]'),
     ).toBeTruthy();
   });
 

@@ -2,14 +2,14 @@
   "specVersion": "1.0",
   "host": {
     "displayName": "Free LLM Models",
-    "identifier": "did:web:free-llm-models.custats.info"
+    "identifier": "did:web:free-llm-models.custats.com"
   },
   "entries": [
     {
-      "identifier": "urn:air:free-llm-models.custats.info:mcp:catalog",
+      "identifier": "urn:air:free-llm-models.custats.com:mcp:catalog",
       "displayName": "Free LLM Models MCP Server",
       "type": "application/mcp-server-card+json",
-      "url": "https://free-llm-models.custats.info/.well-known/mcp/server-card.json",
+      "url": "https://free-llm-models.custats.com/.well-known/mcp/server-card.json",
       "representativeQueries": [
         "search for free AI models with large context",
         "find a free code generation model",
@@ -17,10 +17,10 @@
       ]
     },
     {
-      "identifier": "urn:air:free-llm-models.custats.info:a2a:directory",
+      "identifier": "urn:air:free-llm-models.custats.com:a2a:directory",
       "displayName": "Free LLM Models Directory Agent",
       "type": "application/a2a-agent-card+json",
-      "url": "https://free-llm-models.custats.info/.well-known/agent-card.json",
+      "url": "https://free-llm-models.custats.com/.well-known/agent-card.json",
       "representativeQueries": [
         "find free models for reasoning tasks",
         "compare free models by context length",
@@ -28,10 +28,10 @@
       ]
     },
     {
-      "identifier": "urn:air:free-llm-models.custats.info:api:catalog",
+      "identifier": "urn:air:free-llm-models.custats.com:api:catalog",
       "displayName": "Free LLM Models API Catalog",
       "type": "application/linkset+json",
-      "url": "https://free-llm-models.custats.info/.well-known/api-catalog",
+      "url": "https://free-llm-models.custats.com/.well-known/api-catalog",
       "representativeQueries": [
         "get the full free model catalog JSON",
         "fetch provider-specific model listings",
@@ -39,10 +39,10 @@
       ]
     },
     {
-      "identifier": "urn:air:free-llm-models.custats.info:data:full-catalog",
+      "identifier": "urn:air:free-llm-models.custats.com:data:full-catalog",
       "displayName": "Full Model Catalog",
       "type": "application/json",
-      "url": "https://free-llm-models.custats.info/free_models.json",
+      "url": "https://free-llm-models.custats.com/free_models.json",
       "representativeQueries": [
         "download complete free model list",
         "get all free models with pricing",

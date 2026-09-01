@@ -24,15 +24,15 @@ This site is agent-ready. Discoverable resources:
 
 ## Catalog
 
-- [Free AI model directory](https://free-llm-models.custats.info/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
-- [Free models JSON](https://free-llm-models.custats.info/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
-- [Per-provider model index](https://free-llm-models.custats.info/models/index.json): Provider files and model counts used by the website.
+- [Free AI model directory](https://free-llm-models.custats.com/): Search and filter the current free model catalog by provider, modality, context length, reasoning, tools, and other capabilities.
+- [Free models JSON](https://free-llm-models.custats.com/free_models.json): Machine-readable aggregate catalog with model metadata and provider identifiers.
+- [Per-provider model index](https://free-llm-models.custats.com/models/index.json): Provider files and model counts used by the website.
 
 ## Pages
 
-- [Frequently Asked Questions](https://free-llm-models.custats.info/faq): API keys, first API calls, rate limits, integrations, and API key security.
-- [Former free models](https://free-llm-models.custats.info/archive): Models that have left the current free catalog.
-- [Model details](https://free-llm-models.custats.info/): Individual model pages use the URL pattern `/model/{encoded-model-id}`.
+- [Frequently Asked Questions](https://free-llm-models.custats.com/faq): API keys, first API calls, rate limits, integrations, and API key security.
+- [Former free models](https://free-llm-models.custats.com/archive): Models that have left the current free catalog.
+- [Model details](https://free-llm-models.custats.com/): Individual model pages use the URL pattern `/model/{encoded-model-id}`.
 
 ## Optional
 

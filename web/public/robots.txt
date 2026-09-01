@@ -70,6 +70,6 @@ Disallow: /
 # ai-input=no: Do not use user-submitted content to improve AI models.
 Content-Signal: ai-train=no, search=yes, ai-input=no
 
-Agentmap: https://free-llm-models.custats.info/.well-known/ai-catalog.json
+Agentmap: https://free-llm-models.custats.com/.well-known/ai-catalog.json
 
-Sitemap: https://free-llm-models.custats.info/sitemap.xml
+Sitemap: https://free-llm-models.custats.com/sitemap.xml

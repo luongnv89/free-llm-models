@@ -127,7 +127,7 @@ describe("HomePage", () => {
 
     expect(container.querySelector(".animate-spin")).toBeTruthy();
     expect(
-      container.querySelector('a[href="https://custats.info"]'),
+      container.querySelector('a[href="https://custats.com"]'),
     ).toBeTruthy();
     expect(container.textContent).not.toContain("OpenRouter Free Models");
   });
@@ -140,7 +140,7 @@ describe("HomePage", () => {
     expect(container.textContent).toContain("Failed to load models");
     expect(container.textContent).toContain("network down");
     expect(
-      container.querySelector('a[href="https://custats.info"]'),
+      container.querySelector('a[href="https://custats.com"]'),
     ).toBeTruthy();
   });
 

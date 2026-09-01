@@ -5,42 +5,42 @@
       "name": "model-catalog",
       "type": "skill-md",
       "description": "Access the full catalog of free AI/LLM models across multiple providers.",
-      "url": "https://free-llm-models.custats.info/free_models.json",
+      "url": "https://free-llm-models.custats.com/free_models.json",
       "digest": "sha256:795e869092531b7a8ace2f284eace05fe9fd6529ca9d7afc46cc9345dd62f10c"
     },
     {
       "name": "provider-models",
       "type": "skill-md",
       "description": "Access per-provider model listings with counts and metadata.",
-      "url": "https://free-llm-models.custats.info/models/index.json",
+      "url": "https://free-llm-models.custats.com/models/index.json",
       "digest": "sha256:992241cd1649cd10daa61bcdfe0d7dba4b4fd1636bbefbaa1a723c41721efb1d"
     },
     {
       "name": "model-details",
       "type": "skill-md",
       "description": "Get detailed information about a specific free AI model.",
-      "url": "https://free-llm-models.custats.info/model/{model_id}",
+      "url": "https://free-llm-models.custats.com/model/{model_id}",
       "digest": "sha256:f8a1717d93a64fbf97a64dea837f20fd28ef50faa9f5791a1cb613b1ca227964"
     },
     {
       "name": "faq",
       "type": "skill-md",
       "description": "Frequently asked questions about free AI models and provider APIs.",
-      "url": "https://free-llm-models.custats.info/faq",
+      "url": "https://free-llm-models.custats.com/faq",
       "digest": "sha256:30de18cc4ea2bf4601b4d97e3dc591d762e5bf00400e320c319a1f03821c6257"
     },
     {
       "name": "archive",
       "type": "skill-md",
       "description": "Browse models that have left the current free catalog.",
-      "url": "https://free-llm-models.custats.info/archive",
+      "url": "https://free-llm-models.custats.com/archive",
       "digest": "sha256:0eb3e36bfb24dcd9bb1d1bece1531216b59539a8fde17ee80224af0653c92aa3"
     },
     {
       "name": "llms-full-text",
       "type": "skill-md",
       "description": "Machine-readable full-text summary for LLM consumption.",
-      "url": "https://free-llm-models.custats.info/llms.txt",
+      "url": "https://free-llm-models.custats.com/llms.txt",
       "digest": "sha256:cc2a3e8d3d4e562ad89591c22f4e35ee52a175fafadee3c864424f034e3fa975"
     }
   ]

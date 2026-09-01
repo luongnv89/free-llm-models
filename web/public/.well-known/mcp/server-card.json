@@ -4,11 +4,11 @@
     "version": "1.0.0"
   },
   "description": "Model catalog browsing and search via the Model Context Protocol. Search free AI models, get model details, and list providers.",
-  "url": "https://free-llm-models.custats.info/mcp",
-  "endpoint": "https://free-llm-models.custats.info/mcp",
+  "url": "https://free-llm-models.custats.com/mcp",
+  "endpoint": "https://free-llm-models.custats.com/mcp",
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://free-llm-models.custats.info/mcp"
+    "endpoint": "https://free-llm-models.custats.com/mcp"
   },
   "capabilities": {
     "tools": true,

@@ -23,7 +23,7 @@ export function CuStatsPageShell({
 export function CuStatsBanner() {
   return (
     <a
-      href="https://custats.info"
+      href="https://custats.com"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center gap-2 px-4 py-2 bg-card border border-[var(--highlight)]"

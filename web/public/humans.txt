@@ -1,0 +1,15 @@
+/* TEAM */
+Developer: Luong NGUYEN (luongnv89)
+Site: https://free-llm-models.custats.com
+Contact: https://github.com/luongnv89/free-llm-models/issues
+Location: France
+
+/* THANKS */
+Providers: OpenRouter, Groq, Google, Cerebras, Mistral, GitHub Models, Hugging Face, NVIDIA
+Community: cheahjs/free-llm-api-resources
+
+/* SITE */
+Standards: HTML5, CSS3, React 19, Vite 7, Tailwind 4
+Language: English
+Doctype: HTML5
+IDE: VS Code

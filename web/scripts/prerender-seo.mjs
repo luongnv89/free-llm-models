@@ -104,6 +104,14 @@ function homeSchema() {
         url: `${siteUrl}/`,
         description: homeDescription,
         image: ogImage,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${siteUrl}/?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "Organization",
@@ -111,6 +119,31 @@ function homeSchema() {
         name: siteName,
         url: `${siteUrl}/`,
         logo: ogImage,
+      },
+      {
+        "@type": "Dataset",
+        "@id": `${siteUrl}/#dataset`,
+        name: "Free LLM Models Catalog",
+        description:
+          "Machine-readable catalog of free AI models across OpenRouter, Groq, Google, Cerebras, Mistral, Hugging Face, and NVIDIA NIM with context length, modality, and capabilities.",
+        url: `${siteUrl}/free_models.json`,
+        keywords: ["LLM", "AI models", "free", "OpenRouter", "Groq", "generative AI"],
+        license: "https://github.com/luongnv89/free-llm-models/blob/main/LICENSE",
+        isAccessibleForFree: true,
+        distribution: [
+          {
+            "@type": "DataDownload",
+            encodingFormat: "application/json",
+            contentUrl: `${siteUrl}/free_models.json`,
+          },
+          {
+            "@type": "DataDownload",
+            encodingFormat: "application/json",
+            contentUrl: `${siteUrl}/models/index.json`,
+          },
+        ],
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        dateModified: data.fetchedAt,
       },
       {
         "@type": "ItemList",
@@ -345,10 +378,20 @@ function sitemapXml() {
   const lastmod = data.fetchedAt
     ? new Date(data.fetchedAt).toISOString().slice(0, 10)
     : undefined;
+  const priorityFor = (route) => {
+    if (route === "/") return "1.0";
+    if (route === "/faq" || route === "/archive") return "0.7";
+    return "0.6";
+  };
+  const changefreqFor = (route) => {
+    if (route === "/") return "daily";
+    if (route === "/archive") return "weekly";
+    return "weekly";
+  };
   const urls = [...seen]
     .map(
       (route) =>
-        `<url><loc>${escapeXml(canonicalUrl(route))}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`,
+        `<url><loc>${escapeXml(canonicalUrl(route))}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}<changefreq>${changefreqFor(route)}</changefreq><priority>${priorityFor(route)}</priority></url>`,
     )
     .join("");
   return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>\n`;

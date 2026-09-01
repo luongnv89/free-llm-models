@@ -7,15 +7,37 @@
   "tools": [
     {
       "name": "search_models",
-      "description": "Search the free AI model catalog",
+      "description": "Search the free AI model catalog by query, provider, and modality.",
       "method": "GET",
-      "endpoint": "/?q={query}&provider={provider}"
+      "endpoint": "/?q={query}&provider={provider}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string" },
+          "provider": { "type": "string" },
+          "modality": { "type": "string" }
+        }
+      }
     },
     {
       "name": "get_model",
       "description": "Get details for a specific model",
       "method": "GET",
-      "endpoint": "/model/{model_id}"
+      "endpoint": "/model/{model_id}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "model_id": { "type": "string" }
+        },
+        "required": ["model_id"]
+      }
+    },
+    {
+      "name": "list_providers",
+      "description": "List all providers with free models",
+      "method": "GET",
+      "endpoint": "/models/index.json",
+      "inputSchema": { "type": "object", "properties": {} }
     }
   ]
 }

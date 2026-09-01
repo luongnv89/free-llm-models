@@ -44,6 +44,8 @@
       content="https://free-llm-models.custats.info/og-image.svg"
     />
     <!-- SEO:END -->
+    <link rel="ai-catalog" href="/.well-known/ai-catalog.json" />
+    <link rel="alternate" type="text/markdown" href="/llms.txt" />
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -57,6 +59,72 @@
       }
       gtag("js", new Date());
       gtag("config", "G-15QDEYG6YB");
+    </script>
+    <script>
+      (function () {
+        const abortController = new AbortController();
+        function registerWebMCP() {
+          if (
+            typeof navigator === "undefined" ||
+            !navigator.modelContext ||
+            typeof navigator.modelContext.registerTool !== "function"
+          )
+            return;
+          const tools = [
+            {
+              name: "search_models",
+              description:
+                "Search the free AI model catalog by query, provider, and modality.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  query: { type: "string", description: "Search query" },
+                  provider: { type: "string", description: "Provider ID" },
+                  modality: { type: "string", description: "Modality filter" },
+                },
+              },
+              execute: async (input) => {
+                const p = new URLSearchParams();
+                if (input.query) p.set("q", input.query);
+                if (input.provider) p.set("provider", input.provider);
+                const r = await fetch("/free_models.json?" + p.toString());
+                const j = await r.json();
+                return { content: [{ type: "text", text: JSON.stringify(j, null, 2) }] };
+              },
+            },
+            {
+              name: "get_model",
+              description: "Get detailed information about a specific free AI model.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  model_id: { type: "string", description: "Model identifier" },
+                },
+                required: ["model_id"],
+              },
+              execute: async (input) => {
+                const r = await fetch("/free_models.json");
+                const j = await r.json();
+                const m = (j.models || []).find((x) => x.id === input.model_id) || null;
+                return { content: [{ type: "text", text: JSON.stringify(m, null, 2) }] };
+              },
+            },
+          ];
+          tools.forEach((t) => {
+            try {
+              navigator.modelContext.registerTool(t, {
+                signal: abortController.signal,
+              });
+            } catch {}
+          });
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", registerWebMCP);
+        } else {
+          registerWebMCP();
+        }
+        window.addEventListener("pagehide", () => abortController.abort());
+      })();
     </script>
   </head>
   <body>

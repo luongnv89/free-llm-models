@@ -6,6 +6,50 @@ const webVercelConfig = new URL("../vercel.json", import.meta.url);
 const expectedConfig = {
   rewrites: [
     {
+      source: "/",
+      has: [
+        {
+          type: "header",
+          key: "accept",
+          value: "(.*)text/markdown(.*)",
+        },
+      ],
+      destination: "/api/markdown",
+    },
+    {
+      source: "/faq",
+      has: [
+        {
+          type: "header",
+          key: "accept",
+          value: "(.*)text/markdown(.*)",
+        },
+      ],
+      destination: "/api/markdown",
+    },
+    {
+      source: "/archive",
+      has: [
+        {
+          type: "header",
+          key: "accept",
+          value: "(.*)text/markdown(.*)",
+        },
+      ],
+      destination: "/api/markdown",
+    },
+    {
+      source: "/model/:path+",
+      has: [
+        {
+          type: "header",
+          key: "accept",
+          value: "(.*)text/markdown(.*)",
+        },
+      ],
+      destination: "/api/markdown",
+    },
+    {
       source: "/model/:path+",
       destination: "/index.html",
     },

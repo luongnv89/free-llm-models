@@ -1,0 +1,46 @@
+{
+  "name": "Free LLM Models Directory",
+  "version": "1.0.0",
+  "description": "A searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM.",
+  "url": "https://free-llm-models.custats.info/",
+  "documentationUrl": "https://github.com/luongnv89/free-llm-models",
+  "provider": {
+    "organization": "Free LLM Models",
+    "url": "https://github.com/luongnv89/free-llm-models"
+  },
+  "supportedInterfaces": [
+    {
+      "url": "https://free-llm-models.custats.info/",
+      "protocolBinding": "JSONRPC"
+    },
+    {
+      "url": "https://free-llm-models.custats.info/.well-known/agent-card.json",
+      "protocolBinding": "HTTP+JSON"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "skills": [
+    {
+      "id": "model-search",
+      "name": "Model Search",
+      "description": "Search the free AI model catalog by name, provider, or capability.",
+      "tags": ["models", "search"]
+    },
+    {
+      "id": "model-details",
+      "name": "Model Details",
+      "description": "Get detailed information about a specific free AI model.",
+      "tags": ["models", "details"]
+    },
+    {
+      "id": "provider-filtering",
+      "name": "Provider Filtering",
+      "description": "Filter and compare models by provider, modality, and context length.",
+      "tags": ["providers", "filtering"]
+    }
+  ]
+}

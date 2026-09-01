@@ -39,14 +39,15 @@ ${providerEntries}
 
 ## Agent Resources
 
-- [Agent Skills](/.well-known/agent-skills/index.json)
-- [API Catalog](/.well-known/api-catalog.json)
-- [A2A Agent Card](/.well-known/agent.json)
-- [MCP Server](/.well-known/mcp.json)
-- [ARD Manifest](/.well-known/ard.json)
-- [Auth.md](/Auth.md)
-- [robots.txt](/robots.txt)
-- [sitemap.xml](/sitemap.xml)
+- [Agent Skills](/.well-known/agent-skills/index.json) - Discoverable skills
+- [API Catalog](/.well-known/api-catalog) - Machine-readable API endpoints (RFC 9727)
+- [A2A Agent Card](/.well-known/agent-card.json) - Agent-to-agent discovery
+- [MCP Server Card](/.well-known/mcp/server-card.json) - Model Context Protocol
+- [ARD Manifest](/.well-known/ai-catalog.json) - Agentic Resource Discovery
+- [Auth.md](/Auth.md) - Authentication and API key policy
+- [robots.txt](/robots.txt) - Crawl rules and AI content preferences
+- [sitemap.xml](/sitemap.xml) - Site map for crawlers
+- [llms.txt](/llms.txt) - LLM-friendly site summary
 `;
 
   return new Response(markdown, {
@@ -54,6 +55,8 @@ ${providerEntries}
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       "Cache-Control": "public, max-age=3600",
+      "x-markdown-tokens": String(markdown.split(/\s+/).length),
+      "Access-Control-Allow-Origin": "*",
     },
   });
 }

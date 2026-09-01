@@ -19,65 +19,102 @@
     </p>
 
     <script>
-      if (
-        typeof navigator.modelContext !== "undefined" &&
-        typeof navigator.modelContext.registerTool === "function"
-      ) {
-        navigator.modelContext.registerTool({
-          name: "search_models",
-          description:
-            "Search the free AI model catalog by query, provider, and modality.",
-          inputSchema: {
-            type: "object",
-            properties: {
-              query: { type: "string", description: "Search query string" },
-              provider: {
-                type: "string",
-                description: "Filter by provider ID",
+      (function () {
+        const abortController = new AbortController();
+        function registerTools() {
+          if (
+            typeof navigator === "undefined" ||
+            typeof navigator.modelContext === "undefined" ||
+            typeof navigator.modelContext.registerTool !== "function"
+          ) {
+            return;
+          }
+          navigator.modelContext.registerTool(
+            {
+              name: "search_models",
+              description:
+                "Search the free AI model catalog by query, provider, and modality.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  query: { type: "string", description: "Search query string" },
+                  provider: {
+                    type: "string",
+                    description: "Filter by provider ID",
+                  },
+                  modality: {
+                    type: "string",
+                    description: "Filter by modality (text, image, audio)",
+                  },
+                  context_length: {
+                    type: "integer",
+                    description: "Maximum context length in tokens",
+                  },
+                },
               },
-              modality: {
-                type: "string",
-                description: "Filter by modality (text, image, audio)",
-              },
-              context_length: {
-                type: "integer",
-                description: "Maximum context length in tokens",
+              execute: async (input) => {
+                const params = new URLSearchParams();
+                if (input.query) params.set("q", input.query);
+                if (input.provider) params.set("provider", input.provider);
+                if (input.modality) params.set("modality", input.modality);
+                if (input.context_length)
+                  params.set("context_length", String(input.context_length));
+                const resp = await fetch(`/free_models.json?${params}`);
+                const data = await resp.json();
+                return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
               },
             },
-          },
-          handler: async (input) => {
-            const params = new URLSearchParams();
-            if (input.query) params.set("q", input.query);
-            if (input.provider) params.set("provider", input.provider);
-            if (input.modality) params.set("modality", input.modality);
-            if (input.context_length)
-              params.set("context_length", String(input.context_length));
-            const resp = await fetch(`/free_models.json?${params}`);
-            const data = await resp.json();
-            return { content: JSON.stringify(data, null, 2) };
-          },
-        });
+            { signal: abortController.signal },
+          );
 
-        navigator.modelContext.registerTool({
-          name: "get_model",
-          description:
-            "Get detailed information about a specific free AI model.",
-          inputSchema: {
-            type: "object",
-            properties: {
-              model_id: { type: "string", description: "The model identifier" },
+          navigator.modelContext.registerTool(
+            {
+              name: "get_model",
+              description:
+                "Get detailed information about a specific free AI model.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  model_id: { type: "string", description: "The model identifier" },
+                },
+                required: ["model_id"],
+              },
+              execute: async (input) => {
+                const resp = await fetch(`/free_models.json`);
+                const data = await resp.json();
+                const model = (data.models || []).find((m) => m.id === input.model_id) || null;
+                return {
+                  content: [{ type: "text", text: JSON.stringify(model, null, 2) }],
+                };
+              },
             },
-            required: ["model_id"],
-          },
-          handler: async (input) => {
-            const resp = await fetch(
-              `/free_models.json`,
-            );
-            const data = await resp.json();
-            return { content: JSON.stringify(data, null, 2) };
-          },
-        });
-      }
+            { signal: abortController.signal },
+          );
+
+          navigator.modelContext.registerTool(
+            {
+              name: "list_providers",
+              description: "List all providers with free models and their model counts.",
+              inputSchema: {
+                type: "object",
+                properties: {},
+              },
+              execute: async () => {
+                const resp = await fetch(`/models/index.json`);
+                const data = await resp.json();
+                return { content: [{ type: "text", text: JSON.stringify(data, null, 2) }] };
+              },
+            },
+            { signal: abortController.signal },
+          );
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", registerTools);
+        } else {
+          registerTools();
+        }
+        window.addEventListener("pagehide", () => abortController.abort());
+      })();
     </script>
   </body>
 </html>

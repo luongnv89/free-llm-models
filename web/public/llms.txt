@@ -9,14 +9,18 @@ The catalog is refreshed from provider APIs. Availability, limits, model policie
 This site is agent-ready. Discoverable resources:
 
 - [Agent Skills Index](/.well-known/agent-skills/index.json) - Discoverable skills and resources
-- [API Catalog](/.well-known/api-catalog.json) - Machine-readable API endpoints (RFC 9727)
-- [A2A Agent Card](/.well-known/agent.json) - Agent-to-agent discovery
-- [MCP Server Card](/.well-known/mcp.json) - Model Context Protocol server
-- [ARD Manifest](/.well-known/ard.json) - Agentic Resource Discovery
+- [API Catalog](/.well-known/api-catalog) - Machine-readable API endpoints (RFC 9727) — also at /.well-known/api-catalog.json
+- [A2A Agent Card](/.well-known/agent-card.json) - Agent-to-agent discovery (also /.well-known/agent.json)
+- [MCP Server Card](/.well-known/mcp/server-card.json) - Model Context Protocol server (also /.well-known/mcp.json)
+- [ARD Manifest](/.well-known/ai-catalog.json) - Agentic Resource Discovery (also /.well-known/ard.json)
 - [Auth.md](/Auth.md) - Authentication and API key policy
+- [OAuth Authorization Server](/.well-known/oauth-authorization-server) - OAuth 2.0 discovery (RFC 8414)
+- [OAuth Protected Resource](/.well-known/oauth-protected-resource) - Protected resource metadata (RFC 9728)
+- [JWKS](/.well-known/jwks.json) - JSON Web Key Set
+- [WebMCP manifest](/.well-known/webmcp.json) - Browser tool definitions
 - [robots.txt](/robots.txt) - Crawl rules and AI content preferences
 - [sitemap.xml](/sitemap.xml) - Site map for crawlers
-- Link response headers are not available on GitHub Pages (legacy Vercel/Netlify behavior is not part of this deployment).
+- Link response headers with `rel=api-catalog` are served on Vercel (see vercel.json); GitHub Pages serves the site statically and cannot provide response Link headers.
 
 ## Catalog
 

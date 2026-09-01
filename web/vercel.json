@@ -1,6 +1,50 @@
 {
   "rewrites": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*)text/markdown(.*)"
+        }
+      ],
+      "destination": "/api/markdown"
+    },
+    {
+      "source": "/faq",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*)text/markdown(.*)"
+        }
+      ],
+      "destination": "/api/markdown"
+    },
+    {
+      "source": "/archive",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*)text/markdown(.*)"
+        }
+      ],
+      "destination": "/api/markdown"
+    },
+    {
+      "source": "/model/:path+",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "(.*)text/markdown(.*)"
+        }
+      ],
+      "destination": "/api/markdown"
+    },
+    {
       "source": "/model/:path+",
       "destination": "/index.html"
     },
@@ -11,6 +55,17 @@
     {
       "source": "/faq",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</.well-known/api-catalog>; rel=\"api-catalog\", </.well-known/ai-catalog.json>; rel=\"describedby\", </.well-known/agent-card.json>; rel=\"service-desc\", </.well-known/mcp/server-card.json>; rel=\"service-desc\", </robots.txt>; rel=\"robots\", </sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"llms-text\", </free_models.json>; rel=\"data\""
+        }
+      ]
     }
   ]
 }

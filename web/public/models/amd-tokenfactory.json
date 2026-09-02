@@ -1,0 +1,105 @@
+{
+  "providerId": "amd-tokenfactory",
+  "fetchedAt": "2026-09-02T22:52:17.916Z",
+  "newModelIds": [
+    "DeepSeek-V4-Flash-Vision-Exp",
+    "DeepSeek-V4-Flash",
+    "Qwen3.8-Flash-Next",
+    "MiniCPM5-1B"
+  ],
+  "archivedModels": [],
+  "models": [
+    {
+      "id": "DeepSeek-V4-Flash-Vision-Exp",
+      "name": "DeepSeek-V4-Flash-Vision-Exp",
+      "created": 0,
+      "description": "DeepSeek-V4-Flash-Vision-Exp served by the AMD GPU Cloud",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "amd-tokenfactory",
+      "sourceUrl": "https://developer.amd.com.cn/radeon/tokenfactory",
+      "addedToFreeList": "2026-09-02T22:52:17.916Z"
+    },
+    {
+      "id": "DeepSeek-V4-Flash",
+      "name": "DeepSeek-V4-Flash-0731",
+      "created": 0,
+      "description": "DeepSeek V4 Flash 0731 served by the AMD GPU Cloud",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "amd-tokenfactory",
+      "sourceUrl": "https://developer.amd.com.cn/radeon/tokenfactory",
+      "addedToFreeList": "2026-09-02T22:52:17.916Z"
+    },
+    {
+      "id": "Qwen3.8-Flash-Next",
+      "name": "Qwen3.8-Flash-Next",
+      "created": 0,
+      "description": "Qwen3.8-Flash-Next served by the AMD GPU Cloud",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "amd-tokenfactory",
+      "sourceUrl": "https://developer.amd.com.cn/radeon/tokenfactory",
+      "addedToFreeList": "2026-09-02T22:52:17.916Z"
+    },
+    {
+      "id": "MiniCPM5-1B",
+      "name": "MiniCPM5-1B",
+      "created": 0,
+      "description": "MiniCPM5-1B served by the AMD GPU Cloud",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "amd-tokenfactory",
+      "sourceUrl": "https://developer.amd.com.cn/radeon/tokenfactory",
+      "addedToFreeList": "2026-09-02T22:52:17.916Z"
+    }
+  ]
+}

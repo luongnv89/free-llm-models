@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-09-01T01:00:05.001Z",
-  "totalModels": 104,
+  "fetchedAt": "2026-09-02T01:00:22.364Z",
+  "totalModels": 103,
   "newModelIds": [],
   "models": [
     {
@@ -440,8 +440,8 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1205,
-            "win_rate": 44.1,
+            "elo": 1207,
+            "win_rate": 44.4,
             "rank": 46
           },
           {
@@ -454,15 +454,15 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1221,
+            "elo": 1220,
             "win_rate": 42.4,
             "rank": 44
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1184,
-            "win_rate": 38.4,
+            "elo": 1185,
+            "win_rate": 38.6,
             "rank": 59
           },
           {
@@ -475,14 +475,14 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1203,
-            "win_rate": 40.3,
-            "rank": 50
+            "elo": 1206,
+            "win_rate": 40.7,
+            "rank": 48
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1230,
+            "elo": 1229,
             "win_rate": 43.2,
             "rank": 43
           }
@@ -700,7 +700,7 @@
             "category": "agenticgamedev",
             "elo": 1210,
             "win_rate": 49.4,
-            "rank": 10
+            "rank": 9
           },
           {
             "arena": "agents",
@@ -755,7 +755,7 @@
             "arena": "models",
             "category": "3d",
             "elo": 1342,
-            "win_rate": 56.8,
+            "win_rate": 56.7,
             "rank": 7
           },
           {
@@ -768,7 +768,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1327,
+            "elo": 1325,
             "win_rate": 56.1,
             "rank": 6
           },
@@ -789,21 +789,21 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1255,
-            "win_rate": 54.2,
-            "rank": 15
+            "elo": 1258,
+            "win_rate": 54.5,
+            "rank": 13
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1323,
-            "win_rate": 57.1,
+            "elo": 1322,
+            "win_rate": 57,
             "rank": 9
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1321,
+            "elo": 1320,
             "win_rate": 56.6,
             "rank": 6
           }
@@ -945,29 +945,29 @@
             "arena": "models",
             "category": "3d",
             "elo": 1175,
-            "win_rate": 41.1,
+            "win_rate": 41,
             "rank": 57
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1097,
+            "elo": 1098,
             "win_rate": 36.2,
             "rank": 55
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1159,
+            "elo": 1158,
             "win_rate": 36.3,
             "rank": 75
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1158,
-            "win_rate": 38.1,
-            "rank": 70
+            "elo": 1160,
+            "win_rate": 38.4,
+            "rank": 69
           },
           {
             "arena": "models",
@@ -979,21 +979,21 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1119,
-            "win_rate": 36.6,
-            "rank": 55
+            "elo": 1118,
+            "win_rate": 36.5,
+            "rank": 56
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1164,
-            "win_rate": 37.8,
+            "win_rate": 37.7,
             "rank": 67
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1147,
+            "elo": 1146,
             "win_rate": 34.3,
             "rank": 80
           }
@@ -1078,71 +1078,71 @@
           {
             "arena": "agents",
             "category": "agenticgamedev",
-            "elo": 1151,
-            "win_rate": 43.3,
+            "elo": 1156,
+            "win_rate": 44.1,
             "rank": 19
           },
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1174,
-            "win_rate": 43.6,
+            "elo": 1175,
+            "win_rate": 43.8,
             "rank": 24
           },
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1223,
-            "win_rate": 49.5,
+            "elo": 1224,
+            "win_rate": 49.6,
             "rank": 16
           },
           {
             "arena": "agents",
             "category": "htmlslides",
-            "elo": 1185,
-            "win_rate": 45.4,
-            "rank": 12
+            "elo": 1186,
+            "win_rate": 45.6,
+            "rank": 11
           },
           {
             "arena": "agents",
             "category": "mobileapps",
             "elo": 1197,
-            "win_rate": 46.4,
+            "win_rate": 46.3,
             "rank": 20
           },
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1240,
-            "win_rate": 49.5,
+            "elo": 1241,
+            "win_rate": 49.6,
             "rank": 10
           },
           {
             "arena": "agents",
             "category": "webapps",
             "elo": 1231,
-            "win_rate": 48.9,
+            "win_rate": 49,
             "rank": 18
           },
           {
             "arena": "models",
             "category": "3d",
             "elo": 1254,
-            "win_rate": 52.4,
+            "win_rate": 52.5,
             "rank": 31
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1188,
-            "win_rate": 47.7,
+            "elo": 1190,
+            "win_rate": 47.9,
             "rank": 27
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1274,
-            "win_rate": 52.6,
+            "elo": 1273,
+            "win_rate": 52.5,
             "rank": 26
           },
           {
@@ -1162,22 +1162,22 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1208,
+            "elo": 1209,
             "win_rate": 48.7,
-            "rank": 30
+            "rank": 29
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1271,
-            "win_rate": 52.1,
+            "elo": 1270,
+            "win_rate": 52,
             "rank": 28
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1278,
-            "win_rate": 53.1,
+            "elo": 1277,
+            "win_rate": 53,
             "rank": 25
           }
         ],
@@ -1574,22 +1574,22 @@
             "arena": "models",
             "category": "3d",
             "elo": 1236,
-            "win_rate": 50.6,
+            "win_rate": 50.7,
             "rank": 37
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1167,
+            "elo": 1168,
             "win_rate": 47.6,
-            "rank": 36
+            "rank": 37
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1258,
+            "elo": 1257,
             "win_rate": 52.1,
-            "rank": 34
+            "rank": 33
           },
           {
             "arena": "models",
@@ -1609,7 +1609,7 @@
             "arena": "models",
             "category": "svg",
             "elo": 1178,
-            "win_rate": 49.3,
+            "win_rate": 49.2,
             "rank": 42
           },
           {
@@ -1622,7 +1622,7 @@
           {
             "arena": "models",
             "category": "website",
-            "elo": 1265,
+            "elo": 1263,
             "win_rate": 52.6,
             "rank": 32
           }
@@ -3094,29 +3094,6 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
-      "id": "nvidia/nemotron-3-nano-30b-a3b",
-      "name": "Nvidia/nemotron 3 Nano 30b A3b",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
       "name": "Nvidia/nemotron 3 Nano Omni 30b A3b Reasoning",
       "created": 735790403,
@@ -3763,6 +3740,36 @@
           "default_effort": "max"
         },
         "addedToFreeList": "2026-08-26T08:32:50.786Z"
+      }
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-09-02T01:00:22.364Z",
+      "lastSeenAt": "2026-09-01T01:00:05.001Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/nemotron-3-nano-30b-a3b",
+        "name": "Nvidia/nemotron 3 Nano 30b A3b",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
       }
     },
     {

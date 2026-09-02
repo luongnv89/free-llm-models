@@ -1,8 +1,38 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-01T01:00:05.001Z",
+  "fetchedAt": "2026-09-02T01:00:22.364Z",
   "newModelIds": [],
   "archivedModels": [
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-09-02T01:00:22.364Z",
+      "lastSeenAt": "2026-09-01T01:00:05.001Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/nemotron-3-nano-30b-a3b",
+        "name": "Nvidia/nemotron 3 Nano 30b A3b",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
     {
       "id": "stepfun-ai/step-3.7-flash",
       "providerId": "nvidia-nim",
@@ -1686,29 +1716,6 @@
     {
       "id": "nvidia/nemotron-3-embed-1b",
       "name": "Nvidia/nemotron 3 Embed 1b",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "nvidia/nemotron-3-nano-30b-a3b",
-      "name": "Nvidia/nemotron 3 Nano 30b A3b",
       "created": 735790403,
       "description": "",
       "context_length": null,

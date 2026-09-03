@@ -1,12 +1,12 @@
 {
   "providerId": "cerebras",
-  "fetchedAt": "2026-09-03T01:00:44.389Z",
+  "fetchedAt": "2026-09-03T08:38:12.908Z",
   "newModelIds": [],
   "archivedModels": [],
   "models": [
     {
-      "id": "gemma-4-31b",
-      "name": "Gemma 4 31b",
+      "id": "gpt-oss-120b",
+      "name": "Gpt Oss 120b",
       "created": 0,
       "description": "",
       "context_length": null,
@@ -28,8 +28,8 @@
       "addedToFreeList": "2026-09-02T05:41:20.387Z"
     },
     {
-      "id": "gpt-oss-120b",
-      "name": "Gpt Oss 120b",
+      "id": "gemma-4-31b",
+      "name": "Gemma 4 31b",
       "created": 0,
       "description": "",
       "context_length": null,

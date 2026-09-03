@@ -1,8 +1,38 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-03T01:00:45.289Z",
+  "fetchedAt": "2026-09-03T08:38:13.857Z",
   "newModelIds": [],
   "archivedModels": [
+    {
+      "id": "openai/gpt-oss-120b",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-09-03T08:38:13.857Z",
+      "lastSeenAt": "2026-09-03T01:00:45.289Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "openai/gpt-oss-120b",
+        "name": "Openai/gpt Oss 120b",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
     {
       "id": "nvidia/nemotron-3-nano-30b-a3b",
       "providerId": "nvidia-nim",
@@ -2084,29 +2114,6 @@
     {
       "id": "nvidia/vila",
       "name": "Nvidia/vila",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "name": "Openai/gpt Oss 120b",
       "created": 735790403,
       "description": "",
       "context_length": null,

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-02T22:52:15.404Z",
+  "fetchedAt": "2026-09-03T01:00:43.913Z",
   "totalModels": 21,
   "newModelIds": [],
   "models": [
@@ -64,7 +64,7 @@
       "popularity": {
         "rank": 5,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -122,7 +122,7 @@
       "popularity": {
         "rank": 9,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -193,7 +193,7 @@
       "popularity": {
         "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -257,7 +257,7 @@
       "popularity": {
         "rank": 4,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -343,7 +343,7 @@
       "popularity": {
         "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -398,7 +398,7 @@
       "popularity": {
         "rank": 3,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -464,30 +464,30 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1204,
-            "win_rate": 44.3,
-            "rank": 46
+            "elo": 1201,
+            "win_rate": 44,
+            "rank": 47
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1115,
-            "win_rate": 35.3,
+            "elo": 1113,
+            "win_rate": 34.8,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1218,
+            "elo": 1217,
             "win_rate": 42.3,
-            "rank": 44
+            "rank": 45
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1185,
-            "win_rate": 38.8,
-            "rank": 59
+            "elo": 1183,
+            "win_rate": 38.5,
+            "rank": 60
           },
           {
             "arena": "models",
@@ -499,23 +499,23 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1134,
-            "win_rate": 34.4,
-            "rank": 54
+            "elo": 1139,
+            "win_rate": 34.8,
+            "rank": 52
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1205,
-            "win_rate": 40.8,
-            "rank": 48
+            "elo": 1202,
+            "win_rate": 40.4,
+            "rank": 50
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1227,
             "win_rate": 43.1,
-            "rank": 44
+            "rank": 45
           }
         ],
         "artificial_analysis": {
@@ -541,7 +541,7 @@
       "popularity": {
         "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -594,9 +594,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 11,
+        "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -669,9 +669,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 10,
+        "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -748,9 +748,9 @@
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1201,
+            "elo": 1202,
             "win_rate": 53,
-            "rank": 17
+            "rank": 18
           },
           {
             "arena": "agents",
@@ -797,51 +797,51 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1340,
-            "win_rate": 56.8,
-            "rank": 6
+            "elo": 1341,
+            "win_rate": 56.5,
+            "rank": 7
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1246,
-            "win_rate": 52.5,
+            "elo": 1245,
+            "win_rate": 52.4,
             "rank": 14
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1324,
+            "elo": 1323,
             "win_rate": 56.1,
-            "rank": 6
-          },
-          {
-            "arena": "models",
-            "category": "dataviz",
-            "elo": 1321,
-            "win_rate": 54.3,
             "rank": 7
           },
           {
             "arena": "models",
+            "category": "dataviz",
+            "elo": 1318,
+            "win_rate": 54.3,
+            "rank": 8
+          },
+          {
+            "arena": "models",
             "category": "gamedev",
-            "elo": 1322,
-            "win_rate": 54.1,
+            "elo": 1319,
+            "win_rate": 53.4,
             "rank": 11
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1255,
-            "win_rate": 54.3,
+            "elo": 1254,
+            "win_rate": 54.1,
             "rank": 15
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1320,
-            "win_rate": 57,
-            "rank": 9
+            "elo": 1321,
+            "win_rate": 57.1,
+            "rank": 10
           },
           {
             "arena": "models",
@@ -870,7 +870,7 @@
       "popularity": {
         "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -933,7 +933,7 @@
       "popularity": {
         "rank": 17,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -997,28 +997,28 @@
             "category": "3d",
             "elo": 1173,
             "win_rate": 41.1,
-            "rank": 57
+            "rank": 58
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1102,
+            "elo": 1103,
             "win_rate": 36.5,
             "rank": 55
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1157,
+            "elo": 1156,
             "win_rate": 36.3,
-            "rank": 74
+            "rank": 76
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1160,
-            "win_rate": 38.4,
-            "rank": 69
+            "elo": 1158,
+            "win_rate": 38.3,
+            "rank": 70
           },
           {
             "arena": "models",
@@ -1030,23 +1030,23 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1116,
-            "win_rate": 36.5,
+            "elo": 1115,
+            "win_rate": 36.4,
             "rank": 58
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1161,
-            "win_rate": 37.7,
-            "rank": 68
+            "win_rate": 37.6,
+            "rank": 69
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1145,
-            "win_rate": 34.3,
-            "rank": 81
+            "elo": 1144,
+            "win_rate": 34.2,
+            "rank": 82
           }
         ],
         "artificial_analysis": {
@@ -1067,9 +1067,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 1,
+        "rank": 2,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1133,22 +1133,22 @@
           {
             "arena": "agents",
             "category": "agenticgamedev",
-            "elo": 1156,
-            "win_rate": 44.2,
+            "elo": 1157,
+            "win_rate": 44.4,
             "rank": 19
           },
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1175,
-            "win_rate": 43.6,
-            "rank": 24
+            "elo": 1177,
+            "win_rate": 43.9,
+            "rank": 23
           },
           {
             "arena": "agents",
             "category": "fullstack",
             "elo": 1224,
-            "win_rate": 49.5,
+            "win_rate": 49.6,
             "rank": 16
           },
           {
@@ -1162,7 +1162,7 @@
             "arena": "agents",
             "category": "mobileapps",
             "elo": 1197,
-            "win_rate": 46.3,
+            "win_rate": 46.4,
             "rank": 20
           },
           {
@@ -1175,7 +1175,7 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1231,
+            "elo": 1230,
             "win_rate": 49,
             "rank": 18
           },
@@ -1183,8 +1183,8 @@
             "arena": "models",
             "category": "3d",
             "elo": 1252,
-            "win_rate": 52.5,
-            "rank": 31
+            "win_rate": 52.4,
+            "rank": 32
           },
           {
             "arena": "models",
@@ -1196,16 +1196,16 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1271,
+            "elo": 1270,
             "win_rate": 52.5,
-            "rank": 26
+            "rank": 27
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1255,
+            "elo": 1254,
             "win_rate": 51.8,
-            "rank": 29
+            "rank": 30
           },
           {
             "arena": "models",
@@ -1217,23 +1217,23 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1208,
-            "win_rate": 48.9,
+            "elo": 1207,
+            "win_rate": 48.8,
             "rank": 30
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1268,
-            "win_rate": 52,
-            "rank": 28
+            "win_rate": 51.9,
+            "rank": 29
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1276,
-            "win_rate": 53,
-            "rank": 26
+            "elo": 1275,
+            "win_rate": 52.9,
+            "rank": 27
           }
         ],
         "artificial_analysis": {
@@ -1247,9 +1247,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 2,
+        "rank": 1,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1325,7 +1325,7 @@
       "popularity": {
         "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1397,7 +1397,7 @@
       "popularity": {
         "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1472,7 +1472,7 @@
       "popularity": {
         "rank": 16,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1531,7 +1531,7 @@
       "popularity": {
         "rank": 19,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1590,7 +1590,7 @@
       "popularity": {
         "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1654,33 +1654,33 @@
             "category": "3d",
             "elo": 1234,
             "win_rate": 50.7,
-            "rank": 37
+            "rank": 38
           },
           {
             "arena": "models",
             "category": "asciiart",
             "elo": 1167,
             "win_rate": 47.5,
-            "rank": 39
+            "rank": 38
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1256,
+            "elo": 1255,
             "win_rate": 52.1,
-            "rank": 33
+            "rank": 34
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1254,
+            "elo": 1252,
             "win_rate": 52.7,
-            "rank": 30
+            "rank": 31
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1244,
+            "elo": 1243,
             "win_rate": 51.7,
             "rank": 35
           },
@@ -1696,14 +1696,14 @@
             "category": "uicomponent",
             "elo": 1234,
             "win_rate": 49.4,
-            "rank": 40
+            "rank": 41
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1262,
-            "win_rate": 52.6,
-            "rank": 33
+            "elo": 1261,
+            "win_rate": 52.5,
+            "rank": 34
           }
         ],
         "artificial_analysis": {
@@ -1717,9 +1717,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 7,
+        "rank": 6,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1798,9 +1798,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 6,
+        "rank": 7,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     },
     {
@@ -1870,7 +1870,7 @@
       "popularity": {
         "rank": 21,
         "source": "top-weekly",
-        "asOf": "2026-09-02T22:52:15.404Z"
+        "asOf": "2026-09-03T01:00:43.913Z"
       }
     }
   ],

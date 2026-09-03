@@ -1,12 +1,7 @@
 {
   "providerId": "amd-tokenfactory",
-  "fetchedAt": "2026-09-02T22:52:17.916Z",
-  "newModelIds": [
-    "DeepSeek-V4-Flash-Vision-Exp",
-    "DeepSeek-V4-Flash",
-    "Qwen3.8-Flash-Next",
-    "MiniCPM5-1B"
-  ],
+  "fetchedAt": "2026-09-03T01:00:46.607Z",
+  "newModelIds": [],
   "archivedModels": [],
   "models": [
     {

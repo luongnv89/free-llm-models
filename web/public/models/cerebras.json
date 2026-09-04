@@ -1,7 +1,9 @@
 {
   "providerId": "cerebras",
-  "fetchedAt": "2026-09-03T08:38:12.908Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-09-04T01:00:05.346Z",
+  "newModelIds": [
+    "qwen-3.8-27b"
+  ],
   "archivedModels": [],
   "models": [
     {
@@ -26,6 +28,29 @@
       "providerId": "cerebras",
       "sourceUrl": "https://api.cerebras.ai/v1/models",
       "addedToFreeList": "2026-09-02T05:41:20.387Z"
+    },
+    {
+      "id": "qwen-3.8-27b",
+      "name": "Qwen 3 8 27b",
+      "created": 0,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "cerebras",
+      "sourceUrl": "https://api.cerebras.ai/v1/models",
+      "addedToFreeList": "2026-09-04T01:00:05.346Z"
     },
     {
       "id": "gemma-4-31b",

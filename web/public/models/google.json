@@ -1,8 +1,41 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-09-03T08:38:13.059Z",
-  "newModelIds": [],
-  "archivedModels": [],
+  "fetchedAt": "2026-09-04T01:00:05.445Z",
+  "newModelIds": [
+    "lyria-3.5"
+  ],
+  "archivedModels": [
+    {
+      "id": "gemini-flash-latest-high-res-exp",
+      "providerId": "google",
+      "removedAt": "2026-09-04T01:00:05.445Z",
+      "lastSeenAt": "2026-09-03T08:38:13.059Z",
+      "addedToFreeList": "2026-09-02T22:52:15.888Z",
+      "model": {
+        "id": "gemini-flash-latest-high-res-exp",
+        "name": "Gemini Flash Latest",
+        "created": 0,
+        "description": "Latest release of Gemini Flash",
+        "context_length": 1048576,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "google",
+        "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+        "addedToFreeList": "2026-09-02T22:52:15.888Z"
+      }
+    }
+  ],
   "models": [
     {
       "id": "gemini-2.5-flash",
@@ -95,29 +128,6 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T05:41:20.491Z"
-    },
-    {
-      "id": "gemini-flash-latest-high-res-exp",
-      "name": "Gemini Flash Latest",
-      "created": 0,
-      "description": "Latest release of Gemini Flash",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "google",
-      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-09-02T22:52:15.888Z"
     },
     {
       "id": "gemma-4-26b-a4b-it",
@@ -762,6 +772,29 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T05:41:20.491Z"
+    },
+    {
+      "id": "lyria-3.5",
+      "name": "Lyria 3.5",
+      "created": 0,
+      "description": "Music Generation model",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-09-04T01:00:05.445Z"
     },
     {
       "id": "gemini-3.1-flash-tts-preview",

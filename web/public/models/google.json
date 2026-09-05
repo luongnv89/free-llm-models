@@ -1,9 +1,7 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-09-04T01:00:05.445Z",
-  "newModelIds": [
-    "lyria-3.5"
-  ],
+  "fetchedAt": "2026-09-05T01:00:25.926Z",
+  "newModelIds": [],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",

@@ -13,7 +13,7 @@
         "notes": null
       },
       "modelCount": 22,
-      "fetchedAt": "2026-09-05T01:00:25.456Z"
+      "fetchedAt": "2026-09-06T01:00:23.721Z"
     },
     {
       "id": "groq",
@@ -28,7 +28,7 @@
         "notes": null
       },
       "modelCount": 14,
-      "fetchedAt": "2026-09-05T01:00:25.689Z"
+      "fetchedAt": "2026-09-06T01:00:23.920Z"
     },
     {
       "id": "cerebras",
@@ -43,7 +43,7 @@
         "notes": null
       },
       "modelCount": 3,
-      "fetchedAt": "2026-09-05T01:00:25.838Z"
+      "fetchedAt": "2026-09-06T01:00:24.071Z"
     },
     {
       "id": "google",
@@ -58,7 +58,7 @@
         "notes": null
       },
       "modelCount": 40,
-      "fetchedAt": "2026-09-05T01:00:25.926Z"
+      "fetchedAt": "2026-09-06T01:00:24.167Z"
     },
     {
       "id": "mistral",
@@ -73,7 +73,7 @@
         "notes": "Free tier (\"La Plateforme\" experiment plan) serves the whole catalog at no cost but with low per-minute rate limits."
       },
       "modelCount": 50,
-      "fetchedAt": "2026-09-05T01:00:26.269Z"
+      "fetchedAt": "2026-09-06T01:00:24.514Z"
     },
     {
       "id": "huggingface",
@@ -88,7 +88,7 @@
         "notes": "Catalog served through the HF Router (Inference Providers). Free-tier accounts get monthly inference credits; usage draws down those credits rather than being permanently free."
       },
       "modelCount": 0,
-      "fetchedAt": "2026-09-05T01:00:26.845Z"
+      "fetchedAt": "2026-09-06T01:00:25.061Z"
     },
     {
       "id": "nvidia-nim",
@@ -103,7 +103,7 @@
         "notes": "Hosted NIM API access is granted via trial credits (NVAPI_KEY in NVIDIA's own docs); models are trial-credit eligible, not permanently free."
       },
       "modelCount": 81,
-      "fetchedAt": "2026-09-05T01:00:26.934Z"
+      "fetchedAt": "2026-09-06T01:00:25.148Z"
     },
     {
       "id": "amd-tokenfactory",
@@ -118,7 +118,7 @@
         "notes": "Shared Model APIs served on AMD Radeon Cloud (Token Factory). Free to use with points-based metering (pts / 1M tokens) — not charges."
       },
       "modelCount": 4,
-      "fetchedAt": "2026-09-05T01:00:28.620Z"
+      "fetchedAt": "2026-09-06T01:00:26.315Z"
     }
   ],
   "models": [
@@ -612,9 +612,9 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1197,
-            "win_rate": 43.5,
-            "rank": 49
+            "elo": 1196,
+            "win_rate": 43,
+            "rank": 50
           },
           {
             "arena": "models",
@@ -627,7 +627,7 @@
             "arena": "models",
             "category": "codecategories",
             "elo": 1215,
-            "win_rate": 42.4,
+            "win_rate": 42.5,
             "rank": 46
           },
           {
@@ -640,7 +640,7 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1192,
+            "elo": 1193,
             "win_rate": 39.1,
             "rank": 55
           },
@@ -648,21 +648,21 @@
             "arena": "models",
             "category": "svg",
             "elo": 1138,
-            "win_rate": 34.4,
+            "win_rate": 34.2,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1204,
-            "win_rate": 40.6,
-            "rank": 50
+            "elo": 1206,
+            "win_rate": 40.7,
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1227,
-            "win_rate": 43.3,
+            "elo": 1226,
+            "win_rate": 43.5,
             "rank": 46
           }
         ],
@@ -881,14 +881,14 @@
           {
             "arena": "agents",
             "category": "androidnative",
-            "elo": 1197,
-            "win_rate": 53,
-            "rank": 16
+            "elo": 1196,
+            "win_rate": 52.9,
+            "rank": 18
           },
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1252,
+            "elo": 1250,
             "win_rate": 61.4,
             "rank": 10
           },
@@ -902,9 +902,9 @@
           {
             "arena": "agents",
             "category": "htmlslides",
-            "elo": 1188,
-            "win_rate": 49.8,
-            "rank": 10
+            "elo": 1183,
+            "win_rate": 49.7,
+            "rank": 12
           },
           {
             "arena": "agents",
@@ -916,9 +916,9 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1218,
+            "elo": 1213,
             "win_rate": 49,
-            "rank": 13
+            "rank": 14
           },
           {
             "arena": "agents",
@@ -930,57 +930,57 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1339,
+            "elo": 1340,
             "win_rate": 56.5,
-            "rank": 8
+            "rank": 7
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1242,
-            "win_rate": 52,
+            "elo": 1248,
+            "win_rate": 52.7,
             "rank": 15
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1318,
-            "win_rate": 55.8,
-            "rank": 7
+            "elo": 1317,
+            "win_rate": 55.7,
+            "rank": 8
           },
           {
             "arena": "models",
             "category": "dataviz",
             "elo": 1318,
-            "win_rate": 54.3,
+            "win_rate": 54.4,
             "rank": 8
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1311,
+            "elo": 1312,
             "win_rate": 53.2,
             "rank": 13
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1255,
-            "win_rate": 54,
-            "rank": 15
+            "elo": 1256,
+            "win_rate": 53.5,
+            "rank": 14
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1319,
-            "win_rate": 57,
+            "win_rate": 56.9,
             "rank": 11
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1315,
-            "win_rate": 56.4,
+            "elo": 1313,
+            "win_rate": 56.3,
             "rank": 8
           }
         ],
@@ -1118,8 +1118,8 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1170,
-            "win_rate": 40.9,
+            "elo": 1172,
+            "win_rate": 41,
             "rank": 60
           },
           {
@@ -1132,8 +1132,8 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1152,
-            "win_rate": 36.2,
+            "elo": 1153,
+            "win_rate": 36.3,
             "rank": 77
           },
           {
@@ -1146,8 +1146,8 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1154,
-            "win_rate": 36.8,
+            "elo": 1157,
+            "win_rate": 37,
             "rank": 70
           },
           {
@@ -1160,14 +1160,14 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1160,
-            "win_rate": 37.5,
-            "rank": 70
+            "elo": 1159,
+            "win_rate": 37.4,
+            "rank": 71
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1144,
+            "elo": 1142,
             "win_rate": 34.3,
             "rank": 83
           }
@@ -1259,21 +1259,21 @@
             "arena": "agents",
             "category": "androidnative",
             "elo": 1173,
-            "win_rate": 43.9,
+            "win_rate": 43.8,
             "rank": 24
           },
           {
             "arena": "agents",
             "category": "fullstack",
-            "elo": 1213,
-            "win_rate": 49.5,
-            "rank": 16
+            "elo": 1210,
+            "win_rate": 49.3,
+            "rank": 17
           },
           {
             "arena": "agents",
             "category": "htmlslides",
-            "elo": 1184,
-            "win_rate": 45.6,
+            "elo": 1186,
+            "win_rate": 46.3,
             "rank": 11
           },
           {
@@ -1286,28 +1286,28 @@
           {
             "arena": "agents",
             "category": "python-pptxslides",
-            "elo": 1240,
-            "win_rate": 49.4,
-            "rank": 10
+            "elo": 1234,
+            "win_rate": 49.1,
+            "rank": 11
           },
           {
             "arena": "agents",
             "category": "webapps",
             "elo": 1230,
-            "win_rate": 49,
+            "win_rate": 48.9,
             "rank": 18
           },
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1250,
-            "win_rate": 52.2,
-            "rank": 33
+            "elo": 1251,
+            "win_rate": 52.1,
+            "rank": 34
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1185,
+            "elo": 1186,
             "win_rate": 47.7,
             "rank": 28
           },
@@ -1315,41 +1315,41 @@
             "arena": "models",
             "category": "codecategories",
             "elo": 1267,
-            "win_rate": 52.5,
+            "win_rate": 52.4,
             "rank": 28
           },
           {
             "arena": "models",
             "category": "dataviz",
             "elo": 1253,
-            "win_rate": 51.8,
+            "win_rate": 51.7,
             "rank": 31
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1243,
+            "elo": 1245,
             "win_rate": 48,
             "rank": 36
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1207,
+            "elo": 1206,
             "win_rate": 48.5,
             "rank": 31
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1266,
-            "win_rate": 51.8,
+            "elo": 1268,
+            "win_rate": 51.9,
             "rank": 30
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1274,
+            "elo": 1272,
             "win_rate": 52.9,
             "rank": 28
           }
@@ -1742,12 +1742,12 @@
             "category": "3d",
             "elo": 1232,
             "win_rate": 50.6,
-            "rank": 39
+            "rank": 40
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1164,
+            "elo": 1165,
             "win_rate": 47.5,
             "rank": 37
           },
@@ -1756,7 +1756,7 @@
             "category": "codecategories",
             "elo": 1251,
             "win_rate": 52,
-            "rank": 36
+            "rank": 35
           },
           {
             "arena": "models",
@@ -1768,9 +1768,9 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1237,
+            "elo": 1238,
             "win_rate": 51.4,
-            "rank": 38
+            "rank": 37
           },
           {
             "arena": "models",
@@ -1782,14 +1782,14 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1233,
-            "win_rate": 49.3,
+            "elo": 1234,
+            "win_rate": 49.4,
             "rank": 42
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1260,
+            "elo": 1258,
             "win_rate": 52.5,
             "rank": 35
           }
@@ -1947,9 +1947,32 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
-      "id": "openai/gpt-oss-20b",
-      "name": "Openai/gpt Oss 20b",
-      "created": 1754407957,
+      "id": "allam-2-7b",
+      "name": "Allam 2 7b",
+      "created": 1737672203,
+      "description": "",
+      "context_length": 4096,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "qwen/qwen3.6-27b",
+      "name": "Qwen/qwen3 6 27b",
+      "created": 1778288776,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -1970,55 +1993,9 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "whisper-large-v3-turbo",
-      "name": "Whisper Large V3 Turbo",
-      "created": 1728413088,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "whisper-large-v3",
-      "name": "Whisper Large V3",
-      "created": 1693721698,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "groq/compound-mini",
-      "name": "Groq/compound Mini",
-      "created": 1756949707,
+      "id": "groq/compound",
+      "name": "Groq/compound",
+      "created": 1756949530,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -2062,29 +2039,6 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "openai/gpt-oss-safeguard-20b",
-      "name": "Openai/gpt Oss Safeguard 20b",
-      "created": 1761708789,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
       "id": "canopylabs/orpheus-arabic-saudi",
       "name": "Canopylabs/orpheus Arabic Saudi",
       "created": 1765926439,
@@ -2108,80 +2062,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "groq/compound",
-      "name": "Groq/compound",
-      "created": 1756949530,
+      "id": "openai/gpt-oss-120b",
+      "name": "Openai/gpt Oss 120b",
+      "created": 1754408224,
       "description": "",
       "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "qwen/qwen3.6-27b",
-      "name": "Qwen/qwen3 6 27b",
-      "created": 1778288776,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
-      "description": "",
-      "context_length": 4096,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2246,9 +2131,124 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "openai/gpt-oss-120b",
-      "name": "Openai/gpt Oss 120b",
-      "created": 1754408224,
+      "id": "whisper-large-v3",
+      "name": "Whisper Large V3",
+      "created": 1693721698,
+      "description": "",
+      "context_length": 448,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "meta-llama/llama-prompt-guard-2-86m",
+      "name": "Meta Llama/llama Prompt Guard 2 86m",
+      "created": 1748632165,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "groq/compound-mini",
+      "name": "Groq/compound Mini",
+      "created": 1756949707,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "name": "Openai/gpt Oss Safeguard 20b",
+      "created": 1761708789,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "whisper-large-v3-turbo",
+      "name": "Whisper Large V3 Turbo",
+      "created": 1728413088,
+      "description": "",
+      "context_length": 448,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-20b",
+      "name": "Openai/gpt Oss 20b",
+      "created": 1754407957,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -3260,7 +3260,7 @@
     {
       "id": "codestral-2508",
       "name": "Codestral 2508",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -3283,7 +3283,7 @@
     {
       "id": "codestral-latest",
       "name": "Codestral Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -3306,7 +3306,7 @@
     {
       "id": "mistral-code-latest",
       "name": "Mistral Code Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -3329,7 +3329,7 @@
     {
       "id": "mistral-code-fim-latest",
       "name": "Mistral Code Fim Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -3352,7 +3352,7 @@
     {
       "id": "mistral-small-2603",
       "name": "Mistral Small 2603",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3375,7 +3375,7 @@
     {
       "id": "mistral-small-latest",
       "name": "Mistral Small Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3398,7 +3398,7 @@
     {
       "id": "mistral-vibe-cli-fast",
       "name": "Mistral Vibe Cli Fast",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3421,7 +3421,7 @@
     {
       "id": "magistral-small-latest",
       "name": "Magistral Small Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3444,7 +3444,7 @@
     {
       "id": "voxtral-small-2507",
       "name": "Voxtral Small 2507",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3467,7 +3467,7 @@
     {
       "id": "voxtral-small-latest",
       "name": "Voxtral Small Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3490,7 +3490,7 @@
     {
       "id": "labs-leanstral-1-5-1",
       "name": "Labs Leanstral 1 5 1",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3513,7 +3513,7 @@
     {
       "id": "labs-leanstral-1-5",
       "name": "Labs Leanstral 1 5",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3536,7 +3536,7 @@
     {
       "id": "mistral-large-2512",
       "name": "Mistral Large 2512",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3559,7 +3559,7 @@
     {
       "id": "mistral-large-latest",
       "name": "Mistral Large Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3582,7 +3582,7 @@
     {
       "id": "ministral-3b-2512",
       "name": "Ministral 3b 2512",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -3605,7 +3605,7 @@
     {
       "id": "ministral-3b-latest",
       "name": "Ministral 3b Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -3628,7 +3628,7 @@
     {
       "id": "ministral-8b-2512",
       "name": "Ministral 8b 2512",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3651,7 +3651,7 @@
     {
       "id": "ministral-8b-latest",
       "name": "Ministral 8b Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3674,7 +3674,7 @@
     {
       "id": "ministral-14b-2512",
       "name": "Ministral 14b 2512",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3697,7 +3697,7 @@
     {
       "id": "ministral-14b-latest",
       "name": "Ministral 14b Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3720,7 +3720,7 @@
     {
       "id": "mistral-medium-latest",
       "name": "Mistral Medium Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3743,7 +3743,7 @@
     {
       "id": "mistral-medium",
       "name": "Mistral Medium",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3766,7 +3766,7 @@
     {
       "id": "mistral-medium-3-5",
       "name": "Mistral Medium 3 5",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3789,7 +3789,7 @@
     {
       "id": "mistral-medium-3.5",
       "name": "Mistral Medium 3 5",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3812,7 +3812,7 @@
     {
       "id": "mistral-medium-3",
       "name": "Mistral Medium 3",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3835,7 +3835,7 @@
     {
       "id": "mistral-medium-2604",
       "name": "Mistral Medium 2604",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3858,7 +3858,7 @@
     {
       "id": "mistral-vibe-cli-latest",
       "name": "Mistral Vibe Cli Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3881,7 +3881,7 @@
     {
       "id": "mistral-vibe-cli-with-tools",
       "name": "Mistral Vibe Cli With Tools",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3904,7 +3904,7 @@
     {
       "id": "magistral-medium-latest",
       "name": "Magistral Medium Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3927,7 +3927,7 @@
     {
       "id": "glm-5-2",
       "name": "Glm 5 2",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 1048576,
       "pricing": {
@@ -3950,7 +3950,7 @@
     {
       "id": "zai-glm-5-2",
       "name": "Zai Glm 5 2",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 1048576,
       "pricing": {
@@ -3973,7 +3973,7 @@
     {
       "id": "mistral-embed-2312",
       "name": "Mistral Embed 2312",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -3996,7 +3996,7 @@
     {
       "id": "mistral-embed",
       "name": "Mistral Embed",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -4019,7 +4019,7 @@
     {
       "id": "codestral-embed",
       "name": "Codestral Embed",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -4042,7 +4042,7 @@
     {
       "id": "codestral-embed-2505",
       "name": "Codestral Embed 2505",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -4065,7 +4065,7 @@
     {
       "id": "mistral-moderation-2603",
       "name": "Mistral Moderation 2603",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -4088,7 +4088,7 @@
     {
       "id": "mistral-ocr-2512",
       "name": "Mistral Ocr 2512",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4111,7 +4111,7 @@
     {
       "id": "mistral-ocr-3-0",
       "name": "Mistral Ocr 3 0",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4134,7 +4134,7 @@
     {
       "id": "mistral-ocr-3",
       "name": "Mistral Ocr 3",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4157,7 +4157,7 @@
     {
       "id": "mistral-ocr-4-0",
       "name": "Mistral Ocr 4 0",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4180,7 +4180,7 @@
     {
       "id": "mistral-ocr-latest",
       "name": "Mistral Ocr Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4203,7 +4203,7 @@
     {
       "id": "mistral-ocr-4",
       "name": "Mistral Ocr 4",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4226,7 +4226,7 @@
     {
       "id": "mistral-ocr-4-1",
       "name": "Mistral Ocr 4 1",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4249,7 +4249,7 @@
     {
       "id": "voxtral-mini-2602",
       "name": "Voxtral Mini 2602",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4272,7 +4272,7 @@
     {
       "id": "voxtral-mini-latest",
       "name": "Voxtral Mini Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4295,7 +4295,7 @@
     {
       "id": "voxtral-mini-transcribe-realtime-2602",
       "name": "Voxtral Mini Transcribe Realtime 2602",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -4318,7 +4318,7 @@
     {
       "id": "voxtral-mini-realtime-2602",
       "name": "Voxtral Mini Realtime 2602",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -4341,7 +4341,7 @@
     {
       "id": "voxtral-mini-realtime-latest",
       "name": "Voxtral Mini Realtime Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -4364,7 +4364,7 @@
     {
       "id": "voxtral-mini-tts-2603",
       "name": "Voxtral Mini Tts 2603",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 4096,
       "pricing": {
@@ -4387,7 +4387,7 @@
     {
       "id": "voxtral-mini-tts-latest",
       "name": "Voxtral Mini Tts Latest",
-      "created": 1788570026,
+      "created": 1788656424,
       "description": "",
       "context_length": 4096,
       "pricing": {

@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-09-07T01:00:59.426Z",
-  "totalModels": 213,
+  "fetchedAt": "2026-09-08T01:00:38.605Z",
+  "totalModels": 211,
   "newModelIds": [],
   "models": [
     {
@@ -293,9 +293,9 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 13.6,
           "coding_index": 26.8,
-          "agentic_index": null
+          "agentic_index": 6.1
         }
       },
       "reasoning": {
@@ -365,9 +365,9 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 26.1,
           "coding_index": 52.9,
-          "agentic_index": 25.1
+          "agentic_index": 25
         }
       },
       "reasoning": {
@@ -500,64 +500,64 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1197,
-            "win_rate": 42.8,
-            "rank": 48
+            "elo": 1195,
+            "win_rate": 42.9,
+            "rank": 47
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1119,
+            "elo": 1123,
             "win_rate": 34.8,
-            "rank": 52
+            "rank": 54
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1215,
+            "elo": 1217,
             "win_rate": 42.4,
             "rank": 45
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1183,
-            "win_rate": 39,
-            "rank": 59
+            "elo": 1190,
+            "win_rate": 40,
+            "rank": 54
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1186,
-            "win_rate": 38.2,
+            "elo": 1182,
+            "win_rate": 37.9,
             "rank": 55
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1133,
-            "win_rate": 34,
-            "rank": 53
+            "elo": 1129,
+            "win_rate": 34.3,
+            "rank": 52
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1203,
-            "win_rate": 40.5,
-            "rank": 49
+            "win_rate": 40.8,
+            "rank": 48
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1227,
+            "elo": 1228,
             "win_rate": 43.5,
             "rank": 44
           }
         ],
         "artificial_analysis": {
-          "intelligence_index": 32.2,
+          "intelligence_index": 25.5,
           "coding_index": 52.1,
-          "agentic_index": 24.4
+          "agentic_index": 24.3
         }
       },
       "reasoning": {
@@ -816,62 +816,62 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1171,
-            "win_rate": 41,
-            "rank": 58
+            "elo": 1166,
+            "win_rate": 40.9,
+            "rank": 59
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1099,
-            "win_rate": 36.4,
-            "rank": 55
+            "elo": 1096,
+            "win_rate": 36,
+            "rank": 57
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1153,
+            "elo": 1154,
             "win_rate": 36.2,
             "rank": 76
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1157,
+            "elo": 1156,
             "win_rate": 38.3,
             "rank": 70
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1156,
-            "win_rate": 36.9,
+            "elo": 1153,
+            "win_rate": 36.8,
             "rank": 69
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1112,
+            "elo": 1103,
             "win_rate": 36.1,
             "rank": 58
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1158,
-            "win_rate": 37.4,
+            "elo": 1154,
+            "win_rate": 37.3,
             "rank": 70
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1142,
+            "elo": 1144,
             "win_rate": 34.3,
             "rank": 81
           }
         ],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 23.4,
           "coding_index": 49.3,
           "agentic_index": 21.7
         }
@@ -885,182 +885,6 @@
           "medium"
         ],
         "default_effort": "high"
-      },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "providerId": "openrouter"
-    },
-    {
-      "id": "minimax/minimax-m3:free",
-      "canonical_slug": "minimax/minimax-m3-20260531",
-      "hugging_face_id": "MiniMaxAI/Minimax-M3",
-      "name": "MiniMax: MiniMax M3 (free)",
-      "created": 1780245374,
-      "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
-      "context_length": 1048576,
-      "architecture": {
-        "modality": "text+image+video->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 1048576,
-        "max_completion_tokens": 943718,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "response_format",
-        "seed",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/minimax/minimax-m3-20260531/endpoints"
-      },
-      "benchmarks": {
-        "design_arena": [
-          {
-            "arena": "agents",
-            "category": "agenticgamedev",
-            "elo": 1158,
-            "win_rate": 44.5,
-            "rank": 18
-          },
-          {
-            "arena": "agents",
-            "category": "androidnative",
-            "elo": 1171,
-            "win_rate": 43.6,
-            "rank": 23
-          },
-          {
-            "arena": "agents",
-            "category": "fullstack",
-            "elo": 1207,
-            "win_rate": 49.4,
-            "rank": 14
-          },
-          {
-            "arena": "agents",
-            "category": "htmlslides",
-            "elo": 1186,
-            "win_rate": 46.3,
-            "rank": 10
-          },
-          {
-            "arena": "agents",
-            "category": "mobileapps",
-            "elo": 1197,
-            "win_rate": 46.1,
-            "rank": 19
-          },
-          {
-            "arena": "agents",
-            "category": "python-pptxslides",
-            "elo": 1228,
-            "win_rate": 49.1,
-            "rank": 10
-          },
-          {
-            "arena": "agents",
-            "category": "webapps",
-            "elo": 1227,
-            "win_rate": 48.8,
-            "rank": 17
-          },
-          {
-            "arena": "models",
-            "category": "3d",
-            "elo": 1248,
-            "win_rate": 52.1,
-            "rank": 33
-          },
-          {
-            "arena": "models",
-            "category": "asciiart",
-            "elo": 1185,
-            "win_rate": 47.7,
-            "rank": 27
-          },
-          {
-            "arena": "models",
-            "category": "codecategories",
-            "elo": 1267,
-            "win_rate": 52.3,
-            "rank": 28
-          },
-          {
-            "arena": "models",
-            "category": "dataviz",
-            "elo": 1251,
-            "win_rate": 51.7,
-            "rank": 31
-          },
-          {
-            "arena": "models",
-            "category": "gamedev",
-            "elo": 1241,
-            "win_rate": 47.7,
-            "rank": 35
-          },
-          {
-            "arena": "models",
-            "category": "svg",
-            "elo": 1204,
-            "win_rate": 48.5,
-            "rank": 30
-          },
-          {
-            "arena": "models",
-            "category": "uicomponent",
-            "elo": 1266,
-            "win_rate": 51.9,
-            "rank": 29
-          },
-          {
-            "arena": "models",
-            "category": "website",
-            "elo": 1272,
-            "win_rate": 52.8,
-            "rank": 26
-          }
-        ],
-        "artificial_analysis": {
-          "intelligence_index": 35.7,
-          "coding_index": 58.6,
-          "agentic_index": 31
-        }
-      },
-      "reasoning": {
-        "mandatory": false
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "providerId": "openrouter"
@@ -1264,9 +1088,9 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 15.4,
           "coding_index": 43.4,
-          "agentic_index": 6.8
+          "agentic_index": 6.7
         }
       },
       "reasoning": {
@@ -1387,131 +1211,6 @@
       "providerId": "openrouter"
     },
     {
-      "id": "minimax/minimax-m2.7:free",
-      "canonical_slug": "minimax/minimax-m2.7-20260318",
-      "hugging_face_id": "MiniMaxAI/MiniMax-M2.7",
-      "name": "MiniMax: MiniMax M2.7 (free)",
-      "created": 1773836697,
-      "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
-      "context_length": 196608,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 196608,
-        "max_completion_tokens": 176947,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "response_format",
-        "seed",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/minimax/minimax-m2.7-20260318/endpoints"
-      },
-      "benchmarks": {
-        "design_arena": [
-          {
-            "arena": "models",
-            "category": "3d",
-            "elo": 1231,
-            "win_rate": 50.6,
-            "rank": 38
-          },
-          {
-            "arena": "models",
-            "category": "asciiart",
-            "elo": 1164,
-            "win_rate": 47.5,
-            "rank": 36
-          },
-          {
-            "arena": "models",
-            "category": "codecategories",
-            "elo": 1251,
-            "win_rate": 52,
-            "rank": 35
-          },
-          {
-            "arena": "models",
-            "category": "dataviz",
-            "elo": 1251,
-            "win_rate": 52.8,
-            "rank": 30
-          },
-          {
-            "arena": "models",
-            "category": "gamedev",
-            "elo": 1237,
-            "win_rate": 51.4,
-            "rank": 37
-          },
-          {
-            "arena": "models",
-            "category": "svg",
-            "elo": 1172,
-            "win_rate": 48.9,
-            "rank": 44
-          },
-          {
-            "arena": "models",
-            "category": "uicomponent",
-            "elo": 1232,
-            "win_rate": 49.4,
-            "rank": 41
-          },
-          {
-            "arena": "models",
-            "category": "website",
-            "elo": 1258,
-            "win_rate": 52.4,
-            "rank": 33
-          }
-        ],
-        "artificial_analysis": {
-          "intelligence_index": null,
-          "coding_index": 52.6,
-          "agentic_index": null
-        }
-      },
-      "reasoning": {
-        "mandatory": true
-      },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "providerId": "openrouter"
-    },
-    {
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
       "canonical_slug": "nvidia/nemotron-3-super-120b-a12b-20230311",
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
@@ -1570,9 +1269,9 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 13.6,
           "coding_index": 37.7,
-          "agentic_index": 4.2
+          "agentic_index": 4.1
         }
       },
       "reasoning": {
@@ -1655,11 +1354,11 @@
       "providerId": "openrouter"
     },
     {
-      "id": "groq/compound",
-      "name": "Groq/compound",
-      "created": 1756949530,
+      "id": "allam-2-7b",
+      "name": "Allam 2 7b",
+      "created": 1737672203,
       "description": "",
-      "context_length": 131072,
+      "context_length": 4096,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1678,216 +1377,9 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "qwen/qwen3.8-27b",
-      "name": "Qwen/qwen3 8 27b",
-      "created": 1786984846,
-      "description": "",
-      "context_length": 131042,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "name": "Openai/gpt Oss 120b",
-      "created": 1754408224,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-22m",
-      "name": "Meta Llama/llama Prompt Guard 2 22m",
-      "created": 1748632101,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-20b",
-      "name": "Openai/gpt Oss 20b",
-      "created": 1754407957,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "whisper-large-v3-turbo",
-      "name": "Whisper Large V3 Turbo",
-      "created": 1728413088,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "groq/compound-mini",
-      "name": "Groq/compound Mini",
-      "created": 1756949707,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "whisper-large-v3",
-      "name": "Whisper Large V3",
-      "created": 1693721698,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "canopylabs/orpheus-arabic-saudi",
-      "name": "Canopylabs/orpheus Arabic Saudi",
-      "created": 1765926439,
-      "description": "",
-      "context_length": 4000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-safeguard-20b",
-      "name": "Openai/gpt Oss Safeguard 20b",
-      "created": 1761708789,
+      "id": "qwen/qwen3.6-27b",
+      "name": "Qwen/qwen3 6 27b",
+      "created": 1778288776,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -1931,11 +1423,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
+      "id": "openai/gpt-oss-20b",
+      "name": "Openai/gpt Oss 20b",
+      "created": 1754407957,
       "description": "",
-      "context_length": 4096,
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1954,11 +1446,218 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "qwen/qwen3.6-27b",
-      "name": "Qwen/qwen3 6 27b",
-      "created": 1778288776,
+      "id": "whisper-large-v3-turbo",
+      "name": "Whisper Large V3 Turbo",
+      "created": 1728413088,
+      "description": "",
+      "context_length": 448,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "meta-llama/llama-prompt-guard-2-86m",
+      "name": "Meta Llama/llama Prompt Guard 2 86m",
+      "created": 1748632165,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "meta-llama/llama-prompt-guard-2-22m",
+      "name": "Meta Llama/llama Prompt Guard 2 22m",
+      "created": 1748632101,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "qwen/qwen3.8-27b",
+      "name": "Qwen/qwen3 8 27b",
+      "created": 1786984846,
+      "description": "",
+      "context_length": 131042,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "groq/compound",
+      "name": "Groq/compound",
+      "created": 1756949530,
       "description": "",
       "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "whisper-large-v3",
+      "name": "Whisper Large V3",
+      "created": 1693721698,
+      "description": "",
+      "context_length": 448,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "name": "Openai/gpt Oss Safeguard 20b",
+      "created": 1761708789,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "groq/compound-mini",
+      "name": "Groq/compound Mini",
+      "created": 1756949707,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "name": "Openai/gpt Oss 120b",
+      "created": 1754408224,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "canopylabs/orpheus-arabic-saudi",
+      "name": "Canopylabs/orpheus Arabic Saudi",
+      "created": 1765926439,
+      "description": "",
+      "context_length": 4000,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2968,7 +2667,7 @@
     {
       "id": "codestral-2508",
       "name": "Codestral 2508",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -2991,7 +2690,7 @@
     {
       "id": "codestral-latest",
       "name": "Codestral Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -3014,7 +2713,7 @@
     {
       "id": "mistral-code-latest",
       "name": "Mistral Code Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -3037,7 +2736,7 @@
     {
       "id": "mistral-code-fim-latest",
       "name": "Mistral Code Fim Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 256000,
       "pricing": {
@@ -3060,7 +2759,7 @@
     {
       "id": "mistral-small-2603",
       "name": "Mistral Small 2603",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3083,7 +2782,7 @@
     {
       "id": "mistral-small-latest",
       "name": "Mistral Small Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3106,7 +2805,7 @@
     {
       "id": "mistral-vibe-cli-fast",
       "name": "Mistral Vibe Cli Fast",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3129,7 +2828,7 @@
     {
       "id": "magistral-small-latest",
       "name": "Magistral Small Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3152,7 +2851,7 @@
     {
       "id": "voxtral-small-2507",
       "name": "Voxtral Small 2507",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3175,7 +2874,7 @@
     {
       "id": "voxtral-small-latest",
       "name": "Voxtral Small Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -3198,7 +2897,7 @@
     {
       "id": "labs-leanstral-1-5-1",
       "name": "Labs Leanstral 1 5 1",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3221,7 +2920,7 @@
     {
       "id": "labs-leanstral-1-5",
       "name": "Labs Leanstral 1 5",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3244,7 +2943,7 @@
     {
       "id": "mistral-large-2512",
       "name": "Mistral Large 2512",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3267,7 +2966,7 @@
     {
       "id": "mistral-large-latest",
       "name": "Mistral Large Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3290,7 +2989,7 @@
     {
       "id": "ministral-3b-2512",
       "name": "Ministral 3b 2512",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -3313,7 +3012,7 @@
     {
       "id": "ministral-3b-latest",
       "name": "Ministral 3b Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -3336,7 +3035,7 @@
     {
       "id": "ministral-8b-2512",
       "name": "Ministral 8b 2512",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3359,7 +3058,7 @@
     {
       "id": "ministral-8b-latest",
       "name": "Ministral 8b Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3382,7 +3081,7 @@
     {
       "id": "ministral-14b-2512",
       "name": "Ministral 14b 2512",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3405,7 +3104,7 @@
     {
       "id": "ministral-14b-latest",
       "name": "Ministral 14b Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 262144,
       "pricing": {
@@ -3428,9 +3127,9 @@
     {
       "id": "mistral-medium-latest",
       "name": "Mistral Medium Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3451,9 +3150,9 @@
     {
       "id": "mistral-medium",
       "name": "Mistral Medium",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3474,9 +3173,9 @@
     {
       "id": "mistral-medium-3-5",
       "name": "Mistral Medium 3 5",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3497,9 +3196,9 @@
     {
       "id": "mistral-medium-3.5",
       "name": "Mistral Medium 3 5",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3520,9 +3219,9 @@
     {
       "id": "mistral-medium-3",
       "name": "Mistral Medium 3",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3543,9 +3242,9 @@
     {
       "id": "mistral-medium-2604",
       "name": "Mistral Medium 2604",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3566,9 +3265,9 @@
     {
       "id": "mistral-vibe-cli-latest",
       "name": "Mistral Vibe Cli Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3589,9 +3288,9 @@
     {
       "id": "mistral-vibe-cli-with-tools",
       "name": "Mistral Vibe Cli With Tools",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3612,9 +3311,9 @@
     {
       "id": "magistral-medium-latest",
       "name": "Magistral Medium Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
-      "context_length": 32768,
+      "context_length": 262144,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3635,7 +3334,7 @@
     {
       "id": "glm-5-2",
       "name": "Glm 5 2",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 1048576,
       "pricing": {
@@ -3658,7 +3357,7 @@
     {
       "id": "zai-glm-5-2",
       "name": "Zai Glm 5 2",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 1048576,
       "pricing": {
@@ -3681,7 +3380,7 @@
     {
       "id": "mistral-embed-2312",
       "name": "Mistral Embed 2312",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -3704,7 +3403,7 @@
     {
       "id": "mistral-embed",
       "name": "Mistral Embed",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -3727,7 +3426,7 @@
     {
       "id": "codestral-embed",
       "name": "Codestral Embed",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -3750,7 +3449,7 @@
     {
       "id": "codestral-embed-2505",
       "name": "Codestral Embed 2505",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 8192,
       "pricing": {
@@ -3773,7 +3472,7 @@
     {
       "id": "mistral-moderation-2603",
       "name": "Mistral Moderation 2603",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -3796,7 +3495,7 @@
     {
       "id": "mistral-ocr-2512",
       "name": "Mistral Ocr 2512",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3819,7 +3518,7 @@
     {
       "id": "mistral-ocr-3-0",
       "name": "Mistral Ocr 3 0",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3842,7 +3541,7 @@
     {
       "id": "mistral-ocr-3",
       "name": "Mistral Ocr 3",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3865,7 +3564,7 @@
     {
       "id": "mistral-ocr-4-0",
       "name": "Mistral Ocr 4 0",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3888,7 +3587,7 @@
     {
       "id": "mistral-ocr-latest",
       "name": "Mistral Ocr Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3911,7 +3610,7 @@
     {
       "id": "mistral-ocr-4",
       "name": "Mistral Ocr 4",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3934,7 +3633,7 @@
     {
       "id": "mistral-ocr-4-1",
       "name": "Mistral Ocr 4 1",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3957,7 +3656,7 @@
     {
       "id": "voxtral-mini-2602",
       "name": "Voxtral Mini 2602",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -3980,7 +3679,7 @@
     {
       "id": "voxtral-mini-latest",
       "name": "Voxtral Mini Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 16384,
       "pricing": {
@@ -4003,7 +3702,7 @@
     {
       "id": "voxtral-mini-transcribe-realtime-2602",
       "name": "Voxtral Mini Transcribe Realtime 2602",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -4026,7 +3725,7 @@
     {
       "id": "voxtral-mini-realtime-2602",
       "name": "Voxtral Mini Realtime 2602",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -4049,7 +3748,7 @@
     {
       "id": "voxtral-mini-realtime-latest",
       "name": "Voxtral Mini Realtime Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 32768,
       "pricing": {
@@ -4072,7 +3771,7 @@
     {
       "id": "voxtral-mini-tts-2603",
       "name": "Voxtral Mini Tts 2603",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 4096,
       "pricing": {
@@ -4095,7 +3794,7 @@
     {
       "id": "voxtral-mini-tts-latest",
       "name": "Voxtral Mini Tts Latest",
-      "created": 1788742857,
+      "created": 1788829236,
       "description": "",
       "context_length": 4096,
       "pricing": {
@@ -6072,6 +5771,319 @@
     }
   ],
   "archivedModels": [
+    {
+      "id": "minimax/minimax-m3:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-09-08T01:00:35.931Z",
+      "lastSeenAt": "2026-09-07T01:00:56.363Z",
+      "addedToFreeList": "2026-08-26T08:32:50.786Z",
+      "model": {
+        "id": "minimax/minimax-m3:free",
+        "canonical_slug": "minimax/minimax-m3-20260531",
+        "hugging_face_id": "MiniMaxAI/Minimax-M3",
+        "name": "MiniMax: MiniMax M3 (free)",
+        "created": 1780245374,
+        "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
+        "context_length": 1048576,
+        "architecture": {
+          "modality": "text+image+video->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 1048576,
+          "max_completion_tokens": 943718,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 1,
+          "top_p": 0.95,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/minimax/minimax-m3-20260531/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [
+            {
+              "arena": "agents",
+              "category": "agenticgamedev",
+              "elo": 1158,
+              "win_rate": 44.5,
+              "rank": 18
+            },
+            {
+              "arena": "agents",
+              "category": "androidnative",
+              "elo": 1171,
+              "win_rate": 43.6,
+              "rank": 23
+            },
+            {
+              "arena": "agents",
+              "category": "fullstack",
+              "elo": 1207,
+              "win_rate": 49.4,
+              "rank": 14
+            },
+            {
+              "arena": "agents",
+              "category": "htmlslides",
+              "elo": 1186,
+              "win_rate": 46.3,
+              "rank": 10
+            },
+            {
+              "arena": "agents",
+              "category": "mobileapps",
+              "elo": 1197,
+              "win_rate": 46.1,
+              "rank": 19
+            },
+            {
+              "arena": "agents",
+              "category": "python-pptxslides",
+              "elo": 1228,
+              "win_rate": 49.1,
+              "rank": 10
+            },
+            {
+              "arena": "agents",
+              "category": "webapps",
+              "elo": 1227,
+              "win_rate": 48.8,
+              "rank": 17
+            },
+            {
+              "arena": "models",
+              "category": "3d",
+              "elo": 1248,
+              "win_rate": 52.1,
+              "rank": 33
+            },
+            {
+              "arena": "models",
+              "category": "asciiart",
+              "elo": 1185,
+              "win_rate": 47.7,
+              "rank": 27
+            },
+            {
+              "arena": "models",
+              "category": "codecategories",
+              "elo": 1267,
+              "win_rate": 52.3,
+              "rank": 28
+            },
+            {
+              "arena": "models",
+              "category": "dataviz",
+              "elo": 1251,
+              "win_rate": 51.7,
+              "rank": 31
+            },
+            {
+              "arena": "models",
+              "category": "gamedev",
+              "elo": 1241,
+              "win_rate": 47.7,
+              "rank": 35
+            },
+            {
+              "arena": "models",
+              "category": "svg",
+              "elo": 1204,
+              "win_rate": 48.5,
+              "rank": 30
+            },
+            {
+              "arena": "models",
+              "category": "uicomponent",
+              "elo": 1266,
+              "win_rate": 51.9,
+              "rank": 29
+            },
+            {
+              "arena": "models",
+              "category": "website",
+              "elo": 1272,
+              "win_rate": 52.8,
+              "rank": 26
+            }
+          ],
+          "artificial_analysis": {
+            "intelligence_index": 35.7,
+            "coding_index": 58.6,
+            "agentic_index": 31
+          }
+        },
+        "reasoning": {
+          "mandatory": false
+        },
+        "addedToFreeList": "2026-08-26T08:32:50.786Z"
+      }
+    },
+    {
+      "id": "minimax/minimax-m2.7:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-09-08T01:00:35.931Z",
+      "lastSeenAt": "2026-09-07T01:00:56.363Z",
+      "addedToFreeList": "2026-08-26T08:32:50.786Z",
+      "model": {
+        "id": "minimax/minimax-m2.7:free",
+        "canonical_slug": "minimax/minimax-m2.7-20260318",
+        "hugging_face_id": "MiniMaxAI/MiniMax-M2.7",
+        "name": "MiniMax: MiniMax M2.7 (free)",
+        "created": 1773836697,
+        "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
+        "context_length": 196608,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 196608,
+          "max_completion_tokens": 176947,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 1,
+          "top_p": 0.95,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/minimax/minimax-m2.7-20260318/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [
+            {
+              "arena": "models",
+              "category": "3d",
+              "elo": 1231,
+              "win_rate": 50.6,
+              "rank": 38
+            },
+            {
+              "arena": "models",
+              "category": "asciiart",
+              "elo": 1164,
+              "win_rate": 47.5,
+              "rank": 36
+            },
+            {
+              "arena": "models",
+              "category": "codecategories",
+              "elo": 1251,
+              "win_rate": 52,
+              "rank": 35
+            },
+            {
+              "arena": "models",
+              "category": "dataviz",
+              "elo": 1251,
+              "win_rate": 52.8,
+              "rank": 30
+            },
+            {
+              "arena": "models",
+              "category": "gamedev",
+              "elo": 1237,
+              "win_rate": 51.4,
+              "rank": 37
+            },
+            {
+              "arena": "models",
+              "category": "svg",
+              "elo": 1172,
+              "win_rate": 48.9,
+              "rank": 44
+            },
+            {
+              "arena": "models",
+              "category": "uicomponent",
+              "elo": 1232,
+              "win_rate": 49.4,
+              "rank": 41
+            },
+            {
+              "arena": "models",
+              "category": "website",
+              "elo": 1258,
+              "win_rate": 52.4,
+              "rank": 33
+            }
+          ],
+          "artificial_analysis": {
+            "intelligence_index": null,
+            "coding_index": 52.6,
+            "agentic_index": null
+          }
+        },
+        "reasoning": {
+          "mandatory": true
+        },
+        "addedToFreeList": "2026-08-26T08:32:50.786Z"
+      }
+    },
     {
       "id": "z-ai/glm-5.2:free",
       "providerId": "openrouter",

@@ -1,12 +1,35 @@
 {
   "providerId": "cerebras",
-  "fetchedAt": "2026-09-08T01:00:36.279Z",
+  "fetchedAt": "2026-09-09T01:00:07.614Z",
   "newModelIds": [],
   "archivedModels": [],
   "models": [
     {
       "id": "gpt-oss-120b",
       "name": "Gpt Oss 120b",
+      "created": 0,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "cerebras",
+      "sourceUrl": "https://api.cerebras.ai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.387Z"
+    },
+    {
+      "id": "gemma-4-31b",
+      "name": "Gemma 4 31b",
       "created": 0,
       "description": "",
       "context_length": null,
@@ -49,29 +72,6 @@
       "providerId": "cerebras",
       "sourceUrl": "https://api.cerebras.ai/v1/models",
       "addedToFreeList": "2026-09-04T01:00:05.346Z"
-    },
-    {
-      "id": "gemma-4-31b",
-      "name": "Gemma 4 31b",
-      "created": 0,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "cerebras",
-      "sourceUrl": "https://api.cerebras.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.387Z"
     }
   ]
 }

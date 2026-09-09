@@ -1,7 +1,10 @@
 {
   "providerId": "openrouter",
-  "fetchedAt": "2026-09-08T01:00:35.931Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-09-09T01:00:07.254Z",
+  "newModelIds": [
+    "nex-agi/nex-n2.5-mini:free",
+    "nex-agi/nex-n2.5-pro:free"
+  ],
   "archivedModels": [
     {
       "id": "minimax/minimax-m3:free",
@@ -592,6 +595,139 @@
   ],
   "models": [
     {
+      "id": "nex-agi/nex-n2.5-mini:free",
+      "canonical_slug": "nex-agi/nex-n2.5-mini-20260908",
+      "hugging_face_id": "nex-agi/Nex-N2.5-mini",
+      "name": "Nex AGI: Nex-N2.5-Mini (free)",
+      "created": 1788890061,
+      "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": 40
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nex-agi/nex-n2.5-mini-20260908/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "none"
+        ],
+        "default_effort": "high"
+      },
+      "addedToFreeList": "2026-09-09T01:00:07.254Z"
+    },
+    {
+      "id": "nex-agi/nex-n2.5-pro:free",
+      "canonical_slug": "nex-agi/nex-n2.5-pro-20260907",
+      "hugging_face_id": "nex-agi/Nex-N2.5-Pro",
+      "name": "Nex AGI: Nex-N2.5-Pro (free)",
+      "created": 1788890050,
+      "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": 40
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nex-agi/nex-n2.5-pro-20260907/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "none"
+        ],
+        "default_effort": "high"
+      },
+      "addedToFreeList": "2026-09-09T01:00:07.254Z"
+    },
+    {
       "id": "inclusionai/ling-3.0-flash-sante:free",
       "canonical_slug": "inclusionai/ling-3.0-flash-sante-20260904",
       "hugging_face_id": null,
@@ -921,6 +1057,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
+        "logprobs",
         "max_tokens",
         "presence_penalty",
         "reasoning",
@@ -929,6 +1066,7 @@
         "stop",
         "temperature",
         "tools",
+        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -1082,57 +1220,57 @@
             "arena": "models",
             "category": "3d",
             "elo": 1195,
-            "win_rate": 42.9,
-            "rank": 47
+            "win_rate": 42.8,
+            "rank": 48
           },
           {
             "arena": "models",
             "category": "asciiart",
             "elo": 1123,
             "win_rate": 34.8,
-            "rank": 54
+            "rank": 55
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1217,
-            "win_rate": 42.4,
-            "rank": 45
+            "elo": 1216,
+            "win_rate": 42.3,
+            "rank": 46
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1190,
-            "win_rate": 40,
+            "elo": 1192,
+            "win_rate": 40.2,
             "rank": 54
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1182,
-            "win_rate": 37.9,
-            "rank": 55
+            "elo": 1179,
+            "win_rate": 37.6,
+            "rank": 57
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1129,
+            "elo": 1130,
             "win_rate": 34.3,
             "rank": 52
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1203,
-            "win_rate": 40.8,
-            "rank": 48
+            "elo": 1206,
+            "win_rate": 41.1,
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1228,
-            "win_rate": 43.5,
-            "rank": 44
+            "elo": 1226,
+            "win_rate": 43.4,
+            "rank": 45
           }
         ],
         "artificial_analysis": {
@@ -1394,7 +1532,7 @@
             "arena": "models",
             "category": "3d",
             "elo": 1166,
-            "win_rate": 40.9,
+            "win_rate": 40.8,
             "rank": 59
           },
           {
@@ -1402,34 +1540,34 @@
             "category": "asciiart",
             "elo": 1096,
             "win_rate": 36,
-            "rank": 57
+            "rank": 58
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1154,
             "win_rate": 36.2,
-            "rank": 76
+            "rank": 77
           },
           {
             "arena": "models",
             "category": "dataviz",
             "elo": 1156,
             "win_rate": 38.3,
-            "rank": 70
+            "rank": 71
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1153,
-            "win_rate": 36.8,
-            "rank": 69
+            "win_rate": 37,
+            "rank": 70
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1103,
-            "win_rate": 36.1,
+            "elo": 1104,
+            "win_rate": 36,
             "rank": 58
           },
           {
@@ -1437,14 +1575,14 @@
             "category": "uicomponent",
             "elo": 1154,
             "win_rate": 37.3,
-            "rank": 70
+            "rank": 71
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1144,
+            "elo": 1143,
             "win_rate": 34.3,
-            "rank": 81
+            "rank": 82
           }
         ],
         "artificial_analysis": {

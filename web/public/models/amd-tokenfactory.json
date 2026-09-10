@@ -1,10 +1,39 @@
 {
   "providerId": "amd-tokenfactory",
-  "fetchedAt": "2026-09-09T01:00:09.906Z",
-  "newModelIds": [
-    "MiniCPM5-2B"
+  "fetchedAt": "2026-09-10T01:00:51.812Z",
+  "newModelIds": [],
+  "archivedModels": [
+    {
+      "id": "MiniCPM5-1B",
+      "providerId": "amd-tokenfactory",
+      "removedAt": "2026-09-10T01:00:51.812Z",
+      "lastSeenAt": "2026-09-09T01:00:09.906Z",
+      "addedToFreeList": "2026-09-02T22:52:17.916Z",
+      "model": {
+        "id": "MiniCPM5-1B",
+        "name": "MiniCPM5-1B",
+        "created": 0,
+        "description": "MiniCPM5-1B served by the AMD GPU Cloud",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "amd-tokenfactory",
+        "sourceUrl": "https://developer.amd.com.cn/radeon/tokenfactory",
+        "addedToFreeList": "2026-09-02T22:52:17.916Z"
+      }
+    }
   ],
-  "archivedModels": [],
   "models": [
     {
       "id": "DeepSeek-V4-Flash-Vision-Exp",
@@ -58,29 +87,6 @@
       "created": 0,
       "description": "Qwen3.8-Flash-Next served by the AMD GPU Cloud",
       "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "amd-tokenfactory",
-      "sourceUrl": "https://developer.amd.com.cn/radeon/tokenfactory",
-      "addedToFreeList": "2026-09-02T22:52:17.916Z"
-    },
-    {
-      "id": "MiniCPM5-1B",
-      "name": "MiniCPM5-1B",
-      "created": 0,
-      "description": "MiniCPM5-1B served by the AMD GPU Cloud",
-      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"

@@ -1,8 +1,38 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-09T01:00:08.546Z",
+  "fetchedAt": "2026-09-10T01:00:50.706Z",
   "newModelIds": [],
   "archivedModels": [
+    {
+      "id": "minimaxai/minimax-m3",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-09-10T01:00:50.706Z",
+      "lastSeenAt": "2026-09-09T01:00:08.546Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "minimaxai/minimax-m3",
+        "name": "Minimaxai/minimax M3",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
     {
       "id": "openai/gpt-oss-120b",
       "providerId": "nvidia-nim",
@@ -1148,29 +1178,6 @@
     {
       "id": "microsoft/phi-3.5-moe-instruct",
       "name": "Microsoft/phi 3 5 Moe Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "minimaxai/minimax-m3",
-      "name": "Minimaxai/minimax M3",
       "created": 735790403,
       "description": "",
       "context_length": null,

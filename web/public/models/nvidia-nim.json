@@ -1,7 +1,10 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-11T01:00:19.089Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-09-12T01:00:57.089Z",
+  "newModelIds": [
+    "nvidia/nemotron-parse-2.0",
+    "z-ai/glm-5.3-flash"
+  ],
   "archivedModels": [
     {
       "id": "minimaxai/minimax-m3",
@@ -1981,6 +1984,29 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
+      "id": "nvidia/nemotron-parse-2.0",
+      "name": "Nvidia/nemotron Parse 2 0",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-09-12T01:00:57.089Z"
+    },
+    {
       "id": "nvidia/neva-22b",
       "name": "Nvidia/neva 22b",
       "created": 735790403,
@@ -2301,6 +2327,29 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "name": "Z Ai/glm 5 3 Flash",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-09-12T01:00:57.089Z"
     },
     {
       "id": "zyphra/zamba2-7b-instruct",

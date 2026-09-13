@@ -1,10 +1,7 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-12T01:00:57.089Z",
-  "newModelIds": [
-    "nvidia/nemotron-parse-2.0",
-    "z-ai/glm-5.3-flash"
-  ],
+  "fetchedAt": "2026-09-13T01:00:36.316Z",
+  "newModelIds": [],
   "archivedModels": [
     {
       "id": "minimaxai/minimax-m3",

@@ -27,9 +27,9 @@ const normalizeSiteUrl = (value, fallback) => {
 };
 const siteUrl = normalizeSiteUrl(process.env.VITE_SITE_URL, seoConfig.siteUrl);
 const siteName = seoConfig.siteName;
-const ogImage = new URL("og-image.svg", `${siteUrl}/`).toString();
+const ogImage = new URL("og-image.png", `${siteUrl}/`).toString();
+const ogImageAlt = `${siteName} — live catalog of free AI models`;
 const homeTitle = seoConfig.homeTitle;
-const homeDescription = seoConfig.homeDescription;
 const archiveTitle = seoConfig.archiveTitle;
 const archiveDescription = seoConfig.archiveDescription;
 const faqTitle = seoConfig.faqTitle;
@@ -86,6 +86,31 @@ const uniqueModels = models.filter(
   (model, index, allModels) =>
     allModels.findIndex((candidate) => candidate.id === model.id) === index,
 );
+const joinWithAnd = (names) => {
+  const list = names.map((n) => String(n ?? "").trim()).filter(Boolean);
+  if (list.length === 0) return "";
+  if (list.length === 1) return list[0];
+  if (list.length === 2) return `${list[0]} and ${list[1]}`;
+  return `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
+};
+const providerNamesList = providers.map(
+  (provider) => provider.displayName || provider.id,
+);
+const modelCount = uniqueModels.length;
+const homeDescriptionTail =
+  " Compare context length, capabilities, and API access.";
+let homeDescriptionBase = providerNamesList.length
+  ? `Browse ${modelCount} free AI and LLM models from ${joinWithAnd(providerNamesList)}.`
+  : "";
+if (`${homeDescriptionBase}${homeDescriptionTail}`.length > 160) {
+  homeDescriptionBase = `Browse ${modelCount} free AI and LLM models across ${providerNamesList.length} providers including ${joinWithAnd(providerNamesList.slice(0, 3))}.`;
+}
+const homeDescriptionWithTail = `${homeDescriptionBase}${homeDescriptionTail}`;
+const homeDescription = !homeDescriptionBase
+  ? seoConfig.homeDescription
+  : homeDescriptionWithTail.length <= 160
+    ? homeDescriptionWithTail
+    : homeDescriptionBase;
 const modelDescription = (model, providerName) => {
   const fallback = `${model.name} is a free ${providerName} AI model. View its context length, capabilities, supported parameters, and API setup details.`;
   const description = cleanText(model.description);
@@ -124,8 +149,7 @@ function homeSchema() {
         "@type": "Dataset",
         "@id": `${siteUrl}/#dataset`,
         name: "Free LLM Models Catalog",
-        description:
-          "Machine-readable catalog of free AI models across OpenRouter, Groq, Google, Cerebras, Mistral, Hugging Face, and NVIDIA NIM with context length, modality, and capabilities.",
+        description: homeDescription,
         url: `${siteUrl}/free_models.json`,
         keywords: ["LLM", "AI models", "free", "OpenRouter", "Groq", "generative AI"],
         license: "https://github.com/luongnv89/free-llm-models/blob/main/LICENSE",
@@ -292,16 +316,13 @@ function staticLink(route, label) {
 }
 
 function homeBody() {
-  const providerSummary = providers
-    .map((provider) => provider.displayName || provider.id)
-    .join(", ");
   const list = uniqueModels
     .map(
       (model) =>
         `<li><a href="${escapeHtml(sitePath(modelPath(model.id)))}"><strong>${escapeHtml(model.name)}</strong></a> <span>${escapeHtml(providerNameFor(model))}</span>${model.description ? `<p>${escapeHtml(model.description)}</p>` : ""}</li>`,
     )
     .join("");
-  return `<main class="seo-prerendered"><header><h1>Free LLM Models</h1><p>Browse and compare ${escapeHtml(String(uniqueModels.length))} free AI models across ${escapeHtml(providerSummary || "multiple providers")}.</p></header><nav aria-label="Primary navigation">${staticLink("/faq", "FAQ")} ${staticLink("/archive", "Former free models")} ${staticLink("/free_models.json", "Download model data")}</nav><section><h2>Free AI model directory</h2><p>Search models by provider, context length, modality, reasoning, tool use, and other capabilities.</p><ul>${list}</ul></section></main>`;
+  return `<main class="seo-prerendered"><header><h1>Free LLM Models</h1><p>${escapeHtml(homeDescription)}</p></header><nav aria-label="Primary navigation">${staticLink("/faq", "FAQ")} ${staticLink("/archive", "Former free models")} ${staticLink("/free_models.json", "Download model data")}</nav><section><h2>Free AI model directory</h2><p>Search models by provider, context length, modality, reasoning, tool use, and other capabilities.</p><ul>${list}</ul></section></main>`;
 }
 
 function archiveBody() {
@@ -345,7 +366,7 @@ function headBlock({
   structuredData,
 }) {
   const url = canonicalUrl(route);
-  return `<!-- SEO:BEGIN -->\n    <meta charset="UTF-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <meta name="description" content="${escapeHtml(description)}" />\n    <meta name="robots" content="index,follow" />\n    <link rel="canonical" href="${escapeHtml(url)}" />\n    <title>${escapeHtml(title)}</title>\n    <meta property="og:title" content="${escapeHtml(title)}" />\n    <meta property="og:description" content="${escapeHtml(description)}" />\n    <meta property="og:type" content="${escapeHtml(type)}" />\n    <meta property="og:url" content="${escapeHtml(url)}" />\n    <meta property="og:image" content="${ogImage}" />\n    <meta property="og:site_name" content="${siteName}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeHtml(title)}" />\n    <meta name="twitter:description" content="${escapeHtml(description)}" />\n    <meta name="twitter:image" content="${ogImage}" />\n    <script type="application/ld+json" data-seo-jsonld="true">${jsonLd(structuredData)}</script>\n    <!-- SEO:END -->`;
+  return `<!-- SEO:BEGIN -->\n    <meta charset="UTF-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <meta name="description" content="${escapeHtml(description)}" />\n    <meta name="robots" content="index,follow" />\n    <link rel="canonical" href="${escapeHtml(url)}" />\n    <title>${escapeHtml(title)}</title>\n    <meta property="og:title" content="${escapeHtml(title)}" />\n    <meta property="og:description" content="${escapeHtml(description)}" />\n    <meta property="og:type" content="${escapeHtml(type)}" />\n    <meta property="og:url" content="${escapeHtml(url)}" />\n    <meta property="og:image" content="${ogImage}" />\n    <meta property="og:image:width" content="1200" />\n    <meta property="og:image:height" content="630" />\n    <meta property="og:image:alt" content="${escapeHtml(ogImageAlt)}" />\n    <meta property="og:site_name" content="${siteName}" />\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:title" content="${escapeHtml(title)}" />\n    <meta name="twitter:description" content="${escapeHtml(description)}" />\n    <meta name="twitter:image" content="${ogImage}" />\n    <meta name="twitter:image:alt" content="${escapeHtml(ogImageAlt)}" />\n    <script type="application/ld+json" data-seo-jsonld="true">${jsonLd(structuredData)}</script>\n    <!-- SEO:END -->`;
 }
 
 function renderDocument(template, metadata, body) {
@@ -475,6 +496,14 @@ for (const entry of archivedModels) {
     },
     modelBody(model, true),
   );
+}
+const llmsIntro = `> Free LLM Models is a searchable, daily-refreshed directory of ${modelCount} currently free AI models across ${joinWithAnd(providerNamesList) || "multiple providers"}.`;
+for (const name of ["llms.txt", "llms-full.txt"]) {
+  const source = await readFile(path.join(publicDir, name), "utf8");
+  const lines = source.split("\n");
+  const introIndex = lines.findIndex((line) => line.startsWith("> "));
+  if (introIndex >= 0) lines[introIndex] = llmsIntro;
+  await writeFile(path.join(distDir, name), lines.join("\n"));
 }
 await writeFile(path.join(distDir, "sitemap.xml"), sitemapXml());
 await writeFile(

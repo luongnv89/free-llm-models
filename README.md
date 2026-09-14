@@ -2,7 +2,7 @@
 
 A tiny site + updater that tracks **free LLM models across multiple providers** (OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, GitHub Models, Hugging Face, NVIDIA NIM) and publishes a searchable UI.
 
-- **Site:** `web/` (Vite + React + Tailwind)
+- **Site:** `web/` (Vite + React + Tailwind; fonts self-hosted via `@fontsource` — Bricolage Grotesque, Instrument Sans, IBM Plex Mono)
 - **Data fetcher:** `get_openrouter_free_models.js` (multi-provider runner: `lib/providers/run-update.js`)
 - **Generated data files (served by the site):**
   - `web/public/models/<providerId>.json` – one file per provider
@@ -294,6 +294,16 @@ cd web
 npm run build
 npm run preview
 ```
+
+### Brand assets
+
+`web/public/og-image.png`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png` and `icon-512.png` are generated from `web/public/og-image.svg` and `web/public/favicon.svg`. Regenerate them after editing either SVG:
+
+```bash
+cd web && npx playwright install chromium && node scripts/render-brand-assets.mjs
+```
+
+The script is not part of the build; commit the regenerated files.
 
 ## Manual harness validation
 

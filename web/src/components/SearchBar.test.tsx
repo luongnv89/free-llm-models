@@ -78,7 +78,7 @@ describe("SearchBar", () => {
     const input = container.querySelector("input");
     expect(input).toBeTruthy();
     expect(input!.getAttribute("value")).toBe("gpt");
-    expect(container.textContent).toContain("5 of 42");
+    expect(container.textContent).toContain("5 / 42");
   });
 
   it("emits search changes", async () => {
@@ -126,9 +126,9 @@ describe("SearchBar", () => {
     expect(container.textContent).toContain("Z↓");
   });
 
-  it("shows Newest/Oldest for Date Added instead of A/Z", async () => {
+  it("shows Newest/Oldest for the Added sort instead of A/Z", async () => {
     await render({ sortField: "addedToFreeList", sortOrder: "desc" });
-    expect(container.textContent).toContain("Date Added");
+    expect(container.textContent).toContain("Added");
     expect(container.textContent).toContain("Newest");
     expect(container.textContent).not.toContain("Z↓");
     expect(

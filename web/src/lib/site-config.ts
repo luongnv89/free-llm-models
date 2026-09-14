@@ -31,4 +31,4 @@ export const SITE_URL = normalizeSiteUrl(
   import.meta.env.VITE_SITE_URL,
   seoConfig.siteUrl,
 );
-export const OG_IMAGE_URL = new URL("og-image.svg", `${SITE_URL}/`).toString();
+export const OG_IMAGE_URL = new URL("og-image.png", `${SITE_URL}/`).toString();

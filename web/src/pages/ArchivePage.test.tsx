@@ -177,14 +177,14 @@ describe("ArchivePage", () => {
     expect(container.querySelector('a[href="/"]')).toBeTruthy();
   });
 
-  it("keeps a Back to Models path when fetching fails", async () => {
+  it("keeps a path back to the catalog when fetching fails", async () => {
     fetchMock.mockRejectedValue(new Error("network down"));
     await renderPage();
     await settle();
 
     expect(container.textContent).toContain("Failed to load models");
     expect(container.textContent).toContain("network down");
-    expect(container.textContent).toContain("Back to Models");
+    expect(container.textContent).toContain("Catalog");
     expect(container.querySelector('a[href="/"]')).toBeTruthy();
     expect(
       container.querySelector('a[href="https://custats.com"]'),

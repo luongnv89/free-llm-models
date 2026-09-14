@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { X, Check } from "lucide-react";
+import { X, Check, ChevronDown } from "lucide-react";
 import type { FilterState, SourceOption } from "@/types/model";
+import { formatModality } from "@/lib/model-utils";
 
 interface FilterSidebarProps {
   filters: FilterState;
@@ -25,9 +26,7 @@ interface FilterSectionProps {
 function FilterSection({ title, children }: FilterSectionProps) {
   return (
     <div className="space-y-2">
-      <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-        {title}
-      </h3>
+      <h3 className="eyebrow">{title}</h3>
       {children}
     </div>
   );
@@ -90,32 +89,16 @@ function FiltersContent({
         </div>
       )}
 
-      {/* Modalities */}
-      <FilterSection title="Modality">
-        <div className="space-y-1">
-          {modalities.map((modality) => (
+      {/* Sources */}
+      <FilterSection title="Source">
+        <div className="space-y-1 max-h-48 overflow-y-auto">
+          {sources.map((source) => (
             <FilterOption
-              key={modality}
-              label={modality}
-              selected={filters.modalities.includes(modality)}
-              onClick={() => toggleArrayFilter("modalities", modality)}
-            />
-          ))}
-        </div>
-      </FilterSection>
-
-      {/* Context Length */}
-      <FilterSection title="Context Length">
-        <div className="space-y-1">
-          {contextLengthOptions.map((opt) => (
-            <FilterOption
-              key={opt.label}
-              label={opt.label}
-              selected={
-                filters.contextLengthMin === opt.min &&
-                filters.contextLengthMax === opt.max
-              }
-              onClick={() => toggleContextLength(opt.min, opt.max)}
+              key={source.id}
+              label={source.displayName}
+              count={source.count}
+              selected={filters.sources.includes(source.id)}
+              onClick={() => toggleArrayFilter("sources", source.id)}
             />
           ))}
         </div>
@@ -144,22 +127,38 @@ function FiltersContent({
         </div>
       </FilterSection>
 
-      {/* Sources */}
-      <FilterSection title="Source">
-        <div className="space-y-1 max-h-48 overflow-y-auto">
-          {sources.map((source) => (
+      {/* Context Length */}
+      <FilterSection title="Context length">
+        <div className="space-y-1">
+          {contextLengthOptions.map((opt) => (
             <FilterOption
-              key={source.id}
-              label={source.displayName}
-              count={source.count}
-              selected={filters.sources.includes(source.id)}
-              onClick={() => toggleArrayFilter("sources", source.id)}
+              key={opt.label}
+              label={opt.label}
+              selected={
+                filters.contextLengthMin === opt.min &&
+                filters.contextLengthMax === opt.max
+              }
+              onClick={() => toggleContextLength(opt.min, opt.max)}
             />
           ))}
         </div>
       </FilterSection>
 
-      {/* Providers */}
+      {/* Modalities */}
+      <FilterSection title="Modality">
+        <div className="space-y-1">
+          {modalities.map((modality) => (
+            <FilterOption
+              key={modality}
+              label={formatModality(modality)}
+              selected={filters.modalities.includes(modality)}
+              onClick={() => toggleArrayFilter("modalities", modality)}
+            />
+          ))}
+        </div>
+      </FilterSection>
+
+      {/* Providers (model authors) */}
       <FilterSection title="Provider">
         <div className="space-y-1 max-h-48 overflow-y-auto">
           {providers.map((provider) => (
@@ -188,23 +187,25 @@ function FilterOption({ label, selected, onClick, count }: FilterOptionProps) {
     <button
       onClick={onClick}
       className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-md transition-colors text-left ${
-        selected ? "bg-black text-white" : "hover:bg-muted text-foreground"
+        selected ? "bg-muted text-foreground" : "hover:bg-muted/60 text-foreground"
       }`}
     >
       <span className="flex items-center gap-2">
         <span
-          className={`w-4 h-4 rounded border flex items-center justify-center ${
+          className={`size-3.5 rounded-[3px] border flex items-center justify-center ${
             selected
-              ? "bg-[var(--highlight)] border-[var(--highlight)]"
-              : "border-gray-300"
+              ? "border-[var(--highlight)] bg-transparent"
+              : "border-border"
           }`}
         >
-          {selected && <Check className="w-3 h-3 text-black" />}
+          {selected && (
+            <Check className="size-3 text-[var(--highlight)]" aria-hidden="true" />
+          )}
         </span>
         <span className="truncate">{label}</span>
       </span>
       {count !== undefined && (
-        <span className="text-xs text-muted-foreground">{count}</span>
+        <span className="font-mono text-xs text-muted-foreground">{count}</span>
       )}
     </button>
   );
@@ -293,7 +294,7 @@ export function FilterSidebar({
     <aside className="w-full lg:w-64 shrink-0 lg:border-r border-border bg-card border-b lg:border-b-0">
       {/* Mobile: collapsible */}
       <div className="p-4 lg:hidden">
-        <details>
+        <details className="group">
           <summary className="list-none cursor-pointer select-none">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -304,9 +305,7 @@ export function FilterSidebar({
                   </Badge>
                 )}
               </div>
-              <span className="text-xs text-muted-foreground">
-                Tap to expand
-              </span>
+              <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform group-open:rotate-180" />
             </div>
           </summary>
           <div className="pt-4 space-y-6">

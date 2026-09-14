@@ -150,8 +150,8 @@ describe("App deep links", () => {
     expect(container.textContent).toContain("Navigation Model");
     expect(container.textContent).not.toContain("Model not found");
 
-    const backLink = [...container.querySelectorAll("a")].find((link) =>
-      link.textContent?.includes("Back to Models"),
+    const backLink = [...container.querySelectorAll("a")].find(
+      (link) => link.textContent?.trim() === "Catalog",
     );
     expect(backLink).toBeTruthy();
 

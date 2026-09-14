@@ -1,8 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft, CircleHelp } from "lucide-react";
-import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { useLocation } from "react-router-dom";
 import { SeoHead } from "@/components/SeoHead";
-import { CuStatsBanner } from "@/components/CuStatsBanner";
+import { SiteShell } from "@/components/SiteShell";
 import { useModels } from "@/hooks/useModels";
 import {
   FAQ_DESCRIPTION,
@@ -40,39 +38,17 @@ export function FAQPage() {
         }}
         structuredData={buildFaqStructuredData()}
       />
-      <div className="min-h-screen bg-background">
-        <CuStatsBanner />
-        {/* Header */}
-        <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
-          <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-            <Link
-              to="/"
-              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Models
-            </Link>
-            <DarkModeToggle />
-          </div>
-        </header>
-
-        {/* Main Content */}
-        <main className="max-w-4xl mx-auto px-4 py-8">
+      <SiteShell modelCount={data?.totalModels} fetchedAt={data?.fetchedAt}>
+        <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 lg:px-6">
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-12 w-12 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-                <CircleHelp className="h-7 w-7 text-[var(--highlight)]" />
-              </div>
-              <div>
-                <h1 className="text-3xl font-bold">
-                  Frequently Asked Questions
-                </h1>
-                <p className="text-muted-foreground">{subtitle}</p>
-              </div>
-            </div>
+            <p className="eyebrow">Reference</p>
+            <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight">
+              Frequently Asked Questions
+            </h1>
+            <p className="mt-2 text-muted-foreground">{subtitle}</p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-8">
             <GettingStartedSection targetId={targetId} />
             <LimitationsSection targetId={targetId} providers={providers} />
             <IntegrationSection targetId={targetId} />
@@ -80,7 +56,7 @@ export function FAQPage() {
             <MoreResources />
           </div>
         </main>
-      </div>
+      </SiteShell>
     </>
   );
 }

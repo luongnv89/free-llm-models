@@ -100,6 +100,37 @@ export function formatDateTime(isoString: string): string {
   });
 }
 
+export function formatShortDateTime(isoString: string): string {
+  const date = new Date(isoString);
+  const day = date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+  const time = date.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+  return `${day}, ${time}`;
+}
+
+export function formatModality(modality: string): string {
+  return modality
+    .split("->")
+    .map((part) =>
+      part
+        .split("+")
+        .map((token) => {
+          const trimmed = token.trim();
+          return trimmed
+            ? trimmed.charAt(0).toUpperCase() + trimmed.slice(1)
+            : trimmed;
+        })
+        .join(" + "),
+    )
+    .join(" → ");
+}
+
 export function calendarDay(isoOrUnix: string | number): string {
   const date =
     typeof isoOrUnix === "number"

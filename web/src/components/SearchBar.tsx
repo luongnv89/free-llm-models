@@ -50,22 +50,22 @@ export function SearchBar({
   const orderAriaLabel = sortOrderAriaLabel(sortField, sortOrder);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-3 pb-4 border-b border-border">
-      <div className="relative flex-1">
+    <div className="flex flex-col gap-3 pb-4 border-b border-border">
+      <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
-          placeholder="Search models by name, description, or ID..."
+          placeholder={`Search ${totalCount} models…`}
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="pl-10"
+          className="pl-10 font-mono"
         />
       </div>
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex items-center gap-2">
         <Select
           value={sortField}
           onValueChange={(v) => onSortChange(v as SortField, sortOrder)}
         >
-          <SelectTrigger className="w-full sm:w-[11.5rem]">
+          <SelectTrigger className="w-[8.5rem] sm:w-[11.5rem]">
             <ArrowUpDown className="h-4 w-4 mr-2" />
             <SelectValue />
           </SelectTrigger>
@@ -73,7 +73,7 @@ export function SearchBar({
             <SelectItem value="name">Name</SelectItem>
             <SelectItem value="provider">Provider</SelectItem>
             <SelectItem value="context_length">Context</SelectItem>
-            <SelectItem value="addedToFreeList">Date Added</SelectItem>
+            <SelectItem value="addedToFreeList">Added</SelectItem>
           </SelectContent>
         </Select>
         <Button
@@ -89,8 +89,8 @@ export function SearchBar({
             {sortOrderVisibleLabel(sortField, sortOrder)}
           </span>
         </Button>
-        <span className="text-sm text-muted-foreground whitespace-nowrap">
-          {filteredCount} of {totalCount}
+        <span className="ml-auto whitespace-nowrap font-mono text-xs tabular-nums text-muted-foreground">
+          {filteredCount} / {totalCount}
         </span>
       </div>
     </div>

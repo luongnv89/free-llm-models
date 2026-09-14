@@ -40,10 +40,10 @@ export function ModelListItem({
   };
 
   return (
-    <li className="group border-b border-border/70 py-3 transition-colors hover:bg-muted/40 first:border-t">
+    <li className="group border-b border-l-2 border-border/70 border-l-transparent py-3 transition-colors hover:border-l-[var(--highlight)] hover:bg-muted/40 first:border-t">
       <div className="flex min-w-0 items-start gap-3 px-2 sm:px-3">
         <span
-          className="w-6 shrink-0 pt-0.5 text-right font-mono text-xs text-muted-foreground"
+          className="w-6 shrink-0 pt-0.5 text-right font-mono text-xs tabular-nums text-muted-foreground"
           aria-label={`Rank ${rank}`}
         >
           {rank}
@@ -56,7 +56,7 @@ export function ModelListItem({
             >
               {model.name}
             </Link>
-            <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
               {provider}
             </span>
             {isNew && (
@@ -70,7 +70,7 @@ export function ModelListItem({
             )}
           </div>
 
-          <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          <div className="mt-1 flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-muted-foreground">
             <code className="min-w-0 max-w-full break-all font-mono">
               {model.id}
             </code>

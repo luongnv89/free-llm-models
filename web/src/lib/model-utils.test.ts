@@ -5,6 +5,8 @@ import {
   formatContextLength,
   formatDateTime,
   formatIsoDate,
+  formatModality,
+  formatShortDateTime,
   modelCapabilities,
   capabilityTags,
   CAPABILITY_TAG_META,
@@ -196,6 +198,28 @@ describe("formatDateTime (ISO string)", () => {
 describe("formatIsoDate", () => {
   it("formats an ISO timestamp as a long-form US date", () => {
     expect(formatIsoDate("2026-02-02T10:30:00Z")).toBe("February 2, 2026");
+  });
+});
+
+describe("formatShortDateTime", () => {
+  it("formats an ISO timestamp as a short date plus 24h time", () => {
+    expect(formatShortDateTime("2026-09-02T07:42:00Z")).toMatch(
+      /^Sep 2, \d{2}:\d{2}$/,
+    );
+  });
+});
+
+describe("formatModality", () => {
+  it("humanizes combined input and output modalities", () => {
+    expect(formatModality("text+image->text")).toBe("Text + Image → Text");
+  });
+
+  it("humanizes a simple modality", () => {
+    expect(formatModality("text->text")).toBe("Text → Text");
+  });
+
+  it("handles single-part modalities", () => {
+    expect(formatModality("text")).toBe("Text");
   });
 });
 

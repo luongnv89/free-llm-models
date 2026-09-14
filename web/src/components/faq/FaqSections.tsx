@@ -96,7 +96,7 @@ export function GettingStartedSection({ targetId }: SectionProps) {
           <Zap className="h-5 w-5 text-[var(--highlight)]" />
           Getting Started
         </h2>
-        <div className="space-y-3">
+        <div className="panel divide-y divide-border overflow-hidden">
           <FAQItem
             id="what-are-free-models"
             question="What are free models?"
@@ -280,7 +280,7 @@ export function LimitationsSection({
           <TriangleAlert className="h-5 w-5 text-[var(--highlight)]" />
           Limitations & Considerations
         </h2>
-        <div className="space-y-3">
+        <div className="panel divide-y divide-border overflow-hidden">
           <FAQItem
             id="provider-trade-offs"
             question="How do free models differ between providers?"
@@ -478,7 +478,7 @@ export function IntegrationSection({ targetId }: SectionProps) {
           <Code className="h-5 w-5 text-[var(--highlight)]" />
           Integration Examples
         </h2>
-        <div className="space-y-3">
+        <div className="panel divide-y divide-border overflow-hidden">
           <FAQItem
             id="claude-code"
             question="How do I use OpenRouter with Claude Code?"
@@ -781,7 +781,7 @@ export function ApiKeySecuritySection({ targetId }: SectionProps) {
           <Key className="h-5 w-5 text-[var(--highlight)]" />
           API Key Security
         </h2>
-        <div className="space-y-3">
+        <div className="panel divide-y divide-border overflow-hidden">
           <FAQItem
             id="store-api-key"
             question="How should I store my API key?"
@@ -893,7 +893,7 @@ api_key = os.environ.get("OPENROUTER_API_KEY")`}
 export function MoreResources() {
   return (
     <>
-      <div className="mt-8 p-6 bg-muted rounded-lg">
+      <div className="mt-8 panel p-6">
         <h2 className="text-lg font-semibold mb-3">More Resources</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           <a

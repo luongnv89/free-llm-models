@@ -19,13 +19,13 @@ const badgeVariants = cva(
         ghost: "[a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         link: "text-primary underline-offset-4 [a&]:hover:underline",
         vision:
-          "border-sky-500/30 bg-sky-500/15 text-sky-700 dark:text-sky-300",
+          "border-border bg-muted/60 text-foreground/80 dark:text-foreground/70",
         video:
-          "border-purple-500/30 bg-purple-500/15 text-purple-700 dark:text-purple-300",
+          "border-border bg-muted/60 text-foreground/80 dark:text-foreground/70",
         reasoning:
-          "border-violet-500/30 bg-violet-500/15 text-violet-700 dark:text-violet-300",
+          "border-border bg-muted/60 text-foreground/80 dark:text-foreground/70",
         tools:
-          "border-amber-500/30 bg-amber-500/15 text-amber-700 dark:text-amber-300",
+          "border-border bg-muted/60 text-foreground/80 dark:text-foreground/70",
       },
     },
     defaultVariants: {

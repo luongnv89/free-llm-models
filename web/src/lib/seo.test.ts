@@ -2,9 +2,12 @@ import { describe, expect, it } from "vitest";
 import type { Model } from "@/types/model";
 import {
   FAQ_SCHEMA_ENTRIES,
+  HOME_DESCRIPTION,
   buildFaqStructuredData,
+  buildHomeDescription,
   buildHomeStructuredData,
   canonicalUrl,
+  joinWithAnd,
   modelPath,
   modelSeoDescription,
   serializeStructuredData,
@@ -68,6 +71,49 @@ describe("SEO helpers", () => {
         url: expect.stringContaining("/model/"),
       }),
     ]);
+  });
+
+  it("uses the provided description on the WebSite schema node", () => {
+    const description = buildHomeDescription(7, ["OpenRouter", "Groq"]);
+    const schema = buildHomeStructuredData([model], undefined, description);
+    const website = (schema["@graph"] as Array<Record<string, unknown>>).find(
+      (entry) => entry["@type"] === "WebSite",
+    );
+
+    expect(website?.description).toBe(description);
+  });
+
+  it("joins provider names with commas and a final and", () => {
+    expect(joinWithAnd(["OpenRouter"])).toBe("OpenRouter");
+    expect(joinWithAnd(["OpenRouter", "Groq"])).toBe("OpenRouter and Groq");
+    expect(joinWithAnd(["OpenRouter", "Groq", "Google"])).toBe(
+      "OpenRouter, Groq, and Google",
+    );
+    expect(joinWithAnd([])).toBe("");
+  });
+
+  it("builds a data-driven home description and falls back without providers", () => {
+    expect(buildHomeDescription(42, ["OpenRouter", "Groq"])).toBe(
+      "Browse 42 free AI and LLM models from OpenRouter and Groq. Compare context length, capabilities, and API access.",
+    );
+    expect(buildHomeDescription(42, [])).toBe(HOME_DESCRIPTION);
+  });
+
+  it("summarizes providers when the full list would exceed 160 chars", () => {
+    const description = buildHomeDescription(210, [
+      "OpenRouter",
+      "Groq",
+      "Cerebras",
+      "Google AI Studio",
+      "Mistral AI",
+      "Hugging Face",
+      "NVIDIA NIM",
+    ]);
+    expect(description).toContain(
+      "Browse 210 free AI and LLM models across 7 providers including",
+    );
+    expect(description.length).toBeLessThanOrEqual(160);
+    expect(description).not.toContain("…");
   });
 
   it("creates FAQ schema entries matching the FAQ content set", () => {

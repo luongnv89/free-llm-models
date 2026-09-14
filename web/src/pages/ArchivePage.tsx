@@ -1,8 +1,6 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { ModelListItem } from "@/components/ModelListItem";
-import { DarkModeToggle } from "@/components/DarkModeToggle";
-import { CuStatsPageShell } from "@/components/CuStatsBanner";
+import { SiteShell } from "@/components/SiteShell";
 import { SeoHead } from "@/components/SeoHead";
 import {
   useModels,
@@ -18,13 +16,8 @@ import {
   buildPageStructuredData,
   canonicalUrl,
 } from "@/lib/seo";
-import {
-  ArrowLeft,
-  Archive,
-  LoaderCircle,
-  CircleAlert,
-  Check,
-} from "lucide-react";
+import { LoaderCircle, CircleAlert } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ProviderGroupProps {
   displayName: string;
@@ -59,16 +52,19 @@ function SourceChip({
     <button
       onClick={onClick}
       aria-pressed={selected}
-      className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm rounded-md border transition-colors ${
+      className={cn(
+        "inline-flex h-8 items-center gap-2 rounded-full border px-3 text-sm transition-colors",
         selected
-          ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
-          : "border-border hover:bg-muted text-foreground"
-      }`}
+          ? "border-foreground bg-foreground text-background"
+          : "border-border hover:border-foreground/40",
+      )}
     >
-      {selected && <Check className="w-3 h-3" />}
       <span>{option.displayName}</span>
       <span
-        className={`text-xs ${selected ? "opacity-70" : "text-muted-foreground"}`}
+        className={cn(
+          "font-mono text-xs",
+          selected ? "opacity-70" : "text-muted-foreground",
+        )}
       >
         {option.count}
       </span>
@@ -106,11 +102,11 @@ export function ArchivePage() {
 
   if (loading) {
     return (
-      <CuStatsPageShell>
+      <SiteShell>
         <div className="flex-1 flex items-center justify-center">
           <LoaderCircle className="h-8 w-8 animate-spin text-muted-foreground" />
         </div>
-      </CuStatsPageShell>
+      </SiteShell>
     );
   }
 
@@ -132,20 +128,7 @@ export function ArchivePage() {
           ],
         )}
       />
-      <CuStatsPageShell>
-        <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-20">
-          <div className="px-4 py-4 flex items-center justify-between gap-3">
-            <Link
-              to="/"
-              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Models
-            </Link>
-            <DarkModeToggle />
-          </div>
-        </header>
-
+      <SiteShell modelCount={data?.totalModels} fetchedAt={data?.fetchedAt}>
         {error ? (
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
@@ -157,25 +140,21 @@ export function ArchivePage() {
             </div>
           </div>
         ) : (
-          <main className="flex-1 p-4 lg:p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-10 w-10 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-                <Archive className="h-6 w-6 text-[var(--highlight)]" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold">Former free models</h1>
-                <p className="text-xs text-muted-foreground">
-                  {archived.length} archived model
-                  {archived.length === 1 ? "" : "s"}
-                </p>
-              </div>
+          <main className="flex-1 px-4 py-6 lg:px-6">
+            <div className="mb-8">
+              <p className="eyebrow">Archive</p>
+              <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+                Former free models
+              </h1>
+              <p className="mt-2 font-mono text-xs text-muted-foreground">
+                {archived.length} archived model
+                {archived.length === 1 ? "" : "s"}
+              </p>
             </div>
 
             {sourceOptions.length > 1 && (
               <div className="flex flex-wrap items-center gap-2 mb-6">
-                <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mr-1">
-                  Source
-                </span>
+                <span className="eyebrow mr-1">Source</span>
                 {sourceOptions.map((option) => (
                   <SourceChip
                     key={option.id}
@@ -229,7 +208,7 @@ export function ArchivePage() {
             )}
           </main>
         )}
-      </CuStatsPageShell>
+      </SiteShell>
     </>
   );
 }

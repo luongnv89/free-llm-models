@@ -1,5 +1,5 @@
 // @vitest-environment happy-dom
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import { createElement } from "react";
 import { createRoot, type Root } from "react-dom/client";
@@ -7,6 +7,7 @@ import { CuStatsBanner } from "./CuStatsBanner";
 
 let container: HTMLElement;
 let root: Root | null = null;
+let storage: Record<string, string>;
 
 async function render() {
   container = document.createElement("div");
@@ -18,6 +19,22 @@ async function render() {
 }
 
 describe("CuStatsBanner", () => {
+  beforeEach(() => {
+    storage = {};
+    Object.defineProperty(globalThis, "localStorage", {
+      value: {
+        getItem: (key: string) => storage[key] ?? null,
+        setItem: (key: string, value: string) => {
+          storage[key] = value;
+        },
+        removeItem: (key: string) => {
+          delete storage[key];
+        },
+      },
+      configurable: true,
+    });
+  });
+
   afterEach(async () => {
     await act(async () => {
       root?.unmount();
@@ -26,12 +43,12 @@ describe("CuStatsBanner", () => {
     root = null;
   });
 
-  it("describes CuStats as an AI usage tracking tool", async () => {
+  it("describes CuStats as a free AI usage and cost tracker", async () => {
     await render();
 
     expect(container.textContent).toContain("CuStats");
-    expect(container.textContent).toContain("AI usage tracking tool");
-    expect(container.textContent).toContain("usage. Learn more");
+    expect(container.textContent).toContain("free AI usage & cost tracking");
+    expect(container.textContent).toContain("Learn more");
   });
 
   it("links to custats.com in a new tab", async () => {
@@ -42,5 +59,25 @@ describe("CuStatsBanner", () => {
     expect(link!.getAttribute("href")).toBe("https://custats.com");
     expect(link!.getAttribute("target")).toBe("_blank");
     expect(link!.getAttribute("rel")).toContain("noopener");
+  });
+
+  it("dismisses the bar and persists the choice", async () => {
+    await render();
+
+    const dismiss = container.querySelector('button[aria-label="Dismiss"]');
+    expect(dismiss).toBeTruthy();
+    await act(async () => {
+      dismiss!.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    });
+
+    expect(storage.custatsBarDismissed).toBe("1");
+    expect(container.querySelector("a")).toBeNull();
+  });
+
+  it("stays hidden when previously dismissed", async () => {
+    storage.custatsBarDismissed = "1";
+    await render();
+
+    expect(container.querySelector("a")).toBeNull();
   });
 });

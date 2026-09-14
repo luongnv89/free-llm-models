@@ -1,6 +1,6 @@
 # Free LLM Models — Full Context for LLMs
 
-> Free LLM Models is a searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM. All data is machine-readable and refreshed from provider APIs.
+> Free LLM Models is a searchable, daily-refreshed directory of currently free AI models across OpenRouter, Google AI Studio, Mistral AI, Groq, and other providers. All data is machine-readable and refreshed from provider APIs.
 
 The catalog is refreshed from provider APIs. Availability, limits, model policies, and pricing can change; verify important details with the provider before production use.
 

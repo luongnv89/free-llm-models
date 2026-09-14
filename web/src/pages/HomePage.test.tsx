@@ -152,23 +152,21 @@ describe("HomePage", () => {
     await renderPage();
     await settle();
 
-    expect(container.textContent).toContain("2 free models available");
     expect(container.textContent).toContain(
-      "1 New Model (added in last 3 days)",
+      "2 models with $0 input and output tokens across 2 providers",
     );
-    expect(container.textContent).toContain("visible “New” badge");
+    expect(container.textContent).toContain("1 new in the last 3 days");
+    expect(container.textContent).toContain("Live catalog");
     expect(container.textContent).toContain("Fresh Model");
     expect(container.textContent).toContain("Old Model");
     expect(container.textContent).toContain("/free_models.json");
-    expect(container.textContent).toContain("Last updated");
     const archiveLinks = [...container.querySelectorAll('a[href="/archive"]')];
-    const headerArchive = archiveLinks.find(
-      (a) => a.getAttribute("aria-label") === "Former free models",
+    const navArchive = archiveLinks.find((a) =>
+      a.textContent?.includes("Archive"),
     );
-    expect(headerArchive).toBeTruthy();
-    expect(headerArchive!.querySelector("button")).toBeNull();
-    expect(headerArchive!.tagName).toBe("A");
-    expect(container.textContent).toContain("Archive");
+    expect(navArchive).toBeTruthy();
+    expect(navArchive!.querySelector("button")).toBeNull();
+    expect(navArchive!.tagName).toBe("A");
 
     const list = container.querySelector('ol[aria-label="Free models"]');
     expect(list).toBeTruthy();
@@ -345,6 +343,6 @@ describe("HomePage", () => {
     });
 
     expect(container.textContent).toContain("No models match your filters");
-    expect(container.textContent).toContain("0 of 2");
+    expect(container.textContent).toContain("0 / 2");
   });
 });

@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button";
 import { CodeSnippets } from "@/components/CodeSnippets";
 import { HarnessSetupGuide } from "@/components/HarnessSetupGuide";
 import { OriHarnessGuide } from "@/components/OriHarnessGuide";
-import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { SeoHead } from "@/components/SeoHead";
-import { CuStatsPageShell } from "@/components/CuStatsBanner";
+import { SiteShell } from "@/components/SiteShell";
 import {
   useModels,
   getProvider,
@@ -75,19 +74,19 @@ export function ModelDetailPage() {
 
   if (loading) {
     return (
-      <CuStatsPageShell>
+      <SiteShell>
         <div className="flex-1 flex items-center justify-center">
           <div className="animate-pulse text-muted-foreground font-mono">
             Loading…
           </div>
         </div>
-      </CuStatsPageShell>
+      </SiteShell>
     );
   }
 
   if (error || !model) {
     return (
-      <CuStatsPageShell>
+      <SiteShell>
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <TriangleAlert className="h-12 w-12 text-destructive mx-auto mb-4" />
@@ -103,7 +102,7 @@ export function ModelDetailPage() {
             </Link>
           </div>
         </div>
-      </CuStatsPageShell>
+      </SiteShell>
     );
   }
 
@@ -150,22 +149,8 @@ export function ModelDetailPage() {
           isArchived,
         )}
       />
-      <CuStatsPageShell className="min-h-screen bg-background">
-        {/* Header */}
-        <header className="border-b border-border sticky top-0 bg-background/95 backdrop-blur z-10">
-          <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-            <Link
-              to={isArchived ? "/archive" : "/"}
-              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              {isArchived ? "Back to Archive" : "Back to Models"}
-            </Link>
-            <DarkModeToggle />
-          </div>
-        </header>
-
-        <main className="relative max-w-5xl mx-auto px-4 pb-16">
+      <SiteShell modelCount={data?.totalModels} fetchedAt={data?.fetchedAt}>
+        <main className="relative max-w-5xl mx-auto w-full px-4 pb-16">
           {/* Blueprint grid texture behind the hero */}
           <div
             aria-hidden="true"
@@ -173,6 +158,28 @@ export function ModelDetailPage() {
           >
             <div className="bg-grid h-full w-full opacity-60 [mask-image:linear-gradient(to_bottom,black_20%,transparent)]" />
           </div>
+
+          {/* Breadcrumb */}
+          <nav
+            aria-label="Breadcrumb"
+            className="relative flex min-w-0 items-center gap-2 pt-6 font-mono text-xs text-muted-foreground"
+          >
+            <Link
+              to={isArchived ? "/archive" : "/"}
+              className="transition-colors hover:text-foreground"
+            >
+              {isArchived ? "Archive" : "Catalog"}
+            </Link>
+            <span aria-hidden="true">/</span>
+            <Link
+              to={isArchived ? "/archive" : "/"}
+              className="transition-colors hover:text-foreground"
+            >
+              {providerMeta.displayName}
+            </Link>
+            <span aria-hidden="true">/</span>
+            <span className="truncate text-foreground">{model.name}</span>
+          </nav>
 
           {isArchived && (
             <div className="relative mt-6 p-4 border border-amber-500/30 rounded-lg bg-amber-500/10 animate-in fade-in duration-300">
@@ -216,7 +223,7 @@ export function ModelDetailPage() {
                 )}
               </div>
 
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3">
+              <h1 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
                 {model.name}
               </h1>
 
@@ -356,26 +363,28 @@ export function ModelDetailPage() {
                 </div>
               )}
 
-              <Card {...reveal(225)}>
-                <CardHeader>
-                  <CardTitle className="text-lg">
-                    Supported Parameters
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {(model.supported_parameters ?? []).map((param) => (
-                      <Badge
-                        key={param}
-                        variant="secondary"
-                        className="font-mono text-xs"
-                      >
-                        {param}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              {(model.supported_parameters ?? []).length > 0 && (
+                <Card {...reveal(225)}>
+                  <CardHeader>
+                    <CardTitle className="text-lg">
+                      Supported Parameters
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {(model.supported_parameters ?? []).map((param) => (
+                        <Badge
+                          key={param}
+                          variant="secondary"
+                          className="font-mono text-xs"
+                        >
+                          {param}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
             {/* Right column — reference */}
@@ -405,14 +414,16 @@ export function ModelDetailPage() {
                         </dd>
                       </div>
                     )}
-                    <div className="flex items-baseline justify-between gap-4 py-2.5 first:pt-0 last:pb-0">
-                      <dt className="text-sm text-muted-foreground">
-                        Tokenizer
-                      </dt>
-                      <dd className="text-sm font-medium font-mono text-right">
-                        {model.architecture.tokenizer}
-                      </dd>
-                    </div>
+                    {model.architecture.tokenizer && (
+                      <div className="flex items-baseline justify-between gap-4 py-2.5 first:pt-0 last:pb-0">
+                        <dt className="text-sm text-muted-foreground">
+                          Tokenizer
+                        </dt>
+                        <dd className="text-sm font-medium font-mono text-right">
+                          {model.architecture.tokenizer}
+                        </dd>
+                      </div>
+                    )}
                     <div className="flex items-baseline justify-between gap-4 py-2.5 first:pt-0 last:pb-0">
                       <dt className="text-sm text-muted-foreground">
                         Added to free list
@@ -553,7 +564,7 @@ export function ModelDetailPage() {
             </div>
           </div>
         </main>
-      </CuStatsPageShell>
+      </SiteShell>
     </>
   );
 }

@@ -20,11 +20,11 @@ export function FAQTip() {
   return (
     <Link
       to={`/faq#${faq.id}`}
-      className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-muted/50 hover:bg-muted border border-border hover:border-[var(--highlight)]/50 transition-all text-sm text-muted-foreground hover:text-foreground group max-w-md"
+      className="flex min-w-0 items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
       title="Click to see the answer"
     >
       <CircleHelp className="h-4 w-4 shrink-0 text-[var(--highlight)]" />
-      <span className="truncate">{faq.question}</span>
+      <span className="truncate">Tip: {faq.question} →</span>
     </Link>
   );
 }

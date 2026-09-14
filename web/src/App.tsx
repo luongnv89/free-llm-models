@@ -4,21 +4,24 @@ import { HomePage } from "@/pages/HomePage";
 import { ModelDetailPage } from "@/pages/ModelDetailPage";
 import { FAQPage } from "@/pages/FAQPage";
 import { ArchivePage } from "@/pages/ArchivePage";
+import { SiteShell } from "@/components/SiteShell";
 
 function NotFoundPage() {
   return (
-    <main className="min-h-screen bg-background p-8 text-center">
-      <h1 className="text-2xl font-bold">Page not found</h1>
-      <p className="mt-2 text-muted-foreground">
-        The requested page does not exist.
-      </p>
-      <Link
-        to="/"
-        className="mt-6 inline-block text-[var(--highlight)] underline"
-      >
-        Back to free models
-      </Link>
-    </main>
+    <SiteShell>
+      <main className="flex-1 p-8 text-center">
+        <h1 className="font-display text-2xl font-semibold">Page not found</h1>
+        <p className="mt-2 text-muted-foreground">
+          The requested page does not exist.
+        </p>
+        <Link
+          to="/"
+          className="mt-6 inline-block text-[var(--highlight)] underline"
+        >
+          Back to free models
+        </Link>
+      </main>
+    </SiteShell>
   );
 }
 

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface FAQItemProps {
   id: string;
@@ -38,10 +37,10 @@ export function FAQItem({
   }, [isTargeted]);
 
   return (
-    <Card
+    <div
       ref={itemRef}
       id={id}
-      className={`overflow-hidden scroll-mt-20 ${isTargeted ? "ring-2 ring-[var(--highlight)]" : ""}`}
+      className={`scroll-mt-20 ${isTargeted ? "ring-2 ring-inset ring-[var(--highlight)]" : ""}`}
     >
       <button
         id={`${id}-trigger`}
@@ -59,15 +58,15 @@ export function FAQItem({
         />
       </button>
       {isOpen && (
-        <CardContent
+        <div
           id={`${id}-content`}
           role="region"
           aria-labelledby={`${id}-trigger`}
           className="pt-0 pb-6 px-6 border-t border-border"
         >
           <div className="pt-4">{children}</div>
-        </CardContent>
+        </div>
       )}
-    </Card>
+    </div>
   );
 }

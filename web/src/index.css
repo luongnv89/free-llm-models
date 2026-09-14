@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/instrument-sans";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -28,9 +32,12 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --font-display:
+    "Bricolage Grotesque Variable", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-sans:
-    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, sans-serif;
+    "Instrument Sans Variable", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono:
     "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -69,21 +76,21 @@
   /* Dark mode: inverted palette with same bright green for highlights */
   --background: #0a0a0a;
   --foreground: #fafafa;
-  --card: #141414;
+  --card: #111111;
   --card-foreground: #fafafa;
-  --popover: #141414;
+  --popover: #111111;
   --popover-foreground: #fafafa;
   --primary: #fafafa;
   --primary-foreground: #0a0a0a;
   --secondary: #1f1f1f;
   --secondary-foreground: #fafafa;
-  --muted: #1f1f1f;
+  --muted: #171717;
   --muted-foreground: #a3a3a3;
-  --accent: #1f1f1f;
+  --accent: #171717;
   --accent-foreground: #fafafa;
   --destructive: #ef4444;
-  --border: #2a2a2a;
-  --input: #2a2a2a;
+  --border: #262626;
+  --input: #262626;
   --ring: #525252;
   /* Bright green stays the same for highlights */
   --highlight: #22c55e;
@@ -106,6 +113,25 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+}
+
+/* Instrument-panel primitives */
+@utility panel {
+  @apply bg-card border border-border rounded-lg dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)];
+}
+
+@utility led {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  background: var(--highlight);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--highlight) 70%, transparent);
+}
+
+@utility eyebrow {
+  @apply font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground;
 }
 
 /* Utility classes for the highlight color */

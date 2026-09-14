@@ -43,10 +43,11 @@ describe("FAQPage", () => {
     root = null;
   });
 
-  it("renders the header with a back link and FAQ sections", async () => {
+  it("renders the header with site nav and FAQ sections", async () => {
     await renderPage();
 
-    expect(container.textContent).toContain("Back to Models");
+    expect(container.textContent).toContain("Frequently Asked Questions");
+    expect(container.textContent).toContain("Catalog");
     expect(container.querySelectorAll("header").length).toBeGreaterThan(0);
     expect(container.textContent.length).toBeGreaterThan(200);
   });
@@ -54,6 +55,6 @@ describe("FAQPage", () => {
   it("renders without a hash target", async () => {
     await renderPage("#getting-started");
 
-    expect(container.textContent).toContain("Back to Models");
+    expect(container.textContent).toContain("Frequently Asked Questions");
   });
 });

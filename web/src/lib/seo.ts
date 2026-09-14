@@ -57,6 +57,31 @@ export function truncate(value: string, maxLength: number): string {
   return `${text.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
 }
 
+export function joinWithAnd(names: string[]): string {
+  const list = names.map((name) => name.trim()).filter(Boolean);
+  if (list.length === 0) return "";
+  if (list.length === 1) return list[0];
+  if (list.length === 2) return `${list[0]} and ${list[1]}`;
+  return `${list.slice(0, -1).join(", ")}, and ${list[list.length - 1]}`;
+}
+
+const HOME_DESCRIPTION_TAIL =
+  " Compare context length, capabilities, and API access.";
+
+export function buildHomeDescription(
+  modelCount: number,
+  providerNames: string[],
+): string {
+  const names = providerNames.map((name) => name.trim()).filter(Boolean);
+  if (names.length === 0 || modelCount <= 0) return HOME_DESCRIPTION;
+  let base = `Browse ${modelCount} free AI and LLM models from ${joinWithAnd(names)}.`;
+  if (`${base}${HOME_DESCRIPTION_TAIL}`.length > 160) {
+    base = `Browse ${modelCount} free AI and LLM models across ${names.length} providers including ${joinWithAnd(names.slice(0, 3))}.`;
+  }
+  const withTail = `${base}${HOME_DESCRIPTION_TAIL}`;
+  return withTail.length <= 160 ? withTail : base;
+}
+
 export function modelSeoTitle(model: Model): string {
   return truncate(`${model.name} | Free AI Model`, 60);
 }
@@ -73,6 +98,7 @@ export function modelSeoDescription(
 export function buildHomeStructuredData(
   models: Model[],
   fetchedAt?: string,
+  description = HOME_DESCRIPTION,
 ): StructuredData {
   const uniqueModels = models.filter(
     (model, index, allModels) =>
@@ -87,7 +113,7 @@ export function buildHomeStructuredData(
         "@id": `${SITE_URL}/#website`,
         name: SITE_NAME,
         url: `${SITE_URL}/`,
-        description: HOME_DESCRIPTION,
+        description,
         image: OG_IMAGE_URL,
       },
       {

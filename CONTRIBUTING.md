@@ -26,7 +26,7 @@ Never run the updater casually — it rewrites tracked JSON and the cron script 
 
 ## Agent readiness
 
-The site is hosted on GitHub Pages at `https://free-llm-models.custats.com` (Vercel as legacy). Discovery docs live under `web/public/.well-known/*` and at the site root (`robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, `Auth.md`). See `agent-ready-plan.md` for the Pages vs Vercel split and manual DNS steps.
+The site is hosted on GitHub Pages at `https://free-llm-models.custats.info` (Vercel as legacy). Discovery docs live under `web/public/.well-known/*` and at the site root (`robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`, `Auth.md`). See `agent-ready-plan.md` for the Pages vs Vercel split and manual DNS steps.
 
 ## Issues and PRs
 

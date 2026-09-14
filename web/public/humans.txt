@@ -1,6 +1,6 @@
 /* TEAM */
 Developer: Luong NGUYEN (luongnv89)
-Site: https://free-llm-models.custats.com
+Site: https://free-llm-models.custats.info
 Contact: https://github.com/luongnv89/free-llm-models/issues
 Location: France
 

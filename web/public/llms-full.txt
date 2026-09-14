@@ -6,38 +6,38 @@ The catalog is refreshed from provider APIs. Availability, limits, model policie
 
 ## Site
 
-- Homepage: https://free-llm-models.custats.com/
-- Canonical: https://free-llm-models.custats.com/
-- Sitemap: https://free-llm-models.custats.com/sitemap.xml
-- Robots: https://free-llm-models.custats.com/robots.txt
+- Homepage: https://free-llm-models.custats.info/
+- Canonical: https://free-llm-models.custats.info/
+- Sitemap: https://free-llm-models.custats.info/sitemap.xml
+- Robots: https://free-llm-models.custats.info/robots.txt
 - GitHub: https://github.com/luongnv89/free-llm-models
 
 ## Machine-readable data
 
-- Full catalog: https://free-llm-models.custats.com/free_models.json — aggregate with `models`, `archivedModels`, `providers`, `totalModels`, `fetchedAt`
-- Per-provider index: https://free-llm-models.custats.com/models/index.json — provider files and counts
-- Legacy snapshot: https://free-llm-models.custats.com/openrouter_free_models.json
-- Per-provider files: https://free-llm-models.custats.com/models/{providerId}.json
+- Full catalog: https://free-llm-models.custats.info/free_models.json — aggregate with `models`, `archivedModels`, `providers`, `totalModels`, `fetchedAt`
+- Per-provider index: https://free-llm-models.custats.info/models/index.json — provider files and counts
+- Legacy snapshot: https://free-llm-models.custats.info/openrouter_free_models.json
+- Per-provider files: https://free-llm-models.custats.info/models/{providerId}.json
 
 Each model entry includes: `id`, `name`, `description`, `context_length`, `architecture.modality`, `pricing.prompt/completion`, `supported_parameters`, `providerId`, `addedToFreeList`, `popularity`.
 
 ## Agent discovery
 
-- Agent Skills: https://free-llm-models.custats.com/.well-known/agent-skills/index.json
-- API Catalog (RFC 9727): https://free-llm-models.custats.com/.well-known/api-catalog
-- A2A Agent Card: https://free-llm-models.custats.com/.well-known/agent-card.json
-- MCP Server Card: https://free-llm-models.custats.com/.well-known/mcp/server-card.json
-- ARD Manifest: https://free-llm-models.custats.com/.well-known/ai-catalog.json
-- Auth.md: https://free-llm-models.custats.com/Auth.md
-- OAuth Authorization Server: https://free-llm-models.custats.com/.well-known/oauth-authorization-server
-- OAuth Protected Resource: https://free-llm-models.custats.com/.well-known/oauth-protected-resource
-- WebMCP: https://free-llm-models.custats.com/.well-known/webmcp.html (registerTool: search_models, get_model, list_providers)
+- Agent Skills: https://free-llm-models.custats.info/.well-known/agent-skills/index.json
+- API Catalog (RFC 9727): https://free-llm-models.custats.info/.well-known/api-catalog
+- A2A Agent Card: https://free-llm-models.custats.info/.well-known/agent-card.json
+- MCP Server Card: https://free-llm-models.custats.info/.well-known/mcp/server-card.json
+- ARD Manifest: https://free-llm-models.custats.info/.well-known/ai-catalog.json
+- Auth.md: https://free-llm-models.custats.info/Auth.md
+- OAuth Authorization Server: https://free-llm-models.custats.info/.well-known/oauth-authorization-server
+- OAuth Protected Resource: https://free-llm-models.custats.info/.well-known/oauth-protected-resource
+- WebMCP: https://free-llm-models.custats.info/.well-known/webmcp.html (registerTool: search_models, get_model, list_providers)
 
 ## Pages
 
-- FAQ: https://free-llm-models.custats.com/faq — API keys, first calls, rate limits, harness integrations, key security
-- Archive: https://free-llm-models.custats.com/archive — former free models
-- Model detail: https://free-llm-models.custats.com/model/{encoded-model-id} — per-model context, capabilities, and provider-specific setup recipes
+- FAQ: https://free-llm-models.custats.info/faq — API keys, first calls, rate limits, harness integrations, key security
+- Archive: https://free-llm-models.custats.info/archive — former free models
+- Model detail: https://free-llm-models.custats.info/model/{encoded-model-id} — per-model context, capabilities, and provider-specific setup recipes
 
 ## Providers
 
@@ -107,6 +107,6 @@ A: Revoke the compromised key immediately, create a new one, update applications
 
 ## Verification
 
-- Sitemap and discovery URLs use `https://free-llm-models.custats.com/`.
+- Sitemap and discovery URLs use `https://free-llm-models.custats.info/`.
 - Structured data includes WebSite with SearchAction, Organization, Dataset, ItemList, WebPage, and per-model SoftwareApplication.
 - Markdown negotiation (`Accept: text/markdown` → `text/markdown` + `x-markdown-tokens`) is served on Vercel; GitHub Pages documents it as Vercel-only.

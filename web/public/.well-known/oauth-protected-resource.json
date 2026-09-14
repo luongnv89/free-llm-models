@@ -1,6 +1,6 @@
 {
-  "resource": "https://free-llm-models.custats.com",
-  "authorization_servers": ["https://free-llm-models.custats.com"],
+  "resource": "https://free-llm-models.custats.info",
+  "authorization_servers": ["https://free-llm-models.custats.info"],
   "scopes_supported": ["read:models", "read:providers"],
   "bearer_methods_supported": ["header"],
   "resource_documentation": "https://github.com/luongnv89/free-llm-models",

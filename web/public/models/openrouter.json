@@ -1,6 +1,6 @@
 {
   "providerId": "openrouter",
-  "fetchedAt": "2026-09-13T01:00:35.041Z",
+  "fetchedAt": "2026-09-15T01:00:16.697Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -1012,8 +1012,7 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
-        "top_p"
+        "top_logprobs"
       ],
       "default_parameters": {
         "temperature": 0.1,
@@ -1284,14 +1283,14 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1188,
-            "win_rate": 41.5,
+            "elo": 1187,
+            "win_rate": 41.4,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1118,
+            "elo": 1119,
             "win_rate": 34.6,
             "rank": 55
           },
@@ -1299,7 +1298,7 @@
             "arena": "models",
             "category": "codecategories",
             "elo": 1215,
-            "win_rate": 42.1,
+            "win_rate": 42,
             "rank": 48
           },
           {
@@ -1319,7 +1318,7 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1134,
+            "elo": 1135,
             "win_rate": 34.9,
             "rank": 52
           },
@@ -1327,7 +1326,7 @@
             "arena": "models",
             "category": "uicomponent",
             "elo": 1210,
-            "win_rate": 41.9,
+            "win_rate": 41.8,
             "rank": 48
           },
           {
@@ -1603,14 +1602,14 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1099,
-            "win_rate": 36.9,
+            "elo": 1098,
+            "win_rate": 36.5,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1154,
+            "elo": 1155,
             "win_rate": 36.3,
             "rank": 77
           },

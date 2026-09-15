@@ -33,13 +33,13 @@ export default async function handler(request: Request) {
 
 ## Catalog
 
-Browse and compare free AI models at https://free-llm-models.custats.com/
+Browse and compare free AI models at https://free-llm-models.custats.info/
 
-- **Homepage**: https://free-llm-models.custats.com/
-- **Model Catalog JSON**: https://free-llm-models.custats.com/free_models.json
-- **Per-Provider Index**: https://free-llm-models.custats.com/models/index.json
-- **FAQ**: https://free-llm-models.custats.com/faq
-- **Archive**: https://free-llm-models.custats.com/archive
+- **Homepage**: https://free-llm-models.custats.info/
+- **Model Catalog JSON**: https://free-llm-models.custats.info/free_models.json
+- **Per-Provider Index**: https://free-llm-models.custats.info/models/index.json
+- **FAQ**: https://free-llm-models.custats.info/faq
+- **Archive**: https://free-llm-models.custats.info/archive
 
 Model detail pages use the URL pattern \`/model/{encoded-model-id}\`.
 

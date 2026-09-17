@@ -1,9 +1,7 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-16T01:00:41.793Z",
-  "newModelIds": [
-    "z-ai/glm-5.3"
-  ],
+  "fetchedAt": "2026-09-17T01:01:03.446Z",
+  "newModelIds": [],
   "archivedModels": [
     {
       "id": "deepseek-ai/deepseek-v4-pro-0813",

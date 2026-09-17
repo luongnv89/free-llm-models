@@ -1,6 +1,6 @@
 {
   "providerId": "cerebras",
-  "fetchedAt": "2026-09-17T01:01:02.581Z",
+  "fetchedAt": "2026-09-17T08:40:27.999Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -21,8 +21,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "cerebras",
         "sourceUrl": "https://api.cerebras.ai/v1/models",
@@ -43,8 +47,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "cerebras",
       "sourceUrl": "https://api.cerebras.ai/v1/models",
@@ -62,8 +70,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "cerebras",
       "sourceUrl": "https://api.cerebras.ai/v1/models",

@@ -1,6 +1,6 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-17T01:01:03.446Z",
+  "fetchedAt": "2026-09-17T08:40:29.249Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -21,8 +21,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -47,8 +51,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -73,8 +81,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -99,8 +111,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -125,8 +141,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -151,8 +171,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -177,8 +201,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -203,8 +231,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -229,8 +261,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -255,8 +291,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -281,8 +321,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -307,8 +351,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -333,8 +381,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -359,8 +411,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -385,8 +441,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -411,8 +471,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -437,8 +501,12 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": ["text"],
-          "output_modalities": ["text"]
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
         },
         "providerId": "nvidia-nim",
         "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -459,8 +527,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -478,8 +550,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -497,8 +573,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -516,8 +596,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -535,8 +619,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -554,8 +642,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -573,8 +665,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -592,8 +688,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -611,8 +711,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -630,8 +734,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -649,8 +757,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -668,8 +780,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -687,8 +803,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -706,8 +826,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -725,8 +849,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -744,8 +872,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -763,8 +895,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -782,8 +918,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -801,8 +941,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -820,8 +964,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -839,8 +987,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -858,8 +1010,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -877,8 +1033,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -896,8 +1056,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -915,8 +1079,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -934,8 +1102,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -953,8 +1125,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -972,8 +1148,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -991,8 +1171,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1010,8 +1194,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1029,8 +1217,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1048,8 +1240,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1067,8 +1263,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1086,8 +1286,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1105,8 +1309,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1124,8 +1332,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1143,8 +1355,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1162,8 +1378,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1181,8 +1401,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1200,8 +1424,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1219,8 +1447,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1238,8 +1470,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1257,8 +1493,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1276,8 +1516,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1295,8 +1539,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1314,8 +1562,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1333,8 +1585,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1352,8 +1608,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1371,8 +1631,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1390,8 +1654,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1409,8 +1677,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1428,8 +1700,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1447,8 +1723,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1466,8 +1746,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1485,8 +1769,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1504,8 +1792,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1523,8 +1815,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1542,8 +1838,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1561,8 +1861,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1580,8 +1884,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1599,8 +1907,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1618,8 +1930,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1637,8 +1953,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1656,8 +1976,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1675,8 +1999,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1694,8 +2022,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1713,8 +2045,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1732,8 +2068,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1751,8 +2091,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1770,8 +2114,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1789,8 +2137,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1808,8 +2160,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1827,8 +2183,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1846,8 +2206,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1865,8 +2229,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1884,8 +2252,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1903,8 +2275,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1922,8 +2298,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1941,8 +2321,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1960,8 +2344,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1979,8 +2367,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
@@ -1998,8 +2390,12 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": ["text"],
-        "output_modalities": ["text"]
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",

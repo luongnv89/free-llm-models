@@ -12,15 +12,15 @@ This site provides public, unauthenticated access to its core resources. No API 
 
 ## Authentication
 
-| Resource            | Authentication Required | Notes |
-| ------------------- | ----------------------- | ----- |
-| `/` (homepage) | No | Public |
-| `/free_models.json` | No | Public catalog |
-| `/models/*.json` | No | Public per-provider files |
-| `/model/{id}` | No | Public model detail |
-| `/faq` | No | Public |
-| `/archive` | No | Public |
-| `/.well-known/*` | No | Public discovery |
+| Resource            | Authentication Required | Notes                     |
+| ------------------- | ----------------------- | ------------------------- |
+| `/` (homepage)      | No                      | Public                    |
+| `/free_models.json` | No                      | Public catalog            |
+| `/models/*.json`    | No                      | Public per-provider files |
+| `/model/{id}`       | No                      | Public model detail       |
+| `/faq`              | No                      | Public                    |
+| `/archive`          | No                      | Public                    |
+| `/.well-known/*`    | No                      | Public discovery          |
 
 ## Registration
 

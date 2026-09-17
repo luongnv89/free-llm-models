@@ -35,7 +35,8 @@ describe("site configuration", () => {
     expect(
       normalizeSiteUrl("javascript:alert(1)", "https://example.com/site"),
     ).toBe("https://example.com/site");
-    expect(normalizeSiteUrl("https://example.com/site///", "https://fallback.com"))
-      .toBe("https://example.com/site");
+    expect(
+      normalizeSiteUrl("https://example.com/site///", "https://fallback.com"),
+    ).toBe("https://example.com/site");
   });
 });

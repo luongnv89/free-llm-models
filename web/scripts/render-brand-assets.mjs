@@ -88,10 +88,7 @@ function sizedSvg(svg, size) {
 const chromium = await loadChromium();
 const fontCss = await fontFaceCss();
 const ogSvg = await readFile(path.join(publicDir, "og-image.svg"), "utf8");
-const faviconSvg = await readFile(
-  path.join(publicDir, "favicon.svg"),
-  "utf8",
-);
+const faviconSvg = await readFile(path.join(publicDir, "favicon.svg"), "utf8");
 const browser = await chromium.launch();
 
 try {

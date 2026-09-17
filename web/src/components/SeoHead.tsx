@@ -45,11 +45,7 @@ export function SeoHead({
     setMeta("property", "og:description", metadata.description);
     setMeta("property", "og:type", metadata.type ?? "website");
     setMeta("property", "og:url", metadata.canonicalPath);
-    setMeta(
-      "property",
-      "og:image",
-      metadata.image ?? OG_IMAGE_URL,
-    );
+    setMeta("property", "og:image", metadata.image ?? OG_IMAGE_URL);
     setMeta("property", "og:image:width", "1200");
     setMeta("property", "og:image:height", "630");
     setMeta("property", "og:image:alt", OG_IMAGE_ALT);
@@ -57,11 +53,7 @@ export function SeoHead({
     setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", metadata.title);
     setMeta("name", "twitter:description", metadata.description);
-    setMeta(
-      "name",
-      "twitter:image",
-      metadata.image ?? OG_IMAGE_URL,
-    );
+    setMeta("name", "twitter:image", metadata.image ?? OG_IMAGE_URL);
     setMeta("name", "twitter:image:alt", OG_IMAGE_ALT);
 
     let script = document.head.querySelector<HTMLScriptElement>(

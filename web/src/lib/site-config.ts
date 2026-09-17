@@ -6,7 +6,9 @@ export function normalizeBasePath(value: string | undefined): string {
   return `${withLeadingSlash.replace(/\/+$/, "")}/`;
 }
 
-export function routerBasename(baseUrl: string | undefined): string | undefined {
+export function routerBasename(
+  baseUrl: string | undefined,
+): string | undefined {
   const normalized = normalizeBasePath(baseUrl);
   return normalized === "/" ? undefined : normalized.slice(0, -1);
 }
@@ -20,7 +22,8 @@ export function normalizeSiteUrl(
 ): string {
   try {
     const url = new URL(value || fallback);
-    if (url.protocol !== "http:" && url.protocol !== "https:") throw new Error();
+    if (url.protocol !== "http:" && url.protocol !== "https:")
+      throw new Error();
     return url.toString().replace(/\/+$/, "");
   } catch {
     return fallback.replace(/\/+$/, "");

@@ -187,7 +187,9 @@ function FilterOption({ label, selected, onClick, count }: FilterOptionProps) {
     <button
       onClick={onClick}
       className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-md transition-colors text-left ${
-        selected ? "bg-muted text-foreground" : "hover:bg-muted/60 text-foreground"
+        selected
+          ? "bg-muted text-foreground"
+          : "hover:bg-muted/60 text-foreground"
       }`}
     >
       <span className="flex items-center gap-2">
@@ -199,7 +201,10 @@ function FilterOption({ label, selected, onClick, count }: FilterOptionProps) {
           }`}
         >
           {selected && (
-            <Check className="size-3 text-[var(--highlight)]" aria-hidden="true" />
+            <Check
+              className="size-3 text-[var(--highlight)]"
+              aria-hidden="true"
+            />
           )}
         </span>
         <span className="truncate">{label}</span>

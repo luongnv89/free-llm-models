@@ -19,7 +19,8 @@ const basePath = normalizeBasePath(process.env.VITE_BASE_PATH);
 const normalizeSiteUrl = (value, fallback) => {
   try {
     const url = new URL(value || fallback);
-    if (url.protocol !== "http:" && url.protocol !== "https:") throw new Error();
+    if (url.protocol !== "http:" && url.protocol !== "https:")
+      throw new Error();
     return url.toString().replace(/\/+$/, "");
   } catch {
     return fallback.replace(/\/+$/, "");
@@ -51,13 +52,10 @@ const truncate = (value, max) => {
   const text = cleanText(value);
   return text.length <= max ? text : `${text.slice(0, max - 1).trimEnd()}…`;
 };
-const routePath = (route) =>
-  route.startsWith("/") ? route : `/${route}`;
+const routePath = (route) => (route.startsWith("/") ? route : `/${route}`);
 const sitePath = (route) => {
   const normalized = routePath(route);
-  return basePath === "/"
-    ? normalized
-    : `${basePath}${normalized.slice(1)}`;
+  return basePath === "/" ? normalized : `${basePath}${normalized.slice(1)}`;
 };
 const modelPath = (id) => `/model/${id}`;
 const modelUrl = (id) => canonicalUrl(modelPath(id));
@@ -151,8 +149,16 @@ function homeSchema() {
         name: "Free LLM Models Catalog",
         description: homeDescription,
         url: `${siteUrl}/free_models.json`,
-        keywords: ["LLM", "AI models", "free", "OpenRouter", "Groq", "generative AI"],
-        license: "https://github.com/luongnv89/free-llm-models/blob/main/LICENSE",
+        keywords: [
+          "LLM",
+          "AI models",
+          "free",
+          "OpenRouter",
+          "Groq",
+          "generative AI",
+        ],
+        license:
+          "https://github.com/luongnv89/free-llm-models/blob/main/LICENSE",
         isAccessibleForFree: true,
         distribution: [
           {

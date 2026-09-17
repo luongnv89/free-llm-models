@@ -25,7 +25,10 @@
           "query": { "type": "string", "description": "Search query" },
           "provider": { "type": "string", "description": "Filter by provider" },
           "modality": { "type": "string", "description": "Filter by modality" },
-          "context_length": { "type": "integer", "description": "Minimum context length" }
+          "context_length": {
+            "type": "integer",
+            "description": "Minimum context length"
+          }
         }
       }
     },

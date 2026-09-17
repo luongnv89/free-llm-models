@@ -21,12 +21,8 @@
         },
         "architecture": {
           "modality": "text->text",
-          "input_modalities": [
-            "text"
-          ],
-          "output_modalities": [
-            "text"
-          ]
+          "input_modalities": ["text"],
+          "output_modalities": ["text"]
         },
         "providerId": "google",
         "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -47,12 +43,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -70,12 +62,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -93,12 +81,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -116,12 +100,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -139,12 +119,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -162,12 +138,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -185,12 +157,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -208,12 +176,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -231,12 +195,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -254,12 +214,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -277,12 +233,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -300,12 +252,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -323,12 +271,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -346,12 +290,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -369,12 +309,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -392,12 +328,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -415,12 +347,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -438,12 +366,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -461,12 +385,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -484,12 +404,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -507,12 +423,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -530,12 +442,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -553,12 +461,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -576,12 +480,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -599,12 +499,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -622,12 +518,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -645,12 +537,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -668,12 +556,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -691,12 +575,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -714,12 +594,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -737,12 +613,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -760,12 +632,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -783,12 +651,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -806,12 +670,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -829,12 +689,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -852,12 +708,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -875,12 +727,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -898,12 +746,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -921,12 +765,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -944,12 +784,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
@@ -967,12 +803,8 @@
       },
       "architecture": {
         "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
+        "input_modalities": ["text"],
+        "output_modalities": ["text"]
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",

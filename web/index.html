@@ -109,12 +109,15 @@
                 if (input.provider) p.set("provider", input.provider);
                 const r = await fetch("/free_models.json?" + p.toString());
                 const j = await r.json();
-                return { content: [{ type: "text", text: JSON.stringify(j, null, 2) }] };
+                return {
+                  content: [{ type: "text", text: JSON.stringify(j, null, 2) }],
+                };
               },
             },
             {
               name: "get_model",
-              description: "Get detailed information about a specific free AI model.",
+              description:
+                "Get detailed information about a specific free AI model.",
               inputSchema: {
                 type: "object",
                 properties: {
@@ -125,8 +128,11 @@
               execute: async (input) => {
                 const r = await fetch("/free_models.json");
                 const j = await r.json();
-                const m = (j.models || []).find((x) => x.id === input.model_id) || null;
-                return { content: [{ type: "text", text: JSON.stringify(m, null, 2) }] };
+                const m =
+                  (j.models || []).find((x) => x.id === input.model_id) || null;
+                return {
+                  content: [{ type: "text", text: JSON.stringify(m, null, 2) }],
+                };
               },
             },
           ];

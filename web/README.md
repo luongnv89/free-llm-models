@@ -60,10 +60,10 @@ The app is fully static — it reads only files from `public/`
 The optional provider API keys used by the updater live at the repo root (see the
 root README); they are not read by this app.
 
-| Variable | Local default | Pages production value |
-| -------- | ------------- | ---------------------- |
-| `VITE_BASE_PATH` | `/` | `/` |
-| `VITE_SITE_URL` | `https://free-llm-models.custats.info` | `https://free-llm-models.custats.info` |
+| Variable         | Local default                          | Pages production value                 |
+| ---------------- | -------------------------------------- | -------------------------------------- |
+| `VITE_BASE_PATH` | `/`                                    | `/`                                    |
+| `VITE_SITE_URL`  | `https://free-llm-models.custats.info` | `https://free-llm-models.custats.info` |
 
 The Pages workflow supplies both values explicitly. `VITE_BASE_PATH` controls
 Vite assets, the React Router basename, data fetch URLs, and prerendered links.

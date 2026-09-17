@@ -119,7 +119,9 @@ describe("ModelDetailPage", () => {
     fetchMock.mockReturnValue(new Promise(() => {}));
     await renderPage("acme/loading");
 
-    expect(container.querySelector('a[href="https://custats.com"]')).toBeTruthy();
+    expect(
+      container.querySelector('a[href="https://custats.com"]'),
+    ).toBeTruthy();
   });
 
   it("renders the banner when the model cannot be loaded", async () => {
@@ -128,7 +130,9 @@ describe("ModelDetailPage", () => {
     await settle();
 
     expect(container.textContent).toContain("Model not found");
-    expect(container.querySelector('a[href="https://custats.com"]')).toBeTruthy();
+    expect(
+      container.querySelector('a[href="https://custats.com"]'),
+    ).toBeTruthy();
   });
 
   it("renders provider metadata in docs link and code snippets when available", async () => {

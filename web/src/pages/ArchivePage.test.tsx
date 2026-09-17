@@ -216,9 +216,7 @@ describe("ArchivePage", () => {
       `Removed ${formatDateTime("2026-08-01T00:00:00Z")}`,
     );
     expect(container.textContent).not.toContain("Live Model");
-    expect(
-      container.querySelector('a[href="/model/acme/gone"]'),
-    ).toBeTruthy();
+    expect(container.querySelector('a[href="/model/acme/gone"]')).toBeTruthy();
     const list = container.querySelector(
       'ol[aria-label="OpenRouter archived models"]',
     );

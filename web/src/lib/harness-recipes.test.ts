@@ -23,7 +23,6 @@ const EXPECTED: Array<{
   ...(
     [
       "huggingface",
-      "github-models",
       "google",
       "mistral",
       "nvidia-nim",
@@ -65,17 +64,17 @@ describe("harness compatibility registry", () => {
     },
   );
 
-  it("has exactly one provenance-backed entry for all 32 combinations", () => {
+  it("has exactly one provenance-backed entry for all 28 combinations", () => {
     const entries = HARNESS_IDS.flatMap((harnessId) =>
       PROVIDER_IDS.map(
         (providerId) => COMPATIBILITY_REGISTRY[harnessId][providerId],
       ),
     );
-    expect(entries).toHaveLength(32);
+    expect(entries).toHaveLength(28);
     expect(
       new Set(entries.map((entry) => `${entry.providerId}:${entry.harnessId}`))
         .size,
-    ).toBe(32);
+    ).toBe(28);
     expect(entries.every((entry) => entry.lastVerified === "2026-08-27")).toBe(
       true,
     );

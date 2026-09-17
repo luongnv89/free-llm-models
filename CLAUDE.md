@@ -24,7 +24,7 @@ Both packages have test suites (`cd web && npm run test`, `npm test`). Run them 
 
 - `get_openrouter_free_models.js` — CLI entry point: parses `--providers`, invokes the runner.
 - `lib/providers/run-update.js` — multi-provider runner: iterates adapters from `lib/providers/registry.js`, per-provider fetch with `PROVIDER_TIMEOUT_MS` timeout, history merge, emission.
-- `lib/providers/*.js` — one adapter per provider (openrouter, groq, google, cerebras, mistral, github-models, huggingface, nvidia-nim) plus shared schema/emit helpers.
+- `lib/providers/*.js` — one adapter per provider (openrouter, groq, google, cerebras, mistral, huggingface, nvidia-nim) plus shared schema/emit helpers.
 - `web/` — Vite + React + Tailwind frontend; loads `web/public/models/index.json` and the per-provider files at runtime.
 - `web/scripts/prerender-seo.mjs` — postbuild: prerenders every route with meta + JSON-LD into dist/, rewrites dist/llms.txt intro and sitemap.xml from free_models.json.
 - `web/scripts/render-brand-assets.mjs` — manual (needs Playwright): regenerates og-image.png, favicon.ico and PWA icons from the SVG sources in web/public/.

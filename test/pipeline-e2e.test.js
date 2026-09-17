@@ -141,6 +141,7 @@ async function runPipeline(dir, { now, routes = baseRoutes() }) {
   return runUpdate({
     registry: buildRegistry(routes),
     outputDir: path.join(dir, 'models'),
+    aggregateOutputPath: path.join(dir, 'free_models.json'),
     legacyOutputPath: path.join(dir, 'openrouter_free_models.json'),
     now,
     log: () => {},

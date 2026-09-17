@@ -329,10 +329,8 @@ test('openrouter adapter is registered first and permits keyless fetch', () => {
     'cerebras',
     'google',
     'mistral',
-    'github-models',
     'huggingface',
     'nvidia-nim',
-    'amd-tokenfactory',
   ]);
   const openrouter = UPDATER.registry.getProvider('openrouter');
   assert.strictEqual(openrouter.allowKeylessFetch, true);

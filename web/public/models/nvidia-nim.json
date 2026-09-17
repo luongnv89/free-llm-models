@@ -1,8 +1,38 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-13T01:00:36.316Z",
+  "fetchedAt": "2026-09-17T01:01:03.446Z",
   "newModelIds": [],
   "archivedModels": [
+    {
+      "id": "deepseek-ai/deepseek-v4-pro-0813",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-09-15T01:00:18.515Z",
+      "lastSeenAt": "2026-09-13T01:00:36.316Z",
+      "addedToFreeList": "2026-08-27T23:20:39.401Z",
+      "model": {
+        "id": "deepseek-ai/deepseek-v4-pro-0813",
+        "name": "Deepseek Ai/deepseek V4 Pro 0813",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-27T23:20:39.401Z"
+      }
+    },
     {
       "id": "minimaxai/minimax-m3",
       "providerId": "nvidia-nim",
@@ -668,29 +698,6 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "deepseek-ai/deepseek-v4-pro-0813",
-      "name": "Deepseek Ai/deepseek V4 Pro 0813",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-27T23:20:39.401Z"
     },
     {
       "id": "google/codegemma-1.1-7b",
@@ -2324,6 +2331,29 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
+    },
+    {
+      "id": "z-ai/glm-5.3",
+      "name": "Z Ai/glm 5 3",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-09-16T01:00:41.793Z"
     },
     {
       "id": "z-ai/glm-5.3-flash",

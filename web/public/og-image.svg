@@ -14,5 +14,5 @@
   <g transform="translate(100 84) scale(2)" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></g>
   <text x="80" y="330" fill="#fafafa" font-family="'Bricolage Grotesque Variable', 'Instrument Sans Variable', sans-serif" font-size="72" font-weight="600" letter-spacing="-1">Free LLM Models</text>
   <text x="82" y="396" fill="#a3a3a3" font-family="'Instrument Sans Variable', sans-serif" font-size="30">Live catalog of free AI models — $0 input &amp; output tokens</text>
-  <text x="82" y="540" fill="#22c55e" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24">free-llm-models.custats.com</text>
+  <text x="82" y="540" fill="#22c55e" font-family="'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24">free-llm-models.custats.info</text>
 </svg>

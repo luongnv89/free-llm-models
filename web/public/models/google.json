@@ -1,6 +1,6 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-09-13T01:00:35.498Z",
+  "fetchedAt": "2026-09-17T01:01:02.675Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -868,7 +868,7 @@
       "name": "Antigravity Agent Preview",
       "created": 0,
       "description": "Preview release of Antigravity Agent (05-2026)",
-      "context_length": 131072,
+      "context_length": 1048576,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -885,6 +885,29 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T05:41:20.491Z"
+    },
+    {
+      "id": "antigravity-preview-09-2026",
+      "name": "Antigravity Agent Preview",
+      "created": 0,
+      "description": "Preview release of Antigravity Agent (09-2026)",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-09-15T01:00:17.259Z"
     },
     {
       "id": "deep-research-max-preview-04-2026",

@@ -12,7 +12,7 @@ Please report vulnerabilities privately:
 - File a public issue at https://github.com/luongnv89/free-llm-models/issues if the issue is not sensitive, or
 - Contact via the repository's issue tracker and request a private channel.
 
-Do not include credentials, tokens, or sensitive data in public issues. For the canonical contact see `/.well-known/security.txt` at https://free-llm-models.custats.com/.well-known/security.txt.
+Do not include credentials, tokens, or sensitive data in public issues. For the canonical contact see `/.well-known/security.txt` at https://free-llm-models.custats.info/.well-known/security.txt.
 
 We aim to acknowledge reports within 3 business days and to provide a fix or mitigation timeline within 7 days.
 

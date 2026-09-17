@@ -48,7 +48,6 @@ const PROVIDER_MAP = [
   { id: 'huggingface', match: ['huggingface inference providers', 'hugging face inference providers'] },
   { id: 'cerebras', match: ['cerebras'] },
   { id: 'groq', match: ['groq'] },
-  { id: 'github-models', match: ['github models'] },
 ];
 
 const NON_MODEL_PATTERN =

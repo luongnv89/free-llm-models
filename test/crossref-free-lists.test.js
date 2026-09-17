@@ -20,7 +20,7 @@ test('providerIdForHeading maps community headings onto adapter ids', () => {
   assert.strictEqual(providerIdForHeading('[Mistral (La Plateforme)](https://console.mistral.ai/)'), 'mistral');
   assert.strictEqual(providerIdForHeading('[Mistral (Codestral)](https://codestral.mistral.ai/)'), 'mistral');
   assert.strictEqual(providerIdForHeading('[HuggingFace Inference Providers](https://huggingface.co)'), 'huggingface');
-  assert.strictEqual(providerIdForHeading('[GitHub Models](https://github.com/marketplace/models)'), 'github-models');
+  assert.strictEqual(providerIdForHeading('[GitHub Models](https://github.com/marketplace/models)'), null);
   assert.strictEqual(providerIdForHeading('Cohere'), null);
 });
 

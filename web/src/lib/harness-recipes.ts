@@ -9,7 +9,6 @@ export const PROVIDER_IDS = [
   "groq",
   "cerebras",
   "huggingface",
-  "github-models",
 ] as const;
 export type ProviderId = (typeof PROVIDER_IDS)[number];
 
@@ -129,11 +128,6 @@ const PROVIDER_INFO: Record<
     providerSignupUrl: "https://huggingface.co/settings/tokens",
     providerDocsUrl: "https://huggingface.co/docs/router/quickstart",
   },
-  "github-models": {
-    providerDisplayName: "GitHub Models",
-    providerSignupUrl: "https://github.com/settings/tokens",
-    providerDocsUrl: "https://docs.github.com/en/github-models",
-  },
 };
 
 const API_KEY_ENV: Record<ProviderId, string> = {
@@ -144,7 +138,6 @@ const API_KEY_ENV: Record<ProviderId, string> = {
   groq: "GROQ_API_KEY",
   cerebras: "CEREBRAS_API_KEY",
   huggingface: "HF_TOKEN",
-  "github-models": "GITHUB_TOKEN",
 };
 
 const PROVIDER_BASE_URL: Record<ProviderId, string> = {
@@ -155,7 +148,6 @@ const PROVIDER_BASE_URL: Record<ProviderId, string> = {
   groq: "https://api.groq.com/openai/v1",
   cerebras: "https://api.cerebras.ai/v1",
   huggingface: "https://router.huggingface.co/v1",
-  "github-models": "https://models.github.ai/v1",
 };
 
 const OPENROUTER_CLAUDE_CAVEAT =
@@ -202,12 +194,6 @@ export const COMPATIBILITY_REGISTRY = {
       "unsupported",
       "huggingface",
     ),
-    "github-models": entry(
-      "github-models",
-      "claude-code",
-      "unsupported",
-      "github",
-    ),
   },
   pi: {
     openrouter: entry("openrouter", "pi", "supported", "openrouter"),
@@ -217,7 +203,6 @@ export const COMPATIBILITY_REGISTRY = {
     groq: entry("groq", "pi", "supported", "groq"),
     cerebras: entry("cerebras", "pi", "supported", "cerebras"),
     huggingface: entry("huggingface", "pi", "supported", "huggingface"),
-    "github-models": entry("github-models", "pi", "supported", "github"),
   },
   opencode: {
     openrouter: entry("openrouter", "opencode", "supported", "openrouter"),
@@ -227,7 +212,6 @@ export const COMPATIBILITY_REGISTRY = {
     groq: entry("groq", "opencode", "supported", "groq"),
     cerebras: entry("cerebras", "opencode", "supported", "cerebras"),
     huggingface: entry("huggingface", "opencode", "supported", "huggingface"),
-    "github-models": entry("github-models", "opencode", "supported", "github"),
   },
   codex: {
     openrouter: entry("openrouter", "codex", "supported", "openrouter"),
@@ -239,7 +223,6 @@ export const COMPATIBILITY_REGISTRY = {
     ]),
     cerebras: entry("cerebras", "codex", "supported", "cerebras"),
     huggingface: entry("huggingface", "codex", "supported", "huggingface"),
-    "github-models": entry("github-models", "codex", "supported", "github"),
   },
 } as const satisfies Record<HarnessId, Record<ProviderId, CompatibilityEntry>>;
 

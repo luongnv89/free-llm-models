@@ -1,6 +1,6 @@
 # OpenRouter Free Models
 
-A tiny site + updater that tracks **free LLM models across multiple providers** (OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, GitHub Models, Hugging Face, NVIDIA NIM) and publishes a searchable UI.
+A tiny site + updater that tracks **free LLM models across multiple providers** (OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, NVIDIA NIM) and publishes a searchable UI.
 
 - **Site:** `web/` (Vite + React + Tailwind; fonts self-hosted via `@fontsource` — Bricolage Grotesque, Instrument Sans, IBM Plex Mono)
 - **Data fetcher:** `get_openrouter_free_models.js` (multi-provider runner: `lib/providers/run-update.js`)
@@ -19,7 +19,6 @@ A tiny site + updater that tracks **free LLM models across multiple providers** 
 | `google` | [Google AI Studio](https://aistudio.google.com) | `GOOGLE_AI_API_KEY` (required) |
 | `cerebras` | [Cerebras](https://cloud.cerebras.ai) | `CEREBRAS_API_KEY` (optional) |
 | `mistral` | [Mistral AI](https://console.mistral.ai) | `MISTRAL_API_KEY` (optional) |
-| `github-models` | [GitHub Models](https://github.com/marketplace/models) | `GITHUB_TOKEN` (required) |
 | `huggingface` | [Hugging Face Router](https://router.huggingface.co) | `HF_TOKEN` (optional) |
 | `nvidia-nim` | [NVIDIA NIM](https://build.nvidia.com) | `NVIDIA_API_KEY` (required) |
 
@@ -185,7 +184,6 @@ All three work with the same free models from OpenRouter, Ollama, LM Studio, or 
 | `GOOGLE_AI_API_KEY` | for Google | Google AI Studio key (`https://generativelanguage.googleapis.com/v1beta`). Get one at https://aistudio.google.com/apikey. |
 | `CEREBRAS_API_KEY` | no | Cerebras API key (`https://api.cerebras.ai/v1`). Get one at https://cloud.cerebras.ai. |
 | `MISTRAL_API_KEY` | no | Mistral API key (`https://api.mistral.ai/v1`). Get one at https://console.mistral.ai. |
-| `GITHUB_TOKEN` | for GitHub Models | GitHub personal access token (classic) for `https://models.github.ai/catalog/models`. Create one at https://github.com/settings/tokens. |
 | `HF_TOKEN` | no | Hugging Face token sent to the HF Router (`https://router.huggingface.co/v1`) for authenticated requests. Get one at https://huggingface.co/settings/tokens. |
 | `NVIDIA_API_KEY` | for NVIDIA NIM | NVIDIA API key sent to the hosted NIM API (`https://integrate.api.nvidia.com/v1`). Get one at https://build.nvidia.com (NVIDIA's docs call this `NVAPI_KEY`; we read `NVIDIA_API_KEY` for consistency). |
 | `PROVIDERS` | no | Comma-separated allow-list of provider ids to run (e.g. `openrouter,groq`). Unset = all providers. Same as the `--providers` flag. |

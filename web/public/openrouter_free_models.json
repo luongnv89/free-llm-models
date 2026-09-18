@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-09-18T01:00:23.003Z",
-  "totalModels": 24,
-  "newModelIds": [
-    "qwen/qwen3.8-27b:free"
-  ],
+  "fetchedAt": "2026-09-18T09:43:56.846Z",
+  "totalModels": 25,
+  "newModelIds": [],
   "models": [
     {
       "id": "inclusionai/ling-3.0-flash-vl:free",
@@ -77,7 +75,7 @@
         "rank": 29,
         "tokens": 95367473148,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -147,9 +145,9 @@
       },
       "addedToFreeList": "2026-09-09T01:00:07.254Z",
       "popularity": {
-        "rank": 13,
+        "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -222,7 +220,7 @@
         "rank": 33,
         "tokens": 83391907830,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -286,7 +284,7 @@
       "popularity": {
         "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -359,7 +357,7 @@
         "rank": 24,
         "tokens": 163708864369,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -440,9 +438,9 @@
       "addedToFreeList": "2026-09-18T01:00:23.003Z",
       "popularity": {
         "rank": 50,
-        "tokens": 44142283628,
+        "tokens": 44142596116,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -501,7 +499,7 @@
         "rank": 30,
         "tokens": 94523949153,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -569,9 +567,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 16,
+        "rank": 17,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -636,7 +634,146 @@
         "rank": 26,
         "tokens": 119366214954,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731:free",
+      "canonical_slug": "deepseek/deepseek-v4-flash-20260731",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+      "name": "DeepSeek: DeepSeek V4 Flash 0731 (free)",
+      "created": 1785478908,
+      "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows....",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "DeepSeek",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 393216,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": [],
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/deepseek/deepseek-v4-flash-20260731/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1237,
+            "win_rate": 48.6,
+            "rank": 36
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1111,
+            "win_rate": 33.3,
+            "rank": 58
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1245,
+            "win_rate": 46.5,
+            "rank": 40
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1197,
+            "win_rate": 41.1,
+            "rank": 54
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1232,
+            "win_rate": 44.6,
+            "rank": 38
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1211,
+            "win_rate": 45.1,
+            "rank": 24
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1252,
+            "win_rate": 47,
+            "rank": 35
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1251,
+            "win_rate": 46.8,
+            "rank": 38
+          }
+        ],
+        "artificial_analysis": {
+          "intelligence_index": 34.5,
+          "coding_index": 69.1,
+          "agentic_index": 41.7
+        }
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "high",
+          "low"
+        ],
+        "default_effort": "high"
+      },
+      "addedToFreeList": "2026-09-18T09:41:28.959Z",
+      "popularity": {
+        "rank": 4,
+        "tokens": 1327505194194,
+        "source": "rankings-daily",
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -720,9 +857,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 11,
+        "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -778,7 +915,7 @@
         "rank": 23,
         "tokens": 167903301947,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -922,7 +1059,7 @@
         "rank": 44,
         "tokens": 52384479006,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -975,9 +1112,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 14,
+        "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -1050,9 +1187,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 12,
+        "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -1248,7 +1385,7 @@
         "rank": 17,
         "tokens": 255635384643,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -1309,9 +1446,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 17,
+        "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -1448,7 +1585,7 @@
         "rank": 10,
         "tokens": 660319408625,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -1522,9 +1659,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 15,
+        "rank": 16,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -1597,7 +1734,7 @@
         "rank": 49,
         "tokens": 46047919566,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -1671,9 +1808,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 42,
-        "tokens": 57260354969,
+        "tokens": 57260692865,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -1730,9 +1867,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 22,
+        "rank": 23,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -1789,9 +1926,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 23,
+        "rank": 24,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     },
     {
@@ -1873,7 +2010,7 @@
         "rank": 47,
         "tokens": 47382700616,
         "source": "rankings-daily",
-        "asOf": "2026-09-18T01:00:25.531Z"
+        "asOf": "2026-09-18T09:43:59.206Z"
       }
     },
     {
@@ -1909,6 +2046,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
+        "logit_bias",
         "logprobs",
         "max_completion_tokens",
         "max_tokens",
@@ -1941,9 +2079,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 24,
+        "rank": 25,
         "source": "top-weekly",
-        "asOf": "2026-09-18T01:00:23.003Z"
+        "asOf": "2026-09-18T09:43:56.846Z"
       }
     }
   ],

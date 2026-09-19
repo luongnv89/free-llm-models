@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-09-19T06:36:24.062Z",
-  "totalModels": 217,
+  "fetchedAt": "2026-09-19T06:54:45.779Z",
+  "totalModels": 164,
   "newModelIds": [],
   "models": [
     {
@@ -1971,9 +1971,101 @@
       "providerId": "openrouter"
     },
     {
+      "id": "allam-2-7b",
+      "name": "Allam 2 7b",
+      "created": 1737672203,
+      "description": "",
+      "context_length": 4096,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "canopylabs/orpheus-arabic-saudi",
+      "name": "Canopylabs/orpheus Arabic Saudi",
+      "created": 1765926439,
+      "description": "",
+      "context_length": 4000,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "name": "Openai/gpt Oss 120b",
+      "created": 1754408224,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
       "id": "openai/gpt-oss-20b",
       "name": "Openai/gpt Oss 20b",
       "created": 1754407957,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "name": "Openai/gpt Oss Safeguard 20b",
+      "created": 1761708789,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -2040,195 +2132,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "whisper-large-v3",
-      "name": "Whisper Large V3",
-      "created": 1693721698,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "whisper-large-v3-turbo",
-      "name": "Whisper Large V3 Turbo",
-      "created": 1728413088,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "groq/compound",
-      "name": "Groq/compound",
-      "created": 1756949530,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-safeguard-20b",
-      "name": "Openai/gpt Oss Safeguard 20b",
-      "created": 1761708789,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
       "id": "groq/compound-mini",
       "name": "Groq/compound Mini",
       "created": 1756949707,
       "description": "",
       "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "name": "Openai/gpt Oss 120b",
-      "created": 1754408224,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "canopylabs/orpheus-arabic-saudi",
-      "name": "Canopylabs/orpheus Arabic Saudi",
-      "created": 1765926439,
-      "description": "",
-      "context_length": 4000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
-      "description": "",
-      "context_length": 4096,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2270,11 +2178,103 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
+      "id": "meta-llama/llama-prompt-guard-2-86m",
+      "name": "Meta Llama/llama Prompt Guard 2 86m",
+      "created": 1748632165,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
       "id": "meta-llama/llama-prompt-guard-2-22m",
       "name": "Meta Llama/llama Prompt Guard 2 22m",
       "created": 1748632101,
       "description": "",
       "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "groq/compound",
+      "name": "Groq/compound",
+      "created": 1756949530,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "whisper-large-v3-turbo",
+      "name": "Whisper Large V3 Turbo",
+      "created": 1728413088,
+      "description": "",
+      "context_length": 448,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "whisper-large-v3",
+      "name": "Whisper Large V3",
+      "created": 1693721698,
+      "description": "",
+      "context_length": 448,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3280,1225 +3280,6 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T05:41:20.491Z"
-    },
-    {
-      "id": "codestral-2508",
-      "name": "Codestral 2508",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "codestral-latest",
-      "name": "Codestral Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-code-latest",
-      "name": "Mistral Code Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-code-fim-latest",
-      "name": "Mistral Code Fim Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 256000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-small-2603",
-      "name": "Mistral Small 2603",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-small-latest",
-      "name": "Mistral Small Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-vibe-cli-fast",
-      "name": "Mistral Vibe Cli Fast",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "magistral-small-latest",
-      "name": "Magistral Small Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-small-2507",
-      "name": "Voxtral Small 2507",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-small-latest",
-      "name": "Voxtral Small Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "labs-leanstral-1-5-1",
-      "name": "Labs Leanstral 1 5 1",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "labs-leanstral-1-5",
-      "name": "Labs Leanstral 1 5",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-large-2512",
-      "name": "Mistral Large 2512",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-large-latest",
-      "name": "Mistral Large Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "ministral-3b-2512",
-      "name": "Ministral 3b 2512",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "ministral-3b-latest",
-      "name": "Ministral 3b Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "ministral-8b-2512",
-      "name": "Ministral 8b 2512",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "ministral-8b-latest",
-      "name": "Ministral 8b Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "ministral-14b-2512",
-      "name": "Ministral 14b 2512",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "ministral-14b-latest",
-      "name": "Ministral 14b Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-medium-latest",
-      "name": "Mistral Medium Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-medium",
-      "name": "Mistral Medium",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-medium-3-5",
-      "name": "Mistral Medium 3 5",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-medium-3.5",
-      "name": "Mistral Medium 3 5",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-medium-3",
-      "name": "Mistral Medium 3",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-medium-2604",
-      "name": "Mistral Medium 2604",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-vibe-cli-latest",
-      "name": "Mistral Vibe Cli Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-vibe-cli-with-tools",
-      "name": "Mistral Vibe Cli With Tools",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "magistral-medium-latest",
-      "name": "Magistral Medium Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 262144,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "glm-5-2",
-      "name": "Glm 5 2",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "zai-glm-5-2",
-      "name": "Zai Glm 5 2",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "zai-glm-5-3",
-      "name": "Zai Glm 5 3",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-17T01:01:02.828Z"
-    },
-    {
-      "id": "zai-glm-5",
-      "name": "Zai Glm 5",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-17T01:01:02.828Z"
-    },
-    {
-      "id": "zai-glm-latest",
-      "name": "Zai Glm Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 1048576,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-17T01:01:02.828Z"
-    },
-    {
-      "id": "mistral-embed-2312",
-      "name": "Mistral Embed 2312",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-embed",
-      "name": "Mistral Embed",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "codestral-embed",
-      "name": "Codestral Embed",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "codestral-embed-2505",
-      "name": "Codestral Embed 2505",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 8192,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-moderation-2603",
-      "name": "Mistral Moderation 2603",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-ocr-2512",
-      "name": "Mistral Ocr 2512",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-ocr-3-0",
-      "name": "Mistral Ocr 3 0",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-ocr-3",
-      "name": "Mistral Ocr 3",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-ocr-4-0",
-      "name": "Mistral Ocr 4 0",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-ocr-latest",
-      "name": "Mistral Ocr Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-ocr-4",
-      "name": "Mistral Ocr 4",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "mistral-ocr-4-1",
-      "name": "Mistral Ocr 4 1",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-mini-2602",
-      "name": "Voxtral Mini 2602",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-mini-latest",
-      "name": "Voxtral Mini Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 16384,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-mini-transcribe-realtime-2602",
-      "name": "Voxtral Mini Transcribe Realtime 2602",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-mini-realtime-2602",
-      "name": "Voxtral Mini Realtime 2602",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-mini-realtime-latest",
-      "name": "Voxtral Mini Realtime Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 32768,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-mini-tts-2603",
-      "name": "Voxtral Mini Tts 2603",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 4096,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
-    },
-    {
-      "id": "voxtral-mini-tts-latest",
-      "name": "Voxtral Mini Tts Latest",
-      "created": 1789799783,
-      "description": "",
-      "context_length": 4096,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "mistral",
-      "sourceUrl": "https://api.mistral.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.647Z"
     },
     {
       "id": "01-ai/yi-large",
@@ -7434,15 +6215,6 @@
       "docsUrl": "https://ai.google.dev/gemini-api/docs",
       "openaiCompatibleBaseUrl": "https://generativelanguage.googleapis.com/openai/v1",
       "notes": null
-    },
-    {
-      "id": "mistral",
-      "displayName": "Mistral AI",
-      "baseUrl": "https://api.mistral.ai/v1",
-      "apiKeySignupUrl": "https://console.mistral.ai",
-      "docsUrl": "https://docs.mistral.ai",
-      "openaiCompatibleBaseUrl": null,
-      "notes": "Free tier (\"La Plateforme\" experiment plan) serves the whole catalog at no cost but with low per-minute rate limits."
     },
     {
       "id": "huggingface",

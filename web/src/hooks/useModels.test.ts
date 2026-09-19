@@ -468,7 +468,6 @@ describe("getProviderQuickFilterOptions", () => {
     expect(getProviderQuickFilterOptions(sourced)).toEqual([
       { id: "openrouter", displayName: "OpenRouter", count: 1 },
       { id: "google", displayName: "Google", count: 0 },
-      { id: "mistral", displayName: "Mistral", count: 0 },
       { id: "nvidia-nim", displayName: "Nvidia", count: 0 },
       { id: "groq", displayName: "Groq", count: 2 },
       { id: "cerebras", displayName: "Cerebras", count: 0 },
@@ -481,7 +480,6 @@ describe("getProviderQuickFilterOptions", () => {
     ).toEqual([
       { id: "openrouter", count: 0 },
       { id: "google", count: 0 },
-      { id: "mistral", count: 0 },
       { id: "nvidia-nim", count: 0 },
       { id: "groq", count: 0 },
       { id: "cerebras", count: 0 },

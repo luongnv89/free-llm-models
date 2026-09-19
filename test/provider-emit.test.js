@@ -328,7 +328,6 @@ test('openrouter adapter is registered first and permits keyless fetch', () => {
     'groq',
     'cerebras',
     'google',
-    'mistral',
     'huggingface',
     'nvidia-nim',
   ]);

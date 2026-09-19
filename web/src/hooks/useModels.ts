@@ -502,7 +502,6 @@ export function getUniqueProviders(models: Model[]): string[] {
 const PROVIDER_QUICK_FILTERS = [
   { id: "openrouter", displayName: "OpenRouter" },
   { id: "google", displayName: "Google" },
-  { id: "mistral", displayName: "Mistral" },
   { id: "nvidia-nim", displayName: "Nvidia" },
   { id: "groq", displayName: "Groq" },
   { id: "cerebras", displayName: "Cerebras" },

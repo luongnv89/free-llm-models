@@ -216,7 +216,6 @@ describe("HomePage", () => {
       "All",
       "OpenRouter",
       "Google",
-      "Mistral",
       "Nvidia",
       "Groq",
       "Cerebras",
@@ -227,10 +226,9 @@ describe("HomePage", () => {
     expect(buttons[0].getAttribute("aria-pressed")).toBe("true");
     expect(
       buttons.slice(1).map((button) => button.getAttribute("aria-pressed")),
-    ).toEqual(["false", "false", "false", "false", "false", "false"]);
+    ).toEqual(["false", "false", "false", "false", "false"]);
     expect(group.textContent).toContain("OpenRouter1");
     expect(group.textContent).toContain("Google1");
-    expect(group.textContent).toContain("Mistral0");
   });
 
   it("supports multi-select, sidebar synchronization, intersection, and All reset", async () => {

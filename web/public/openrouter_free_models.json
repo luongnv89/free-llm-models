@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T01:00:27.345Z",
+  "fetchedAt": "2026-09-22T09:20:45.657Z",
   "totalModels": 24,
   "newModelIds": [],
   "models": [
@@ -75,7 +75,7 @@
         "rank": 30,
         "tokens": 87246032558,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -130,7 +130,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-09-25",
       "links": {
         "details": "/api/v1/models/nex-agi/nex-n2.5-mini-20260908/endpoints"
       },
@@ -147,7 +147,7 @@
       "popularity": {
         "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -202,7 +202,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-09-25",
       "links": {
         "details": "/api/v1/models/nex-agi/nex-n2.5-pro-20260907/endpoints"
       },
@@ -218,9 +218,9 @@
       "addedToFreeList": "2026-09-09T01:00:07.254Z",
       "popularity": {
         "rank": 32,
-        "tokens": 85471140925,
+        "tokens": 85471236661,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -284,7 +284,7 @@
       "popularity": {
         "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "rank": 20,
         "tokens": 180162772791,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -440,7 +440,7 @@
         "rank": 43,
         "tokens": 55591431697,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -499,7 +499,7 @@
         "rank": 28,
         "tokens": 100073405443,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -569,7 +569,7 @@
       "popularity": {
         "rank": 17,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -634,7 +634,7 @@
         "rank": 38,
         "tokens": 65535084372,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -720,7 +720,7 @@
       "popularity": {
         "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -776,7 +776,7 @@
         "rank": 22,
         "tokens": 169493483643,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -920,7 +920,7 @@
         "rank": 45,
         "tokens": 53742039170,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -975,7 +975,7 @@
       "popularity": {
         "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -1050,7 +1050,7 @@
       "popularity": {
         "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -1244,9 +1244,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 15,
-        "tokens": 257470001904,
+        "tokens": 257470945619,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -1309,7 +1309,7 @@
       "popularity": {
         "rank": 19,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -1446,7 +1446,7 @@
         "rank": 7,
         "tokens": 743895363643,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -1522,7 +1522,7 @@
       "popularity": {
         "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -1595,7 +1595,7 @@
         "rank": 46,
         "tokens": 49772338978,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -1669,9 +1669,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 39,
-        "tokens": 60695226128,
+        "tokens": 60695896767,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -1730,7 +1730,7 @@
       "popularity": {
         "rank": 22,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -1789,7 +1789,7 @@
       "popularity": {
         "rank": 23,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     },
     {
@@ -1871,7 +1871,7 @@
         "rank": 50,
         "tokens": 43319757439,
         "source": "rankings-daily",
-        "asOf": "2026-09-22T01:00:29.660Z"
+        "asOf": "2026-09-22T09:20:47.911Z"
       }
     },
     {
@@ -1941,7 +1941,7 @@
       "popularity": {
         "rank": 24,
         "source": "top-weekly",
-        "asOf": "2026-09-22T01:00:27.345Z"
+        "asOf": "2026-09-22T09:20:45.657Z"
       }
     }
   ],

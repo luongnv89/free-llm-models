@@ -1,6 +1,6 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-22T01:00:28.048Z",
+  "fetchedAt": "2026-09-22T09:20:46.477Z",
   "newModelIds": [
     "deepseek-ai/deepseek-v4.1-flash"
   ],
@@ -8,8 +8,8 @@
     {
       "id": "deepseek-ai/deepseek-v4-flash-0731",
       "providerId": "nvidia-nim",
-      "removedAt": "2026-09-22T01:00:28.048Z",
-      "lastSeenAt": "2026-09-21T01:00:58.462Z",
+      "removedAt": "2026-09-22T09:20:46.477Z",
+      "lastSeenAt": "2026-09-20T21:49:07.466Z",
       "addedToFreeList": "2026-08-26T08:32:51.070Z",
       "model": {
         "id": "deepseek-ai/deepseek-v4-flash-0731",
@@ -729,7 +729,7 @@
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-09-22T01:00:28.048Z"
+      "addedToFreeList": "2026-09-22T09:20:46.477Z"
     },
     {
       "id": "google/codegemma-1.1-7b",

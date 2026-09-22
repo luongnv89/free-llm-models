@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-09-22T01:00:28.048Z",
-  "totalModels": 164,
+  "fetchedAt": "2026-09-22T09:20:46.477Z",
+  "totalModels": 162,
   "newModelIds": [
     "antigravity-preview-latest",
     "deepseek-ai/deepseek-v4.1-flash"
@@ -128,7 +128,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-09-25",
       "links": {
         "details": "/api/v1/models/nex-agi/nex-n2.5-mini-20260908/endpoints"
       },
@@ -196,7 +196,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-09-25",
       "links": {
         "details": "/api/v1/models/nex-agi/nex-n2.5-pro-20260907/endpoints"
       },
@@ -1839,172 +1839,11 @@
       "providerId": "openrouter"
     },
     {
-      "id": "groq/compound-mini",
-      "name": "Groq/compound Mini",
-      "created": 1756949707,
+      "id": "meta-llama/llama-prompt-guard-2-86m",
+      "name": "Meta Llama/llama Prompt Guard 2 86m",
+      "created": 1748632165,
       "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "whisper-large-v3",
-      "name": "Whisper Large V3",
-      "created": 1693721698,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "whisper-large-v3-turbo",
-      "name": "Whisper Large V3 Turbo",
-      "created": 1728413088,
-      "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "qwen/qwen3.8-27b",
-      "name": "Qwen/qwen3 8 27b",
-      "created": 1786984846,
-      "description": "",
-      "context_length": 131042,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-20b",
-      "name": "Openai/gpt Oss 20b",
-      "created": 1754407957,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "groq/compound",
-      "name": "Groq/compound",
-      "created": 1756949530,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "canopylabs/orpheus-v1-english",
-      "name": "Canopylabs/orpheus V1 English",
-      "created": 1766186316,
-      "description": "",
-      "context_length": 4000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "canopylabs/orpheus-arabic-saudi",
-      "name": "Canopylabs/orpheus Arabic Saudi",
-      "created": 1765926439,
-      "description": "",
-      "context_length": 4000,
+      "context_length": 512,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2069,6 +1908,29 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
+      "id": "whisper-large-v3-turbo",
+      "name": "Whisper Large V3 Turbo",
+      "created": 1728413088,
+      "description": "",
+      "context_length": 448,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
       "id": "allam-2-7b",
       "name": "Allam 2 7b",
       "created": 1737672203,
@@ -2092,11 +1954,103 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
+      "id": "canopylabs/orpheus-v1-english",
+      "name": "Canopylabs/orpheus V1 English",
+      "created": 1766186316,
       "description": "",
-      "context_length": 512,
+      "context_length": 4000,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "name": "Openai/gpt Oss Safeguard 20b",
+      "created": 1761708789,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "qwen/qwen3.8-27b",
+      "name": "Qwen/qwen3 8 27b",
+      "created": 1786984846,
+      "description": "",
+      "context_length": 131042,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "whisper-large-v3",
+      "name": "Whisper Large V3",
+      "created": 1693721698,
+      "description": "",
+      "context_length": 448,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-20b",
+      "name": "Openai/gpt Oss 20b",
+      "created": 1754407957,
+      "description": "",
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2138,11 +2092,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "openai/gpt-oss-safeguard-20b",
-      "name": "Openai/gpt Oss Safeguard 20b",
-      "created": 1761708789,
+      "id": "canopylabs/orpheus-arabic-saudi",
+      "name": "Canopylabs/orpheus Arabic Saudi",
+      "created": 1765926439,
       "description": "",
-      "context_length": 131072,
+      "context_length": 4000,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -3101,7 +3055,7 @@
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-09-22T01:00:27.796Z"
+      "addedToFreeList": "2026-09-22T09:20:46.199Z"
     },
     {
       "id": "deep-research-max-preview-04-2026",
@@ -3354,7 +3308,7 @@
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-09-22T01:00:28.048Z"
+      "addedToFreeList": "2026-09-22T09:20:46.477Z"
     },
     {
       "id": "google/codegemma-1.1-7b",
@@ -5640,6 +5594,66 @@
       }
     },
     {
+      "id": "groq/compound-mini",
+      "providerId": "groq",
+      "removedAt": "2026-09-22T09:20:45.872Z",
+      "lastSeenAt": "2026-09-20T21:49:06.825Z",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z",
+      "model": {
+        "id": "groq/compound-mini",
+        "name": "Groq/compound Mini",
+        "created": 1756949707,
+        "description": "",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "groq",
+        "sourceUrl": "https://api.groq.com/openai/v1/models",
+        "addedToFreeList": "2026-09-02T05:41:20.238Z"
+      }
+    },
+    {
+      "id": "groq/compound",
+      "providerId": "groq",
+      "removedAt": "2026-09-22T09:20:45.872Z",
+      "lastSeenAt": "2026-09-20T21:49:06.825Z",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z",
+      "model": {
+        "id": "groq/compound",
+        "name": "Groq/compound",
+        "created": 1756949530,
+        "description": "",
+        "context_length": 131072,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "groq",
+        "sourceUrl": "https://api.groq.com/openai/v1/models",
+        "addedToFreeList": "2026-09-02T05:41:20.238Z"
+      }
+    },
+    {
       "id": "gemma-4-31b",
       "providerId": "cerebras",
       "removedAt": "2026-09-16T01:00:40.909Z",
@@ -5702,8 +5716,8 @@
     {
       "id": "deepseek-ai/deepseek-v4-flash-0731",
       "providerId": "nvidia-nim",
-      "removedAt": "2026-09-22T01:00:28.048Z",
-      "lastSeenAt": "2026-09-21T01:00:58.462Z",
+      "removedAt": "2026-09-22T09:20:46.477Z",
+      "lastSeenAt": "2026-09-20T21:49:07.466Z",
       "addedToFreeList": "2026-08-26T08:32:51.070Z",
       "model": {
         "id": "deepseek-ai/deepseek-v4-flash-0731",

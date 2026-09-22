@@ -1,6 +1,6 @@
 {
   "providerId": "openrouter",
-  "fetchedAt": "2026-09-22T01:00:27.345Z",
+  "fetchedAt": "2026-09-22T09:20:45.657Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -705,7 +705,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-09-25",
       "links": {
         "details": "/api/v1/models/nex-agi/nex-n2.5-mini-20260908/endpoints"
       },
@@ -772,7 +772,7 @@
       },
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-09-25",
       "links": {
         "details": "/api/v1/models/nex-agi/nex-n2.5-pro-20260907/endpoints"
       },

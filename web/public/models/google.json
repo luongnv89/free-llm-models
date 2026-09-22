@@ -1,6 +1,6 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-09-22T01:00:27.796Z",
+  "fetchedAt": "2026-09-22T09:20:46.199Z",
   "newModelIds": [
     "antigravity-preview-latest"
   ],
@@ -932,7 +932,7 @@
       },
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
-      "addedToFreeList": "2026-09-22T01:00:27.796Z"
+      "addedToFreeList": "2026-09-22T09:20:46.199Z"
     },
     {
       "id": "deep-research-max-preview-04-2026",

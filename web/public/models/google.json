@@ -1,7 +1,9 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-09-21T01:00:58.170Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-09-22T01:00:27.796Z",
+  "newModelIds": [
+    "antigravity-preview-latest"
+  ],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",
@@ -908,6 +910,29 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-15T01:00:17.259Z"
+    },
+    {
+      "id": "antigravity-preview-latest",
+      "name": "Antigravity Agent Preview Latest",
+      "created": 0,
+      "description": "Latest preview release of Antigravity Agent",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-09-22T01:00:27.796Z"
     },
     {
       "id": "deep-research-max-preview-04-2026",

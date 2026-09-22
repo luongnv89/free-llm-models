@@ -1,8 +1,40 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-09-21T01:00:58.462Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-09-22T01:00:28.048Z",
+  "newModelIds": [
+    "deepseek-ai/deepseek-v4.1-flash"
+  ],
   "archivedModels": [
+    {
+      "id": "deepseek-ai/deepseek-v4-flash-0731",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-09-22T01:00:28.048Z",
+      "lastSeenAt": "2026-09-21T01:00:58.462Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "deepseek-ai/deepseek-v4-flash-0731",
+        "name": "Deepseek Ai/deepseek V4 Flash 0731",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
     {
       "id": "deepseek-ai/deepseek-v4-pro-0813",
       "providerId": "nvidia-nim",
@@ -677,8 +709,8 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
-      "id": "deepseek-ai/deepseek-v4-flash-0731",
-      "name": "Deepseek Ai/deepseek V4 Flash 0731",
+      "id": "deepseek-ai/deepseek-v4.1-flash",
+      "name": "Deepseek Ai/deepseek V4 1 Flash",
       "created": 735790403,
       "description": "",
       "context_length": null,
@@ -697,7 +729,7 @@
       },
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      "addedToFreeList": "2026-09-22T01:00:28.048Z"
     },
     {
       "id": "google/codegemma-1.1-7b",

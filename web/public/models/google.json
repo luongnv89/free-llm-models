@@ -1,7 +1,10 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-09-23T01:00:55.999Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-09-23T15:07:05.857Z",
+  "newModelIds": [
+    "gemini-3.8-flash-tts",
+    "gemini-3.8-flash-lite-tts"
+  ],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",
@@ -816,6 +819,52 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T05:41:20.491Z"
+    },
+    {
+      "id": "gemini-3.8-flash-tts",
+      "name": "Gemini 3.8 Flash TTS",
+      "created": 0,
+      "description": "Gemini 3.8 Flash TTS",
+      "context_length": 8192,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-09-23T15:07:05.857Z"
+    },
+    {
+      "id": "gemini-3.8-flash-lite-tts",
+      "name": "Gemini 3.8 Flash Lite TTS",
+      "created": 0,
+      "description": "Gemini 3.8 Flash Lite TTS",
+      "context_length": 8192,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-09-23T15:07:05.857Z"
     },
     {
       "id": "gemini-robotics-er-2-preview",

@@ -1,10 +1,7 @@
 {
-  "fetchedAt": "2026-09-22T09:20:46.477Z",
+  "fetchedAt": "2026-09-23T01:00:56.334Z",
   "totalModels": 162,
-  "newModelIds": [
-    "antigravity-preview-latest",
-    "deepseek-ai/deepseek-v4.1-flash"
-  ],
+  "newModelIds": [],
   "models": [
     {
       "id": "inclusionai/ling-3.0-flash-vl:free",
@@ -462,7 +459,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": "2026-09-30",
+      "expiration_date": "2026-12-31",
       "links": {
         "details": "/api/v1/models/dots-studio/dots-3-note-preview-20260813/endpoints"
       },
@@ -795,57 +792,57 @@
             "arena": "models",
             "category": "3d",
             "elo": 1186,
-            "win_rate": 40.5,
-            "rank": 54
+            "win_rate": 40.4,
+            "rank": 55
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1108,
-            "win_rate": 33.3,
-            "rank": 59
+            "elo": 1111,
+            "win_rate": 33.7,
+            "rank": 58
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1215,
             "win_rate": 42,
-            "rank": 48
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1184,
+            "elo": 1185,
             "win_rate": 38.9,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1181,
-            "win_rate": 37.3,
+            "elo": 1185,
+            "win_rate": 37.6,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1137,
+            "elo": 1134,
             "win_rate": 35.5,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1217,
-            "win_rate": 42.3,
-            "rank": 46
+            "elo": 1215,
+            "win_rate": 42,
+            "rank": 49
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1229,
             "win_rate": 43.9,
-            "rank": 47
+            "rank": 48
           }
         ],
         "artificial_analysis": {
@@ -1104,65 +1101,65 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1227,
+            "elo": 1229,
             "win_rate": 56,
-            "rank": 13
+            "rank": 14
           },
           {
             "arena": "models",
             "category": "3d",
             "elo": 1319,
-            "win_rate": 53.8,
-            "rank": 13
+            "win_rate": 53.7,
+            "rank": 14
           },
           {
             "arena": "models",
             "category": "asciiart",
             "elo": 1222,
             "win_rate": 47.5,
-            "rank": 21
+            "rank": 22
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1305,
-            "win_rate": 52.8,
-            "rank": 12
+            "win_rate": 52.7,
+            "rank": 13
           },
           {
             "arena": "models",
             "category": "dataviz",
             "elo": 1306,
             "win_rate": 53.4,
-            "rank": 10
+            "rank": 11
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1293,
-            "win_rate": 49.7,
-            "rank": 17
+            "elo": 1294,
+            "win_rate": 49.6,
+            "rank": 18
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1245,
-            "win_rate": 50.2,
+            "elo": 1242,
+            "win_rate": 50.1,
             "rank": 15
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1306,
-            "win_rate": 55.2,
-            "rank": 13
+            "elo": 1307,
+            "win_rate": 55.3,
+            "rank": 14
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1302,
-            "win_rate": 53.2,
-            "rank": 12
+            "win_rate": 53.1,
+            "rank": 13
           }
         ],
         "artificial_analysis": {
@@ -1303,13 +1300,13 @@
             "category": "3d",
             "elo": 1160,
             "win_rate": 39.7,
-            "rank": 63
+            "rank": 64
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1100,
-            "win_rate": 36.8,
+            "elo": 1101,
+            "win_rate": 37.2,
             "rank": 61
           },
           {
@@ -1322,37 +1319,37 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1157,
-            "win_rate": 38.2,
-            "rank": 73
+            "elo": 1156,
+            "win_rate": 38,
+            "rank": 74
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1157,
-            "win_rate": 36.7,
-            "rank": 70
+            "elo": 1158,
+            "win_rate": 36.8,
+            "rank": 71
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1097,
-            "win_rate": 35.2,
+            "elo": 1095,
+            "win_rate": 35.3,
             "rank": 61
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1155,
-            "win_rate": 37.1,
-            "rank": 71
+            "elo": 1156,
+            "win_rate": 37.2,
+            "rank": 72
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1149,
             "win_rate": 34.9,
-            "rank": 81
+            "rank": 82
           }
         ],
         "artificial_analysis": {
@@ -1839,11 +1836,57 @@
       "providerId": "openrouter"
     },
     {
+      "id": "meta-llama/llama-prompt-guard-2-22m",
+      "name": "Meta Llama/llama Prompt Guard 2 22m",
+      "created": 1748632101,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
       "id": "meta-llama/llama-prompt-guard-2-86m",
       "name": "Meta Llama/llama Prompt Guard 2 86m",
       "created": 1748632165,
       "description": "",
       "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "qwen/qwen3.8-27b",
+      "name": "Qwen/qwen3 8 27b",
+      "created": 1786984846,
+      "description": "",
+      "context_length": 131042,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1885,11 +1928,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "meta-llama/llama-prompt-guard-2-22m",
-      "name": "Meta Llama/llama Prompt Guard 2 22m",
-      "created": 1748632101,
+      "id": "allam-2-7b",
+      "name": "Allam 2 7b",
+      "created": 1737672203,
       "description": "",
-      "context_length": 512,
+      "context_length": 4096,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1931,80 +1974,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
-      "description": "",
-      "context_length": 4096,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "canopylabs/orpheus-v1-english",
-      "name": "Canopylabs/orpheus V1 English",
-      "created": 1766186316,
-      "description": "",
-      "context_length": 4000,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-safeguard-20b",
-      "name": "Openai/gpt Oss Safeguard 20b",
-      "created": 1761708789,
+      "id": "qwen/qwen3.6-27b",
+      "name": "Qwen/qwen3 6 27b",
+      "created": 1778288776,
       "description": "",
       "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "qwen/qwen3.8-27b",
-      "name": "Qwen/qwen3 8 27b",
-      "created": 1786984846,
-      "description": "",
-      "context_length": 131042,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2069,29 +2043,6 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "qwen/qwen3.6-27b",
-      "name": "Qwen/qwen3 6 27b",
-      "created": 1778288776,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
       "id": "canopylabs/orpheus-arabic-saudi",
       "name": "Canopylabs/orpheus Arabic Saudi",
       "created": 1765926439,
@@ -2115,11 +2066,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "gpt-oss-120b",
-      "name": "Gpt Oss 120b",
-      "created": 0,
+      "id": "openai/gpt-oss-safeguard-20b",
+      "name": "Openai/gpt Oss Safeguard 20b",
+      "created": 1761708789,
       "description": "",
-      "context_length": null,
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2133,9 +2084,32 @@
           "text"
         ]
       },
-      "providerId": "cerebras",
-      "sourceUrl": "https://api.cerebras.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.387Z"
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "canopylabs/orpheus-v1-english",
+      "name": "Canopylabs/orpheus V1 English",
+      "created": 1766186316,
+      "description": "",
+      "context_length": 4000,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
       "id": "qwen-3.8-27b",
@@ -2159,6 +2133,29 @@
       "providerId": "cerebras",
       "sourceUrl": "https://api.cerebras.ai/v1/models",
       "addedToFreeList": "2026-09-04T01:00:05.346Z"
+    },
+    {
+      "id": "gpt-oss-120b",
+      "name": "Gpt Oss 120b",
+      "created": 0,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "cerebras",
+      "sourceUrl": "https://api.cerebras.ai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.387Z"
     },
     {
       "id": "gemini-2.5-flash",

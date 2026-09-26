@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-09-25T01:00:54.159Z",
-  "totalModels": 24,
+  "fetchedAt": "2026-09-26T01:00:55.976Z",
+  "totalModels": 21,
   "newModelIds": [],
   "models": [
     {
@@ -65,154 +65,10 @@
       },
       "addedToFreeList": "2026-09-23T15:07:05.356Z",
       "popularity": {
-        "rank": 2,
-        "tokens": 2655598445385,
+        "rank": 1,
+        "tokens": 3302484218166,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
-      }
-    },
-    {
-      "id": "nex-agi/nex-n2.5-mini:free",
-      "canonical_slug": "nex-agi/nex-n2.5-mini-20260908",
-      "hugging_face_id": "nex-agi/Nex-N2.5-mini",
-      "name": "Nex AGI: Nex-N2.5-Mini (free)",
-      "created": 1788890061,
-      "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 235929,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "logprobs",
-        "max_tokens",
-        "reasoning",
-        "reasoning_effort",
-        "response_format",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.7,
-        "top_p": 0.95,
-        "top_k": 40
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-09-25",
-      "links": {
-        "details": "/api/v1/models/nex-agi/nex-n2.5-mini-20260908/endpoints"
-      },
-      "reasoning": {
-        "mandatory": false,
-        "supported_efforts": [
-          "high",
-          "medium",
-          "none"
-        ],
-        "default_effort": "high"
-      },
-      "addedToFreeList": "2026-09-09T01:00:07.254Z",
-      "popularity": {
-        "rank": 11,
-        "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
-      }
-    },
-    {
-      "id": "nex-agi/nex-n2.5-pro:free",
-      "canonical_slug": "nex-agi/nex-n2.5-pro-20260907",
-      "hugging_face_id": "nex-agi/Nex-N2.5-Pro",
-      "name": "Nex AGI: Nex-N2.5-Pro (free)",
-      "created": 1788890050,
-      "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 235929,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "logprobs",
-        "max_tokens",
-        "reasoning",
-        "reasoning_effort",
-        "response_format",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.7,
-        "top_p": 0.95,
-        "top_k": 40
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-09-25",
-      "links": {
-        "details": "/api/v1/models/nex-agi/nex-n2.5-pro-20260907/endpoints"
-      },
-      "reasoning": {
-        "mandatory": false,
-        "supported_efforts": [
-          "high",
-          "medium",
-          "none"
-        ],
-        "default_effort": "high"
-      },
-      "addedToFreeList": "2026-09-09T01:00:07.254Z",
-      "popularity": {
-        "rank": 7,
-        "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -274,9 +130,10 @@
       },
       "addedToFreeList": "2026-09-05T01:00:25.456Z",
       "popularity": {
-        "rank": 10,
-        "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "rank": 48,
+        "tokens": 50818559855,
+        "source": "rankings-daily",
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -346,10 +203,10 @@
       },
       "addedToFreeList": "2026-08-27T23:20:38.098Z",
       "popularity": {
-        "rank": 26,
-        "tokens": 169394079305,
+        "rank": 25,
+        "tokens": 172087939271,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -429,10 +286,9 @@
       },
       "addedToFreeList": "2026-09-18T01:00:23.003Z",
       "popularity": {
-        "rank": 45,
-        "tokens": 60804369781,
-        "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "rank": 13,
+        "source": "top-weekly",
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -488,10 +344,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 37,
-        "tokens": 80159493373,
+        "rank": 41,
+        "tokens": 75733480803,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -560,9 +416,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 17,
+        "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -624,10 +480,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 41,
-        "tokens": 70532414413,
+        "rank": 45,
+        "tokens": 61414476798,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -711,9 +567,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 12,
+        "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -766,10 +622,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 27,
-        "tokens": 158598202840,
+        "rank": 28,
+        "tokens": 155000248459,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -835,21 +691,21 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1183,
+            "elo": 1181,
             "win_rate": 40.3,
             "rank": 55
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1101,
-            "win_rate": 33.5,
+            "elo": 1097,
+            "win_rate": 33.1,
             "rank": 59
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1211,
+            "elo": 1212,
             "win_rate": 42,
             "rank": 49
           },
@@ -857,36 +713,36 @@
             "arena": "models",
             "category": "dataviz",
             "elo": 1177,
-            "win_rate": 38.2,
+            "win_rate": 38.1,
             "rank": 64
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1176,
-            "win_rate": 37.5,
+            "elo": 1179,
+            "win_rate": 37.7,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1123,
+            "elo": 1126,
             "win_rate": 34.7,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1212,
-            "win_rate": 41.6,
-            "rank": 49
+            "elo": 1206,
+            "win_rate": 41.3,
+            "rank": 50
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1227,
+            "elo": 1228,
             "win_rate": 44,
-            "rank": 48
+            "rank": 49
           }
         ],
         "artificial_analysis": {
@@ -910,9 +766,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 8,
+        "rank": 7,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -965,9 +821,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 14,
+        "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -1040,205 +896,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 13,
+        "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
-      }
-    },
-    {
-      "id": "z-ai/glm-5.2:free",
-      "canonical_slug": "z-ai/glm-5.2-20260616",
-      "hugging_face_id": "zai-org/GLM-5.2",
-      "name": "Z.ai: GLM 5.2 (free)",
-      "created": 1781631930,
-      "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": 29491,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "reasoning_effort",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": null,
-        "frequency_penalty": null,
-        "presence_penalty": null,
-        "repetition_penalty": null
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/z-ai/glm-5.2-20260616/endpoints"
-      },
-      "benchmarks": {
-        "design_arena": [
-          {
-            "arena": "agents",
-            "category": "agenticgamedev",
-            "elo": 1205,
-            "win_rate": 49,
-            "rank": 10
-          },
-          {
-            "arena": "agents",
-            "category": "androidnative",
-            "elo": 1191,
-            "win_rate": 53,
-            "rank": 16
-          },
-          {
-            "arena": "agents",
-            "category": "fullstack",
-            "elo": 1238,
-            "win_rate": 60.9,
-            "rank": 12
-          },
-          {
-            "arena": "agents",
-            "category": "godotgamedev",
-            "elo": 1142,
-            "win_rate": 40.1,
-            "rank": 22
-          },
-          {
-            "arena": "agents",
-            "category": "htmlslides",
-            "elo": 1178,
-            "win_rate": 49.6,
-            "rank": 13
-          },
-          {
-            "arena": "agents",
-            "category": "mobileapps",
-            "elo": 1189,
-            "win_rate": 50.4,
-            "rank": 23
-          },
-          {
-            "arena": "agents",
-            "category": "python-pptxslides",
-            "elo": 1194,
-            "win_rate": 48.7,
-            "rank": 16
-          },
-          {
-            "arena": "agents",
-            "category": "webapps",
-            "elo": 1227,
-            "win_rate": 56.1,
-            "rank": 14
-          },
-          {
-            "arena": "models",
-            "category": "3d",
-            "elo": 1316,
-            "win_rate": 53.6,
-            "rank": 14
-          },
-          {
-            "arena": "models",
-            "category": "asciiart",
-            "elo": 1212,
-            "win_rate": 47.1,
-            "rank": 23
-          },
-          {
-            "arena": "models",
-            "category": "codecategories",
-            "elo": 1300,
-            "win_rate": 52.7,
-            "rank": 13
-          },
-          {
-            "arena": "models",
-            "category": "dataviz",
-            "elo": 1303,
-            "win_rate": 53.3,
-            "rank": 11
-          },
-          {
-            "arena": "models",
-            "category": "gamedev",
-            "elo": 1285,
-            "win_rate": 49.7,
-            "rank": 18
-          },
-          {
-            "arena": "models",
-            "category": "svg",
-            "elo": 1233,
-            "win_rate": 49.8,
-            "rank": 15
-          },
-          {
-            "arena": "models",
-            "category": "uicomponent",
-            "elo": 1305,
-            "win_rate": 55.1,
-            "rank": 14
-          },
-          {
-            "arena": "models",
-            "category": "website",
-            "elo": 1299,
-            "win_rate": 53.1,
-            "rank": 13
-          }
-        ],
-        "artificial_analysis": {
-          "intelligence_index": 33.7,
-          "coding_index": 68.8,
-          "agentic_index": 38.4
-        }
-      },
-      "reasoning": {
-        "mandatory": false,
-        "default_enabled": true,
-        "supported_efforts": [
-          "xhigh",
-          "high"
-        ],
-        "default_effort": "high"
-      },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "popularity": {
-        "rank": 19,
-        "tokens": 215927472362,
-        "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -1299,9 +959,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 19,
+        "rank": 16,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -1363,9 +1023,9 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1159,
-            "win_rate": 39.7,
-            "rank": 64
+            "elo": 1157,
+            "win_rate": 39.6,
+            "rank": 63
           },
           {
             "arena": "models",
@@ -1377,8 +1037,8 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1153,
-            "win_rate": 36.4,
+            "elo": 1154,
+            "win_rate": 36.3,
             "rank": 75
           },
           {
@@ -1391,30 +1051,30 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1151,
+            "elo": 1155,
             "win_rate": 36.9,
-            "rank": 69
+            "rank": 67
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1086,
-            "win_rate": 34.9,
-            "rank": 62
+            "elo": 1094,
+            "win_rate": 35.3,
+            "rank": 60
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1155,
-            "win_rate": 37.3,
+            "elo": 1149,
+            "win_rate": 37,
             "rank": 71
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1147,
-            "win_rate": 34.9,
-            "rank": 83
+            "win_rate": 35,
+            "rank": 84
           }
         ],
         "artificial_analysis": {
@@ -1435,10 +1095,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 8,
-        "tokens": 625818438314,
+        "rank": 7,
+        "tokens": 983612537317,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -1512,9 +1172,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 16,
+        "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -1584,10 +1244,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 49,
-        "tokens": 51962315602,
+        "rank": 50,
+        "tokens": 50357185701,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -1661,9 +1321,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 46,
-        "tokens": 57206787042,
+        "tokens": 60410811768,
         "source": "rankings-daily",
-        "asOf": "2026-09-25T01:00:59.616Z"
+        "asOf": "2026-09-26T01:00:03.785Z"
       }
     },
     {
@@ -1720,9 +1380,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 22,
+        "rank": 19,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -1779,9 +1439,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 23,
+        "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -1860,9 +1520,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 9,
+        "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     },
     {
@@ -1930,13 +1590,374 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 24,
+        "rank": 21,
         "source": "top-weekly",
-        "asOf": "2026-09-25T01:00:54.159Z"
+        "asOf": "2026-09-26T01:00:55.976Z"
       }
     }
   ],
   "archivedModels": [
+    {
+      "id": "nex-agi/nex-n2.5-mini:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-09-26T01:00:55.976Z",
+      "lastSeenAt": "2026-09-25T01:00:54.159Z",
+      "addedToFreeList": "2026-09-09T01:00:07.254Z",
+      "model": {
+        "id": "nex-agi/nex-n2.5-mini:free",
+        "canonical_slug": "nex-agi/nex-n2.5-mini-20260908",
+        "hugging_face_id": "nex-agi/Nex-N2.5-mini",
+        "name": "Nex AGI: Nex-N2.5-Mini (free)",
+        "created": 1788890061,
+        "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+        "context_length": 262144,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Qwen3",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 262144,
+          "max_completion_tokens": 235929,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "logprobs",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_logprobs",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 0.7,
+          "top_p": 0.95,
+          "top_k": 40
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": "2026-09-25",
+        "links": {
+          "details": "/api/v1/models/nex-agi/nex-n2.5-mini-20260908/endpoints"
+        },
+        "reasoning": {
+          "mandatory": false,
+          "supported_efforts": [
+            "high",
+            "medium",
+            "none"
+          ],
+          "default_effort": "high"
+        },
+        "addedToFreeList": "2026-09-09T01:00:07.254Z",
+        "popularity": {
+          "rank": 11,
+          "source": "top-weekly",
+          "asOf": "2026-09-25T01:00:54.159Z"
+        }
+      }
+    },
+    {
+      "id": "nex-agi/nex-n2.5-pro:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-09-26T01:00:55.976Z",
+      "lastSeenAt": "2026-09-25T01:00:54.159Z",
+      "addedToFreeList": "2026-09-09T01:00:07.254Z",
+      "model": {
+        "id": "nex-agi/nex-n2.5-pro:free",
+        "canonical_slug": "nex-agi/nex-n2.5-pro-20260907",
+        "hugging_face_id": "nex-agi/Nex-N2.5-Pro",
+        "name": "Nex AGI: Nex-N2.5-Pro (free)",
+        "created": 1788890050,
+        "description": "Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...",
+        "context_length": 262144,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Qwen3",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 262144,
+          "max_completion_tokens": 235929,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "logprobs",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_logprobs",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 0.7,
+          "top_p": 0.95,
+          "top_k": 40
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": "2026-09-25",
+        "links": {
+          "details": "/api/v1/models/nex-agi/nex-n2.5-pro-20260907/endpoints"
+        },
+        "reasoning": {
+          "mandatory": false,
+          "supported_efforts": [
+            "high",
+            "medium",
+            "none"
+          ],
+          "default_effort": "high"
+        },
+        "addedToFreeList": "2026-09-09T01:00:07.254Z",
+        "popularity": {
+          "rank": 7,
+          "source": "top-weekly",
+          "asOf": "2026-09-25T01:00:54.159Z"
+        }
+      }
+    },
+    {
+      "id": "z-ai/glm-5.2:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-09-26T01:00:55.976Z",
+      "lastSeenAt": "2026-09-25T01:00:54.159Z",
+      "addedToFreeList": "2026-08-26T08:32:50.786Z",
+      "model": {
+        "id": "z-ai/glm-5.2:free",
+        "canonical_slug": "z-ai/glm-5.2-20260616",
+        "hugging_face_id": "zai-org/GLM-5.2",
+        "name": "Z.ai: GLM 5.2 (free)",
+        "created": 1781631930,
+        "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
+        "context_length": 32768,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 32768,
+          "max_completion_tokens": 29491,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "max_tokens",
+          "min_p",
+          "presence_penalty",
+          "reasoning",
+          "reasoning_effort",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "temperature",
+          "top_k",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 1,
+          "top_p": 0.95,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/z-ai/glm-5.2-20260616/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [
+            {
+              "arena": "agents",
+              "category": "agenticgamedev",
+              "elo": 1205,
+              "win_rate": 49,
+              "rank": 10
+            },
+            {
+              "arena": "agents",
+              "category": "androidnative",
+              "elo": 1191,
+              "win_rate": 53,
+              "rank": 16
+            },
+            {
+              "arena": "agents",
+              "category": "fullstack",
+              "elo": 1238,
+              "win_rate": 60.9,
+              "rank": 12
+            },
+            {
+              "arena": "agents",
+              "category": "godotgamedev",
+              "elo": 1142,
+              "win_rate": 40.1,
+              "rank": 22
+            },
+            {
+              "arena": "agents",
+              "category": "htmlslides",
+              "elo": 1178,
+              "win_rate": 49.6,
+              "rank": 13
+            },
+            {
+              "arena": "agents",
+              "category": "mobileapps",
+              "elo": 1189,
+              "win_rate": 50.4,
+              "rank": 23
+            },
+            {
+              "arena": "agents",
+              "category": "python-pptxslides",
+              "elo": 1194,
+              "win_rate": 48.7,
+              "rank": 16
+            },
+            {
+              "arena": "agents",
+              "category": "webapps",
+              "elo": 1227,
+              "win_rate": 56.1,
+              "rank": 14
+            },
+            {
+              "arena": "models",
+              "category": "3d",
+              "elo": 1316,
+              "win_rate": 53.6,
+              "rank": 14
+            },
+            {
+              "arena": "models",
+              "category": "asciiart",
+              "elo": 1212,
+              "win_rate": 47.1,
+              "rank": 23
+            },
+            {
+              "arena": "models",
+              "category": "codecategories",
+              "elo": 1300,
+              "win_rate": 52.7,
+              "rank": 13
+            },
+            {
+              "arena": "models",
+              "category": "dataviz",
+              "elo": 1303,
+              "win_rate": 53.3,
+              "rank": 11
+            },
+            {
+              "arena": "models",
+              "category": "gamedev",
+              "elo": 1285,
+              "win_rate": 49.7,
+              "rank": 18
+            },
+            {
+              "arena": "models",
+              "category": "svg",
+              "elo": 1233,
+              "win_rate": 49.8,
+              "rank": 15
+            },
+            {
+              "arena": "models",
+              "category": "uicomponent",
+              "elo": 1305,
+              "win_rate": 55.1,
+              "rank": 14
+            },
+            {
+              "arena": "models",
+              "category": "website",
+              "elo": 1299,
+              "win_rate": 53.1,
+              "rank": 13
+            }
+          ],
+          "artificial_analysis": {
+            "intelligence_index": 33.7,
+            "coding_index": 68.8,
+            "agentic_index": 38.4
+          }
+        },
+        "reasoning": {
+          "mandatory": false,
+          "default_enabled": true,
+          "supported_efforts": [
+            "xhigh",
+            "high"
+          ],
+          "default_effort": "high"
+        },
+        "addedToFreeList": "2026-08-26T08:32:50.786Z",
+        "popularity": {
+          "rank": 19,
+          "tokens": 215927472362,
+          "source": "rankings-daily",
+          "asOf": "2026-09-25T01:00:59.616Z"
+        }
+      }
+    },
     {
       "id": "inclusionai/ling-3.0-flash-vl:free",
       "providerId": "openrouter",

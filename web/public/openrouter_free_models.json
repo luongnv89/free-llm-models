@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-09-28T01:00:12.948Z",
-  "totalModels": 21,
+  "fetchedAt": "2026-09-29T01:00:17.749Z",
+  "totalModels": 20,
   "newModelIds": [],
   "models": [
     {
@@ -66,9 +66,9 @@
       "addedToFreeList": "2026-09-23T15:07:05.356Z",
       "popularity": {
         "rank": 1,
-        "tokens": 3992090048994,
+        "tokens": 4321096612883,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -130,83 +130,10 @@
       },
       "addedToFreeList": "2026-09-05T01:00:25.456Z",
       "popularity": {
-        "rank": 48,
-        "tokens": 45266402563,
+        "rank": 46,
+        "tokens": 54641543587,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
-      }
-    },
-    {
-      "id": "inclusionai/ling-3.0-flash-fin:free",
-      "canonical_slug": "inclusionai/ling-3.0-flash-fin-20260827",
-      "hugging_face_id": null,
-      "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
-      "created": 1787846290,
-      "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 32768,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logprobs",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/inclusionai/ling-3.0-flash-fin-20260827/endpoints"
-      },
-      "benchmarks": {
-        "design_arena": [],
-        "artificial_analysis": {
-          "intelligence_index": 22.6,
-          "coding_index": 55.6,
-          "agentic_index": 27.9
-        }
-      },
-      "reasoning": {
-        "mandatory": false,
-        "default_enabled": true
-      },
-      "addedToFreeList": "2026-08-27T23:20:38.098Z",
-      "popularity": {
-        "rank": 23,
-        "tokens": 156980092129,
-        "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -286,9 +213,9 @@
       },
       "addedToFreeList": "2026-09-18T01:00:23.003Z",
       "popularity": {
-        "rank": 13,
+        "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -344,10 +271,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 33,
-        "tokens": 71084958557,
+        "rank": 36,
+        "tokens": 80431202576,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -416,9 +343,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 15,
+        "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -480,10 +407,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 34,
-        "tokens": 71084810080,
+        "rank": 33,
+        "tokens": 104024655536,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -567,9 +494,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 11,
+        "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -622,10 +549,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 24,
-        "tokens": 148253446898,
+        "rank": 26,
+        "tokens": 146353792082,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -698,9 +625,9 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1097,
-            "win_rate": 33.1,
-            "rank": 61
+            "elo": 1108,
+            "win_rate": 34.6,
+            "rank": 59
           },
           {
             "arena": "models",
@@ -712,9 +639,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1180,
-            "win_rate": 38.5,
-            "rank": 61
+            "elo": 1175,
+            "win_rate": 38.3,
+            "rank": 66
           },
           {
             "arena": "models",
@@ -726,22 +653,22 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1112,
-            "win_rate": 34.7,
-            "rank": 53
+            "elo": 1111,
+            "win_rate": 34.4,
+            "rank": 54
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1207,
-            "win_rate": 41.2,
+            "win_rate": 41.1,
             "rank": 49
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1229,
-            "win_rate": 44.1,
+            "win_rate": 44.2,
             "rank": 47
           }
         ],
@@ -766,9 +693,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 9,
+        "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -821,9 +748,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 12,
+        "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -896,9 +823,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 10,
+        "rank": 9,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -959,9 +886,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 16,
+        "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -1023,16 +950,16 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1151,
+            "elo": 1150,
             "win_rate": 39.4,
             "rank": 65
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1102,
+            "elo": 1103,
             "win_rate": 37.6,
-            "rank": 60
+            "rank": 61
           },
           {
             "arena": "models",
@@ -1044,30 +971,30 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1153,
+            "elo": 1151,
             "win_rate": 37.8,
-            "rank": 74
+            "rank": 75
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1151,
+            "elo": 1152,
             "win_rate": 36.8,
-            "rank": 71
+            "rank": 69
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1069,
-            "win_rate": 33.3,
-            "rank": 65
+            "elo": 1068,
+            "win_rate": 33.1,
+            "rank": 66
           },
           {
             "arena": "models",
             "category": "uicomponent",
             "elo": 1149,
-            "win_rate": 37,
-            "rank": 71
+            "win_rate": 36.6,
+            "rank": 72
           },
           {
             "arena": "models",
@@ -1095,10 +1022,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 6,
-        "tokens": 1009590310067,
+        "rank": 7,
+        "tokens": 964310962281,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -1172,9 +1099,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 14,
+        "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -1244,10 +1171,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 49,
-        "tokens": 42454663322,
+        "rank": 50,
+        "tokens": 50403161253,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -1320,10 +1247,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 37,
-        "tokens": 60880894472,
+        "rank": 42,
+        "tokens": 67326788634,
         "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "asOf": "2026-09-29T01:00:19.928Z"
       }
     },
     {
@@ -1380,9 +1307,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 19,
+        "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -1439,9 +1366,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 20,
+        "rank": 19,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -1520,10 +1447,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 45,
-        "tokens": 49523181357,
-        "source": "rankings-daily",
-        "asOf": "2026-09-28T01:00:15.352Z"
+        "rank": 7,
+        "source": "top-weekly",
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     },
     {
@@ -1591,13 +1517,93 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 21,
+        "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-09-28T01:00:12.948Z"
+        "asOf": "2026-09-29T01:00:17.749Z"
       }
     }
   ],
   "archivedModels": [
+    {
+      "id": "inclusionai/ling-3.0-flash-fin:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-09-29T01:00:17.749Z",
+      "lastSeenAt": "2026-09-28T01:00:12.948Z",
+      "addedToFreeList": "2026-08-27T23:20:38.098Z",
+      "model": {
+        "id": "inclusionai/ling-3.0-flash-fin:free",
+        "canonical_slug": "inclusionai/ling-3.0-flash-fin-20260827",
+        "hugging_face_id": null,
+        "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
+        "created": 1787846290,
+        "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
+        "context_length": 262144,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 262144,
+          "max_completion_tokens": 32768,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "logprobs",
+          "max_tokens",
+          "presence_penalty",
+          "reasoning",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_logprobs",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/inclusionai/ling-3.0-flash-fin-20260827/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [],
+          "artificial_analysis": {
+            "intelligence_index": 22.6,
+            "coding_index": 55.6,
+            "agentic_index": 27.9
+          }
+        },
+        "reasoning": {
+          "mandatory": false,
+          "default_enabled": true
+        },
+        "addedToFreeList": "2026-08-27T23:20:38.098Z",
+        "popularity": {
+          "rank": 23,
+          "tokens": 156980092129,
+          "source": "rankings-daily",
+          "asOf": "2026-09-28T01:00:15.352Z"
+        }
+      }
+    },
     {
       "id": "nex-agi/nex-n2.5-mini:free",
       "providerId": "openrouter",

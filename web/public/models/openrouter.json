@@ -1,6 +1,6 @@
 {
   "providerId": "openrouter",
-  "fetchedAt": "2026-09-30T01:00:47.140Z",
+  "fetchedAt": "2026-10-01T01:00:38.703Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -1124,7 +1124,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-10-05",
       "links": {
         "details": "/api/v1/models/stealth/space-bunny-alpha/endpoints"
       },
@@ -1516,9 +1516,9 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 25.7,
           "coding_index": 52.9,
-          "agentic_index": null
+          "agentic_index": 23.5
         }
       },
       "reasoning": {
@@ -1656,23 +1656,23 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1103,
+            "elo": 1101,
             "win_rate": 33.9,
-            "rank": 61
+            "rank": 60
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1213,
+            "elo": 1210,
             "win_rate": 42.1,
-            "rank": 49
+            "rank": 50
           },
           {
             "arena": "models",
             "category": "dataviz",
             "elo": 1178,
             "win_rate": 38.6,
-            "rank": 62
+            "rank": 63
           },
           {
             "arena": "models",
@@ -1693,14 +1693,14 @@
             "category": "uicomponent",
             "elo": 1208,
             "win_rate": 41.3,
-            "rank": 50
+            "rank": 51
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1229,
+            "elo": 1228,
             "win_rate": 44.2,
-            "rank": 47
+            "rank": 50
           }
         ],
         "artificial_analysis": {
@@ -1968,22 +1968,22 @@
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1109,
+            "elo": 1108,
             "win_rate": 38.6,
-            "rank": 58
+            "rank": 57
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1153,
+            "elo": 1151,
             "win_rate": 36.2,
-            "rank": 75
+            "rank": 76
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1150,
-            "win_rate": 37.6,
+            "elo": 1151,
+            "win_rate": 37.7,
             "rank": 76
           },
           {
@@ -1996,16 +1996,16 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1069,
+            "elo": 1070,
             "win_rate": 32.9,
             "rank": 68
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1148,
+            "elo": 1147,
             "win_rate": 36.4,
-            "rank": 73
+            "rank": 76
           },
           {
             "arena": "models",
@@ -2230,7 +2230,7 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 14.7,
           "coding_index": 43.4,
           "agentic_index": 4.2
         }

@@ -1,7 +1,9 @@
 {
   "providerId": "openrouter",
-  "fetchedAt": "2026-10-01T01:00:38.703Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-10-02T01:00:38.442Z",
+  "newModelIds": [
+    "apodex/apodex-1.1-mini:free"
+  ],
   "archivedModels": [
     {
       "id": "inclusionai/ling-3.0-flash-fin:free",
@@ -1080,6 +1082,64 @@
   ],
   "models": [
     {
+      "id": "apodex/apodex-1.1-mini:free",
+      "canonical_slug": "apodex/apodex-1.1-mini-20261001",
+      "hugging_face_id": null,
+      "name": "Apodex: Apodex 1.1 Mini (free)",
+      "created": 1790875335,
+      "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/apodex/apodex-1.1-mini-20261001/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false
+      },
+      "addedToFreeList": "2026-10-02T01:00:38.442Z"
+    },
+    {
       "id": "stealth/space-bunny-alpha",
       "canonical_slug": "stealth/space-bunny-alpha",
       "hugging_face_id": null,
@@ -1321,7 +1381,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-12-31",
       "links": {
         "details": "/api/v1/models/dots-studio/dots-3-note-preview-20260813/endpoints"
       },
@@ -1649,7 +1709,7 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1178,
+            "elo": 1175,
             "win_rate": 40.5,
             "rank": 55
           },
@@ -1664,15 +1724,15 @@
             "arena": "models",
             "category": "codecategories",
             "elo": 1210,
-            "win_rate": 42.1,
+            "win_rate": 42.2,
             "rank": 50
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1178,
+            "elo": 1177,
             "win_rate": 38.6,
-            "rank": 63
+            "rank": 65
           },
           {
             "arena": "models",
@@ -1684,23 +1744,23 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1111,
-            "win_rate": 34.1,
+            "elo": 1112,
+            "win_rate": 34,
             "rank": 56
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1208,
-            "win_rate": 41.3,
-            "rank": 51
+            "elo": 1206,
+            "win_rate": 41.4,
+            "rank": 52
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1228,
-            "win_rate": 44.2,
-            "rank": 50
+            "win_rate": 44.3,
+            "rank": 48
           }
         ],
         "artificial_analysis": {
@@ -1961,58 +2021,58 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1150,
+            "elo": 1147,
             "win_rate": 39.4,
             "rank": 65
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1108,
-            "win_rate": 38.6,
-            "rank": 57
+            "elo": 1104,
+            "win_rate": 37.9,
+            "rank": 58
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1151,
+            "elo": 1150,
             "win_rate": 36.2,
-            "rank": 76
+            "rank": 77
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1151,
+            "elo": 1150,
             "win_rate": 37.7,
             "rank": 76
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1152,
+            "elo": 1151,
             "win_rate": 36.8,
-            "rank": 68
+            "rank": 70
           },
           {
             "arena": "models",
             "category": "svg",
             "elo": 1070,
-            "win_rate": 32.9,
+            "win_rate": 33,
             "rank": 68
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1147,
-            "win_rate": 36.4,
-            "rank": 76
+            "elo": 1146,
+            "win_rate": 36.6,
+            "rank": 74
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1148,
+            "elo": 1146,
             "win_rate": 34.9,
-            "rank": 84
+            "rank": 85
           }
         ],
         "artificial_analysis": {

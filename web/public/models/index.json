@@ -12,8 +12,8 @@
         "openaiCompatibleBaseUrl": null,
         "notes": null
       },
-      "modelCount": 21,
-      "fetchedAt": "2026-10-02T01:00:38.442Z"
+      "modelCount": 22,
+      "fetchedAt": "2026-10-03T01:00:38.539Z"
     },
     {
       "id": "groq",
@@ -28,7 +28,7 @@
         "notes": null
       },
       "modelCount": 12,
-      "fetchedAt": "2026-10-02T01:00:38.639Z"
+      "fetchedAt": "2026-10-03T01:00:38.760Z"
     },
     {
       "id": "cerebras",
@@ -43,7 +43,7 @@
         "notes": null
       },
       "modelCount": 2,
-      "fetchedAt": "2026-10-02T01:00:38.799Z"
+      "fetchedAt": "2026-10-03T01:00:38.927Z"
     },
     {
       "id": "google",
@@ -58,7 +58,7 @@
         "notes": null
       },
       "modelCount": 44,
-      "fetchedAt": "2026-10-02T01:00:38.930Z"
+      "fetchedAt": "2026-10-03T01:00:39.030Z"
     },
     {
       "id": "huggingface",
@@ -73,7 +73,7 @@
         "notes": "Catalog served through the HF Router (Inference Providers). Free-tier accounts get monthly inference credits; usage draws down those credits rather than being permanently free."
       },
       "modelCount": 0,
-      "fetchedAt": "2026-10-02T01:00:39.107Z"
+      "fetchedAt": "2026-10-03T01:00:39.209Z"
     },
     {
       "id": "nvidia-nim",
@@ -88,10 +88,69 @@
         "notes": "Hosted NIM API access is granted via trial credits (NVAPI_KEY in NVIDIA's own docs); models are trial-credit eligible, not permanently free."
       },
       "modelCount": 81,
-      "fetchedAt": "2026-10-02T01:00:39.194Z"
+      "fetchedAt": "2026-10-03T01:00:39.305Z"
     }
   ],
   "models": [
+    {
+      "id": "inclusionai/ling-3.1-flash",
+      "canonical_slug": "inclusionai/ling-3.1-flash-20261002",
+      "hugging_face_id": null,
+      "name": "inclusionAI: Ling 3.1 Flash",
+      "created": 1790950024,
+      "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/inclusionai/ling-3.1-flash-20261002/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
+      },
+      "addedToFreeList": "2026-10-03T01:00:38.539Z"
+    },
     {
       "id": "apodex/apodex-1.1-mini:free",
       "canonical_slug": "apodex/apodex-1.1-mini-20261001",
@@ -647,7 +706,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-10-31",
       "links": {
         "details": "/api/v1/models/poolside/laguna-s-2.1-20260720/endpoints"
       },
@@ -720,14 +779,14 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1175,
+            "elo": 1176,
             "win_rate": 40.5,
-            "rank": 55
+            "rank": 54
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1101,
+            "elo": 1103,
             "win_rate": 33.9,
             "rank": 60
           },
@@ -741,9 +800,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1177,
-            "win_rate": 38.6,
-            "rank": 65
+            "elo": 1175,
+            "win_rate": 38.3,
+            "rank": 66
           },
           {
             "arena": "models",
@@ -763,14 +822,14 @@
             "arena": "models",
             "category": "uicomponent",
             "elo": 1206,
-            "win_rate": 41.4,
-            "rank": 52
+            "win_rate": 41.3,
+            "rank": 53
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1228,
-            "win_rate": 44.3,
+            "win_rate": 44.2,
             "rank": 48
           }
         ],
@@ -835,7 +894,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-10-31",
       "links": {
         "details": "/api/v1/models/poolside/laguna-xs-2.1-20260625/endpoints"
       },
@@ -1033,7 +1092,7 @@
             "arena": "models",
             "category": "3d",
             "elo": 1147,
-            "win_rate": 39.4,
+            "win_rate": 39.3,
             "rank": 65
           },
           {
@@ -1041,7 +1100,7 @@
             "category": "asciiart",
             "elo": 1104,
             "win_rate": 37.9,
-            "rank": 58
+            "rank": 59
           },
           {
             "arena": "models",
@@ -1060,9 +1119,9 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1151,
-            "win_rate": 36.8,
-            "rank": 70
+            "elo": 1152,
+            "win_rate": 36.9,
+            "rank": 68
           },
           {
             "arena": "models",
@@ -1074,8 +1133,8 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1146,
-            "win_rate": 36.6,
+            "elo": 1148,
+            "win_rate": 36.7,
             "rank": 74
           },
           {
@@ -1562,57 +1621,11 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
-      "id": "whisper-large-v3-turbo",
-      "name": "Whisper Large V3 Turbo",
-      "created": 1728413088,
+      "id": "openai/gpt-oss-safeguard-20b",
+      "name": "Openai/gpt Oss Safeguard 20b",
+      "created": 1761708789,
       "description": "",
-      "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "whisper-large-v3",
-      "name": "Whisper Large V3",
-      "created": 1693721698,
-      "description": "",
-      "context_length": 448,
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1654,11 +1667,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "canopylabs/orpheus-arabic-saudi",
-      "name": "Canopylabs/orpheus Arabic Saudi",
-      "created": 1765926439,
+      "id": "allam-2-7b",
+      "name": "Allam 2 7b",
+      "created": 1737672203,
       "description": "",
-      "context_length": 4000,
+      "context_length": 4096,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1677,57 +1690,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "openai/gpt-oss-20b",
-      "name": "Openai/gpt Oss 20b",
-      "created": 1754407957,
+      "id": "whisper-large-v3",
+      "name": "Whisper Large V3",
+      "created": 1693721698,
       "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "name": "Openai/gpt Oss 120b",
-      "created": 1754408224,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "qwen/qwen3.8-27b",
-      "name": "Qwen/qwen3 8 27b",
-      "created": 1786984846,
-      "description": "",
-      "context_length": 131072,
+      "context_length": 448,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1769,11 +1736,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "openai/gpt-oss-safeguard-20b",
-      "name": "Openai/gpt Oss Safeguard 20b",
-      "created": 1761708789,
+      "id": "whisper-large-v3-turbo",
+      "name": "Whisper Large V3 Turbo",
+      "created": 1728413088,
       "description": "",
-      "context_length": 131072,
+      "context_length": 448,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1792,11 +1759,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
+      "id": "openai/gpt-oss-20b",
+      "name": "Openai/gpt Oss 20b",
+      "created": 1754407957,
       "description": "",
-      "context_length": 4096,
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1838,11 +1805,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "gpt-oss-120b",
-      "name": "Gpt Oss 120b",
-      "created": 0,
+      "id": "qwen/qwen3.8-27b",
+      "name": "Qwen/qwen3 8 27b",
+      "created": 1786984846,
       "description": "",
-      "context_length": null,
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1856,9 +1823,78 @@
           "text"
         ]
       },
-      "providerId": "cerebras",
-      "sourceUrl": "https://api.cerebras.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.387Z"
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "canopylabs/orpheus-arabic-saudi",
+      "name": "Canopylabs/orpheus Arabic Saudi",
+      "created": 1765926439,
+      "description": "",
+      "context_length": 4000,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "name": "Openai/gpt Oss 120b",
+      "created": 1754408224,
+      "description": "",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "meta-llama/llama-prompt-guard-2-86m",
+      "name": "Meta Llama/llama Prompt Guard 2 86m",
+      "created": 1748632165,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
       "id": "qwen-3.8-27b",
@@ -1882,6 +1918,29 @@
       "providerId": "cerebras",
       "sourceUrl": "https://api.cerebras.ai/v1/models",
       "addedToFreeList": "2026-09-04T01:00:05.346Z"
+    },
+    {
+      "id": "gpt-oss-120b",
+      "name": "Gpt Oss 120b",
+      "created": 0,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "cerebras",
+      "sourceUrl": "https://api.cerebras.ai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.387Z"
     },
     {
       "id": "gemini-2.5-flash",

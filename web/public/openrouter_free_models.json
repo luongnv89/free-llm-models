@@ -1,10 +1,74 @@
 {
-  "fetchedAt": "2026-10-02T01:00:38.442Z",
-  "totalModels": 21,
+  "fetchedAt": "2026-10-03T01:00:38.539Z",
+  "totalModels": 22,
   "newModelIds": [
-    "apodex/apodex-1.1-mini:free"
+    "inclusionai/ling-3.1-flash"
   ],
   "models": [
+    {
+      "id": "inclusionai/ling-3.1-flash",
+      "canonical_slug": "inclusionai/ling-3.1-flash-20261002",
+      "hugging_face_id": null,
+      "name": "inclusionAI: Ling 3.1 Flash",
+      "created": 1790950024,
+      "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/inclusionai/ling-3.1-flash-20261002/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
+      },
+      "addedToFreeList": "2026-10-03T01:00:38.539Z",
+      "popularity": {
+        "rank": 16,
+        "source": "top-weekly",
+        "asOf": "2026-10-03T01:00:38.539Z"
+      }
+    },
     {
       "id": "apodex/apodex-1.1-mini:free",
       "canonical_slug": "apodex/apodex-1.1-mini-20261001",
@@ -63,9 +127,9 @@
       },
       "addedToFreeList": "2026-10-02T01:00:38.442Z",
       "popularity": {
-        "rank": 15,
+        "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -131,9 +195,9 @@
       "addedToFreeList": "2026-09-23T15:07:05.356Z",
       "popularity": {
         "rank": 1,
-        "tokens": 5166688701553,
+        "tokens": 5890362479879,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -195,10 +259,10 @@
       },
       "addedToFreeList": "2026-09-05T01:00:25.456Z",
       "popularity": {
-        "rank": 47,
-        "tokens": 53540022784,
+        "rank": 49,
+        "tokens": 53592663436,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -278,10 +342,10 @@
       },
       "addedToFreeList": "2026-09-18T01:00:23.003Z",
       "popularity": {
-        "rank": 48,
-        "tokens": 52859408383,
+        "rank": 41,
+        "tokens": 73444767592,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -337,10 +401,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 46,
-        "tokens": 56694942489,
+        "rank": 48,
+        "tokens": 54052104852,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -409,9 +473,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 14,
+        "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -473,10 +537,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 43,
-        "tokens": 62847948369,
+        "rank": 37,
+        "tokens": 87567375888,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -562,7 +626,7 @@
       "popularity": {
         "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -605,7 +669,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-10-31",
       "links": {
         "details": "/api/v1/models/poolside/laguna-s-2.1-20260720/endpoints"
       },
@@ -615,10 +679,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 27,
-        "tokens": 130057457929,
+        "rank": 32,
+        "tokens": 120100844619,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -684,14 +748,14 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1175,
+            "elo": 1176,
             "win_rate": 40.5,
-            "rank": 55
+            "rank": 54
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1101,
+            "elo": 1103,
             "win_rate": 33.9,
             "rank": 60
           },
@@ -705,9 +769,9 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1177,
-            "win_rate": 38.6,
-            "rank": 65
+            "elo": 1175,
+            "win_rate": 38.3,
+            "rank": 66
           },
           {
             "arena": "models",
@@ -727,14 +791,14 @@
             "arena": "models",
             "category": "uicomponent",
             "elo": 1206,
-            "win_rate": 41.4,
-            "rank": 52
+            "win_rate": 41.3,
+            "rank": 53
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1228,
-            "win_rate": 44.3,
+            "win_rate": 44.2,
             "rank": 48
           }
         ],
@@ -761,7 +825,7 @@
       "popularity": {
         "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -804,7 +868,7 @@
       "default_parameters": {},
       "supported_voices": null,
       "knowledge_cutoff": null,
-      "expiration_date": null,
+      "expiration_date": "2026-10-31",
       "links": {
         "details": "/api/v1/models/poolside/laguna-xs-2.1-20260625/endpoints"
       },
@@ -816,7 +880,7 @@
       "popularity": {
         "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -891,7 +955,7 @@
       "popularity": {
         "rank": 9,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -952,9 +1016,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 16,
+        "rank": 17,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -1017,7 +1081,7 @@
             "arena": "models",
             "category": "3d",
             "elo": 1147,
-            "win_rate": 39.4,
+            "win_rate": 39.3,
             "rank": 65
           },
           {
@@ -1025,7 +1089,7 @@
             "category": "asciiart",
             "elo": 1104,
             "win_rate": 37.9,
-            "rank": 58
+            "rank": 59
           },
           {
             "arena": "models",
@@ -1044,9 +1108,9 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1151,
-            "win_rate": 36.8,
-            "rank": 70
+            "elo": 1152,
+            "win_rate": 36.9,
+            "rank": 68
           },
           {
             "arena": "models",
@@ -1058,8 +1122,8 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1146,
-            "win_rate": 36.6,
+            "elo": 1148,
+            "win_rate": 36.7,
             "rank": 74
           },
           {
@@ -1088,10 +1152,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 7,
-        "tokens": 755803809994,
+        "rank": 6,
+        "tokens": 782804716601,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -1165,9 +1229,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 13,
+        "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -1237,9 +1301,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 17,
+        "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -1312,10 +1376,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 39,
-        "tokens": 71270226018,
+        "rank": 44,
+        "tokens": 63662526599,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -1372,9 +1436,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 19,
+        "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -1431,9 +1495,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 20,
+        "rank": 21,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     },
     {
@@ -1513,9 +1577,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 45,
-        "tokens": 56881987341,
+        "tokens": 57636773056,
         "source": "rankings-daily",
-        "asOf": "2026-10-02T01:00:40.408Z"
+        "asOf": "2026-10-03T01:00:40.832Z"
       }
     },
     {
@@ -1583,9 +1647,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 21,
+        "rank": 22,
         "source": "top-weekly",
-        "asOf": "2026-10-02T01:00:38.442Z"
+        "asOf": "2026-10-03T01:00:38.539Z"
       }
     }
   ],

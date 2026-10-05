@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-04T01:00:38.314Z",
+  "fetchedAt": "2026-10-05T01:00:38.206Z",
   "totalModels": 22,
   "newModelIds": [],
   "models": [
@@ -56,16 +56,24 @@
       "links": {
         "details": "/api/v1/models/inclusionai/ling-3.1-flash-20261002/endpoints"
       },
+      "benchmarks": {
+        "design_arena": [],
+        "artificial_analysis": {
+          "intelligence_index": 41.1,
+          "coding_index": null,
+          "agentic_index": null
+        }
+      },
       "reasoning": {
         "mandatory": false,
         "default_enabled": true
       },
       "addedToFreeList": "2026-10-03T01:00:38.539Z",
       "popularity": {
-        "rank": 38,
-        "tokens": 61419416707,
+        "rank": 34,
+        "tokens": 81052275771,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -128,7 +136,7 @@
       "popularity": {
         "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -194,9 +202,9 @@
       "addedToFreeList": "2026-09-23T15:07:05.356Z",
       "popularity": {
         "rank": 1,
-        "tokens": 6020921575930,
+        "tokens": 6727489898018,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -258,10 +266,10 @@
       },
       "addedToFreeList": "2026-09-05T01:00:25.456Z",
       "popularity": {
-        "rank": 47,
-        "tokens": 49492558451,
+        "rank": 45,
+        "tokens": 53082414102,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -341,10 +349,10 @@
       },
       "addedToFreeList": "2026-09-18T01:00:23.003Z",
       "popularity": {
-        "rank": 37,
-        "tokens": 63443881841,
+        "rank": 28,
+        "tokens": 101973514918,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -400,9 +408,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 5,
-        "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "rank": 48,
+        "tokens": 48115235828,
+        "source": "rankings-daily",
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -473,7 +482,7 @@
       "popularity": {
         "rank": 16,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -535,10 +544,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 34,
-        "tokens": 77378584073,
+        "rank": 27,
+        "tokens": 104423938887,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -622,9 +631,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 11,
+        "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -677,10 +686,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 28,
-        "tokens": 118094022800,
+        "rank": 24,
+        "tokens": 127397586797,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -746,9 +755,9 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1176,
-            "win_rate": 40.5,
-            "rank": 54
+            "elo": 1171,
+            "win_rate": 40.4,
+            "rank": 55
           },
           {
             "arena": "models",
@@ -767,29 +776,29 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1175,
-            "win_rate": 38.2,
-            "rank": 66
+            "elo": 1174,
+            "win_rate": 38.1,
+            "rank": 67
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1176,
-            "win_rate": 37.8,
+            "elo": 1177,
+            "win_rate": 37.9,
             "rank": 61
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1113,
+            "elo": 1114,
             "win_rate": 34.1,
             "rank": 56
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1204,
-            "win_rate": 41,
+            "elo": 1205,
+            "win_rate": 41.1,
             "rank": 53
           },
           {
@@ -823,7 +832,7 @@
       "popularity": {
         "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -876,9 +885,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 12,
+        "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -951,9 +960,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 10,
+        "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -1016,7 +1025,7 @@
       "popularity": {
         "rank": 17,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -1078,16 +1087,16 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1147,
-            "win_rate": 39.3,
-            "rank": 65
+            "elo": 1141,
+            "win_rate": 39.2,
+            "rank": 66
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1103,
-            "win_rate": 37.5,
-            "rank": 59
+            "elo": 1105,
+            "win_rate": 38,
+            "rank": 58
           },
           {
             "arena": "models",
@@ -1099,30 +1108,30 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1149,
-            "win_rate": 37.5,
-            "rank": 77
+            "elo": 1150,
+            "win_rate": 37.7,
+            "rank": 76
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1152,
-            "win_rate": 36.9,
+            "win_rate": 36.8,
             "rank": 68
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1070,
-            "win_rate": 32.9,
+            "elo": 1069,
+            "win_rate": 32.8,
             "rank": 68
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1147,
-            "win_rate": 36.6,
-            "rank": 74
+            "elo": 1146,
+            "win_rate": 36.4,
+            "rank": 75
           },
           {
             "arena": "models",
@@ -1150,10 +1159,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 5,
-        "tokens": 833570193278,
+        "rank": 6,
+        "tokens": 915630463354,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -1229,7 +1238,7 @@
       "popularity": {
         "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -1290,7 +1299,7 @@
         "artificial_analysis": {
           "intelligence_index": null,
           "coding_index": 39.3,
-          "agentic_index": null
+          "agentic_index": 2.9
         }
       },
       "reasoning": {
@@ -1301,7 +1310,7 @@
       "popularity": {
         "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -1374,10 +1383,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 41,
-        "tokens": 58887049604,
+        "rank": 44,
+        "tokens": 54465824777,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -1436,7 +1445,7 @@
       "popularity": {
         "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -1495,7 +1504,7 @@
       "popularity": {
         "rank": 21,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     },
     {
@@ -1575,9 +1584,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 39,
-        "tokens": 60777622201,
+        "tokens": 61795569788,
         "source": "rankings-daily",
-        "asOf": "2026-10-04T01:00:40.251Z"
+        "asOf": "2026-10-05T01:00:40.260Z"
       }
     },
     {
@@ -1647,7 +1656,7 @@
       "popularity": {
         "rank": 22,
         "source": "top-weekly",
-        "asOf": "2026-10-04T01:00:38.314Z"
+        "asOf": "2026-10-05T01:00:38.206Z"
       }
     }
   ],

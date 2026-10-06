@@ -1,8 +1,38 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-10-05T01:00:38.930Z",
+  "fetchedAt": "2026-10-06T01:00:39.819Z",
   "newModelIds": [],
   "archivedModels": [
+    {
+      "id": "nvidia/riva-translate-4b-instruct-v1.1",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-10-06T01:00:39.819Z",
+      "lastSeenAt": "2026-10-05T01:00:38.930Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "nvidia/riva-translate-4b-instruct-v1.1",
+        "name": "Nvidia/riva Translate 4b Instruct V1 1",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
     {
       "id": "mistralai/mistral-nemotron",
       "providerId": "nvidia-nim",
@@ -2119,29 +2149,6 @@
     {
       "id": "nvidia/riva-translate-4b-instruct",
       "name": "Nvidia/riva Translate 4b Instruct",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
-      "id": "nvidia/riva-translate-4b-instruct-v1.1",
-      "name": "Nvidia/riva Translate 4b Instruct V1 1",
       "created": 735790403,
       "description": "",
       "context_length": null,

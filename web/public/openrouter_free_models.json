@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-10-05T01:00:38.206Z",
-  "totalModels": 22,
+  "fetchedAt": "2026-10-06T01:00:38.425Z",
+  "totalModels": 20,
   "newModelIds": [],
   "models": [
     {
@@ -70,10 +70,10 @@
       },
       "addedToFreeList": "2026-10-03T01:00:38.539Z",
       "popularity": {
-        "rank": 34,
-        "tokens": 81052275771,
+        "rank": 36,
+        "tokens": 78901200527,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -134,77 +134,9 @@
       },
       "addedToFreeList": "2026-10-02T01:00:38.442Z",
       "popularity": {
-        "rank": 14,
+        "rank": 9,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
-      }
-    },
-    {
-      "id": "stealth/space-bunny-alpha",
-      "canonical_slug": "stealth/space-bunny-alpha",
-      "hugging_face_id": null,
-      "name": "Space Bunny Alpha",
-      "created": 1790174884,
-      "description": "Space Bunny Alpha is an anonymous large model with blazing-fast inference, strong coding capabilities and native multimodal input support. It delivers adjustable reasoning effort, and a 1M-token context window. Space...",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image+video->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 1000000,
-        "max_completion_tokens": 524288,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "reasoning_effort",
-        "response_format",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-10-05",
-      "links": {
-        "details": "/api/v1/models/stealth/space-bunny-alpha/endpoints"
-      },
-      "reasoning": {
-        "mandatory": true,
-        "supported_efforts": [
-          "max",
-          "xhigh",
-          "high",
-          "medium",
-          "low"
-        ],
-        "default_effort": "max"
-      },
-      "addedToFreeList": "2026-09-23T15:07:05.356Z",
-      "popularity": {
-        "rank": 1,
-        "tokens": 6727489898018,
-        "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -266,93 +198,10 @@
       },
       "addedToFreeList": "2026-09-05T01:00:25.456Z",
       "popularity": {
-        "rank": 45,
-        "tokens": 53082414102,
+        "rank": 43,
+        "tokens": 69197101194,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
-      }
-    },
-    {
-      "id": "qwen/qwen3.8-27b:free",
-      "canonical_slug": "qwen/qwen3.8-27b-20260814",
-      "hugging_face_id": "Qwen/Qwen3.8-27B",
-      "name": "Qwen: Qwen3.8 27B (free)",
-      "created": 1786722910,
-      "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text+image+video->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 235929,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "reasoning_effort",
-        "repetition_penalty",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": 20
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/qwen/qwen3.8-27b-20260814/endpoints"
-      },
-      "benchmarks": {
-        "design_arena": [],
-        "artificial_analysis": {
-          "intelligence_index": 33.7,
-          "coding_index": 68.1,
-          "agentic_index": 45.8
-        }
-      },
-      "reasoning": {
-        "mandatory": false,
-        "default_enabled": true,
-        "supported_efforts": [
-          "xhigh",
-          "medium",
-          "low"
-        ],
-        "default_effort": "xhigh"
-      },
-      "addedToFreeList": "2026-09-18T01:00:23.003Z",
-      "popularity": {
-        "rank": 28,
-        "tokens": 101973514918,
-        "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -408,10 +257,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 48,
-        "tokens": 48115235828,
+        "rank": 42,
+        "tokens": 70530273830,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -475,14 +324,22 @@
       "links": {
         "details": "/api/v1/models/liquid/lfm-2.5-2.6b-20260811/endpoints"
       },
+      "benchmarks": {
+        "design_arena": [],
+        "artificial_analysis": {
+          "intelligence_index": 8.4,
+          "coding_index": 7.7,
+          "agentic_index": null
+        }
+      },
       "reasoning": {
         "mandatory": true
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 16,
+        "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -544,10 +401,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 27,
-        "tokens": 104423938887,
+        "rank": 31,
+        "tokens": 113046874530,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -631,9 +488,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 12,
+        "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -686,10 +543,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 24,
-        "tokens": 127397586797,
+        "rank": 30,
+        "tokens": 115981212051,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -755,29 +612,29 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1171,
-            "win_rate": 40.4,
+            "elo": 1174,
+            "win_rate": 40.3,
             "rank": 55
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1102,
-            "win_rate": 33.7,
-            "rank": 60
+            "elo": 1108,
+            "win_rate": 34.3,
+            "rank": 58
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1210,
+            "elo": 1209,
             "win_rate": 42.1,
             "rank": 50
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1174,
-            "win_rate": 38.1,
+            "elo": 1173,
+            "win_rate": 38.4,
             "rank": 67
           },
           {
@@ -790,7 +647,7 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1114,
+            "elo": 1113,
             "win_rate": 34.1,
             "rank": 56
           },
@@ -798,14 +655,14 @@
             "arena": "models",
             "category": "uicomponent",
             "elo": 1205,
-            "win_rate": 41.1,
+            "win_rate": 41,
             "rank": 53
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1229,
-            "win_rate": 44.3,
+            "elo": 1228,
+            "win_rate": 44.2,
             "rank": 48
           }
         ],
@@ -832,7 +689,7 @@
       "popularity": {
         "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -885,9 +742,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 13,
+        "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -960,9 +817,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 11,
+        "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -1023,9 +880,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 17,
+        "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -1087,8 +944,8 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1141,
-            "win_rate": 39.2,
+            "elo": 1146,
+            "win_rate": 39.3,
             "rank": 66
           },
           {
@@ -1096,7 +953,7 @@
             "category": "asciiart",
             "elo": 1105,
             "win_rate": 38,
-            "rank": 58
+            "rank": 60
           },
           {
             "arena": "models",
@@ -1108,22 +965,22 @@
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1150,
-            "win_rate": 37.7,
-            "rank": 76
+            "elo": 1149,
+            "win_rate": 37.5,
+            "rank": 77
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1152,
-            "win_rate": 36.8,
+            "win_rate": 36.9,
             "rank": 68
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1069,
-            "win_rate": 32.8,
+            "elo": 1068,
+            "win_rate": 32.5,
             "rank": 68
           },
           {
@@ -1137,7 +994,7 @@
             "arena": "models",
             "category": "website",
             "elo": 1146,
-            "win_rate": 34.9,
+            "win_rate": 34.8,
             "rank": 85
           }
         ],
@@ -1159,10 +1016,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 6,
-        "tokens": 915630463354,
+        "rank": 7,
+        "tokens": 845005564428,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -1224,7 +1081,7 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 10.3,
           "coding_index": 13.8,
           "agentic_index": null
         }
@@ -1236,9 +1093,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 15,
+        "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -1297,7 +1154,7 @@
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
-          "intelligence_index": null,
+          "intelligence_index": 16.7,
           "coding_index": 39.3,
           "agentic_index": 2.9
         }
@@ -1308,9 +1165,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 18,
-        "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "rank": 50,
+        "tokens": 52959118103,
+        "source": "rankings-daily",
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -1383,10 +1241,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 44,
-        "tokens": 54465824777,
+        "rank": 47,
+        "tokens": 63092372507,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -1443,9 +1301,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 20,
+        "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -1502,9 +1360,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 21,
+        "rank": 19,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     },
     {
@@ -1583,10 +1441,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 39,
-        "tokens": 61795569788,
+        "rank": 35,
+        "tokens": 79899981945,
         "source": "rankings-daily",
-        "asOf": "2026-10-05T01:00:40.260Z"
+        "asOf": "2026-10-06T01:00:41.023Z"
       }
     },
     {
@@ -1654,13 +1512,178 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 22,
+        "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-10-05T01:00:38.206Z"
+        "asOf": "2026-10-06T01:00:38.425Z"
       }
     }
   ],
   "archivedModels": [
+    {
+      "id": "stealth/space-bunny-alpha",
+      "providerId": "openrouter",
+      "removedAt": "2026-10-06T01:00:38.425Z",
+      "lastSeenAt": "2026-10-05T01:00:38.206Z",
+      "addedToFreeList": "2026-09-23T15:07:05.356Z",
+      "model": {
+        "id": "stealth/space-bunny-alpha",
+        "canonical_slug": "stealth/space-bunny-alpha",
+        "hugging_face_id": null,
+        "name": "Space Bunny Alpha",
+        "created": 1790174884,
+        "description": "Space Bunny Alpha is an anonymous large model with blazing-fast inference, strong coding capabilities and native multimodal input support. It delivers adjustable reasoning effort, and a 1M-token context window. Space...",
+        "context_length": 1000000,
+        "architecture": {
+          "modality": "text+image+video->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 1000000,
+          "max_completion_tokens": 524288,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": "2026-10-05",
+        "links": {
+          "details": "/api/v1/models/stealth/space-bunny-alpha/endpoints"
+        },
+        "reasoning": {
+          "mandatory": true,
+          "supported_efforts": [
+            "max",
+            "xhigh",
+            "high",
+            "medium",
+            "low"
+          ],
+          "default_effort": "max"
+        },
+        "addedToFreeList": "2026-09-23T15:07:05.356Z",
+        "popularity": {
+          "rank": 1,
+          "tokens": 6727489898018,
+          "source": "rankings-daily",
+          "asOf": "2026-10-05T01:00:40.260Z"
+        }
+      }
+    },
+    {
+      "id": "qwen/qwen3.8-27b:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-10-06T01:00:38.425Z",
+      "lastSeenAt": "2026-10-05T01:00:38.206Z",
+      "addedToFreeList": "2026-09-18T01:00:23.003Z",
+      "model": {
+        "id": "qwen/qwen3.8-27b:free",
+        "canonical_slug": "qwen/qwen3.8-27b-20260814",
+        "hugging_face_id": "Qwen/Qwen3.8-27B",
+        "name": "Qwen: Qwen3.8 27B (free)",
+        "created": 1786722910,
+        "description": "Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...",
+        "context_length": 262144,
+        "architecture": {
+          "modality": "text+image+video->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Qwen",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 262144,
+          "max_completion_tokens": 235929,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "max_tokens",
+          "presence_penalty",
+          "reasoning",
+          "reasoning_effort",
+          "repetition_penalty",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 1,
+          "top_p": 0.95,
+          "top_k": 20
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/qwen/qwen3.8-27b-20260814/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [],
+          "artificial_analysis": {
+            "intelligence_index": 33.7,
+            "coding_index": 68.1,
+            "agentic_index": 45.8
+          }
+        },
+        "reasoning": {
+          "mandatory": false,
+          "default_enabled": true,
+          "supported_efforts": [
+            "xhigh",
+            "medium",
+            "low"
+          ],
+          "default_effort": "xhigh"
+        },
+        "addedToFreeList": "2026-09-18T01:00:23.003Z",
+        "popularity": {
+          "rank": 28,
+          "tokens": 101973514918,
+          "source": "rankings-daily",
+          "asOf": "2026-10-05T01:00:40.260Z"
+        }
+      }
+    },
     {
       "id": "inclusionai/ling-3.0-flash-fin:free",
       "providerId": "openrouter",

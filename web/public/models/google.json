@@ -1,7 +1,9 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-10-06T01:00:39.537Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-10-07T01:00:38.802Z",
+  "newModelIds": [
+    "gemini-nano-banana-2.1"
+  ],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",
@@ -540,6 +542,29 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T05:41:20.491Z"
+    },
+    {
+      "id": "gemini-nano-banana-2.1",
+      "name": "Nano Banana 2.1",
+      "created": 0,
+      "description": "Gemini Nano Banana 2.1.",
+      "context_length": 65536,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-10-07T01:00:38.802Z"
     },
     {
       "id": "gemini-3.5-flash",

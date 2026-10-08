@@ -1,9 +1,7 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-10-07T01:00:38.802Z",
-  "newModelIds": [
-    "gemini-nano-banana-2.1"
-  ],
+  "fetchedAt": "2026-10-08T01:00:39.025Z",
+  "newModelIds": [],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",

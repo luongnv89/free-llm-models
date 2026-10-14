@@ -12,8 +12,8 @@
         "openaiCompatibleBaseUrl": null,
         "notes": null
       },
-      "modelCount": 19,
-      "fetchedAt": "2026-10-13T01:00:15.837Z"
+      "modelCount": 17,
+      "fetchedAt": "2026-10-14T01:00:16.181Z"
     },
     {
       "id": "groq",
@@ -28,7 +28,7 @@
         "notes": null
       },
       "modelCount": 12,
-      "fetchedAt": "2026-10-13T01:00:16.042Z"
+      "fetchedAt": "2026-10-14T01:00:16.391Z"
     },
     {
       "id": "cerebras",
@@ -43,7 +43,7 @@
         "notes": null
       },
       "modelCount": 2,
-      "fetchedAt": "2026-10-13T01:00:16.218Z"
+      "fetchedAt": "2026-10-14T01:00:16.588Z"
     },
     {
       "id": "google",
@@ -57,8 +57,8 @@
         "openaiCompatibleBaseUrl": "https://generativelanguage.googleapis.com/openai/v1",
         "notes": null
       },
-      "modelCount": 45,
-      "fetchedAt": "2026-10-13T01:00:16.318Z"
+      "modelCount": 46,
+      "fetchedAt": "2026-10-14T01:00:16.679Z"
     },
     {
       "id": "huggingface",
@@ -73,7 +73,7 @@
         "notes": "Catalog served through the HF Router (Inference Providers). Free-tier accounts get monthly inference credits; usage draws down those credits rather than being permanently free."
       },
       "modelCount": 0,
-      "fetchedAt": "2026-10-13T01:00:16.610Z"
+      "fetchedAt": "2026-10-14T01:00:16.874Z"
     },
     {
       "id": "nvidia-nim",
@@ -88,135 +88,10 @@
         "notes": "Hosted NIM API access is granted via trial credits (NVAPI_KEY in NVIDIA's own docs); models are trial-credit eligible, not permanently free."
       },
       "modelCount": 80,
-      "fetchedAt": "2026-10-13T01:00:16.714Z"
+      "fetchedAt": "2026-10-14T01:00:16.967Z"
     }
   ],
   "models": [
-    {
-      "id": "inclusionai/ling-3.1-flash",
-      "canonical_slug": "inclusionai/ling-3.1-flash-20261002",
-      "hugging_face_id": null,
-      "name": "inclusionAI: Ling 3.1 Flash",
-      "created": 1790950024,
-      "description": "Ling 3.1 Flash is a hybrid reasoning mixture-of-experts model from inclusionAI, with 25B active parameters out of 560B total.",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 235929,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logprobs",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/inclusionai/ling-3.1-flash-20261002/endpoints"
-      },
-      "benchmarks": {
-        "design_arena": [],
-        "artificial_analysis": {
-          "intelligence_index": 41.1,
-          "coding_index": null,
-          "agentic_index": null
-        }
-      },
-      "reasoning": {
-        "mandatory": false,
-        "default_enabled": true
-      },
-      "addedToFreeList": "2026-10-03T01:00:38.539Z"
-    },
-    {
-      "id": "apodex/apodex-1.1-mini:free",
-      "canonical_slug": "apodex/apodex-1.1-mini-20261001",
-      "hugging_face_id": null,
-      "name": "Apodex: Apodex 1.1 Mini (free)",
-      "created": 1790875335,
-      "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 235929,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/apodex/apodex-1.1-mini-20261001/endpoints"
-      },
-      "reasoning": {
-        "mandatory": false
-      },
-      "addedToFreeList": "2026-10-02T01:00:38.442Z"
-    },
     {
       "id": "dots-studio/dots-3-note-preview:free",
       "canonical_slug": "dots-studio/dots-3-note-preview-20260813",
@@ -317,8 +192,7 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
-        "top_p"
+        "top_logprobs"
       ],
       "default_parameters": {
         "temperature": 0.1,
@@ -604,28 +478,28 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1164,
-            "win_rate": 40.5,
-            "rank": 60
+            "elo": 1163,
+            "win_rate": 40.3,
+            "rank": 62
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1092,
-            "win_rate": 34,
-            "rank": 63
+            "elo": 1094,
+            "win_rate": 33.9,
+            "rank": 62
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1208,
-            "win_rate": 42.3,
-            "rank": 55
+            "win_rate": 42.2,
+            "rank": 56
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1164,
+            "elo": 1163,
             "win_rate": 37.9,
             "rank": 73
           },
@@ -633,8 +507,8 @@
             "arena": "models",
             "category": "gamedev",
             "elo": 1170,
-            "win_rate": 37.8,
-            "rank": 65
+            "win_rate": 37.9,
+            "rank": 66
           },
           {
             "arena": "models",
@@ -646,15 +520,15 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1201,
+            "elo": 1200,
             "win_rate": 40.2,
-            "rank": 56
+            "rank": 57
           },
           {
             "arena": "models",
             "category": "website",
             "elo": 1226,
-            "win_rate": 44.6,
+            "win_rate": 44.5,
             "rank": 52
           }
         ],
@@ -916,14 +790,14 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1133,
+            "elo": 1132,
             "win_rate": 39,
-            "rank": 73
+            "rank": 74
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1098,
+            "elo": 1097,
             "win_rate": 37.5,
             "rank": 60
           },
@@ -931,36 +805,36 @@
             "arena": "models",
             "category": "codecategories",
             "elo": 1148,
-            "win_rate": 36.1,
-            "rank": 82
+            "win_rate": 36,
+            "rank": 83
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1142,
+            "elo": 1141,
             "win_rate": 37.3,
-            "rank": 82
+            "rank": 83
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1143,
+            "elo": 1142,
             "win_rate": 36.3,
-            "rank": 75
+            "rank": 77
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1069,
-            "win_rate": 32.5,
+            "elo": 1068,
+            "win_rate": 32.4,
             "rank": 69
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1144,
-            "win_rate": 36.3,
-            "rank": 77
+            "elo": 1142,
+            "win_rate": 36.2,
+            "rank": 78
           },
           {
             "arena": "models",
@@ -1446,52 +1320,6 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z"
     },
     {
-      "id": "meta-llama/llama-prompt-guard-2-22m",
-      "name": "Meta Llama/llama Prompt Guard 2 22m",
-      "created": 1748632101,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-20b",
-      "name": "Openai/gpt Oss 20b",
-      "created": 1754407957,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
       "id": "canopylabs/orpheus-arabic-saudi",
       "name": "Canopylabs/orpheus Arabic Saudi",
       "created": 1765926439,
@@ -1520,52 +1348,6 @@
       "created": 1728413088,
       "description": "",
       "context_length": 448,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "qwen/qwen3.8-27b",
-      "name": "Qwen/qwen3 8 27b",
-      "created": 1786984846,
-      "description": "",
-      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1630,6 +1412,29 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
+      "id": "allam-2-7b",
+      "name": "Allam 2 7b",
+      "created": 1737672203,
+      "description": "",
+      "context_length": 4096,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
       "id": "qwen/qwen3.6-27b",
       "name": "Qwen/qwen3 6 27b",
       "created": 1778288776,
@@ -1653,11 +1458,34 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "canopylabs/orpheus-v1-english",
-      "name": "Canopylabs/orpheus V1 English",
-      "created": 1766186316,
+      "id": "openai/gpt-oss-20b",
+      "name": "Openai/gpt Oss 20b",
+      "created": 1754407957,
       "description": "",
-      "context_length": 4000,
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "qwen/qwen3.8-27b",
+      "name": "Qwen/qwen3 8 27b",
+      "created": 1786984846,
+      "description": "",
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1699,11 +1527,57 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
+      "id": "meta-llama/llama-prompt-guard-2-22m",
+      "name": "Meta Llama/llama Prompt Guard 2 22m",
+      "created": 1748632101,
       "description": "",
-      "context_length": 4096,
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "meta-llama/llama-prompt-guard-2-86m",
+      "name": "Meta Llama/llama Prompt Guard 2 86m",
+      "created": 1748632165,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "canopylabs/orpheus-v1-english",
+      "name": "Canopylabs/orpheus V1 English",
+      "created": 1766186316,
+      "description": "",
+      "context_length": 4000,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -2479,6 +2353,29 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T22:52:15.888Z"
+    },
+    {
+      "id": "gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "created": 0,
+      "description": "Gemini 4 Argon",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-10-14T01:00:16.679Z"
     },
     {
       "id": "lyria-3-clip-preview",

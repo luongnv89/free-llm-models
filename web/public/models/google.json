@@ -1,9 +1,7 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-10-14T01:00:16.679Z",
-  "newModelIds": [
-    "gemini-4-argon"
-  ],
+  "fetchedAt": "2026-10-15T01:00:16.061Z",
+  "newModelIds": [],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",

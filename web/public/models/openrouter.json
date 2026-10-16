@@ -1,7 +1,9 @@
 {
   "providerId": "openrouter",
-  "fetchedAt": "2026-10-15T01:00:15.594Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-10-16T01:00:15.775Z",
+  "newModelIds": [
+    "nvidia/nemotron-3.5-super-vl:free"
+  ],
   "archivedModels": [
     {
       "id": "inclusionai/ling-3.1-flash",
@@ -1438,6 +1440,69 @@
   ],
   "models": [
     {
+      "id": "nvidia/nemotron-3.5-super-vl:free",
+      "canonical_slug": "nvidia/nemotron-3.5-super-vl-20261015",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+      "name": "NVIDIA: Nemotron 3.5 Super VL (free)",
+      "created": 1792076662,
+      "description": "NVIDIA Nemotron 3.5 Super VL is an open multimodal mixture-of-experts model from NVIDIA, with 12B active parameters out of 120B total. It takes text, images, documents, GUI screenshots, and video...",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/nvidia/nemotron-3.5-super-vl-20261015/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [],
+        "artificial_analysis": {
+          "intelligence_index": 26.5,
+          "coding_index": null,
+          "agentic_index": null
+        }
+      },
+      "reasoning": {
+        "mandatory": false
+      },
+      "addedToFreeList": "2026-10-16T01:00:15.775Z"
+    },
+    {
       "id": "dots-studio/dots-3-note-preview:free",
       "canonical_slug": "dots-studio/dots-3-note-preview-20260813",
       "hugging_face_id": null,
@@ -1823,8 +1888,8 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1162,
-            "win_rate": 40.1,
+            "elo": 1161,
+            "win_rate": 40,
             "rank": 63
           },
           {
@@ -1845,27 +1910,27 @@
             "arena": "models",
             "category": "dataviz",
             "elo": 1162,
-            "win_rate": 37.9,
-            "rank": 74
+            "win_rate": 37.8,
+            "rank": 75
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1169,
-            "win_rate": 37.9,
+            "win_rate": 38,
             "rank": 67
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1112,
-            "win_rate": 35,
+            "elo": 1111,
+            "win_rate": 34.9,
             "rank": 57
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1200,
+            "elo": 1197,
             "win_rate": 40.2,
             "rank": 58
           },
@@ -1873,7 +1938,7 @@
             "arena": "models",
             "category": "website",
             "elo": 1226,
-            "win_rate": 44.6,
+            "win_rate": 44.5,
             "rank": 53
           }
         ],
@@ -2135,7 +2200,7 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1131,
+            "elo": 1132,
             "win_rate": 38.9,
             "rank": 75
           },
@@ -2149,7 +2214,7 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1148,
+            "elo": 1149,
             "win_rate": 36.1,
             "rank": 84
           },
@@ -2157,34 +2222,34 @@
             "arena": "models",
             "category": "dataviz",
             "elo": 1142,
-            "win_rate": 37.4,
-            "rank": 83
+            "win_rate": 37.5,
+            "rank": 84
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1141,
-            "win_rate": 36.2,
+            "win_rate": 36.3,
             "rank": 78
           },
           {
             "arena": "models",
             "category": "svg",
             "elo": 1069,
-            "win_rate": 32.5,
+            "win_rate": 32.4,
             "rank": 69
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1142,
+            "elo": 1139,
             "win_rate": 36.1,
-            "rank": 79
+            "rank": 80
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1145,
+            "elo": 1146,
             "win_rate": 35.1,
             "rank": 91
           }
@@ -2201,7 +2266,8 @@
         "supports_max_tokens": true,
         "supported_efforts": [
           "high",
-          "medium"
+          "medium",
+          "none"
         ],
         "default_effort": "high"
       },
@@ -2593,7 +2659,8 @@
         "supports_max_tokens": true,
         "supported_efforts": [
           "medium",
-          "low"
+          "low",
+          "none"
         ],
         "default_effort": "medium"
       },

@@ -1,8 +1,41 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-10-15T01:00:16.344Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-10-16T01:00:22.730Z",
+  "newModelIds": [
+    "nvidia/nemotron-3.5-super-vl-120b-a12b",
+    "stepfun-ai/step-5-preview"
+  ],
   "archivedModels": [
+    {
+      "id": "moonshotai/kimi-k3",
+      "providerId": "nvidia-nim",
+      "removedAt": "2026-10-16T01:00:22.730Z",
+      "lastSeenAt": "2026-10-15T01:00:16.344Z",
+      "addedToFreeList": "2026-08-26T08:32:51.070Z",
+      "model": {
+        "id": "moonshotai/kimi-k3",
+        "name": "Moonshotai/kimi K3",
+        "created": 735790403,
+        "description": "",
+        "context_length": null,
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "providerId": "nvidia-nim",
+        "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+        "addedToFreeList": "2026-08-26T08:32:51.070Z"
+      }
+    },
     {
       "id": "nvidia/riva-translate-4b-instruct-v1.1",
       "providerId": "nvidia-nim",
@@ -1434,29 +1467,6 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
-      "id": "moonshotai/kimi-k3",
-      "name": "Moonshotai/kimi K3",
-      "created": 735790403,
-      "description": "",
-      "context_length": null,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "nvidia-nim",
-      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
-      "addedToFreeList": "2026-08-26T08:32:51.070Z"
-    },
-    {
       "id": "nv-mistralai/mistral-nemo-12b-instruct",
       "name": "Nv Mistralai/mistral Nemo 12b Instruct",
       "created": 735790403,
@@ -1963,6 +1973,29 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
+      "id": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+      "name": "Nvidia/nemotron 3 5 Super Vl 120b A12b",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-10-16T01:00:22.730Z"
+    },
+    {
       "id": "nvidia/nemotron-4-340b-instruct",
       "name": "Nvidia/nemotron 4 340b Instruct",
       "created": 735790403,
@@ -2283,6 +2316,29 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
+    },
+    {
+      "id": "stepfun-ai/step-5-preview",
+      "name": "Stepfun Ai/step 5 Preview",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-10-16T01:00:22.730Z"
     },
     {
       "id": "writer/palmyra-creative-122b",

@@ -1,8 +1,8 @@
 {
   "providerId": "openrouter",
-  "fetchedAt": "2026-10-16T01:00:15.775Z",
+  "fetchedAt": "2026-10-17T01:00:15.796Z",
   "newModelIds": [
-    "nvidia/nemotron-3.5-super-vl:free"
+    "xingchen-agi/xing4.0-29b-a4b:free"
   ],
   "archivedModels": [
     {
@@ -1440,6 +1440,70 @@
   ],
   "models": [
     {
+      "id": "xingchen-agi/xing4.0-29b-a4b:free",
+      "canonical_slug": "xingchen-agi/xing4.0-29b-a4b-20261015",
+      "hugging_face_id": "XingChen-AGI/Xing4.0-29B-A4B",
+      "name": "XingChen: Xing4.0 29B A4B (free)",
+      "created": 1792177496,
+      "description": "Xing4.0-29B-A4B is an open-weight mixture-of-experts language model from China Telecom's AI team (TeleAI) and the successor to the TeleChat series. It has 29B total parameters with 4B active per token...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "repetition_penalty": 1.05
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/xingchen-agi/xing4.0-29b-a4b-20261015/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
+      },
+      "addedToFreeList": "2026-10-17T01:00:15.796Z"
+    },
+    {
       "id": "nvidia/nemotron-3.5-super-vl:free",
       "canonical_slug": "nvidia/nemotron-3.5-super-vl-20261015",
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
@@ -1490,7 +1554,29 @@
         "details": "/api/v1/models/nvidia/nemotron-3.5-super-vl-20261015/endpoints"
       },
       "benchmarks": {
-        "design_arena": [],
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1160,
+            "win_rate": 33.1,
+            "rank": 79
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1117,
+            "win_rate": 29.8,
+            "rank": 88
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1175,
+            "win_rate": 35,
+            "rank": 77
+          }
+        ],
         "artificial_analysis": {
           "intelligence_index": 26.5,
           "coding_index": null,
@@ -1881,14 +1967,14 @@
           {
             "arena": "agents",
             "category": "webapps",
-            "elo": 1189,
+            "elo": 1187,
             "win_rate": 48.6,
             "rank": 22
           },
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1161,
+            "elo": 1162,
             "win_rate": 40,
             "rank": 63
           },
@@ -1902,9 +1988,9 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1208,
+            "elo": 1207,
             "win_rate": 42.2,
-            "rank": 56
+            "rank": 57
           },
           {
             "arena": "models",
@@ -1917,27 +2003,27 @@
             "arena": "models",
             "category": "gamedev",
             "elo": 1169,
-            "win_rate": 38,
+            "win_rate": 38.1,
             "rank": 67
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1111,
-            "win_rate": 34.9,
+            "elo": 1113,
+            "win_rate": 35,
             "rank": 57
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1197,
+            "elo": 1199,
             "win_rate": 40.2,
-            "rank": 58
+            "rank": 57
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1226,
+            "elo": 1225,
             "win_rate": 44.5,
             "rank": 53
           }
@@ -2200,23 +2286,23 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1132,
+            "elo": 1133,
             "win_rate": 38.9,
             "rank": 75
           },
           {
             "arena": "models",
             "category": "asciiart",
-            "elo": 1097,
-            "win_rate": 37.5,
+            "elo": 1099,
+            "win_rate": 37.8,
             "rank": 60
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1149,
+            "elo": 1148,
             "win_rate": 36.1,
-            "rank": 84
+            "rank": 85
           },
           {
             "arena": "models",
@@ -2228,30 +2314,30 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1141,
+            "elo": 1140,
             "win_rate": 36.3,
             "rank": 78
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1069,
+            "elo": 1068,
             "win_rate": 32.4,
             "rank": 69
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1139,
+            "elo": 1140,
             "win_rate": 36.1,
-            "rank": 80
+            "rank": 79
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1146,
-            "win_rate": 35.1,
-            "rank": 91
+            "elo": 1145,
+            "win_rate": 35.2,
+            "rank": 92
           }
         ],
         "artificial_analysis": {

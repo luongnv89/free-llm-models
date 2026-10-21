@@ -1,7 +1,10 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-10-20T01:00:27.229Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-10-21T01:00:27.699Z",
+  "newModelIds": [
+    "nvidia/nemotron-3.5-embed-1b",
+    "nvidia/nemotron-3.5-embed-8b"
+  ],
   "archivedModels": [
     {
       "id": "moonshotai/kimi-k3",
@@ -1945,6 +1948,52 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
+    },
+    {
+      "id": "nvidia/nemotron-3.5-embed-1b",
+      "name": "Nvidia/nemotron 3 5 Embed 1b",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-10-21T01:00:27.699Z"
+    },
+    {
+      "id": "nvidia/nemotron-3.5-embed-8b",
+      "name": "Nvidia/nemotron 3 5 Embed 8b",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-10-21T01:00:27.699Z"
     },
     {
       "id": "nvidia/nemotron-3.5-lightning-30b-a3b",

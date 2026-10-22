@@ -1,10 +1,7 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-10-21T01:00:27.699Z",
-  "newModelIds": [
-    "nvidia/nemotron-3.5-embed-1b",
-    "nvidia/nemotron-3.5-embed-8b"
-  ],
+  "fetchedAt": "2026-10-22T01:00:27.238Z",
+  "newModelIds": [],
   "archivedModels": [
     {
       "id": "moonshotai/kimi-k3",

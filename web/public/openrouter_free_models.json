@@ -1,9 +1,7 @@
 {
-  "fetchedAt": "2026-10-22T01:00:26.464Z",
-  "totalModels": 21,
-  "newModelIds": [
-    "recursive/flint-v1.0:free"
-  ],
+  "fetchedAt": "2026-10-23T01:00:26.486Z",
+  "totalModels": 20,
+  "newModelIds": [],
   "models": [
     {
       "id": "recursive/flint-v1.0:free",
@@ -59,85 +57,9 @@
       },
       "addedToFreeList": "2026-10-22T01:00:26.464Z",
       "popularity": {
-        "rank": 16,
+        "rank": 13,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
-      }
-    },
-    {
-      "id": "minimax/minimax-m3.1-flash:free",
-      "canonical_slug": "minimax/minimax-m3.1-flash-20261019",
-      "hugging_face_id": null,
-      "name": "MiniMax: MiniMax M3.1 Flash (free)",
-      "created": 1792379569,
-      "description": "MiniMax-M3.1-Flash is a multimodal model from MiniMax. Compared with M3, it delivers significant improvements across multiple benchmarks, particularly in complex agentic tasks, coding, and cybersecurity. It is built for complex,...",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image+video->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 1000000,
-        "max_completion_tokens": 524288,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "reasoning_effort",
-        "response_format",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/minimax/minimax-m3.1-flash-20261019/endpoints"
-      },
-      "benchmarks": {
-        "design_arena": [],
-        "artificial_analysis": {
-          "intelligence_index": 42.7,
-          "coding_index": null,
-          "agentic_index": null
-        }
-      },
-      "reasoning": {
-        "mandatory": true,
-        "supported_efforts": [
-          "max",
-          "xhigh",
-          "high",
-          "medium",
-          "low"
-        ],
-        "default_effort": "max"
-      },
-      "addedToFreeList": "2026-10-20T01:00:26.436Z",
-      "popularity": {
-        "rank": 1,
-        "tokens": 5378268675918,
-        "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -204,9 +126,9 @@
       },
       "addedToFreeList": "2026-10-17T01:00:15.796Z",
       "popularity": {
-        "rank": 12,
+        "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -264,36 +186,36 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1129,
-            "win_rate": 28.5,
-            "rank": 78
+            "elo": 1127,
+            "win_rate": 28.4,
+            "rank": 81
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1156,
-            "win_rate": 32.8,
+            "elo": 1154,
+            "win_rate": 32.6,
             "rank": 82
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1111,
-            "win_rate": 29.2,
+            "elo": 1109,
+            "win_rate": 29,
             "rank": 93
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1143,
-            "win_rate": 32,
-            "rank": 81
+            "elo": 1149,
+            "win_rate": 31.8,
+            "rank": 77
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1173,
-            "win_rate": 34.9,
+            "elo": 1172,
+            "win_rate": 34.8,
             "rank": 81
           }
         ],
@@ -308,10 +230,10 @@
       },
       "addedToFreeList": "2026-10-16T01:00:15.775Z",
       "popularity": {
-        "rank": 31,
-        "tokens": 133828356575,
+        "rank": 32,
+        "tokens": 138596010085,
         "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:29.556Z"
       }
     },
     {
@@ -367,10 +289,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 42,
-        "tokens": 75471467534,
+        "rank": 43,
+        "tokens": 80242245843,
         "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:29.556Z"
       }
     },
     {
@@ -448,7 +370,7 @@
       "popularity": {
         "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -510,10 +432,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 28,
-        "tokens": 149564705199,
+        "rank": 29,
+        "tokens": 153987632621,
         "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:29.556Z"
       }
     },
     {
@@ -597,9 +519,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 10,
+        "rank": 9,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -652,10 +574,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 33,
-        "tokens": 120380928796,
+        "rank": 34,
+        "tokens": 119388961714,
         "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:29.556Z"
       }
     },
     {
@@ -742,16 +664,16 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1206,
-            "win_rate": 42.2,
-            "rank": 58
+            "elo": 1205,
+            "win_rate": 42.3,
+            "rank": 59
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1159,
-            "win_rate": 37.5,
-            "rank": 78
+            "elo": 1157,
+            "win_rate": 37.4,
+            "rank": 80
           },
           {
             "arena": "models",
@@ -763,21 +685,21 @@
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1110,
-            "win_rate": 34.6,
-            "rank": 57
+            "elo": 1108,
+            "win_rate": 34.4,
+            "rank": 59
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1201,
-            "win_rate": 40.5,
+            "elo": 1199,
+            "win_rate": 40.6,
             "rank": 58
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1224,
+            "elo": 1225,
             "win_rate": 44.6,
             "rank": 57
           }
@@ -803,9 +725,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 8,
+        "rank": 7,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -858,9 +780,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 11,
+        "rank": 10,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -933,9 +855,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 9,
+        "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -998,7 +920,7 @@
       "popularity": {
         "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -1060,7 +982,7 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1132,
+            "elo": 1131,
             "win_rate": 38.9,
             "rank": 76
           },
@@ -1074,37 +996,37 @@
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1147,
+            "elo": 1146,
             "win_rate": 36.1,
             "rank": 87
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1141,
-            "win_rate": 37.5,
+            "elo": 1142,
+            "win_rate": 37.4,
             "rank": 85
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1138,
-            "win_rate": 36.2,
-            "rank": 82
+            "win_rate": 36.1,
+            "rank": 81
           },
           {
             "arena": "models",
             "category": "svg",
             "elo": 1070,
             "win_rate": 32.4,
-            "rank": 69
+            "rank": 70
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1139,
-            "win_rate": 35.8,
-            "rank": 83
+            "elo": 1135,
+            "win_rate": 35.6,
+            "rank": 84
           },
           {
             "arena": "models",
@@ -1134,9 +1056,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 8,
-        "tokens": 998549993059,
+        "tokens": 943262508142,
         "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:29.556Z"
       }
     },
     {
@@ -1210,9 +1132,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 13,
+        "rank": 12,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -1282,10 +1204,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 50,
-        "tokens": 55394418586,
+        "rank": 49,
+        "tokens": 56180177496,
         "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:29.556Z"
       }
     },
     {
@@ -1358,10 +1280,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 40,
-        "tokens": 84658760411,
+        "rank": 44,
+        "tokens": 78397108960,
         "source": "rankings-daily",
-        "asOf": "2026-10-22T01:00:28.285Z"
+        "asOf": "2026-10-23T01:00:29.556Z"
       }
     },
     {
@@ -1418,9 +1340,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 19,
+        "rank": 18,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -1477,9 +1399,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 20,
+        "rank": 19,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -1559,9 +1481,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 7,
+        "rank": 6,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     },
     {
@@ -1629,13 +1551,96 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 21,
+        "rank": 20,
         "source": "top-weekly",
-        "asOf": "2026-10-22T01:00:26.464Z"
+        "asOf": "2026-10-23T01:00:26.486Z"
       }
     }
   ],
   "archivedModels": [
+    {
+      "id": "minimax/minimax-m3.1-flash:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-10-23T01:00:26.486Z",
+      "lastSeenAt": "2026-10-22T01:00:26.464Z",
+      "addedToFreeList": "2026-10-20T01:00:26.436Z",
+      "model": {
+        "id": "minimax/minimax-m3.1-flash:free",
+        "canonical_slug": "minimax/minimax-m3.1-flash-20261019",
+        "hugging_face_id": null,
+        "name": "MiniMax: MiniMax M3.1 Flash (free)",
+        "created": 1792379569,
+        "description": "MiniMax-M3.1-Flash is a multimodal model from MiniMax. Compared with M3, it delivers significant improvements across multiple benchmarks, particularly in complex agentic tasks, coding, and cybersecurity. It is built for complex,...",
+        "context_length": 1000000,
+        "architecture": {
+          "modality": "text+image+video->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 1000000,
+          "max_completion_tokens": 524288,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/minimax/minimax-m3.1-flash-20261019/endpoints"
+        },
+        "benchmarks": {
+          "design_arena": [],
+          "artificial_analysis": {
+            "intelligence_index": 42.7,
+            "coding_index": null,
+            "agentic_index": null
+          }
+        },
+        "reasoning": {
+          "mandatory": true,
+          "supported_efforts": [
+            "max",
+            "xhigh",
+            "high",
+            "medium",
+            "low"
+          ],
+          "default_effort": "max"
+        },
+        "addedToFreeList": "2026-10-20T01:00:26.436Z",
+        "popularity": {
+          "rank": 1,
+          "tokens": 5378268675918,
+          "source": "rankings-daily",
+          "asOf": "2026-10-22T01:00:28.285Z"
+        }
+      }
+    },
     {
       "id": "inclusionai/ling-3.1-flash",
       "providerId": "openrouter",

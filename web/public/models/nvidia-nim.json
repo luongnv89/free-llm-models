@@ -1,7 +1,10 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-10-23T01:00:27.258Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-10-24T01:00:27.406Z",
+  "newModelIds": [
+    "minimaxai/minimax-m3.1-flash",
+    "nvidia/nemotron-3.5-bolt-e4b"
+  ],
   "archivedModels": [
     {
       "id": "moonshotai/kimi-k3",
@@ -1326,6 +1329,29 @@
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
     },
     {
+      "id": "minimaxai/minimax-m3.1-flash",
+      "name": "Minimaxai/minimax M3 1 Flash",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-10-24T01:00:27.406Z"
+    },
+    {
       "id": "mistralai/codestral-22b-instruct-v0.1",
       "name": "Mistralai/codestral 22b Instruct V0 1",
       "created": 735790403,
@@ -1922,6 +1948,29 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
+    },
+    {
+      "id": "nvidia/nemotron-3.5-bolt-e4b",
+      "name": "Nvidia/nemotron 3 5 Bolt E4b",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-10-24T01:00:27.406Z"
     },
     {
       "id": "nvidia/nemotron-3.5-content-safety",

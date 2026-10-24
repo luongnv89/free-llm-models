@@ -1,6 +1,6 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-10-23T01:00:26.946Z",
+  "fetchedAt": "2026-10-24T01:00:27.053Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -1072,9 +1072,9 @@
     },
     {
       "id": "deep-research-pro-preview-12-2025",
-      "name": "Deep Research Pro Preview (Dec-12-2025)",
+      "name": "Deep Research Pro Preview (Dec-12-2025) [Rerouted]",
       "created": 0,
-      "description": "Preview release (December 12th, 2025) of Deep Research Pro",
+      "description": "Deprecated preview agent; automatically rerouting traffic to deep-research-preview-04-2026.",
       "context_length": 131072,
       "pricing": {
         "prompt": "0",

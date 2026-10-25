@@ -1,10 +1,7 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-10-24T01:00:27.406Z",
-  "newModelIds": [
-    "minimaxai/minimax-m3.1-flash",
-    "nvidia/nemotron-3.5-bolt-e4b"
-  ],
+  "fetchedAt": "2026-10-25T02:00:27.619Z",
+  "newModelIds": [],
   "archivedModels": [
     {
       "id": "moonshotai/kimi-k3",

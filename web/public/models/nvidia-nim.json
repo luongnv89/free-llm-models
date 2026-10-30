@@ -1,7 +1,9 @@
 {
   "providerId": "nvidia-nim",
-  "fetchedAt": "2026-10-29T02:00:27.839Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-10-30T02:00:27.701Z",
+  "newModelIds": [
+    "mistralai/mistral-large-4-1t-a52b"
+  ],
   "archivedModels": [
     {
       "id": "z-ai/glm-5.3",
@@ -1469,6 +1471,29 @@
       "providerId": "nvidia-nim",
       "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
       "addedToFreeList": "2026-08-26T08:32:51.070Z"
+    },
+    {
+      "id": "mistralai/mistral-large-4-1t-a52b",
+      "name": "Mistralai/mistral Large 4 1t A52b",
+      "created": 735790403,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "nvidia-nim",
+      "sourceUrl": "https://integrate.api.nvidia.com/v1/models",
+      "addedToFreeList": "2026-10-30T02:00:27.701Z"
     },
     {
       "id": "mistralai/mixtral-8x22b-v0.1",

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-30T02:00:26.976Z",
+  "fetchedAt": "2026-10-31T02:00:26.934Z",
   "totalModels": 5,
   "newModelIds": [],
   "models": [
@@ -56,6 +56,12 @@
       "links": {
         "details": "/api/v1/models/google/gemma-4-26b-a4b-it-20260403/endpoints"
       },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
@@ -70,10 +76,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 49,
-        "tokens": 55931573998,
-        "source": "rankings-daily",
-        "asOf": "2026-10-30T02:00:28.890Z"
+        "rank": 1,
+        "source": "top-weekly",
+        "asOf": "2026-10-31T02:00:26.934Z"
       }
     },
     {
@@ -132,6 +137,12 @@
       "links": {
         "details": "/api/v1/models/google/gemma-4-31b-it-20260402/endpoints"
       },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
       "benchmarks": {
         "design_arena": [],
         "artificial_analysis": {
@@ -147,9 +158,9 @@
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 43,
-        "tokens": 78249046182,
+        "tokens": 77554470458,
         "source": "rankings-daily",
-        "asOf": "2026-10-30T02:00:28.890Z"
+        "asOf": "2026-10-31T02:00:29.031Z"
       }
     },
     {
@@ -204,11 +215,17 @@
       "links": {
         "details": "/api/v1/models/google/lyria-3-pro-preview-20260330/endpoints"
       },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 3,
         "source": "top-weekly",
-        "asOf": "2026-10-30T02:00:26.976Z"
+        "asOf": "2026-10-31T02:00:26.934Z"
       }
     },
     {
@@ -263,11 +280,17 @@
       "links": {
         "details": "/api/v1/models/google/lyria-3-clip-preview-20260330/endpoints"
       },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 4,
         "source": "top-weekly",
-        "asOf": "2026-10-30T02:00:26.976Z"
+        "asOf": "2026-10-31T02:00:26.934Z"
       }
     },
     {
@@ -322,11 +345,17 @@
       "links": {
         "details": "/api/v1/models/openrouter/free/endpoints"
       },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
         "rank": 5,
         "source": "top-weekly",
-        "asOf": "2026-10-30T02:00:26.976Z"
+        "asOf": "2026-10-31T02:00:26.934Z"
       }
     }
   ],

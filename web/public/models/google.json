@@ -1,7 +1,9 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-11-05T02:00:33.391Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-11-06T02:00:33.495Z",
+  "newModelIds": [
+    "gemini-omni-1.2-flash"
+  ],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",
@@ -655,6 +657,29 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-09-02T05:41:20.491Z"
+    },
+    {
+      "id": "gemini-omni-1.2-flash",
+      "name": "Gemini Omni 1.2 Flash",
+      "created": 0,
+      "description": "Gemini Omni 1.2 Flash",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-11-06T02:00:33.495Z"
     },
     {
       "id": "gemini-3.5-transcribe",

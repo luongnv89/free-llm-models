@@ -142,7 +142,7 @@ test('old and new normalization paths produce identical updater output', () => {
 });
 
 // ── HTTP behaviour with injected fetch ──────────────────────────────────────
-test('fetchModels hits the models endpoint with auth header when keyed', async () => {
+test('fetchModels hits the models endpoint keyless even when an API key is set', async () => {
   const calls = [];
   const adapter = makeAdapter({
     fetchImpl: async (url, init) => {
@@ -158,8 +158,28 @@ test('fetchModels hits the models endpoint with auth header when keyed', async (
 
   assert.strictEqual(calls.length, 1);
   assert.strictEqual(calls[0].url, 'https://openrouter.example/api/v1/models');
-  assert.strictEqual(calls[0].headers.Authorization, 'Bearer test-key');
+  // A keyed /models response is filtered by the account's privacy settings,
+  // which hid free models; the catalog must never depend on the key.
+  assert.strictEqual(calls[0].headers.Authorization, undefined);
   assert.strictEqual(models.length, 3);
+});
+
+test('only rankings-daily sends the API key; top-weekly stays keyless', async () => {
+  const calls = [];
+  const adapter = makeAdapter({
+    fetchImpl: async (url, init) => {
+      calls.push({ url, headers: init.headers });
+      return { ok: true, json: async () => ({ data: [] }) };
+    },
+  });
+
+  await adapter.fetchRankingsDaily();
+  await adapter.fetchTopWeekly();
+
+  assert.strictEqual(calls[0].url, 'https://openrouter.example/api/v1/datasets/rankings-daily');
+  assert.strictEqual(calls[0].headers.Authorization, 'Bearer test-key');
+  assert.strictEqual(calls[1].url, 'https://openrouter.example/api/v1/models?sort=top-weekly');
+  assert.strictEqual(calls[1].headers.Authorization, undefined);
 });
 
 test('fetchModels omits Authorization without an API key', async () => {

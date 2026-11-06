@@ -19,9 +19,10 @@ The route inventory below was compared with the Phase C harness work on
 When Phase C lands, reconcile this worksheet with the merged
 `COMPATIBILITY_REGISTRY` before releasing. The Phase C registry contains six
 harness-advertised providers: `openrouter`, `google`, `mistral`, `nvidia-nim`,
-`groq`, and `cerebras`. The dataset also lists GitHub Models and Hugging Face,
-but this registry does **not** advertise a supported harness route for them;
-do not smoke-test or document them as supported until a registry entry exists.
+`groq`, and `cerebras`. GitHub Models, Mistral, and Hugging Face have since
+been removed from the dataset; Mistral remains in the registry but has no
+models to route. Do not smoke-test or document a provider as supported unless
+it has both a registry entry and models in the dataset.
 
 ### Phase C compatibility snapshot
 

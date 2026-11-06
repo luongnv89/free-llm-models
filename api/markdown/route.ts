@@ -29,7 +29,7 @@ export default async function handler(request: Request) {
   // Generate markdown content - static but representative
   const markdown = `# Free LLM Models
 
-> A searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, and NVIDIA NIM.
+> A searchable directory of currently free AI models across OpenRouter, Groq, Google AI Studio, Cerebras, and NVIDIA NIM.
 
 ## Catalog
 

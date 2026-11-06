@@ -41,7 +41,7 @@ Each model entry includes: `id`, `name`, `description`, `context_length`, `archi
 
 ## Providers
 
-Supported providers (see README for env vars): openrouter (keyless), groq, google (Google AI Studio), cerebras, mistral, github-models, huggingface, nvidia-nim. Unconfigured providers are skipped with a warning.
+Supported providers (see README for env vars): openrouter (keyless), groq, google (Google AI Studio), cerebras, nvidia-nim. Unconfigured providers are skipped with a warning.
 
 ## How to use the data
 

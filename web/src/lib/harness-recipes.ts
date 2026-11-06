@@ -8,7 +8,6 @@ export const PROVIDER_IDS = [
   "nvidia-nim",
   "groq",
   "cerebras",
-  "huggingface",
 ] as const;
 export type ProviderId = (typeof PROVIDER_IDS)[number];
 
@@ -123,11 +122,6 @@ const PROVIDER_INFO: Record<
     providerSignupUrl: "https://cloud.cerebras.ai",
     providerDocsUrl: "https://inference-docs.cerebras.ai",
   },
-  huggingface: {
-    providerDisplayName: "Hugging Face",
-    providerSignupUrl: "https://huggingface.co/settings/tokens",
-    providerDocsUrl: "https://huggingface.co/docs/router/quickstart",
-  },
 };
 
 const API_KEY_ENV: Record<ProviderId, string> = {
@@ -137,7 +131,6 @@ const API_KEY_ENV: Record<ProviderId, string> = {
   "nvidia-nim": "NVIDIA_API_KEY",
   groq: "GROQ_API_KEY",
   cerebras: "CEREBRAS_API_KEY",
-  huggingface: "HF_TOKEN",
 };
 
 const PROVIDER_BASE_URL: Record<ProviderId, string> = {
@@ -147,7 +140,6 @@ const PROVIDER_BASE_URL: Record<ProviderId, string> = {
   "nvidia-nim": "https://integrate.api.nvidia.com/v1",
   groq: "https://api.groq.com/openai/v1",
   cerebras: "https://api.cerebras.ai/v1",
-  huggingface: "https://router.huggingface.co/v1",
 };
 
 const OPENROUTER_CLAUDE_CAVEAT =
@@ -188,12 +180,6 @@ export const COMPATIBILITY_REGISTRY = {
     "nvidia-nim": entry("nvidia-nim", "claude-code", "unsupported", "nvidia"),
     groq: entry("groq", "claude-code", "unsupported", "groq"),
     cerebras: entry("cerebras", "claude-code", "unsupported", "cerebras"),
-    huggingface: entry(
-      "huggingface",
-      "claude-code",
-      "unsupported",
-      "huggingface",
-    ),
   },
   pi: {
     openrouter: entry("openrouter", "pi", "supported", "openrouter"),
@@ -202,7 +188,6 @@ export const COMPATIBILITY_REGISTRY = {
     "nvidia-nim": entry("nvidia-nim", "pi", "supported", "nvidia"),
     groq: entry("groq", "pi", "supported", "groq"),
     cerebras: entry("cerebras", "pi", "supported", "cerebras"),
-    huggingface: entry("huggingface", "pi", "supported", "huggingface"),
   },
   opencode: {
     openrouter: entry("openrouter", "opencode", "supported", "openrouter"),
@@ -211,7 +196,6 @@ export const COMPATIBILITY_REGISTRY = {
     "nvidia-nim": entry("nvidia-nim", "opencode", "supported", "nvidia"),
     groq: entry("groq", "opencode", "supported", "groq"),
     cerebras: entry("cerebras", "opencode", "supported", "cerebras"),
-    huggingface: entry("huggingface", "opencode", "supported", "huggingface"),
   },
   codex: {
     openrouter: entry("openrouter", "codex", "supported", "openrouter"),
@@ -222,7 +206,6 @@ export const COMPATIBILITY_REGISTRY = {
       "Tool calls, streaming, and multi-turn Responses behavior still require manual verification.",
     ]),
     cerebras: entry("cerebras", "codex", "supported", "cerebras"),
-    huggingface: entry("huggingface", "codex", "supported", "huggingface"),
   },
 } as const satisfies Record<HarnessId, Record<ProviderId, CompatibilityEntry>>;
 

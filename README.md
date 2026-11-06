@@ -1,6 +1,6 @@
 # OpenRouter Free Models
 
-A tiny site + updater that tracks **free LLM models across multiple providers** (OpenRouter, Groq, Google AI Studio, Cerebras, Mistral, Hugging Face, NVIDIA NIM) and publishes a searchable UI.
+A tiny site + updater that tracks **free LLM models across multiple providers** (OpenRouter, Groq, Google AI Studio, Cerebras, NVIDIA NIM) and publishes a searchable UI.
 
 - **Site:** `web/` (Vite + React + Tailwind; fonts self-hosted via `@fontsource` — Bricolage Grotesque, Instrument Sans, IBM Plex Mono)
 - **Data fetcher:** `get_openrouter_free_models.js` (multi-provider runner: `lib/providers/run-update.js`)
@@ -18,7 +18,6 @@ A tiny site + updater that tracks **free LLM models across multiple providers** 
 | `groq` | [Groq](https://groq.com) | `GROQ_API_KEY` (required) |
 | `google` | [Google AI Studio](https://aistudio.google.com) | `GOOGLE_AI_API_KEY` (required) |
 | `cerebras` | [Cerebras](https://cloud.cerebras.ai) | `CEREBRAS_API_KEY` (optional) |
-| `huggingface` | [Hugging Face Router](https://router.huggingface.co) | `HF_TOKEN` (optional) |
 | `nvidia-nim` | [NVIDIA NIM](https://build.nvidia.com) | `NVIDIA_API_KEY` (required) |
 
 Providers whose key is missing are skipped with a warning (except where noted); one failing provider never blocks the others.
@@ -178,11 +177,10 @@ All three work with the same free models from OpenRouter, Ollama, LM Studio, or 
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
-| `OPENROUTER_API_KEY` | no | Sent to the OpenRouter API for authenticated/higher-rate-limit requests. When set, the updater may also `GET /api/v1/datasets/rankings-daily` for popularity data. Read by the fetcher and both updater scripts. |
+| `OPENROUTER_API_KEY` | no | Only used to `GET /api/v1/datasets/rankings-daily` for popularity data. The model catalog (`/api/v1/models`, including `sort=top-weekly`) is always fetched keyless, because a keyed request is filtered by that account's privacy/provider settings and would hide free models. Read by the fetcher and both updater scripts. |
 | `GROQ_API_KEY` | for Groq | Groq API key (`https://api.groq.com/openai/v1`). Get one at https://console.groq.com/keys. |
 | `GOOGLE_AI_API_KEY` | for Google | Google AI Studio key (`https://generativelanguage.googleapis.com/v1beta`). Get one at https://aistudio.google.com/apikey. |
 | `CEREBRAS_API_KEY` | no | Cerebras API key (`https://api.cerebras.ai/v1`). Get one at https://cloud.cerebras.ai. |
-| `HF_TOKEN` | no | Hugging Face token sent to the HF Router (`https://router.huggingface.co/v1`) for authenticated requests. Get one at https://huggingface.co/settings/tokens. |
 | `NVIDIA_API_KEY` | for NVIDIA NIM | NVIDIA API key sent to the hosted NIM API (`https://integrate.api.nvidia.com/v1`). Get one at https://build.nvidia.com (NVIDIA's docs call this `NVAPI_KEY`; we read `NVIDIA_API_KEY` for consistency). |
 | `PROVIDERS` | no | Comma-separated allow-list of provider ids to run (e.g. `openrouter,groq`). Unset = all providers. Same as the `--providers` flag. |
 | `PROVIDER_TIMEOUT_MS` | no | Per-provider fetch timeout in milliseconds (default `30000`). Invalid or non-positive values fall back to the default. |

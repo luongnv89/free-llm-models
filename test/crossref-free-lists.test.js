@@ -17,9 +17,10 @@ test('providerIdForHeading maps community headings onto adapter ids', () => {
   assert.strictEqual(providerIdForHeading('[OpenRouter](https://openrouter.ai)'), 'openrouter');
   assert.strictEqual(providerIdForHeading('Google AI Studio'), 'google');
   assert.strictEqual(providerIdForHeading('[NVIDIA NIM](https://build.nvidia.com)'), 'nvidia-nim');
-  assert.strictEqual(providerIdForHeading('[Mistral (La Plateforme)](https://console.mistral.ai/)'), 'mistral');
-  assert.strictEqual(providerIdForHeading('[Mistral (Codestral)](https://codestral.mistral.ai/)'), 'mistral');
-  assert.strictEqual(providerIdForHeading('[HuggingFace Inference Providers](https://huggingface.co)'), 'huggingface');
+  // Removed providers are no longer mapped, so crossref never reports them
+  // as no-local-data.
+  assert.strictEqual(providerIdForHeading('[Mistral (La Plateforme)](https://console.mistral.ai/)'), null);
+  assert.strictEqual(providerIdForHeading('[HuggingFace Inference Providers](https://huggingface.co)'), null);
   assert.strictEqual(providerIdForHeading('[GitHub Models](https://github.com/marketplace/models)'), null);
   assert.strictEqual(providerIdForHeading('Cohere'), null);
 });

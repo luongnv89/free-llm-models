@@ -44,8 +44,6 @@ const PROVIDER_MAP = [
   { id: 'openrouter', match: ['openrouter'] },
   { id: 'google', match: ['google ai studio'] },
   { id: 'nvidia-nim', match: ['nvidia nim'] },
-  { id: 'mistral', match: ['mistral (la plateforme)', 'mistral (codestral)', 'mistral la plateforme', 'mistral codestral'] },
-  { id: 'huggingface', match: ['huggingface inference providers', 'hugging face inference providers'] },
   { id: 'cerebras', match: ['cerebras'] },
   { id: 'groq', match: ['groq'] },
 ];

@@ -1,6 +1,6 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-11-09T02:00:54.924Z",
+  "fetchedAt": "2026-11-10T02:00:48.757Z",
   "newModelIds": [],
   "archivedModels": [
     {
@@ -1052,7 +1052,7 @@
       "name": "Deep Research Max Preview (Apr-21-2026)",
       "created": 0,
       "description": "Preview release (April 21st, 2026) of Deep Research Max",
-      "context_length": 131072,
+      "context_length": 1048576,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1075,7 +1075,7 @@
       "name": "Deep Research Preview (Apr-21-2026)",
       "created": 0,
       "description": "Preview release (April 21th, 2026) of Deep Research",
-      "context_length": 131072,
+      "context_length": 1048576,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1098,7 +1098,7 @@
       "name": "Deep Research Pro Preview (Dec-12-2025) [Rerouted]",
       "created": 0,
       "description": "Deprecated preview agent; automatically rerouting traffic to deep-research-preview-04-2026.",
-      "context_length": 131072,
+      "context_length": 1048576,
       "pricing": {
         "prompt": "0",
         "completion": "0"

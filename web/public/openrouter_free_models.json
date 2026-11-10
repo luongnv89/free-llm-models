@@ -1,8 +1,98 @@
 {
-  "fetchedAt": "2026-11-09T02:00:54.447Z",
+  "fetchedAt": "2026-11-10T02:00:48.283Z",
   "totalModels": 16,
-  "newModelIds": [],
+  "newModelIds": [
+    "thinkingmachines/inkling-2-small:free"
+  ],
   "models": [
+    {
+      "id": "thinkingmachines/inkling-2-small:free",
+      "canonical_slug": "thinkingmachines/inkling-2-small-20261107",
+      "hugging_face_id": null,
+      "name": "Thinking Machines: Inkling 2 Small (free)",
+      "created": 1794261847,
+      "description": "Inkling 2 Small is a multimodal mixture-of-experts reasoning model from Thinking Machines Lab, with 17B active parameters out of 594B total. It is the first model in the second Inkling...",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "seed",
+        "stop",
+        "temperature",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/thinkingmachines/inkling-2-small-20261107/endpoints"
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "benchmarks": {
+        "design_arena": [],
+        "artificial_analysis": {
+          "intelligence_index": 30.6,
+          "coding_index": null,
+          "agentic_index": null
+        }
+      },
+      "reasoning": {
+        "mandatory": true,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "default_effort": "high"
+      },
+      "addedToFreeList": "2026-11-10T02:00:48.283Z",
+      "popularity": {
+        "rank": 10,
+        "source": "top-weekly",
+        "asOf": "2026-11-10T02:00:48.283Z"
+      }
+    },
     {
       "id": "liquid/lfm-3-1.7b:free",
       "canonical_slug": "liquid/lfm-3-1.7b-20261106",
@@ -77,85 +167,7 @@
       "popularity": {
         "rank": 11,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
-      }
-    },
-    {
-      "id": "stealth/crouton-alpha",
-      "canonical_slug": "stealth/crouton-alpha",
-      "hugging_face_id": null,
-      "name": "Crouton Alpha",
-      "created": 1793669930,
-      "description": "Crouton Alpha is a lightweight model built for scalable coding, agentic, and multimodal workflows. It's ideal for executing agentic sub-tasks, tool use, and document analysis in high-volume, repeated work. Developers...",
-      "context_length": 1048576,
-      "architecture": {
-        "modality": "text+image+file+audio+video->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video",
-          "file",
-          "audio"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 1048576,
-        "max_completion_tokens": 943718,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "reasoning_effort",
-        "response_format",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/stealth/crouton-alpha/endpoints"
-      },
-      "endpoints": [
-        "/api/v1/chat/completions",
-        "/api/v1/completions",
-        "/api/v1/messages",
-        "/api/v1/responses"
-      ],
-      "reasoning": {
-        "mandatory": true,
-        "supported_efforts": [
-          "max",
-          "xhigh",
-          "high",
-          "medium",
-          "low",
-          "minimal"
-        ],
-        "default_effort": "max"
-      },
-      "addedToFreeList": "2026-11-06T23:17:52.116Z",
-      "popularity": {
-        "rank": 6,
-        "tokens": 935744392333,
-        "source": "rankings-daily",
-        "asOf": "2026-11-09T02:00:56.208Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -218,9 +230,9 @@
       },
       "addedToFreeList": "2026-10-22T01:00:26.464Z",
       "popularity": {
-        "rank": 8,
+        "rank": 6,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -293,9 +305,9 @@
       },
       "addedToFreeList": "2026-10-17T01:00:15.796Z",
       "popularity": {
-        "rank": 9,
+        "rank": 8,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -359,23 +371,23 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1127,
-            "win_rate": 31.3,
-            "rank": 82
+            "elo": 1122,
+            "win_rate": 30.8,
+            "rank": 83
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1150,
+            "elo": 1151,
             "win_rate": 33.4,
-            "rank": 88
+            "rank": 87
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1091,
-            "win_rate": 26.5,
-            "rank": 105
+            "elo": 1099,
+            "win_rate": 27.4,
+            "rank": 101
           },
           {
             "arena": "models",
@@ -387,9 +399,9 @@
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1140,
-            "win_rate": 31.4,
-            "rank": 85
+            "elo": 1143,
+            "win_rate": 31.7,
+            "rank": 84
           },
           {
             "arena": "models",
@@ -410,10 +422,10 @@
       },
       "addedToFreeList": "2026-10-16T01:00:15.775Z",
       "popularity": {
-        "rank": 16,
-        "tokens": 378968261827,
+        "rank": 17,
+        "tokens": 442287937869,
         "source": "rankings-daily",
-        "asOf": "2026-11-09T02:00:56.208Z"
+        "asOf": "2026-11-10T02:00:50.020Z"
       }
     },
     {
@@ -475,10 +487,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 34,
-        "tokens": 96902436469,
+        "rank": 36,
+        "tokens": 98683419467,
         "source": "rankings-daily",
-        "asOf": "2026-11-09T02:00:56.208Z"
+        "asOf": "2026-11-10T02:00:50.020Z"
       }
     },
     {
@@ -561,9 +573,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 10,
+        "rank": 9,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -631,10 +643,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 28,
-        "tokens": 146054292073,
+        "rank": 31,
+        "tokens": 154987696834,
         "source": "rankings-daily",
-        "asOf": "2026-11-09T02:00:56.208Z"
+        "asOf": "2026-11-10T02:00:50.020Z"
       }
     },
     {
@@ -713,9 +725,9 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 6,
+        "rank": 5,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -811,21 +823,21 @@
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1135,
+            "elo": 1136,
             "win_rate": 35.8,
-            "rank": 82
+            "rank": 81
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1067,
-            "win_rate": 32.1,
+            "elo": 1066,
+            "win_rate": 32,
             "rank": 76
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1137,
+            "elo": 1136,
             "win_rate": 36,
             "rank": 87
           },
@@ -856,10 +868,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 13,
-        "tokens": 458841867392,
+        "rank": 12,
+        "tokens": 525552425318,
         "source": "rankings-daily",
-        "asOf": "2026-11-09T02:00:56.208Z"
+        "asOf": "2026-11-10T02:00:50.020Z"
       }
     },
     {
@@ -941,7 +953,7 @@
       "popularity": {
         "rank": 7,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -1017,10 +1029,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 48,
-        "tokens": 49525107146,
+        "rank": 46,
+        "tokens": 63007549403,
         "source": "rankings-daily",
-        "asOf": "2026-11-09T02:00:56.208Z"
+        "asOf": "2026-11-10T02:00:50.020Z"
       }
     },
     {
@@ -1099,10 +1111,10 @@
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "popularity": {
-        "rank": 44,
-        "tokens": 58137639944,
+        "rank": 45,
+        "tokens": 65404935131,
         "source": "rankings-daily",
-        "asOf": "2026-11-09T02:00:56.208Z"
+        "asOf": "2026-11-10T02:00:50.020Z"
       }
     },
     {
@@ -1167,7 +1179,7 @@
       "popularity": {
         "rank": 14,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -1232,7 +1244,7 @@
       "popularity": {
         "rank": 15,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     },
     {
@@ -1308,11 +1320,96 @@
       "popularity": {
         "rank": 16,
         "source": "top-weekly",
-        "asOf": "2026-11-09T02:00:54.447Z"
+        "asOf": "2026-11-10T02:00:48.283Z"
       }
     }
   ],
   "archivedModels": [
+    {
+      "id": "stealth/crouton-alpha",
+      "providerId": "openrouter",
+      "removedAt": "2026-11-10T02:00:48.283Z",
+      "lastSeenAt": "2026-11-09T02:00:54.447Z",
+      "addedToFreeList": "2026-11-06T23:17:52.116Z",
+      "model": {
+        "id": "stealth/crouton-alpha",
+        "canonical_slug": "stealth/crouton-alpha",
+        "hugging_face_id": null,
+        "name": "Crouton Alpha",
+        "created": 1793669930,
+        "description": "Crouton Alpha is a lightweight model built for scalable coding, agentic, and multimodal workflows. It's ideal for executing agentic sub-tasks, tool use, and document analysis in high-volume, repeated work. Developers...",
+        "context_length": 1048576,
+        "architecture": {
+          "modality": "text+image+file+audio+video->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "video",
+            "file",
+            "audio"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 1048576,
+          "max_completion_tokens": 943718,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/stealth/crouton-alpha/endpoints"
+        },
+        "endpoints": [
+          "/api/v1/chat/completions",
+          "/api/v1/completions",
+          "/api/v1/messages",
+          "/api/v1/responses"
+        ],
+        "reasoning": {
+          "mandatory": true,
+          "supported_efforts": [
+            "max",
+            "xhigh",
+            "high",
+            "medium",
+            "low",
+            "minimal"
+          ],
+          "default_effort": "max"
+        },
+        "addedToFreeList": "2026-11-06T23:17:52.116Z",
+        "popularity": {
+          "rank": 6,
+          "tokens": 935744392333,
+          "source": "rankings-daily",
+          "asOf": "2026-11-09T02:00:56.208Z"
+        }
+      }
+    },
     {
       "id": "thinkingmachines/inkling-small:free",
       "providerId": "openrouter",

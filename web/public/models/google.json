@@ -1,7 +1,9 @@
 {
   "providerId": "google",
-  "fetchedAt": "2026-11-10T02:00:48.757Z",
-  "newModelIds": [],
+  "fetchedAt": "2026-11-11T02:00:49.743Z",
+  "newModelIds": [
+    "gemini-4-carbon"
+  ],
   "archivedModels": [
     {
       "id": "gemini-flash-latest-high-res-exp",
@@ -793,6 +795,29 @@
       "providerId": "google",
       "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
       "addedToFreeList": "2026-10-14T01:00:16.679Z"
+    },
+    {
+      "id": "gemini-4-carbon",
+      "name": "Gemini 4 Carbon",
+      "created": 0,
+      "description": "Gemini 4 Carbon",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "google",
+      "sourceUrl": "https://generativelanguage.googleapis.com/v1beta/models",
+      "addedToFreeList": "2026-11-11T02:00:49.743Z"
     },
     {
       "id": "lyria-3-clip-preview",

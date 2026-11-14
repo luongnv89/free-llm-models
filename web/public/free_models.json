@@ -1,12 +1,76 @@
 {
-  "fetchedAt": "2026-11-13T02:00:50.179Z",
-  "totalModels": 164,
+  "fetchedAt": "2026-11-14T02:00:48.736Z",
+  "totalModels": 163,
   "newModelIds": [
-    "particle-ai/particle-1:free",
-    "apodex/apodex-1.1-mini:free",
-    "gemini-4-hydrogen"
+    "inclusionai/ling-3.2-flash:free"
   ],
   "models": [
+    {
+      "id": "inclusionai/ling-3.2-flash:free",
+      "canonical_slug": "inclusionai/ling-3.2-flash-20261113",
+      "hugging_face_id": "inclusionAI/Ling-3.2-flash",
+      "name": "inclusionAI: Ling 3.2 Flash (free)",
+      "created": 1794591958,
+      "description": "Ling 3.2 Flash is a hybrid reasoning model from inclusionAI that accepts text and image input, with a 1M-token context window and up to 200 images per request. Thinking can...",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 262144,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/inclusionai/ling-3.2-flash-20261113/endpoints"
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true
+      },
+      "addedToFreeList": "2026-11-14T02:00:48.165Z",
+      "providerId": "openrouter"
+    },
     {
       "id": "baidu/ernie-5.5-flash-preview:free",
       "canonical_slug": "baidu/ernie-5.5-flash-preview-20261110",
@@ -432,37 +496,37 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1116,
-            "win_rate": 30.2,
-            "rank": 84
+            "elo": 1120,
+            "win_rate": 30.9,
+            "rank": 82
           },
           {
             "arena": "models",
             "category": "codecategories",
             "elo": 1140,
-            "win_rate": 32.4,
+            "win_rate": 32.5,
             "rank": 93
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1085,
+            "elo": 1084,
             "win_rate": 26.1,
-            "rank": 106
+            "rank": 107
           },
           {
             "arena": "models",
             "category": "gamedev",
             "elo": 1078,
-            "win_rate": 27.1,
-            "rank": 106
+            "win_rate": 27.2,
+            "rank": 107
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1154,
-            "win_rate": 33,
-            "rank": 82
+            "elo": 1158,
+            "win_rate": 33.2,
+            "rank": 77
           },
           {
             "arena": "models",
@@ -482,70 +546,6 @@
         "mandatory": false
       },
       "addedToFreeList": "2026-10-16T01:00:15.775Z",
-      "providerId": "openrouter"
-    },
-    {
-      "id": "apodex/apodex-1.1-mini:free",
-      "canonical_slug": "apodex/apodex-1.1-mini-20261001",
-      "hugging_face_id": null,
-      "name": "Apodex: Apodex 1.1 Mini (free)",
-      "created": 1790875335,
-      "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": 235929,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": null,
-      "links": {
-        "details": "/api/v1/models/apodex/apodex-1.1-mini-20261001/endpoints"
-      },
-      "endpoints": [
-        "/api/v1/chat/completions",
-        "/api/v1/completions",
-        "/api/v1/messages",
-        "/api/v1/responses"
-      ],
-      "reasoning": {
-        "mandatory": false
-      },
-      "addedToFreeList": "2026-10-02T01:00:38.442Z",
       "providerId": "openrouter"
     },
     {
@@ -604,87 +604,6 @@
       ],
       "reasoning": {
         "mandatory": false
-      },
-      "addedToFreeList": "2026-08-26T08:32:50.786Z",
-      "providerId": "openrouter"
-    },
-    {
-      "id": "liquid/lfm-2.5-2.6b:free",
-      "canonical_slug": "liquid/lfm-2.5-2.6b-20260811",
-      "hugging_face_id": "LiquidAI/LFM2.5-2.6B",
-      "name": "LiquidAI: LFM2.5-2.6B (free)",
-      "created": 1786470519,
-      "description": "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...",
-      "context_length": 65536,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 65536,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logprobs",
-        "max_completion_tokens",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.1,
-        "top_k": 50,
-        "repetition_penalty": 1.1
-      },
-      "supported_voices": null,
-      "knowledge_cutoff": null,
-      "expiration_date": "2026-11-13",
-      "links": {
-        "details": "/api/v1/models/liquid/lfm-2.5-2.6b-20260811/endpoints"
-      },
-      "endpoints": [
-        "/api/v1/chat/completions",
-        "/api/v1/completions",
-        "/api/v1/messages",
-        "/api/v1/responses"
-      ],
-      "benchmarks": {
-        "design_arena": [],
-        "artificial_analysis": {
-          "intelligence_index": null,
-          "coding_index": 7.7,
-          "agentic_index": null
-        }
-      },
-      "reasoning": {
-        "mandatory": true
       },
       "addedToFreeList": "2026-08-26T08:32:50.786Z",
       "providerId": "openrouter"
@@ -897,58 +816,58 @@
           {
             "arena": "models",
             "category": "3d",
-            "elo": 1111,
-            "win_rate": 38,
-            "rank": 87
+            "elo": 1108,
+            "win_rate": 37.9,
+            "rank": 89
           },
           {
             "arena": "models",
             "category": "asciiart",
             "elo": 1093,
             "win_rate": 36.8,
-            "rank": 65
+            "rank": 64
           },
           {
             "arena": "models",
             "category": "codecategories",
-            "elo": 1133,
-            "win_rate": 35.4,
-            "rank": 96
+            "elo": 1131,
+            "win_rate": 35.3,
+            "rank": 98
           },
           {
             "arena": "models",
             "category": "dataviz",
-            "elo": 1139,
+            "elo": 1137,
             "win_rate": 37.2,
             "rank": 87
           },
           {
             "arena": "models",
             "category": "gamedev",
-            "elo": 1127,
+            "elo": 1126,
             "win_rate": 35.4,
-            "rank": 87
+            "rank": 88
           },
           {
             "arena": "models",
             "category": "svg",
-            "elo": 1062,
+            "elo": 1060,
             "win_rate": 32.1,
-            "rank": 78
+            "rank": 79
           },
           {
             "arena": "models",
             "category": "uicomponent",
-            "elo": 1128,
-            "win_rate": 35.3,
-            "rank": 92
+            "elo": 1126,
+            "win_rate": 35.2,
+            "rank": 94
           },
           {
             "arena": "models",
             "category": "website",
-            "elo": 1131,
-            "win_rate": 34.4,
-            "rank": 102
+            "elo": 1129,
+            "win_rate": 34.3,
+            "rank": 103
           }
         ],
         "artificial_analysis": {
@@ -1395,57 +1314,34 @@
       "providerId": "openrouter"
     },
     {
+      "id": "allam-2-7b",
+      "name": "Allam 2 7b",
+      "created": 1737672203,
+      "description": "",
+      "context_length": 4096,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
       "id": "qwen/qwen3.6-27b",
       "name": "Qwen/qwen3 6 27b",
       "created": 1778288776,
       "description": "",
       "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "qwen/qwen3.8-27b",
-      "name": "Qwen/qwen3 8 27b",
-      "created": 1786984846,
-      "description": "",
-      "context_length": 131072,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "meta-llama/llama-prompt-guard-2-86m",
-      "name": "Meta Llama/llama Prompt Guard 2 86m",
-      "created": 1748632165,
-      "description": "",
-      "context_length": 512,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1487,11 +1383,34 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "openai/gpt-oss-20b",
-      "name": "Openai/gpt Oss 20b",
-      "created": 1754407957,
+      "id": "openai/gpt-oss-120b",
+      "name": "Openai/gpt Oss 120b",
+      "created": 1754408224,
       "description": "",
       "context_length": 131072,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
+      "id": "meta-llama/llama-prompt-guard-2-22m",
+      "name": "Meta Llama/llama Prompt Guard 2 22m",
+      "created": 1748632101,
+      "description": "",
+      "context_length": 512,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1556,55 +1475,9 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "meta-llama/llama-prompt-guard-2-22m",
-      "name": "Meta Llama/llama Prompt Guard 2 22m",
-      "created": 1748632101,
-      "description": "",
-      "context_length": 512,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "allam-2-7b",
-      "name": "Allam 2 7b",
-      "created": 1737672203,
-      "description": "",
-      "context_length": 4096,
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ]
-      },
-      "providerId": "groq",
-      "sourceUrl": "https://api.groq.com/openai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.238Z"
-    },
-    {
-      "id": "openai/gpt-oss-120b",
-      "name": "Openai/gpt Oss 120b",
-      "created": 1754408224,
+      "id": "openai/gpt-oss-20b",
+      "name": "Openai/gpt Oss 20b",
+      "created": 1754407957,
       "description": "",
       "context_length": 131072,
       "pricing": {
@@ -1648,6 +1521,29 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
+      "id": "meta-llama/llama-prompt-guard-2-86m",
+      "name": "Meta Llama/llama Prompt Guard 2 86m",
+      "created": 1748632165,
+      "description": "",
+      "context_length": 512,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
+    },
+    {
       "id": "canopylabs/orpheus-arabic-saudi",
       "name": "Canopylabs/orpheus Arabic Saudi",
       "created": 1765926439,
@@ -1671,11 +1567,11 @@
       "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
-      "id": "gpt-oss-120b",
-      "name": "Gpt Oss 120b",
-      "created": 0,
+      "id": "qwen/qwen3.8-27b",
+      "name": "Qwen/qwen3 8 27b",
+      "created": 1786984846,
       "description": "",
-      "context_length": null,
+      "context_length": 131072,
       "pricing": {
         "prompt": "0",
         "completion": "0"
@@ -1689,9 +1585,9 @@
           "text"
         ]
       },
-      "providerId": "cerebras",
-      "sourceUrl": "https://api.cerebras.ai/v1/models",
-      "addedToFreeList": "2026-09-02T05:41:20.387Z"
+      "providerId": "groq",
+      "sourceUrl": "https://api.groq.com/openai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.238Z"
     },
     {
       "id": "qwen-3.8-27b",
@@ -1715,6 +1611,29 @@
       "providerId": "cerebras",
       "sourceUrl": "https://api.cerebras.ai/v1/models",
       "addedToFreeList": "2026-09-04T01:00:05.346Z"
+    },
+    {
+      "id": "gpt-oss-120b",
+      "name": "Gpt Oss 120b",
+      "created": 0,
+      "description": "",
+      "context_length": null,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "providerId": "cerebras",
+      "sourceUrl": "https://api.cerebras.ai/v1/models",
+      "addedToFreeList": "2026-09-02T05:41:20.387Z"
     },
     {
       "id": "gemini-2.5-flash",
@@ -4754,6 +4673,163 @@
     }
   ],
   "archivedModels": [
+    {
+      "id": "apodex/apodex-1.1-mini:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-11-14T02:00:48.165Z",
+      "lastSeenAt": "2026-11-13T02:00:49.110Z",
+      "addedToFreeList": "2026-10-02T01:00:38.442Z",
+      "model": {
+        "id": "apodex/apodex-1.1-mini:free",
+        "canonical_slug": "apodex/apodex-1.1-mini-20261001",
+        "hugging_face_id": null,
+        "name": "Apodex: Apodex 1.1 Mini (free)",
+        "created": 1790875335,
+        "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
+        "context_length": 262144,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 262144,
+          "max_completion_tokens": 235929,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "max_tokens",
+          "presence_penalty",
+          "reasoning",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/apodex/apodex-1.1-mini-20261001/endpoints"
+        },
+        "endpoints": [
+          "/api/v1/chat/completions",
+          "/api/v1/completions",
+          "/api/v1/messages",
+          "/api/v1/responses"
+        ],
+        "reasoning": {
+          "mandatory": false
+        },
+        "addedToFreeList": "2026-10-02T01:00:38.442Z"
+      }
+    },
+    {
+      "id": "liquid/lfm-2.5-2.6b:free",
+      "providerId": "openrouter",
+      "removedAt": "2026-11-14T02:00:48.165Z",
+      "lastSeenAt": "2026-11-13T02:00:49.110Z",
+      "addedToFreeList": "2026-08-26T08:32:50.786Z",
+      "model": {
+        "id": "liquid/lfm-2.5-2.6b:free",
+        "canonical_slug": "liquid/lfm-2.5-2.6b-20260811",
+        "hugging_face_id": "LiquidAI/LFM2.5-2.6B",
+        "name": "LiquidAI: LFM2.5-2.6B (free)",
+        "created": 1786470519,
+        "description": "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...",
+        "context_length": 65536,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Other",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "top_provider": {
+          "context_length": 65536,
+          "max_completion_tokens": 8192,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "logprobs",
+          "max_completion_tokens",
+          "max_tokens",
+          "min_p",
+          "presence_penalty",
+          "reasoning",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_logprobs",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 0.1,
+          "top_k": 50,
+          "repetition_penalty": 1.1
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": "2026-11-13",
+        "links": {
+          "details": "/api/v1/models/liquid/lfm-2.5-2.6b-20260811/endpoints"
+        },
+        "endpoints": [
+          "/api/v1/chat/completions",
+          "/api/v1/completions",
+          "/api/v1/messages",
+          "/api/v1/responses"
+        ],
+        "benchmarks": {
+          "design_arena": [],
+          "artificial_analysis": {
+            "intelligence_index": null,
+            "coding_index": 7.7,
+            "agentic_index": null
+          }
+        },
+        "reasoning": {
+          "mandatory": true
+        },
+        "addedToFreeList": "2026-08-26T08:32:50.786Z"
+      }
+    },
     {
       "id": "xingchen-agi/xing4.0-29b-a4b:free",
       "providerId": "openrouter",
